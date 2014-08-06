@@ -22,6 +22,8 @@ The GC program cleans up two types of unused blocks:
 This is because new blocks written into Seafile while GC is running may be
 mistakenly deleted by the GC program.
 
+**Attention:** When running the GC, any incomplete uploads will be deleted, as their blocks do not belong to any commit, yet. This means users may want to know when GC will run to avoid starting uploads just before GC and longer intervals between two runs allow big continued uploads, by starting them long enough before the next GC run.
+
 To run GC program
 
     cd seafile-server-{version}/seafile
