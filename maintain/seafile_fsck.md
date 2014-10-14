@@ -12,6 +12,9 @@ The seaf-fsck tool accepts the following arguments:
 
 ```
 seaf-fsck [-c config_dir] [-d seafile_dir] [repo_id_1 [repo_id_2 ...]]
+Additional options:
+-D, --dry-run: check fs objects and blocks, but don't remove them.
+-s, --strict: check whether fs object id consistent with content.
 ```
 
 Supposed you follow the standard installation and directory layout, and your seafile installation directory is `/data/haiwen`, you should run the command as
