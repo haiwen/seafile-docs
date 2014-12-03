@@ -12,17 +12,19 @@ That is, if you are using Community Server 1.6, and want to switch to the Profes
 
 ### Install Java Runtime Environment (JRE) ###
 
+Java 7 or higher is required.
+
 On Ubuntu/Debian:
 ```
-sudo apt-get install default-jre
+sudo apt-get install openjdk-7-jre
 ```
 
 On CentOS/Red Hat:
 ```
-sudo yum install java-1.6.0-openjdk
+sudo yum install java-1.7.0-openjdk
 ```
 
-*Note*: You can use either the JRE of openJDK or Oracle JRE, but not the GCJ(GNU Java) package.
+*Note*: Since version 3.1.12, java 1.7 is required, please check your java version by `java -version`. If not, please [change the default java version](./change_default_java.md).
 
 ### Install poppler-utils ###
 

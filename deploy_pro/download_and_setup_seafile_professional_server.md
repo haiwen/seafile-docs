@@ -9,7 +9,7 @@
 
 On Ubuntu/Debian:
 ```
-sudo apt-get install default-jre
+sudo apt-get install openjdk-7-jre
 ```
 
 On CentOS/Red Hat:
@@ -17,9 +17,7 @@ On CentOS/Red Hat:
 sudo yum install java-1.7.0-openjdk
 ```
 
-*Note*: You can use either the JRE of openJDK or Oracle JRE, but not the GCJ(GNU Java) package.
-
-*Note*: Since version 3.1.12, java 1.7 is required, please check your java version by `java -version`
+*Note*: Since version 3.1.12, java 1.7 is required, please check your java version by `java -version`. If not, please [change the default java version](./change_default_java.md).
 
 ### Install poppler-utils ###
 

@@ -6,23 +6,19 @@ Setup homebrew environment
 
   - Download Xcode from [website](https://developer.apple.com/xcode/downloads/) or
     [App Store](http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)
-  - Xcode Command Line Utilities might be sufficient to build seafile, but it is left
-untested yet.
+  - Xcode Command Line Utilities might be enough to build seafile, but it is left untested yet.
 
 2. Install homebrew
 
-  - Make sure you don't have macports installed or uninstalled completely
   - Execute this from Terminal
   ``ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"``
+  - Make sure you have a clean homebrew environment. You can double-check it
+    by ``brew doctor``
 
 Then install seafile from homebrew
   ```
-  brew tap homebrew/dupes
   brew tap Chilledheart/seafile
-  brew install libsearpc
-  brew install ccnet
-  brew install seafile --HEAD
-  brew install seafile-client --HEAD
+  brew install seafile-client
   ```
 
 If you face any installation issue, please report it with your homebrew logs
@@ -43,8 +39,8 @@ Setup macports environment
 
 3. Install following libraries and tools using `port`
 
-        sudo port install autoconf intltool automake pkgconfig libtool glib2 \
-        ossp-uuid libevent vala openssl git qt4-mac python27 jansson gsed
+        sudo port install autoconf automake pkgconfig libtool glib2 \
+        libevent vala openssl git qt4-mac python27 jansson
 
 4. Install python
 
@@ -55,9 +51,9 @@ Setup macports environment
 
         export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig
         export LIBTOOL=glibtool
-        export LBITOOLIZE=glibtoolize
-        export SED=gsed
-        export LDFLAGS="-L/opt/local/lib -luuid -L/usr/local/lib -Wl,-headerpad_max_install_names"
+        export LIBTOOLIZE=glibtoolize
+        export CFLAGS="-I/opt/local/include"
+        export LDFLAGS="-L/opt/local/lib -L/usr/local/lib -Wl,-headerpad_max_install_names"
 
 
 Compiling libsearpc
@@ -76,7 +72,7 @@ Compiling ccnet
 Download [ccnet](https://github.com/haiwen/ccnet), then:
 
         ./autogen.sh
-        CFLAGS="-I/opt/local/include" LDFLAGS="-L/opt/local/lib -luuid -L/usr/local/lib -Wl,-headerpad_max_install_names" ./configure
+        ./configure
         make
         sudo make install
 
@@ -87,7 +83,7 @@ Compiling seafile
 2. Compile
 
         ./autogen.sh
-        SED=sed CFLAGS="-I/opt/local/include" LDFLAGS="-L/opt/local/lib -luuid -L/usr/local/lib -Wl,-headerpad_max_install_names" ./configure
+        ./configure
         make
         sudo make install
 
@@ -98,19 +94,16 @@ Compiling seafile-client and packaging it
 
         ./genapp.sh xcode
 
-    Generate xcode project from qmake
+    Generate xcode project from cmake
 
-2. Compile seafile.app：
+2. Compile seafile-applet.app：
 
         ./genapp.sh build
 
-    If you are told build failed, you might try to use HEAD version of
-    seafile-client, or any tag which ends up with "mac"
+3. Package seafile-applet.app:
 
-3. Package seafile.app:
         ./genapp.sh otool
         ./genapp.sh package
-        ./genapp.sh dmg
 
     This will copy ccnet, seaf-daemon and other libraries to seafile-client, and use `install_name_tool` to modify the library paths in ccnet, seaf-daemon.
     After compiling, it will copy seafile.app to `${top_dir}/../seafile-${VERSION}`. You can also compiling seafile.app in xcode.
