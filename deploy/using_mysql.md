@@ -22,7 +22,7 @@ https://bitbucket.org/haiwen/seafile/downloads/seafile-server_{version}_x86-64.t
 
 ## Create an unprivileged user
 
-It's recommended tu run Seafile Server as an unprivileged user. Before starting the installation procedure create such an user: 
+It's recommended to run Seafile Server as an unprivileged user. Before starting the installation procedure create such an user: 
 
 <pre>
 adduser haiwen --no-create-home --disabled-login
