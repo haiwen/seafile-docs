@@ -15,6 +15,16 @@ The following document is tested in Ubuntu 14.04, so we recommend that you use U
 > sudo pip install boto
 > ```
 > 
+> For CentOS 7:
+> 
+> ```
+> wget https://bootstrap.pypa.io/get-pip.py
+> sudo python get-pip.py
+> sudo yum install java-1.7.0-openjdk poppler-utils libreoffice libreoffice-headless libreoffice-pyuno python-dev python-setuptools python-imaging MySQL-python mariadb-server.x86_64
+> sudo pip install boto
+> sudo systemctl start mariadb.service
+> ```
+> 
 > For more information please see bellow.
 
 ### Minimum System Requirement ###
