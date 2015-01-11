@@ -119,7 +119,9 @@ and **script\_path** accordingly)
     ### BEGIN INIT INFO
     # Provides:          seafile-server
     # Required-Start:    $local_fs $remote_fs $network
-    # Required-Stop:     $local_fs
+    # Required-Stop:     $local_fs $remote_fs $network
+    # Should-Start:      mysql slapd nscd nslcd
+    # Should-Stop:       mysql slapd nscd nslcd
     # Default-Start:     2 3 4 5
     # Default-Stop:      0 1 6
     # Short-Description: Starts Seafile Server
@@ -139,9 +141,13 @@ and **script\_path** accordingly)
     fastcgi=false
     # Set the port of fastcgi, default is 8000. Change it if you need different.
     fastcgi_port=8000
+    
+    # Number of open file ulimit
+    nofile=30000
 
     case "$1" in
             start)
+                    ulimit -n ${nofile}
                     sudo -u ${user} ${script_path}/seafile.sh start >> ${seafile_init_log}
                     if [  $fastcgi = true ];
                     then
@@ -151,6 +157,7 @@ and **script\_path** accordingly)
                     fi
             ;;
             restart)
+                    ulimit -n ${nofile}
                     sudo -u ${user} ${script_path}/seafile.sh restart >> ${seafile_init_log}
                     if [  $fastcgi = true ];
                     then
@@ -173,12 +180,6 @@ and **script\_path** accordingly)
 
 1.  If you want to start seahub in fastcgi, just change the **fastcgi**
     variable to **true**
-2.  If you deployed Seafile with MySQL, append "mysql" to the
-    Required-Start line:
-
-<!-- -->
-
-    # Required-Start: $local_fs $remote_fs $network mysql
 
 ### Add Directory for Logfiles
 
