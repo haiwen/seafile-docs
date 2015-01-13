@@ -131,6 +131,11 @@
 <li><a href="#get-group-avatar">Get Group Avatar</a></li>
 </ul>
 </li>
+<li><a href="#get-thumbnail">Get Thumbnail</a><ul>
+<li><a href="#get-thumbnail-src">Get Thumbnail Src</a></li>
+<li><a href="#get-thumbnail-image">Get Thumbnail Image</a></li>
+</ul>
+</li>
 <li><a href="#list-group-and-contacts">List Group And Contacts</a></li>
 <li><a href="#get-file-events">Get File Activities</a></li>
 </ul>
@@ -2131,6 +2136,42 @@ A sample request looks like `curl -X DELETE https://cloud.seafile.com/api2/repos
         "is_default": true,
         "mtime": 0
     }
+
+## <a id="get-thumbnail"></a>Get Thumbnail##
+
+### <a id="get-thumbnail-src"></a>Get Thumbnail Src ##
+
+**GET** https://cloud.seafile.com/api2/thumbnail/{repo_id}/
+
+**Request parameters**
+
+* repo_id
+* path
+* size
+
+**Sample request**
+
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/thumbnail/716f779f-b1f3-4990-b634-30b25703d5ab/?p=/1.png\&s=123
+
+**Sample response**
+
+{
+"thumbnail_src": "https://cloud.seafile.com/api2/thumbnail/716f779f-b1f3-4990-b634-30b25703d5ab/6bfbd22bf0611cb0219940667bdf78cec579cde5/123/"
+}
+
+### <a id="get-thumbnail-image"></a>Get Thumbnail Image ##
+
+**GET** https://cloud.seafile.com/api2/thumbnail/{repo_id}/{obj_id}/{size}/
+
+**Request parameters**
+
+* repo_id
+* obj_id
+* size
+
+**Sample request**
+
+    curl -H 'Authorization: Token eecac65a7ca347f5e2bf68c6566e42d5f62009ff' https://cloud.seafile.com/api2/thumbnail/716f779f-b1f3-4990-b634-30b25703d5ab/6bfbd22bf0611cb0219940667bdf78cec579cde5/123/ > thumbnail.png
 
 ## <a id="list-group-and-contacts"></a>List Group And Contacts ##
 
