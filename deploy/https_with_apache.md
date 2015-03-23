@@ -26,30 +26,19 @@ LoadModule ssl_module modules/mod_ssl.so
 Then modify your Apache configuration file. Here is a sample:
 
 <pre>
-<VirtualHost *:443>
+<VirtualHost *:80>
   ServerName www.myseafile.com
-  DocumentRoot /var/www
-  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
-
+  redirectMatch / https://www.myseafile.com/
+</virtualHost>
+<VirtualHost *:443>
   SSLEngine On
   SSLCertificateFile /path/to/cacert.pem
   SSLCertificateKeyFile /path/to/privkey.pem
 
-  RewriteEngine On
 
-  #
-  # seafile fileserver
-  #
-  ProxyPass /seafhttp http://127.0.0.1:8082
-  ProxyPassReverse /seafhttp http://127.0.0.1:8082
-  RewriteRule ^/seafhttp - [QSA,L]
-
-  #
-  # seahub
-  #
-  RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.*)$ /seahub.fcgi/$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  ServerName www.myseafile.com
+  DocumentRoot /var/www
+  ... and so on, same as for without SSL ....
 </VirtualHost>
 </pre>
 
