@@ -8,12 +8,12 @@
     sudo apt-get install python-flup
     ```
 
-2. Install and enable mod_fastcgi and also enable mod_rewrite. On Ubuntu:
+2. Install and enable enable mod_rewrite and also mod_fastcgi (not required for Apache 2.4). On Ubuntu:
 
     ```
     sudo apt-get install libapache2-mod-fastcgi
     sudo a2enmod rewrite
-    sudo a2enmod fastcgi
+    sudo a2enmod fastcgi # skip this for Apache 2.4
     ```
    
     On Debian you will need to first enable the **non-free** repo in **/etc/apt/sources.list** before you can install libapache2-mod-fastcgi e.g.:
@@ -40,7 +40,7 @@ Seahub is the web interface of Seafile server. FileServer is used to handle raw 
 
 Here we deploy Seahub using fastcgi, and deploy FileServer with reverse proxy. We assume you are running Seahub using domain '''www.myseafile.com'''.
 
-First edit your apache config file. Depending on your distro, you will need to add this line to **the end of the file**:
+First edit your apache config file. Depending on your distro, you will need to add this line to **the end of the file**. This is not required for Apache 2.4
 
 `apache2.conf`, for Ubuntu/Debian:
 ```
@@ -57,6 +57,7 @@ Note, `seahub.fcgi` is just a placeholder, you don't need to actually have this 
 Second, modify Apache config file:
 (`sites-enabled/000-default`) for ubuntu/debian, (`vhost.conf`) for centos/fedora
 
+Apache 2.4 (no mod_fastcgi)
 ```
 <VirtualHost *:80>
     ServerName www.myseafile.com
@@ -73,27 +74,58 @@ Second, modify Apache config file:
     #    Allow from all
     #  </Location>
     <Location /media>
+        ProxyPass !
         Require all granted
     </Location>
 
-    #
-    # seafile fileserver
-    #
-    ProxyPass /seafhttp http://127.0.0.1:8082
-    ProxyPassReverse /seafhttp http://127.0.0.1:8082
-    RewriteRule ^/seafhttp - [QSA,L]
-    # For apache2.2, you may need to add
-    #  <Location /seafhttp>
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1 
+    # Seafile file server   
+    ProxyPass /seafhttp http://localhost:8082
+    ProxyPassReverse /seafhttp http://localhost:8082
+
+    # Seafile WebDAV server
+    ProxyPass /seafdav http://localhost:8080/seafdav
+    ProxyPassReverse /seafdav http://localhost:8080/seafdav
+
+    # Seafile seahub server
+    SetEnvIf Request_URI . proxy-fcgi-pathinfo=1
+    ProxyPass / fcgi://localhost:8000/
+</VirtualHost>
+```
+
+Apache 2.2 (or Apache 2.4 with mod_fastcgi)
+```
+<VirtualHost *:80>
+    ServerName www.myseafile.com
+    # Use "DocumentRoot /var/www/html" for Centos/Fedora
+    # Use "DocumentRoot /var/www" for Ubuntu/Debian
+    DocumentRoot /var/www
+    Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
+
+    RewriteEngine On
+
+    # For apache2.2, you may need to change to
+    #  <Location /media>
     #    Order allow,deny
     #    Allow from all
-    # </Location>
-    
-    #
-    # seahub
-    #
-    RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    #  </Location>
+    <Location /media>
+        ProxyPass !
+        Require all granted
+    </Location>
+
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1 
+    # Seafile file server   
+    ProxyPass /seafhttp http://localhost:8082
+    ProxyPassReverse /seafhttp http://localhost:8082
+
+    # Seafile WebDAV server
+    ProxyPass /seafdav http://localhost:8080/seafdav
+    ProxyPassReverse /seafdav http://localhost:8080/seafdav
+
+    # Seafile seahub server
+    SetEnvIf Request_URI . proxy-fcgi-pathinfo=1
+    ProxyPass / fcgi://localhost:8000/
 </VirtualHost>
 ```
 
@@ -166,7 +198,7 @@ This may help you understand seafile server better: [Seafile Components](../over
 
 There are two components in Seafile server, Seahub and FileServer. FileServer only servers for raw file uploading/downloading, it listens on 8082. Seahub that serving all the other pages, is still listen on 8000. But under https, Seahub should listen as in fastcgi mode on 8000 (run as ./seahub.sh start-fastcgi). And as in fastcgi mode, when you visit  http://domain:8000 directly, it should return an error page.
 
-When a user visit https://example.com/home/my/, Apache receives this request and sends it to Seahub via fastcgi. This is controlled by the following config items:
+When a user visit https://example.com/home/my/, Apache receives this request and sends it to Seahub via fastcgi (or ProxyPass). This is controlled by the following config items in Apache 2.2
 
     #
     # seahub
@@ -182,7 +214,7 @@ and
 
 When a user click a file download link in Seahub, Seahub reads the value of `FILE_SERVER_ROOT` and redirects the user to address `https://example.com/seafhttp/xxxxx/`. `https://example.com/seafhttp` is the value of `FILE_SERVER_ROOT`. Here, the `FILE_SERVER` means the FileServer component of Seafile, which only serves for raw file downloading/uploading.
 
-When Apache receives the request at 'https://example.com/seafhttp/xxxxx/', it proxies the request to FileServer, which is listening at 127.0.0.1:8082. This is controlled by the following config items:
+When Apache receives the request at 'https://example.com/seafhttp/xxxxx/', it proxies the request to FileServer, which is listening at 127.0.0.1:8082. This is controlled by the following config items for Apache 2.2
 
     ProxyPass /seafhttp http://127.0.0.1:8082
     ProxyPassReverse /seafhttp http://127.0.0.1:8082
