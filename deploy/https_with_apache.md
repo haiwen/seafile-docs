@@ -67,7 +67,7 @@ SERVICE_URL = https://www.myseafile.com
 You need to add a line in seahub_settings.py to set the value of `FILE_SERVER_ROOT` (Or `HTTP_SERVER_ROOT` before version 3.1.0)
 
 ```python
-FILE_SERVER_ROOT = 'https://www.myseafile.com/seafhttp'
+'FILE_SERVER_ROOT' : 'http://www.myseafile.com/seafhttp',
 ```
 
 ## Start Seafile and Seahub
