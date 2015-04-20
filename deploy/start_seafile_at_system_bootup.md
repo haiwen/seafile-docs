@@ -446,6 +446,7 @@ Create systemd service files, change **${seafile\_dir}** to your
     [Unit]
     Description=Seafile
     # add mysql.service or postgresql.service depending on your database to the line below
+    # and also if you use Apache/Ngix the relative systemd service, httpd.service or nginx.service.
     After=network.target
 
     [Service]
@@ -459,14 +460,14 @@ Create systemd service files, change **${seafile\_dir}** to your
     [Install]
     WantedBy=multi-user.target
 
-### Create systemd service file /etc/systemd/system/seahub.service
+### Create systemd service file /etc/systemd/system/seahub.service 
+**if you are not using Apache/Ngix**
 
     [Unit]
     Description=Seafile hub
     After=network.target seafile.service
 
     [Service]
-    # change start to start-fastcgi if you want to run fastcgi
     ExecStart=${seafile_dir}/seafile-server-latest/seahub.sh start
     ExecStop=${seafile_dir}/seafile-server-latest/seahub.sh stop
     User=seafile
@@ -476,6 +477,25 @@ Create systemd service files, change **${seafile\_dir}** to your
 
     [Install]
     WantedBy=multi-user.target
+
+**if you are using Apache/Ngix**
+
+    [Unit]
+    Description=Seafile hub
+    After=network.target seafile.service
+
+    [Service]
+    ExecStart=${seafile_dir}/seafile-server-latest/seahub.sh start-fastcgi
+    ExecStop=${seafile_dir}/seafile-server-latest/seahub.sh stop
+    User=seafile
+    Group=seafile
+    Type=oneshot
+    RemainAfterExit=yes
+
+    [Install]
+    WantedBy=multi-user.target
+
+
 
 ### Create systemd service file /etc/systemd/system/seafile-client.service (optional)
 
