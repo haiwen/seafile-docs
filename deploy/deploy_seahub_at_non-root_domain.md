@@ -71,8 +71,8 @@ If you are using **mod_fastcgi** then edit httpd.conf file, add this line:
 </pre>
 After that, you need to configure your Apache, here is the sample configuration:
 
-<pre>
-<VirtualHost *:80>
+```
+ <VirtualHost *:80>
   ServerName www.example.com
   DocumentRoot /var/www
   Alias /seafmedia  /home/user/haiwen/seafile-server-2.0.2/seahub/media
@@ -92,32 +92,31 @@ After that, you need to configure your Apache, here is the sample configuration:
   RewriteRule ^/(seafmedia.*)$ /$1 [QSA,L,PT]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^/(seafile.*)$ /seahub.fcgi/$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-</VirtualHost>
-</pre>
+ </VirtualHost>
+```
 
 If you are using **mod_proxy_fcgi** you need only to configure your Apache, here is the sample configuration of a virtual host:
 
-<pre>
-<VirtualHost *:80>
- Alias /seafmedia /home/user/haiwen/seafile-server-latest/seahub/media
- <Location /seafmedia>
+```
+ <VirtualHost *:80>
+  Alias /seafmedia /home/user/haiwen/seafile-server-latest/seahub/media
+  <Location /seafmedia>
    ProxyPass !
    Require all granted
- </Location>
+  </Location>
 
- SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
- SetEnvIf Request_URI . proxy-fcgi-pathinfo=1
+  SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+  SetEnvIf Request_URI . proxy-fcgi-pathinfo=1
 
- # Seafile file server
- ProxyPass "/seafhttp" "http://127.0.0.1:8082"
- ProxyPassReverse "/seafhttp" "http://127.0.0.1:8082"
+  # Seafile file server
+  ProxyPass "/seafhttp" "http://127.0.0.1:8082"
+  ProxyPassReverse "/seafhttp" "http://127.0.0.1:8082"
 
- # Seafile seahub server
- SetEnvIf Request_URI . proxy-fcgi-pathinfo=1
- ProxyPass "/seafile" "fcgi://127.0.0.1:8000/seafile"
+  # Seafile seahub server
+  ProxyPass "/seafile" "fcgi://127.0.0.1:8000/seafile"
 
-</VirtualHost>
-</pre>
+ </VirtualHost>
+```
 
 We use Alias to let Apache serve static files, please change the second argument to your path.
 
