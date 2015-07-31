@@ -20,6 +20,19 @@ https://bitbucket.org/haiwen/seafile/downloads/seafile-server_{version}_i386.tar
 https://bitbucket.org/haiwen/seafile/downloads/seafile-server_{version}_x86-64.tar.gz
 </pre>
 
+## Create an unprivileged user
+
+It's recommended to run Seafile Server as an unprivileged user. Before starting the installation procedure create such an user: 
+
+<pre>
+adduser haiwen --no-create-home --disabled-login
+</pre>
+
+Now change to that user and run start the installation:
+
+<pre>
+su haiwen
+</pre>
 
 ## Deploying and Directory Layout
 
@@ -120,10 +133,10 @@ If some of the prerequisites are not installed, the seafile initialization scrip
 
 The script will guide you through the settings of various configuration options.
 
-** Seafile configuration options **
+**Seafile configuration options**
 
 | Option | Description | Note |
-| -- | -- | ---- |
+| ---- | ---- | ---- |
 | server name | Name of this seafile server | 3-15 characters, only English letters, digits and underscore ('_') are allowed |
 | server ip or domain | The IP address or domain name used by this server | Seafile client program will access the server with this address |
 | seafile data dir | Seafile stores your data in this directory. By default it'll be placed in the current directory.  | The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space.  |
@@ -152,7 +165,7 @@ If you choose "[1] Create new ccnet/seafile/seahub databases", you would be aske
 
 
 | Question | Description | Note
-| -- | -- | ---- |
+| ---- | ---- | ---- |
 | mysql server host | the host address of the mysql server | the default is localhost |
 | mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port.  |
 | root password | the password of mysql root account | the root password is required to create new databases and a new user |
@@ -166,10 +179,10 @@ If you choose "[1] Create new ccnet/seafile/seahub databases", you would be aske
 If you choose "[2] Use existing ccnet/seafile/seahub databases", you would be asked these questions:
 
 
-** related questions for "Use existing ccnet/seafile/seahub databases" **
+**related questions for "Use existing ccnet/seafile/seahub databases"**
 
 | Question | Description | Note |
-| -- | -- | ---- |
+| ---- | ---- | ---- |
 | mysql server host | the host address of the mysql server | the default is localhost |
 | mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port |
 | mysql user for seafile | the user for seafile programs to use to access MySQL server | the user must already exists |
@@ -226,7 +239,7 @@ ulimit -n 30000
 
 ### Starting Seafile Server and Seahub Website
 
-Under seafile-server-1.8.2 directory, run the following commands
+Under seafile-server-1.8.2 directory, run the following commands as your unprivileged Seafile user:
 
 * Start seafile:
 
