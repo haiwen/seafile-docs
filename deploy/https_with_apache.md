@@ -50,8 +50,9 @@ Then modify your Apache configuration file. Here is a sample:
   # seahub
   #
   RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.*)$ /seahub.fcgi/$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    RewriteCond %{REQUEST_FILENAME} "^/seahub\.fcgi"
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </VirtualHost>
 ```
 
