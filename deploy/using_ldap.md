@@ -182,10 +182,10 @@ To do this, just run the following command
 
 ```
 cd ${SEAFILE_INSTALLATION_DIR}/seafile-server-latest/seafile/lib
-mv liblber-2.4.so.2 libldap-2.4.so.2 libsasl2.so.2 ..
+mv liblber-2.4.so.2 libldap-2.4.so.2 libsasl2.so.2 libldap_r-2.4.so.2 ..
 ```
 
-This effectively remove the bundled ldap library from the library path. When the server runs, it'll look for ldap library from the system paths.
+This effectively remove the bundled ldap library from the library path. When the server runs, it'll look for ldap library from the system paths. Remember to repeat the command after each update of your seafile installation.
 
 ## Password reset page redirection
 
