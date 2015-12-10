@@ -113,7 +113,7 @@ If you are running Apache 2.2 then you will need to [update your access control 
 
 If you are running ModSecurity with Apache 2.2 then you will need to disable Modsecurity for the (Sub-)Domain where you setup Seafile, to avoid problems while synching. (http://www.atomicorp.com/wiki/index.php/Mod_security)
 
-``` ModSecurity
+```apache
     <IfModule mod_security2.c>
         SecRuleEngine Off 
     </IfModule>
