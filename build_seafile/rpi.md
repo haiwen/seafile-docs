@@ -80,6 +80,9 @@ Download these tarballs to `/tmp/`:
 - [django-compressor](https://pypi.python.org/packages/source/d/django_compressor/django_compressor-1.4.tar.gz)
 - [django-picklefield](https://pypi.python.org/packages/source/d/django-picklefield/django-picklefield-0.3.2.tar.gz)
 - [django-constance](https://github.com/haiwen/django-constance/archive/bde7f7c.zip)
+- [jdcal](https://pypi.python.org/packages/source/j/jdcal/jdcal-1.2.tar.gz)
+- [et_xmlfile](https://pypi.python.org/packages/source/e/et_xmlfile/et_xmlfile-1.0.1.tar.gz)
+- [openpyxl](https://pypi.python.org/packages/source/o/openpyxl/openpyxl-2.3.0.tar.gz)
 
 Install all these libaries to `/home/pi/dev/seahub_thirdpart`:
 
@@ -98,6 +101,9 @@ easy_install -d . /tmp/django_compressor-1.4.tar.gz
 easy_install -d . /tmp/django-picklefield-0.3.2.tar.gz
 wget -O /tmp/django_constance.zip https://github.com/haiwen/django-constance/archive/bde7f7c.zip
 easy_install -d . /tmp/django_constance.zip
+easy_install -d . /tmp/jdcal-1.2.tar.gz
+easy_install -d . /tmp/et_xmlfile-1.0.1.tar.gz
+easy_install -d . /tmp/openpyxl-2.3.0.tar.gz
 ```
 
 ## <a id="wiki-prepare-seafile-source-code"></a>Prepare seafile source code

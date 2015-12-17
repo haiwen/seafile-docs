@@ -94,6 +94,22 @@ cd seafile-server-latest
 ./seaf-fsck.sh --enable-sync [library-id1] [library-id2] ...
 ```
 
+### Change after CE 5.0.3 and Pro 5.0.2
+
+Since community eidition 5.0.3 and Pro edition 5.0.2, we improved seaf-fsck repair operation. Two improvements are added:
+
+- After running "--repair" operation, the system admin doesn't need to run "--enable-sync" command any more. Instead, seaf-fsck automatically disconnects all syncing clients to the library. So the users are forced to re-sync the library.
+- In the library history, seaf-fsck includes the list of files and folders that are corrupted. So it's much easier to located corrupted paths.
+
+### Best Practice for Repairing a Library
+
+To check all libraries and find out which library is corrupted, the system admin can run seaf-fsck.sh without any argument and save the output to a log file. Search for keyword "Fail" in the log file to locate corrupted libraries.
+
+When the system admin find a library is corrupted, he/she should run seaf-fsck.sh with "--repair" for the library. After the command fixes the library, the admin should inform user to recover files from other places. There are two ways:
+
+- Upload corrupted files or folders via the web interface
+- If the library was synced to some desktop computer, and that computer has a correct version of the corrupted file, resyncing the library on that computer will upload the corrupted files to the server.
+
 ## Exporting Libraries to File System
 
 Since version 4.2.0, you can use seaf-fsck to export all the files in libraries to external file system (such as Ext4). This procedure doesn't rely on the seafile database. As long as you have your seafile-data directory, you can always export your files from Seafile to external file system.

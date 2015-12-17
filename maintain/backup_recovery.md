@@ -37,30 +37,22 @@ For MySQL, the databases are created by the administrator, so the names can be d
 The backup is a three step procedure:
 
 1. Optional: Stop Seafile server first if you're using SQLite as database.
-2. Backup the seafile data directory;
-3. Backup the databases;
+2. Backup the databases;
+3. Backup the seafile data directory;
+
+### Backup Order: Database First or Data Directory First
+
+- backup data directory first, SQL later: When you're backing up data directory, some new objects are written and they're not backed up. Those new objects may be referenced in SQL database. So when you restore, some records in the database cannot find its object. So the library is corrupted.
+- backup SQL first, data directory later: Since you backup database first, all records in the database have valid objects to be referenced. So the libraries won't be corrupted. But new objects written to storage when you're backing up are not referenced by database records. So some libraries are out of date. When you restore, some new data are lost.
+ 
+The second sequence is better in the sense that it avoids library corruption. Like other backup solutions, some new data can be lost in recovery. There is always a backup window.
+However, if your storage backup mechanism can finish quickly enough, using the first sequence can retain more data.
 
 We assume your seafile data directory is in `/data/haiwen`. And you want to backup to `/backup` directory. The `/backup` can be an NFS or Windows share mount exported by another machine, or just an external disk. You can create a layout similar to the following in `/backup` directory:
 
     /backup
     ---- databases/  contains database backup files
     ---- data/  contains backups of the data directory
-
-### Backing up Seafile library data ###
-
-The data files are all stored in the `/data/haiwen` directory, so just back up the whole directory. You can directly copy the whole directory to the backup destination, or you can use rsync to do incremental backup. 
-
-To directly copy the whole data directory,
-
-    cp -R /data/haiwen /backup/data/haiwen-`date +"%Y-%m-%d-%H-%M-%S"`
-
-This produces a separate copy of the data directory each time. You can delete older backup copies after a new one is completed.
-
-If you have a lot of data, copying the whole data directory would take long. You can use rsync to do incremental backup.
-
-    rsync -az /data/haiwen /backup/data
-
-This command backup the data directory to `/backup/data/haiwen`.
 
 ### Backing up Databases ###
 
@@ -87,6 +79,22 @@ You need to stop Seafile server first before backing up SQLite database.
     sqlite3 /data/haiwen/seafile-data/seafile.db .dump > /backup/databases/seafile.db.bak.`date +"%Y-%m-%d-%H-%M-%S"`
 
     sqlite3 /data/haiwen/seahub.db .dump > /backup/databases/seahub.db.bak.`date +"%Y-%m-%d-%H-%M-%S"`
+
+### Backing up Seafile library data ###
+
+The data files are all stored in the `/data/haiwen` directory, so just back up the whole directory. You can directly copy the whole directory to the backup destination, or you can use rsync to do incremental backup. 
+
+To directly copy the whole data directory,
+
+    cp -R /data/haiwen /backup/data/haiwen-`date +"%Y-%m-%d-%H-%M-%S"`
+
+This produces a separate copy of the data directory each time. You can delete older backup copies after a new one is completed.
+
+If you have a lot of data, copying the whole data directory would take long. You can use rsync to do incremental backup.
+
+    rsync -az /data/haiwen /backup/data
+
+This command backup the data directory to `/backup/data/haiwen`.
 
 ## Restore from backup ##
 
