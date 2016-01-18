@@ -77,9 +77,15 @@ The corresponding Nginx configuration is (without https):
         fastcgi_param   SERVER_NAME         $server_name;
         
         client_max_body_size 0;
+        proxy_connect_timeout  36000s;
+        proxy_read_timeout  36000s;
+        proxy_send_timeout  36000s;
+        send_timeout  36000s;
+        proxy_request_buffering off;
 
         access_log      /var/log/nginx/seafdav.access.log;
         error_log       /var/log/nginx/seafdav.error.log;
+        
     }
 </pre>
 
@@ -105,9 +111,15 @@ Nginx conf with https:
         fastcgi_param   HTTPS               on;
         
         client_max_body_size 0;
-
+        proxy_connect_timeout  36000s;
+        proxy_read_timeout  36000s;
+        proxy_send_timeout  36000s;
+        send_timeout  36000s;
+        proxy_request_buffering off;
+        
         access_log      /var/log/nginx/seafdav.access.log;
         error_log       /var/log/nginx/seafdav.error.log;
+        
     }
 </pre>
 
