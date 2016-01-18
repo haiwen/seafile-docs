@@ -107,8 +107,8 @@ Nginx conf with https:
         fastcgi_param   SERVER_ADDR         $server_addr;
         fastcgi_param   SERVER_PORT         $server_port;
         fastcgi_param   SERVER_NAME         $server_name;
-
         fastcgi_param   HTTPS               on;
+        fastcgi_param   HTTP_SCHEME         https;
         
         client_max_body_size 0;
         proxy_connect_timeout  36000s;
