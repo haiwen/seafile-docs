@@ -43,11 +43,19 @@
 </ul>
 </li>
 <li><a href="#share">Share</a><ul>
-<li><a href="#file-share-link">File Share Link</a><ul>
-<li><a href="#list-file-share-links">List File Share Links</a></li>
-<li><a href="#create-file-share-link">Create File Share Link</a></li>
-<li><a href="#delete-file-share-link">Delete File Share Link</a></li>
+<li><a href="#share-link">Share Link</a><ul>
+<li><a href="#list-share-links">List Share Links</a></li>
+<li><a href="#create-share-link">Create Share Link</a></li>
+<li><a href="#delete-share-link">Delete Share Link</a></li>
+<li><a href="#send-share-link-email">Send Share Link Email</a></li>
 <li><a href="#list-direntry-in-dir-download-link">List Direntry in Dir Download Link</a></li>
+</ul>
+</li>
+<li><a href="#upload-link">Upload Link</a><ul>
+<li><a href="#list-upload-links">List Upload Links</a></li>
+<li><a href="#create-upload-link">Create Upload Link</a></li>
+<li><a href="#delete-upload-link">Delete Upload Link</a></li>
+<li><a href="#send-upload-link-email">Send Upload Link Email</a></li>
 </ul>
 </li>
 <li><a href="#shared-libraries">Shared Libraries</a><ul>
@@ -57,8 +65,10 @@
 <li><a href="#unshare-a-library">Unshare A Library</a></li>
 </ul>
 </li>
+
 </ul>
 </li>
+
 <li><a href="#library">Library</a><ul>
 <li><a href="#library-1">Library</a><ul>
 <li><a href="#get-default-lib">Get Default Library</a></li>
@@ -823,80 +833,126 @@ None
 
 ## <a id="share"></a>Share
 
-### <a id="file-share-link"></a>File Share Link ###
+### <a id="share-link"></a>Share Link ###
 
-#### <a id="list-file-share-links"></a>List File Share Links ####
+#### <a id="list-share-links"></a>List Share Links ####
 
-**GET** https://cloud.seafile.com/api2/shared-links/
+**GET** https://cloud.seafile.com/api/v2.1/share-links/
 
 **Sample request**
 
-    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/shared-links/"
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/share-links/"
 
 **Sample response**
 
-    {"fileshares": [{"username": "user@example.com", "repo_id": "a582d3bc-bcf5-421e-9125-741fa56d18d4", "ctime": null, "s_type": "d", "token": "e410827494", "view_cnt": 0, "path": "/123/"}, {"username": "user@example.com", "repo_id": "affc837f-7fdd-4e91-b88a-32caf99897f2", "ctime": null, "s_type": "f", "token": "0ae587a7d1", "view_cnt": 0, "path": "/lian123.md"}]}
+    [{"username":"lian@lian.com","view_cnt":0,"ctime":"2016-02-26T16:20:36.894","token":"4cbd625c5e","repo_id":"62ca6cf9-dab6-47e5-badc-bab13d9220ce","link":"https://cloud.seafile.com/f/4cbd625c5e/","expire_date":null,"path":"/file.md","is_expired":false},{"username":"lian@lian.com","view_cnt":0,"ctime":"2016-03-04T03:54:58.279","token":"8dc1e04ddd","repo_id":"62ca6cf9-dab6-47e5-badc-bab13d9220ce","link":"https://cloud.seafile.com/d/8dc1e04ddd/","expire_date":null,"path":"/","is_expired":false}]
 
-#### <a id="create-file-share-link"></a>Create File Share Link ####
+#### <a id="create-share-link"></a>Create Share Link ####
 
-**PUT** https://cloud.seafile.com/api2/repos/{repo-id}/file/shared-link/
+**POST** https://cloud.seafile.com/api/v2.1/share-links/
 
 **Request parameters**
 
 * repo-id
-* p (Path to the file)
-* share_type (optional, `download` or `upload`, default `download`)
-* password (optional)
-* expire (optional)
+* path (file/folder path)
+* password (not necessary)
+* expire_date (not necessary)
 
 **Sample request**
 
 Create download link for file
 
-    curl -v  -X PUT -d "p=/foo.md" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/afc3b694-7d4c-4b8a-86a4-89c9f3261b12/file/shared-link/
+    curl -d "path=/foo.md&repo_id=62ca6cf9-dab6-47e5-badc-bab13d9220ce" -H 'Authorization: Token ef12bf1e66a1aa797a1d6556fdc9ae84f1e9249f' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/share-links/
 
 Create download link for directory with password and expire date
 
-    curl -v  -X PUT -d "password=password&expire=6&p=/123/" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/afc3b694-7d4c-4b8a-86a4-89c9f3261b12/file/shared-link/
-
-Create upload link for directory
-
-    curl -v -X PUT -d "share_type=upload&p=/123/" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/afc3b694-7d4c-4b8a-86a4-89c9f3261b12/file/shared-link/
+    curl -d "path=/bar/&repo_id=62ca6cf9-dab6-47e5-badc-bab13d9220ce&password=password&expire_date=6" -H 'Authorization: Token ef12bf1e66a1aa797a1d6556fdc9ae84f1e9249f' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/share-links/
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 201 CREATED
-    < Location: https://cloud.seafile.com/f/9b437a7e55/
-    ...
+```
+{
+    "username": "lian@lian.com",
+    "view_cnt": 0,
+    "ctime": "2016-03-04T04:06:35.477",
+    "token": "409f5aa54a",
+    "repo_id": "62ca6cf9-dab6-47e5-badc-bab13d9220ce",
+    "link": "https://cloud.seafile.com/f/409f5aa54a/",
+    "expire_date": null,
+    "path": "/foo.md",
+    "is_expired": false
+}
+```
 
-**Success**
-
-    Response code 201(Created) is returned and the Location header provides shared link.
+```
+{
+    "username": "lian@lian.com",
+    "view_cnt": 0,
+    "ctime": "2016-03-04T04:12:48.959",
+    "token": "db1a50e686",
+    "repo_id": "62ca6cf9-dab6-47e5-badc-bab13d9220ce",
+    "link": "https://cloud.seafile.com/d/db1a50e686/",
+    "expire_date": null,
+    "path": "/bar/",
+    "is_expired": false
+}
+```
 
 **Errors**
 
-* 400 Path is missing
-* 400 Password(if link is encrypted) is missing
-* 500 Internal server error
+* 400 path/repo_id invalid
+* 403 Permission denied.
+* 404 file/folder/library not found.
+* 500 Internal Server Error
 
-#### <a id="delete-file-share-link"></a>Delete File Share Link ####
+#### <a id="delete-share-link"></a>Delete Share Link ####
 
-**DELETE** https://cloud.seafile.com/api2/shared-links/?t=0ae587a7d1
-
-**Request parameters**
-
-* t
+**DELETE** https://cloud.seafile.com/api/v2.1/share-links/{token}/
 
 **Sample request**
 
-    curl -v -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/shared-links/?t=0ae587a7d1"
+    curl -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/share-links/0ae587a7d1/"
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 200 OK
-    ...
+    {"success":true}
+
+#### <a id="send-share-link-email"></a>Send Share Link Email ####
+
+**POST** https://cloud.seafile.com/api2/send-share-link/
+
+**Request parameters**
+
+* token
+* email
+* extra_msg (not necessary)
+
+**Sample request**
+
+    curl -d "email=sample@eamil.com,invalid-email&token=4cbd625c5e" -H 'Authorization: Token ef12bf1e66a1aa797a1d6556fdc9ae84f1e9249f' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/send-share-link/
+
+**Sample response**
+
+```
+{
+    "failed": [
+        {
+            "email": "invalid-email",
+            "error_msg": "email invalid."
+        }
+    ],
+    "success": [
+        "sample@eamil.com"
+    ]
+}
+```
+
+**Errors**
+
+* 400 token/repo_id invalid
+* 403 Permission denied.
+* 403 Sending shared link failed. Email service is not properly configured, please contact administrator.
+* 404 token/library not found
 
 #### <a id="list-direntry-in-dir-download-link"></a>List Direntry in Dir Download Link ####
 
@@ -915,6 +971,100 @@ Create upload link for directory
 **Sample response**
 
     [{"mtime": 1436846750, "type": "dir", "name": "sadof", "id": "1806dbdb700b7bcd49e6275107c7ccf7b3ea1776"}, {"id": "bdb06f6de972c42893fda590ac954988b562429c", "mtime": 1436431020, "type": "file", "name": "test.mdert", "size": 20}]
+
+### <a id="upload-link"></a>Upload Link ###
+
+#### <a id="list-upload-links"></a>List Upload Links ####
+
+**GET** https://cloud.seafile.com/api/v2.1/upload-links/
+
+**Sample request**
+
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/upload-links/"
+
+**Sample response**
+
+    [{"username":"lian@lian.com","repo_id":"62ca6cf9-dab6-47e5-badc-bab13d9220ce","ctime":"2016-03-03T15:26:15.223","token":"9a5d5c8391","link":"https://cloud.seafile.com/u/d/9a5d5c8391/","path":"/"},{"username":"lian@lian.com","repo_id":"78c620ee-2989-4427-8eff-7748f4fbebc0","ctime":"2016-03-04T05:37:17.968","token":"d17d87ea4d","link":"https://cloud.seafile.com/u/d/d17d87ea4d/","path":"/yutong/"}]
+
+#### <a id="create-upload-link"></a>Create Upload Link ####
+
+**POST** https://cloud.seafile.com/api/v2.1/upload-links/
+
+**Request parameters**
+
+* repo-id
+* path (file/folder path)
+* password (not necessary)
+
+**Sample request**
+
+Create upload link for directory with password
+
+    curl -d "path=/bar/&repo_id=afc3b694-7d4c-4b8a-86a4-89c9f3261b12&password=password" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/upload-links/
+
+**Sample response**
+
+```
+{
+    "username": "lian@lian.com",
+    "repo_id": "62ca6cf9-dab6-47e5-badc-bab13d9220ce",
+    "ctime": "2016-03-04T05:51:34.022",
+    "token": "dce40e8594",
+    "link": "https://cloud.seafile.com/u/d/dce40e8594/",
+    "path": "/bar/"
+}
+```
+**Errors**
+
+* 400 path/repo_id invalid
+* 403 Permission denied.
+* 500 Internal Server Error
+
+#### <a id="delete-upload-link"></a>Delete Upload Link ####
+
+**DELETE** https://cloud.seafile.com/api/v2.1/upload-links/{token}/
+
+**Sample request**
+
+    curl -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/upload-links/0ae587a7d1/"
+
+**Sample response**
+
+    {"success":true}
+
+#### <a id="send-upload-link-email"></a>Send Upoad Link Email ####
+
+**POST** https://cloud.seafile.com/api2/send-upload-link/
+
+**Request parameters**
+
+* token
+* email
+* extra_msg (not necessary)
+
+**Sample request**
+
+    curl -d "email=sample@eamil.com,invalid-email&token=4cbd625c5e" -H 'Authorization: Token ef12bf1e66a1aa797a1d6556fdc9ae84f1e9249f' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/send-upload-link/
+
+**Sample response**
+
+```
+{
+    "failed": [
+        {
+            "email": "invalid-email",
+            "error_msg": "email invalid."
+        }
+    ],
+    "success": [
+        "sample@eamil.com"
+    ]
+}
+```
+* 400 token/repo_id invalid
+* 403 Permission denied.
+* 403 Sending shared link failed. Email service is not properly configured, please contact administrator.
+* 404 token/library not found
 
 ### <a id="shared-libs"></a>Shared Libraries ###
 
