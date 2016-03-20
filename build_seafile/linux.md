@@ -27,7 +27,7 @@ sudo apt-get install autoconf automake libtool libevent-dev libcurl4-openssl-dev
 For a fresh Fedora 20 installation, the following will install all dependencies via YUM:
 
 ```bash
-$ sudo yum install wget gcc libevent-devel openssl-devel gtk2-devel libuuid-devel sqlite-devel jansson-devel intltool cmake qt-devel fuse-devel libtool vala gcc-c++
+$ sudo yum install wget gcc libevent-devel openssl-devel gtk2-devel libuuid-devel sqlite-devel jansson-devel intltool cmake qt-devel fuse-devel libtool vala gcc-c++ libcurl-devel
 ```
 
 #### Building
