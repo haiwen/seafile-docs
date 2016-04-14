@@ -69,10 +69,12 @@
 <li><a href="#get-library-info">Get Library Info</a></li>
 <li><a href="#get-library-owner">Get Library Owner</a></li>
 <li><a href="#get-library-history">Get Library History</a></li>
+<li><a href="#get-library-history-limit-days">Get Library History Limit Days</a></li>
 <li><a href="#create-library">Create Library</a></li>
 <li><a href="#check/create-sub-library">Check/Create Sub Library</a></li>
 <li><a href="#delete-library">Delete Library</a></li>
 <li><a href="#rename-library">Rename Library</a></li>
+<li><a href="#set-library-history-limit-days">Set Library History Limit Days</a></li>
 <li><a href="#decrypt-library">Decrypt Library</a></li>
 <li><a href="#create-public-lib">Create Public Library</a></li>
 <li><a href="#remove-public-lib">Remove Public Library</a></li>
@@ -1195,6 +1197,30 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
 
     {"commits": [{"rev_file_size": 0, "rev_file_id": null, "ctime": 1398045167, "creator_name": "imwhatiam123@gmail.com", "creator": "0000000000000000000000000000000000000000", "root_id": "ca2625da6be6e211ddd584615ef3bfaa531e66aa", "rev_renamed_old_path": null, "parent_id": "205c469f0830df09b13024601524058757a43128", "new_merge": false, "repo_id": "691b3e24-d05e-43cd-a9f2-6f32bd6b800e", "desc": "Modified \"api.md\"", "id": "eb62721812e0c3122889b5facde971b353ad176b", "conflict": false, "second_parent_id": null}, {"rev_file_size": 0, "rev_file_id": null, "ctime": 1398045158, "creator_name": "imwhatiam123@gmail.com", "creator": "0000000000000000000000000000000000000000", "root_id": "0b7a31adf4ea8b29ad5a5920420b548da11dd32f", "rev_renamed_old_path": null, "parent_id": "2ba85ee6072efea51a3483843ea7de9b6d1d1eb2", "new_merge": false, "repo_id": "691b3e24-d05e-43cd-a9f2-6f32bd6b800e", "desc": "Added \"api.md\"", "id": "205c469f0830df09b13024601524058757a43128", "conflict": false, "second_parent_id": null}], "page_next": false}
 
+#### <a id="get-library-history-limit-days"></a>Get Library History Limit Days ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/history-limit/
+
+**Request parameters**
+
+* repo-id
+
+**Sample request**
+
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d9b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/history-limit/
+
+**Sample response**
+
+    {
+    "keep_days": -1,
+    }
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+* 500 Internal Server Error
+
 #### <a id="create-library"></a>Create Library ###
 
 **POST** https://cloud.seafile.com/api2/repos/
@@ -1297,6 +1323,33 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 * 403 You do not have permission to rename this library.
 
 * 500 Unable to rename library
+
+#### <a id="set-library-history-limit-days"></a>Set Library History Limit Days ###
+
+**PUT** https://cloud.seafile.com/api2/repos/{repo-id}/history-limit/
+
+**Request parameters**
+
+* repo-id
+* keep_days. -1 for keep full history; 0 for do not keep history; positive number for keep a period of limit days.
+
+**Sample request**
+
+    curl -v -X PUT -d "keep_days=4" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/history-limit/
+
+**Sample response**
+
+    {
+    "keep_days": 4,
+    }
+
+**Errors**
+
+* 400 keep_days invalid.
+* 403 Permission denied.
+* 404 Library not found.
+* 500 Internal Server Error
+* 520 Failed to set library history limit.
 
 #### <a id="decrypt-library"></a>Decrypt Library ###
 
