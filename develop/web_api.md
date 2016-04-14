@@ -73,6 +73,7 @@
 <li><a href="#check/create-sub-library">Check/Create Sub Library</a></li>
 <li><a href="#delete-library">Delete Library</a></li>
 <li><a href="#rename-library">Rename Library</a></li>
+<li><a href="#transfer-library">Transfer Library</a></li>
 <li><a href="#decrypt-library">Decrypt Library</a></li>
 <li><a href="#create-public-lib">Create Public Library</a></li>
 <li><a href="#remove-public-lib">Remove Public Library</a></li>
@@ -1177,7 +1178,7 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
 
 **Errors**
 
-* 403 Permission error, only administrator can perform this action
+* 403 Permission error(only administrator/repo-owner can perform this action).
 
 #### <a id="get-library-history"></a>Get Library History ###
 
@@ -1297,6 +1298,32 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 * 403 You do not have permission to rename this library.
 
 * 500 Unable to rename library
+
+#### <a id="transfer-library"></a>Transfer Library ###
+
+**PUT** https://cloud.seafile.com/api2/repos/{repo-id}/owner/
+
+**Request parameters**
+
+* repo-id
+* owner
+
+**Sample request**
+
+    curl -v -X PUT -d "owner=new@owner.com" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d9b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/owner/
+
+**Sample response**
+
+    {
+    "success": True
+    }
+
+**Errors**
+
+* 440 Email invalid.
+* 403 Permission error(only administrator/repo-owner can perform this action).
+* 404 Library not found.
+* 404 User not found.
 
 #### <a id="decrypt-library"></a>Decrypt Library ###
 
