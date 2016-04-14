@@ -69,6 +69,10 @@
 <li><a href="#get-library-info">Get Library Info</a></li>
 <li><a href="#get-library-owner">Get Library Owner</a></li>
 <li><a href="#get-library-history">Get Library History</a></li>
+<li><a href="#get-library-download-links">Get Library Download Links</a></li>
+<li><a href="#get-library-upload-links">Get Library Upload Links</a></li>
+<li><a href="#delete-library-download-link">Delete Library Download Link</a></li>
+<li><a href="#delete-library-upload-link">Delete Library Upload Link</a></li>
 <li><a href="#create-library">Create Library</a></li>
 <li><a href="#check/create-sub-library">Check/Create Sub Library</a></li>
 <li><a href="#delete-library">Delete Library</a></li>
@@ -1194,6 +1198,136 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
 **Sample response**
 
     {"commits": [{"rev_file_size": 0, "rev_file_id": null, "ctime": 1398045167, "creator_name": "imwhatiam123@gmail.com", "creator": "0000000000000000000000000000000000000000", "root_id": "ca2625da6be6e211ddd584615ef3bfaa531e66aa", "rev_renamed_old_path": null, "parent_id": "205c469f0830df09b13024601524058757a43128", "new_merge": false, "repo_id": "691b3e24-d05e-43cd-a9f2-6f32bd6b800e", "desc": "Modified \"api.md\"", "id": "eb62721812e0c3122889b5facde971b353ad176b", "conflict": false, "second_parent_id": null}, {"rev_file_size": 0, "rev_file_id": null, "ctime": 1398045158, "creator_name": "imwhatiam123@gmail.com", "creator": "0000000000000000000000000000000000000000", "root_id": "0b7a31adf4ea8b29ad5a5920420b548da11dd32f", "rev_renamed_old_path": null, "parent_id": "2ba85ee6072efea51a3483843ea7de9b6d1d1eb2", "new_merge": false, "repo_id": "691b3e24-d05e-43cd-a9f2-6f32bd6b800e", "desc": "Added \"api.md\"", "id": "205c469f0830df09b13024601524058757a43128", "conflict": false, "second_parent_id": null}], "page_next": false}
+
+#### <a id="get-library-download-links"></a>Get Library Download Links ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/download-shared-links/
+
+**Request parameters**
+
+* repo-id
+
+**Sample request**
+
+    curl -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/download-shared-links/
+
+**Sample response**
+
+    [
+        {
+            "view_count": 0,
+            "name": "/",
+            "share_type": "d",
+            "creator_name": "lian",
+            "create_by": "lian@lian.com",
+            "token": "105f108fb6",
+            "create_time": "2016-01-18T15:03:10+0800",
+            "path": "/",
+            "size": ""
+        },
+        {
+            "view_count": 3,
+            "name": "1.md",
+            "share_type": "f",
+            "creator_name": "lian",
+            "create_by": "lian@lian.com",
+            "token": "a626012c1b",
+            "create_time": "2016-01-19T11:27:43+0800",
+            "path": "/1.md",
+            "size": "4"
+        }
+    ]
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+
+#### <a id="get-library-upload-links"></a>Get Library Upload Links ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/upload-shared-links/
+
+**Request parameters**
+
+* repo-id
+
+**Sample request**
+
+    curl -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/upload-shared-links/
+
+**Sample response**
+
+    [
+        {
+            "view_count": 3,
+            "name": "/",
+            "creator_name": "lian",
+            "create_by": "lian@lian.com",
+            "token": "43340efca5",
+            "create_time": "2016-01-18T15:03:12+0800",
+            "path": "/"
+        },
+        {
+            "view_count": 8,
+            "name": "a&b",
+            "creator_name": "lian",
+            "create_by": "lian@lian.com",
+            "token": "f1e49d445a",
+            "create_time": "2016-01-18T15:03:18+0800",
+            "path": "/a&b/"
+        }
+    ]
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+
+#### <a id="delete-library-download-link"></a>Delete Library Download Link ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/download-shared-links/{token}/
+
+**Request parameters**
+
+* repo-id
+* token
+
+**Sample request**
+
+    curl -X DELETE -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/download-shared-links/105f108fb6/
+
+**Sample response**
+
+    {"success": true}
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+* 404 Link not found.
+
+#### <a id="delete-library-upload-link"></a>Delete Library Upload Link ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/upload-shared-links/{token}/
+
+**Request parameters**
+
+* repo-id
+* token
+
+**Sample request**
+
+    curl -X DELETE -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/upload-shared-links/f1e49d445a/
+
+**Sample response**
+
+    {"success": true}
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+* 404 Link not found.
 
 #### <a id="create-library"></a>Create Library ###
 
