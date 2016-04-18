@@ -95,6 +95,15 @@ After restarting Apache, you should be able to get the Service Provider metadata
 
 ## Configure Seahub
 
+Seahub extracts the username from the `REMOTE_USER` environment variable. So you should modify your SP's shibboleth2.xml (/etc/shibboleth/shibboleth2.xml on Ubuntu) config file, so that Shibboleth translates your desired attribute into `REMOTE_USER` environment variable.
+
+```
+    <ApplicationDefaults entityID="https://your-server/shibboleth"
+        REMOTE_USER="xxxx">
+```
+
+In Seafile, only one of the following two attributes can be used for username: `eppn`, and `mail`. `eppn` stands for "Edu Person Principal Name". It is usually the UserPrincipalName attribute in Active Directory. It's not necessarily a valid email address. `mail` is the user's email address. You should set `REMOTE_USER` to either one of these attributes.
+
 Now we have to tell Seahub how to do with the authentication information passed in by Shibboleth.
 
 Add the following configuration to seahub_settings.py.
@@ -106,14 +115,37 @@ EXTRA_AUTHENTICATION_BACKENDS = (
 EXTRA_MIDDLEWARE_CLASSES = (
     'shibboleth.middleware.ShibbolethRemoteUserMiddleware',
 )
-SHIBBOLETH_ATTRIBUTE_MAP = {
-    "eppn": (True, "username"),
-}
 
 ENABLE_SHIB_LOGIN = True
+
+SHIBBOLETH_ATTRIBUTE_MAP = {
+    # Change eppn to mail if you use mail attribute for REMOTE_USER
+    "eppn": (False, "username"),
+}
 ```
 
-In the above configuration, the Shibboleth attribute `eppn` (short for Edu Person Principal Name) is mapped into Seahub's username. You can use other reasonable Shibboleth attribute returned by your IdP for username. The username should have format similar to an email address.
+Since version 5.0, Seahub can process additional user attributes from Shibboleth. These attributes are saved into Seahub's database, as user's properties. They're all not mandatory. The internal user properties Seahub now supports are:
+
+- givenname
+- surname
+- contact_email: used for sending notification email to user if username is not a valid email address (like eppn).
+- institution: used to identify user's institution
+
+You can specify the mapping between Shibboleth attributes and Seahub's user properties in seahub_settings.py:
+
+```
+SHIBBOLETH_ATTRIBUTE_MAP = {
+    "eppn": (False, "username"),
+    "givenname": (False, "givenname"),
+    "sn": (False, "surname"),
+    "mail": (False, "contact_email"),
+    "organization": (False, "institution"),
+}
+```
+
+In the above config, the hash key is Shibboleth attribute name, the second element in the hash value is Seahub's property name. You can adjust the Shibboleth attribute name for your own needs. ***Note that you may have to change attribute-map.xml in your Shibboleth SP, so that the desired attributes are passed to Seahub. And you have to make sure the IdP sends these attributes to the SP.***
+
+Since version 5.1.1, we added an option `SHIB_ACTIVATE_AFTER_CREATION` (defaults to `True`) which control the user status after shibboleth connection. If this option set to `False`, user will be inactive after connection, and system admins will be notified by email to activate that account.
 
 ## Verify
 

@@ -80,6 +80,7 @@ Here is the sample configuration file:
 
             access_log      /var/log/nginx/seahub.access.log;
     	    error_log       /var/log/nginx/seahub.error.log;
+    	    fastcgi_read_timeout 36000;
         }
         location /seafhttp {
             rewrite ^/seafhttp(.*)$ $1 break;
@@ -88,6 +89,7 @@ Here is the sample configuration file:
             proxy_connect_timeout  36000s;
             proxy_read_timeout  36000s;
             proxy_send_timeout  36000s;
+            send_timeout  36000s;
         }
         location /media {
             root /home/user/haiwen/seafile-server-latest/seahub;
@@ -95,10 +97,21 @@ Here is the sample configuration file:
     }
 ```
 
+### Large file uploads
 Tip for uploading very large files (> 4GB): By default Nginx will buffer large request body in temp file. After the body is completely received, Nginx will send the body to the upstream server (seaf-server in our case). But it seems when file size is very large, the buffering mechanism dosen't work well. It may stop proxying the body in the middle. So if you want to support file upload larger for 4GB, we suggest you install Nginx version >= 1.8.0 and add the following options to Nginx config file:
 
 ```
     location /seafhttp {
+        ... ...
+        proxy_request_buffering off;
+    }
+    
+```
+
+If you have WebDAV enabled it is recommended to add the same:
+
+```
+    location /seafdav {
         ... ...
         proxy_request_buffering off;
     }

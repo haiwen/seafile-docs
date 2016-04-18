@@ -14,8 +14,8 @@ This is a sample Nginx config file.
 
 In Ubuntu 14.04, you can add the config file as follows:
 
-1. create file `/etc/nginx/site-available/seafile.conf`
-2. Delete `/etc/nginx/site-enabled/default`: `rm /etc/nginx/site-enabled/default`
+1. create file `/etc/nginx/sites-available/seafile.conf`
+2. Delete `/etc/nginx/sites-enabled/default`: `rm /etc/nginx/sites-enabled/default`
 3. Create symbolic link: `ln -s /etc/nginx/sites-available/seafile.conf /etc/nginx/sites-enabled/seafile.conf`
 
 ```nginx
@@ -42,6 +42,7 @@ server {
 
         access_log      /var/log/nginx/seahub.access.log;
     	error_log       /var/log/nginx/seahub.error.log;
+    	fastcgi_read_timeout 36000;
     }
 
     location /seafhttp {
@@ -51,6 +52,7 @@ server {
         proxy_connect_timeout  36000s;
         proxy_read_timeout  36000s;
         proxy_send_timeout  36000s;
+        send_timeout  36000s;
     }
 
     location /media {

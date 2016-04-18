@@ -186,7 +186,7 @@ https://www.digitalocean.com/community/tutorials/how-to-configure-a-galera-clust
 
 ## Setup Seafile cluster
 
-Please follow http://manual.seafile.com/deploy_pro/setup_with_Ceph.html to set seafile with Ceph and follow http://manual.seafile.com/deploy_pro/deploy_in_a_cluster.html for setup Seafile cluster.
+Please follow http://manual.seafile.com/deploy_pro/setup_with_ceph.html to set seafile with Ceph and follow http://manual.seafile.com/deploy_pro/deploy_in_a_cluster.html for setup Seafile cluster.
 
 
 

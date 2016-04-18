@@ -3,23 +3,51 @@ This documentation will talk about how to deploy Seafile Web using Apache/Nginx 
 
 **Note:** We assume you have read [Deploy Seafile with nginx](deploy_with_nginx.md) or [Deploy Seafile with apache](deploy_with_apache.md).
 
-## Deploy with Nginx
+## Configure Seahub
 
 First, we need to overwrite some variables in seahub_settings.py:
 
 <pre>
 SERVE_STATIC = False
 MEDIA_URL = '/seafmedia/'
-SITE_ROOT = '/seafile/'
 COMPRESS_URL = MEDIA_URL
 STATIC_URL = MEDIA_URL + 'assets/'
+SITE_ROOT = '/seafile/'
+LOGIN_URL = '/seafile/accounts/login/'    # NOTE: since version 5.0.4
 </pre>
 
-We will use Nginx to serve static files(js, css, etc), so we just disable <code>SERVE_STATIC</code>.
+The webserver will serve static files (js, css, etc), so we just disable <code>SERVE_STATIC</code>.
 
 <code>MEDIA_URL</code> can be anything you like, just make sure a trailing slash is appended at the end.
 
 We deploy Seafile at <code>/seafile/</code> directory instead of root directory, so we set <code>SITE_ROOT</code> to <code>/seafile/</code>.
+
+## Modify ccnet.conf and seahub_setting.py
+
+### Modify ccnet.conf
+
+You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md)
+to let Seafile know the domain you choose.
+
+<pre>
+SERVICE_URL = http://www.myseafile.com/seafile
+</pre>
+
+Note: If you later change the domain assigned to seahub, you also need to change the value of  <code>SERVICE_URL</code>.
+
+### Modify seahub_settings.py
+
+You need to add a line in <code>seahub_settings.py</code> to set the value of `FILE_SERVER_ROOT`
+
+```python
+FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'
+```
+**Note:** The file server path MUST be `/seafhttp` because this path is hardcoded in the clients.
+
+
+## Webserver configuration
+
+### Deploy with Nginx
 
 Then, we need to configure the Nginx:
 
@@ -61,23 +89,21 @@ server {
 }
 </pre>
 
-You need also to modify `SERVICE_URL` and `FILE_SERVER_ROOT` (see below).
 
 ## Deploy with Apache
 
-First, you need to modify seahub_settings.py as above.
-
-Then edit httpd.conf file, add this line:
-<pre>
-  FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000
-</pre>
-After that, you need to configure your Apache, here is the sample configuration:
+Here is the sample configuration:
 
 <pre>
 <VirtualHost *:80>
   ServerName www.example.com
   DocumentRoot /var/www
-  Alias /seafmedia  /home/user/haiwen/seafile-server-2.0.2/seahub/media
+  Alias /seafmedia  /home/user/haiwen/seafile-server-latest/seahub/media
+
+  <Location /seafmedia>
+    ProxyPass !
+    Require all granted
+  </Location>
 
   RewriteEngine On
 
@@ -91,35 +117,13 @@ After that, you need to configure your Apache, here is the sample configuration:
   #
   # seahub
   #
-  RewriteRule ^/(seafmedia.*)$ /$1 [QSA,L,PT]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^/(seafile.*)$ /seahub.fcgi/$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
+  SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+  ProxyPass /seafile fcgi://127.0.0.1:8000/seafile
 </VirtualHost>
 </pre>
 
 We use Alias to let Apache serve static files, please change the second argument to your path.
-
-## Modify ccnet.conf and seahub_setting.py
-
-### Modify ccnet.conf
-
-You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md)
-to let Seafile know the domain you choose.
-
-<pre>
-SERVICE_URL = http://www.myseafile.com/seafile
-</pre>
-
-Note: If you later change the domain assigned to seahub, you also need to change the value of  <code>SERVICE_URL</code>.
-
-### Modify seahub_settings.py
-
-You need to add a line in <code>seahub_settings.py</code> to set the value of `FILE_SERVER_ROOT`
-
-```python
-FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'
-```
-**Note:** The file server path MUST be `/seafhttp` because this path is hardcoded in the clients.
 
 ## Clear the cache
 

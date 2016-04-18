@@ -26,6 +26,22 @@ We recommend to allocate 128MB memory for memcached. Edit /etc/memcached.conf
 -m 128
 ```
 
+## Install Python Ceph Library
+
+File search and WebDAV functions rely on Python Ceph library installed in the system.
+
+On Debian/Ubuntu:
+
+```
+sudo apt-get install python-ceph
+```
+
+On RedHat/CentOS:
+
+```
+sudo yum install python-rados
+```
+
 ## Edit seafile configuration
 
 Edit `seafile.conf`, add the following lines:

@@ -10,9 +10,12 @@ From version 4.1, Seafile uses HTTP(S) syncing protocol by default.
 
 ## Encrypted Library
 
-Seafile provides a feature called encrypted library to protect your privacy. The file encryption/decryption is performed in the client-side when using the desktop client for file syncing. The password of an encrypted library is not stored in the server. **Even the system admin of the server can't view the file contents**. 
+Seafile provides a feature called encrypted library to protect your privacy. The file encryption/decryption is performed in the client-side when using the desktop client for file syncing. The password of an encrypted library is not stored in the server. **Even the system admin of the server can't view the file contents - they can however view the metadata [which are currently not encrypted](https://github.com/haiwen/seafile/issues/350).** The metadata includes: the complete list of directory and file names, every file size, the history of who changed each file, when, and what byte ranges were altered.
 
-CAUTION: The client side encryption is not work currently for mobile client, web browser and the cloud file browser of the desktop client. When you browsing encrypted libraries via the mobile client, web browser and the cloud file browser, you will need to input the password. And the server will use the password to decrypt the "file key" for the library (see description below) and cache it in memory for 1 hour. The plain text password is never stored or cached on the server.
+CAUTION: The client side encryption is not work currently for web browser and the cloud file browser of the desktop client. When you browsing encrypted libraries via the web browser and the cloud file browser, you will need to input the password. And the server will use the password to decrypt the "file key" for the library (see description below) and cache it in memory for 1 hour. The plain text password is never stored or cached on the server.
+
+Update: The client side encryption works on iOS client since version 2.1.6. The Android client doesn't support client side encryption yet. 
+
 
 ## How does an encrypted library work?
 

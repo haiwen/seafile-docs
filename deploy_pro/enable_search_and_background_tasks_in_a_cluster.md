@@ -1,3 +1,5 @@
+*Note:* Before you try to deploy file search office documents preview, make sure other parts of your seafile cluster are already working, e.g upload/download files in a web browser. Make sure memcached is configured as described in ["Deploy in a cluster"](./deploy_in_a_cluster.md).
+
 # Enable search and background tasks in a cluster
 
 **Note**: Since Seafile Server 5.0.0, all config files are moved to the central **conf** folder. [Read More](../deploy/new_directory_layout_5_0_0.md).
@@ -68,6 +70,27 @@ Edit **seahub_settings.py** and add a line:
 ```
 OFFICE_CONVERTOR_ROOT = http://<ip of node A>
 ```
+
+Make sure requests to http://<ip of node A> is also handled by seahub. For example , you may need to add this nginx configuration in the background node:
+
+```
+server {
+      listen 80;
+      server_name <IP of node A>;
+      location / {
+          fastcgi_pass    127.0.0.1:8000;
+          ...
+  }
+```
+
+As a simple test, you can use this command to test if you set it up correctly.
+
+```
+curl -v http://<IP of node A>/office-convert/internal/status/
+```
+
+It should say "400 Bad Request" when you have nginx config updated.
+
 
 ## Start the background tasks
 

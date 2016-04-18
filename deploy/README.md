@@ -10,6 +10,10 @@ Here we describe how to deploy Seafile from prebuild binary packages.
 
 In production environment we recommend using MySQL as the database and config Seafile web behing Nginx or Apache. For those who are not familiar with Nginx and Apache. We recommend Nginx, since it is easier to config than Apache.
 
+Note: We have prepared an installation script [Deploy Seafile with an installation script](https://forum.seafile-server.org/t/seafile-server-installer-for-production-ready-seafile-ce-and-pro-installations/1464). The installer offer a quick and easy way to set up a production ready Seafile Server using MariaDB, Memcached and NGINX as a reverse proxy in under 5 minutes.
+
+You can also install Seafile manually without the installation script as following:
+
 Basic:
 
 * [Deploying Seafile with MySQL](using_mysql.md)
@@ -21,12 +25,16 @@ Basic:
 Advanced:
 
 * [Add Memcached](add_memcached.md), adding memcached is very important if you have more than 50 users.
-* [Configure Seafile to use LDAP](using_ldap.md)
-* [Importing Groups from LDAP](ldap_group_sync.md)
 * [Start Seafile at System Bootup](start_seafile_at_system_bootup.md)
 * [Firewall settings](using_firewall.md)
 * [Logrotate](using_logrotate.md)
 
+User Authentication:
+
+Seafile supports a few external user authentication methods.
+
+* [Configure Seafile to use LDAP](using_ldap.md)
+* [Shibboleth Authentication](shibboleth_config.md)
 
 Other Deployment Issues
 

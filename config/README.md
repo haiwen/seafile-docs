@@ -14,7 +14,7 @@ There is one additional config file in the pro edition:
 
 - `seafevents.conf`: contains settings for search and documents preview
 
-Note: Since version 5.0.0, you can also modify most of the config items via web interface.
+Note: Since version 5.0.0, you can also modify most of the config items via web interface.The config items are saved in database table (seahub-dab/constance_config). They have a higher priority over the items in config files.
 
 ![Seafile Config via Web](../images/seafile-server-config.png)
 

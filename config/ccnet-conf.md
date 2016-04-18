@@ -7,13 +7,10 @@ You may change Seafile's network options by modifying `ccnet.conf` file. Let's w
 <pre>
 [General]
 
-# Not used anymore 
-USER_NAME=example
-
-# Not used anymore
+# Used internally. Don't delete.
 ID=eb812fd276432eff33bcdde7506f896eb4769da0
 
-# Not used anymore
+# Used internally. Don't delete.
 NAME=example
 
 # This is outside URL for Seahub(Seafile Web). 

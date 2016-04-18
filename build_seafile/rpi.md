@@ -69,15 +69,18 @@ mkdir -p ~/dev/seahub_thirdpart
 
 Download these tarballs to `/tmp/`:
 
-- [django 1.5.12](https://www.djangoproject.com/download/1.5/tarball/)
-- [djblets 0.6.14](https://github.com/djblets/djblets/tarball/release-0.6.14)
-- [gunicorn 0.16.1](http://pypi.python.org/packages/source/g/gunicorn/gunicorn-0.16.1.tar.gz)
-- [flup 1.0](http://pypi.python.org/packages/source/f/flup/flup-1.0.tar.gz#md5=530801fe835fd9a680457e443eb95578)
-- [chardet](https://pypi.python.org/pypi/chardet)
-- [python-dateutil](https://labix.org/python-dateutil#head-2f49784d6b27bae60cde1cff6a535663cf87497b)
-- [six](https://pypi.python.org/pypi/six)
+- [pytz](https://pypi.python.org/packages/source/p/pytz/pytz-2016.1.tar.gz)
+- [Django](https://www.djangoproject.com/m/releases/1.8/Django-1.8.10.tar.gz)
 - [django-statici18n](https://pypi.python.org/packages/source/d/django-statici18n/django-statici18n-1.1.3.tar.gz)
-- [django-compressor](https://pypi.python.org/packages/source/d/django_compressor/django_compressor-1.4.tar.gz)
+- [djangorestframework](https://pypi.python.org/packages/source/d/djangorestframework/djangorestframework-3.3.2.tar.gz)
+- [django_compressor](https://pypi.python.org/packages/source/d/django_compressor/django_compressor-1.4.tar.gz)
+- [jsonfield](https://pypi.python.org/packages/source/j/jsonfield/jsonfield-1.0.3.tar.gz)
+- [django-post_office](https://pypi.python.org/packages/source/d/django-post_office/django-post_office-2.0.6.tar.gz)
+- [gunicorn](http://pypi.python.org/packages/source/g/gunicorn/gunicorn-19.4.5.tar.gz)
+- [flup](http://pypi.python.org/packages/source/f/flup/flup-1.0.2.tar.gz)
+- [chardet](https://pypi.python.org/packages/source/c/chardet/chardet-2.3.0.tar.gz)
+- [python-dateutil](https://labix.org/download/python-dateutil/python-dateutil-1.5.tar.gz)
+- [six](https://pypi.python.org/packages/source/s/six/six-1.9.0.tar.gz)
 - [django-picklefield](https://pypi.python.org/packages/source/d/django-picklefield/django-picklefield-0.3.2.tar.gz)
 - [django-constance](https://github.com/haiwen/django-constance/archive/bde7f7c.zip)
 - [jdcal](https://pypi.python.org/packages/source/j/jdcal/jdcal-1.2.tar.gz)
@@ -89,15 +92,18 @@ Install all these libaries to `/home/pi/dev/seahub_thirdpart`:
 ```
 cd ~/dev/seahub_thirdpart
 export PYTHONPATH=.
-easy_install -d . /tmp/Django-1.5.12.tar.gz
-easy_install -d . /tmp/djblets-0.6.14.tar.gz
-easy_install -d . /tmp/gunicorn-0.16.1.tar.gz
-easy_install -d . /tmp/flup-1.0.tar.gz
-easy_install -d . /tmp/chardet-1.0.tar.gz
-easy_install -d . /tmp/python-dateutil-1.5.tar.gz
-easy_install -d . /tmp/six-<version>.tar.gz
+easy_install -d . /tmp/pytz-2016.1.tar.gz
+easy_install -d . /tmp/Django-1.8.10.tar.gz
 easy_install -d . /tmp/django-statici18n-1.1.3.tar.gz
+easy_install -d . /tmp/djangorestframework-3.3.2.tar.gz
 easy_install -d . /tmp/django_compressor-1.4.tar.gz
+easy_install -d . /tmp/jsonfield-1.0.3.tar.gz
+easy_install -d . /tmp/django-post_office-2.0.6.tar.gz
+easy_install -d . /tmp/gunicorn-19.4.5.tar.gz
+easy_install -d . /tmp/flup-1.0.2.tar.gz
+easy_install -d . /tmp/chardet-2.3.0.tar.gz
+easy_install -d . /tmp/python-dateutil-1.5.tar.gz
+easy_install -d . /tmp/six-1.9.0.tar.gz
 easy_install -d . /tmp/django-picklefield-0.3.2.tar.gz
 wget -O /tmp/django_constance.zip https://github.com/haiwen/django-constance/archive/bde7f7c.zip
 easy_install -d . /tmp/django_constance.zip

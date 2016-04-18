@@ -3,8 +3,13 @@
 
 Install Seafile Pro Edition
 
-- Method 1: [Deploy Seafile with an installation script](https://forum.seafile-server.org/t/seafile-server-installer-for-production-ready-seafile-ce-and-pro-installations/1464). The installer offer a quick and easy way to set up a production ready Seafile Server using MariaDB, Memcached and NGINX as a reverse proxy in under 5 minutes.
+- Method 1 (For Debian and CentOS 7): [Deploy Seafile with an installation script](https://github.com/SeafileDE/seafile-server-installer#auto-install-seafile-server-ce-and-pro). The installer offer a quick and easy way to set up a production ready Seafile Server using MariaDB, Memcached and NGINX as a reverse proxy in under 5 minutes.
 - Method 2:  [Download and Setup Seafile Professional Server Step by Step](download_and_setup_seafile_professional_server.md)
+
+LDAP/AD Integration for Pro:
+
+- [Configure LDAP in Seafile Pro](using_ldap_pro.md)
+- [Syncing Groups from LDAP/AD](ldap_group_sync.md)
 
 Migration and Upgrading
 
@@ -14,7 +19,7 @@ Migration and Upgrading
 S3/OpenSwift/Ceph
 
 - [Setup Seafile Professional Server With Amazon S3](setup_with_mazon_S3.md)
-- [Setup Seafile Professional Server With OpenStackSwift](setup_with_OpenStackSwift.md)
+- [Setup Seafile Professional Server With OpenStack Swift](setup_with_swift.md)
 - [Setup Seafile Professional Server With Ceph](setup_with_Ceph.md)
 
 Config Options
@@ -37,6 +42,10 @@ Config Options
 
 - [Deploy seafile servers in a cluster](deploy_in_a_cluster.md)
 - [Enable search and background tasks in a cluster](enable_search_and_background_tasks_in_a_cluster.md)
+
+## Backup
+
+- [Real-time Backup Server](real_time_backup.md)
 
 ## FAQ
 

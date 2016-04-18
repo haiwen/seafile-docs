@@ -31,11 +31,17 @@ Then modify your Apache configuration file. Here is a sample:
 <VirtualHost *:443>
   ServerName www.myseafile.com
   DocumentRoot /var/www
-  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
-
+  
   SSLEngine On
   SSLCertificateFile /path/to/cacert.pem
   SSLCertificateKeyFile /path/to/privkey.pem
+
+  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
+  
+  <Location /media>
+    ProxyPass !
+    Require all granted
+  </Location>
 
   RewriteEngine On
 
@@ -49,9 +55,9 @@ Then modify your Apache configuration file. Here is a sample:
   #
   # seahub
   #
-  RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.*)$ /seahub.fcgi/$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
+  SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+  ProxyPass / fcgi://127.0.0.1:8000/
 </VirtualHost>
 ```
 
@@ -90,9 +96,9 @@ When a user visit https://example.com/home/my/, Apache receives this request and
     #
     # seahub
     #
-    RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^/(seahub.*)$ /seahub.fcgi/$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+    ProxyPass / fcgi://127.0.0.1:8000/
 ```
 and
 ```apache
@@ -103,6 +109,9 @@ When a user click a file download link in Seahub, Seahub reads the value of `FIL
 
 When Apache receives the request at 'https://example.com/seafhttp/xxxxx/', it proxies the request to FileServer, which is listening at 127.0.0.1:8082. This is controlled by the following config items:
 ```apache
+    #
+    # seafile fileserver
+    #
     ProxyPass /seafhttp http://127.0.0.1:8082
     ProxyPassReverse /seafhttp http://127.0.0.1:8082
     RewriteRule ^/seafhttp - [QSA,L]

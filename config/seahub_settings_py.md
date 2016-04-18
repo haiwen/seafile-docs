@@ -10,7 +10,7 @@ EMAIL_USE_TLS = False
 EMAIL_HOST = 'smtp.example.com'        # smpt server
 EMAIL_HOST_USER = 'username@example.com'    # username and domain
 EMAIL_HOST_PASSWORD = 'password'    # password
-EMAIL_PORT = '25'
+EMAIL_PORT = 25
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 ```
@@ -82,6 +82,10 @@ USER_PASSWORD_STRENGTH_LEVEL = 3
 # when True, check password strength level, STRONG(or above) is allowed
 USER_STRONG_PASSWORD_REQUIRED = False
 
+# Force user to change password when admin add/reset a user.
+# Added in 5.1.1, deafults to True.
+FORCE_PASSWORD_CHANGE = True
+
 # Age of cookie, in seconds (default: 2 weeks).
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2
 
@@ -111,6 +115,10 @@ DISABLE_SYNC_WITH_ANY_FOLDER = True
 
 # Enable or disable library history setting
 ENABLE_REPO_HISTORY_SETTING = True
+
+# Enable or disable normal user to create organization libraries
+# Since version 5.0.5
+ENABLE_USER_CREATE_ORG_REPO = True
 ```
 
 Options for online file preview:

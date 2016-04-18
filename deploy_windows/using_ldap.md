@@ -1,8 +1,8 @@
 # Configure Seafile to use LDAP
 
-Note: This documentation is for the Community Edition. If you're using Pro Edition, please refer to [the Seafile Pro documentation](../deploy_pro/using_ldap_pro.md).
+Note: This documentation is for the Community Edition. If you're using Pro Edition, please refer to [the Seafile Pro documentation|../deploy_pro/using_ldap_pro.md].
 
-## How does LDAP User Management work in Seafile
+## How does LDAP User Management Works in Seafile
 
 When Seafile is integrated with LDAP/AD, users in the system can be divided into two tiers:
 
@@ -11,13 +11,13 @@ When Seafile is integrated with LDAP/AD, users in the system can be divided into
     * Users imported from LDAP/AD server: When a user in LDAP/AD logs into Seafile, its information will be imported from LDAP/AD server into Seafile's database. These users are stored in the `LDAPUsers` table of the `ccnet` database.
 - Users in LDAP/AD server. These are all the intended users of Seafile inside the LDAP server. Seafile doesn't manipulate these users directly. It has to import them into its internal database before setting attributes on them.
 
-When Seafile counts the number of users in the system, it only counts the **activated** users in its internal database.
+When Seafile counts the user number in the system, it only counts the **activated** users in its internal database.
 
-When Seafile is integrated with LDAP/AD, it'll look up users from both the internal database and LDAP server. As long as the user exists in one of these two sources, they can log into the system.
+When Seafile is integrated with LDAP/AD, it'll look up users from both the internal database and LDAP server. As long as the user exists in one of these two sources, it can log into the system.
 
 ## Basic LDAP/AD Integration
 
-The only requirement for Seafile to use LDAP/AD for authentication is that there must be a unique identifier for each user in the LDAP/AD server. Seafile can only use email-address-format user identifiers. So there are usually only two options for this unique identifier:
+The only requirement for Seafile to use LDAP/AD for authentication is that, there must be a unique identifier for each user in the LDAP/AD server. Seafile can only use email-address-format user identifiers. So there are usually only two options for this unique identifier:
 
 - Email address: this is the most common choice. Most organizations assign unique email address for each member.
 - UserPrincipalName: this is a user attribute only available in Active Directory. It's format is `user-login-name@domain-name`, e.g. `john@example.com`. It's not a real email address, but it works fine as the unique identifier.
@@ -29,7 +29,8 @@ To use AD to authenticate user, please add the following lines to ccnet.conf.
 If you choose email address as unique identifier:
 
     [LDAP]
-    HOST = ldap://192.168.1.123/
+    HOST = 192.168.1.123
+    USE_SSL = false
     BASE = cn=users,dc=example,dc=com
     USER_DN = administrator@example.local
     PASSWORD = secret
@@ -38,7 +39,8 @@ If you choose email address as unique identifier:
 If you choose UserPrincipalName as unique identifier:
 
     [LDAP]
-    HOST = ldap://192.168.1.123/
+    HOST = 192.168.1.123
+    USE_SSL = false
     BASE = cn=users,dc=example,dc=com
     USER_DN = administrator@example.local
     PASSWORD = secret
@@ -46,7 +48,7 @@ If you choose UserPrincipalName as unique identifier:
 
 Meaning of each config options:
 
-* HOST: LDAP URL for the host. ldap://, ldaps:// and ldapi:// are supported. You can also include a port number in the URL, like ldap://ldap.example.com:389. To use TLS, you should configure the LDAP server to listen on LDAPS port and specify ldaps:// here. More details about TLS will be covered below.
+* HOST: LDAP URL for the host. ldap://, ldaps:// and ldapi:// are supported. You can also include port number in the URL, like ldap://ldap.example.com:389. To use TLS, you should configure the LDAP server to listen on LDAPS port and specify ldaps:// here. More details about TLS will be covered below.
 * BASE: The root distinguished name (DN) to use when running queries against the directory server. **You cannot use the root DN (e.g. dc=example,dc=com) as BASE**.
 * USER_DN: The distinguished name of the user that Seafile will use when connecting to the directory server. This user should have sufficient privilege to access all the nodes under BASE. It's recommended to use a user in the administrator group.
 * PASSWORD: Password of the above user.
@@ -64,7 +66,8 @@ Tips for choosing BASE and USER_DN:
 Please add the following options to ccnet.conf:
 
     [LDAP]
-    HOST = ldap://192.168.1.123/
+    HOST = 192.168.1.123
+    USE_SSL = false
     BASE = ou=users,dc=example,dc=com
     USER_DN = cn=admin,dc=example,dc=com
     PASSWORD = secret
@@ -92,44 +95,16 @@ FILTER = memberOf=CN=group,CN=developers,DC=example,DC=com
 
 The final search filter would be `(&(mail=*)(memberOf=CN=group,CN=developers,DC=example,DC=com))`
 
-Note that the case of attribute names in the above example is significant. The `memberOf` attribute is only available in Active Directory.
+Note that the cases in the above example is significant. The `memberOf` attribute is only available in Active Directory.
 
 ### Limiting Seafile Users to a Group in Active Directory
 
 You can use the FILTER option to limit user scope to a certain AD group.
 
-1. First, you should find out the DN for the group. Again, we'll use the `dsquery` command on the domain controller. For example, if group name is 'seafilegroup', run `dsquery group -name seafilegroup`.
-2. Add the following line to LDAP config:
+1. First, you should find out the DN for the group. Again, we'll use `dsquery` command on the domain controller. For example, if group name is 'seafilegroup', run `dsquery group -name seafilegroup`.
+2. Add following line to LDAP config:
 
 ```
 FILTER = memberOf={output of dsquery command}
 ```
-
-### Using TLS connection to LDAP/AD server
-
-To use a TLS connection to the directory server, you should install a valid SSL certificate on the directory server.
-
-The current version of Seafile Linux server package is compiled on CentOS. We include the ldap client library in the package to maintain compatibility with older Linux distributions. But since different Linux distributions have different path or configuration for OpenSSL library, sometimes Seafile is unable to connect to the directory server with TLS.
-
-The ldap library (libldap) bundled in the Seafile package is of version 2.4. If your Linux distribution is new enough (like CentOS 6, Debian 7 or Ubuntu 12.04 or above), you can use system's libldap instead.
-
-On Ubuntu 14.04 and Debian 7/8, moving the bundled ldap related libraries out of the library path should make TLS connection work.
-
-```
-cd ${SEAFILE_INSTALLATION_DIR}/seafile-server-latest/seafile/lib
-mkdir disabled_libs_use_local_ones_instead
-mv liblber-2.4.so.2 libldap-2.4.so.2 libsasl2.so.2 libldap_r-2.4.so.2 disabled_libs_use_local_ones_instead/
-```
-
-On CentOS 6, you have to move the libnssutil library:
-
-```
-cd ${SEAFILE_INSTALLATION_DIR}/seafile-server-latest/seafile/lib
-mkdir disabled_libs_use_local_ones_instead
-mv libnssutil3.so disabled_libs_use_local_ones_instead/
-```
-
-This effectively removes the bundled libraries from the library search path. 
-When the server starts, it'll instead find and use the system libraries (if they are installed). 
-This change has to be repeated after each update of the Seafile installation.
 

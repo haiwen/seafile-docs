@@ -63,7 +63,7 @@ Now upgrade to version 3.1.0.
    ```sh
    cd haiwen/seafile-server-3.1.0/
    ./seafile.sh start
-   ./seahub.sh start
+   ./seahub.sh start # or "./seahub.sh start-fastcgi" if you're using fastcgi
    ```
 
 ## Minor version upgrade (like from 3.0.x to 3.2.y)

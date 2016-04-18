@@ -46,6 +46,13 @@ max_upload_size=200
 max_download_dir_size=200
 </pre>
 
+After a file is uploaded via the web interface, or the cloud file browser in the client, it needs to be divided into fixed size blocks and stored into storage backend. We call this procedure "indexing". By default, the file server uses 1 thread to sequentially index the file and store the blocks one by one. This is suitable for most cases. But if you're using S3/Ceph/Swift backends, you may have more bandwidth in the storage backend for storing multiple blocks in parallel. We provide an option to define the number of concurrent threads in indexing:
+
+```
+[fileserver]
+max_indexing_threads = 10
+```
+
 You can download a folder as a zip archive from seahub, but some zip software
 on windows doesn't support UTF-8, in which case you can use the "windows_encoding"
 settings to solve it.

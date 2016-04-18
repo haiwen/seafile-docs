@@ -22,7 +22,7 @@ index_office_pdf=false
 
 [SEAHUB EMAIL]
 
-## must be "true" to enable user email notifications when there are new messages
+## must be "true" to enable user email notifications when there are new new unread notifications
 enabled = true
 
 ## interval of sending seahub email. Can be s(seconds), m(minutes), h(hours), d(days)
@@ -51,7 +51,7 @@ max-size = 2
 
 ### <a id="wiki-options-you-may-want-to-modify"></a>Options you may want to modify
 
-The section above listed all the options in `seafevents.conf`. Most of the time you can use the default settings. But you may want to modify some of them to fit your own use case. 
+The section above listed all the options in `seafevents.conf`. Most of the time you can use the default settings. But you may want to modify some of them to fit your own use case.
 
 We list them in the following table, as well as why we choose the default value.
 

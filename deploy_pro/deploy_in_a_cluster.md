@@ -148,6 +148,20 @@ health_check_port = 12345
 
 #### seahub_settings.py
 
+Install python memcache library.
+
+On Debian/Ubuntu:
+
+```
+sudo apt-get install python-memcache
+```
+
+On CentOS/RedHat:
+
+```
+sudo yum install python-memcached
+```
+
 Add following configuration to `seahub_settings.py`. These settings tell Seahub to store avatar in database and cache avatar in memcached, and store css CACHE to local memory of every node.
 
 ```
@@ -175,7 +189,7 @@ CACHES = {
 }
 ```
 
-If you enable thumbnail feature, you'd better set thumbnail storage path to a **Shared Folder**, so that every node will create/get thumbnail through the same **Shared Folder** instead respectively.
+If you enable thumbnail feature, you'd better set thumbnail storage path to a **Shared Folder**, so that every node will create/get thumbnail through the same **Shared Folder**.
 
 ```
 THUMBNAIL_ROOT = 'path/to/shared/folder/'
@@ -183,7 +197,7 @@ THUMBNAIL_ROOT = 'path/to/shared/folder/'
 
 #### seafevents.conf
 
-Add following to `seafevents.conf` to disable file indexing service:
+Add following to `seafevents.conf` to disable file indexing service on the local server. The file indexing service should be started on a dedicated background server.
 
 ```
 [INDEX FILES]
@@ -272,7 +286,7 @@ Then you setup health check
 
 This is a sample `/etc/haproxy/haproxy.cfg`:
 
-(Assume your health check port is `12345`)
+(Assume your health check port is `11001`)
 
 ```
 global

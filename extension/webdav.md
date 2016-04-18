@@ -42,7 +42,7 @@ fastcgi = false
 share_name = /
 </pre>
 
-### Sample Configuration 2: With Nginx/Apache
+### Sample Configuration 2: With Nginx
 
 Your WebDAV client would visit the Seafile WebDAV server at <code>http://example.com/seafdav</code>
 
@@ -55,7 +55,6 @@ share_name = /seafdav
 </pre>
 
 In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to seafdav server.
-
 
 #### Nginx without HTTPS
 
@@ -77,6 +76,9 @@ The corresponding Nginx configuration is (without https):
         fastcgi_param   SERVER_NAME         $server_name;
         
         client_max_body_size 0;
+        
+        # This option is only available for Nginx >= 1.8.0. See more details below.
+        proxy_request_buffering off;
 
         access_log      /var/log/nginx/seafdav.access.log;
         error_log       /var/log/nginx/seafdav.error.log;
@@ -105,57 +107,74 @@ Nginx conf with https:
         fastcgi_param   HTTPS               on;
         
         client_max_body_size 0;
+        
+        # This option is only available for Nginx >= 1.8.0. See more details below.
+        proxy_request_buffering off;
 
         access_log      /var/log/nginx/seafdav.access.log;
         error_log       /var/log/nginx/seafdav.error.log;
     }
 </pre>
 
-#### Apache
+By default Nginx will buffer large request body in temp file. After the body is completely received, Nginx will send the body to the upstream server (seafdav in our case). But it seems when file size is very large, the buffering mechanism dosen't work well. It may stop proxying the body in the middle. So if you want to support file upload larger for 4GB, we suggest you install Nginx version >= 1.8.0 and add `proxy_request_buffering off` to Nginx configuration.
 
-First edit <code>apache2.conf</code> file, add this line to the end of the file (or add it to <code>httpd.conf</code> depending on your Linux distro):
+### Sample Configuration 3: With Apache
+
+The following configuratioin assumes you use Apache 2.4 or later.
+
+Your WebDAV client would visit the Seafile WebDAV server at <code>http://example.com/seafdav</code>
 
 <pre>
-FastCGIExternalServer /var/www/seafdav.fcgi -host 127.0.0.1:8080
+[WEBDAV]
+enabled = true
+port = 8080
+fastcgi = false
+share_name = /seafdav
 </pre>
 
-Note, <code>/var/www/seafdav.fcgi</code> is just a placeholder, you don't need to actually have this file in your system.
+In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to seafdav server. **Note that we do not use fastcgi for Apache.**
 
-Second, modify Apache config file (site-enabled/000-default):
+Modify Apache config file (site-enabled/000-default):
 
 #### Apache without HTTPS
 
-Based on your apache configuration when you [[Deploy Seafile with apache|deployed seafile with Apache]], add seafdav related config:
+Based on your apache configuration when you [deploy Seafile with Apache](,,/deploy/deploy_with_apache.md), add seafdav related config:
 
 <pre>
 <VirtualHost *:80>
 
-ServerName www.myseafile.com
-  DocumentRoot /var/www
-  Alias /media  /home/user/haiwen/seafile-server/seahub/media
+    ServerName www.myseafile.com
+    # Use "DocumentRoot /var/www/html" for Centos/Fedora
+    # Use "DocumentRoot /var/www" for Ubuntu/Debian
+    DocumentRoot /var/www
+    Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
 
-  RewriteEngine On
+    RewriteEngine On
 
-  #
-  # seafile fileserver
-  #
-  ProxyPass /seafhttp http://127.0.0.1:8082
-  ProxyPassReverse /seafhttp http://127.0.0.1:8082
-  RewriteRule ^/seafhttp - [QSA,L]
+    <Location /media>
+        Require all granted
+    </Location>
 
-  #
-  # seafile webdav
-  #
-  RewriteCond %{HTTP:Authorization} (.+)
-  RewriteRule ^(/seafdav.*)$ /seafdav.fcgi$1 [QSA,L,e=HTTP_AUTHORIZATION:%1]
-  RewriteRule ^(/seafdav.*)$ /seafdav.fcgi$1 [QSA,L]
+    #
+    # seafile fileserver
+    #
+    ProxyPass /seafhttp http://127.0.0.1:8082
+    ProxyPassReverse /seafhttp http://127.0.0.1:8082
+    RewriteRule ^/seafhttp - [QSA,L]
 
-  #
-  # seahub
-  #
-  RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    #
+    # WebDAV
+    # We use http proxy, since SeafDAV is incompatible with FCGI proxy in Apache 2.4.
+    #
+    ProxyPass /seafdav http://127.0.0.1:8080/seafdav
+    ProxyPassReverse /seafdav http://127.0.0.1:8080/seafdav
+
+    #
+    # seahub
+    #
+    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+    ProxyPass / fcgi://127.0.0.1:8000/
 
 </virtualhost>
 </pre>
@@ -167,13 +186,19 @@ Based on your apache configuration when you [Enable Https on Seafile web with Ap
 <pre>
 <VirtualHost *:443>
 
-ServerName www.myseafile.com
+  ServerName www.myseafile.com
   DocumentRoot /var/www
-  Alias /media  /home/user/haiwen/seafile-server/seahub/media
 
   SSLEngine On
-  SSLCertificateFile /etc/ssl/cacert.pem
-  SSLCertificateKeyFile /etc/ssl/privkey.pem
+  SSLCertificateFile /path/to/cacert.pem
+  SSLCertificateKeyFile /path/to/privkey.pem
+
+  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
+
+  <Location /media>
+    ProxyPass !
+    Require all granted
+  </Location>
 
   RewriteEngine On
 
@@ -183,36 +208,37 @@ ServerName www.myseafile.com
   ProxyPass /seafhttp http://127.0.0.1:8082
   ProxyPassReverse /seafhttp http://127.0.0.1:8082
   RewriteRule ^/seafhttp - [QSA,L]
-
+  
   #
-  # seafile webdav
+  # WebDAV
+  # We use http proxy, since SeafDAV is incompatible with FCGI proxy in Apache 2.4.
   #
-  RewriteCond %{HTTP:Authorization} (.+)
-  RewriteRule ^(/seafdav.*)$ /seafdav.fcgi$1 [QSA,L,e=HTTP_AUTHORIZATION:%1]
-  RewriteRule ^(/seafdav.*)$ /seafdav.fcgi$1 [QSA,L]
-
+  ProxyPass /seafdav http://127.0.0.1:8080/seafdav
+  ProxyPassReverse /seafdav http://127.0.0.1:8080/seafdav
+  
   #
   # seahub
   #
-  RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
+  SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+  ProxyPass / fcgi://127.0.0.1:8000/
 
 </virtualhost>
 </pre>
 
 ## Notes on Clients
 
+Please first note that, there are some known performance limitation when you map a Seafile webdav server as a local file system (or network drive).
+- Uploading large number of files at once is usually much slower than the syncing client. That's because each file needs to be committed separately.
+- The access to the webdav server may be slow sometimes. That's because the local file system driver sends a lot of unnecessary requests to get the files' attributes.
+
+So WebDAV is more suitable for infrequent file access. If you want better performance, please use the sync client instead.
+
 ### Windows
 
-On Windows it is recommended to use a webdav client software such as Cyberduck or BitKinex.
-The implementation of webdav support in Windows explorer is not very usable since:
-
-```
-Windows explorer requires to use HTTP digest authentication. But Seafile can't support this because it doesn't store plain text passwords on the server. HTTP basic authentication is only supported for HTTPS (which is reasonable). But explorer doesn't accept self-signed certificates.
-```
-
-The conclusion is if you have a valid ssl certificate, you should be able to access seafdav from Windows explorer. Otherwise you should use a client software. It's also reported that Windows XP doesn't support HTTPS webdav.
+The client recommendation for WebDAV depends on your Windows version:
+- For Windows XP: Only non-encryped HTTP connection is supported by the Windows Explorer. So for security, the only viable option is to use third-party clients, such as Cyberduck or Bitkinex.
+- For Vista and later versions: Windows Explorer supports HTTPS connection. But it requires a valid certificate on the server. It's generally recommended to use Windows Explorer to map a webdav server as network dirve. If you use a self-signed certificate, you have to add the certificate's CA into Windows' system CA store.
 
 ### Linux
 
@@ -249,4 +275,8 @@ If not, modify it and restart seafile server.
 
 If you deploy SeafDAV behind Nginx/Apache, make sure to change the value of <code>share_name</code> as the sample configuration above. Restart your seafile server and try again.
 
+### Windows Explorer reports "file size exceeds the limit allowed and cannot be saved"
 
+This happens when you map webdav as a network drive, and tries to copy a file larger than about 50MB from the network drive to a local folder.
+
+This is because Windows Explorer has a limit of the file size downloaded from webdav server. To make this size large, change the registry entry on the client machine. There is a registry key named `FileSizeLimitInBytes` under `HKEY_LOCAL_MACHINE -> SYSTEM -> CurrentControlSet -> Services -> WebClient -> Parameters`.

@@ -1,148 +1,252 @@
 # Web API
-<p><div class="toc">
+<p>
+<div class="toc">
 <ul>
-<li><a href="#seafile-web-api-v2">Seafile Web API V2</a><ul>
-<li><a href="#api-basics">API Basics</a></li>
-<li><a href="#status-code">Status Code</a></li>
-<li><a href="#quick-start">Quick Start</a></li>
-<li><a href="#account">Account</a><ul>
-<li><a href="#list-accounts">List Accounts(Admin only)</a></li>
-<li><a href="#get-account">Get Account Info(Admin only)</a></li>
-<li><a href="#create-account">Create Account(Admin only)</a></li>
-<li><a href="#update-account">Update Account(Admin only)</a></li>
-<li><a href="#migrate-account">Migrate Account(Admin only)</a></li>
-<li><a href="#delete-account">Delete Account(Admin only)</a></li>
-<li><a href="#check-account-info">Check Account Info</a></li>
-<li><a href="#server-info">Get Server Information</a></li>
+
+<li>
+<a href="#seafile-web-api">Seafile Web API</a>
+<ul>
+
+    <li><a href="#api-basics">API Basics</a></li>
+    <li><a href="#status-code">Status Code</a></li>
+    <li><a href="#quick-start">Quick Start</a></li>
+
+    <li>
+        <a href="#account">Account</a>
+        <ul>
+            <li><a href="#check-account-info">Check Account Info</a></li>
+            <li><a href="#server-info">Get Server Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#starred-files">Starred Files</a>
+        <ul>
+            <li><a href="#list-starred-files">List starred files</a></li>
+            <li><a href="#star-a-file">Star A File</a></li>
+            <li><a href="#unstar-a-file">Unstar A File</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#group">Group</a>
+        <ul>
+            <li><a href="#list-groups">List Groups</a></li>
+            <li><a href="#add-a-group">Add a Group</a></li>
+            <li><a href="#get-info-of-a-group">Get Info of a Group</a></li>
+            <li><a href="#rename-a-group">Rename a Group</a></li>
+            <li><a href="#transfer-a-group">Transfer a Group</a></li>
+            <li><a href="#delete-a-group">Delete a Group</a></li>
+            <li><a href="#quit-group">Quit Group</a></li>
+            <li>
+                <a href="#group-member">Group Member</a>
+                <ul>
+                    <li><a href="#list-group-members">List Group Members</a></li>
+                    <li><a href="#add-a-group-member">Add a Group Member</a></li>
+                    <li><a href="#bulk-add-group-members">Bulk Add Group Members</a></li>
+                    <li><a href="#get-info-of-a-group-member">Get Info of a Group Member</a></li>
+                    <li><a href="#set-a-group-member-admin">Set a Group Member Admin</a></li>
+                    <li><a href="#unset-a-group-member-admin">Unset a Group Member Admin</a></li>
+                    <li><a href="#delete-a-group-member">Delete a Group Member</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#group-message">Group Message</a>
+                <ul>
+                    <li><a href="#get-group-messages">Get Group Messages</a></li>
+                    <li><a href="#get-group-message-detail">Get Group Message Detail</a></li>
+                    <li><a href="#send-a-group-message">Send A Group Message</a></li>
+                    <li><a href="#reply-a-group-message">Reply A Group Message</a></li>
+                    <li><a href="#get-group-message-replies">Get Group Message Replies</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#share">Share</a>
+        <ul>
+            <li>
+                <a href="#share-link">Share Link</a>
+                <ul>
+                    <li><a href="#list-share-links">List Share Links</a></li>
+                    <li><a href="#create-share-link">Create Share Link</a></li>
+                    <li><a href="#delete-share-link">Delete Share Link</a></li>
+                    <li><a href="#send-share-link-email">Send Share Link Email</a></li>
+                    <li><a href="#list-direntry-in-dir-download-link">List Direntry in Dir Download Link</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#upload-link">Upload Link</a>
+                <ul>
+                    <li><a href="#list-upload-links">List Upload Links</a></li>
+                    <li><a href="#create-upload-link">Create Upload Link</a></li>
+                    <li><a href="#delete-upload-link">Delete Upload Link</a></li>
+                    <li><a href="#send-upload-link-email">Send Upload Link Email</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#shared-libraries">Shared Libraries</a>
+                <ul>
+                    <li><a href="#list-shared-libraries">List Shared Libraries</a></li>
+                    <li><a href="#list-be-shared-libraries">List Be Shared Libraries</a></li>
+                    <li><a href="#share-a-library">Share A Library</a></li>
+                    <li><a href="#unshare-a-library">Unshare A Library</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#library">Library</a>
+        <ul>
+            <li><a href="#get-default-lib">Get Default Library</a></li>
+            <li><a href="#create-default-lib">Create Default Library</a></li>
+            <li><a href="#list-libraries">List Libraries</a></li>
+            <li><a href="#get-library-info">Get Library Info</a></li>
+            <li><a href="#get-library-owner">Get Library Owner</a></li>
+            <li><a href="#get-library-history">Get Library History</a></li>
+            <li><a href="#get-library-history-limit-days">Get Library History Limit Days</a></li>
+            <li><a href="#set-library-history-limit-days">Set Library History Limit Days</a></li>
+            <li><a href="#create-library">Create Library</a></li>
+            <li><a href="#check/create-sub-library">Check/Create Sub Library</a></li>
+            <li><a href="#delete-library">Delete Library</a></li>
+            <li><a href="#rename-library">Rename Library</a></li>
+            <li><a href="#transfer-library">Transfer Library</a></li>
+            <li><a href="#decrypt-library">Decrypt Library</a></li>
+            <li><a href="#create-public-lib">Create Public Library</a></li>
+            <li><a href="#remove-public-lib">Remove Public Library</a></li>
+            <li><a href="#fetch-library-download-info">Fetch library download info</a></li>
+            <li><a href="#list-virtual-libraries">List Virtual Libraries</a></li>
+            <li><a href="#search-libraries">Search Libraries</a></li>
+            <li><a href="#get-library-download-links">Get Library Download Links</a></li>
+            <li><a href="#get-library-upload-links">Get Library Upload Links</a></li>
+            <li><a href="#delete-library-download-link">Delete Library Download Link</a></li>
+            <li><a href="#delete-library-upload-link">Delete Library Upload Link</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#file">File</a>
+        <ul>
+            <li><a href="#view-file-through-owa">View File Through Owa</a></li>
+            <li><a href="#download-file">Download File</a></li>
+            <li><a href="#get-file-detail">Get File Detail</a></li>
+            <li><a href="#get-file-history">Get File History</a></li>
+            <li><a href="#download-file-revision">Download File From a Revision</a></li>
+            <li><a href="#create-file">Create File</a></li>
+            <li><a href="#rename-file">Rename File</a></li>
+            <li><a href="#lock-file">Lock File</a></li>
+            <li><a href="#unlock-file">Unlock File</a></li>
+            <li><a href="#move-file">Move File</a></li>
+            <li><a href="#copy-file">Copy File</a></li>
+            <li><a href="#revert-file">Revert File</a></li>
+            <li><a href="#delete-file">Delete File</a></li>
+            <li>
+                <a href="#upload-file">Upload File</a>
+                <ul>
+                    <li><a href="#get-upload-link">Get Upload Link</a></li>
+                    <li><a href="#upload-file-1">Upload File</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#update-file">Update file</a>
+                <ul>
+                    <li><a href="#get-update-link">Get Update Link</a></li>
+                    <li><a href="#update-file-1">Update File</a></li>
+                </ul>
+            </li>
+            <li><a href="#get-upload-blocks-link">Get Upload Blocks Link</a></li>
+            <li><a href="#get-update-blocks-link">Get Update Blocks Link</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#directory">Directory</a>
+        <ul>
+            <li><a href="#list-directory-entries">List Directory Entries</a></li>
+            <li><a href="#create-new-directory">Create New Directory</a></li>
+            <li><a href="#rename-directory">Rename Directory</a></li>
+            <li><a href="#delete-directory">Delete Directory</a></li>
+            <li><a href="#download-directory">Download Directory</a></li>
+            <li><a href="#share-directory">Share Directory</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#multiple-files-directories">Multiple Files / Directories</a>
+        <ul>
+            <li><a href="#multiple-files-directories-copy">Copy</a></li>
+            <li><a href="#multiple-files-directories-move">Move</a></li>
+            <li><a href="#multiple-files-directories-delete">Delete</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#avatar">Avatar</a>
+        <ul>
+            <li><a href="#get-user-avatar">Get User Avatar</a></li>
+            <li><a href="#get-group-avatar">Get Group Avatar</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#devices">Devices</a>
+        <ul>
+            <li><a href="#get-user-devices">Get User Devices</a></li>
+            <li><a href="#unlink-user-device">Unlink User Device</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#get-file-activities">Get File Activities</a></li>
+    <li><a href="#get-thumbnail-image">Get Thumbnail Image</a></li>
+    <li><a href="#add-organization">Add Organization</a></li>
+
 </ul>
 </li>
-<li><a href="#starred-files">Starred Files</a><ul>
-<li><a href="#list-starred-files">List starred files</a></li>
-<li><a href="#star-a-file">Star A File</a></li>
-<li><a href="#unstar-a-file">Unstar A File</a></li>
+
+<li>
+<a href="#admin-only">Admin Only</a>
+<ul>
+    <li>
+        <a href="#admin-only-account">Account</a>
+        <ul>
+            <li><a href="#admin-only-list-accounts">List Accounts</a></li>
+            <li><a href="#admin-only-get-account">Get Account Info</a></li>
+            <li><a href="#admin-only-create-account">Create Account</a></li>
+            <li><a href="#admin-only-update-account">Update Account</a></li>
+            <li><a href="#admin-only-migrate-account">Migrate Account</a></li>
+            <li><a href="#admin-only-delete-account">Delete Account</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#admin-only-devices">Devices</a>
+        <ul>
+            <li><a href="#admin-only-get-desktop-devices">Get Desktop Devices</a></li>
+            <li><a href="#admin-only-get-mobile-devices">Get Mobile Devices</a></li>
+            <li><a href="#admin-only-unlink-user-device">Unlink User Device</a></li>
+            <li><a href="#admin-only-get-device-errors">Get Device Errors</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#admin-only-log">Log</a>
+        <ul>
+            <li><a href="#admin-only-get-login-log">Get Login Log</a></li>
+            <li><a href="#admin-only-get-file-audit-log">Get File Audit Log</a></li>
+            <li><a href="#admin-only-get-file-update-log">Get File Update Log</a></li>
+            <li><a href="#admin-only-get-perm-audit-log">Get Permission Audit Log</a></li>
+        </ul>
+    </li>
 </ul>
 </li>
-<li><a href="#group">Group</a><ul>
-<li><a href="#list-groups">List Groups</a></li>
-<li><a href="#add-a-group">Add A Group</a></li>
-<li><a href="#delete-group">Delete Group</a></li>
-<li><a href="#rename-group">Rename Group</a></li>
-<li><a href="#group-member">Group Member</a><ul>
-<li><a href="#add-a-group-member">Add A Group Member</a></li>
-<li><a href="#delete-a-group-member">Delete A Group Member</a></li>
-</ul>
-</li>
-<li><a href="#group-message">Group Message</a><ul>
-<li><a href="#get-group-messages">Get Group Messages</a></li>
-<li><a href="#get-group-message-detail">Get Group Message Detail</a></li>
-<li><a href="#send-a-group-message">Send A Group Message</a></li>
-<li><a href="#reply-a-group-message">Reply A Group Message</a></li>
-<li><a href="#get-group-message-replies">Get Group Message Replies</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#share">Share</a><ul>
-<li><a href="#file-share-link">File Share Link</a><ul>
-<li><a href="#list-file-share-links">List File Share Links</a></li>
-<li><a href="#create-file-share-link">Create File Share Link</a></li>
-<li><a href="#delete-file-share-link">Delete File Share Link</a></li>
-<li><a href="#send-share-link-email">Send Share Link Email</a></li>
-<li><a href="#send-upload-link-email">Send Upload Link Email</a></li>
-<li><a href="#list-direntry-in-dir-download-link">List Direntry in Dir Download Link</a></li>
-</ul>
-</li>
-<li><a href="#shared-libraries">Shared Libraries</a><ul>
-<li><a href="#list-shared-libraries">List Shared Libraries</a></li>
-<li><a href="#list-be-shared-libraries">List Be Shared Libraries</a></li>
-<li><a href="#share-a-library">Share A Library</a></li>
-<li><a href="#unshare-a-library">Unshare A Library</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#library">Library</a><ul>
-<li><a href="#library-1">Library</a><ul>
-<li><a href="#get-default-lib">Get Default Library</a></li>
-<li><a href="#create-default-lib">Create Default Library</a></li>
-<li><a href="#list-libraries">List Libraries</a></li>
-<li><a href="#get-library-info">Get Library Info</a></li>
-<li><a href="#get-library-owner">Get Library Owner</a></li>
-<li><a href="#get-library-history">Get Library History</a></li>
-<li><a href="#create-library">Create Library</a></li>
-<li><a href="#check/create-sub-library">Check/Create Sub Library</a></li>
-<li><a href="#delete-library">Delete Library</a></li>
-<li><a href="#rename-library">Rename Library</a></li>
-<li><a href="#decrypt-library">Decrypt Library</a></li>
-<li><a href="#create-public-lib">Create Public Library</a></li>
-<li><a href="#remove-public-lib">Remove Public Library</a></li>
-<li><a href="#fetch-library-download-info">Fetch library download info</a></li>
-<li><a href="#list-virtual-libraries">List Virtual Libraries</a></li>
-<li><a href="#search-libraries">Search Libraries</a></li>
-</ul>
-</li>
-<li><a href="#file">File</a><ul>
-<li><a href="#view-file-through-owa">View File Through Owa</a></li>
-<li><a href="#download-file">Download File</a></li>
-<li><a href="#get-file-detail">Get File Detail</a></li>
-<li><a href="#get-file-history">Get File History</a></li>
-<li><a href="#download-file-revision">Download File From a Revision</a></li>
-<li><a href="#create-file">Create File</a></li>
-<li><a href="#rename-file">Rename File</a></li>
-<li><a href="#lock-file">Lock File</a></li>
-<li><a href="#unlock-file">Unlock File</a></li>
-<li><a href="#move-file">Move File</a></li>
-<li><a href="#copy-file">Copy File</a></li>
-<li><a href="#revert-file">Revert File</a></li>
-<li><a href="#delete-file">Delete File</a></li>
-<li><a href="#upload-file">Upload File</a><ul>
-<li><a href="#get-upload-link">Get Upload Link</a></li>
-<li><a href="#upload-file-1">Upload File</a></li>
-</ul>
-</li>
-<li><a href="#update-file">Update file</a><ul>
-<li><a href="#get-update-link">Get Update Link</a></li>
-<li><a href="#update-file-1">Update File</a></li>
-</ul>
-</li>
-<li><a href="#get-upload-blocks-link">Get Upload Blocks Link</a></li>
-<li><a href="#get-update-blocks-link">Get Update Blocks Link</a></li>
-</ul>
-</li>
-<li><a href="#directory">Directory</a><ul>
-<li><a href="#list-directory-entries">List Directory Entries</a></li>
-<li><a href="#create-new-directory">Create New Directory</a></li>
-<li><a href="#rename-directory">Rename Directory</a></li>
-<li><a href="#delete-directory">Delete Directory</a></li>
-<li><a href="#download-directory">Download Directory</a></li>
-<li><a href="#share-directory">Share Directory</a></li>
-</ul>
-</li>
-<li><a href="#multiple-files-directories">Multiple Files / Directories</a><ul>
-<li><a href="#multiple-files-directories-copy">Copy</a></li>
-<li><a href="#multiple-files-directories-move">Move</a></li>
-<li><a href="#multiple-files-directories-delete">Delete</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#avatar">Avatar</a><ul>
-<li><a href="#get-user-avatar">Get User Avatar</a></li>
-<li><a href="#get-group-avatar">Get Group Avatar</a></li>
-</ul>
-</li>
-<li><a href="#get-file-activities">Get File Activities</a></li>
-<li><a href="#get-thumbnail-image">Get Thumbnail Image</a></li>
-<li><a href="#add-organization">Add Organization</a></li>
-</ul>
-</li>
-</ul>
-</li>
+
 </ul>
 </div>
 </p>
 
-# <a id="seafile-web-api-v2"></a>Seafile Web API V2 #
+# <a id="seafile-web-api"></a>Seafile Web API #
 
 ## <a id="api-basics"></a>API Basics ##
 
@@ -153,7 +257,6 @@ All API calls must be authenticated with a valid Seafile API key.
 The api key can be retrieved by the obtain auth api. See the <a href="#quick-start">Quick Start</a> for details.
 
 For each API, we provide `curl` examples to illustrate the usage. We also provide `python` and `javascript` examples, please refer to https://github.com/haiwen/webapi-examples for details.
-
 
 ## <a id="status-code"></a>Status Code ##
 
@@ -193,70 +296,9 @@ For each API, we provide `curl` examples to illustrate the usage. We also provid
 
 ## <a id="account"></a>Account ##
 
-### <a id="list-accounts"></a>List Accounts ###
-
-**GET** https://cloud.seafile.com/api2/accounts/
-
-**Request parameters**
-
-* start (default to 0)
-* limit (default to 100)
-* scope (default None, accepted values: 'LDAP' or 'DB')
-
-To retrieve all users, just set both `start` and `limit` to `-1`.
-
-If scope parameter is passed then accounts will be searched inside the specific scope, otherwise it will be used the old approach: first LDAP and, if no account is found, DB.
-
-**Sample request**
-
-    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/
-
-**Sample response**
-
-    [
-    {
-        "email": "foo@foo.com"
-    },
-    {
-        "email": "bar@bar.com"
-    }
-    ]
-
-**Errors**
-
-* 403 Permission error, only administrator can perform this action
-
-### <a id="get-account"></a>Get Account Info ###
-
-**GET** https://cloud.seafile.com/api2/accounts/{email}/
-
-**Request parameters**
-
-**Sample request**
-
-    curl -v -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/user@mail.com/
-
-**Sample response**
-
-    {
-    "is_staff": false,
-    "is_active": true,
-    "id": 2,
-    "create_time": 1356061187741686,
-    "usage": 651463187,
-    "total": 107374182400,
-    "email": "user@mail.com"
-    }
-
-**Errors**
-
-* 403 Permission error, only administrator can perform this action
-
-
 ### <a id="check-account-info"></a>Check Account Info ###
 
 **GET** https://cloud.seafile.com/api2/account/info/
-
 
 **Sample request**
 
@@ -273,121 +315,6 @@ If scope parameter is passed then accounts will be searched inside the specific 
 **Errors**
 
 * 403 Invalid token
-
-### <a id="create-account"></a>Create Account ###
-
-**PUT** https://cloud.seafile.com/api2/accounts/{email}/
-
-**Request parameters**
-
-* password
-* is_staff (defaults to False)
-* is_active (defaults to True)
-
-**Sample request**
-
-    curl -v -X PUT -d "password=123456" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/newaccount@gmail.com/
-
-**Sample response**
-
-    ...
-    < HTTP/1.0 201 CREATED
-    < Location: https://cloud.seafile.com/api2/accounts/newaccount@gmail.com/
-    ...
-
-    "success"
-
-**Success**
-
-    Response code 201(Created) is returned and the Location header provides shared link.
-
-**Errors**
-
-* 403 Permission error, only administrator can perform this action
-
-### <a id="update-account"></a>Update Account ###
-
-**PUT** https://cloud.seafile.com/api2/accounts/{email}/
-
-**Request parameters**
-
-At least one of followings:
-
-* password
-* is_staff
-* is_active
-* name
-* note
-* storage
-
-**Sample request**
-
-    curl -v -X PUT -d "password=654321&is_staff=true&storage=1073741824" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/user@mail.com/
-
-**Sample response**
-
-    ...
-    < HTTP/1.0 200 OK
-    ...
-
-    "success"
-
-**Success**
-
-    Response code 200(OK) is returned.
-
-**Errors**
-
-* 400 Bad Request, keyword password is required
-* 403 Permission error, only administrator can perform this action
-
-### <a id="migrate-account"></a>Migrate Account ###
-
-**POST** https://cloud.seafile.com/api2/accounts/{email}/
-
-**Request parameters**
-
-* op
-* to_user this user must exist
-
-**Sample request**
-
-    curl -v -d "op=migrate&to_user=user2@mail.com" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/user@mail.com/
-
-**Sample response**
-
-    ...
-    < HTTP/1.0 200 OK
-    ...
-
-    "success"
-
-**Success**
-
-    Response code 200(OK) is returned.
-
-**Errors**
-
-* 400 Bad Request, arguments are missing or invalid
-* 403 Permission error, only administrator can perform this action
-
-
-### <a id="delete-account"></a>Delete Account ###
-
-**DELETE** https://cloud.seafile.com/api2/accounts/{email}/
-
-
-**Sample request**
-
-    curl -v -X DELETE -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/newaccount@gmail.com/
-
-**Sample response**
-
-    "success"
-
-**Errors**
-
-* 403 Permission error, only administrator can perform this action
 
 ### <a id="server-info"></a>Get Server Information ###
 
@@ -514,8 +441,6 @@ Sample response from a seafile pro edition server:
 
 * 400 `repo_id` or `p` is missing, or `p` is not valid file path(e.g. /foo/bar/).
 
-
-
 ## <a id="group"></a>Group ##
 
 ### <a id="list-groups"></a>List Groups ###
@@ -551,117 +476,359 @@ Sample response from a seafile pro edition server:
         ]
     }
 
-### <a id="add-a-group"></a>Add A Group ###
+### <a id="add-a-group"></a>Add a Group ###
 
-**PUT** https://cloud.seafile.com/api2/groups/
+**POST** https://cloud.seafile.com/api/v2.1/groups/
 
 **Request parameters**
 
-* group_name
+* name (name of new group)
 
 **Sample request**
 
-    curl -X PUT -d "group_name=newgroup" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/groups/"
+```
+curl -d "name=new_group_name" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/
+```
 
 **Sample response**
 
-    {"group_id": 3, "success": true}
+```
+{
+    "name": "new_group_name",
+    "owner": "lian@lian.com",
+    "created_at": "2015-12-17T10:29:57+0800",
+    "admins": ["lian@lian.com"],
+    "avatar_url": "https://cloud.seafile.com/media/avatars/groups/default.png",
+    "id": 773
+}
+```
 
-**Errors**
+### <a id="get-info-of-a-group"></a>Get Info of a Group ###
 
-* 400 There is already a group with that name.
-
-### <a id="delete-group"></a>Delete Group ###
-
-**DELETE** https://cloud.seafile.com/api2/groups/{group_id}/
-
-**Request parameters**
-
-None
-
-**Sample request**
-
-    curl -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/groups/1/"
-
-**Success**
-
-200 if everything is fine.
-
-**Errors**
-
-* 400 if ad group id format
-* 404 if Group not found
-* 403 if Forbid to delete group
-* 520 if Failed to remove group (generic error)
-
-### <a id="rename-group"></a>Rename Group
-
-**POST** https://cloud.seafile.com/api2/groups/{group_id}/
+**GET** https://cloud.seafile.com/api/v2.1/groups/772/
 
 **Request parameters**
 
-* operation (value must be 'rename')
-* newname (the new name for the group)
+* avatar_size
+* with_repos (0 or 1, if return library info of group. default 0 not return)
 
 **Sample request**
 
-    curl -d "operation=rename&newname=pinkfloyd_lovers" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/groups/1/"
+```
+curl -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/772/
+```
 
-**Success**
+**Sample response**
 
-   200 if everything is fine.
+```
+{
+    "name": "rename_group_name",
+    "owner": "lian@lian.com",
+    "created_at": "2015-12-17T10:29:57+0800",
+    "admins": ["lian@lian.com"],
+    "avatar_url": "https://cloud.seafile.com/media/avatars/groups/default.png",
+    "id": 772
+}
+```
 
-**Errors**
+### <a id="rename-a-group"></a>Rename a Group ###
 
-* 404 if Group not found
-* 403 if Forbid to rename group
-* 400 if Newname is missing or if Group name is not valid of if There is already a group with that name or Operation can only be rename.
+**PUT** https://cloud.seafile.com/api/v2.1/groups/772/
+
+**Request parameters**
+
+* name (name of new group)
+
+**Sample request**
+
+```
+curl -X PUT -d "name=rename_group_name" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/772/
+```
+
+**Sample response**
+
+```
+{
+    "name": "rename_group_name",
+    "owner": "lian@lian.com",
+    "created_at": "2015-12-17T10:29:57+0800",
+    "admins": ["lian@lian.com"],
+    "avatar_url": "https://cloud.seafile.com/media/avatars/groups/default.png",
+    "id": 772
+}
+```
+
+### <a id="transfer-a-group"></a> Transfer a Group ###
+
+**PUT** https://cloud.seafile.com/api/v2.1/groups/772/
+
+**Request parameters**
+
+* owner (new owner of this group, should be an email.)
+
+**Sample request**
+
+```
+curl -X PUT -d "owner=new_owner@new_owner.com" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/772/
+```
+
+**Sample response**
+
+```
+{
+    "name": "rename_group_name",
+    "owner": "new_owner@new_owner.com",
+    "created_at": "2015-12-17T10:29:57+0800",
+    "admins": ["lian@lian.com", "new_owner@new_owner.com"],
+    "avatar_url": "https://cloud.seafile.com/media/avatars/groups/default.png",
+    "id": 772
+}
+```
+
+### <a id="delete-a-group"></a> Delete a Group ###
+
+**DELETE** https://cloud.seafile.com/api/v2.1/groups/772/
+
+**Sample request**
+
+```
+curl -X DELETE -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/772/
+```
+
+**Sample response**
+
+```
+{"success":true}
+```
+
+### <a id="quit-group"></a> Quit Group ###
+
+**DELETE** https://cloud.seafile.com/api/v2.1/groups/770/members/myself@email.com/
+
+**Sample request**
+
+```
+curl -X DELETE -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/770/members/myself@email.com/
+```
+
+**Sample response**
+
+```
+{"success":true}
+```
 
 ### <a id="group-member"></a>Group Member ###
 
-#### <a id="add-a-group-member"></a>Add A Group Member ####
+#### <a id="list-group-members"></a>List All Group Members ###
 
-**PUT** https://cloud.seafile.com/api2/groups/{group_id}/members/
-
-**Request parameters**
-
-* user_name
-
-**Sample request**
-
-    curl -X PUT -d "user_name=user@example.com"-H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/groups/1/members/"
-
-**Sample response**
-
-    {"success": true}
-
-**Errors**
-
-* 400 invalid group id
-* 403 only administrators can add group members
-* 404 unable to find group
-
-#### <a id="delete-a-group-member"></a>Delete A Group Member ####
-
-**DELETE** https://cloud.seafile.com/api2/groups/{group_id}/members/
+**GET** https://cloud.seafile.com/api/v2.1/groups/770/members/
 
 **Request parameters**
 
-* user_name
+* avatar_size
+* is_admin (`true` or `false`, if ONLY return admin members of group. default `false` return all members)
 
 **Sample request**
 
-    curl -X DELETE -d "user_name=user@example.com" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/groups/1/members/"
+```
+curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/groups/770/members/"
+```
 
 **Sample response**
 
-    {"success": true}
+```
+[
+    {
+        "login_id": "",
+        "name": "nickname-of-lian",
+        "avatar_url": "https://cloud.seafile.com/media/avatars/default.png",
+        "is_admin": true,
+        "contact_email": "lian_contact@email.com",
+        "email": "lian@lian.com"
+    },
+    {
+        "login_id": "",
+        "name": "1",
+        "avatar_url": "https://cloud.seafile.com/media/avatars/default.png",
+        "is_admin": false,
+        "contact_email": "1@1.com",
+        "email": "1@1.com"
+    }
+]
+```
 
-**Errors**
+#### <a id="add-a-group-member"></a>Add a Group Member ###
 
-* 400 invalid group id
-* 403 only administrators can remove group members
-* 404 unable to find group
+**POST** https://cloud.seafile.com/api/v2.1/groups/770/members/
+
+**Request parameters**
+
+* email
+
+**Sample request**
+
+```
+curl -d "email=new-member@email.com" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/770/members/
+```
+
+**Sample response**
+
+```
+{
+    "login_id": "",
+    "name": "new-member",
+    "avatar_url": "https://cloud.seafile.com/media/avatars/default.png",
+    "is_admin": false,
+    "contact_email": "new-member@email.com",
+    "email": "new-member@email.com"
+}
+```
+
+#### <a id="bulk-add-group-members"></a>Bulk Add Group Members ###
+
+**POST** https://cloud.seafile.com/api/v2.1/groups/770/members/bulk/
+
+**Request parameters**
+
+* emails
+
+**Sample request**
+
+```
+curl -d "emails=new-member-1@email.com,new-member-2@email.com,new-member-3@email.com" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/770/members/bulk/
+```
+
+**Sample response**
+
+```
+{
+    "failed":[
+        {
+            "error_msg": "Invalid email",
+            "email": "new-member-3@email.com"
+        },
+        {
+            "error_msg": "Is already group member",
+            "email": "new-member-4@email.com"
+        }
+    "success":[
+        {
+            "login_id": "",
+            "name": "new-member-1",
+            "avatar_url": "https://cloud.seafile.com/media/avatars/default.png",
+            "is_admin": false,
+            "contact_email": "new-member-1@email.com",
+            "email": "new-member-1@email.com"
+        },
+        {
+            "login_id": "",
+            "name": "new-member-2",
+            "avatar_url": "https://cloud.seafile.com/media/avatars/default.png",
+            "is_admin": false,
+            "contact_email": "new-member-2@email.com",
+            "email": "new-member-2@email.com"
+        }
+    ]
+}
+
+```
+
+#### <a id="get-info-of-a-group-member"></a>Get Info of a Group Member ###
+
+**GET** https://cloud.seafile.com/api/v2.1/groups/770/members/group-member@email.com/
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/770/members/group-member@email.com/
+```
+
+**Request parameters**
+
+* avatar_size
+
+**Sample response**
+
+```
+{
+    "login_id": "",
+    "name": "group-member",
+    "avatar_url": "https://cloud.seafile.com/media/avatars/default.png",
+    "is_admin": false,
+    "contact_email": "group-member@email.com",
+    "email": "group-member@email.com"
+}
+```
+
+#### <a id="set-a-group-member-admin"></a>Set a Group Member Admin ###
+
+**PUT** https://cloud.seafile.com/api/v2.1/groups/770/members/group-member@email.com/
+
+**Request parameters**
+
+* is_admin=true
+
+**Sample request**
+
+```
+curl -X PUT -d "is_admin=true" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/770/members/group-member@email.com/
+```
+
+**Sample response**
+
+```
+{
+    "login_id": "",
+    "name": "group-member",
+    "avatar_url": "https://cloud.seafile.com/media/avatars/default.png",
+    "is_admin": true,
+    "contact_email": "group-member@email.com",
+    "email": "group-member@email.com"
+}
+```
+
+#### <a id="unset-a-group-member-admin"></a>Unset a Group Member Admin ###
+
+**PUT** https://cloud.seafile.com/api/v2.1/groups/770/members/group-member@email.com/
+
+**Request parameters**
+
+* is_admin=false
+
+**Sample request**
+
+```
+curl -X PUT -d "is_admin=false" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/770/members/group-member@email.com/
+```
+
+**Sample response**
+
+```
+{
+    "login_id": "",
+    "name": "group-member",
+    "avatar_url": "https://cloud.seafile.com/media/avatars/default.png",
+    "is_admin": false,
+    "contact_email": "group-member@email.com",
+    "email": "group-member@email.com"
+}
+```
+
+#### <a id="delete-a-group-member"></a> Delete a Group Member ###
+
+**DELETE** https://cloud.seafile.com/api/v2.1/groups/770/members/group-member@email.com/
+
+**Sample request**
+
+```
+curl -X DELETE -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/groups/770/members/group-member@email.com/
+```
+
+**Sample response**
+
+```
+{"success":true}
+```
 
 ### <a id="group-message"></a>Group Message ###
 
@@ -822,80 +989,89 @@ None
 
 ## <a id="share"></a>Share
 
-### <a id="file-share-link"></a>File Share Link ###
+### <a id="share-link"></a>File Share Link ###
 
-#### <a id="list-file-share-links"></a>List File Share Links ####
+#### <a id="list-share-links"></a>List Share Links ####
 
-**GET** https://cloud.seafile.com/api2/shared-links/
+**GET** https://cloud.seafile.com/api/v2.1/share-links/
 
 **Sample request**
 
-    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/shared-links/"
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/share-links/"
 
 **Sample response**
 
-    {"fileshares": [{"username": "user@example.com", "repo_id": "a582d3bc-bcf5-421e-9125-741fa56d18d4", "ctime": null, "s_type": "d", "token": "e410827494", "view_cnt": 0, "path": "/123/"}, {"username": "user@example.com", "repo_id": "affc837f-7fdd-4e91-b88a-32caf99897f2", "ctime": null, "s_type": "f", "token": "0ae587a7d1", "view_cnt": 0, "path": "/lian123.md"}]}
+    [{"username":"lian@lian.com","view_cnt":0,"ctime":"2016-02-26T16:20:36.894","token":"4cbd625c5e","repo_id":"62ca6cf9-dab6-47e5-badc-bab13d9220ce","link":"https://cloud.seafile.com/f/4cbd625c5e/","expire_date":null,"path":"/file.md","is_expired":false},{"username":"lian@lian.com","view_cnt":0,"ctime":"2016-03-04T03:54:58.279","token":"8dc1e04ddd","repo_id":"62ca6cf9-dab6-47e5-badc-bab13d9220ce","link":"https://cloud.seafile.com/d/8dc1e04ddd/","expire_date":null,"path":"/","is_expired":false}]
 
-#### <a id="create-file-share-link"></a>Create File Share Link ####
+#### <a id="create-share-link"></a>Create Share Link ####
 
-**PUT** https://cloud.seafile.com/api2/repos/{repo-id}/file/shared-link/
+**POST** https://cloud.seafile.com/api/v2.1/share-links/
 
 **Request parameters**
 
 * repo-id
-* p (Path to the file)
-* share_type (optional, `download` or `upload`, default `download`)
-* password (optional)
-* expire (optional)
+* path (file/folder path)
+* password (not necessary)
+* expire_date (not necessary)
 
 **Sample request**
 
 Create download link for file
 
-    curl -v  -X PUT -d "p=/foo.md" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/afc3b694-7d4c-4b8a-86a4-89c9f3261b12/file/shared-link/
+    curl -d "path=/foo.md&repo_id=62ca6cf9-dab6-47e5-badc-bab13d9220ce" -H 'Authorization: Token ef12bf1e66a1aa797a1d6556fdc9ae84f1e9249f' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/share-links/
 
 Create download link for directory with password and expire date
 
-    curl -v  -X PUT -d "password=password&expire=6&p=/123/" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/afc3b694-7d4c-4b8a-86a4-89c9f3261b12/file/shared-link/
-
-Create upload link for directory
-
-    curl -v -X PUT -d "share_type=upload&p=/123/" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/afc3b694-7d4c-4b8a-86a4-89c9f3261b12/file/shared-link/
+    curl -d "path=/bar/&repo_id=62ca6cf9-dab6-47e5-badc-bab13d9220ce&password=password&expire_date=6" -H 'Authorization: Token ef12bf1e66a1aa797a1d6556fdc9ae84f1e9249f' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/share-links/
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 201 CREATED
-    < Location: https://cloud.seafile.com/f/9b437a7e55/
-    ...
+```
+{
+    "username": "lian@lian.com",
+    "view_cnt": 0,
+    "ctime": "2016-03-04T04:06:35.477",
+    "token": "409f5aa54a",
+    "repo_id": "62ca6cf9-dab6-47e5-badc-bab13d9220ce",
+    "link": "https://cloud.seafile.com/f/409f5aa54a/",
+    "expire_date": null,
+    "path": "/foo.md",
+    "is_expired": false
+}
+```
 
-**Success**
-
-    Response code 201(Created) is returned and the Location header provides shared link.
+```
+{
+    "username": "lian@lian.com",
+    "view_cnt": 0,
+    "ctime": "2016-03-04T04:12:48.959",
+    "token": "db1a50e686",
+    "repo_id": "62ca6cf9-dab6-47e5-badc-bab13d9220ce",
+    "link": "https://cloud.seafile.com/d/db1a50e686/",
+    "expire_date": null,
+    "path": "/bar/",
+    "is_expired": false
+}
+```
 
 **Errors**
 
-* 400 Path is missing
-* 400 Password(if link is encrypted) is missing
-* 500 Internal server error
+* 400 path/repo_id invalid
+* 403 Permission denied.
+* 404 file/folder/library not found.
+* 500 Internal Server Error
 
-#### <a id="delete-file-share-link"></a>Delete File Share Link ####
+#### <a id="delete-share-link"></a>Delete Share Link ####
 
-**DELETE** https://cloud.seafile.com/api2/shared-links/?t=0ae587a7d1
-
-**Request parameters**
-
-* t
+**DELETE** https://cloud.seafile.com/api/v2.1/share-links/{token}/
 
 **Sample request**
 
-    curl -v -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/shared-links/?t=0ae587a7d1"
+    curl -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/share-links/0ae587a7d1/"
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 200 OK
-    ...
+    {"success":true}
 
 #### <a id="send-share-link-email"></a>Send Share Link Email ####
 
@@ -934,6 +1110,85 @@ Create upload link for directory
 * 403 Sending shared link failed. Email service is not properly configured, please contact administrator.
 * 404 token/library not found
 
+#### <a id="list-direntry-in-dir-download-link"></a>List Direntry in Dir Download Link ####
+
+**GET** https://cloud.seafile.com/api2/d/{token}/dir/
+
+**Request parameters**
+
+* token (upload link token)
+* p (sub folder path)
+* password (if link is encrypted)
+
+**Sample request**
+
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/d/3af7c46595/dir/?p=/subfolder/"
+
+**Sample response**
+
+    [{"mtime": 1436846750, "type": "dir", "name": "sadof", "id": "1806dbdb700b7bcd49e6275107c7ccf7b3ea1776"}, {"id": "bdb06f6de972c42893fda590ac954988b562429c", "mtime": 1436431020, "type": "file", "name": "test.mdert", "size": 20}]
+
+### <a id="upload-link"></a>Upload Link ###
+
+#### <a id="list-upload-links"></a>List Upload Links ####
+
+**GET** https://cloud.seafile.com/api/v2.1/upload-links/
+
+**Sample request**
+
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/upload-links/"
+
+**Sample response**
+
+    [{"username":"lian@lian.com","repo_id":"62ca6cf9-dab6-47e5-badc-bab13d9220ce","ctime":"2016-03-03T15:26:15.223","token":"9a5d5c8391","link":"https://cloud.seafile.com/u/d/9a5d5c8391/","path":"/"},{"username":"lian@lian.com","repo_id":"78c620ee-2989-4427-8eff-7748f4fbebc0","ctime":"2016-03-04T05:37:17.968","token":"d17d87ea4d","link":"https://cloud.seafile.com/u/d/d17d87ea4d/","path":"/yutong/"}]
+
+#### <a id="create-upload-link"></a>Create Upload Link ####
+
+**POST** https://cloud.seafile.com/api/v2.1/upload-links/
+
+**Request parameters**
+
+* repo-id
+* path (file/folder path)
+* password (not necessary)
+
+**Sample request**
+
+Create upload link for directory with password
+
+    curl -d "path=/bar/&repo_id=afc3b694-7d4c-4b8a-86a4-89c9f3261b12&password=password" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/upload-links/
+
+**Sample response**
+
+```
+{
+    "username": "lian@lian.com",
+    "repo_id": "62ca6cf9-dab6-47e5-badc-bab13d9220ce",
+    "ctime": "2016-03-04T05:51:34.022",
+    "token": "dce40e8594",
+    "link": "https://cloud.seafile.com/u/d/dce40e8594/",
+    "path": "/bar/"
+}
+```
+
+**Errors**
+
+* 400 path/repo_id invalid
+* 403 Permission denied.
+* 500 Internal Server Error
+
+#### <a id="delete-upload-link"></a>Delete Upload Link ####
+
+**DELETE** https://cloud.seafile.com/api/v2.1/upload-links/{token}/
+
+**Sample request**
+
+    curl -X DELETE -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api/v2.1/upload-links/0ae587a7d1/"
+
+**Sample response**
+
+    {"success":true}
+
 #### <a id="send-upload-link-email"></a>Send Upload Link Email ####
 
 **POST** https://cloud.seafile.com/api2/send-upload-link/
@@ -968,27 +1223,9 @@ Create upload link for directory
 * 403 Sending shared link failed. Email service is not properly configured, please contact administrator.
 * 404 token/library not found
 
-#### <a id="list-direntry-in-dir-download-link"></a>List Direntry in Dir Download Link ####
-
-**GET** https://cloud.seafile.com/api2/d/{token}/dir/
-
-**Request parameters**
-
-* token (upload link token)
-* p (sub folder path)
-* password (if link is encrypted)
-
-**Sample request**
-
-    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/d/3af7c46595/dir/?p=/subfolder/"
-
-**Sample response**
-
-    [{"mtime": 1436846750, "type": "dir", "name": "sadof", "id": "1806dbdb700b7bcd49e6275107c7ccf7b3ea1776"}, {"id": "bdb06f6de972c42893fda590ac954988b562429c", "mtime": 1436431020, "type": "file", "name": "test.mdert", "size": 20}]
-
 ### <a id="shared-libs"></a>Shared Libraries ###
 
-#### <a id="list-shared-libs"></a>List Shared Libraries ####
+#### <a id="list-shared-libraries"></a>List Shared Libraries ####
 
 **GET** https://cloud.seafile.com/api2/shared-repos/
 
@@ -1000,7 +1237,7 @@ Create upload link for directory
 
     [{"repo_id": "7d42522b-1f6f-465d-b9c9-879f8eed7c6c", "share_type": "personal", "permission": "rw", "encrypted": false, "user": "user@example.com", "last_modified": 1361072500, "repo_desc": "ff", "group_id": 0, "repo_name": "\u6d4b\u8bd5\u4e2d\u6587pdf"}, {"repo_id": "79bb29cd-b683-4844-abaf-433952723ca5", "share_type": "group", "permission": "rw", "encrypted": false, "user": "user@example.com", "last_modified": 1359182468, "repo_desc": "test", "group_id": 1, "repo_name": "test_enc"}]
 
-#### <a id="list-be-shared-libs"></a>List Be Shared Libraries ####
+#### <a id="list-be-shared-libraries"></a>List Be Shared Libraries ####
 
 **GET** https://cloud.seafile.com/api2/beshared-repos/
 
@@ -1056,12 +1293,9 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
 
     "success"
 
-
 ## <a id="library"></a>Library ##
 
-### <a id="library-1"></a>Library
-
-#### <a id="get-default-lib"></a>Get Default Library ###
+### <a id="get-default-lib"></a>Get Default Library ###
 
 **GET** https://cloud.seafile.com/api2/default-repo/
 
@@ -1076,7 +1310,7 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
         "exists": true
     }
 
-#### <a id="create-default-lib"></a>Create Default Library ###
+### <a id="create-default-lib"></a>Create Default Library ###
 
 **POST** https://cloud.seafile.com/api2/default-repo/
 
@@ -1091,7 +1325,7 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
         "exists": true
     }
 
-#### <a id="list-libraries"></a>List Libraries ###
+### <a id="list-libraries"></a>List Libraries ###
 
 **GET** https://cloud.seafile.com/api2/repos/
 
@@ -1130,7 +1364,7 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
     }
     ]
 
-#### <a id="get-library-info"></a>Get Library Info ###
+### <a id="get-library-info"></a>Get Library Info ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/
 
@@ -1157,7 +1391,7 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
     "type": "repo"
     }
 
-#### <a id="get-library-owner"></a>Get Library Owner ###
+### <a id="get-library-owner"></a>Get Library Owner ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/owner/
 
@@ -1177,9 +1411,9 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
 
 **Errors**
 
-* 403 Permission error, only administrator can perform this action
+* 403 Permission error(only administrator/repo-owner can perform this action).
 
-#### <a id="get-library-history"></a>Get Library History ###
+### <a id="get-library-history"></a>Get Library History ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/history/
 
@@ -1195,7 +1429,58 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
 
     {"commits": [{"rev_file_size": 0, "rev_file_id": null, "ctime": 1398045167, "creator_name": "imwhatiam123@gmail.com", "creator": "0000000000000000000000000000000000000000", "root_id": "ca2625da6be6e211ddd584615ef3bfaa531e66aa", "rev_renamed_old_path": null, "parent_id": "205c469f0830df09b13024601524058757a43128", "new_merge": false, "repo_id": "691b3e24-d05e-43cd-a9f2-6f32bd6b800e", "desc": "Modified \"api.md\"", "id": "eb62721812e0c3122889b5facde971b353ad176b", "conflict": false, "second_parent_id": null}, {"rev_file_size": 0, "rev_file_id": null, "ctime": 1398045158, "creator_name": "imwhatiam123@gmail.com", "creator": "0000000000000000000000000000000000000000", "root_id": "0b7a31adf4ea8b29ad5a5920420b548da11dd32f", "rev_renamed_old_path": null, "parent_id": "2ba85ee6072efea51a3483843ea7de9b6d1d1eb2", "new_merge": false, "repo_id": "691b3e24-d05e-43cd-a9f2-6f32bd6b800e", "desc": "Added \"api.md\"", "id": "205c469f0830df09b13024601524058757a43128", "conflict": false, "second_parent_id": null}], "page_next": false}
 
-#### <a id="create-library"></a>Create Library ###
+### <a id="get-library-history-limit-days"></a>Get Library History Limit Days ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/history-limit/
+
+**Request parameters**
+
+* repo-id
+
+**Sample request**
+
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d9b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/history-limit/
+
+**Sample response**
+
+    {
+    "keep_days": -1,
+    }
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+* 500 Internal Server Error
+
+### <a id="set-library-history-limit-days"></a>Set Library History Limit Days ###
+
+**PUT** https://cloud.seafile.com/api2/repos/{repo-id}/history-limit/
+
+**Request parameters**
+
+* repo-id
+* keep_days. -1 for keep full history; 0 for do not keep history; positive number for keep a period of limit days.
+
+**Sample request**
+
+    curl -v -X PUT -d "keep_days=4" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/history-limit/
+
+**Sample response**
+
+    {
+    "keep_days": 4,
+    }
+
+**Errors**
+
+* 400 keep_days invalid.
+* 403 Permission denied.
+* 404 Library not found.
+* 500 Internal Server Error
+* 520 Failed to set library history limit.
+
+### <a id="create-library"></a>Create Library ###
 
 **POST** https://cloud.seafile.com/api2/repos/
 
@@ -1235,7 +1520,7 @@ If share_type is 'personal' then 'user' param is required, if share_type is 'gro
 * 400 Library name missing.
 * 520 Operation failed.
 
-#### <a id="check/create-sub-library"></a>Check/Create Sub Library ###
+### <a id="check/create-sub-library"></a>Check/Create Sub Library ###
 
 check if a dir has a corresponding sub_repo, if it does not have, create one
 
@@ -1260,7 +1545,7 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 * 400 Argument missing
 * 500 INTERNAL SERVER ERROR
 
-#### <a id="delete-library"></a>Delete Library ###
+### <a id="delete-library"></a>Delete Library ###
 
 **DELETE** https://cloud.seafile.com/api2/repos/{repo-id}/
 
@@ -1278,7 +1563,7 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 
 * 403 Only library owner can perform this operation.
 
-#### <a id="rename-library"></a>Rename Library ###
+### <a id="rename-library"></a>Rename Library ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/?op=rename
 
@@ -1293,12 +1578,36 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 **Errors**
 
 * 404 Library not found.
-
 * 403 You do not have permission to rename this library.
-
 * 500 Unable to rename library
 
-#### <a id="decrypt-library"></a>Decrypt Library ###
+### <a id="transfer-library"></a>Transfer Library ###
+
+**PUT** https://cloud.seafile.com/api2/repos/{repo-id}/owner/
+
+**Request parameters**
+
+* repo-id
+* owner
+
+**Sample request**
+
+    curl -v -X PUT -d "owner=new@owner.com" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d9b477fd' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/owner/
+
+**Sample response**
+
+    {
+    "success": True
+    }
+
+**Errors**
+
+* 440 Email invalid.
+* 403 Permission error(only administrator/repo-owner can perform this action).
+* 404 Library not found.
+* 404 User not found.
+
+### <a id="decrypt-library"></a>Decrypt Library ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/
 
@@ -1320,8 +1629,7 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 * 409 Repo is not encrypt
 * 500 Internal server error
 
-
-#### <a id="create-public-lib"></a>Create Public Library ###
+### <a id="create-public-lib"></a>Create Public Library ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/public/
 
@@ -1349,7 +1657,7 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 * 403 Forbid to access this repo
 * 500 INTERNAL SERVER ERROR, Unable to make repo public
 
-#### <a id="remove-public-lib"></a>Remove Public Library ###
+### <a id="remove-public-lib"></a>Remove Public Library ###
 
 **DELETE** https://cloud.seafile.com/api2/repos/{repo-id}/public/
 
@@ -1377,7 +1685,7 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 * 403 Forbid to access this repo
 * 500 INTERNAL SERVER ERROR, Unable to remove public repo
 
-#### <a id="fetch-library-download-info"></a>Fetch library download info ###
+### <a id="fetch-library-download-info"></a>Fetch library download info ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/download-info/
 
@@ -1403,7 +1711,7 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
     "email": "user@example.com"
     }
 
-#### <a id="list-virtual-libraries"></a>List Virtual Libraries ###
+### <a id="list-virtual-libraries"></a>List Virtual Libraries ###
 
 **GET** https://cloud.seafile.com/api2/virtual-repos/
 
@@ -1420,7 +1728,7 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
         ]
     }
 
-#### <a id="search-libraries"></a>Search Libraries ###
+### <a id="search-libraries"></a>Search Libraries ###
 
 **GET** https://cloud.seafile.com/api2/search/
 
@@ -1471,9 +1779,139 @@ check if a dir has a corresponding sub_repo, if it does not have, create one
 * 404 Search not supported.
 * 400 Missing argument q.
 
-### <a id="file"></a>File ##
+### <a id="get-library-download-links"></a>Get Library Download Links ###
 
-#### <a id="view-file-through-owa"></a>View File Through Owa ###
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/download-shared-links/
+
+**Request parameters**
+
+* repo-id
+
+**Sample request**
+
+    curl -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/download-shared-links/
+
+**Sample response**
+
+    [
+        {
+            "view_count": 0,
+            "name": "/",
+            "share_type": "d",
+            "creator_name": "lian",
+            "create_by": "lian@lian.com",
+            "token": "105f108fb6",
+            "create_time": "2016-01-18T15:03:10+0800",
+            "path": "/",
+            "size": ""
+        },
+        {
+            "view_count": 3,
+            "name": "1.md",
+            "share_type": "f",
+            "creator_name": "lian",
+            "create_by": "lian@lian.com",
+            "token": "a626012c1b",
+            "create_time": "2016-01-19T11:27:43+0800",
+            "path": "/1.md",
+            "size": "4"
+        }
+    ]
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+
+#### <a id="get-library-upload-links"></a>Get Library Upload Links ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/upload-shared-links/
+
+**Request parameters**
+
+* repo-id
+
+**Sample request**
+
+    curl -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/upload-shared-links/
+
+**Sample response**
+
+    [
+        {
+            "view_count": 3,
+            "name": "/",
+            "creator_name": "lian",
+            "create_by": "lian@lian.com",
+            "token": "43340efca5",
+            "create_time": "2016-01-18T15:03:12+0800",
+            "path": "/"
+        },
+        {
+            "view_count": 8,
+            "name": "a&b",
+            "creator_name": "lian",
+            "create_by": "lian@lian.com",
+            "token": "f1e49d445a",
+            "create_time": "2016-01-18T15:03:18+0800",
+            "path": "/a&b/"
+        }
+    ]
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+
+#### <a id="delete-library-download-link"></a>Delete Library Download Link ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/download-shared-links/{token}/
+
+**Request parameters**
+
+* repo-id
+* token
+
+**Sample request**
+
+    curl -X DELETE -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/download-shared-links/105f108fb6/
+
+**Sample response**
+
+    {"success": true}
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+* 404 Link not found.
+
+#### <a id="delete-library-upload-link"></a>Delete Library Upload Link ###
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/upload-shared-links/{token}/
+
+**Request parameters**
+
+* repo-id
+* token
+
+**Sample request**
+
+    curl -X DELETE -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/upload-shared-links/f1e49d445a/
+
+**Sample response**
+
+    {"success": true}
+
+**Errors**
+
+* 403 Permission denied.
+* 404 Library not found.
+* 404 Link not found.
+
+## <a id="file"></a>File ##
+
+### <a id="view-file-through-owa"></a>View File Through Owa ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/owa-file/?path=/foo.docx
 
@@ -1512,8 +1950,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 404 File/Library not found.
 * 500 Internal Server Error
 
-
-#### <a id="download-file"></a>Download File  ###
+### <a id="download-file"></a>Download File  ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo
 
@@ -1537,7 +1974,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 404 File not found
 * 520 Operation failed.
 
-#### <a id="get-file-detail"></a>Get File Detail ###
+### <a id="get-file-detail"></a>Get File Detail ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/detail/?p=/foo.c
 
@@ -1563,7 +2000,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 400 Path is missing
 * 520 Operation failed.
 
-#### <a id="get-file-history"></a>Get File History ###
+### <a id="get-file-history"></a>Get File History ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/history/?p=/foo.c
 
@@ -1623,7 +2060,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 400 Path is missing
 * 404 File not found
 
-#### <a id="download-file-revision"></a>Download File From a Revision ###
+### <a id="download-file-revision"></a>Download File From a Revision ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/revision/?p=/foo.c&commit_id=a1ec20709675f4dc8db825cdbca296be245d189b
 
@@ -1646,7 +2083,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 400 Path is missing
 * 404 Revision not found
 
-#### <a id="create-file"></a>Create File  ###
+### <a id="create-file"></a>Create File  ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo.c
 
@@ -1676,7 +2113,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 403 FORBIDDEN, You do not have permission to move file
 * 520 OPERATION FAILED, fail to create file
 
-#### <a id="rename-file"></a>Rename File  ###
+### <a id="rename-file"></a>Rename File  ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo.c
 
@@ -1710,7 +2147,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 409 CONFLICT, the newname is the same to the old
 * 520 OPERATION FAILED, fail to rename file
 
-#### <a id="lock-file"></a>Lock File  ###
+### <a id="lock-file"></a>Lock File  ###
 
 **PUT** https://cloud.seafile.com/api2/repos/{repo-id}/file/
 
@@ -1742,7 +2179,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 404 NOT FOUND, repo not found
 * 520 OPERATION FAILED, fail to lock file
 
-#### <a id="unlock-file"></a>Unlock File  ###
+### <a id="unlock-file"></a>Unlock File  ###
 
 **PUT** https://cloud.seafile.com/api2/repos/{repo-id}/file/
 
@@ -1774,7 +2211,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 404 NOT FOUND, repo not found
 * 520 OPERATION FAILED, fail to unlock file
 
-#### <a id="move-file"></a>Move File  ###
+### <a id="move-file"></a>Move File  ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo.c
 
@@ -1808,7 +2245,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 404 NOT FOUND, repo not found
 * 500 INTERNAL SERVER ERROR
 
-#### <a id="copy-file"></a>Copy File ###
+### <a id="copy-file"></a>Copy File ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo.c
 
@@ -1841,7 +2278,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 403 FORBIDDEN, You do not have permission to copy file
 * 500 INTERNAL SERVER ERROR
 
-#### <a id="revert-file"></a>Revert File ###
+### <a id="revert-file"></a>Revert File ###
 
 **PUT** https://cloud.seafile.com/api2/repos/{repo_id}/file/revert/
 
@@ -1871,7 +2308,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 
 * 400 Path is missing
 
-#### <a id="delete-file"></a>Delete File ###
+### <a id="delete-file"></a>Delete File ###
 
 **DELETE** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo
 
@@ -1900,9 +2337,9 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 
    This can also be used to delete directory.
 
-#### <a id="upload-file"></a>Upload File ###
+### <a id="upload-file"></a>Upload File ###
 
-##### <a id="get-upload-link"></a>Get Upload Link
+#### <a id="get-upload-link"></a>Get Upload Link
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/upload-link/?p=/upload-dir
 
@@ -1924,7 +2361,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
     403 Permission denied.
     500 Run out of quota
 
-##### <a id="upload-file-1"></a>Upload File
+#### <a id="upload-file-1"></a>Upload File
 
 After getting the upload link, POST to this link for uploading files.
 
@@ -1946,13 +2383,13 @@ After getting the upload link, POST to this link for uploading files.
 
 **Note**
 
-- New uploaded file's name will be 'test(1).text' if a file with name 'test.txt' already exists in parent directory
+- New uploaded file name will be 'test(1).text' if a file with name 'test.txt' already exists in parent directory
 
 - For python client uploading, see <https://github.com/haiwen/webapi-examples/blob/master/python/upload-file.py>, or it can be done much more easily with elegant [python requests library](http://docs.python-requests.org/en/latest/), see <https://github.com/haiwen/webapi-examples/blob/master/python/upload-file2.py>
 
-#### <a id="update-file"></a>Update file ###
+### <a id="update-file"></a>Update file ###
 
-##### <a id="get-update-link"></a>Get Update Link
+#### <a id="get-update-link"></a>Get Update Link
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/update-link/?p=/update-dir
 
@@ -1974,7 +2411,7 @@ After getting the upload link, POST to this link for uploading files.
     403 Permission denied.
     500 Run out of quota
 
-##### <a id="update-file-1"></a>Update File
+#### <a id="update-file-1"></a>Update File
 
 After getting the update link, POST to this link for updating files.
 
@@ -2002,7 +2439,7 @@ The id of the updated file
 - 440 Invalid filename
 - 500 Internal server error
 
-#### <a id="get-upload-blks-link"></a>Get Upload Blocks Link
+### <a id="get-upload-blks-link"></a>Get Upload Blocks Link
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/upload-blks-link/
 
@@ -2023,7 +2460,7 @@ The id of the updated file
 - 403 Can not access repo
 - 520 above quota
 
-#### <a id="get-update-blks-link"></a>Get Update Blocks Link
+### <a id="get-update-blks-link"></a>Get Update Blocks Link
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/update-blks-link/
 
@@ -2044,9 +2481,9 @@ The id of the updated file
 - 403 Can not access repo
 - 520 above quota
 
-### <a id="directory">Directory ##
+## <a id="directory">Directory ##
 
-#### <a id="list-directory-entries"></a>List Directory Entries ###
+### <a id="list-directory-entries"></a>List Directory Entries ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
 
@@ -2084,7 +2521,7 @@ The id of the updated file
 * 440 Repo is encrypted, and password is not provided.
 * 520 Operation failed..
 
-#### <a id="create-new-directory"></a>Create New Directory ###
+### <a id="create-new-directory"></a>Create New Directory ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
 
@@ -2118,7 +2555,7 @@ The id of the updated file
 
    Newly created directory will be renamed if the name is duplicated.
 
-#### <a id="rename-directory"></a>Rename Directory ###
+### <a id="rename-directory"></a>Rename Directory ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/dir/?p=/foo
 
@@ -2147,7 +2584,7 @@ The id of the updated file
 
    If the new name is the same of the old name no operation will be done.
 
-#### <a id="delete-directory"></a>Delete Directory ###
+### <a id="delete-directory"></a>Delete Directory ###
 
 **DELETE** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
 
@@ -2178,7 +2615,7 @@ The id of the updated file
 
    This can also be used to delete file.
 
-#### <a id="Download-directory"></a>Download Directory ###
+### <a id="Download-directory"></a>Download Directory ###
 
 **GET** https://cloud.seafile.com/api2/repos/{repo-id}/dir/download/?p=/foo
 
@@ -2199,7 +2636,7 @@ The id of the updated file
 * 404 Repo(path) not found(exist)
 * 520 Operation failed.
 
-#### <a id="share-directory"></a>Share Directory ###
+### <a id="share-directory"></a>Share Directory ###
 
 **PUT** https://cloud.seafile.com/api2/repos/{repo-id}/dir/shared_items/?p={path}
 
@@ -2233,9 +2670,9 @@ The id of the updated file
 * 404 Library/Folder/Group not found.
 * 500 Failed to get sub repo.
 
-### <a id="multiple-files-directories">Multiple Files / Directories ##
+## <a id="multiple-files-directories">Multiple Files / Directories ##
 
-#### <a id="multiple-files-directories-copy"></a>Copy ###
+### <a id="multiple-files-directories-copy"></a>Copy ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/copy/
 
@@ -2261,7 +2698,7 @@ The id of the updated file
 * 404 repo not found
 * 502 failed to copy file
 
-#### <a id="multiple-files-directories-move"></a>Move ###
+### <a id="multiple-files-directories-move"></a>Move ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/move/
 
@@ -2287,7 +2724,7 @@ The id of the updated file
 * 404 repo not found
 * 502 failed to move file
 
-#### <a id="multiple-files-directories-delete"></a>Delete ###
+### <a id="multiple-files-directories-delete"></a>Delete ###
 
 **POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/delete/
 
@@ -2324,7 +2761,7 @@ The id of the updated file
 
 **Sample request**
 
-    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/avatars/user/user@example.com/resized/80/
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/avatars/user/user@example.com/resized/80/"
 
 **Sample response**
 
@@ -2345,7 +2782,7 @@ The id of the updated file
 
 **Sample request**
 
-    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/avatars/group/1/resized/80/
+    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/avatars/group/1/resized/80/"
 
 **Sample response**
 
@@ -2355,7 +2792,85 @@ The id of the updated file
         "mtime": 0
     }
 
-### <a id="get-file-activities"></a>Get File Activities ###
+## <a id="devices"></a>Devices ##
+
+### <a id="get-user-devices"></a>Get User Devices ##
+
+**GET** https://cloud.seafile.com/api2/devices/
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/devices/
+
+**Sample response**
+
+```
+[
+    {
+        "synced_repos": [
+            {
+                "repo_id": "47945b31-dedb-4b92-a048-32bf825595ce",
+                "sync_time": 1458008928,
+                "repo_name": "wopi"
+            },
+            {
+                "repo_id": "78c620ee-2989-4427-8eff-7748f4fbebc0",
+                "sync_time": 1457943466,
+                "repo_name": "lib-of-lian"
+            }
+        ],
+        "last_accessed": "2016-03-15T10:28:48+08:00",
+        "device_name": "lian",
+        "platform_version": "",
+        "platform": "linux",
+        "user": "lian@lian.com",
+        "key": "99abe1a7cc7d614db0bfa19db81e42ef675abe4f",
+        "client_version": "5.0.0",
+        "last_login_ip": "192.168.1.16",
+        "device_id": "be10980211752515053bf9036a13139375de0cc8"
+    },
+    {
+        "last_accessed": "2016-03-15T13:59:51+08:00",
+        "device_name": "PLK-AL10",
+        "platform_version": "5.0.2",
+        "platform": "android",
+        "user": "lian@lian.com",
+        "key": "067051c94163ed193f2131d48c61882daa7cb238",
+        "client_version": "2.0.3",
+        "last_login_ip": "192.168.1.208",
+        "device_id": "4a0d62c1f27b3b74"
+    }
+]
+```
+
+**Errors**
+
+* 401 UNAUTHORIZED
+
+### <a id="unlink-user-device"></a>Unlink User Device ##
+
+**DELETE** https://cloud.seafile.com/api2/devices/
+
+**Request parameters**
+
+* platform
+* device_id
+
+**Sample request**
+
+    curl -X DELETE -d "platform=linux&device_id=be10980211752515053bf9036a13139375de0cc8" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/devices/
+
+**Sample response**
+
+    {"success": true}
+
+**Errors**
+
+* 400 platform invalid
+* 400 device_id invalid
+* 500 Internal Server Error
+
+## <a id="get-file-activities"></a>Get File Activities ###
 
 **GET** https://cloud.seafile.com/api2/events/
 
@@ -2382,7 +2897,7 @@ this api will only return first 15 records of activities. if want get more, pass
 
      {"more_offset": 30, "events":[{"repo_id": "6f3d28a4-73ae-4d01-a727-26774379dcb9", "author": "mysnowls@163.com", "nick": "lins05", "time": 1398078909, "etype": "repo-update", "repo_name": "Downloads", "desc": "Added \"seafile-cli_3.0.2_i386.tar.gz\"."},{"repo_id": "6f3d28a4-73ae-4d01-a727-26774379dcb9", "author": "mysnowls@163.com", "nick": "lins05", "time": 1398075540, "etype": "repo-update", "repo_name": "Downloads", "desc": "Added \"seafile-server_3.0.0_x86-64.tar.gz\"."}], "more": false}
 
-### <a id="get-thumbnail-image"></a>Get Thumbnail Image ##
+## <a id="get-thumbnail-image"></a>Get Thumbnail Image ##
 
 **GET** https://cloud.seafile.com/api2/repos/{repo_id}/thumbnail/
 
@@ -2418,3 +2933,470 @@ This API is only used internally to create an organization account in seacloud.c
 **Sample response**
 
     "success"
+
+
+Note: The following APIs are only available since Seafile v5.1.
+
+# <a id="admin-only"></a>Admin Only ##
+
+## <a id="admin-only-account"></a>Account ##
+
+### <a id="admin-only-list-accounts"></a>List Accounts ###
+
+**GET** https://cloud.seafile.com/api2/accounts/
+
+**Request parameters**
+
+* start (default to 0)
+* limit (default to 100)
+* scope (default None, accepted values: 'LDAP' or 'DB')
+
+To retrieve all users, just set both `start` and `limit` to `-1`.
+
+If scope parameter is passed then accounts will be searched inside the specific scope, otherwise it will be used the old approach: first LDAP and, if no account is found, DB.
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/
+
+**Sample response**
+
+    [
+    {
+        "email": "foo@foo.com"
+    },
+    {
+        "email": "bar@bar.com"
+    }
+    ]
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+
+### <a id="admin-only-get-account"></a>Get Account Info ###
+
+**GET** https://cloud.seafile.com/api2/accounts/{email}/
+
+**Request parameters**
+
+**Sample request**
+
+    curl -v -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/user@mail.com/
+
+**Sample response**
+
+    {
+    "is_staff": false,
+    "is_active": true,
+    "id": 2,
+    "create_time": 1356061187741686,
+    "usage": 651463187,
+    "total": 107374182400,
+    "email": "user@mail.com"
+    }
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+
+### <a id="admin-only-create-account"></a>Create Account ###
+
+**PUT** https://cloud.seafile.com/api2/accounts/{email}/
+
+**Request parameters**
+
+* password
+* is_staff (defaults to False)
+* is_active (defaults to True)
+
+**Sample request**
+
+    curl -v -X PUT -d "password=123456" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/newaccount@gmail.com/
+
+**Sample response**
+
+    ...
+    < HTTP/1.0 201 CREATED
+    < Location: https://cloud.seafile.com/api2/accounts/newaccount@gmail.com/
+    ...
+
+    "success"
+
+**Success**
+
+    Response code 201(Created) is returned and the Location header provides shared link.
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+
+### <a id="admin-only-update-account"></a>Update Account ###
+
+**PUT** https://cloud.seafile.com/api2/accounts/{email}/
+
+**Request parameters**
+
+At least one of followings:
+
+* password
+* is_staff
+* is_active
+* name
+* note
+* storage
+
+**Sample request**
+
+    curl -v -X PUT -d "password=654321&is_staff=true&storage=1073741824" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/user@mail.com/
+
+**Sample response**
+
+    ...
+    < HTTP/1.0 200 OK
+    ...
+
+    "success"
+
+**Success**
+
+    Response code 200(OK) is returned.
+
+**Errors**
+
+* 400 Bad Request, keyword password is required
+* 403 Permission error, only administrator can perform this action
+
+### <a id="admin-only-migrate-account"></a>Migrate Account ###
+
+**POST** https://cloud.seafile.com/api2/accounts/{email}/
+
+**Request parameters**
+
+* op
+* to_user this user must exist
+
+**Sample request**
+
+    curl -v -d "op=migrate&to_user=user2@mail.com" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/user@mail.com/
+
+**Sample response**
+
+    ...
+    < HTTP/1.0 200 OK
+    ...
+
+    "success"
+
+**Success**
+
+    Response code 200(OK) is returned.
+
+**Errors**
+
+* 400 Bad Request, arguments are missing or invalid
+* 403 Permission error, only administrator can perform this action
+
+### <a id="admin-only-delete-account"></a>Delete Account ###
+
+**DELETE** https://cloud.seafile.com/api2/accounts/{email}/
+
+
+**Sample request**
+
+    curl -v -X DELETE -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/accounts/newaccount@gmail.com/
+
+**Sample response**
+
+    "success"
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+
+## <a id="admin-only-devices"></a>Devices ##
+
+### <a id="admin-only-get-desktop-devices"></a>Get Desktop Devices ##
+
+Get first page (50 records per page) of desktop devices.
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/devices/?platform=desktop&page=1&per_page=50
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/devices/?platform=desktop&page=1&per_page=50
+
+**Sample response**
+
+```
+[
+    {'has_next_page': False},
+    [
+        {
+            'last_accessed': '2016-04-11T18:24:29+08:00',
+            'last_login_ip': u'192.168.1.210',
+            'platform': u'linux',
+            'user': u'1@1.com',
+            'client_version': u'2.0.4',
+            'device_name': u'PLK-AL10',
+            'device_id': u'4a0d62c1f27b3b74'
+        }
+    ]
+]
+```
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+
+### <a id="admin-only-get-mobile-devices"></a>Get Mobile Devices ##
+
+Get first page (50 records per page) of mobile devices.
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/devices/?platform=mobile&page=1&per_page=50
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/devices/?platform=mobile&page=1&per_page=50
+
+**Sample response**
+
+```
+[
+    {'has_next_page': False},
+    [
+        {
+            'last_accessed': '2016-04-11T18:24:29+08:00',
+            'last_login_ip': u'192.168.1.210',
+            'platform': u'ios',
+            'user': u'1@1.com',
+            'client_version': u'2.0.4',
+            'device_name': u'PLK-AL10',
+            'device_id': u'4a0d62c1f27b3b74'
+        }
+    ]
+]
+```
+
+**Errors**
+
+* 403 Permission error, only administrator can perform this action
+
+### <a id="admin-only-unlink-user-device"></a>Unlink User Device ##
+
+**DELETE** https://cloud.seafile.com/api/v2.1/admin/devices/
+
+**Request parameters**
+
+* platform
+* device_id
+* user
+
+**Sample request**
+
+    curl -X DELETE -d "platform=linux&device_id=be10980211752515053bf9036a13139375de0cc8&user=1@1.com" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/devices/
+
+**Sample response**
+
+    {"success": true}
+
+**Errors**
+
+* 400 platform invalid
+* 400 device_id invalid
+* 400 user invalid
+* 500 Internal Server Error
+
+### <a id="admin-only-get-device-errors"></a>Get Device Errors ##
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/device-errors/
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/device-errors/
+
+**Sample response**
+
+```
+[
+    {
+        'repo_id': u'47945b31-dedb-4b92-a048-32bf825595ce',
+        'device_ip': u'192.168.1.124',
+        'error_time': '2016-04-13T17:49:11+08:00',
+        'device_name': u'lian-ubuntu-1404-64',
+        'email': u'1@1.com',
+        'client_version': u'5.0.6',
+        'error_msg': u'No permission.',
+        'repo_name': u'wopi'
+    }
+]
+```
+
+**Errors**
+
+* 403 Permission denied.
+* 500 Internal Server Error
+
+**NOTE** This api only supported in pro edition.
+
+## <a id="admin-only-log"></a>Admin Log ##
+
+### <a id="admin-only-get-login-log"></a>Get Login Log ##
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/logs/login/?start=2016-03-20&end=2016-03-31
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/logs/login/?start=2016-03-20&end=2016-03-31
+
+**Sample response**
+
+```
+[
+    {
+        'email': u'lian@lian.com',
+        'login_ip': u'192.168.1.124',
+        'name': u'lian',
+        'login_time': '2016-03-31T14:42:23+08:00'
+    },
+    {
+        'email': u'org@org.com',
+        'login_ip': u'192.168.1.124',
+        'name': u'org',
+        'login_time': '2016-03-31T14:39:08+08:00'
+    }
+]
+```
+
+**Errors**
+
+* 400 start or end date invalid.
+* 403 Feature disabled.
+
+**NOTE** This api only supported in pro edition.
+
+### <a id="admin-only-get-file-audit-log"></a>Get File Audit Log ##
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/logs/file-audit/?start=2016-03-20&end=2016-03-31
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/logs/file-audit/?start=2016-03-20&end=2016-03-31
+
+**Sample response**
+
+```
+[
+    {
+        'repo_id': u'4929d0df-8c6c-43cb-8edf-40a8489689fb',
+        'time': '2016-03-31T05:46:03+08:00',
+        'etype': u'file-download-web',
+        'ip': u'192.168.1.124',
+        'user_name': u'org',
+        'file_path': u'/earth.jpg',
+        'user_email': u'org@org.com',
+        'repo_name': ''
+    },
+    {
+        'repo_id': u'513cd72c-c54a-463e-a18f-841efe91bd61',
+        'time': '2016-03-31T06:25:22+08:00',
+        'etype': u'file-download-web',
+        'ip': u'192.168.1.124',
+        'user_name': u'org',
+        'file_path': u'/kj.md',
+        'user_email': u'org@org.com',
+        'repo_name': u'new-lib-of-org-1'
+    }
+]
+```
+
+**Errors**
+
+* 400 start or end date invalid.
+* 403 Feature disabled.
+
+**NOTE** This api only supported in pro edition.
+
+### <a id="admin-only-get-file-update-log"></a>Get File Update Log ##
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/logs/file-update/?start=2016-03-20&end=2016-03-31
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/logs/file-update/?start=2016-03-20&end=2016-03-31
+
+**Sample response**
+
+```
+[
+    {
+        'commit_id': u'55ec5350b16d6c72a044b5a9cd9b2d62ad439364',
+        'file_operation': u'Added "user.csv".',
+        'repo_id': u'513cd72c-c54a-463e-a18f-841efe91bd61',
+        'repo_name': u'new-lib-of-org-1',
+        'time': '2016-03-31T06:25:15+08:00',
+        'user_email': u'org@org.com',
+        'user_name': u'org'
+    },
+    {
+        'commit_id': u'6820d809481e3c9fb856d0650ac73a09b570a301',
+        'file_operation': u'Added "kj.md"',
+        'repo_id': u'513cd72c-c54a-463e-a18f-841efe91bd61',
+        'repo_name': u'new-lib-of-org-1',
+        'time': '2016-03-31T06:25:21+08:00',
+        'user_email': u'org@org.com',
+        'user_name': u'org'
+    }
+]
+```
+
+**Errors**
+
+* 400 start or end date invalid.
+* 403 Feature disabled.
+
+**NOTE** This api only supported in pro edition.
+
+### <a id="admin-only-get-perm-audit-log"></a>Get Permission Audit Log ##
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/logs/perm-audit/?start=2016-03-20&end=2016-03-31
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/logs/perm-audit/?start=2016-03-20&end=2016-03-31
+
+**Sample response**
+
+```
+[
+    {
+        'etype': u'add-repo-perm',
+        'file_path': u'/<img onerror=alert(1) src=a>_"_\u2126_%2F_W_#_12_\u8fd9',
+        'from_email': u'org3@org3.com',
+        'from_name': u'org3',
+        'permission': u'rw',
+        'repo_id': u'a84544e5-0b84-459d-b1e6-0399dabc76a0',
+        'repo_name': '',
+        'time': '2016-03-31T06:21:50+08:00',
+        'to': u'org@org.com'
+    },
+    {
+        'etype': u'add-repo-perm',
+        'file_path': u'/<img onerror=alert(1) src=a>_"_\u2126_%2F_W_#_12_\u8fd9',
+        'from_email': u'org3@org3.com',
+        'from_name': u'org3',
+        'permission': u'rw',
+        'repo_id': u'a84544e5-0b84-459d-b1e6-0399dabc76a0',
+        'repo_name': '',
+        'time': '2016-03-31T06:21:53+08:00',
+        'to': u'777'
+    }
+]
+```
+
+**Errors**
+
+* 400 start or end date invalid.
+* 403 Feature disabled.
+
+**NOTE** This api only supported in pro edition.

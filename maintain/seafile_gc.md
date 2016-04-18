@@ -87,7 +87,22 @@ seaf-gc.sh -r
 
 **In Seafile version 4.1.1 and later, libraries deleted by the users are not immediately removed from the system. Instead, they're moved into a "trash" in the system admin page. Before they're cleared from the trash, their blocks won't be garbage collected.**
 
-## Run GC in version 3.1.2 and later
+### Using Multiple Threads in GC
+
+Since Pro server 5.1.0, you can specify the thread number in GC. By default,
+
+- If storage backend is S3/Swift/Ceph, 10 threads are started to do the GC work.
+- If storage backend is file system, only 1 thread is started.
+
+You can specify the thread number in with "-t" option. "-t" option can be used together with all other options. Each thread will do GC on one library. For example, the following command will use 20 threads to GC all libraries:
+
+```
+seaf-gc.sh -t 20
+```
+
+Since the threads are concurrent, the output of each thread may mix with each others. Library ID is printed in each line of output.
+
+## Run GC in older versions (before 4.1.1)
 
 To run GC program
 

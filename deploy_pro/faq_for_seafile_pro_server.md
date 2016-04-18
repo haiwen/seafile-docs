@@ -1,13 +1,13 @@
 # FAQ
 ## <a id="wiki-search-faq"></a>FAQ about Search ##
 
-- However I tried, files in an encrypted library aren't listed in the search results 
+- Q: However I tried, files in an encrypted library aren't listed in the search results
 
-  This is because the server can't index encrypted files, since, they are encrypted.
+  A: This is because the server can't index encrypted files, since, they are encrypted.
 
-- I switched to Professional Server from Community Server, but whatever I search, I get no results
+- Q: I switched to Professional Server from Community Server, but whatever I search, I get no results
 
-  The search index is updated every 10 minutes by default. So before the first index update is performed, you get nothing no matter what you search.
+  A: The search index is updated every 10 minutes by default. So before the first index update is performed, you get nothing no matter what you search.
 
   To be able to search immediately,
 
@@ -20,9 +20,9 @@
 
   If you have lots of files, this process may take quite a while.
 
-- I want to enable full text search for office/pdf documents, so I set `index_office_pdf` to `true` in the configuration file, but it doesn't work.
+- Q: I want to enable full text search for office/pdf documents, so I set `index_office_pdf` to `true` in the configuration file, but it doesn't work.
 
-  In this case, you need to:
+  A: In this case, you need to:
   1. Edit the value of `index_office_pdf` option in `seafevents.conf` to `true`
   2. Restart seafile server
   ```
@@ -38,3 +38,21 @@
   ./pro/pro.py search --update
   ```
 
+
+## <a id="wiki-office-preview-faq"></a>FAQ about libreoffice-based office documents preview ##
+
+- Q: The browser displays "document conversion failed", and in the logs I see messages like `[WARNING] failed to convert xxx to ...`, what should I do?
+
+  A: Sometimes the libreoffice process need to be restarted, especially if it's the first time seafile server is running on the server.
+
+  Try to kill the libreoffice process:
+  ```sh
+  pkill -f soffice.bin
+  ```
+  Now try re-opening the preview page in the brower again.
+
+  Also if you are deploying seafile in cluster mode, make sure memcached is working on each server.
+
+- Q: The above solution does not solve my problem.
+
+  A: Please check whether the user you run Seafile can correctly start the libreoffice process. There may be permission problems.

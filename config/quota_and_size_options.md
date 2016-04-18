@@ -12,6 +12,15 @@ You may set a default quota (e.g. 2GB) for all users. To do this, just add the f
 default = 2
 </pre>
 
+After Community Edition 5.0.5, you can also set the default quota in KB, MB, GB or TB. For example,
+
+```
+[quota]
+default = 200MB
+```
+
+Note that 1TB = 1000GB = 1000*1000MB and so forth.
+
 This setting applies to all users. If you want to set quota for a specific user, you may log in to seahub website as administrator, then set it in "System Admin" page.
 
 #### Default history length limit (seafile.conf)

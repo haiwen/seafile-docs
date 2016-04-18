@@ -37,3 +37,14 @@ Then restart
 After you click the document you specified in seahub_settings.py, you will see the new preview page.
 
 ![office-web-app](../images/office-web-app.png)
+
+## Trouble shooting
+
+Understanding how the web app integration work will help you debug the problem. When a user visit a file page:
+
+1. (seahub->browser) Seahub will generate a page containing an iframe and send to the browser
+2. (broswer->office web app) With the iframe, the browser will try to load the file preview page from the office web app
+3. (office web app->seahub) Office web app receives the request and send a request to Seahub to get the file content
+4. (office web app->browser) Office web app send the file preview page to the browser.
+
+Please check the Nginx log for Seahub (for step 3) and Office Web App to see which step is wrong.

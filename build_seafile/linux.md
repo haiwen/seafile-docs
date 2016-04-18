@@ -4,7 +4,7 @@
 
 The following list is what you need to install on your development machine. __You should install all of them before you build seafile__.
 
-Package names are according to Ubuntu 12.04. For other Linux distros, please find their corresponding names yourself.
+Package names are according to Ubuntu 14.04. For other Linux distros, please find their corresponding names yourself.
 
 * autoconf/automake/libtool
 * libevent-dev ( 2.0 or later )
@@ -15,19 +15,22 @@ Package names are according to Ubuntu 12.04. For other Linux distros, please fin
 * libsqlite3-dev (3.7 or later)
 * valac  (only needed if you build from git repo)
 * libjansson-dev
-* libqt4-dev
+* qtchooser
+* qtbase5-dev
+* libqt5webkit5-dev
+* qttools5-dev
+* qttools5-dev-tools
 * valac
 * cmake
-* libfuse-dev (for seafile >= 2.1)
 * python-simplejson (for seaf-cli)
 
 ```bash
-sudo apt-get install autoconf automake libtool libevent-dev libcurl4-openssl-dev libgtk2.0-dev uuid-dev intltool libsqlite3-dev valac libjansson-dev libqt4-dev cmake libfuse-dev
+sudo apt-get install autoconf automake libtool libevent-dev libcurl4-openssl-dev libgtk2.0-dev uuid-dev intltool libsqlite3-dev valac libjansson-dev cmake qtchooser qtbase5-dev libqt5webkit5-dev qttools5-dev qttools5-dev-tools
 ```
 For a fresh Fedora 20 installation, the following will install all dependencies via YUM:
 
 ```bash
-$ sudo yum install wget gcc libevent-devel openssl-devel gtk2-devel libuuid-devel sqlite-devel jansson-devel intltool cmake qt-devel fuse-devel libtool vala gcc-c++
+$ sudo yum install wget gcc libevent-devel openssl-devel gtk2-devel libuuid-devel sqlite-devel jansson-devel intltool cmake libtool vala gcc-c++ qt5-qtbase-devel qt5-qttools-devel qt5-qtwebkit-devel
 ```
 
 #### Building
@@ -41,15 +44,15 @@ Download the source tarball of the latest tag from
 - https://github.com/haiwen/seafile/tags
 - https://github.com/haiwen/seafile-client/tags
 
-For example, if the latest released seafile client is 3.0.2, then just use the **v3.0.2** tags of the four projects. You should get four tarballs:
+For example, if the latest released seafile client is 5.0.7, then just use the **v5.0.7** tags of the four projects. You should get four tarballs:
 
 - libsearpc-v3.0-latest.tar.gz
-- ccnet-3.0.2.tar.gz
-- seafile-3.0.2.tar.gz
-- seafile-client-3.0.2.tar.gz
+- ccnet-5.0.7.tar.gz
+- seafile-5.0.7.tar.gz
+- seafile-client-5.0.7.tar.gz
 
 ```sh
-export version=3.0.2
+export version=5.0.7
 alias wget='wget --content-disposition -nc'
 wget https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz
 wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz
@@ -102,7 +105,7 @@ cd ..
 ```bash
 cd seafile-${version}/
 ./autogen.sh
-./configure --prefix=$PREFIX --disable-gui
+./configure --prefix=$PREFIX --disable-fuse
 make
 sudo make install
 cd ..
@@ -112,7 +115,7 @@ cd ..
 
 ```bash
 cd seafile-client-${version}
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX .
+cmake -DUSE_QT5=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX .
 make
 sudo make install
 cd ..

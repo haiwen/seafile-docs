@@ -112,7 +112,7 @@ For other Debian based Linux
     sudo vim /etc/init.d/seafile-server
 
 The content of this script is: (You need to modify the value of **user**
-and **script\_path** accordingly)
+and **seafile\_dir** accordingly)
 
     #!/bin/sh
 
@@ -126,10 +126,10 @@ and **script\_path** accordingly)
     # Description:       starts Seafile Server
     ### END INIT INFO
 
-    # Change the value of "user" to your linux user name
+    # Change the value of "user" to linux user name who runs seafile
     user=haiwen
 
-    # Change the value of "script_path" to your path of seafile installation
+    # Change the value of "seafile_dir" to your path of seafile installation
     # usually the home directory of $user
     seafile_dir=/data/haiwen
     script_path=${seafile_dir}/seafile-server-latest
@@ -201,7 +201,7 @@ and **script\_path** accordingly)
 
 ### Done
 
-Don't forget to update the value of **script\_path** later if you update
+Don't forget to update the value of **seafile\_dir** later if you update
 your seafile server.
 
 For RHEL/CentOS
@@ -229,7 +229,7 @@ is executed by the system at bootup, so we start seafile/seahub there.
     # Change the value of "user" to your linux user name
     user=haiwen
 
-    # Change the value of "script_path" to your path of seafile installation
+    # Change the value of "seafile_dir" to your path of seafile installation
     # usually the home directory of $user
     seafile_dir=/data/haiwen
     script_path=${seafile_dir}/seafile-server-latest
@@ -241,7 +241,7 @@ is executed by the system at bootup, so we start seafile/seahub there.
 **"seahub.sh start"** in the last line above to **"seahub.sh
 start-fastcgi"**
 
--   Done. Don't forget to update the value of **script\_path** later if
+-   Done. Don't forget to update the value of **seafile\_dir** later if
     you update your seafile server.
 
 For RHEL/CentOS run as service
@@ -255,7 +255,7 @@ seafile/seahub at system boot as service.
     # Change the value of "user" to your linux user name
     user=haiwen
 
-    # Change the value of "script_path" to your path of seafile installation
+    # Change the value of "seafile_dir" to your path of seafile installation
     # usually the home directory of $user
     seafile_dir=/data/haiwen
     script_path=${seafile_dir}/seafile-server-latest

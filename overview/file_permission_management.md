@@ -4,11 +4,16 @@ Seafile manages files into libraries. Every library has an owner, who can share 
 
 ## Read-only syncing
 
-Read-only libraries can be synced to local desktop. The modifications at the client will not be synced back. In the further, we will add the ability to prevent users from modifying the files on the client.
+Read-only libraries can be synced to local desktop. The modifications at the client will not be synced back. If an user has modified some file contents, he/she can use "resync" to revert the modifications.
 
-## Cascading permission
 
-In Seafile, most permission management are done at the library level. This makes syncing very efficient without needing to check permission for every file. This is enough for most cases. But there are occasional cases where users want to set different permissions on sub-folders.
+## Cascading permission/Sub-folder permissions (Pro edition)
 
-Suppose you share a library as read-only to a group and then want specific sub-folder to be read-write by a few users. From Seafile pro edition version 4.1, you can set permissions on sub-folders for shared users and groups.
+Sharing controls whether an user/group can see an library, while sub-foler permissions is used to modify permissions on specific folders.
 
+Suppose you share a library as read-only to a group and then want specific sub-folders to be read-write by a few users. You can set permissions on sub-folders for shared users and groups.
+
+Note:
+
+* Setting sub-folder permission for an user without sharing the folder or parent folder to that user will have no effect.
+* Sharing a library read-only to an user and then sharing a sub-folder read-write to that user will lead to two shared items for that user. This will cause confusing. Use sub-folder permission instead.

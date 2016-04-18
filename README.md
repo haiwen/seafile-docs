@@ -19,7 +19,7 @@ License.
 
 ## About this manual
 
-The "source code" of this manual is hosted on GitHub https://github.com/haiwen/seafile-docs
+The "source code" of this manual is hosted on GitHub: https://github.com/haiwen/seafile-docs
 
 ## Contact information
 
@@ -29,6 +29,4 @@ The "source code" of this manual is hosted on GitHub https://github.com/haiwen/s
 ## More Documents
 
 * [Wiki containing general information of Seafile](https://seacloud.cc/group/3/wiki/)
-
-
 

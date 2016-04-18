@@ -19,6 +19,8 @@ Package names are according to Ubuntu 12.04. For other Linux distros, please fin
 * valac
 * libfuse-dev
 
+Also, python 2.7 is required since seafile server 5.1.0.
+
 The following libraries need to be compiled from source.
 
 ### libzdb
@@ -42,19 +44,19 @@ sudo make install
 
 **Seahub** is the web front end of Seafile. It's written in the [django](http://djangoproject.com) framework. Seahub requires Python 2.6(or 2.7) installed on your server, and it needs the following python libraries:
 
-* [django 1.5](https://www.djangoproject.com/download/1.5.12/tarball/)
-* [djblets](https://github.com/djblets/djblets/tarball/release-0.6.14)
-* sqlite3
-* simplejson (python-simplejson)
-* PIL (aka. python imaging library, python-image)
-* chardet
-* gunicorn
-* django-compressor==1.4
-* django-statisi18n==1.1.2
-* six
-* python-dateutil
-
-The module **argparser** is required by the <code>seafile-admin</code> script which you'll see later. If you use Python 2.7, **argparser** is distributed with python's standard library, so you don't need to install it. But if you use Python 2.6, you should install it manually.
+- Django 1.8
+- pytz
+- django-statici18n
+- djangorestframework
+- django_compressor
+- django-post_office
+- [django-constance](https://github.com/haiwen/django-constance/) (install it by `pip install https://github.com/haiwen/django-constance/archive/bde7f7c.zip`)
+- gunicorn
+- flup
+- chardet
+- python-dateutil
+- six
+- openpyxl
 
 Before continue, make sure you have all the above libraries available in your system.
 
@@ -406,4 +408,3 @@ ln -s ../../../seahub-data/avatars
 ## Problems Report
 
 If you encounter any problem when building/deploying Seafile, please leave us a message or [open an issue](https://github.com/haiwen/seafile/issues).
-
