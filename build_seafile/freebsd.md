@@ -6,8 +6,7 @@
 
 The following list is what you need to install on your development machine. __You should install all of them before you build seafile__.
 
-Package names are according to FreeBSD Ports. You might install your ports
-manually or via ``pkgng``.
+Package names are according to FreeBSD Ports. You might install your ports manually or via ``pkgng``.
 
 * devel/autoconf
 * devel/automake

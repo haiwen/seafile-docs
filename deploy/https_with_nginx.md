@@ -19,8 +19,7 @@ If your Nginx does not support SSL, you need to recompile it, the commands are a
 
 ### Modify Nginx configuration file
 
-Assume you have configured nginx as
-[Deploy-Seafile-with-nginx](deploy_with_nginx.md). To use https, you need to modify your nginx configuration file.
+Assume you have configured Nginx as [Deploy-Seafile-with-nginx](deploy_with_nginx.md). To use https, you need to modify your Nginx configuration file.
 ```nginx
     server {
         listen       80;

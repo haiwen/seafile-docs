@@ -107,7 +107,7 @@ or For Apache:
 Alias /media  /data/haiwen/seafile-server-latest/seahub/media
 ```
 
-This way, you no longer need to update the nginx/apache config file each time you upgrade your seafile server.
+This way, you no longer need to update the Nginx/Apache config file each time you upgrade your seafile server.
 
 
 ### 4. Restart Seafile/Seahub/Nginx/Apache
@@ -127,7 +127,7 @@ The procedure is:
 
 Minor upgrade is like an upgrade from 1.5.0 to 1.5.1.
 
-Here is our dir strutcutre
+Here is our dir structure
 
 <pre>
 haiwen
