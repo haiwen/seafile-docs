@@ -1,0 +1,1270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-20 05:34:40+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: config/README.md:1
+# header
+msgid "# Server Configuration and Customization"
+msgstr ""
+
+#: config/README.md:3
+# header
+msgid "## Config Files"
+msgstr ""
+
+#: config/README.md:5
+msgid "**Important**: Since Seafile Server 5.0.0, all config files are moved to the central **conf** folder. [Read More](../deploy/new_directory_layout_5_0_0.md)."
+msgstr ""
+
+#: config/README.md:7
+msgid "There are three config files in the community edition:"
+msgstr ""
+
+#: config/README.md:9
+# unordered list
+msgid "- [ccnet.conf](ccnet-conf.md): contains the LDAP settings"
+msgstr ""
+
+#: config/README.md:10
+# unordered list
+msgid "- [seafile.conf](seafile-conf.md): contains settings for seafile daemon and fileserver."
+msgstr ""
+
+#: config/README.md:11
+# unordered list
+msgid "- [seahub_settings.py](seahub_settings_py.md): contains settings for Seahub"
+msgstr ""
+
+#: config/README.md:13
+msgid "There is one additional config file in the pro edition:"
+msgstr ""
+
+#: config/README.md:15
+# unordered list
+msgid "- `seafevents.conf`: contains settings for search and documents preview"
+msgstr ""
+
+#: config/README.md:17
+msgid "Note: Since version 5.0.0, you can also modify most of the config items via web interface.The config items are saved in database table (seahub-dab/constance_config). They have a higher priority over the items in config files."
+msgstr ""
+
+#: config/README.md:19
+msgid "![Seafile Config via Web](../images/seafile-server-config.png)"
+msgstr ""
+
+#: config/README.md:21
+# header
+msgid "## Config Items"
+msgstr ""
+
+#: config/README.md:23
+msgid "Email:"
+msgstr ""
+
+#: config/README.md:25
+# unordered list
+msgid "* [Sending email notifications](sending_email.md)"
+msgstr ""
+
+#: config/README.md:26
+# unordered list
+msgid "* [Customize email notifications](customize_email_notifications.md)"
+msgstr ""
+
+#: config/README.md:28
+msgid "User management"
+msgstr ""
+
+#: config/README.md:30
+# unordered list
+msgid "* [User management options](user_options.md)"
+msgstr ""
+
+#: config/README.md:32
+msgid "User quota and download/upload size limits"
+msgstr ""
+
+#: config/README.md:34
+# unordered list
+msgid "* [User quota and download/upload size limits options](quota_and_size_options.md)"
+msgstr ""
+
+#: config/README.md:36
+# header
+msgid "## Customize Web"
+msgstr ""
+
+#: config/README.md:38
+# unordered list
+msgid "* [Customize web inferface](seahub_customization.md)"
+msgstr ""
+
+#: config/ccnet-conf.md:1
+# header
+msgid "# Seafile Network Configurations (ccnet.conf)"
+msgstr ""
+
+#: config/ccnet-conf.md:3
+#: config/quota_and_size_options.md:3
+#: config/seafile-conf.md:3
+msgid "**Note**: Since Seafile Server 5.0.0, all config files are moved to the central **conf** folder. [Read More](../deploy/new_directory_layout_5_0_0.md)."
+msgstr ""
+
+#: config/ccnet-conf.md:5
+msgid "You may change Seafile's network options by modifying `ccnet.conf` file. Let's walk through the options by an example."
+msgstr ""
+
+#: config/ccnet-conf.md:7
+# inline html
+msgid "<pre>\n"
+"[General]\n"
+"\n"
+"# Used internally. Don't delete.\n"
+"ID=eb812fd276432eff33bcdde7506f896eb4769da0\n"
+"\n"
+"# Used internally. Don't delete.\n"
+"NAME=example\n"
+"\n"
+"# This is outside URL for Seahub(Seafile Web). \n"
+"# The domain part (i.e., www.example.com) will be used in generating share links and download/upload file via web.\n"
+"# Note: Outside URL means \"if you use Nginx, it should be the Nginx's address\"\n"
+"SERVICE_URL=http://www.example.com:8000\n"
+"\n"
+"\n"
+"[Network]\n"
+"# Not used anymore\n"
+"PORT=10001\n"
+"\n"
+"[Client]\n"
+"# Not used anymore\n"
+"PORT=13419\n"
+"\n"
+"</pre>"
+msgstr ""
+
+#: config/ccnet-conf.md:32
+msgid "**Note**: You should restart seafile so that your changes take effect."
+msgstr ""
+
+#: config/ccnet-conf.md:34
+# inline html
+msgid "<pre>\n"
+"cd seafile-server\n"
+"./seafile.sh restart\n"
+"</pre>"
+msgstr ""
+
+#: config/ccnet-conf.md:39
+#: config/seafile-conf.md:63
+# header
+msgid "## Changing MySQL Connection Pool Size"
+msgstr ""
+
+#: config/ccnet-conf.md:41
+msgid "When you configure ccnet to use MySQL, the default connection pool size is 100, which should be enough for most use cases. You can change this value by adding following options to ccnet.conf:"
+msgstr ""
+
+#: config/ccnet-conf.md:43
+# code block
+msgid "```\n"
+"[Database]\n"
+"......\n"
+"# Use larger connection pool\n"
+"MAX_CONNECTIONS = 200\n"
+"```"
+msgstr ""
+
+#: config/customize_email_notifications.md:1
+# header
+msgid "# Customize Email Notifications"
+msgstr ""
+
+#: config/customize_email_notifications.md:3
+msgid "**Note:** Subject line may vary between different releases, this is based on Release 2.0.1. Restart Seahub so that your changes take effect."
+msgstr ""
+
+#: config/customize_email_notifications.md:5
+# header
+msgid "## User reset his/her password ##"
+msgstr ""
+
+#: config/customize_email_notifications.md:7
+#: config/customize_email_notifications.md:19
+#: config/customize_email_notifications.md:31
+#: config/customize_email_notifications.md:43
+#: config/sending_email.md:90
+#: config/sending_email.md:108
+#: config/sending_email.md:125
+#: config/sending_email.md:142
+#: config/sending_email.md:174
+msgid "**Subject**"
+msgstr ""
+
+#: config/customize_email_notifications.md:9
+msgid "seahub/seahub/auth/forms.py line:103"
+msgstr ""
+
+#: config/customize_email_notifications.md:11
+#: config/customize_email_notifications.md:23
+#: config/customize_email_notifications.md:35
+#: config/customize_email_notifications.md:47
+#: config/sending_email.md:99
+#: config/sending_email.md:117
+#: config/sending_email.md:134
+#: config/sending_email.md:163
+#: config/sending_email.md:182
+msgid "**Body**"
+msgstr ""
+
+#: config/customize_email_notifications.md:13
+msgid "seahub/seahub/templates/registration/password_reset_email.html"
+msgstr ""
+
+#: config/customize_email_notifications.md:15
+msgid "Note: You can copy password_reset_email.html to `seahub-data/custom/templates/registration/password_reset_email.html` and modify the new one. In this way, the customization will be maintained after upgrade. "
+msgstr ""
+
+#: config/customize_email_notifications.md:17
+# header
+msgid "## System admin add new member ##"
+msgstr ""
+
+#: config/customize_email_notifications.md:21
+#: config/sending_email.md:110
+msgid "seahub/seahub/views/sysadmin.py line:424"
+msgstr ""
+
+#: config/customize_email_notifications.md:25
+msgid "seahub/seahub/templates/sysadmin/user_add_email.html"
+msgstr ""
+
+#: config/customize_email_notifications.md:27
+msgid "Note: You can copy user_add_email.html to `seahub-data/custom/templates/sysadmin/user_add_email.html` and modify the new one. In this way, the customization will be maintained after upgrade. "
+msgstr ""
+
+#: config/customize_email_notifications.md:29
+# header
+msgid "## System admin reset user password ##"
+msgstr ""
+
+#: config/customize_email_notifications.md:33
+msgid "seahub/seahub/views/sysadmin.py line:368"
+msgstr ""
+
+#: config/customize_email_notifications.md:37
+msgid "seahub/seahub/templates/sysadmin/user_reset_email.html"
+msgstr ""
+
+#: config/customize_email_notifications.md:39
+msgid "Note: You can copy user_reset_email.html to `seahub-data/custom/templates/sysadmin/user_reset_email.html` and modify the new one. In this way, the customization will be maintained after upgrade. "
+msgstr ""
+
+#: config/customize_email_notifications.md:41
+# header
+msgid "## User send file/folder share link ##"
+msgstr ""
+
+#: config/customize_email_notifications.md:45
+msgid "seahub/seahub/share/views.py line:668"
+msgstr ""
+
+#: config/customize_email_notifications.md:49
+msgid "seahub/seahub/templates/shared_link_email.html"
+msgstr ""
+
+#: config/desktop_customization.md:1
+# header
+msgid "# Seafile Desktop customization"
+msgstr ""
+
+#: config/desktop_customization.md:3
+# header
+msgid "## Customize the logo and name displayed on seafile desktop clients (Seafile Professional Only)"
+msgstr ""
+
+#: config/desktop_customization.md:5
+msgid "Note: The feature is only available in seafile desktop client 4.4.0 and later."
+msgstr ""
+
+#: config/desktop_customization.md:7
+msgid "By default, the text \"Seafile\" is displayed in the top of seafile desktop client window, along side with the seafile logo. To customize them, set `DESKTOP_CUSTOM_LOGO` and `DESKTOP_CUSTOM_BRAND` in `seahub_settings.py`."
+msgstr ""
+
+#: config/desktop_customization.md:9
+msgid "![desktop-customization](../images/desktop-customization.png)"
+msgstr ""
+
+#: config/desktop_customization.md:11
+msgid "The size of the image must be `24x24`, and generally you should put it in the `custom` folder."
+msgstr ""
+
+#: config/desktop_customization.md:13
+# code block
+msgid "```python\n"
+"DESKTOP_CUSTOM_LOGO = 'custom/desktop-custom-logo.png'\n"
+"DESKTOP_CUSTOM_BRAND = 'Seafile For My Company'\n"
+"```"
+msgstr ""
+
+#: config/desktop_customization.md:18
+# header
+msgid "## Auto Install Seafile Client on All Windows PCs"
+msgstr ""
+
+#: config/desktop_customization.md:20
+msgid "You can setup a group policy object (GPO) in your Windows Domain Controller to auto install seafile client on all Windows PCs in your company network. The Seafile client is provided as an MSI installer. So you just need to following the instructioin on [Microsoft's documentation](https://support.microsoft.com/en-us/kb/816102) to auto install the client."
+msgstr ""
+
+#: config/desktop_customization.md:22
+# header
+msgid "## Preconfigure Seafile Client for All Windows PCs"
+msgstr ""
+
+#: config/desktop_customization.md:24
+msgid "Some behavior of the Seafile client can be configured via registry entries on Windows. So it's possible to control the client's behavior in a centralized way, via group policy objects (GPO)."
+msgstr ""
+
+#: config/desktop_customization.md:26
+msgid "The registry entries used to configure Seafile client are described in [this documentation](https://github.com/haiwen/seafile-user-manual/blob/master/en/faq.md). To setup GPO to set these registry entries on Windows, please refer to [Microsoft's documentation](https://technet.microsoft.com/en-us/library/cc753092.aspx)."
+msgstr ""
+
+#: config/quota_and_size_options.md:1
+# header
+msgid "# Quota and other options"
+msgstr ""
+
+#: config/quota_and_size_options.md:5
+# header
+msgid "#### Quota"
+msgstr ""
+
+#: config/quota_and_size_options.md:7
+msgid "You may set a default quota (e.g. 2GB) for all users. To do this, just add the following lines to [seafile.conf](../config/seafile-conf.md) file"
+msgstr ""
+
+#: config/quota_and_size_options.md:9
+#: config/seafile-conf.md:9
+# inline html
+msgid "<pre>\n"
+"[quota]\n"
+"# default user quota in GB, integer only\n"
+"default = 2\n"
+"</pre>"
+msgstr ""
+
+#: config/quota_and_size_options.md:15
+msgid "After Community Edition 5.0.5, you can also set the default quota in KB, MB, GB or TB. For example,"
+msgstr ""
+
+#: config/quota_and_size_options.md:17
+# code block
+msgid "```\n"
+"[quota]\n"
+"default = 200MB\n"
+"```"
+msgstr ""
+
+#: config/quota_and_size_options.md:22
+msgid "Note that 1TB = 1000GB = 1000*1000MB and so forth."
+msgstr ""
+
+#: config/quota_and_size_options.md:24
+#: config/seafile-conf.md:15
+msgid "This setting applies to all users. If you want to set quota for a specific user, you may log in to seahub website as administrator, then set it in \"System Admin\" page."
+msgstr ""
+
+#: config/quota_and_size_options.md:26
+# header
+msgid "#### Default history length limit (seafile.conf)"
+msgstr ""
+
+#: config/quota_and_size_options.md:28
+msgid "If you don't want to keep all file revision history, you may set a default history length limit for all libraries. In `seafile.conf`:"
+msgstr ""
+
+#: config/quota_and_size_options.md:30
+#: config/seafile-conf.md:21
+# inline html
+msgid "<pre>\n"
+"[history]\n"
+"keep_days = days of history to keep\n"
+"</pre>"
+msgstr ""
+
+#: config/quota_and_size_options.md:36
+# header
+msgid "#### Change upload/download size limit."
+msgstr ""
+
+#: config/quota_and_size_options.md:38
+msgid "In `seafile.conf`:"
+msgstr ""
+
+#: config/quota_and_size_options.md:40
+#: config/seafile-conf.md:40
+# inline html
+msgid "<pre>\n"
+"[fileserver]\n"
+"# Set maximum upload file size to 200M.\n"
+"max_upload_size=200\n"
+"\n"
+"# Set maximum download directory size to 200M.\n"
+"max_download_dir_size=200\n"
+"</pre>"
+msgstr ""
+
+#: config/seafile-conf.md:1
+# header
+msgid "# Seafile.conf settings"
+msgstr ""
+
+#: config/seafile-conf.md:5
+# header
+msgid "## Storage Quota Setting (seafile.conf)"
+msgstr ""
+
+#: config/seafile-conf.md:7
+msgid "You may set a default quota (e.g. 2GB) for all users. To do this, just add the following lines to `seafile.conf` file"
+msgstr ""
+
+#: config/seafile-conf.md:17
+# header
+msgid "## Default history length limit (seafile.conf)"
+msgstr ""
+
+#: config/seafile-conf.md:19
+msgid "If you don't want to keep all file revision history, you may set a default history length limit for all libraries."
+msgstr ""
+
+#: config/seafile-conf.md:26
+# header
+msgid "## Seafile fileserver configuration (seafile.conf)"
+msgstr ""
+
+#: config/seafile-conf.md:28
+msgid "The configuration of seafile fileserver is in the <code>[fileserver]</code> section of the file `seafile.conf`"
+msgstr ""
+
+#: config/seafile-conf.md:30
+# inline html
+msgid "<pre>\n"
+"[fileserver]\n"
+"# bind address for fileserver, default to 0.0.0.0\n"
+"host = 0.0.0.0\n"
+"# tcp port for fileserver\n"
+"port = 8082\n"
+"</pre>"
+msgstr ""
+
+#: config/seafile-conf.md:38
+msgid "Change upload/download settings."
+msgstr ""
+
+#: config/seafile-conf.md:49
+msgid "After a file is uploaded via the web interface, or the cloud file browser in the client, it needs to be divided into fixed size blocks and stored into storage backend. We call this procedure \"indexing\". By default, the file server uses 1 thread to sequentially index the file and store the blocks one by one. This is suitable for most cases. But if you're using S3/Ceph/Swift backends, you may have more bandwidth in the storage backend for storing multiple blocks in parallel. We provide an option to define the number of concurrent threads in indexing:"
+msgstr ""
+
+#: config/seafile-conf.md:51
+# code block
+msgid "```\n"
+"[fileserver]\n"
+"max_indexing_threads = 10\n"
+"```"
+msgstr ""
+
+#: config/seafile-conf.md:56
+msgid "You can download a folder as a zip archive from seahub, but some zip software on windows doesn't support UTF-8, in which case you can use the \"windows_encoding\" settings to solve it."
+msgstr ""
+
+#: config/seafile-conf.md:57
+# inline html
+msgid "<pre>\n"
+"[zip]\n"
+"# The file name encoding of the downloaded zip file.\n"
+"windows_encoding = iso-8859-1\n"
+"</pre>"
+msgstr ""
+
+#: config/seafile-conf.md:65
+msgid "When you configure seafile server to use MySQL, the default connection pool size is 100, which should be enough for most use cases. You can change this value by adding following options to seafile.conf:"
+msgstr ""
+
+#: config/seafile-conf.md:67
+# code block
+msgid "```\n"
+"[database]\n"
+"......\n"
+"# Use larger connection pool\n"
+"max_connections = 200\n"
+"```"
+msgstr ""
+
+#: config/seafile-conf.md:74
+msgid "**Note**: You need to restart seafile and seahub so that your changes take effect."
+msgstr ""
+
+#: config/seafile-conf.md:75
+# inline html
+msgid "<pre>\n"
+"./seahub.sh restart\n"
+"./seafile.sh restart\n"
+"</pre>"
+msgstr ""
+
+#: config/seahub_customization.md:1
+# header
+msgid "# Seahub customization"
+msgstr ""
+
+#: config/seahub_customization.md:3
+# header
+msgid "## Customize Seahub Logo and CSS"
+msgstr ""
+
+#: config/seahub_customization.md:5
+msgid "Create a folder ``<seafile-install-path>/seahub-data/custom``. Create a symbolic link in `seafile-server-latest/seahub/media` by `ln -s ../../../seahub-data/custom custom`."
+msgstr ""
+
+#: config/seahub_customization.md:7
+msgid "During upgrading, Seafile upgrade script will create symbolic link automatically to preserve your customization."
+msgstr ""
+
+#: config/seahub_customization.md:9
+# header
+msgid "### Customize Logo"
+msgstr ""
+
+#: config/seahub_customization.md:11
+# ordered list
+msgid "1. Add your logo file to `custom/`"
+msgstr ""
+
+#: config/seahub_customization.md:12
+# ordered list
+msgid "2. Overwrite `LOGO_PATH` in `seahub_settings.py`"
+msgstr ""
+
+#: config/seahub_customization.md:14
+# code block
+msgid "   ```python\n"
+"   LOGO_PATH = 'custom/mylogo.png'\n"
+"   ```"
+msgstr ""
+
+#: config/seahub_customization.md:18
+# ordered list
+msgid "3. Default width and height for logo is 149px and 32px, you may need to change that according to yours."
+msgstr ""
+
+#: config/seahub_customization.md:20
+# code block
+msgid "   ```python\n"
+"   LOGO_WIDTH = 149\n"
+"   LOGO_HEIGHT = 32\n"
+"   ```"
+msgstr ""
+
+#: config/seahub_customization.md:25
+# header
+msgid "### Customize Seahub CSS"
+msgstr ""
+
+#: config/seahub_customization.md:27
+# ordered list
+msgid "1. Add your css file to `custom/`, for example, `custom.css`"
+msgstr ""
+
+#: config/seahub_customization.md:28
+# ordered list
+msgid "2. Overwrite `BRANDING_CSS` in `seahub_settings.py`"
+msgstr ""
+
+#: config/seahub_customization.md:30
+# code block
+msgid "   ```python\n"
+"   BRANDING_CSS = 'custom/custom.css'\n"
+"   ```"
+msgstr ""
+
+#: config/seahub_customization.md:34
+# header
+msgid "## Customize footer and other Seahub Pages"
+msgstr ""
+
+#: config/seahub_customization.md:36
+msgid "**Note:** Since version 2.1."
+msgstr ""
+
+#: config/seahub_customization.md:38
+msgid "Create a folder ``templates`` under ``<seafile-install-path>/seahub-data/custom``"
+msgstr ""
+
+#: config/seahub_customization.md:40
+# header
+msgid "### Customize footer"
+msgstr ""
+
+#: config/seahub_customization.md:42
+# ordered list
+msgid "1. Copy ``seahub/seahub/templates/footer.html`` to ``seahub-data/custom/templates``."
+msgstr ""
+
+#: config/seahub_customization.md:43
+# ordered list
+msgid "2. Modify `footer.html`."
+msgstr ""
+
+#: config/seahub_customization.md:45
+# header
+msgid "### Customize Download page"
+msgstr ""
+
+#: config/seahub_customization.md:47
+# ordered list
+msgid "1. Copy ``seahub/seahub/templates/download.html`` to ``seahub-data/custom/templates``."
+msgstr ""
+
+#: config/seahub_customization.md:48
+# ordered list
+msgid "2. Modify `download.html`."
+msgstr ""
+
+#: config/seahub_customization.md:50
+# header
+msgid "### Customize Help page"
+msgstr ""
+
+#: config/seahub_customization.md:52
+# ordered list
+msgid "1. Copy ``seahub/seahub/help/templates/help`` to ``seahub-data/custom/templates/help``."
+msgstr ""
+
+#: config/seahub_customization.md:53
+# ordered list
+msgid "2. Modify pages under `help`."
+msgstr ""
+
+#: config/seahub_settings_py.md:1
+# header
+msgid "# Seahub Settings"
+msgstr ""
+
+#: config/seahub_settings_py.md:3
+# header
+msgid "##  Sending Email Notifications on Seahub"
+msgstr ""
+
+#: config/seahub_settings_py.md:5
+msgid "A few features work better if it can send email notifications, such as notifying users about new messages."
+msgstr ""
+
+#: config/seahub_settings_py.md:6
+msgid "If you want to setup email notifications, please add the following lines to `seahub_settings.py` (and set your email server)."
+msgstr ""
+
+#: config/seahub_settings_py.md:8
+# code block
+msgid "```python\n"
+"EMAIL_USE_TLS = False\n"
+"EMAIL_HOST = 'smtp.example.com'        # smpt server\n"
+"EMAIL_HOST_USER = 'username@example.com'    # username and domain\n"
+"EMAIL_HOST_PASSWORD = 'password'    # password\n"
+"EMAIL_PORT = 25\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:18
+#: config/sending_email.md:29
+msgid "If you are using Gmail as email server, use following lines:"
+msgstr ""
+
+#: config/seahub_settings_py.md:20
+# code block
+msgid "```python\n"
+"EMAIL_USE_TLS = True\n"
+"EMAIL_HOST = 'smtp.gmail.com'\n"
+"EMAIL_HOST_USER = 'username@gmail.com'\n"
+"EMAIL_HOST_PASSWORD = 'password'\n"
+"EMAIL_PORT = 587\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:30
+#: config/sending_email.md:41
+msgid "**Note**: If your Email service still can not work, you may checkout the log file <code>logs/seahub.log</code> to see what may cause the problem. For complete email notification list, please refer to [Email notification list](customize_email_notifications.md)."
+msgstr ""
+
+#: config/seahub_settings_py.md:32
+msgid "**Note2**: If you want to use the Email service without authentication leaf <code>EMAIL_HOST_PASSWORD</code> **blank** (<code>''</code>)."
+msgstr ""
+
+#: config/seahub_settings_py.md:35
+# header
+msgid "## Memcached"
+msgstr ""
+
+#: config/seahub_settings_py.md:37
+msgid "Seahub caches items(avatars, profiles, etc) on file system by default(/tmp/seahub_cache/). You can replace with Memcached."
+msgstr ""
+
+#: config/seahub_settings_py.md:38
+msgid "After install **python-memcache**, add the following lines to **seahub_settings.py**."
+msgstr ""
+
+#: config/seahub_settings_py.md:40
+# code block
+msgid "```python\n"
+"CACHES = {\n"
+"    'default': {\n"
+"        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',\n"
+"        'LOCATION': '127.0.0.1:11211',\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:49
+# header
+msgid "## User management options"
+msgstr ""
+
+#: config/seahub_settings_py.md:51
+msgid "The following options affect user registration, password and session."
+msgstr ""
+
+#: config/seahub_settings_py.md:53
+# code block
+msgid "```python\n"
+"# Enalbe or disalbe registration on web. Default is `False`.\n"
+"ENABLE_SIGNUP = False\n"
+"\n"
+"# Activate or deactivate user when registration complete. Default is `True`.\n"
+"# If set to `False`, new users need to be activated by admin in admin panel.\n"
+"ACTIVATE_AFTER_REGISTRATION = False\n"
+"\n"
+"# Whether to send email when a system admin adding a new member. Default is `True`.\n"
+"SEND_EMAIL_ON_ADDING_SYSTEM_MEMBER = True\n"
+"\n"
+"# Whether to send email when a system admin resetting a user's password. Default is `True`.\n"
+"SEND_EMAIL_ON_RESETTING_USER_PASSWD = True\n"
+"\n"
+"# Remember days for login. Default is 7\n"
+"LOGIN_REMEMBER_DAYS = 7\n"
+"\n"
+"# Attempt limit before showing a captcha when login.\n"
+"LOGIN_ATTEMPT_LIMIT = 3\n"
+"    \n"
+"# mininum length for user's password\n"
+"USER_PASSWORD_MIN_LENGTH = 6\n"
+"\n"
+"# LEVEL based on four types of input:\n"
+"# num, upper letter, lower letter, other symbols\n"
+"# '3' means password must have at least 3 types of the above.\n"
+"USER_PASSWORD_STRENGTH_LEVEL = 3\n"
+"\n"
+"# default False, only check USER_PASSWORD_MIN_LENGTH\n"
+"# when True, check password strength level, STRONG(or above) is allowed\n"
+"USER_STRONG_PASSWORD_REQUIRED = False\n"
+"\n"
+"# Force user to change password when admin add/reset a user.\n"
+"# Added in 5.1.1, deafults to True.\n"
+"FORCE_PASSWORD_CHANGE = True\n"
+"\n"
+"# Age of cookie, in seconds (default: 2 weeks).\n"
+"SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2\n"
+"\n"
+"# Whether a user's session cookie expires when the Web browser is closed.\n"
+"SESSION_EXPIRE_AT_BROWSER_CLOSE = False\n"
+"\n"
+"# Whether to save the session data on every request. Default is `False`\n"
+"SESSION_SAVE_EVERY_REQUEST = False\n"
+"\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:101
+# header
+msgid "## Library options"
+msgstr ""
+
+#: config/seahub_settings_py.md:103
+msgid "Options for libraries:"
+msgstr ""
+
+#: config/seahub_settings_py.md:105
+# code block
+msgid "```python\n"
+"# mininum length for password of encrypted library\n"
+"REPO_PASSWORD_MIN_LENGTH = 8\n"
+"\n"
+"# mininum length for password for share link (since version 4.4)\n"
+"SHARE_LINK_PASSWORD_MIN_LENGTH = 8\n"
+"\n"
+"# Disable sync with any folder. Default is `False`\n"
+"# NOTE: since version 4.2.4\n"
+"DISABLE_SYNC_WITH_ANY_FOLDER = True\n"
+"\n"
+"# Enable or disable library history setting\n"
+"ENABLE_REPO_HISTORY_SETTING = True\n"
+"\n"
+"# Enable or disable normal user to create organization libraries\n"
+"# Since version 5.0.5\n"
+"ENABLE_USER_CREATE_ORG_REPO = True\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:124
+msgid "Options for online file preview:"
+msgstr ""
+
+#: config/seahub_settings_py.md:126
+# code block
+msgid "```python\n"
+"# Whether to use pdf.js to view pdf files online. Default is `True`,  you can turn it off.\n"
+"# NOTE: since version 1.4.\n"
+"USE_PDFJS = True\n"
+"\n"
+"# Online preview maximum file size, defaults to 30M.\n"
+"# Note, this option controls files that can be previewed online, like pictures, txt, pdf.\n"
+"# In pro edition, for preview doc/ppt/excel/pdf, there is another option `max-size` \n"
+"# in seafevents.conf that controls the limit of files that can be previewed.\n"
+"FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024\n"
+"\n"
+"# Enable or disable thumbnails\n"
+"# NOTE: since version 4.0.2 \n"
+"ENABLE_THUMBNAIL = True\n"
+"\n"
+"# Absolute filesystem path to the directory that will hold thumbnail files.\n"
+"THUMBNAIL_ROOT = '/haiwen/seahub-data/thumbnail/thumb/'\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:146
+# header
+msgid "## Cloud Mode"
+msgstr ""
+
+#: config/seahub_settings_py.md:148
+msgid "You should enable cloud mode if you use Seafile with an unknown user base. It disables the organization tab in Seahub's website to ensure that users can't access the user list. Cloud mode provides some nice features like sharing content with unregistered users and sending invitations to them. Therefore you also want to enable user registration. Through the global address book (since version 4.2.3) you can do a search for every user account. So you probably want to disable it."
+msgstr ""
+
+#: config/seahub_settings_py.md:150
+# code block
+msgid "```python\n"
+"# Enable cloude mode and hide `Organization` tab.\n"
+"CLOUD_MODE = True\n"
+"\n"
+"# Disable global address book\n"
+"ENABLE_GLOBAL_ADDRESSBOOK = False\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:159
+# header
+msgid "## Other options"
+msgstr ""
+
+#: config/seahub_settings_py.md:162
+# code block
+msgid "```python\n"
+"\n"
+"# Choices can be found here:\n"
+"# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name\n"
+"# although not all choices may be available on all operating systems.\n"
+"# If running in a Windows environment this must be set to the same as your\n"
+"# system time zone.\n"
+"TIME_ZONE = 'UTC'\n"
+"\n"
+"# Language code for this installation. All choices can be found here:\n"
+"# http://www.i18nguy.com/unicode/language-identifiers.html\n"
+"# Default language for sending emails.\n"
+"LANGUAGE_CODE = 'en'\n"
+"\n"
+"# Set this to your website's name. This is contained in email notifications.\n"
+"SITE_NAME = 'example.com'\n"
+"\n"
+"# Set seahub website's title\n"
+"SITE_TITLE = 'Seafile'\n"
+"\n"
+"# If you don't want to run seahub website on your site's root path, set this option to your preferred path.\n"
+"# e.g. setting it to '/seahub/' would run seahub on http://example.com/seahub/.\n"
+"SITE_ROOT = '/'\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:187
+# header
+msgid "## Pro edition only options"
+msgstr ""
+
+#: config/seahub_settings_py.md:189
+# code block
+msgid "```python\n"
+"# Whether to show the used traffic in user's profile popup dialog. Default is True\n"
+"SHOW_TRAFFIC = True\n"
+"\n"
+"# Allow administrator to view user's file in UNENCRYPTED libraries\n"
+"# through Libraries page in System Admin. Default is False.\n"
+"ENABLE_SYS_ADMIN_VIEW_REPO = True\n"
+"```"
+msgstr ""
+
+#: config/seahub_settings_py.md:198
+# header
+msgid "## Note"
+msgstr ""
+
+#: config/seahub_settings_py.md:200
+# unordered list
+msgid "* You need to restart seahub so that your changes take effect."
+msgstr ""
+
+#: config/seahub_settings_py.md:201
+# unordered list
+msgid "* If your changes don't take effect, You may need to delete 'seahub_setting.pyc'. (A cache file)"
+msgstr ""
+
+#: config/seahub_settings_py.md:203
+# code block
+msgid "```bash\n"
+"./seahub.sh restart\n"
+"```"
+msgstr ""
+
+#: config/sending_email.md:1
+# header
+msgid "# Sending Email Notifications on Seahub"
+msgstr ""
+
+#: config/sending_email.md:3
+# header
+msgid "## Types of email sending in Seafile"
+msgstr ""
+
+#: config/sending_email.md:5
+msgid "There are currently five types of Emails sent in Seafile:"
+msgstr ""
+
+#: config/sending_email.md:7
+# unordered list
+msgid "- User reset his/her password"
+msgstr ""
+
+#: config/sending_email.md:8
+# unordered list
+msgid "- System admin add new member"
+msgstr ""
+
+#: config/sending_email.md:9
+# unordered list
+msgid "- System admin reset user password"
+msgstr ""
+
+#: config/sending_email.md:10
+# unordered list
+msgid "- User send file/folder share link and upload link"
+msgstr ""
+
+#: config/sending_email.md:11
+# unordered list
+msgid "- [pro] Reminder of unread notifications (It is sent by a background task which is pro edition only)"
+msgstr ""
+
+#: config/sending_email.md:13
+msgid "The first four types of Email are sent immediately. The last type is sent by a background task running periodically."
+msgstr ""
+
+#: config/sending_email.md:15
+# header
+msgid "## Options of email sending"
+msgstr ""
+
+#: config/sending_email.md:17
+msgid "Please add the following lines to seahub_settings.py to enable Email sending."
+msgstr ""
+
+#: config/sending_email.md:19
+# inline html
+msgid "<pre>\n"
+"EMAIL_USE_TLS = False\n"
+"EMAIL_HOST = 'smtp.example.com'        # smpt server\n"
+"EMAIL_HOST_USER = 'username@example.com'    # username and domain\n"
+"EMAIL_HOST_PASSWORD = 'password'    # password\n"
+"EMAIL_PORT = 25\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"</pre>"
+msgstr ""
+
+#: config/sending_email.md:31
+# inline html
+msgid "<pre>\n"
+"EMAIL_USE_TLS = True\n"
+"EMAIL_HOST = 'smtp.gmail.com'\n"
+"EMAIL_HOST_USER = 'username@gmail.com'\n"
+"EMAIL_HOST_PASSWORD = 'password'\n"
+"EMAIL_PORT = 587\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"</pre>"
+msgstr ""
+
+#: config/sending_email.md:43
+msgid "**Note2**: If you want to use the Email service without authentication leaf <code>EMAIL_HOST_USER</code> and <code>EMAIL_HOST_PASSWORD</code> **blank** (<code>''</code>). (But notice that the emails then will be sent without a <code>From:</code> address.)"
+msgstr ""
+
+#: config/sending_email.md:45
+msgid "**Note3**: About using SSL connection (using port 465)"
+msgstr ""
+
+#: config/sending_email.md:47
+msgid "Port 587 is for using TLS connection to the Email server. Port 465 is for using SSL connection.  Starting from Django 1.8, it support both. But we are still using Django 1.5 in version 5.0, which only support  TLS connection. If your email server only support SSL connection, you can find a work around here: https://github.com/bancek/django-smtp-ssl."
+msgstr ""
+
+#: config/sending_email.md:49
+# header
+msgid "## Change the `sender` and `reply to` of email"
+msgstr ""
+
+#: config/sending_email.md:51
+msgid "You can change the sender and reply to field of email by add the following settings to seahub_settings.py. This only affects email sending for file share link."
+msgstr ""
+
+#: config/sending_email.md:53
+# inline html
+msgid "<pre>\n"
+"# Replace default from email with user's email or not, defaults to ``False``\n"
+"REPLACE_FROM_EMAIL = True\n"
+"\n"
+"# Set reply-to header to user's email or not, defaults to ``False``. For details,\n"
+"# please refer to http://www.w3.org/Protocols/rfc822/\n"
+"ADD_REPLY_TO_HEADER = True\n"
+"</pre>"
+msgstr ""
+
+#: config/sending_email.md:62
+# header
+msgid "## Config background email sending task (Pro Edition Only)"
+msgstr ""
+
+#: config/sending_email.md:64
+msgid "The background task will run periodically to check whether an user have new unread notifications. If there are any, it will send a reminder email to that user. The background email sending task is controlled by `seafevents.conf`."
+msgstr ""
+
+#: config/sending_email.md:66
+# code block
+msgid "```\n"
+"[SEAHUB EMAIL]\n"
+"\n"
+"## must be \"true\" to enable user email notifications when there are new unread notifications\n"
+"enabled = true\n"
+"\n"
+"## interval of sending seahub email. Can be s(seconds), m(minutes), h(hours), d(days)\n"
+"interval = 30m\n"
+"```"
+msgstr ""
+
+#: config/sending_email.md:76
+# header
+msgid "## Customize Email messages"
+msgstr ""
+
+#: config/sending_email.md:78
+msgid "The simplest way to customize the Email message is setting the `SITE_NAME` variable in seahub_settings.py. If it is not enough for your case, you can customize the Email templates."
+msgstr ""
+
+#: config/sending_email.md:80
+msgid "**Note:** Subject line may vary between different releases, this is based on Release 5.0.0. Restart Seahub so that your changes take effect."
+msgstr ""
+
+#: config/sending_email.md:82
+# header
+msgid "### The Email base template"
+msgstr ""
+
+#: config/sending_email.md:84
+msgid "[seahub/seahub/templates/email_base.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/email_base.html)"
+msgstr ""
+
+#: config/sending_email.md:86
+msgid "Note: You can copy email_base.html to `seahub-data/custom/templates/email_base.html` and modify the new one. In this way, the customization will be maintained after upgrade."
+msgstr ""
+
+#: config/sending_email.md:88
+# header
+msgid "### User reset his/her password"
+msgstr ""
+
+#: config/sending_email.md:92
+msgid "seahub/seahub/auth/forms.py line:127"
+msgstr ""
+
+#: config/sending_email.md:94
+# code block
+msgid "```\n"
+"        send_html_email(_(\"Reset Password on %s\") % site_name,\n"
+"                  email_template_name, c, None, [user.username])\n"
+"```"
+msgstr ""
+
+#: config/sending_email.md:101
+msgid "[seahub/seahub/templates/registration/password_reset_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/registration/password_reset_email.html)"
+msgstr ""
+
+#: config/sending_email.md:104
+msgid "Note: You can copy password_reset_email.html to `seahub-data/custom/templates/registration/password_reset_email.html` and modify the new one. In this way, the customization will be maintained after upgrade."
+msgstr ""
+
+#: config/sending_email.md:106
+# header
+msgid "### System admin add new member"
+msgstr ""
+
+#: config/sending_email.md:112
+#: config/sending_email.md:129
+# code block
+msgid "```\n"
+"send_html_email(_(u'Password has been reset on %s') % SITE_NAME,\n"
+"            'sysadmin/user_reset_email.html', c, None, [email])\n"
+"```"
+msgstr ""
+
+#: config/sending_email.md:119
+msgid "[seahub/seahub/templates/sysadmin/user_add_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/sysadmin/user_add_email.html)"
+msgstr ""
+
+#: config/sending_email.md:121
+msgid "Note: You can copy user_add_email.html to `seahub-data/custom/templates/sysadmin/user_add_email.html` and modify the new one. In this way, the customization will be maintained after upgrade."
+msgstr ""
+
+#: config/sending_email.md:123
+# header
+msgid "### System admin reset user password"
+msgstr ""
+
+#: config/sending_email.md:127
+msgid "seahub/seahub/views/sysadmin.py line:1224"
+msgstr ""
+
+#: config/sending_email.md:136
+msgid "[seahub/seahub/templates/sysadmin/user_reset_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/sysadmin/user_reset_email.html)"
+msgstr ""
+
+#: config/sending_email.md:138
+msgid "Note: You can copy user_reset_email.html to `seahub-data/custom/templates/sysadmin/user_reset_email.html` and modify the new one. In this way, the customization will be maintained after upgrade."
+msgstr ""
+
+#: config/sending_email.md:140
+# header
+msgid "### User send file/folder share link"
+msgstr ""
+
+#: config/sending_email.md:144
+msgid "seahub/seahub/share/views.py line:913"
+msgstr ""
+
+#: config/sending_email.md:146
+# code block
+msgid "```\n"
+"try:\n"
+"    if file_shared_type == 'f':\n"
+"        c['file_shared_type'] = _(u\"file\")\n"
+"        send_html_email(_(u'A file is shared to you on %s') % SITE_NAME,\n"
+"                        'shared_link_email.html',\n"
+"                        c, from_email, [to_email],\n"
+"                        reply_to=reply_to\n"
+"                        )\n"
+"    else:\n"
+"        c['file_shared_type'] = _(u\"directory\")\n"
+"        send_html_email(_(u'A directory is shared to you on %s') % SITE_NAME,\n"
+"                        'shared_link_email.html',\n"
+"                        c, from_email, [to_email],\n"
+"                        reply_to=reply_to)\n"
+"```"
+msgstr ""
+
+#: config/sending_email.md:165
+msgid "[seahub/seahub/templates/shared_link_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/shared_link_email.html)"
+msgstr ""
+
+#: config/sending_email.md:167
+msgid "[seahub/seahub/templates/shared_upload_link_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/shared_upload_link_email.html)"
+msgstr ""
+
+#: config/sending_email.md:169
+msgid "Note: You can copy shared_link_email.html to `seahub-data/custom/templates/shared_link_email.html` and modify the new one. In this way, the customization will be maintained after upgrade."
+msgstr ""
+
+#: config/sending_email.md:172
+# header
+msgid "### Reminder of unread notifications"
+msgstr ""
+
+#: config/sending_email.md:176
+# code block
+msgid "```\n"
+"send_html_email(_('New notice on %s') % settings.SITE_NAME,\n"
+"                                'notifications/notice_email.html', c,\n"
+"                                None, [to_user])\n"
+"```"
+msgstr ""
+
+#: config/sending_email.md:184
+msgid "[seahub/seahub/notifications/templates/notifications/notice_email.html](https://github.com/haiwen/seahub/blob/master/seahub/notifications/templates/notifications/notice_email.html)"
+msgstr ""
+
+#: config/user_options.md:1
+# header
+msgid "# Customize user management"
+msgstr ""
+
+#: config/user_options.md:3
+# header
+msgid "## Options for user management"
+msgstr ""
+
+#: config/user_options.md:5
+msgid "Here we summarize options related to user management in `seahub_settings.py`"
+msgstr ""
+
+#: config/user_options.md:7
+# code block
+msgid "```python\n"
+"\n"
+"# Enalbe or disalbe registration on web. Default is `False`.\n"
+"ENABLE_SIGNUP = False\n"
+"\n"
+"# Activate or deactivate user when registration complete. Default is `True`.\n"
+"# If set to `False`, new users need to be activated by admin in admin panel.\n"
+"ACTIVATE_AFTER_REGISTRATION = False\n"
+"\n"
+"# Whether to send email when a system admin adding a new member. Default is `True`.\n"
+"# NOTE: since version 1.4.\n"
+"SEND_EMAIL_ON_ADDING_SYSTEM_MEMBER = True\n"
+"\n"
+"# Attempt limit before showing a captcha when login.\n"
+"LOGIN_ATTEMPT_LIMIT = 3\n"
+"\n"
+"# Whether a user's session cookie expires when the Web browser is closed.\n"
+"SESSION_EXPIRE_AT_BROWSER_CLOSE = False\n"
+"\n"
+"```"
+msgstr ""
+

@@ -1,0 +1,660 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-20 05:34:41+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: extension/README.md:1
+# header
+msgid "# WebDAV and FUSE extensions"
+msgstr ""
+
+#: extension/README.md:3
+msgid "Seafile WebDAV and FUSE extensions make it easy for Seafile to work with third party applications. For example, you can use Documents App in iOS to access files in Seafile via WebDAV interface."
+msgstr ""
+
+#: extension/fuse.md:1
+# header
+msgid "# FUSE extension"
+msgstr ""
+
+#: extension/fuse.md:3
+msgid "Files in the seafile system are split to blocks, which means what are stored on your seafile server are not complete files, but blocks. This design faciliates effective data deduplication."
+msgstr ""
+
+#: extension/fuse.md:5
+msgid "However, administrators sometimes want to access the files directly on the server. You can use seaf-fuse to do this."
+msgstr ""
+
+#: extension/fuse.md:7
+msgid "`Seaf-fuse` is an implementation of the [FUSE](http://fuse.sourceforge.net) virtual filesystem. In a word, it mounts all the seafile files to a folder (which is called the '''mount point'''), so that you can access all the files managed by seafile server, just as you access a normal folder on your server."
+msgstr ""
+
+#: extension/fuse.md:9
+msgid "Note:"
+msgstr ""
+
+#: extension/fuse.md:11
+# unordered list
+msgid "* Encrypted folders can't be accessed by seaf-fuse."
+msgstr ""
+
+#: extension/fuse.md:12
+# unordered list
+msgid "* Currently the implementation is '''read-only''', which means you can't modify the files through the mounted folder."
+msgstr ""
+
+#: extension/fuse.md:13
+# unordered list
+msgid "* One debian/centos systems, you need to be in the \"fuse\" group to have the permission to mount a FUSE folder."
+msgstr ""
+
+#: extension/fuse.md:15
+# header
+msgid "### How to start seaf-fuse"
+msgstr ""
+
+#: extension/fuse.md:17
+msgid "Assume we want to mount to `/data/seafile-fuse`."
+msgstr ""
+
+#: extension/fuse.md:19
+# header
+msgid "##### Create the folder as the mount point"
+msgstr ""
+
+#: extension/fuse.md:21
+# inline html
+msgid "<pre>\n"
+"mkdir -p /data/seafile-fuse\n"
+"</pre>"
+msgstr ""
+
+#: extension/fuse.md:25
+# header
+msgid "##### Start seaf-fuse with the script"
+msgstr ""
+
+#: extension/fuse.md:27
+msgid "Note: Before start seaf-fuse, you should have started seafile server with `./seafile.sh start`."
+msgstr ""
+
+#: extension/fuse.md:29
+# inline html
+msgid "<pre>\n"
+"./seaf-fuse.sh start /data/seafile-fuse\n"
+"</pre>"
+msgstr ""
+
+#: extension/fuse.md:33
+msgid "Since Community server version 4.2.1 and Pro server 4.2.0, the script supports standard mount options for FUSE. For example, you can specify ownership for the mounted folder:"
+msgstr ""
+
+#: extension/fuse.md:35
+# code block
+msgid "```\n"
+"./seaf-fuse.sh start -o uid=<uid> /data/seafile-fuse\n"
+"```"
+msgstr ""
+
+#: extension/fuse.md:39
+msgid "You can find the complete list of supported options in `man fuse`."
+msgstr ""
+
+#: extension/fuse.md:41
+# header
+msgid "##### Stop seaf-fuse"
+msgstr ""
+
+#: extension/fuse.md:43
+# inline html
+msgid "<pre>\n"
+"./seaf-fuse.sh stop\n"
+"</pre>"
+msgstr ""
+
+#: extension/fuse.md:47
+# header
+msgid "### Contents of the mounted folder"
+msgstr ""
+
+#: extension/fuse.md:49
+# header
+msgid "##### The top level folder"
+msgstr ""
+
+#: extension/fuse.md:51
+msgid "Now you can list the content of `/data/seafile-fuse`."
+msgstr ""
+
+#: extension/fuse.md:53
+# inline html
+msgid "<pre>\n"
+"$ ls -lhp /data/seafile-fuse\n"
+"\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 abc@abc.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  4  2015 foo@foo.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 plus@plus.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 sharp@sharp.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  3  2015 test@test.com/\n"
+"</pre>"
+msgstr ""
+
+#: extension/fuse.md:63
+# unordered list
+msgid "* The top level folder contains many subfolders, each of which corresponds to a user"
+msgstr ""
+
+#: extension/fuse.md:65
+# header
+msgid "##### The folder for each user"
+msgstr ""
+
+#: extension/fuse.md:67
+# inline html
+msgid "<pre>\n"
+"$ ls -lhp /data/seafile-fuse/abc@abc.com\n"
+"\n"
+"drwxr-xr-x 2 root root  924 Jan  1  1970 5403ac56-5552-4e31-a4f1-1de4eb889a5f_Photos/\n"
+"drwxr-xr-x 2 root root 1.6K Jan  1  1970 a09ab9fc-7bd0-49f1-929d-6abeb8491397_My Notes/\n"
+"</pre>"
+msgstr ""
+
+#: extension/fuse.md:74
+msgid "From the above list you can see, under the folder of a user there are subfolders, each of which represents a library of that user, and has a name of this format: '''{library_id}-{library-name}'''."
+msgstr ""
+
+#: extension/fuse.md:76
+# header
+msgid "##### The folder for a library"
+msgstr ""
+
+#: extension/fuse.md:78
+# inline html
+msgid "<pre>\n"
+"$ ls -lhp /data/seafile-fuse/abc@abc.com/5403ac56-5552-4e31-a4f1-1de4eb889a5f_Photos/\n"
+"\n"
+"-rw-r--r-- 1 root root 501K Jan  1  2015 image.png\n"
+"-rw-r--r-- 1 root root 501K Jan  1  2015 sample.jpng\n"
+"</pre>"
+msgstr ""
+
+#: extension/fuse.md:85
+# header
+msgid "##### If you get a \"Permission denied\" error"
+msgstr ""
+
+#: extension/fuse.md:87
+msgid "If you get an error message saying \"Permission denied\" when running `./seaf-fuse.sh start`, most likely you are not in the \"fuse group\". You should:"
+msgstr ""
+
+#: extension/fuse.md:89
+# unordered list
+msgid "* Add yourself to the fuse group"
+msgstr ""
+
+#: extension/fuse.md:90
+# inline html
+msgid "<pre>\n"
+"sudo usermod -a -G fuse <your-user-name>\n"
+"</pre>"
+msgstr ""
+
+#: extension/fuse.md:94
+# unordered list
+msgid "* Logout your shell and login again"
+msgstr ""
+
+#: extension/fuse.md:95
+# unordered list
+msgid "* Now try `./seaf-fuse.sh start <path>`again."
+msgstr ""
+
+#: extension/webdav.md:1
+# header
+msgid "# WebDAV extension"
+msgstr ""
+
+#: extension/webdav.md:3
+msgid "Seafile WebDAV Server(SeafDAV) is added in seafile server 2.1.0."
+msgstr ""
+
+#: extension/webdav.md:5
+msgid "In the wiki below, we assume your seafile installation folder is `/data/haiwen`."
+msgstr ""
+
+#: extension/webdav.md:7
+# header
+msgid "## SeafDAV Configuration"
+msgstr ""
+
+#: extension/webdav.md:9
+msgid "The configuration file is `/data/haiwen/conf/seafdav.conf`. If it is not created already, you can just create the file."
+msgstr ""
+
+#: extension/webdav.md:11
+# inline html
+msgid "<pre>\n"
+"[WEBDAV]\n"
+"\n"
+"# Default is false. Change it to true to enable SeafDAV server.\n"
+"enabled = true\n"
+"\n"
+"port = 8080\n"
+"\n"
+"# Change the value of fastcgi to true if fastcgi is to be used\n"
+"fastcgi = false\n"
+"\n"
+"# If you deploy SeafDAV behind nginx/apache, you need to modify \"share_name\".\n"
+"share_name = /\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:26
+msgid "Every time the configuration is modified, you need to restart seafile server to make it take effect."
+msgstr ""
+
+#: extension/webdav.md:28
+# inline html
+msgid "<pre>\n"
+"./seafile.sh restart\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:33
+# header
+msgid "### Sample Configuration 1: No nginx/apache"
+msgstr ""
+
+#: extension/webdav.md:35
+msgid "Your WebDAV client would visit the Seafile WebDAV server at <code>http://example.com:8080</code>"
+msgstr ""
+
+#: extension/webdav.md:37
+# inline html
+msgid "<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = false\n"
+"share_name = /\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:45
+# header
+msgid "### Sample Configuration 2: With Nginx"
+msgstr ""
+
+#: extension/webdav.md:47
+#: extension/webdav.md:125
+msgid "Your WebDAV client would visit the Seafile WebDAV server at <code>http://example.com/seafdav</code>"
+msgstr ""
+
+#: extension/webdav.md:49
+# inline html
+msgid "<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = true\n"
+"share_name = /seafdav\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:57
+msgid "In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to SeafDAV server."
+msgstr ""
+
+#: extension/webdav.md:59
+# header
+msgid "#### Nginx without HTTPS"
+msgstr ""
+
+#: extension/webdav.md:61
+msgid "The corresponding Nginx configuration is (without https):"
+msgstr ""
+
+#: extension/webdav.md:63
+# inline html
+msgid "<pre>\n"
+"     location /seafdav {\n"
+"        fastcgi_pass    127.0.0.1:8080;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param   SERVER_PROTOCOL     $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param   SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param   SERVER_PORT         $server_port;\n"
+"        fastcgi_param   SERVER_NAME         $server_name;\n"
+"        \n"
+"        client_max_body_size 0;\n"
+"        \n"
+"        # This option is only available for Nginx >= 1.8.0. See more details below.\n"
+"        proxy_request_buffering off;\n"
+"\n"
+"        access_log      /var/log/nginx/seafdav.access.log;\n"
+"        error_log       /var/log/nginx/seafdav.error.log;\n"
+"    }\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:88
+# header
+msgid "#### Nginx with HTTPS"
+msgstr ""
+
+#: extension/webdav.md:90
+msgid "Nginx conf with https:"
+msgstr ""
+
+#: extension/webdav.md:92
+# inline html
+msgid "<pre>\n"
+"     location /seafdav {\n"
+"        fastcgi_pass    127.0.0.1:8080;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param   SERVER_PROTOCOL     $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param   SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param   SERVER_PORT         $server_port;\n"
+"        fastcgi_param   SERVER_NAME         $server_name;\n"
+"\n"
+"        fastcgi_param   HTTPS               on;\n"
+"        \n"
+"        client_max_body_size 0;\n"
+"        \n"
+"        # This option is only available for Nginx >= 1.8.0. See more details below.\n"
+"        proxy_request_buffering off;\n"
+"\n"
+"        access_log      /var/log/nginx/seafdav.access.log;\n"
+"        error_log       /var/log/nginx/seafdav.error.log;\n"
+"    }\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:119
+msgid "By default Nginx will buffer large request body in temp file. After the body is completely received, Nginx will send the body to the upstream server (SeafDAV in our case). But it seems when file size is very large, the buffering mechanism dosen't work well. It may stop proxying the body in the middle. So if you want to support file upload larger for 4GB, we suggest you install Nginx version >= 1.8.0 and add `proxy_request_buffering off` to Nginx configuration."
+msgstr ""
+
+#: extension/webdav.md:121
+# header
+msgid "### Sample Configuration 3: With Apache"
+msgstr ""
+
+#: extension/webdav.md:123
+msgid "The following configuratioin assumes you use Apache 2.4 or later."
+msgstr ""
+
+#: extension/webdav.md:127
+# inline html
+msgid "<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = false\n"
+"share_name = /seafdav\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:135
+msgid "In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to SeafDAV server. **Note that we do not use fastcgi for Apache.**"
+msgstr ""
+
+#: extension/webdav.md:137
+msgid "Modify Apache config file (site-enabled/000-default):"
+msgstr ""
+
+#: extension/webdav.md:139
+# header
+msgid "#### Apache without HTTPS"
+msgstr ""
+
+#: extension/webdav.md:141
+msgid "Based on your apache configuration when you [deploy Seafile with Apache](../deploy/deploy_with_apache.md), add seafdav related config:"
+msgstr ""
+
+#: extension/webdav.md:143
+# inline html
+msgid "<pre>\n"
+"<VirtualHost *:80>\n"
+"\n"
+"    ServerName www.myseafile.com\n"
+"    # Use \"DocumentRoot /var/www/html\" for Centos/Fedora\n"
+"    # Use \"DocumentRoot /var/www\" for Ubuntu/Debian\n"
+"    DocumentRoot /var/www\n"
+"    Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"\n"
+"    RewriteEngine On\n"
+"\n"
+"    <Location /media>\n"
+"        Require all granted\n"
+"    </Location>\n"
+"\n"
+"    #\n"
+"    # seafile fileserver\n"
+"    #\n"
+"    ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"    ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"    RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"    #\n"
+"    # WebDAV\n"
+"    # We use http proxy, since SeafDAV is incompatible with FCGI proxy in Apache 2.4.\n"
+"    #\n"
+"    ProxyPass /seafdav http://127.0.0.1:8080/seafdav\n"
+"    ProxyPassReverse /seafdav http://127.0.0.1:8080/seafdav\n"
+"\n"
+"    #\n"
+"    # seahub\n"
+"    #\n"
+"    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"    SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"    ProxyPass / fcgi://127.0.0.1:8000/\n"
+"\n"
+"</virtualhost>\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:182
+# header
+msgid "#### Apache with HTTPS"
+msgstr ""
+
+#: extension/webdav.md:184
+msgid "Based on your apache configuration when you [Enable Https on Seafile web with Apache](../deploy/https_with_apache.md), add seafdav related config:"
+msgstr ""
+
+#: extension/webdav.md:186
+# inline html
+msgid "<pre>\n"
+"<VirtualHost *:443>\n"
+"\n"
+"  ServerName www.myseafile.com\n"
+"  DocumentRoot /var/www\n"
+"\n"
+"  SSLEngine On\n"
+"  SSLCertificateFile /path/to/cacert.pem\n"
+"  SSLCertificateKeyFile /path/to/privkey.pem\n"
+"\n"
+"  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"\n"
+"  <Location /media>\n"
+"    ProxyPass !\n"
+"    Require all granted\n"
+"  </Location>\n"
+"\n"
+"  RewriteEngine On\n"
+"\n"
+"  #\n"
+"  # seafile fileserver\n"
+"  #\n"
+"  ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"  ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"  RewriteRule ^/seafhttp - [QSA,L]\n"
+"  \n"
+"  #\n"
+"  # WebDAV\n"
+"  # We use http proxy, since SeafDAV is incompatible with FCGI proxy in Apache 2.4.\n"
+"  #\n"
+"  ProxyPass /seafdav http://127.0.0.1:8080/seafdav\n"
+"  ProxyPassReverse /seafdav http://127.0.0.1:8080/seafdav\n"
+"  \n"
+"  #\n"
+"  # seahub\n"
+"  #\n"
+"  SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"  SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"  ProxyPass / fcgi://127.0.0.1:8000/\n"
+"\n"
+"</virtualhost>\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:229
+# header
+msgid "## Notes on Clients"
+msgstr ""
+
+#: extension/webdav.md:231
+msgid "Please first note that, there are some known performance limitation when you map a Seafile webdav server as a local file system (or network drive)."
+msgstr ""
+
+#: extension/webdav.md:232
+# unordered list
+msgid "- Uploading large number of files at once is usually much slower than the syncing client. That's because each file needs to be committed separately."
+msgstr ""
+
+#: extension/webdav.md:233
+# unordered list
+msgid "- The access to the webdav server may be slow sometimes. That's because the local file system driver sends a lot of unnecessary requests to get the files' attributes."
+msgstr ""
+
+#: extension/webdav.md:235
+msgid "So WebDAV is more suitable for infrequent file access. If you want better performance, please use the sync client instead."
+msgstr ""
+
+#: extension/webdav.md:237
+# header
+msgid "### Windows"
+msgstr ""
+
+#: extension/webdav.md:239
+msgid "The client recommendation for WebDAV depends on your Windows version:"
+msgstr ""
+
+#: extension/webdav.md:240
+# unordered list
+msgid "- For Windows XP: Only non-encryped HTTP connection is supported by the Windows Explorer. So for security, the only viable option is to use third-party clients, such as Cyberduck or Bitkinex."
+msgstr ""
+
+#: extension/webdav.md:241
+# unordered list
+msgid "- For Vista and later versions: Windows Explorer supports HTTPS connection. But it requires a valid certificate on the server. It's generally recommended to use Windows Explorer to map a webdav server as network drive. If you use a self-signed certificate, you have to add the certificate's CA into Windows' system CA store."
+msgstr ""
+
+#: extension/webdav.md:243
+# header
+msgid "### Linux"
+msgstr ""
+
+#: extension/webdav.md:245
+msgid "On Linux you have more choices. You can use file manager such as Nautilus to connect to webdav server. Or you can use davfs2 from the command line."
+msgstr ""
+
+#: extension/webdav.md:247
+msgid "To use davfs2"
+msgstr ""
+
+#: extension/webdav.md:249
+# inline html
+msgid "<pre>\n"
+"sudo apt-get install davfs2\n"
+"sudo mount -t davfs -o uid=<username> https://example.com/seafdav /media/seafdav/\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:254
+msgid "The -o option sets the owner of the mounted directory to <username> so that it's writable for non-root users."
+msgstr ""
+
+#: extension/webdav.md:256
+msgid "It's recommended to disable LOCK operation for davfs2. You have to edit /etc/davfs2/davfs2.conf"
+msgstr ""
+
+#: extension/webdav.md:258
+# inline html
+msgid "<pre>\n"
+" use_locks       0\n"
+"</pre>"
+msgstr ""
+
+#: extension/webdav.md:262
+# header
+msgid "### Mac OS X"
+msgstr ""
+
+#: extension/webdav.md:264
+msgid "Finder's support for WebDAV is also not very stable and slow. So it is recommended to use a webdav client software such as Cyberduck."
+msgstr ""
+
+#: extension/webdav.md:266
+# header
+msgid "## Frequently Asked Questions"
+msgstr ""
+
+#: extension/webdav.md:268
+# header
+msgid "### Clients can't connect to SeafDAV server"
+msgstr ""
+
+#: extension/webdav.md:270
+msgid "By default, SeafDAV is disabled. Check whether you have <code>enabled = true</code> in <code>seafdav.conf</code>."
+msgstr ""
+
+#: extension/webdav.md:271
+msgid "If not, modify it and restart seafile server."
+msgstr ""
+
+#: extension/webdav.md:274
+# header
+msgid "### The client gets \"Error: 404 Not Found\""
+msgstr ""
+
+#: extension/webdav.md:276
+msgid "If you deploy SeafDAV behind Nginx/Apache, make sure to change the value of <code>share_name</code> as the sample configuration above. Restart your seafile server and try again."
+msgstr ""
+
+#: extension/webdav.md:278
+# header
+msgid "### Windows Explorer reports \"file size exceeds the limit allowed and cannot be saved\""
+msgstr ""
+
+#: extension/webdav.md:280
+msgid "This happens when you map webdav as a network drive, and tries to copy a file larger than about 50MB from the network drive to a local folder."
+msgstr ""
+
+#: extension/webdav.md:282
+msgid "This is because Windows Explorer has a limit of the file size downloaded from webdav server. To make this size large, change the registry entry on the client machine. There is a registry key named `FileSizeLimitInBytes` under `HKEY_LOCAL_MACHINE -> SYSTEM -> CurrentControlSet -> Services -> WebClient -> Parameters`."
+msgstr ""
+

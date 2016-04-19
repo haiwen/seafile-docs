@@ -1,0 +1,207 @@
+# Korean translation for the seafile-docs package
+# This file is distributed under the same license as the Seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-18 23:31:01+0900\n"
+"PO-Revision-Date: 2016-04-18 05:57+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+# header
+#: overview/README.md:1
+msgid "# Overview"
+msgstr "# 둘러보기"
+
+# unordered list
+#: overview/README.md:3
+msgid "* [Seafile Components](components.md)"
+msgstr "* [Seafile 구성요소](components.md)"
+
+# unordered list
+#: overview/README.md:4
+msgid "* [File permission management](file_permission_management.md)"
+msgstr "* [파일 권한 관리](file_permission_management.md)"
+
+# unordered list
+#: overview/README.md:5
+msgid "* [FAQ](../faq.md)"
+msgstr "* [자주 묻는 질문](../faq.md)"
+
+# unordered list
+#: overview/README.md:6
+msgid "* [Changelog](../changelog.md)"
+msgstr "* [Changelog](../changelog.md)"
+
+# unordered list
+#: overview/README.md:7
+msgid "* [Roadmap](../roadmap.md)"
+msgstr "* [로드맵](../roadmap.md)"
+
+# unordered list
+#: overview/README.md:8
+msgid "* [Contribution](../contribution.md)"
+msgstr "* [기여하기](../contribution.md)"
+
+# header
+#: overview/components.md:1
+msgid "# Components Overview"
+msgstr "# 구성 요소 둘러보기"
+
+#: overview/components.md:3
+msgid "Seafile server consists of following components:"
+msgstr "Seafile 서버는 다음 항목으로 구성되어 있습니다:"
+
+# unordered list
+#: overview/components.md:5
+msgid ""
+"- **Seahub** (django)：the website. Seafile server package contains a light-"
+"weight Python HTTP server gunicorn that serves the website. By default, "
+"Seahub runs as an application within gunicorn. You can also configure Seahub "
+"to run under fast-cgi mode, behind Nginx or Apache."
+msgstr ""
+"- **Seahub**(장고)：웹사이트입니다.  Seafile 서버에는 웹 사이트를 제공하는 경"
+"량 파이썬 HTTP 서버 구니콘이 있습니다. 기본적으로 Seahub는 구니콘의 프로그램"
+"으로 동작합니다. nginx 또는 아파치 뒤에서 fast-cgi 모드로 Seahub를 실행하도"
+"록 설정할 수 있습니다."
+
+# unordered list
+#: overview/components.md:6
+msgid ""
+"- **Seafile server** (``seaf-server``)：data service daemon, handles raw "
+"file upload/download/syncing. Seafile server by default listens on 8082 "
+"port. You can configure Nginx/Apache to proxy traffic to the local 8082 port."
+msgstr ""
+"- **Seafile server** (``seaf-server``)：원시 파일의 업로드/다운로드/동기화를 "
+"처리하는 데이터 서비스 데몬입니다. Seafile 서버는 기본적으로 8082 포트에서 요"
+"청을 대기합니다. nginx/아파치를 설정하여 로컬 8082 포트로 요청을 우회하도록 "
+"설정할 수 있습니다."
+
+# unordered list
+#: overview/components.md:7
+msgid ""
+"- **Ccnet server** (``ccnet-server``)： RPC service daemon to enable "
+"communication among multiple components. Ccnet is only used for internal "
+"communication."
+msgstr ""
+"- **ccnet server** (``ccnet-server``)： 다중 구성요소간 통신을 활성화하는 "
+"RPC 서비스 데몬입니다. ccnet은 자체 내부 통신용으로만 사용합니다."
+
+#: overview/components.md:9
+msgid ""
+"The picture below shows how Seafile clients access files when you configure "
+"Seafile behind Nginx/Apache. "
+msgstr ""
+"다음 그림은 nginx/아파치 뒤에서 Seafile을 가동하도록 설정했을 때 Seafile 클라"
+"이언트의 파일 접근 방식을 나타냅니다."
+
+#: overview/components.md:11
+msgid "![Seafile Sync](../images/seafile-arch-new-http.png)"
+msgstr "![Seafile 동기화](../images/seafile-arch-new-http.png)"
+
+# unordered list
+#: overview/components.md:13
+msgid ""
+"- All access the Seafile service (including Seahub and Seafile server) can "
+"be configured behind Nginx or Apache web server. This way all network "
+"traffic to the service can be encrypted with HTTPS."
+msgstr ""
+"- Seafile 서비스의 모든 접근(Seahub 및 Seafile 서버 포함) 설정은 nginx 또는 "
+"아파치 웹 서버 뒤에서 동작하도록 설정할 수 있습니다. 이 방식으로 서비스로 전"
+"달할 모든 네트워크 트래픽을 HTTPS 방식으로 암호화할 수 있습니다."
+
+# unordered list
+#: overview/components.md:14
+msgid ""
+"- When user access Seahub, Seahub access data from Seafile server via Ccnet "
+"RPC."
+msgstr ""
+"- 사용자가 Seahub로 접근하면, Seahub는 ccnet RPC를 통해 Seafile 서버의 데이터"
+"로 접근합니다."
+
+# header
+#: overview/file_permission_management.md:1
+msgid "# File permission management"
+msgstr "# 파일 권한 관리"
+
+#: overview/file_permission_management.md:3
+msgid ""
+"Seafile manages files into libraries. Every library has an owner, who can "
+"share the library to other users or share it into groups. The sharing can be "
+"read-only or read-write."
+msgstr ""
+"Seafile은 라이브러리 단위로 파일을 관리합니다. 모든 라이브러리는 다른 사용자"
+"에게 공유하거나 다른 그룹에 공유할 수 있는 소유자가 있습니다. 공유는 읽기 전"
+"용 또는 읽기-쓰기 방식으로 공유할 수 있습니다."
+
+# header
+#: overview/file_permission_management.md:5
+msgid "## Read-only syncing"
+msgstr "## 읽기 전용 동기화"
+
+#: overview/file_permission_management.md:7
+msgid ""
+"Read-only libraries can be synced to local desktop. The modifications at the "
+"client will not be synced back. If an user has modified some file contents, "
+"he/she can use \"resync\" to revert the modifications."
+msgstr ""
+"읽기 전용 라이브러리는 로컬 데스크톱에 동기화할 수 있습니다. 클라이언트에서 "
+"수정하면 재 동기화하는 식으로 이전 내용으로 되돌리지 않습니다. 어떤 파일의 내"
+"용을 바꿨을 때 수정 내용을 되돌리려면 \"\""
+
+# header
+#: overview/file_permission_management.md:10
+msgid "## Cascading permission/Sub-folder permissions (Pro edition)"
+msgstr "## 단계별 중첩 권한 부여/하위 폴더 권한 부여(전문가판)"
+
+#: overview/file_permission_management.md:12
+msgid ""
+"Sharing controls whether an user/group can see an library, while sub-foler "
+"permissions is used to modify permissions on specific folders."
+msgstr ""
+"공유 기능은 사용자/그룹의 라이브러리 조회 가능 여부를 조절할 수 있으며, 하위 "
+"폴더 권한은 개별 폴더의 권한을 수정할 때 활용합니다."
+
+#: overview/file_permission_management.md:14
+msgid ""
+"Suppose you share a library as read-only to a group and then want specific "
+"sub-folders to be read-write by a few users. You can set permissions on sub-"
+"folders for shared users and groups."
+msgstr ""
+"라이브러리를 그룹에 읽기 전용으로 공유하고 하위 폴더 일부를 일부 사용자에게 "
+"읽기-쓰기로 공유한다고 가정해보겠습니다. 이 때, 사용자 및 그룹에 공유한 하위 "
+"폴더의 권한을 설정할 수 있습니다."
+
+#: overview/file_permission_management.md:16
+msgid "Note:"
+msgstr "참고:"
+
+# unordered list
+#: overview/file_permission_management.md:18
+msgid ""
+"* Setting sub-folder permission for an user without sharing the folder or "
+"parent folder to that user will have no effect."
+msgstr ""
+"* 공유 폴더 내지는 상위 폴더 없이 사용자 하위 폴더 권한을 사용자에게 설정하"
+"면 설정대로 동작하지 않습니다."
+
+# unordered list
+#: overview/file_permission_management.md:19
+msgid ""
+"* Sharing a library read-only to an user and then sharing a sub-folder read-"
+"write to that user will lead to two shared items for that user. This will "
+"cause confusing. Use sub-folder permission instead."
+msgstr ""
+"* 사용자에게 읽기 전용으로 라이브러리를 공유하고 해당 사용자에게 하위 폴더를 "
+"읽기 쓰기로 공유하면 사용자 대상 공유 항목이 두개가 됩니다. 이 설정은 혼동을 "
+"야기할 수 있습니다. 하위 폴더 권한 설정을 대신 활용하십시오."

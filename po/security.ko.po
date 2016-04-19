@@ -1,0 +1,294 @@
+# Korean translation for the seafile-docs package.
+# This file is distributed under the same license as the seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-19 21:46:37+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# header
+#: security/README.md:1
+msgid "# Security and auditing"
+msgstr ""
+
+# header
+#: security/README.md:3
+msgid "## Security features "
+msgstr ""
+
+# unordered list
+#: security/README.md:5
+msgid "* [Security features](security_features.md)"
+msgstr ""
+
+# header
+#: security/README.md:7
+msgid "## Access log and auditing"
+msgstr ""
+
+# unordered list
+#: security/README.md:9
+msgid "* [Access log and auditing](auditing.md)"
+msgstr ""
+
+# header
+#: security/auditing.md:1
+msgid "# Access log and auditing"
+msgstr ""
+
+#: security/auditing.md:3
+msgid ""
+"In pro edition, Seafile offers four auditing logs in system admin panel:"
+msgstr ""
+
+# unordered list
+#: security/auditing.md:5
+msgid "* Login log"
+msgstr ""
+
+# unordered list
+#: security/auditing.md:6
+msgid "* File access log"
+msgstr ""
+
+# unordered list
+#: security/auditing.md:7
+msgid "* File update log"
+msgstr ""
+
+# unordered list
+#: security/auditing.md:8
+msgid "* Permission change log"
+msgstr ""
+
+#: security/auditing.md:10
+msgid "![Seafile Auditing Log](../images/admin-audit-log.png)"
+msgstr ""
+
+#: security/auditing.md:12
+msgid ""
+"The logging feature is turned off by default. See [config options for pro "
+"edition](../deploy_pro/configurable_options.md) for how to turn it on."
+msgstr ""
+
+# header
+#: security/security_features.md:1
+msgid "# Security Questions"
+msgstr ""
+
+# header
+#: security/security_features.md:3
+msgid "## How is the connection between client and server encrypted?"
+msgstr ""
+
+#: security/security_features.md:5
+msgid ""
+"Before version 4.0, Seafile only supports syncing via a self-designed "
+"protocol. Every seafile desktop client has a unique private key. When a "
+"client and a server connect, they will exchange public key and negotiate a "
+"session key. The session key is derived from cryptographically secure random "
+"number with PDKDF2 algorithm. And it's exchanged between the client and the "
+"server with RSA encryption. This session key will be used to encrypt the "
+"data transfer with AES-256/CBC algorithm. "
+msgstr ""
+
+#: security/security_features.md:7
+msgid ""
+"From version 4.0, Seafile supports syncing via HTTP(S) protocol, which is a "
+"more standard approach."
+msgstr ""
+
+#: security/security_features.md:9
+msgid "From version 4.1, Seafile uses HTTP(S) syncing protocol by default."
+msgstr ""
+
+# header
+#: security/security_features.md:11
+msgid "## Encrypted Library"
+msgstr ""
+
+#: security/security_features.md:13
+msgid ""
+"Seafile provides a feature called encrypted library to protect your privacy. "
+"The file encryption/decryption is performed in the client-side when using "
+"the desktop client for file syncing. The password of an encrypted library is "
+"not stored in the server. **Even the system admin of the server can't view "
+"the file contents - they can however view the metadata [which are currently "
+"not encrypted](https://github.com/haiwen/seafile/issues/350).** The metadata "
+"includes: the complete list of directory and file names, every file size, "
+"the history of who changed each file, when, and what byte ranges were "
+"altered."
+msgstr ""
+
+#: security/security_features.md:15
+msgid ""
+"CAUTION: The client side encryption is not work currently for web browser "
+"and the cloud file browser of the desktop client. When you browsing "
+"encrypted libraries via the web browser and the cloud file browser, you will "
+"need to input the password. And the server will use the password to decrypt "
+"the \"file key\" for the library (see description below) and cache it in "
+"memory for 1 hour. The plain text password is never stored or cached on the "
+"server."
+msgstr ""
+
+#: security/security_features.md:17
+msgid ""
+"Update: The client side encryption works on iOS client since version 2.1.6. "
+"The Android client doesn't support client side encryption yet. "
+msgstr ""
+
+# header
+#: security/security_features.md:20
+msgid "## How does an encrypted library work?"
+msgstr ""
+
+#: security/security_features.md:22
+msgid ""
+"When you create an encrypted library, you'll provide a password for it. All "
+"the data in that library will be encrypted with the password before "
+"uploading to the server."
+msgstr ""
+
+#: security/security_features.md:24
+msgid "The encryption procedure is:"
+msgstr ""
+
+# ordered list
+#: security/security_features.md:26
+msgid ""
+"1. Generate a 32-byte long cryptographically strong random number. This will "
+"be used as the file encryption key (\"file key\")."
+msgstr ""
+
+# ordered list
+#: security/security_features.md:27
+msgid ""
+"2. Encrypt the file key with the user provided password. We first use PBKDF2 "
+"algorithm (1000 iteratioins of SHA256) to derive a key/iv pair from the "
+"password, then use AES 256/CBC to encrypt the file key. The result is called "
+"the \"encrypted file key\". This encrypted file key will be sent to and "
+"stored on the server. When you need to access the data, you can decrypt the "
+"file key from the encrypted file key."
+msgstr ""
+
+# ordered list
+#: security/security_features.md:28
+msgid ""
+"3. All file data is encrypted by the file key with AES 256/CBC. We use "
+"PBKDF2 algorithm (1000 iterations of SHA256) to derive key/iv pair from the "
+"file key. After encryption, the data is uploaded to the server."
+msgstr ""
+
+#: security/security_features.md:30
+msgid ""
+"The above encryption procedure can be executed on the desktop and the mobile "
+"client. The Seahub browser client uses a different encryption procedure that "
+"happens at the server. Because of this your password will be transferred to "
+"the server."
+msgstr ""
+
+#: security/security_features.md:32
+msgid ""
+"When you sync an encrypted library to the desktop, the client needs to "
+"verify your password. When you create the library, a \"magic token\" is "
+"derived from the password and library id. This token is stored with the "
+"library on the server side. The client use this token to check whether your "
+"password is correct before you sync the library. The magic token is "
+"generated by PBKDF2 algorithm with 1000 iterations of SHA256 hash."
+msgstr ""
+
+#: security/security_features.md:34
+msgid ""
+"For maximum security, the plain-text password won't be saved on the client "
+"side too. The client only saves the key/iv pair derived from the \"file key"
+"\", which is used to decrypt the data. So if you forget the password, you "
+"won't be able to recover it or access your data on the server."
+msgstr ""
+
+# header
+#: security/security_features.md:36
+msgid ""
+"## Why fileserver delivers every content to everybody knowing the content "
+"URL of an unshared private file?"
+msgstr ""
+
+#: security/security_features.md:38
+msgid ""
+"When a file download link is clicked, a random URL is generated for user to "
+"access the file from fileserver. This url can only be access for once. After "
+"that, all access will be denied to the url. So even someone else happens to "
+"know about the url, he/she can't access it any more."
+msgstr ""
+
+# header
+#: security/security_features.md:40
+msgid "## How does Seafile store user login password?"
+msgstr ""
+
+#: security/security_features.md:42
+msgid ""
+"User login passwords are stored in hash form only. Note that user login "
+"password is different from the passwords used in encrypted libraries. In the "
+"database, it's format is"
+msgstr ""
+
+# code block
+#: security/security_features.md:44
+msgid ""
+"```\n"
+"PBKDF2SHA256$iterations$salt$hash\n"
+"```"
+msgstr ""
+
+#: security/security_features.md:48
+msgid "The record is divided into 4 parts by the $ sign."
+msgstr ""
+
+# unordered list
+#: security/security_features.md:50
+msgid ""
+"- The first part is the hash algorithm used. Currently we use PBKDF2 with "
+"SHA256. It can be changed to even stronger algorithm if needed."
+msgstr ""
+
+# unordered list
+#: security/security_features.md:51
+msgid "- The second part is the number of iterations of the hash algorithm"
+msgstr ""
+
+# unordered list
+#: security/security_features.md:52
+msgid "- The third part is the random salt used for generating the hash"
+msgstr ""
+
+# unordered list
+#: security/security_features.md:53
+msgid "- The fourth part is the final hash generated from the password"
+msgstr ""
+
+#: security/security_features.md:55
+msgid "The calculate the hash,"
+msgstr ""
+
+# unordered list
+#: security/security_features.md:57
+msgid ""
+"- First, generate a 32-byte long cryptographically strong random number, use "
+"it as the salt."
+msgstr ""
+
+# unordered list
+#: security/security_features.md:58
+msgid ""
+"- Calculate the hash with `PBKDF2(password, salt, iterations)`. The number "
+"of iterations is currently 10000."
+msgstr ""

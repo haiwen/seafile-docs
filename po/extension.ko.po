@@ -1,0 +1,1100 @@
+# Korean translation for the seafile-docs package.
+# This file is distributed under the same license as the Seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-20 05:34:41+0900\n"
+"PO-Revision-Date: 2016-04-19 19:35+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+
+# header
+#: extension/README.md:1
+msgid "# WebDAV and FUSE extensions"
+msgstr "# WebDAV 및 FUSE 확장 기능"
+
+#: extension/README.md:3
+msgid ""
+"Seafile WebDAV and FUSE extensions make it easy for Seafile to work with "
+"third party applications. For example, you can use Documents App in iOS to "
+"access files in Seafile via WebDAV interface."
+msgstr ""
+"Seafile WebDAV 및 FUSE 확장 기능은 Seafile과 서드 파티 프로그램의 연동 동작"
+"을 쉽게 해줍니다. 예를 들어 iOS에서 WebDAV 인터페이스로 파일에 접근할 때 문"
+"서 앱을 활용할 수 있습니다."
+
+# header
+#: extension/fuse.md:1
+msgid "# FUSE extension"
+msgstr "# FUSE 확장 기능"
+
+#: extension/fuse.md:3
+msgid ""
+"Files in the seafile system are split to blocks, which means what are stored "
+"on your seafile server are not complete files, but blocks. This design "
+"faciliates effective data deduplication."
+msgstr ""
+"Seafile 시스템의 파일은 블록 단위로 쪼개져있으며, Seafile 서버에 들어간 파일"
+"은 완전한 파일이 아닌 블록으로 저장했다는 의미입니다. 이 설계 수단은 데이터 "
+"중복 방지에 효과적입니다."
+
+#: extension/fuse.md:5
+msgid ""
+"However, administrators sometimes want to access the files directly on the "
+"server. You can use seaf-fuse to do this."
+msgstr ""
+"그러나 관리자는 때로 서버의 파일에 바로 접근하고 싶을 때가 있습니다. 이 때 "
+"seaf-fuse를 사용할 수 있습니다."
+
+#: extension/fuse.md:7
+msgid ""
+"`Seaf-fuse` is an implementation of the [FUSE](http://fuse.sourceforge.net) "
+"virtual filesystem. In a word, it mounts all the seafile files to a folder "
+"(which is called the '''mount point'''), so that you can access all the "
+"files managed by seafile server, just as you access a normal folder on your "
+"server."
+msgstr ""
+"`Seaf-fuse`는 [FUSE](http://fuse.sourceforge.net) 가상 파일 시스템 구현체입니"
+"다. 말 그대로, 모든 Seafile의 파일을 폴더로 마운트('''마운트 지점'''이라 함)"
+"하여, 서버에서 일반 폴더에 접근하는 방식으로 Seafile 서버에서 관리하는 모든 "
+"파일에 접근할 수 있습니다."
+
+#: extension/fuse.md:9
+msgid "Note:"
+msgstr "참고:"
+
+# unordered list
+#: extension/fuse.md:11
+msgid "* Encrypted folders can't be accessed by seaf-fuse."
+msgstr "* 암호화 폴더는 seaf-fuse로 접근할 수 없습니다."
+
+# unordered list
+#: extension/fuse.md:12
+msgid ""
+"* Currently the implementation is '''read-only''', which means you can't "
+"modify the files through the mounted folder."
+msgstr ""
+"* 현재 구현체는 '''읽기 전용''' 이며, 마운트한 폴더의 파일을 수정할 수 없음"
+"을 의미합니다."
+
+# unordered list
+#: extension/fuse.md:13
+msgid ""
+"* One debian/centos systems, you need to be in the \"fuse\" group to have "
+"the permission to mount a FUSE folder."
+msgstr ""
+"* Debian/CentOS 시스템에서 FUSE 폴더 마운트 권한을 취득하려면 \"fuse\" 그룹"
+"에 들어가야합니다."
+
+# header
+#: extension/fuse.md:15
+msgid "### How to start seaf-fuse"
+msgstr "### seaf-fuse 시작 방법"
+
+#: extension/fuse.md:17
+msgid "Assume we want to mount to `/data/seafile-fuse`."
+msgstr "`/data/seafile-fuse`에 마운트한다고 가정해보겠습니다."
+
+# header
+#: extension/fuse.md:19
+msgid "##### Create the folder as the mount point"
+msgstr "##### 마운트 지점 폴더 만들기"
+
+# inline html
+#: extension/fuse.md:21
+msgid ""
+"<pre>\n"
+"mkdir -p /data/seafile-fuse\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"mkdir -p /data/seafile-fuse\n"
+"</pre>"
+
+# header
+#: extension/fuse.md:25
+msgid "##### Start seaf-fuse with the script"
+msgstr "##### 스크립트로 seaf-fuse 시작하기"
+
+#: extension/fuse.md:27
+msgid ""
+"Note: Before start seaf-fuse, you should have started seafile server with `./"
+"seafile.sh start`."
+msgstr ""
+"참고: seaf-fuse를 시작하기 전에 `./seafile.sh start`로 Seafile 서버를 시작해"
+"야합니다."
+
+# inline html
+#: extension/fuse.md:29
+msgid ""
+"<pre>\n"
+"./seaf-fuse.sh start /data/seafile-fuse\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"./seaf-fuse.sh start /data/seafile-fuse\n"
+"</pre>"
+
+#: extension/fuse.md:33
+msgid ""
+"Since Community server version 4.2.1 and Pro server 4.2.0, the script "
+"supports standard mount options for FUSE. For example, you can specify "
+"ownership for the mounted folder:"
+msgstr ""
+"커뮤니티 서버 4.2.1 및 전문가 서버 4.2.0부터, FUSE용 표준 마운트 옵션 스크립"
+"트를 지원합니다. 예를 들면, 마운트한 폴더의 소유 권한을 지정할 수 있습니다:"
+
+# code block
+#: extension/fuse.md:35
+msgid ""
+"```\n"
+"./seaf-fuse.sh start -o uid=<uid> /data/seafile-fuse\n"
+"```"
+msgstr ""
+"```\n"
+"./seaf-fuse.sh start -o uid=<uid> /data/seafile-fuse\n"
+"```"
+
+#: extension/fuse.md:39
+msgid "You can find the complete list of supported options in `man fuse`."
+msgstr "`man fuse`에서 지원 옵션 전부를 확인해볼 수 있습니다."
+
+# header
+#: extension/fuse.md:41
+msgid "##### Stop seaf-fuse"
+msgstr "##### seaf-fuse 멈추기"
+
+# inline html
+#: extension/fuse.md:43
+msgid ""
+"<pre>\n"
+"./seaf-fuse.sh stop\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"./seaf-fuse.sh stop\n"
+"</pre>"
+
+# header
+#: extension/fuse.md:47
+msgid "### Contents of the mounted folder"
+msgstr "### 마운트한 폴더의 내용"
+
+# header
+#: extension/fuse.md:49
+msgid "##### The top level folder"
+msgstr "##### 최상위 폴더"
+
+#: extension/fuse.md:51
+msgid "Now you can list the content of `/data/seafile-fuse`."
+msgstr "`/data/seafile-fuse`의 내용을 확인해볼 수 있습니다."
+
+# inline html
+#: extension/fuse.md:53
+msgid ""
+"<pre>\n"
+"$ ls -lhp /data/seafile-fuse\n"
+"\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 abc@abc.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  4  2015 foo@foo.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 plus@plus.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 sharp@sharp.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  3  2015 test@test.com/\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"$ ls -lhp /data/seafile-fuse\n"
+"\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 abc@abc.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  4  2015 foo@foo.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 plus@plus.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  2015 sharp@sharp.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  3  2015 test@test.com/\n"
+"</pre>"
+
+# unordered list
+#: extension/fuse.md:63
+msgid ""
+"* The top level folder contains many subfolders, each of which corresponds "
+"to a user"
+msgstr ""
+"* 최상위 폴더에는 여러가지 하위 폴더가 들어있는데, 이 폴더는 각 사용자의 저"
+"장 내용이 들어있습니다"
+
+# header
+#: extension/fuse.md:65
+msgid "##### The folder for each user"
+msgstr "##### 각 사용자 별 폴더"
+
+# inline html
+#: extension/fuse.md:67
+msgid ""
+"<pre>\n"
+"$ ls -lhp /data/seafile-fuse/abc@abc.com\n"
+"\n"
+"drwxr-xr-x 2 root root  924 Jan  1  1970 5403ac56-5552-4e31-"
+"a4f1-1de4eb889a5f_Photos/\n"
+"drwxr-xr-x 2 root root 1.6K Jan  1  1970 "
+"a09ab9fc-7bd0-49f1-929d-6abeb8491397_My Notes/\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"$ ls -lhp /data/seafile-fuse/abc@abc.com\n"
+"\n"
+"drwxr-xr-x 2 root root  924 Jan  1  1970 5403ac56-5552-4e31-"
+"a4f1-1de4eb889a5f_Photos/\n"
+"drwxr-xr-x 2 root root 1.6K Jan  1  1970 "
+"a09ab9fc-7bd0-49f1-929d-6abeb8491397_My Notes/\n"
+"</pre>"
+
+#: extension/fuse.md:74
+msgid ""
+"From the above list you can see, under the folder of a user there are "
+"subfolders, each of which represents a library of that user, and has a name "
+"of this format: '''{library_id}-{library-name}'''."
+msgstr ""
+"위에서 보신 바와 같이, 사용자의 라이브러리로 보이는 하위 폴더가 있는 사용자"
+"의 폴더는 '''{library_id}-{library-name}''' 형식의 이름이 달려있습니다."
+
+# header
+#: extension/fuse.md:76
+msgid "##### The folder for a library"
+msgstr "##### 라이브러리용 폴더"
+
+# inline html
+#: extension/fuse.md:78
+msgid ""
+"<pre>\n"
+"$ ls -lhp /data/seafile-fuse/abc@abc.com/5403ac56-5552-4e31-"
+"a4f1-1de4eb889a5f_Photos/\n"
+"\n"
+"-rw-r--r-- 1 root root 501K Jan  1  2015 image.png\n"
+"-rw-r--r-- 1 root root 501K Jan  1  2015 sample.jpng\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"$ ls -lhp /data/seafile-fuse/abc@abc.com/5403ac56-5552-4e31-"
+"a4f1-1de4eb889a5f_Photos/\n"
+"\n"
+"-rw-r--r-- 1 root root 501K Jan  1  2015 image.png\n"
+"-rw-r--r-- 1 root root 501K Jan  1  2015 sample.jpng\n"
+"</pre>"
+
+# header
+#: extension/fuse.md:85
+msgid "##### If you get a \"Permission denied\" error"
+msgstr "##### \"Permission denied\" 오류가 떴다면"
+
+#: extension/fuse.md:87
+msgid ""
+"If you get an error message saying \"Permission denied\" when running `./"
+"seaf-fuse.sh start`, most likely you are not in the \"fuse group\". You "
+"should:"
+msgstr ""
+"`./seaf-fuse.sh start`를 실행할 때 \"Permission denied\" 오류 메시지가 뜬다"
+"면 대부분의 경우 \"fuse 그룹\"에 속해있지 않기 때문입니다. 다음 과정을 진행하"
+"십시오:"
+
+# unordered list
+#: extension/fuse.md:89
+msgid "* Add yourself to the fuse group"
+msgstr "* fuse 그룹에 사용자 자신을 추가하십시오"
+
+# inline html
+#: extension/fuse.md:90
+msgid ""
+"<pre>\n"
+"sudo usermod -a -G fuse <your-user-name>\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"sudo usermod -a -G fuse <your-user-name>\n"
+"</pre>"
+
+# unordered list
+#: extension/fuse.md:94
+msgid "* Logout your shell and login again"
+msgstr "* 쉘에서 로그아웃 한 다음 다시 로그인해보십시오"
+
+# unordered list
+#: extension/fuse.md:95
+msgid "* Now try `./seaf-fuse.sh start <path>`again."
+msgstr "* 이제 `./seaf-fuse.sh start <path>`명령을 다시 실행해보십시오."
+
+# header
+#: extension/webdav.md:1
+msgid "# WebDAV extension"
+msgstr "# WebDAV 확장 기능"
+
+#: extension/webdav.md:3
+msgid "Seafile WebDAV Server(SeafDAV) is added in seafile server 2.1.0."
+msgstr "Seafile WebDAV 서버(SeafDAV)는 Seafile 서버 2.1.0에 추가했습니다."
+
+#: extension/webdav.md:5
+msgid ""
+"In the wiki below, we assume your seafile installation folder is `/data/"
+"haiwen`."
+msgstr "아래 위키 문서에서 Seafile 설치 폴더를 `/data/haiwen`으로 가정합니다."
+
+# header
+#: extension/webdav.md:7
+msgid "## SeafDAV Configuration"
+msgstr "## SeafDAV 설정"
+
+#: extension/webdav.md:9
+msgid ""
+"The configuration file is `/data/haiwen/conf/seafdav.conf`. If it is not "
+"created already, you can just create the file."
+msgstr ""
+"설정 파일은 `/data/haiwen/conf/seafdav.conf`입니다. 아직 만들지 않았다면 이 "
+"파일을 만들 수 있습니다."
+
+# inline html
+#: extension/webdav.md:11
+#, fuzzy
+msgid ""
+"<pre>\n"
+"[WEBDAV]\n"
+"\n"
+"# Default is false. Change it to true to enable SeafDAV server.\n"
+"enabled = true\n"
+"\n"
+"port = 8080\n"
+"\n"
+"# Change the value of fastcgi to true if fastcgi is to be used\n"
+"fastcgi = false\n"
+"\n"
+"# If you deploy SeafDAV behind nginx/apache, you need to modify \"share_name"
+"\".\n"
+"share_name = /\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[WEBDAV]\n"
+"\n"
+"# Default is false. Change it to true to enable SeafDAV server.\n"
+"enabled = true\n"
+"\n"
+"port = 8080\n"
+"\n"
+"# Change the value of fastcgi to true if fastcgi is to be used\n"
+"fastcgi = false\n"
+"\n"
+"# If you deploy seafdav behind nginx/apache, you need to modify \"share_name"
+"\".\n"
+"share_name = /\n"
+"</pre>"
+
+#: extension/webdav.md:26
+msgid ""
+"Every time the configuration is modified, you need to restart seafile server "
+"to make it take effect."
+msgstr ""
+"설정을 수정하고 나면, 항상 Seafile 서버를 다시 시작하여 설정 내용을 적용해야"
+"합니다."
+
+# inline html
+#: extension/webdav.md:28
+msgid ""
+"<pre>\n"
+"./seafile.sh restart\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"./seafile.sh restart\n"
+"</pre>"
+
+# header
+#: extension/webdav.md:33
+msgid "### Sample Configuration 1: No nginx/apache"
+msgstr "### 예제 설정 1: Nginx/Apache 미 사용"
+
+#: extension/webdav.md:35
+msgid ""
+"Your WebDAV client would visit the Seafile WebDAV server at <code>http://"
+"example.com:8080</code>"
+msgstr ""
+"WebDAV 클라이언트에서 <code>http://example.com:8080</code> 주소로 WebDAV 서버"
+"에 접근합니다"
+
+# inline html
+#: extension/webdav.md:37
+msgid ""
+"<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = false\n"
+"share_name = /\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = false\n"
+"share_name = /\n"
+"</pre>"
+
+# header
+#: extension/webdav.md:45
+msgid "### Sample Configuration 2: With Nginx"
+msgstr "### 예제 설정 2: Nginx"
+
+#: extension/webdav.md:47 extension/webdav.md:125
+msgid ""
+"Your WebDAV client would visit the Seafile WebDAV server at <code>http://"
+"example.com/seafdav</code>"
+msgstr ""
+"WebDAV 클라이언트에서 <code>http://example.com/seafdav</code> 주소로 Seafile "
+"WebDAV 서버에 접근합니다"
+
+# inline html
+#: extension/webdav.md:49
+msgid ""
+"<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = true\n"
+"share_name = /seafdav\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = true\n"
+"share_name = /seafdav\n"
+"</pre>"
+
+#: extension/webdav.md:57
+#, fuzzy
+msgid ""
+"In the above config, the value of '''share_name''' is changed to '''/"
+"seafdav''', which is the address suffix you assign to SeafDAV server."
+msgstr ""
+"위 설정에서, '''share_name''' 값은 seafdav 서버에 할당할 주소의 접미부인 '''/"
+"seafdav'''로 바꾸었습니다."
+
+# header
+#: extension/webdav.md:59
+msgid "#### Nginx without HTTPS"
+msgstr "#### https를 활용하지 않는 Nginx"
+
+#: extension/webdav.md:61
+msgid "The corresponding Nginx configuration is (without https):"
+msgstr "Nginx 해당 설정(https 제외)은 다음과 같습니다:"
+
+# inline html
+#: extension/webdav.md:63
+msgid ""
+"<pre>\n"
+"     location /seafdav {\n"
+"        fastcgi_pass    127.0.0.1:8080;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root"
+"$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param   SERVER_PROTOCOL     $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param   SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param   SERVER_PORT         $server_port;\n"
+"        fastcgi_param   SERVER_NAME         $server_name;\n"
+"        \n"
+"        client_max_body_size 0;\n"
+"        \n"
+"        # This option is only available for Nginx >= 1.8.0. See more details "
+"below.\n"
+"        proxy_request_buffering off;\n"
+"\n"
+"        access_log      /var/log/nginx/seafdav.access.log;\n"
+"        error_log       /var/log/nginx/seafdav.error.log;\n"
+"    }\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"     location /seafdav {\n"
+"        fastcgi_pass    127.0.0.1:8080;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root"
+"$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param   SERVER_PROTOCOL     $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param   SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param   SERVER_PORT         $server_port;\n"
+"        fastcgi_param   SERVER_NAME         $server_name;\n"
+"        \n"
+"        client_max_body_size 0;\n"
+"        \n"
+"        # This option is only available for Nginx >= 1.8.0. See more details "
+"below.\n"
+"        proxy_request_buffering off;\n"
+"\n"
+"        access_log      /var/log/nginx/seafdav.access.log;\n"
+"        error_log       /var/log/nginx/seafdav.error.log;\n"
+"    }\n"
+"</pre>"
+
+# header
+#: extension/webdav.md:88
+msgid "#### Nginx with HTTPS"
+msgstr "#### https를 활용하는 Nginx"
+
+#: extension/webdav.md:90
+msgid "Nginx conf with https:"
+msgstr "https를 활용하는 nginx 설정:"
+
+# inline html
+#: extension/webdav.md:92
+msgid ""
+"<pre>\n"
+"     location /seafdav {\n"
+"        fastcgi_pass    127.0.0.1:8080;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root"
+"$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param   SERVER_PROTOCOL     $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param   SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param   SERVER_PORT         $server_port;\n"
+"        fastcgi_param   SERVER_NAME         $server_name;\n"
+"\n"
+"        fastcgi_param   HTTPS               on;\n"
+"        \n"
+"        client_max_body_size 0;\n"
+"        \n"
+"        # This option is only available for Nginx >= 1.8.0. See more details "
+"below.\n"
+"        proxy_request_buffering off;\n"
+"\n"
+"        access_log      /var/log/nginx/seafdav.access.log;\n"
+"        error_log       /var/log/nginx/seafdav.error.log;\n"
+"    }\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"     location /seafdav {\n"
+"        fastcgi_pass    127.0.0.1:8080;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root"
+"$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param   SERVER_PROTOCOL     $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param   SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param   SERVER_PORT         $server_port;\n"
+"        fastcgi_param   SERVER_NAME         $server_name;\n"
+"\n"
+"        fastcgi_param   HTTPS               on;\n"
+"        \n"
+"        client_max_body_size 0;\n"
+"        \n"
+"        # This option is only available for Nginx >= 1.8.0. See more details "
+"below.\n"
+"        proxy_request_buffering off;\n"
+"\n"
+"        access_log      /var/log/nginx/seafdav.access.log;\n"
+"        error_log       /var/log/nginx/seafdav.error.log;\n"
+"    }\n"
+"</pre>"
+
+#: extension/webdav.md:119
+#, fuzzy
+msgid ""
+"By default Nginx will buffer large request body in temp file. After the body "
+"is completely received, Nginx will send the body to the upstream server "
+"(SeafDAV in our case). But it seems when file size is very large, the "
+"buffering mechanism dosen't work well. It may stop proxying the body in the "
+"middle. So if you want to support file upload larger for 4GB, we suggest you "
+"install Nginx version >= 1.8.0 and add `proxy_request_buffering off` to "
+"Nginx configuration."
+msgstr ""
+"기본적으로 Nginx에서 임시 파일에 있는 대형 요청 본문을 버퍼에 저장합니다. 다"
+"음 요청 본문을 완전히 받으면, Nginx에서 업스트림 서버에 요청 본문을 보냅니다"
+"(이 경우 seafdav). 하지만 파일 크기가 상당히 큰 것 같으면, 버퍼링 기능이 제대"
+"로 동작하지 않습니다. 중간에서 요청 본문 중개가 멈출 수도 있습니다. 따라서 "
+"4GB 이상의 파일 업로드를 지원하려면 Nginx 1.8.0 이상의 버전을 설치하시고 "
+"`proxy_request_buffering off` 설정을  Nginx 설정에 추가하십시오."
+
+# header
+#: extension/webdav.md:121
+msgid "### Sample Configuration 3: With Apache"
+msgstr "### 예제 설정 3: Apache"
+
+#: extension/webdav.md:123
+msgid "The following configuratioin assumes you use Apache 2.4 or later."
+msgstr "다음 설정은 Apache 2.4 이상을 사용함을 가정합니다."
+
+# inline html
+#: extension/webdav.md:127
+msgid ""
+"<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = false\n"
+"share_name = /seafdav\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[WEBDAV]\n"
+"enabled = true\n"
+"port = 8080\n"
+"fastcgi = false\n"
+"share_name = /seafdav\n"
+"</pre>"
+
+#: extension/webdav.md:135
+#, fuzzy
+msgid ""
+"In the above config, the value of '''share_name''' is changed to '''/"
+"seafdav''', which is the address suffix you assign to SeafDAV server. **Note "
+"that we do not use fastcgi for Apache.**"
+msgstr ""
+"위 설정에서 '''share_name''' 값은 SeafDAV 서버의 주소 접미부 '''/"
+"seafdav'''로 바꾸었습니다. **참고로 이 부분은 Apache에서 fastcgi를 사용하지 "
+"않습니다.**"
+
+#: extension/webdav.md:137
+msgid "Modify Apache config file (site-enabled/000-default):"
+msgstr "Apache 설정 파일(site-enabled/000-default)을 수정하십시오:"
+
+# header
+#: extension/webdav.md:139
+msgid "#### Apache without HTTPS"
+msgstr "#### https를 활용하지 않는 Apache"
+
+#: extension/webdav.md:141
+msgid ""
+"Based on your apache configuration when you [deploy Seafile with Apache](../"
+"deploy/deploy_with_apache.md), add seafdav related config:"
+msgstr ""
+"Apache 설정에 따라 [Seafile과 Apache를 가동](../deploy/deploy_with_apache.md)"
+"할 때, 관련 설정 파일에 Seafdav를 추가하십시오:"
+
+# inline html
+#: extension/webdav.md:143
+msgid ""
+"<pre>\n"
+"<VirtualHost *:80>\n"
+"\n"
+"    ServerName www.myseafile.com\n"
+"    # Use \"DocumentRoot /var/www/html\" for Centos/Fedora\n"
+"    # Use \"DocumentRoot /var/www\" for Ubuntu/Debian\n"
+"    DocumentRoot /var/www\n"
+"    Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"\n"
+"    RewriteEngine On\n"
+"\n"
+"    <Location /media>\n"
+"        Require all granted\n"
+"    </Location>\n"
+"\n"
+"    #\n"
+"    # seafile fileserver\n"
+"    #\n"
+"    ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"    ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"    RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"    #\n"
+"    # WebDAV\n"
+"    # We use http proxy, since SeafDAV is incompatible with FCGI proxy in "
+"Apache 2.4.\n"
+"    #\n"
+"    ProxyPass /seafdav http://127.0.0.1:8080/seafdav\n"
+"    ProxyPassReverse /seafdav http://127.0.0.1:8080/seafdav\n"
+"\n"
+"    #\n"
+"    # seahub\n"
+"    #\n"
+"    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"    SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"    ProxyPass / fcgi://127.0.0.1:8000/\n"
+"\n"
+"</virtualhost>\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"<VirtualHost *:80>\n"
+"\n"
+"    ServerName www.myseafile.com\n"
+"    # Use \"DocumentRoot /var/www/html\" for Centos/Fedora\n"
+"    # Use \"DocumentRoot /var/www\" for Ubuntu/Debian\n"
+"    DocumentRoot /var/www\n"
+"    Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"\n"
+"    RewriteEngine On\n"
+"\n"
+"    <Location /media>\n"
+"        Require all granted\n"
+"    </Location>\n"
+"\n"
+"    #\n"
+"    # seafile fileserver\n"
+"    #\n"
+"    ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"    ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"    RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"    #\n"
+"    # WebDAV\n"
+"    # We use http proxy, since SeafDAV is incompatible with FCGI proxy in "
+"Apache 2.4.\n"
+"    #\n"
+"    ProxyPass /seafdav http://127.0.0.1:8080/seafdav\n"
+"    ProxyPassReverse /seafdav http://127.0.0.1:8080/seafdav\n"
+"\n"
+"    #\n"
+"    # seahub\n"
+"    #\n"
+"    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"    SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"    ProxyPass / fcgi://127.0.0.1:8000/\n"
+"\n"
+"</virtualhost>\n"
+"</pre>"
+
+# header
+#: extension/webdav.md:182
+msgid "#### Apache with HTTPS"
+msgstr "#### https를 활용하는 Apache"
+
+#: extension/webdav.md:184
+msgid ""
+"Based on your apache configuration when you [Enable Https on Seafile web "
+"with Apache](../deploy/https_with_apache.md), add seafdav related config:"
+msgstr ""
+"Apache 설정에 따라 [Apache에서 Seafile 웹의 https를 활성화](../deploy/"
+"https_with_apache.md)했다면, seafdav를 관련 설정 파일에 추가하십시오:"
+
+# inline html
+#: extension/webdav.md:186
+msgid ""
+"<pre>\n"
+"<VirtualHost *:443>\n"
+"\n"
+"  ServerName www.myseafile.com\n"
+"  DocumentRoot /var/www\n"
+"\n"
+"  SSLEngine On\n"
+"  SSLCertificateFile /path/to/cacert.pem\n"
+"  SSLCertificateKeyFile /path/to/privkey.pem\n"
+"\n"
+"  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"\n"
+"  <Location /media>\n"
+"    ProxyPass !\n"
+"    Require all granted\n"
+"  </Location>\n"
+"\n"
+"  RewriteEngine On\n"
+"\n"
+"  #\n"
+"  # seafile fileserver\n"
+"  #\n"
+"  ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"  ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"  RewriteRule ^/seafhttp - [QSA,L]\n"
+"  \n"
+"  #\n"
+"  # WebDAV\n"
+"  # We use http proxy, since SeafDAV is incompatible with FCGI proxy in "
+"Apache 2.4.\n"
+"  #\n"
+"  ProxyPass /seafdav http://127.0.0.1:8080/seafdav\n"
+"  ProxyPassReverse /seafdav http://127.0.0.1:8080/seafdav\n"
+"  \n"
+"  #\n"
+"  # seahub\n"
+"  #\n"
+"  SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"  SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"  ProxyPass / fcgi://127.0.0.1:8000/\n"
+"\n"
+"</virtualhost>\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"<VirtualHost *:443>\n"
+"\n"
+"  ServerName www.myseafile.com\n"
+"  DocumentRoot /var/www\n"
+"\n"
+"  SSLEngine On\n"
+"  SSLCertificateFile /path/to/cacert.pem\n"
+"  SSLCertificateKeyFile /path/to/privkey.pem\n"
+"\n"
+"  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"\n"
+"  <Location /media>\n"
+"    ProxyPass !\n"
+"    Require all granted\n"
+"  </Location>\n"
+"\n"
+"  RewriteEngine On\n"
+"\n"
+"  #\n"
+"  # seafile fileserver\n"
+"  #\n"
+"  ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"  ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"  RewriteRule ^/seafhttp - [QSA,L]\n"
+"  \n"
+"  #\n"
+"  # WebDAV\n"
+"  # We use http proxy, since SeafDAV is incompatible with FCGI proxy in "
+"Apache 2.4.\n"
+"  #\n"
+"  ProxyPass /seafdav http://127.0.0.1:8080/seafdav\n"
+"  ProxyPassReverse /seafdav http://127.0.0.1:8080/seafdav\n"
+"  \n"
+"  #\n"
+"  # seahub\n"
+"  #\n"
+"  SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"  SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"  ProxyPass / fcgi://127.0.0.1:8000/\n"
+"\n"
+"</virtualhost>\n"
+"</pre>"
+
+# header
+#: extension/webdav.md:229
+msgid "## Notes on Clients"
+msgstr "## 클라이언트 측 참고"
+
+#: extension/webdav.md:231
+msgid ""
+"Please first note that, there are some known performance limitation when you "
+"map a Seafile webdav server as a local file system (or network drive)."
+msgstr ""
+"Seafile WebDAV 서버를 로컬 파일 시스템(또는 네트워크 드라이브)으로 매핑할 때 "
+"알려진 성능 제약이 있음을 우선적으로 참고하십시오."
+
+# unordered list
+#: extension/webdav.md:232
+msgid ""
+"- Uploading large number of files at once is usually much slower than the "
+"syncing client. That's because each file needs to be committed separately."
+msgstr ""
+"- 한 번에 상당히 많은 양의 파일을 업로드하면 클라이언트와 동기화할 때보다 더 "
+"느려집니다. 각각의 파일을 개별적으로 커밋해야 하기 때문입니다."
+
+# unordered list
+#: extension/webdav.md:233
+msgid ""
+"- The access to the webdav server may be slow sometimes. That's because the "
+"local file system driver sends a lot of unnecessary requests to get the "
+"files' attributes."
+msgstr ""
+"- WebDAV 서버 접근은 때로는 느릴 수 있습니다. 로컬 파일 시스템 드라이버에서 "
+"파일 속성을 가져올 때 불필요한 요청을 많이 보내기 때문입니다."
+
+#: extension/webdav.md:235
+msgid ""
+"So WebDAV is more suitable for infrequent file access. If you want better "
+"performance, please use the sync client instead."
+msgstr ""
+"따라서 WebDAV는 빈번하지 않은 파일 접근 용도에 가장 적합합니다. 더 나은 성능"
+"을 기대한다면, 동기화 클라이언트를 대신 사용하십시오."
+
+# header
+#: extension/webdav.md:237
+msgid "### Windows"
+msgstr "### 윈도우"
+
+#: extension/webdav.md:239
+msgid "The client recommendation for WebDAV depends on your Windows version:"
+msgstr "WebDAV용 클라이언트 추천은 윈도우 버전에 따라 다릅니다:"
+
+# unordered list
+#: extension/webdav.md:240
+msgid ""
+"- For Windows XP: Only non-encryped HTTP connection is supported by the "
+"Windows Explorer. So for security, the only viable option is to use third-"
+"party clients, such as Cyberduck or Bitkinex."
+msgstr ""
+"- 윈도우 XP: 윈도우 탐색기에서 비 암호화 HTTP 연결만 지원합니다. 보안을 위"
+"해, Cyberduck 또는 BitKinex같은 서드 파티 클라이언트 사용만이 유효한 선택입니"
+"다."
+
+# unordered list
+#: extension/webdav.md:241
+msgid ""
+"- For Vista and later versions: Windows Explorer supports HTTPS connection. "
+"But it requires a valid certificate on the server. It's generally "
+"recommended to use Windows Explorer to map a webdav server as network drive. "
+"If you use a self-signed certificate, you have to add the certificate's CA "
+"into Windows' system CA store."
+msgstr ""
+"- 비스타 이상 버전: 윈도우 탐색기에서 https 연결을 지원합니다만, 서버에 유효"
+"한 인증서가 있어야합니다. 윈도우 탐색기에서 WebDAV 서버를 네트워크 드라이브"
+"로 매핑할 경우 추천합니다. 자체 서명 인증서를 사용한다면 윈도우 시스템의 발"
+"급 기관 저장소에 인증서 발급 기관을 추가해야합니다."
+
+# header
+#: extension/webdav.md:243
+msgid "### Linux"
+msgstr "### 리눅스"
+
+#: extension/webdav.md:245
+msgid ""
+"On Linux you have more choices. You can use file manager such as Nautilus to "
+"connect to webdav server. Or you can use davfs2 from the command line."
+msgstr ""
+"리눅스에서는 여러가지 선택의 여지가 있습니다. WebDAV 서버에 연결할 때 노틸러"
+"스 같은 파일 관리자 프로그램을 사용하거나, 명령 프롬프트에서 davfs2를 사용할 "
+"수 있습니다."
+
+#: extension/webdav.md:247
+msgid "To use davfs2"
+msgstr "davfs2를 사용하려면"
+
+# inline html
+#: extension/webdav.md:249
+msgid ""
+"<pre>\n"
+"sudo apt-get install davfs2\n"
+"sudo mount -t davfs -o uid=<username> https://example.com/seafdav /media/"
+"seafdav/\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"sudo apt-get install davfs2\n"
+"sudo mount -t davfs -o uid=<username> https://example.com/seafdav /media/"
+"seafdav/\n"
+"</pre>"
+
+#: extension/webdav.md:254
+msgid ""
+"The -o option sets the owner of the mounted directory to <username> so that "
+"it's writable for non-root users."
+msgstr ""
+"-o 옵션으로 <사용자이름> 디렉터리로 마운트한 디렉터리의 소유주를 설정하여 비 "
+"루트 사용자가 기록하게 할 수 있습니다."
+
+#: extension/webdav.md:256
+msgid ""
+"It's recommended to disable LOCK operation for davfs2. You have to edit /etc/"
+"davfs2/davfs2.conf"
+msgstr ""
+"davfs2의 LOCK 동작 비활성화를 추천합니다. /etc/davfs2/davfs2.conf를 편집해야"
+"합니다."
+
+# inline html
+#: extension/webdav.md:258
+msgid ""
+"<pre>\n"
+" use_locks       0\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+" use_locks       0\n"
+"</pre>"
+
+# header
+#: extension/webdav.md:262
+msgid "### Mac OS X"
+msgstr "### Mac OS X"
+
+#: extension/webdav.md:264
+msgid ""
+"Finder's support for WebDAV is also not very stable and slow. So it is "
+"recommended to use a webdav client software such as Cyberduck."
+msgstr ""
+"Finder의 WebDAV 지원은 안정적이지 않으며 느립니다. 따라서 Cyberduck 같은 "
+"WebDAV 클라이언트 프로그램 사용을 권장합니다."
+
+# header
+#: extension/webdav.md:266
+msgid "## Frequently Asked Questions"
+msgstr "## 자주 묻는 질문"
+
+# header
+#: extension/webdav.md:268
+#, fuzzy
+msgid "### Clients can't connect to SeafDAV server"
+msgstr "### 클라이언트에서 seafdav 서버에 연결할 수 없음"
+
+#: extension/webdav.md:270
+#, fuzzy
+msgid ""
+"By default, SeafDAV is disabled. Check whether you have <code>enabled = "
+"true</code> in <code>seafdav.conf</code>."
+msgstr ""
+"기본적으로, seafdav는 비활성 기능입니다. <code>seafdav.conf</code>에 "
+"<code>enabled = true</code> 설정 값이 들어있는지 확인하십시오."
+
+#: extension/webdav.md:271
+msgid "If not, modify it and restart seafile server."
+msgstr ""
+"비활성 상태로 두고 싶지 않으면, 수정하시고 Seafile 서버를 다시 시작하십시오."
+
+# header
+#: extension/webdav.md:274
+msgid "### The client gets \"Error: 404 Not Found\""
+msgstr "### 클라이언트에 \"Error: 404 Not Found\" 오류가 떴을 때"
+
+#: extension/webdav.md:276
+msgid ""
+"If you deploy SeafDAV behind Nginx/Apache, make sure to change the value of "
+"<code>share_name</code> as the sample configuration above. Restart your "
+"seafile server and try again."
+msgstr ""
+"SeafDAV 서버를 Nginx/Apache 뒤에서 동작하게 하고 싶다면, 위 예제 설정과 같이 "
+"<code>share_name</code>의 값을 바꿨는지 확인하십시오. Seafile 서버를 다시 시"
+"작한 후 확인해보십시오."
+
+# header
+#: extension/webdav.md:278
+msgid ""
+"### Windows Explorer reports \"file size exceeds the limit allowed and "
+"cannot be saved\""
+msgstr ""
+"### 윈도우 탐색기에 \"파일이 너무 커서 대상 파일 시스템에서 사용할 수 없습니"
+"다\" 오류가 떴을 때"
+
+#: extension/webdav.md:280
+msgid ""
+"This happens when you map webdav as a network drive, and tries to copy a "
+"file larger than about 50MB from the network drive to a local folder."
+msgstr ""
+"WebDAV를 네트워크 드라이브로 매핑한 후 네트워크 드라이브에서 로컬 폴더로 "
+"50MB 이상의 파일을 복사할 때 일어납니다."
+
+#: extension/webdav.md:282
+msgid ""
+"This is because Windows Explorer has a limit of the file size downloaded "
+"from webdav server. To make this size large, change the registry entry on "
+"the client machine. There is a registry key named `FileSizeLimitInBytes` "
+"under `HKEY_LOCAL_MACHINE -> SYSTEM -> CurrentControlSet -> Services -> "
+"WebClient -> Parameters`."
+msgstr ""
+"윈도우 탐색기에서 WebDAV 서버에서 다운로드한 파일 크기에 제약을 두기 때문입니"
+"다. 이 크기를 더 크게 하려면, 클라이언트 머신의 레지스트리 항목 값을 바꾸십시"
+"오. `HKEY_LOCAL_MACHINE -> SYSTEM -> CurrentControlSet -> Services -> "
+"WebClient -> Parameters`에 `FileSizeLimitInBytes` 레지스트리 키가 있습니다."

@@ -1,0 +1,3146 @@
+# Korean translation for the seafile-docs package.
+# This file is distributed under the same license as the seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-18 23:34:26+0900\n"
+"PO-Revision-Date: 2016-04-14 15:52+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+# header
+#: build_seafile/README.md:1
+msgid "# How to Build Seafile"
+msgstr "# Seafile 빌드 방법"
+
+#: build_seafile/README.md:3
+msgid ""
+"You can build Seafile from our source code package or from the Github repo "
+"directly."
+msgstr ""
+"소스 코드 꾸러미 또는 github 저장소에서 바로 Seafile을 빌드할 수 있습니다."
+
+#: build_seafile/README.md:5
+msgid "Client"
+msgstr "클라이언트"
+
+# unordered list
+#: build_seafile/README.md:7
+msgid "* [Linux](linux.md)"
+msgstr "* [리눅스](linux.md)"
+
+# unordered list
+#: build_seafile/README.md:8
+msgid "* [Max OS X](osx.md)"
+msgstr "* [Max OS X](osx.md)"
+
+#: build_seafile/README.md:10
+msgid "Server"
+msgstr "서버"
+
+# unordered list
+#: build_seafile/README.md:12
+msgid "* [Build Seafile server](server.md)"
+msgstr "* [Seafile 서버 빌드](server.md)"
+
+# header
+#: build_seafile/freebsd.md:1
+msgid "# FreeBSD"
+msgstr "# FreeBSD"
+
+# header
+#: build_seafile/freebsd.md:3 build_seafile/linux.md:3
+msgid "#### Preparation"
+msgstr "#### 준비"
+
+#: build_seafile/freebsd.md:5
+msgid "**support for FreeBSD** is still under construction."
+msgstr "**FreeBSD 지원** 부분은 아직 작성중입니다."
+
+#: build_seafile/freebsd.md:7 build_seafile/linux.md:5
+msgid ""
+"The following list is what you need to install on your development machine. "
+"__You should install all of them before you build seafile__."
+msgstr ""
+"다음 목록은 개발 머신에 설치해야 할 항목을 나타냅니다. __Seafile을 빌드하기 "
+"전 아래 항목을 모두 설치해야합니다__."
+
+#: build_seafile/freebsd.md:9
+msgid ""
+"Package names are according to FreeBSD Ports. You might install your ports "
+"manually or via ``pkgng``."
+msgstr ""
+"FreeBSD port의 꾸러미 이름을 따릅니다. port 또는 ``pkgng``로 직접 설치하시면 "
+"됩니다."
+
+# unordered list
+#: build_seafile/freebsd.md:11
+msgid "* devel/autoconf"
+msgstr "* devel/autoconf"
+
+# unordered list
+#: build_seafile/freebsd.md:12
+msgid "* devel/automake"
+msgstr "* devel/automake"
+
+# unordered list
+#: build_seafile/freebsd.md:13
+msgid "* textproc/intltool"
+msgstr "* textproc/intltool"
+
+# unordered list
+#: build_seafile/freebsd.md:14
+msgid "* textproc/gsed"
+msgstr "* textproc/gsed"
+
+# unordered list
+#: build_seafile/freebsd.md:15
+msgid "* devel/libtool"
+msgstr "* devel/libtool"
+
+# unordered list
+#: build_seafile/freebsd.md:16
+msgid "* devel/libevent2"
+msgstr "* devel/libevent2"
+
+# unordered list
+#: build_seafile/freebsd.md:17
+msgid "* ftp/curl"
+msgstr "* ftp/curl"
+
+# unordered list
+#: build_seafile/freebsd.md:18
+msgid "* devel/glib20"
+msgstr "* devel/glib20"
+
+# unordered list
+#: build_seafile/freebsd.md:19
+msgid "* misc/ossp-uuid"
+msgstr "* misc/ossp-uuid"
+
+# unordered list
+#: build_seafile/freebsd.md:20
+msgid "* databases/sqlite3"
+msgstr "* databases/sqlite3"
+
+# unordered list
+#: build_seafile/freebsd.md:21
+msgid "* devel/jansson"
+msgstr "* devel/jansson"
+
+# unordered list
+#: build_seafile/freebsd.md:22
+msgid "* lang/vala"
+msgstr "* lang/vala"
+
+# unordered list
+#: build_seafile/freebsd.md:23
+msgid "* devel/cmake"
+msgstr "* devel/cmake"
+
+# unordered list
+#: build_seafile/freebsd.md:24
+msgid "* archivers/libarchive"
+msgstr "* archivers/libarchive"
+
+# unordered list
+#: build_seafile/freebsd.md:25
+msgid "* devel/py-simplejson (removed in furture release)"
+msgstr "* devel/py-simplejson (다음 릴리스에서 제거)"
+
+#: build_seafile/freebsd.md:27
+msgid "GUI"
+msgstr "GUI"
+
+# unordered list
+#: build_seafile/freebsd.md:28
+msgid "* devel/qt4"
+msgstr "* devel/qt4"
+
+# code block
+#: build_seafile/freebsd.md:30
+msgid ""
+"```bash\n"
+"#portmaster devel/autoconf devel/automake textproc/intltool textproc/gsed "
+"\\\n"
+"devel/libtool devel/libevent2 ftp/curl devel/glib20 misc/ossp-uuid databases/"
+"sqlite3 \\\n"
+"devel/jansson lang/vala devel/cmake devel/py-simplejson archivers/"
+"libarchive\n"
+"```"
+msgstr ""
+"```bash\n"
+"#portmaster devel/autoconf devel/automake textproc/intltool textproc/gsed "
+"\\\n"
+"devel/libtool devel/libevent2 ftp/curl devel/glib20 misc/ossp-uuid databases/"
+"sqlite3 \\\n"
+"devel/jansson lang/vala devel/cmake devel/py-simplejson archivers/"
+"libarchive\n"
+"```"
+
+#: build_seafile/freebsd.md:35
+msgid "For a fresh PkgNG users,"
+msgstr "PkgNG 사용자라면,"
+
+# code block
+#: build_seafile/freebsd.md:37
+msgid ""
+"```bash\n"
+"#pkg install autoconf automake intltool gsed libtool libevent2 curl \\\n"
+"  glib20 ossp-uuid sqlite3 jansson vala cmake py-simplejson libarchive\n"
+"```"
+msgstr ""
+"```bash\n"
+"#pkg install autoconf automake intltool gsed libtool libevent2 curl \\\n"
+"  glib20 ossp-uuid sqlite3 jansson vala cmake py-simplejson libarchive\n"
+"```"
+
+# header
+#: build_seafile/freebsd.md:42 build_seafile/linux.md:36
+msgid "#### Building"
+msgstr "#### 빌드"
+
+#: build_seafile/freebsd.md:44 build_seafile/linux.md:38
+msgid ""
+"First you should get the latest source of libsearpc/ccnet/seafile/seafile-"
+"client:"
+msgstr ""
+"우선 libsearpc/ccnet/seafile/seafile-client의 최신 소스 코드를 가져와야합니"
+"다:"
+
+#: build_seafile/freebsd.md:46 build_seafile/linux.md:40
+#: build_seafile/server.md:90
+msgid "Download the source tarball of the latest tag from"
+msgstr "다음 저장소에서 latest 태그가 붙은 소스 코드 타르볼을 다운로드하십시오"
+
+# unordered list
+#: build_seafile/freebsd.md:48 build_seafile/linux.md:42
+msgid "- https://github.com/haiwen/libsearpc/tags (use v3.0-latest)"
+msgstr "- https://github.com/haiwen/libsearpc/tags (v3.0-latest 활용)"
+
+# unordered list
+#: build_seafile/freebsd.md:49 build_seafile/linux.md:43
+msgid "- https://github.com/haiwen/ccnet/tags"
+msgstr "- https://github.com/haiwen/ccnet/tags"
+
+# unordered list
+#: build_seafile/freebsd.md:50 build_seafile/linux.md:44
+msgid "- https://github.com/haiwen/seafile/tags"
+msgstr "- https://github.com/haiwen/seafile/tags"
+
+# unordered list
+#: build_seafile/freebsd.md:51 build_seafile/linux.md:45
+msgid "- https://github.com/haiwen/seafile-client/tags"
+msgstr "- https://github.com/haiwen/seafile-client/tags"
+
+#: build_seafile/freebsd.md:53
+msgid ""
+"For example, if the latest released seafile client is 3.1.0, then just use "
+"the **v3.1.0** tags of the four projects. You should get four tarballs:"
+msgstr ""
+"예를 들어, Seafile 클라이언트 최신 출시 버전이 3.1.0이면, 다음 네가지 프로젝"
+"트의 **v3.1.0** 태그를 활용하십시오. 다음 타르볼 파일 네개를 가져오십시오:"
+
+# unordered list
+#: build_seafile/freebsd.md:55 build_seafile/linux.md:49
+msgid "- libsearpc-v3.0-latest.tar.gz"
+msgstr "- libsearpc-v3.0-latest.tar.gz"
+
+# unordered list
+#: build_seafile/freebsd.md:56
+msgid "- ccnet-3.1.0.tar.gz"
+msgstr "- ccnet-3.1.0.tar.gz"
+
+# unordered list
+#: build_seafile/freebsd.md:57
+msgid "- seafile-3.1.0.tar.gz"
+msgstr "- seafile-3.1.0.tar.gz"
+
+# unordered list
+#: build_seafile/freebsd.md:58
+msgid "- seafile-client-3.1.0.tar.gz"
+msgstr "- seafile-client-3.1.0.tar.gz"
+
+# code block
+#: build_seafile/freebsd.md:60
+msgid ""
+"```sh\n"
+"export version=3.1.0\n"
+"alias wget='wget --content-disposition -nc'\n"
+"wget https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz\n"
+"wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile-client/archive/v${version}.tar.gz\n"
+"```"
+msgstr ""
+"```sh\n"
+"export version=3.1.0\n"
+"alias wget='wget --content-disposition -nc'\n"
+"wget https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz\n"
+"wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile-client/archive/v${version}.tar.gz\n"
+"```"
+
+#: build_seafile/freebsd.md:69 build_seafile/linux.md:63
+msgid "Now uncompress them:"
+msgstr "이제 압축을 해제하십시오:"
+
+# code block
+#: build_seafile/freebsd.md:71
+msgid ""
+"```sh\n"
+"tar xf libsearpc-v3.0-latest.tar.gz\n"
+"tar xf ccnet-${version}.tar.gz\n"
+"tar xf seafile-${version}.tar.gz\n"
+"tar xf seafile-client-${version}.tar.gz\n"
+"```"
+msgstr ""
+"```sh\n"
+"tar xf libsearpc-v3.0-latest.tar.gz\n"
+"tar xf ccnet-${version}.tar.gz\n"
+"tar xf seafile-${version}.tar.gz\n"
+"tar xf seafile-client-${version}.tar.gz\n"
+"```"
+
+#: build_seafile/freebsd.md:78 build_seafile/linux.md:72
+msgid ""
+"To build Seafile client, you need first build **libsearpc** and **ccnet**, "
+"**seafile**."
+msgstr ""
+"Seafile 클라이언트를 빌드하려면, **libsearpc**, **ccnet**, **seafile** 을 우"
+"선 빌드해야합니다."
+
+# header
+#: build_seafile/freebsd.md:80 build_seafile/linux.md:74
+msgid "##### set paths"
+msgstr "##### 경로 설정"
+
+# code block
+#: build_seafile/freebsd.md:81
+msgid ""
+"```bash\n"
+"ln -sfh ../libdata/pkgconfig /usr/local/lib/pkgconfig\n"
+"```"
+msgstr ""
+"```bash\n"
+"ln -sfh ../libdata/pkgconfig /usr/local/lib/pkgconfig\n"
+"```"
+
+# header
+#: build_seafile/freebsd.md:85 build_seafile/linux.md:81
+#: build_seafile/server.md:140
+msgid "##### libsearpc"
+msgstr "##### libsearpc"
+
+# code block
+#: build_seafile/freebsd.md:87
+msgid ""
+"```bash\n"
+"cd libsearpc-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+"```bash\n"
+"cd libsearpc-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+
+# header
+#: build_seafile/freebsd.md:95 build_seafile/linux.md:92
+msgid "##### ccnet #####"
+msgstr "##### ccnet #####"
+
+# code block
+#: build_seafile/freebsd.md:97
+msgid ""
+"```bash\n"
+"export CFLAGS=\"-I/usr/local/include/ossp/uuid -I/usr/local/include/"
+"event2\"\n"
+"export LDFLAGS=\"-L/usr/local/lib -L/usr/local/lib/event2\"\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+"```bash\n"
+"export CFLAGS=\"-I/usr/local/include/ossp/uuid -I/usr/local/include/"
+"event2\"\n"
+"export LDFLAGS=\"-L/usr/local/lib -L/usr/local/lib/event2\"\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+
+# header
+#: build_seafile/freebsd.md:107 build_seafile/linux.md:103
+#: build_seafile/server.md:160
+msgid "##### seafile"
+msgstr "##### seafile"
+
+# code block
+#: build_seafile/freebsd.md:109
+msgid ""
+"```bash\n"
+"cd seafile-${version}/\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+"```bash\n"
+"cd seafile-${version}/\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+
+# header
+#: build_seafile/freebsd.md:117 build_seafile/linux.md:114
+msgid "#### seafile-client"
+msgstr "#### seafile-client"
+
+# code block
+#: build_seafile/freebsd.md:119
+msgid ""
+"```bash\n"
+"cd seafile-client-${version}\n"
+"cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX .\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+"```bash\n"
+"cd seafile-client-${version}\n"
+"cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX .\n"
+"make\n"
+"sudo make install\n"
+"```"
+
+# header
+#: build_seafile/freebsd.md:126 build_seafile/linux.md:124
+msgid "#### custom prefix"
+msgstr "#### 개별 PREFIX 설정"
+
+#: build_seafile/freebsd.md:127 build_seafile/linux.md:125
+msgid ""
+"when installing to a custom ```$PREFIX```, i.e. ```/opt```, you may need a "
+"script to set the path variables correctly"
+msgstr ""
+"```/opt```와 같은 개별 ```$PREFIX```에 설치하려면, 경로 변수를 올바르게 설정"
+"하는 스크립트가 필요합니다"
+
+# code block
+#: build_seafile/freebsd.md:129
+msgid ""
+"```bash\n"
+"cat >$PREFIX/bin/seafile-applet.sh <<END\n"
+"#!/bin/bash\n"
+"exec seafile-applet $@\n"
+"END\n"
+"cat >$PREFIX/bin/seaf-cli.sh <<END\n"
+"export PYTHONPATH=/usr/local/lib/python2.7/site-packages\n"
+"exec seaf-cli $@\n"
+"END\n"
+"chmod +x $PREFIX/bin/seafile-applet.sh $PREFIX/bin/seaf-cli.sh\n"
+"```"
+msgstr ""
+"```bash\n"
+"cat >$PREFIX/bin/seafile-applet.sh <<END\n"
+"#!/bin/bash\n"
+"exec seafile-applet $@\n"
+"END\n"
+"cat >$PREFIX/bin/seaf-cli.sh <<END\n"
+"export PYTHONPATH=/usr/local/lib/python2.7/site-packages\n"
+"exec seaf-cli $@\n"
+"END\n"
+"chmod +x $PREFIX/bin/seafile-applet.sh $PREFIX/bin/seaf-cli.sh\n"
+"```"
+
+#: build_seafile/freebsd.md:140 build_seafile/linux.md:142
+msgid "you can now start the client with ```$PREFIX/bin/seafile-applet.sh```."
+msgstr ""
+"이제 ```$PREFIX/bin/seafile-applet.sh```로 클라이언트를 시작할 수 있습니다."
+
+# header
+#: build_seafile/linux.md:1
+msgid "# Linux"
+msgstr "# 리눅스"
+
+#: build_seafile/linux.md:7
+msgid ""
+"Package names are according to Ubuntu 14.04. For other Linux distros, please "
+"find their corresponding names yourself."
+msgstr ""
+"꾸러미 이름은 우분투 14.04를 따릅니다. 다른 배포판을 사용한다면 관련 이름을 "
+"직접 찾으십시오."
+
+# unordered list
+#: build_seafile/linux.md:9
+msgid "* autoconf/automake/libtool"
+msgstr "* autoconf/automake/libtool"
+
+# unordered list
+#: build_seafile/linux.md:10
+msgid "* libevent-dev ( 2.0 or later )"
+msgstr "* libevent-dev (2.0 이상)"
+
+# unordered list
+#: build_seafile/linux.md:11 build_seafile/server.md:10
+msgid "* libcurl4-openssl-dev  (1.0.0 or later)"
+msgstr "* libcurl4-openssl-dev  (1.0.0 이상)"
+
+# unordered list
+#: build_seafile/linux.md:12
+msgid "* libgtk2.0-dev ( 2.24 or later)"
+msgstr "* libgtk2.0-dev (2.24 이상)"
+
+# unordered list
+#: build_seafile/linux.md:13 build_seafile/server.md:12
+msgid "* uuid-dev"
+msgstr "* uuid-dev"
+
+# unordered list
+#: build_seafile/linux.md:14 build_seafile/server.md:13
+msgid "* intltool (0.40 or later)"
+msgstr "* intltool (0.40 이상)"
+
+# unordered list
+#: build_seafile/linux.md:15 build_seafile/server.md:14
+msgid "* libsqlite3-dev (3.7 or later)"
+msgstr "* libsqlite3-dev (3.7 이상)"
+
+# unordered list
+#: build_seafile/linux.md:16
+msgid "* valac  (only needed if you build from git repo)"
+msgstr "* valac  (git 저장소에서 가져와서 빌드할 때만)"
+
+# unordered list
+#: build_seafile/linux.md:17 build_seafile/server.md:18
+msgid "* libjansson-dev"
+msgstr "* libjansson-dev"
+
+# unordered list
+#: build_seafile/linux.md:18
+msgid "* qtchooser"
+msgstr "* qtchooser"
+
+# unordered list
+#: build_seafile/linux.md:19
+msgid "* qtbase5-dev"
+msgstr "* qtbase5-dev"
+
+# unordered list
+#: build_seafile/linux.md:20
+msgid "* libqt5webkit5-dev"
+msgstr "* libqt5webkit5-dev"
+
+# unordered list
+#: build_seafile/linux.md:21
+msgid "* qttools5-dev"
+msgstr "* qttools5-dev"
+
+# unordered list
+#: build_seafile/linux.md:22
+msgid "* qttools5-dev-tools"
+msgstr "* qttools5-dev-tools"
+
+# unordered list
+#: build_seafile/linux.md:23 build_seafile/server.md:19
+msgid "* valac"
+msgstr "* valac"
+
+# unordered list
+#: build_seafile/linux.md:24
+msgid "* cmake"
+msgstr "* cmake"
+
+# unordered list
+#: build_seafile/linux.md:25
+msgid "* python-simplejson (for seaf-cli)"
+msgstr "* python-simplejson (seaf-cli용)"
+
+# code block
+#: build_seafile/linux.md:27
+msgid ""
+"```bash\n"
+"sudo apt-get install autoconf automake libtool libevent-dev libcurl4-openssl-"
+"dev libgtk2.0-dev uuid-dev intltool libsqlite3-dev valac libjansson-dev "
+"cmake qtchooser qtbase5-dev libqt5webkit5-dev qttools5-dev qttools5-dev-"
+"tools\n"
+"```"
+msgstr ""
+"```bash\n"
+"sudo apt-get install autoconf automake libtool libevent-dev libcurl4-openssl-"
+"dev libgtk2.0-dev uuid-dev intltool libsqlite3-dev valac libjansson-dev "
+"cmake qtchooser qtbase5-dev libqt5webkit5-dev qttools5-dev qttools5-dev-"
+"tools\n"
+"```"
+
+#: build_seafile/linux.md:30
+msgid ""
+"For a fresh Fedora 20 installation, the following will install all "
+"dependencies via YUM:"
+msgstr ""
+"최신 페도라 20 설치 배포판에서는, 다음 YUM 명령으로 모든 의존 관계에 있는 꾸"
+"러미를 설치합니다:"
+
+# code block
+#: build_seafile/linux.md:32
+msgid ""
+"```bash\n"
+"$ sudo yum install wget gcc libevent-devel openssl-devel gtk2-devel libuuid-"
+"devel sqlite-devel jansson-devel intltool cmake libtool vala gcc-c++ qt5-"
+"qtbase-devel qt5-qttools-devel qt5-qtwebkit-devel\n"
+"```"
+msgstr ""
+"```bash\n"
+"$ sudo yum install wget gcc libevent-devel openssl-devel gtk2-devel libuuid-"
+"devel sqlite-devel jansson-devel intltool cmake libtool vala gcc-c++ qt5-"
+"qtbase-devel qt5-qttools-devel qt5-qtwebkit-devel\n"
+"```"
+
+#: build_seafile/linux.md:47
+msgid ""
+"For example, if the latest released seafile client is 5.0.7, then just use "
+"the **v5.0.7** tags of the four projects. You should get four tarballs:"
+msgstr ""
+"예를 들어, Seafile 클라이언트 최신 출시 버전이 5.0.7이라면, 프로젝트의 "
+"**v5.0.7** 태그를 사용하십시오. 다음 네가지 타르볼을 가져와야합니다:"
+
+# unordered list
+#: build_seafile/linux.md:50
+msgid "- ccnet-5.0.7.tar.gz"
+msgstr "- ccnet-5.0.7.tar.gz"
+
+# unordered list
+#: build_seafile/linux.md:51
+msgid "- seafile-5.0.7.tar.gz"
+msgstr "- seafile-5.0.7.tar.gz"
+
+# unordered list
+#: build_seafile/linux.md:52
+msgid "- seafile-client-5.0.7.tar.gz"
+msgstr "- seafile-client-5.0.7.tar.gz"
+
+# code block
+#: build_seafile/linux.md:54
+msgid ""
+"```sh\n"
+"export version=5.0.7\n"
+"alias wget='wget --content-disposition -nc'\n"
+"wget https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz\n"
+"wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile-client/archive/v${version}.tar.gz\n"
+"```"
+msgstr ""
+"```sh\n"
+"export version=5.0.7\n"
+"alias wget='wget --content-disposition -nc'\n"
+"wget https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz\n"
+"wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile-client/archive/v${version}.tar.gz\n"
+"```"
+
+# code block
+#: build_seafile/linux.md:65
+msgid ""
+"```sh\n"
+"tar xf libsearpc-3.0-latest.tar.gz\n"
+"tar xf ccnet-${version}.tar.gz\n"
+"tar xf seafile-${version}.tar.gz\n"
+"tar xf seafile-client-${version}.tar.gz\n"
+"```"
+msgstr ""
+"```sh\n"
+"tar xf libsearpc-3.0-latest.tar.gz\n"
+"tar xf ccnet-${version}.tar.gz\n"
+"tar xf seafile-${version}.tar.gz\n"
+"tar xf seafile-client-${version}.tar.gz\n"
+"```"
+
+# code block
+#: build_seafile/linux.md:75
+msgid ""
+"```bash\n"
+"export PREFIX=/usr\n"
+"export PKG_CONFIG_PATH=\"$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"```"
+msgstr ""
+"```bash\n"
+"export PREFIX=/usr\n"
+"export PKG_CONFIG_PATH=\"$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"```"
+
+# code block
+#: build_seafile/linux.md:83
+msgid ""
+"```bash\n"
+"cd libsearpc-3.0-latest\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+msgstr ""
+"```bash\n"
+"cd libsearpc-3.0-latest\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+
+# code block
+#: build_seafile/linux.md:94
+msgid ""
+"```bash\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+msgstr ""
+"```bash\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+
+# code block
+#: build_seafile/linux.md:105
+msgid ""
+"```bash\n"
+"cd seafile-${version}/\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX --disable-fuse\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+msgstr ""
+"```bash\n"
+"cd seafile-${version}/\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX --disable-fuse\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+
+# code block
+#: build_seafile/linux.md:116
+msgid ""
+"```bash\n"
+"cd seafile-client-${version}\n"
+"cmake -DUSE_QT5=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="
+"$PREFIX .\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+msgstr ""
+"```bash\n"
+"cd seafile-client-${version}\n"
+"cmake -DUSE_QT5=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="
+"$PREFIX .\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+
+# code block
+#: build_seafile/linux.md:127
+msgid ""
+"```bash\n"
+"cat >$PREFIX/bin/seafile-applet.sh <<END\n"
+"#!/bin/bash\n"
+"export LD_LIBRARY_PATH=\"$PREFIX/lib:$LD_LIBRARY_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"exec seafile-applet $@\n"
+"END\n"
+"cat >$PREFIX/bin/seaf-cli.sh <<END\n"
+"export LD_LIBRARY_PATH=\"$PREFIX/lib:$LD_LIBRARY_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"export PYTHONPATH=$PREFIX/lib/python2.7/site-packages\n"
+"exec seaf-cli $@\n"
+"END\n"
+"chmod +x $PREFIX/bin/seafile-applet.sh $PREFIX/bin/seaf-cli.sh\n"
+"```"
+msgstr ""
+"```bash\n"
+"cat >$PREFIX/bin/seafile-applet.sh <<END\n"
+"#!/bin/bash\n"
+"export LD_LIBRARY_PATH=\"$PREFIX/lib:$LD_LIBRARY_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"exec seafile-applet $@\n"
+"END\n"
+"cat >$PREFIX/bin/seaf-cli.sh <<END\n"
+"export LD_LIBRARY_PATH=\"$PREFIX/lib:$LD_LIBRARY_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"export PYTHONPATH=$PREFIX/lib/python2.7/site-packages\n"
+"exec seaf-cli $@\n"
+"END\n"
+"chmod +x $PREFIX/bin/seafile-applet.sh $PREFIX/bin/seaf-cli.sh\n"
+"```"
+
+# header
+#: build_seafile/osx.md:1
+msgid "# Mac OS X"
+msgstr "# Mac OS X"
+
+# header
+#: build_seafile/osx.md:3
+msgid "## Option 1: Homebrew (conflicting with macports)"
+msgstr "## 선택지 1: Homebrew (macports와 겹침)"
+
+#: build_seafile/osx.md:5
+msgid "###Setup homebrew environment"
+msgstr "### homebrew 환경 설정"
+
+# ordered list
+#: build_seafile/osx.md:7 build_seafile/osx.md:36
+msgid "1. Install xcode"
+msgstr "1. xcode를 설치하십시오"
+
+# unordered list
+#: build_seafile/osx.md:9 build_seafile/osx.md:37
+msgid ""
+"  - Download Xcode from [website](https://developer.apple.com/xcode/"
+"downloads/) or [App Store](http://itunes.apple.com/us/app/xcode/id497799835?"
+"ls=1&mt=12)"
+msgstr ""
+"  - [웹 사이트](https://developer.apple.com/xcode/downloads/) 또는 [App "
+"Store](http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)에서 Xcode"
+"를 다운로드하십시오"
+
+# unordered list
+#: build_seafile/osx.md:10
+msgid ""
+"  - Xcode Command Line Utilities might be enough to build seafile, but it is "
+"left untested yet."
+msgstr ""
+"  - Seafile을 빌드할 때 Xcode 명령행 유틸리티로 충분할 수 있지만, 아직 시험해"
+"보진 않았습니다. :P"
+
+# ordered list
+#: build_seafile/osx.md:12
+msgid "2. Install homebrew"
+msgstr "2. homebrew를 설치하십시오"
+
+# unordered list
+#: build_seafile/osx.md:14
+msgid "  - Execute this from Terminal"
+msgstr "  - 아래 명령을 터미널에서 실행하십시오"
+
+#: build_seafile/osx.md:15
+msgid ""
+"  ``ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/"
+"install/master/install)\"`"
+msgstr ""
+"  ``ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/"
+"install/master/install)\"`"
+
+# unordered list
+#: build_seafile/osx.md:16
+msgid ""
+"  - Make sure you have a clean homebrew environment. You can double-check it "
+"by ``brew doctor``"
+msgstr ""
+"  - 초기 homebrew 환경을 갖췄는지 확인하십시오. ``brew doctor``명령으로 다시 "
+"확인해볼 수 있습니다"
+
+# blockquote, which can be cascaded
+#: build_seafile/osx.md:18
+msgid "> visit http://brew.sh/ for more"
+msgstr "> 기타 정보는 http://brew.sh/ 주소를 방문하십시오"
+
+#: build_seafile/osx.md:20
+msgid "Then install seafile from homebrew"
+msgstr "그 다음 homebrew로 Seafile을 설치하십시오"
+
+# code block
+#: build_seafile/osx.md:21
+msgid ""
+"  ```\n"
+"  brew tap Chilledheart/seafile\n"
+"  brew install seafile-client\n"
+"  ```"
+msgstr ""
+"  ```\n"
+"  brew tap Chilledheart/seafile\n"
+"  brew install seafile-client\n"
+"  ```"
+
+#: build_seafile/osx.md:26
+msgid ""
+"If you face any installation issue, please report it with your homebrew logs"
+msgstr "설치상 문제가 있다면 homebrew 로그를 보내주십시오."
+
+# unordered list
+#: build_seafile/osx.md:27
+msgid ""
+"- [Homebrew Troubleshooting](https://github.com/Homebrew/homebrew/wiki/"
+"Troubleshooting)"
+msgstr ""
+"- [Homebrew 문제 해결](https://github.com/Homebrew/homebrew/wiki/"
+"Troubleshooting)"
+
+#: build_seafile/osx.md:29
+msgid ""
+"If it is an issue while using homebrewed seafile, please report it with your "
+"seafile logs"
+msgstr "homebrew로 설치한 Seafile에 문제가 있다면 Seafile 로그를 보내주십시오."
+
+# unordered list
+#: build_seafile/osx.md:30
+msgid "- [Seafile FAQ](../faq.md)"
+msgstr "- [Seafile 자주 묻는 질문](../faq.md)"
+
+# header
+#: build_seafile/osx.md:32
+msgid "## Option 2: Macports (conflicting with homebrew)"
+msgstr "## 선택지 2: Macports (homebrew와 겹침)"
+
+#: build_seafile/osx.md:34
+msgid "###Setup macports environment"
+msgstr "### macports 환경 설정"
+
+# ordered list
+#: build_seafile/osx.md:39
+msgid "2. Install macports"
+msgstr "2. macports를 설치하십시오"
+
+# unordered list
+#: build_seafile/osx.md:41
+msgid "  - Quick start https://www.macports.org/install.php"
+msgstr "  - https://www.macports.org/install.php에서 간단하게 시작"
+
+# blockquote, which can be cascaded
+#: build_seafile/osx.md:43
+msgid "> visit https://www.macports.org/ for more"
+msgstr "> 더 많은 내용은 https://www.macports.org/ 주소에 있습니다"
+
+# ordered list
+#: build_seafile/osx.md:45
+msgid "3. Install following libraries and tools using `port`"
+msgstr "3. `port`로 다음 라이브러리 및 도구를 설치하십시오"
+
+#: build_seafile/osx.md:47
+msgid "        sudo port install autoconf automake pkgconfig libtool glib2 \\"
+msgstr "        sudo port install autoconf automake pkgconfig libtool glib2 \\"
+
+#: build_seafile/osx.md:48
+msgid "        libevent vala openssl git qt4-mac jansson"
+msgstr "        libevent vala openssl git qt4-mac jansson"
+
+# ordered list
+#: build_seafile/osx.md:50
+msgid "4. Install python"
+msgstr "4. 파이썬을 설치하십시오"
+
+#: build_seafile/osx.md:52
+msgid "        sudo port install python27"
+msgstr "        sudo port install python27"
+
+#: build_seafile/osx.md:53
+msgid "        sudo port select --set python python27"
+msgstr "        sudo port select --set python python27"
+
+#: build_seafile/osx.md:55
+msgid "        sudo port install py27-pip"
+msgstr "        sudo port install py27-pip"
+
+#: build_seafile/osx.md:56
+msgid "        sudo port select --set pip pip27"
+msgstr "        sudo port select --set pip pip27"
+
+# ordered list
+#: build_seafile/osx.md:58
+msgid "5. Set pkg config environment"
+msgstr "5. pkg config 환경을 설정하십시오"
+
+#: build_seafile/osx.md:60
+msgid ""
+"        export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/usr/local/lib/"
+"pkgconfig"
+msgstr ""
+"        export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/usr/local/lib/"
+"pkgconfig"
+
+#: build_seafile/osx.md:61
+msgid "        export LIBTOOL=glibtool"
+msgstr "        export LIBTOOL=glibtool"
+
+#: build_seafile/osx.md:62
+msgid "        export LIBTOOLIZE=glibtoolize"
+msgstr "        export LIBTOOLIZE=glibtoolize"
+
+#: build_seafile/osx.md:63
+msgid "        export CPPFLAGS=\"-I/opt/local/include\""
+msgstr "        export CPPFLAGS=\"-I/opt/local/include\""
+
+#: build_seafile/osx.md:64
+msgid ""
+"        export LDFLAGS=\"-L/opt/local/lib -L/usr/local/lib -Wl,-"
+"headerpad_max_install_names\""
+msgstr ""
+"        export LDFLAGS=\"-L/opt/local/lib -L/usr/local/lib -Wl,-"
+"headerpad_max_install_names\""
+
+# header
+#: build_seafile/osx.md:67
+msgid ""
+"Compiling libsearpc\n"
+"------------------"
+msgstr ""
+"libsearpc 컴파일\n"
+"------------------"
+
+#: build_seafile/osx.md:70
+msgid "Download [libsearpc](https://github.com/haiwen/libsearpc), then:"
+msgstr "[libsearpc](https://github.com/haiwen/libsearpc)를 다운로드한 후:"
+
+#: build_seafile/osx.md:72 build_seafile/osx.md:82 build_seafile/osx.md:93
+msgid "        ./autogen.sh"
+msgstr "        ./autogen.sh"
+
+#: build_seafile/osx.md:73 build_seafile/osx.md:83
+msgid "        ./configure"
+msgstr "        ./configure"
+
+#: build_seafile/osx.md:74 build_seafile/osx.md:84 build_seafile/osx.md:95
+msgid "        make"
+msgstr "        make"
+
+#: build_seafile/osx.md:75 build_seafile/osx.md:85 build_seafile/osx.md:96
+msgid "        sudo make install"
+msgstr "        sudo make install"
+
+# header
+#: build_seafile/osx.md:77
+msgid ""
+"Compiling ccnet\n"
+"---------------"
+msgstr ""
+"ccnet 컴파일\n"
+"---------------"
+
+#: build_seafile/osx.md:80
+msgid "Download [ccnet](https://github.com/haiwen/ccnet), then:"
+msgstr "[ccnet](https://github.com/haiwen/ccnet)을 다운로드한 후:"
+
+# header
+#: build_seafile/osx.md:87
+msgid ""
+"Compiling seafile\n"
+"-----------------"
+msgstr ""
+"seafile 컴파일\n"
+"-----------------"
+
+# ordered list
+#: build_seafile/osx.md:90
+msgid "1. Download [seafile](https://github.com/haiwen/seafile)"
+msgstr "1. [seafile](https://github.com/haiwen/seafile)을 다운로드하십시오"
+
+# ordered list
+#: build_seafile/osx.md:91
+msgid "2. Compile"
+msgstr "2. 컴파일 하십시오"
+
+#: build_seafile/osx.md:94
+msgid "        ./configure --disable-fuse"
+msgstr "        ./configure --disable-fuse"
+
+# header
+#: build_seafile/osx.md:98
+msgid ""
+"Compiling seafile-client and packaging it\n"
+"---------"
+msgstr ""
+"seafile-client 컴파일 및 꾸러미 생성\n"
+"---------"
+
+# ordered list
+#: build_seafile/osx.md:101
+msgid "1. execute the building script:"
+msgstr "1. 빌드 스크립트를 실행하십시오:"
+
+#: build_seafile/osx.md:103
+msgid "        ./scripts/build.py"
+msgstr "        ./scripts/build.py"
+
+# ordered list
+#: build_seafile/osx.md:105
+msgid ""
+"2. Go to Release directory and see if `seafile-applet.app` can run correctly."
+msgstr ""
+"2. Go to Release directory and see if `seafile-applet.app` can run correctly."
+
+# header
+#: build_seafile/osx.md:107
+msgid ""
+"Problem you may encounter\n"
+"-------------------------"
+msgstr ""
+"직면할 수 있는 문제\n"
+"-------------------------"
+
+# ordered list
+#: build_seafile/osx.md:109
+msgid ""
+"1. If `install_name_tool` reports \"malformed object\" \"unknown load command"
+"\", It may be the version of xcode command line tools incompatible with "
+"`install_name_tool`."
+msgstr ""
+"1. `install_name_tool`에서 \"malformed object\" \"unknown load command\" 메시"
+"지를 출력했다면, xcode 명령행 도구의 해당 버전이 `install_name_tool`와 맞지 "
+"않기 때문일 수도 있습니다."
+
+# ordered list
+#: build_seafile/osx.md:110
+msgid ""
+"2. If xcode can't find glib, Corrects xcode's \"build settings/search paths/"
+"header search\"."
+msgstr ""
+"2. xcode에서 glib를 찾지 못했다면, xcode의 \"build settings/search paths/"
+"header search\" 설정을 올바르게 고치십시오."
+
+# header
+#: build_seafile/rpi.md:1
+msgid "# How to Build Seafile Server Release Package for Raspberry Pi"
+msgstr "# 라즈베리 파이용 Seafile 서버 출시 꾸러미 빌드 방법"
+
+#: build_seafile/rpi.md:3
+msgid "*Table of contents*:"
+msgstr "*목차*:"
+
+# unordered list
+#: build_seafile/rpi.md:5
+msgid "- [Setup the build environment](#wiki-setup-build-env)"
+msgstr "- [빌드 환경 설정](#wiki-setup-build-env)"
+
+# unordered list
+#: build_seafile/rpi.md:6
+msgid "  - [Install packages](#wiki-install-packages)"
+msgstr "  - [꾸러미 설치](#wiki-install-packages)"
+
+# unordered list
+#: build_seafile/rpi.md:7
+msgid "  - [Compile development libraries](#wiki-compile-dev-libs)"
+msgstr "  - [개발 라이브러리 컴파일](#wiki-compile-dev-libs)"
+
+# unordered list
+#: build_seafile/rpi.md:8
+msgid "  - [Install Python libraries](#wiki-install-python-libs)"
+msgstr "  - [파이썬 라이브러리 설치](#wiki-install-python-libs)"
+
+# unordered list
+#: build_seafile/rpi.md:9
+msgid "- [Prepare source code](#wiki-prepare-seafile-source-code)"
+msgstr "- [소스 코드 준비](#wiki-prepare-seafile-source-code)"
+
+# unordered list
+#: build_seafile/rpi.md:10
+msgid ""
+"  - [Fetch git tags and prepare source tarballs](#wiki-fetch-tags-and-"
+"prepare-tarballs)"
+msgstr ""
+"  - [git 태그 가져온 후 소스코드 타르볼 준비](#wiki-fetch-tags-and-prepare-"
+"tarballs)"
+
+# unordered list
+#: build_seafile/rpi.md:11
+msgid "  - [Run the packaging script](#wiki-run-pkg-script)"
+msgstr "  - [꾸러미 생성 스크립트 실행](#wiki-run-pkg-script)"
+
+# unordered list
+#: build_seafile/rpi.md:12
+msgid "- [Test the built package](#wiki-test-built-pkg)"
+msgstr "- [빌드한 꾸러미 시험](#wiki-test-built-pkg)"
+
+# unordered list
+#: build_seafile/rpi.md:13
+msgid "  - [Test a fresh install](#wiki-test-fresh-install)"
+msgstr "  - [새로 설치한 프로그램 시험](#wiki-test-fresh-install)"
+
+# unordered list
+#: build_seafile/rpi.md:14
+msgid "  - [Test upgrading](#wiki-test-upgrading)"
+msgstr "  - [업그레이드 시험](#wiki-test-upgrading)"
+
+# header
+#: build_seafile/rpi.md:16
+msgid "## <a id=\"wiki-setup-build-env\"></a>Setup the build environment"
+msgstr "## <a id=\"wiki-setup-build-env\"></a>빌드 환경 설정"
+
+#: build_seafile/rpi.md:18
+msgid "Requirements:"
+msgstr "요구 사항:"
+
+# unordered list
+#: build_seafile/rpi.md:20
+msgid "- A raspberry pi with raspian distribution installed."
+msgstr "- 라즈비안 배포판을 설치한 라즈베리 파이."
+
+# header
+#: build_seafile/rpi.md:22
+msgid "### <a id=\"wiki-install-packages\"></a> Install packages"
+msgstr "### <a id=\"wiki-install-packages\"></a> 꾸러미 설치"
+
+# code block
+#: build_seafile/rpi.md:24
+msgid ""
+"```\n"
+"sudo apt-get install build-essential\n"
+"sudo apt-get install libevent-dev libcurl4-openssl-dev libglib2.0-dev uuid-"
+"dev intltool libsqlite3-dev libmysqlclient-dev libarchive-dev libtool "
+"libjansson-dev valac libfuse-dev re2c flex python-setuptools cmake\n"
+"```"
+msgstr ""
+"```\n"
+"sudo apt-get install build-essential\n"
+"sudo apt-get install libevent-dev libcurl4-openssl-dev libglib2.0-dev uuid-"
+"dev intltool libsqlite3-dev libmysqlclient-dev libarchive-dev libtool "
+"libjansson-dev valac libfuse-dev re2c flex python-setuptools cmake\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:28
+msgid "### <a id=\"wiki-compile-dev-libs\"></a> Compile development libraries"
+msgstr "### <a id=\"wiki-compile-dev-libs\"></a> 개발 라이브러리 컴파일"
+
+# header
+#: build_seafile/rpi.md:30 build_seafile/server.md:31
+msgid "#### libevhtp"
+msgstr "#### libevhtp"
+
+#: build_seafile/rpi.md:32
+msgid ""
+"libevhtp is a http server libary on top of libevent. It's used in seafile "
+"file server."
+msgstr ""
+"libevhtp는 libevent 기반으로 동작하는 http 서버입니다. Seafile 파일 서버에서 "
+"활용합니다."
+
+# code block
+#: build_seafile/rpi.md:34
+msgid ""
+"```\n"
+"git clone https://www.github.com/haiwen/libevhtp.git\n"
+"cd libevhtp\n"
+"cmake -DEVHTP_DISABLE_SSL=OFF -DEVHTP_BUILD_SHARED=ON .\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+"```\n"
+"git clone https://www.github.com/haiwen/libevhtp.git\n"
+"cd libevhtp\n"
+"cmake -DEVHTP_DISABLE_SSL=OFF -DEVHTP_BUILD_SHARED=ON .\n"
+"make\n"
+"sudo make install\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:42
+msgid "#### libzdb"
+msgstr "#### libzdb"
+
+#: build_seafile/rpi.md:44
+msgid ""
+"`libzdb` provides a consistent API to various database backends, including "
+"sqlite/mysql/pg/oracle. It's used by ccnet-server and seafile-server."
+msgstr ""
+"`libzdb` 에서는 sqlite/mysql/pg/oracle와 같은 다양한 데이터베이스 백엔드에 대"
+"한 일관된 API를 제공합니다. ccnet-server와 seafile-server에서 활용합니다."
+
+# code block
+#: build_seafile/rpi.md:46
+msgid ""
+"```\n"
+"git clone https://www.github.com/haiwen/libzdb.git\n"
+"cd libzdb\n"
+"./autogen.sh\n"
+"./configure\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+"```\n"
+"git clone https://www.github.com/haiwen/libzdb.git\n"
+"cd libzdb\n"
+"./autogen.sh\n"
+"./configure\n"
+"make\n"
+"sudo make install\n"
+"```"
+
+#: build_seafile/rpi.md:55
+msgid ""
+"After compiling all the libraries, run `ldconfig` to update the system "
+"libraries cache:"
+msgstr ""
+"모든 라이브러리를 컴파일하고 난 후, `ldconfig`를 실행하여 시스템 라이브러리 "
+"캐시를 업데이트하십시오:"
+
+# code block
+#: build_seafile/rpi.md:57
+msgid ""
+"```\n"
+"sudo ldconfig\n"
+"```"
+msgstr ""
+"```\n"
+"sudo ldconfig\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:61
+msgid "### <a id=\"wiki-install-python-libs\"></a> Install python libraries"
+msgstr "### <a id=\"wiki-install-python-libs\"></a> 파이썬 라이브러리 설치"
+
+#: build_seafile/rpi.md:64
+msgid "Create a new directory `/home/pi/dev/seahub_thirdpart`:"
+msgstr "새 `/home/pi/dev/seahub_thirdpart` 디렉터리를 만드십시오:"
+
+# code block
+#: build_seafile/rpi.md:66
+msgid ""
+"```\n"
+"mkdir -p ~/dev/seahub_thirdpart\n"
+"```"
+msgstr ""
+"```\n"
+"mkdir -p ~/dev/seahub_thirdpart\n"
+"```"
+
+#: build_seafile/rpi.md:70
+msgid "Download these tarballs to `/tmp/`:"
+msgstr "타르볼 파일을 `/tmp/`에 다운로드하십시오:"
+
+# unordered list
+#: build_seafile/rpi.md:72
+msgid ""
+"- [pytz](https://pypi.python.org/packages/source/p/pytz/pytz-2016.1.tar.gz)"
+msgstr ""
+"- [pytz](https://pypi.python.org/packages/source/p/pytz/pytz-2016.1.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:73
+msgid ""
+"- [Django](https://www.djangoproject.com/m/releases/1.8/Django-1.8.10.tar.gz)"
+msgstr ""
+"- [Django](https://www.djangoproject.com/m/releases/1.8/Django-1.8.10.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:74
+msgid ""
+"- [django-statici18n](https://pypi.python.org/packages/source/d/django-"
+"statici18n/django-statici18n-1.1.3.tar.gz)"
+msgstr ""
+"- [django-statici18n](https://pypi.python.org/packages/source/d/django-"
+"statici18n/django-statici18n-1.1.3.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:75
+msgid ""
+"- [djangorestframework](https://pypi.python.org/packages/source/d/"
+"djangorestframework/djangorestframework-3.3.2.tar.gz)"
+msgstr ""
+"- [djangorestframework](https://pypi.python.org/packages/source/d/"
+"djangorestframework/djangorestframework-3.3.2.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:76
+msgid ""
+"- [django_compressor](https://pypi.python.org/packages/source/d/"
+"django_compressor/django_compressor-1.4.tar.gz)"
+msgstr ""
+"- [django_compressor](https://pypi.python.org/packages/source/d/"
+"django_compressor/django_compressor-1.4.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:77
+msgid ""
+"- [jsonfield](https://pypi.python.org/packages/source/j/jsonfield/"
+"jsonfield-1.0.3.tar.gz)"
+msgstr ""
+"- [jsonfield](https://pypi.python.org/packages/source/j/jsonfield/"
+"jsonfield-1.0.3.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:78
+msgid ""
+"- [django-post_office](https://pypi.python.org/packages/source/d/django-"
+"post_office/django-post_office-2.0.6.tar.gz)"
+msgstr ""
+"- [django-post_office](https://pypi.python.org/packages/source/d/django-"
+"post_office/django-post_office-2.0.6.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:79
+msgid ""
+"- [gunicorn](http://pypi.python.org/packages/source/g/gunicorn/"
+"gunicorn-19.4.5.tar.gz)"
+msgstr ""
+"- [gunicorn](http://pypi.python.org/packages/source/g/gunicorn/"
+"gunicorn-19.4.5.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:80
+msgid ""
+"- [flup](http://pypi.python.org/packages/source/f/flup/flup-1.0.2.tar.gz)"
+msgstr ""
+"- [flup](http://pypi.python.org/packages/source/f/flup/flup-1.0.2.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:81
+msgid ""
+"- [chardet](https://pypi.python.org/packages/source/c/chardet/chardet-2.3.0."
+"tar.gz)"
+msgstr ""
+"- [chardet](https://pypi.python.org/packages/source/c/chardet/chardet-2.3.0."
+"tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:82
+msgid ""
+"- [python-dateutil](https://labix.org/download/python-dateutil/python-"
+"dateutil-1.5.tar.gz)"
+msgstr ""
+"- [python-dateutil](https://labix.org/download/python-dateutil/python-"
+"dateutil-1.5.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:83
+msgid "- [six](https://pypi.python.org/packages/source/s/six/six-1.9.0.tar.gz)"
+msgstr ""
+"- [six](https://pypi.python.org/packages/source/s/six/six-1.9.0.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:84
+msgid ""
+"- [django-picklefield](https://pypi.python.org/packages/source/d/django-"
+"picklefield/django-picklefield-0.3.2.tar.gz)"
+msgstr ""
+"- [django-picklefield](https://pypi.python.org/packages/source/d/django-"
+"picklefield/django-picklefield-0.3.2.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:85
+msgid ""
+"- [django-constance](https://github.com/haiwen/django-constance/archive/"
+"bde7f7c.zip)"
+msgstr ""
+"- [django-constance](https://github.com/haiwen/django-constance/archive/"
+"bde7f7c.zip)"
+
+# unordered list
+#: build_seafile/rpi.md:86
+msgid ""
+"- [jdcal](https://pypi.python.org/packages/source/j/jdcal/jdcal-1.2.tar.gz)"
+msgstr ""
+"- [jdcal](https://pypi.python.org/packages/source/j/jdcal/jdcal-1.2.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:87
+msgid ""
+"- [et_xmlfile](https://pypi.python.org/packages/source/e/et_xmlfile/"
+"et_xmlfile-1.0.1.tar.gz)"
+msgstr ""
+"- [et_xmlfile](https://pypi.python.org/packages/source/e/et_xmlfile/"
+"et_xmlfile-1.0.1.tar.gz)"
+
+# unordered list
+#: build_seafile/rpi.md:88
+msgid ""
+"- [openpyxl](https://pypi.python.org/packages/source/o/openpyxl/"
+"openpyxl-2.3.0.tar.gz)"
+msgstr ""
+"- [openpyxl](https://pypi.python.org/packages/source/o/openpyxl/"
+"openpyxl-2.3.0.tar.gz)"
+
+#: build_seafile/rpi.md:90
+msgid "Install all these libaries to `/home/pi/dev/seahub_thirdpart`:"
+msgstr ""
+"여기 제시한 모든 라이브러리를 `/home/pi/dev/seahub_thirdpart`에 설치하십시오:"
+
+# code block
+#: build_seafile/rpi.md:92
+msgid ""
+"```\n"
+"cd ~/dev/seahub_thirdpart\n"
+"export PYTHONPATH=.\n"
+"easy_install -d . /tmp/pytz-2016.1.tar.gz\n"
+"easy_install -d . /tmp/Django-1.8.10.tar.gz\n"
+"easy_install -d . /tmp/django-statici18n-1.1.3.tar.gz\n"
+"easy_install -d . /tmp/djangorestframework-3.3.2.tar.gz\n"
+"easy_install -d . /tmp/django_compressor-1.4.tar.gz\n"
+"easy_install -d . /tmp/jsonfield-1.0.3.tar.gz\n"
+"easy_install -d . /tmp/django-post_office-2.0.6.tar.gz\n"
+"easy_install -d . /tmp/gunicorn-19.4.5.tar.gz\n"
+"easy_install -d . /tmp/flup-1.0.2.tar.gz\n"
+"easy_install -d . /tmp/chardet-2.3.0.tar.gz\n"
+"easy_install -d . /tmp/python-dateutil-1.5.tar.gz\n"
+"easy_install -d . /tmp/six-1.9.0.tar.gz\n"
+"easy_install -d . /tmp/django-picklefield-0.3.2.tar.gz\n"
+"wget -O /tmp/django_constance.zip https://github.com/haiwen/django-constance/"
+"archive/bde7f7c.zip\n"
+"easy_install -d . /tmp/django_constance.zip\n"
+"easy_install -d . /tmp/jdcal-1.2.tar.gz\n"
+"easy_install -d . /tmp/et_xmlfile-1.0.1.tar.gz\n"
+"easy_install -d . /tmp/openpyxl-2.3.0.tar.gz\n"
+"```"
+msgstr ""
+"```\n"
+"cd ~/dev/seahub_thirdpart\n"
+"export PYTHONPATH=.\n"
+"easy_install -d . /tmp/pytz-2016.1.tar.gz\n"
+"easy_install -d . /tmp/Django-1.8.10.tar.gz\n"
+"easy_install -d . /tmp/django-statici18n-1.1.3.tar.gz\n"
+"easy_install -d . /tmp/djangorestframework-3.3.2.tar.gz\n"
+"easy_install -d . /tmp/django_compressor-1.4.tar.gz\n"
+"easy_install -d . /tmp/jsonfield-1.0.3.tar.gz\n"
+"easy_install -d . /tmp/django-post_office-2.0.6.tar.gz\n"
+"easy_install -d . /tmp/gunicorn-19.4.5.tar.gz\n"
+"easy_install -d . /tmp/flup-1.0.2.tar.gz\n"
+"easy_install -d . /tmp/chardet-2.3.0.tar.gz\n"
+"easy_install -d . /tmp/python-dateutil-1.5.tar.gz\n"
+"easy_install -d . /tmp/six-1.9.0.tar.gz\n"
+"easy_install -d . /tmp/django-picklefield-0.3.2.tar.gz\n"
+"wget -O /tmp/django_constance.zip https://github.com/haiwen/django-constance/"
+"archive/bde7f7c.zip\n"
+"easy_install -d . /tmp/django_constance.zip\n"
+"easy_install -d . /tmp/jdcal-1.2.tar.gz\n"
+"easy_install -d . /tmp/et_xmlfile-1.0.1.tar.gz\n"
+"easy_install -d . /tmp/openpyxl-2.3.0.tar.gz\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:115
+msgid ""
+"## <a id=\"wiki-prepare-seafile-source-code\"></a>Prepare seafile source code"
+msgstr ""
+"## <a id=\"wiki-prepare-seafile-source-code\"></a>Seafile 소스 코드 준비"
+
+#: build_seafile/rpi.md:117
+msgid "To build seafile server, there are four sub projects involved:"
+msgstr "Seafile 서버를 빌드할 때, 네가지 하위 프로젝트가 과정에 들어갑니다:"
+
+# unordered list
+#: build_seafile/rpi.md:119
+msgid "- [libsearpc](https://github.com/haiwen/libsearpc)"
+msgstr "- [libsearpc](https://github.com/haiwen/libsearpc)"
+
+# unordered list
+#: build_seafile/rpi.md:120
+msgid "- [ccnet](https://github.com/haiwen/ccnet)"
+msgstr "- [ccnet](https://github.com/haiwen/ccnet)"
+
+# unordered list
+#: build_seafile/rpi.md:121
+msgid "- [seafile](https://github.com/haiwen/seafile)"
+msgstr "- [seafile](https://github.com/haiwen/seafile)"
+
+# unordered list
+#: build_seafile/rpi.md:122
+msgid "- [seahub](https://github.com/haiwen/seahub)"
+msgstr "- [seahub](https://github.com/haiwen/seahub)"
+
+#: build_seafile/rpi.md:124
+msgid "The build process has two steps:"
+msgstr "빌드 과정은 두 단계입니다:"
+
+# unordered list
+#: build_seafile/rpi.md:126
+msgid ""
+"- First, fetch the tags of each projects, and make a soruce tarball for each "
+"of them."
+msgstr ""
+"- 우선 각 프로젝트의 태그를 가져온 후, 해당 프로젝트의 소스코드 타르볼에 대"
+"해 make 명령을 수행하십시오."
+
+# unordered list
+#: build_seafile/rpi.md:127
+msgid ""
+"- Then run a `build-server.py` script to build the server package from the "
+"source tarballs."
+msgstr ""
+"- Then run a `build-server.py` script to build the server package from the "
+"source tarballs."
+
+# header
+#: build_seafile/rpi.md:129
+msgid ""
+"### <a id=\"wiki-fetch-tags-and-prepare-tarballs\"></a> Fetch git tags and "
+"prepare source tarballs"
+msgstr ""
+"### <a id=\"wiki-fetch-tags-and-prepare-tarballs\"></a> git 태그를 가져온 후 "
+"소스 코드 타르볼 준비"
+
+#: build_seafile/rpi.md:131
+msgid "Seafile manages the releases in tags on github."
+msgstr "Seafile 출시 버전은 github의 태그로 관리합니다."
+
+#: build_seafile/rpi.md:133
+msgid "Assume we are packaging for seafile server 4.1.1, then the tags are:"
+msgstr "Seafile 서버 4.1.1 꾸러비를 생성한다면, 태그는 다음과 같습니다:"
+
+# unordered list
+#: build_seafile/rpi.md:135
+msgid "- ccnet, seafile, and seahub would all have a `v4.1.1-sever` tag."
+msgstr "- ccnet, seafile, seahub는 모두 `v4.1.1-sever` 태그를 보유."
+
+# unordered list
+#: build_seafile/rpi.md:136
+msgid ""
+"- libsearpc would have the `v3.0-latest` tag (libsearpc has been quite "
+"stable and basically has no further development, so the tag is always `v3.0-"
+"latest`)"
+msgstr ""
+"- libsearpc는 `v3.0-latest` 태그를 보유(libsearpc는 안정적이어서 더이상 개발"
+"을 진행하지 않으므로, 항상 `v3.0-latest`태그를 가짐)"
+
+#: build_seafile/rpi.md:138
+msgid ""
+"First setup the `PKG_CONFIG_PATH` enviroment variable (So we don't need to "
+"make and make install libsearpc/ccnet/seafile into the system):"
+msgstr ""
+"우선 `PKG_CONFIG_PATH`환경 변수를 설정하십시오(이 변수를 설정하여 시스템에서 "
+"make && make install libsearpc/ccnet/seafile 절차를 진행할 필요가 없습니다):"
+
+# code block
+#: build_seafile/rpi.md:140
+msgid ""
+"```\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/seafile/lib:$PKG_CONFIG_PATH\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/libsearpc:$PKG_CONFIG_PATH\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/ccnet:$PKG_CONFIG_PATH\n"
+"```"
+msgstr ""
+"```\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/seafile/lib:$PKG_CONFIG_PATH\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/libsearpc:$PKG_CONFIG_PATH\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/ccnet:$PKG_CONFIG_PATH\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:147
+msgid "### libsearpc"
+msgstr "### libsearpc"
+
+# code block
+#: build_seafile/rpi.md:149
+msgid ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/libsearpc.git\n"
+"cd libsearpc\n"
+"git reset --hard v3.0-latest\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+msgstr ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/libsearpc.git\n"
+"cd libsearpc\n"
+"git reset --hard v3.0-latest\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:159
+msgid "### ccnet"
+msgstr "### ccnet"
+
+# code block
+#: build_seafile/rpi.md:161
+msgid ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/ccnet.git\n"
+"cd ccnet\n"
+"git reset --hard v4.1.1-server\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+msgstr ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/ccnet.git\n"
+"cd ccnet\n"
+"git reset --hard v4.1.1-server\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:171
+msgid "### seafile"
+msgstr "### seafile"
+
+# code block
+#: build_seafile/rpi.md:173
+msgid ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafile.git\n"
+"cd seafile\n"
+"git reset --hard v4.1.1-server\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+msgstr ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafile.git\n"
+"cd seafile\n"
+"git reset --hard v4.1.1-server\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:183
+msgid "### seahub"
+msgstr "### seahub"
+
+# code block
+#: build_seafile/rpi.md:185
+msgid ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seahub.git\n"
+"cd seahub\n"
+"git reset --hard v4.1.1-server\n"
+"./tools/gen-tarball.py --version=4.1.1 --branch=HEAD\n"
+"```"
+msgstr ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seahub.git\n"
+"cd seahub\n"
+"git reset --hard v4.1.1-server\n"
+"./tools/gen-tarball.py --version=4.1.1 --branch=HEAD\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:193
+msgid "### seafobj"
+msgstr "### seafobj"
+
+# code block
+#: build_seafile/rpi.md:195
+msgid ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafobj.git\n"
+"cd seafobj\n"
+"git reset --hard v4.1.1-server\n"
+"make dist\n"
+"```"
+msgstr ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafobj.git\n"
+"cd seafobj\n"
+"git reset --hard v4.1.1-server\n"
+"make dist\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:203
+msgid "### seafdav"
+msgstr "### seafdav"
+
+# code block
+#: build_seafile/rpi.md:205
+msgid ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafdav.git\n"
+"cd seafdav\n"
+"git reset --hard v4.1.1-server\n"
+"make\n"
+"```"
+msgstr ""
+"```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafdav.git\n"
+"cd seafdav\n"
+"git reset --hard v4.1.1-server\n"
+"make\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:213
+msgid "### Copy the source tar balls to the same folder"
+msgstr "### 동일한 폴더에 소스코드 타르볼 복사"
+
+# code block
+#: build_seafile/rpi.md:215
+msgid ""
+"```\n"
+"mkdir ~/seafile-sources\n"
+"cp ~/dev/libsearpc/libsearpc-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/ccnet/ccnet-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/seafile/seafile-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/seahub/seahub-<version>-tar.gz ~/seafile-sources\n"
+"\n"
+"cp ~/dev/seafobj/seafobj.tar.gz ~/seafile-sources\n"
+"cp ~/dev/seafdav/seafdav.tar.gz ~/seafile-sources\n"
+"```"
+msgstr ""
+"```\n"
+"mkdir ~/seafile-sources\n"
+"cp ~/dev/libsearpc/libsearpc-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/ccnet/ccnet-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/seafile/seafile-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/seahub/seahub-<version>-tar.gz ~/seafile-sources\n"
+"\n"
+"cp ~/dev/seafobj/seafobj.tar.gz ~/seafile-sources\n"
+"cp ~/dev/seafdav/seafdav.tar.gz ~/seafile-sources\n"
+"```"
+
+# header
+#: build_seafile/rpi.md:226
+msgid "### <a id=\"wiki-run-pkg-script\"></a> Run the packaging script"
+msgstr "### <a id=\"wiki-run-pkg-script\"></a> 꾸러미 생성 스크립트 실행"
+
+#: build_seafile/rpi.md:228
+msgid ""
+"Now we have all the tarballs prepared, we can run the `build-server.py` "
+"script to build the server package."
+msgstr ""
+"이제 타르볼 파일을 준비했으니, `build-server.py` 스크립트를 실행하여 서버 꾸"
+"러미를 빌드할 수 있습니다."
+
+# code block
+#: build_seafile/rpi.md:230
+msgid ""
+"```\n"
+"mkdir ~/seafile-server-pkgs\n"
+"~/dev/seafile/scripts/build-server.py --"
+"libsearpc_version=<libsearpc_version> --ccnet_version=<ccnet_version> --"
+"seafile_version=<seafile_version> --seahub_version=<seahub_version> --"
+"srcdir=  --thidrpartdir=/home/pi/dev/seahub_thirdpart --srcdir=/home/pi/"
+"seafile-sources --outputdir=/home/pi/seafile-server-pkgs\n"
+"```"
+msgstr ""
+"```\n"
+"mkdir ~/seafile-server-pkgs\n"
+"~/dev/seafile/scripts/build-server.py --"
+"libsearpc_version=<libsearpc_version> --ccnet_version=<ccnet_version> --"
+"seafile_version=<seafile_version> --seahub_version=<seahub_version> --"
+"srcdir=  --thidrpartdir=/home/pi/dev/seahub_thirdpart --srcdir=/home/pi/"
+"seafile-sources --outputdir=/home/pi/seafile-server-pkgs\n"
+"```"
+
+#: build_seafile/rpi.md:235
+msgid ""
+"After the script finisheds, we would get a `seafile-server_4.1.1_pi.tar.gz` "
+"in `~/seafile-server-pkgs` folder."
+msgstr ""
+"스크립트 실행이 끝나면, `~/seafile-server-pkgs` 폴더에 `seafile-"
+"server_4.1.1_pi.tar.gz`파일이 들어갑니다."
+
+# header
+#: build_seafile/rpi.md:237
+msgid "## <a id=\"wiki-test-built-pkg\"></a> Test the built package"
+msgstr "## <a id=\"wiki-test-built-pkg\"></a> 빌드한 꾸러미 시험"
+
+# header
+#: build_seafile/rpi.md:239
+msgid "### <a id=\"wiki-test-fresh-install\"></a>Test a fresh install"
+msgstr "### <a id=\"wiki-test-fresh-install\"></a>새로 설치한 프로그램 시험"
+
+#: build_seafile/rpi.md:241
+msgid ""
+"Use the built seafile server package to go over the steps of [Deploying "
+"Seafile with SQLite](http://manual.seafile.com/deploy/using_sqlite.html)."
+msgstr ""
+"[SQLite와 Seafile 가동](http://manual.seafile.com/deploy/using_sqlite.html) "
+"단계를 따르도록 이미 빌드한 Seafile 서버 꾸러미를 활용하십시오."
+
+#: build_seafile/rpi.md:243
+msgid "The test should cover these steps at least:"
+msgstr "최소한 다음 시험 단계를 통과해야합니다:"
+
+# unordered list
+#: build_seafile/rpi.md:245
+msgid "- The setup process is ok"
+msgstr "- 설치 과정 이상 없음"
+
+# unordered list
+#: build_seafile/rpi.md:246
+msgid ""
+"- After `seafile.sh start` and `seahub.sh start`, you can login from a "
+"browser."
+msgstr ""
+"- `seafile.sh start`및 `seahub.sh start` 실행 후, 브라우저로 로그인할 수 있"
+"음."
+
+# unordered list
+#: build_seafile/rpi.md:247
+msgid "- Uploading/Downloading files through a web browser works correctly."
+msgstr "- 웹 브라우저의 파일 업로드/다운로드 기능 정상 동작."
+
+# unordered list
+#: build_seafile/rpi.md:248
+msgid ""
+"- Seafile [WebDAV](http://manual.seafile.com/extension/webdav.html) server "
+"works correctly"
+msgstr ""
+"- Seafile [WebDAV](http://manual.seafile.com/extension/webdav.html) 서버 정"
+"상 동작"
+
+# header
+#: build_seafile/rpi.md:250
+msgid ""
+"### <a id=\"wiki-test-upgrading\"></a> Test upgrading from a previous version"
+msgstr "### <a id=\"wiki-test-upgrading\"></a> 이전 버전의 업그레이드 시험"
+
+# unordered list
+#: build_seafile/rpi.md:252
+msgid ""
+"- Download the package of the previous version seafile server, and setup it."
+msgstr "- Seafile 서버 이전 버전 꾸러미를 다운로드한 후 설치하십시오."
+
+# unordered list
+#: build_seafile/rpi.md:253
+msgid ""
+"- Upgrading according to [the manual](http://manual.seafile.com/deploy/"
+"upgrade.html)"
+msgstr ""
+"- [설명서](http://manual.seafile.com/deploy/upgrade.html)를 따라 업그레이드하"
+"십시오"
+
+# unordered list
+#: build_seafile/rpi.md:254
+msgid "- After the upgrade, check the functionality is ok:"
+msgstr "- 업그레이드가 끝나면 다음 기능이 정상적으로 동작하는지 확인하십시오:"
+
+# unordered list
+#: build_seafile/rpi.md:255
+msgid "  - Uploading/Downloading files through a web browser works correctly."
+msgstr "  - 웹 브라우저의 파일 업로드/다운로드 기능 정상 동작."
+
+# unordered list
+#: build_seafile/rpi.md:256
+msgid ""
+"  - Seafile [WebDAV](http://manual.seafile.com/extension/webdav.html) server "
+"works correctly"
+msgstr ""
+"  - Seafile [WebDAV](http://manual.seafile.com/extension/webdav.html) 서버 정"
+"상 동작"
+
+# header
+#: build_seafile/server.md:1
+msgid "# Server"
+msgstr "# 서버"
+
+# header
+#: build_seafile/server.md:3
+msgid "## Preparation"
+msgstr "## 준비"
+
+#: build_seafile/server.md:5
+msgid ""
+"The following list is all the libraries you need to install on your machine. "
+"**You should install all of them before you build seafile**."
+msgstr ""
+"다음 목록은 머신에 설치해야 할 모든 라이브러리를 나타냅니다. **Seafile을 빌드"
+"하기 전 모두 설치해야합니다**."
+
+#: build_seafile/server.md:7
+msgid ""
+"Package names are according to Ubuntu 12.04. For other Linux distros, please "
+"find their corresponding names yourself."
+msgstr ""
+"꾸러미 이름은 우분투 12.04를 따릅니다. 다른 리눅스 배포판에서는, 해당 이름을 "
+"직접 찾으십시오."
+
+# unordered list
+#: build_seafile/server.md:9
+msgid "* libevent-dev  (2.0 or later )"
+msgstr "* libevent-dev  (2.0 이상)"
+
+# unordered list
+#: build_seafile/server.md:11
+msgid "* libglib2.0-dev (2.28 or later)"
+msgstr "* libglib2.0-dev (2.28 이상)"
+
+# unordered list
+#: build_seafile/server.md:15
+msgid "* libmysqlclient-dev (5.5 or later)"
+msgstr "* libmysqlclient-dev (5.5 이상)"
+
+# unordered list
+#: build_seafile/server.md:16
+msgid "* libarchive-dev"
+msgstr "* libarchive-dev"
+
+# unordered list
+#: build_seafile/server.md:17
+msgid "* libtool"
+msgstr "* libtool"
+
+# unordered list
+#: build_seafile/server.md:20
+msgid "* libfuse-dev"
+msgstr "* libfuse-dev"
+
+#: build_seafile/server.md:22
+msgid "Also, python 2.7 is required since seafile server 5.1.0."
+msgstr "또한 Seafile 서버 5.1.0부터 파이썬 2.7이 필요합니다."
+
+#: build_seafile/server.md:24
+msgid "The following libraries need to be compiled from source."
+msgstr "다음 라이브러리의 소스 코드를 컴파일해야합니다."
+
+# header
+#: build_seafile/server.md:26
+msgid "### libzdb"
+msgstr "### libzdb"
+
+# unordered list
+#: build_seafile/server.md:28
+msgid "* Install `re2c` and `flex`"
+msgstr "* `re2c`와 `flex`를 설치하십시오"
+
+# unordered list
+#: build_seafile/server.md:29
+msgid ""
+"* Download [libzdb](http://www.tildeslash.com/libzdb/dist/libzdb-2.12.tar.gz)"
+msgstr ""
+"* [libzdb](http://www.tildeslash.com/libzdb/dist/libzdb-2.12.tar.gz)를 다운로"
+"드하십시오"
+
+# unordered list
+#: build_seafile/server.md:33
+msgid ""
+"* Download [libevhtp](https://github.com/ellzey/libevhtp/archive/1.1.6.tar."
+"gz)."
+msgstr ""
+"* [libevhtp](https://github.com/ellzey/libevhtp/archive/1.1.6.tar.gz)를 다운"
+"로드하십시오."
+
+# unordered list
+#: build_seafile/server.md:34
+msgid "* Build libevhtp by:"
+msgstr "* 다음 명령으로 libevhtp를 빌드하십시오:"
+
+# code block
+#: build_seafile/server.md:36
+msgid ""
+"```\n"
+"cmake -DEVHTP_DISABLE_SSL=ON -DEVHTP_BUILD_SHARED=ON .\n"
+"make\n"
+"sudo make install\n"
+"\n"
+"```"
+msgstr ""
+"```\n"
+"cmake -DEVHTP_DISABLE_SSL=ON -DEVHTP_BUILD_SHARED=ON .\n"
+"make\n"
+"sudo make install\n"
+"\n"
+"```"
+
+# header
+#: build_seafile/server.md:43
+msgid "### Seahub dependencies"
+msgstr "### Seahub 의존 관계"
+
+#: build_seafile/server.md:45
+msgid ""
+"**Seahub** is the web front end of Seafile. It's written in the [django]"
+"(http://djangoproject.com) framework. Seahub requires Python 2.6(or 2.7) "
+"installed on your server, and it needs the following python libraries:"
+msgstr ""
+"**Seahub** 는 Seafile의 웹 프론트엔드입니다. [장고](http://djangoproject."
+"com) 프레임워크로 작성했습니다. Seahub를 사용하려면 서버에 파이썬 2.6(또는 "
+"2.7)을 설치해야 하며, 다음 파이썬 라이브러리가 필요합니다:"
+
+# unordered list
+#: build_seafile/server.md:47
+msgid "- Django 1.8"
+msgstr "- Django 1.8"
+
+# unordered list
+#: build_seafile/server.md:48
+msgid "- pytz"
+msgstr "- pytz"
+
+# unordered list
+#: build_seafile/server.md:49
+msgid "- django-statici18n"
+msgstr "- django-statici18n"
+
+# unordered list
+#: build_seafile/server.md:50
+msgid "- djangorestframework"
+msgstr "- djangorestframework"
+
+# unordered list
+#: build_seafile/server.md:51
+msgid "- django_compressor"
+msgstr "- django_compressor"
+
+# unordered list
+#: build_seafile/server.md:52
+msgid "- django-post_office"
+msgstr "- django-post_office"
+
+# unordered list
+#: build_seafile/server.md:53
+msgid ""
+"- [django-constance](https://github.com/haiwen/django-constance/) (install "
+"it by `pip install https://github.com/haiwen/django-constance/archive/"
+"bde7f7c.zip`)"
+msgstr ""
+"- [django-constance](https://github.com/haiwen/django-constance/) (`pip "
+"install https://github.com/haiwen/django-constance/archive/bde7f7c.zip` 명령"
+"으로 설치)"
+
+# unordered list
+#: build_seafile/server.md:54
+msgid "- gunicorn"
+msgstr "- gunicorn"
+
+# unordered list
+#: build_seafile/server.md:55
+msgid "- flup"
+msgstr "- flup"
+
+# unordered list
+#: build_seafile/server.md:56
+msgid "- chardet"
+msgstr "- chardet"
+
+# unordered list
+#: build_seafile/server.md:57
+msgid "- python-dateutil"
+msgstr "- python-dateutil"
+
+# unordered list
+#: build_seafile/server.md:58
+msgid "- six"
+msgstr "- six"
+
+# unordered list
+#: build_seafile/server.md:59
+msgid "- openpyxl"
+msgstr "- openpyxl"
+
+#: build_seafile/server.md:61
+msgid ""
+"Before continue, make sure you have all the above libraries available in "
+"your system."
+msgstr ""
+"계속하기 전, 위에 언급한 모든 라이브러리를 시스템에 설치했는지 확인하십시오."
+
+# header
+#: build_seafile/server.md:63
+msgid "### Prepare the directory layout"
+msgstr "### 디렉터리 배치 준비"
+
+#: build_seafile/server.md:65
+msgid ""
+"In the following sections, you'll be guided to build and setup the seafile "
+"server step by step. Seafile server is consisted of several components. In "
+"order for them to function correctly, you must:"
+msgstr ""
+"다음 섹션에서는 Seafile 서버 빌드 및 설치 방법을 과정 별로 안내합니다. "
+"Seafile 서버에는 여러 구성 요소가 들어있습니다. 이들 구성 요소가 제대로 동작"
+"하려면:"
+
+# unordered list
+#: build_seafile/server.md:67
+msgid "* Follow our instructions step by step"
+msgstr "* 단계별 절차를 따르십시오"
+
+# unordered list
+#: build_seafile/server.md:68
+msgid ""
+"* Make sure your directory layout is exactly the same with the guide in each "
+"step."
+msgstr "* 디렉터리 배치가 각 단계별로 안내서와 정확히 일치하는지 확인하십시오."
+
+#: build_seafile/server.md:70
+msgid ""
+"First create the top level directory. In the following sections, we'll use "
+"\"/data/haiwen\" as the top level directory."
+msgstr ""
+"우선 최상위 디렉터리를 만드십시오. 다음 섹션에서 \"/data/haiwen\"을 최상위 디"
+"렉터리로 사용합니다."
+
+# inline html
+#: build_seafile/server.md:72
+msgid ""
+"<pre>\n"
+"mkdir /data/haiwen/\n"
+"cd /data/haiwen/\n"
+"mkdir seafile-server\n"
+"cd seafile-server\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"mkdir /data/haiwen/\n"
+"cd /data/haiwen/\n"
+"mkdir seafile-server\n"
+"cd seafile-server\n"
+"</pre>"
+
+#: build_seafile/server.md:79
+msgid "The currently layout is:"
+msgstr "현재 배치는 다음과 같습니다:"
+
+# inline html
+#: build_seafile/server.md:81
+msgid ""
+"<pre>\n"
+"haiwen/\n"
+"└── seafile-server\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"haiwen/\n"
+"└── seafile-server\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:86
+msgid "### Get the source"
+msgstr "### 소스 코드 가져오기"
+
+#: build_seafile/server.md:88
+msgid ""
+"First you should get the latest source of libsearpc/ccnet/seafile/seahub"
+msgstr "우선 libsearpc/ccnet/seafile/seahub의 최신 소스 코드를 가져와야합니다"
+
+# unordered list
+#: build_seafile/server.md:92
+msgid "* https://github.com/haiwen/libsearpc/tags"
+msgstr "* https://github.com/haiwen/libsearpc/tags"
+
+# unordered list
+#: build_seafile/server.md:93
+msgid "* https://github.com/haiwen/ccnet/tags"
+msgstr "* https://github.com/haiwen/ccnet/tags"
+
+# unordered list
+#: build_seafile/server.md:94
+msgid "* https://github.com/haiwen/seafile/tags"
+msgstr "* https://github.com/haiwen/seafile/tags"
+
+# unordered list
+#: build_seafile/server.md:95
+msgid "* https://github.com/haiwen/seahub/tags"
+msgstr "* https://github.com/haiwen/seahub/tags"
+
+#: build_seafile/server.md:97
+msgid ""
+"For example, if the latest released seafile server is 4.4.7, then just use "
+"the **v4.4.7-server** tags of the projects (except for libsearpc, which uses "
+"the **v3.0-latest** tag). You should get four tarballs:"
+msgstr ""
+"예를 들어 Seafile 최신 출시 버전이 4.4.7이면 프로젝트의 **v4.4.7-server** 태"
+"그를 활용하십시오(libsearpc는 **v3.0-latest**태그를 활용하므로 제외). 다음 "
+"네 가지 타르볼 파일을 가져오십시오:"
+
+# unordered list
+#: build_seafile/server.md:99
+msgid "* libsearpc-3.0-latest.tar.gz"
+msgstr "* libsearpc-3.0-latest.tar.gz"
+
+# unordered list
+#: build_seafile/server.md:100
+msgid "* ccnet-4.4.7-server.tar.gz"
+msgstr "* ccnet-4.4.7-server.tar.gz"
+
+# unordered list
+#: build_seafile/server.md:101
+msgid "* seafile-4.4.7-server.tar.gz"
+msgstr "* seafile-4.4.7-server.tar.gz"
+
+# unordered list
+#: build_seafile/server.md:102
+msgid "* seahub-4.4.7-server.tar.gz"
+msgstr "* seahub-4.4.7-server.tar.gz"
+
+#: build_seafile/server.md:104
+msgid ""
+"Create a folder <code>haiwen/src</code>, and uncompress libsearpc/ccnet/"
+"seafile source to it."
+msgstr ""
+"<code>haiwen/src</code> 폴더를 만들고 libsearpc/ccnet/seafile 소스코드를 풀"
+"어 복사하십시오."
+
+# inline html
+#: build_seafile/server.md:106
+msgid ""
+"<pre>\n"
+"cd haiwen/seafile-server\n"
+"mkdir src\n"
+"cd src\n"
+"tar xf /path/to/libsearpc-3.0-latest.tar.gz\n"
+"tar xf /path/to/ccnet-4.4.7-server.tar.gz\n"
+"tar xf /path/to/seafile-4.4.7-server.tar.gz\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd haiwen/seafile-server\n"
+"mkdir src\n"
+"cd src\n"
+"tar xf /path/to/libsearpc-3.0-latest.tar.gz\n"
+"tar xf /path/to/ccnet-4.4.7-server.tar.gz\n"
+"tar xf /path/to/seafile-4.4.7-server.tar.gz\n"
+"</pre>"
+
+#: build_seafile/server.md:115
+msgid "And uncompress seahub tarball to <code>haiwen/seafile-server</code>:"
+msgstr ""
+"그리고 <code>haiwen/seafile-server</code>에 seahub 타르볼 압축을 푸십시오:"
+
+# inline html
+#: build_seafile/server.md:117
+msgid ""
+"<pre>\n"
+"cd haiwen/seafile-server\n"
+"tar xf /path/to/seahub-4.4.7-server.tar.gz\n"
+"mv seahub-4.4.7-server seahub\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd haiwen/seafile-server\n"
+"tar xf /path/to/seahub-4.4.7-server.tar.gz\n"
+"mv seahub-4.4.7-server seahub\n"
+"</pre>"
+
+#: build_seafile/server.md:123
+msgid "So far, The current directory layout is:"
+msgstr "현재, 디렉터리 배치는 다음과 같습니다:"
+
+# inline html
+#: build_seafile/server.md:125
+msgid ""
+"<pre>\n"
+"haiwen/\n"
+"└── seafile-server\n"
+"    └── seahub\n"
+"    └── src\n"
+"        ├── libsearpc-4.4.7-server\n"
+"        ├── ccnet-4.4.7-server\n"
+"        ├── seafile-4.4.7-server\n"
+"        ├── ... (other files)\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"haiwen/\n"
+"└── seafile-server\n"
+"    └── seahub\n"
+"    └── src\n"
+"        ├── libsearpc-4.4.7-server\n"
+"        ├── ccnet-4.4.7-server\n"
+"        ├── seafile-4.4.7-server\n"
+"        ├── ... (다른 파일)\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:136
+msgid "### Building"
+msgstr "### 빌드"
+
+#: build_seafile/server.md:138
+msgid ""
+"To build seafile server, you need first build **libsearpc** and **ccnet**."
+msgstr ""
+"Seafile 서버를 빌드하려면 **libsearpc**, **ccnet**을 우선 빌드해야합니다."
+
+# inline html
+#: build_seafile/server.md:142
+msgid ""
+"<pre>\n"
+"cd libsearpc-${version}\n"
+"./autogen.sh\n"
+"./configure\n"
+"make\n"
+"make install\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd libsearpc-${version}\n"
+"./autogen.sh\n"
+"./configure\n"
+"make\n"
+"make install\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:150
+msgid "##### ccnet"
+msgstr "##### ccnet"
+
+# inline html
+#: build_seafile/server.md:152
+msgid ""
+"<pre>\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --disable-client --enable-server   # `export PKG_CONFIG_PATH=/"
+"usr/local/lib/pkgconfig` if libsearpc is not found\n"
+"make\n"
+"make install\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --disable-client --enable-server   # `export PKG_CONFIG_PATH=/"
+"usr/local/lib/pkgconfig` if libsearpc is not found\n"
+"make\n"
+"make install\n"
+"</pre>"
+
+# inline html
+#: build_seafile/server.md:162
+msgid ""
+"<pre>\n"
+"cd seafile-${version}\n"
+"./autogen.sh\n"
+"./configure --disable-client --enable-server\n"
+"make\n"
+"make install\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd seafile-${version}\n"
+"./autogen.sh\n"
+"./configure --disable-client --enable-server\n"
+"make\n"
+"make install\n"
+"</pre>"
+
+#: build_seafile/server.md:171
+msgid ""
+"*Note*: You need to run `sudo ldconfig` to refresh the system libraries "
+"cache after you compiles all the components."
+msgstr ""
+"*참고*: 모든 구성 요소를 컴파일하고 난 후 `sudo ldconfig`를 실행하여 시스템 "
+"라이브러리 캐시를 새로 고쳐야합니다."
+
+# header
+#: build_seafile/server.md:173
+msgid "## Deploy Seafile Server"
+msgstr "## Seafile 서버 가동"
+
+# header
+#: build_seafile/server.md:175
+msgid "### Components of the Seafile Server"
+msgstr "### Seafile 서버 구성 요소"
+
+#: build_seafile/server.md:177
+msgid "The seafile server consists of the following components:"
+msgstr "Seafile 서버는 다음 구성요소로 이루어져있습니다:"
+
+# inline html
+#: build_seafile/server.md:179
+msgid ""
+"<table>\n"
+"  <tr>\n"
+"    <th>Process Name</th><th>Functionality</th>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>ccnet-server</td><td>underlying networking</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>seaf-server</td><td>data management</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>Seahub</td><td>website front-end of seafile server</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>fileserver</td><td>handles raw file upload/download for Seahub</td>\n"
+"  </tr>\n"
+"</table>"
+msgstr ""
+"<table>\n"
+"  <tr>\n"
+"    <th>프로세스 이름</th><th>기능</th>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>ccnet-server</td><td>네트워크 기반</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>seaf-server</td><td>데이터 관리</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>Seahub</td><td>Seafile 서버 웹 사이트 프론트엔드</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>fileserver</td><td>Seafile의 RAW 파일 업로드/다운로드 처리</td>\n"
+"  </tr>\n"
+"</table>"
+
+#: build_seafile/server.md:197
+msgid ""
+"![server architecture](../images/server-arch.png \"server architecture\")"
+msgstr "![Server 구성](../images/server-arch.png \"server architecture\")"
+
+# unordered list
+#: build_seafile/server.md:199
+msgid ""
+"* **ccnet** stores its configuration and metadata is a directory named "
+"<code>ccnet</code>."
+msgstr ""
+"* **ccnet**은 설정값을 보유하며 메타데이터는 <code>ccnet</code>이라는 디렉터"
+"리입니다."
+
+# unordered list
+#: build_seafile/server.md:200
+msgid ""
+"* **seaf-server** store its configuration and data in a directory, normally "
+"named <code>seafile-data</code>."
+msgstr ""
+"* **seaf-server**는 설정값과 데이터를 <code>seafile-data</code>디렉터리에 저"
+"장합니다."
+
+# unordered list
+#: build_seafile/server.md:201
+msgid ""
+"* **seahub** is written in Django. If you have any experience with Django, "
+"you should know the <code>syncdb</code> command must be run to create all "
+"the database tables."
+msgstr ""
+"* **seahub**는 장고(Django)로 작성했습니다. 장고를 사용해 본 경험이 있다면, "
+"모든 데이터베이스 테이블을 만드는 <code>syncdb</code> 명령을 실행해야 함을 알"
+"고 있어야합니다."
+
+# unordered list
+#: build_seafile/server.md:202
+msgid ""
+"* An **admin account** has to be created, so that you, the admin, can login "
+"with this account to manage the server."
+msgstr ""
+"* **admin 계정**을 만들어 서버를 관리하는 admin 계정으로 로그인할 수 있습니"
+"다."
+
+#: build_seafile/server.md:204
+msgid "These are the essential steps to create the configuration:"
+msgstr "설정 값을 만드는 핵심 단계는 다음과 같습니다:"
+
+# unordered list
+#: build_seafile/server.md:206
+msgid ""
+"* ensure seafile is already installed and all the python libraries seahub "
+"needs are installed."
+msgstr ""
+"* Seafile을 이미 설치했고, Seahub에서 필요한 모든 파이썬 라이브러리를 설치했"
+"는지 확인합니다."
+
+# unordered list
+#: build_seafile/server.md:207
+msgid "* create the ccnet configuration with the **ccnet-init** program"
+msgstr "* **ccnet-init** 프로그램으로 ccnet 설정을 만듭니다"
+
+# unordered list
+#: build_seafile/server.md:208
+msgid "* create the seafile configuration with **seaf-server-init** program"
+msgstr "* **seaf-server-init** 프로그램으로 Seafile 설정을 만듭니다"
+
+# unordered list
+#: build_seafile/server.md:209
+msgid "* run Django **syncdb** command for seahub"
+msgstr "* seahub의 **syncdb** 장고(Django) 명령을 실행합니다"
+
+# unordered list
+#: build_seafile/server.md:210
+msgid "* create an admin account for the seafile server"
+msgstr "* Seafile 서버의 admin 계정을 만듭니다"
+
+#: build_seafile/server.md:212
+msgid "To create the configurations, you can either:"
+msgstr "설정 값을 만들려면 다음 방법 중 한가지를 택할 수 있습니다:"
+
+# unordered list
+#: build_seafile/server.md:214
+msgid "* use the seafile-admin script(see below)"
+msgstr "* seafile-admin 스크립트 사용(하단 참조)"
+
+# unordered list
+#: build_seafile/server.md:215
+msgid "* [[create server configuration by hand]]"
+msgstr "* [[서버 설정값 직접 만들기]]"
+
+# header
+#: build_seafile/server.md:218
+msgid "### Create Configurations with the seafile-admin script"
+msgstr "### seafile-script로 설정값 만들기"
+
+#: build_seafile/server.md:220
+msgid ""
+"<code>seafile-admin</code> should have been installed to system path after "
+"you have built and installed Seafile from source."
+msgstr ""
+"소스 코드로 Seafile을 빌드하고 설치했다면 시스템 경로에 <code>seafile-admin</"
+"code>가 이미 설치된 상태입니다."
+
+# inline html
+#: build_seafile/server.md:221
+msgid ""
+"<pre>\n"
+"usage: seafile-admin [-h] {setup,start,stop,reset-admin} ...\n"
+"\n"
+"optional arguments:\n"
+"  -h, --help            show this help message and exit\n"
+"\n"
+"subcommands:\n"
+"\n"
+"  {setup,start,stop,reset-admin}\n"
+"    setup               setup the seafile server\n"
+"    start               start the seafile server\n"
+"    stop                stop the seafile server\n"
+"    reset-admin         reset seafile admin account\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"usage: seafile-admin [-h] {setup,start,stop,reset-admin} ...\n"
+"\n"
+"optional arguments:\n"
+"  -h, --help            show this help message and exit\n"
+"\n"
+"subcommands:\n"
+"\n"
+"  {setup,start,stop,reset-admin}\n"
+"    setup               setup the seafile server\n"
+"    start               start the seafile server\n"
+"    stop                stop the seafile server\n"
+"    reset-admin         reset seafile admin account\n"
+"</pre>"
+
+#: build_seafile/server.md:236
+msgid ""
+"Go to the top level directory(in this guide it's **/data/haiwen/**), and run "
+"**seafile-admin setup** to create all the configuration:"
+msgstr ""
+"최상위 디렉터리로 이동(이 안내서에서는 **/data/haiwen**)한 후, **seafile-"
+"admin setup** 을 실행하여 모든 설정값을 만드십시오:"
+
+# inline html
+#: build_seafile/server.md:237
+msgid ""
+"<pre>\n"
+"cd /data/haiwen\n"
+"export PYTHONPATH=/data/haiwen/seafile-server/seahub/thirdpart\n"
+"seafile-admin setup\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd /data/haiwen\n"
+"export PYTHONPATH=/data/haiwen/seafile-server/seahub/thirdpart\n"
+"seafile-admin setup\n"
+"</pre>"
+
+#: build_seafile/server.md:243
+msgid ""
+"The script would ask you a series of questions, and create all the "
+"configuration for you."
+msgstr ""
+"다음 스크립트는 여러분에게 여러가지 질문을 던져주고, 모든 설정을 만들어줍니"
+"다."
+
+# inline html
+#: build_seafile/server.md:245
+msgid ""
+"<table>\n"
+"  <tr>\n"
+"    <th>Name</th><th>Usage</th><th>Default</th><th>Requirement</th>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>server name</td>\n"
+"    <td>The name of the server that would be shown on the client</td>\n"
+"    <td></td>\n"
+"    <td>3 ~ 15 letters or digits</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>ip or domain</td>\n"
+"    <td>The ip address or domain name of the server</td>\n"
+"    <td></td>\n"
+"    <td>Make sure to use the right ip or domain, or the client would have "
+"trouble connecting it</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"  <td>ccnet port</td>\n"
+"  <td>the tcp port used by ccnet</td>\n"
+"  <td>10001</td>\n"
+"  <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>seafile port</td>\n"
+"    <td>tcp port used by seafile</td>\n"
+"    <td>12001</td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>seafile fileserver port</td>\n"
+"    <td>tcp port used by seafile fileserver</td>\n"
+"    <td>8082</td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>admin email</td>\n"
+"    <td>Email address of the admin account</td>\n"
+"    <td></td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>admin password</td>\n"
+"    <td>password of the admin account</td>\n"
+"    <td></td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"</table>"
+msgstr ""
+"<table>\n"
+"  <tr>\n"
+"    <th>이름</th><th>용도</th><th>기본값</th><th>요구사항</th>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>서버 이름</td>\n"
+"    <td>클라이언트에 나타나는 서버 이름</td>\n"
+"    <td></td>\n"
+"    <td>3 ~ 15 영숫자</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>IP 또는 도메인</td>\n"
+"    <td>서버의  IP 주소 또는 도메인 이름</td>\n"
+"    <td></td>\n"
+"    <td>올바른 IP 주소 또는 도메인 이름을 사용하지 않으면, 클라이언트 연결에 "
+"문제가 있습니다</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"  <td>ccnet 포트</td>\n"
+"  <td>ccnet에서 사용하는 TCP 포트</td>\n"
+"  <td>10001</td>\n"
+"  <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>Seafile 포트</td>\n"
+"    <td>Seafile에서 사용하는 TCP 포트</td>\n"
+"    <td>12001</td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>Seafile 파일 서버 포트</td>\n"
+"    <td>Seafile 파일 서버에서 활용하는 TCP 포트</td>\n"
+"    <td>8082</td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>admin 전자메일 주소</td>\n"
+"    <td>admin 계정의 전자메일 주소</td>\n"
+"    <td></td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>admin 암호</td>\n"
+"    <td>admin 계정 암호</td>\n"
+"    <td></td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"</table>"
+
+#: build_seafile/server.md:293
+msgid "This is a screenshot of the **seafile-admin setup** command:"
+msgstr "**seafile-admin setup** 명령의 실행 화면입니다:"
+
+#: build_seafile/server.md:294
+msgid "![admin setup running](../images/seafile-admin-1.png)"
+msgstr "![admin 설정 실행 중](../images/seafile-admin-1.png)"
+
+#: build_seafile/server.md:296
+msgid "And a screenshot after setup is finished successfully:"
+msgstr "설정 과정이 제대로 끝난 화면은 다음과 같습니다:"
+
+#: build_seafile/server.md:297
+msgid "![admin setup finished](images/seafile-admin-2.png)"
+msgstr "![admin 설정 완료](images/seafile-admin-2.png)"
+
+#: build_seafile/server.md:299
+msgid "At this time, the directory layout would be like this:"
+msgstr "이 때, 디렉터리 배치는 다음과 같습니다:"
+
+# inline html
+#: build_seafile/server.md:300
+msgid ""
+"<pre>\n"
+"haiwen/\n"
+"└── ccnet # ccnet config directory\n"
+"    └── ccnet.conf # ccnet config file\n"
+"└── seafile-data # seafile configuration and data\n"
+"    └── seafile.conf # seafile config file\n"
+"└── seahub-data/ # seahub data\n"
+"└── seahub.db # seahub sqlite3 database\n"
+"└── seahub_settings.py # custom settings for seahub\n"
+"└── seafile-server\n"
+"    └── seahub/\n"
+"    └── seafile-{VERSION} # seafile source code\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"haiwen/\n"
+"└── ccnet # ccnet 설정 디렉터리\n"
+"    └── ccnet.conf # ccnet 설정 파일\n"
+"└── seafile-data # seafile 설정 및 데이터\n"
+"    └── seafile.conf # seafile 설정 파일\n"
+"└── seahub-data/ # seahub 데이터\n"
+"└── seahub.db # seahub sqlite3 데이터베이스\n"
+"└── seahub_settings.py # seahub 개별 설정\n"
+"└── seafile-server\n"
+"    └── seahub/\n"
+"    └── seafile-{VERSION} # seafile 소스 코드\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:314
+msgid "### Start the Seafile Server"
+msgstr "### Seafile 서버 시작하기"
+
+#: build_seafile/server.md:316
+msgid ""
+"After configuration successfully created, run **seafile-admin start** in the "
+"top directory to start the all components of Seafile. ( **You should always "
+"run the seafile-admin script in the top directory** )."
+msgstr ""
+"설정값을 제대로 만든 후, 최상위 디렉터리에서 **seafile-admin start**를 실행하"
+"여 Seafile의 모든 구성 요소를 실행하십시오. (**seafile-admin 스크립트는 반드"
+"시 최상위 디렉터리에서 실행해야합니다**)."
+
+# inline html
+#: build_seafile/server.md:318
+msgid ""
+"<pre>\n"
+"cd /data/haiwen # go to the top level directory\n"
+"seafile-admin start\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd /data/haiwen # go to the top level directory\n"
+"seafile-admin start\n"
+"</pre>"
+
+#: build_seafile/server.md:323
+msgid ""
+"At this moment, all the components should be running and seahub can be "
+"visited at **http://yourserver-ip-or-domain:8000**"
+msgstr ""
+"이 때, 모든 구성 요소가 동작해야 하며 **http://yourserver-ip-or-"
+"domain:8000** 주소로 seahub에 접근할 수 있습니다"
+
+#: build_seafile/server.md:325
+msgid ""
+"**Note** You may want to deploy seahub with nginx or apache. In this case, "
+"follow the instructions on Deploy Seafile Web With [Nginx](../deploy/"
+"deploy_with_nginx.md)/[Apache](../deploy/deploy_with_apache.md)."
+msgstr ""
+"**참고** nginx 또는 apache에서 가동할 경우가 있습니다. 이 때, [Nginx](../"
+"deploy/deploy_with_nginx.md)/[Apache](../deploy/deploy_with_apache.md)에서 "
+"Seafile 웹을 가동하는 방법을 따르십시오."
+
+# header
+#: build_seafile/server.md:327
+msgid "### Stop the Seafile Server"
+msgstr "### Seafile 서버 멈추기"
+
+#: build_seafile/server.md:329
+msgid "To stop seafile server, run **seafile-admin stop**."
+msgstr "Seafile 서버 가동을 멈추려면, **seafile-admin stop**을 실행하십시오."
+
+# inline html
+#: build_seafile/server.md:331
+msgid ""
+"<pre>\n"
+"cd /data/haiwen # go to the top level directory\n"
+"seafile-admin stop\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd /data/haiwen # 최상위 디렉터리로 이동\n"
+"seafile-admin stop\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:336
+msgid "## Upgrade the Seafile Server"
+msgstr "## Seafile 서버 업그레이드"
+
+#: build_seafile/server.md:338
+msgid ""
+"When you want to upgrade to a new vesrion of seafile server, you need to:"
+msgstr "Seafile 서버를 새 버전으로 업그레이드 할 때, 다음 과정을 거쳐야합니다:"
+
+# unordered list
+#: build_seafile/server.md:340
+msgid "* Stop the seafile server if it's running"
+msgstr "* Seafile 서버를 실행중이면 멈추십시오"
+
+# inline html
+#: build_seafile/server.md:342
+msgid ""
+"<pre>\n"
+"cd /data/haiwen\n"
+"seafile-admin stop\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd /data/haiwen\n"
+"seafile-admin stop\n"
+"</pre>"
+
+# unordered list
+#: build_seafile/server.md:347
+msgid ""
+"* Get and latest source code and build libsearpc/ccnet/seafile, just as what "
+"you do in a fresh setup."
+msgstr ""
+"* 새로 설치하는 방식대로 libsearpc/ccnet/seafile의 최신 소스 코드를 가져온 "
+"후 빌드하십시오."
+
+# unordered list
+#: build_seafile/server.md:348
+msgid ""
+"* Run the upgrade script. The upgrade script mainly updates database used by "
+"seafile for you. For example, create a new database table that is used in "
+"the latest seafile server but not in the previous version."
+msgstr ""
+"* 업그레이드 스크립트를 실행하십시오. 업그레이드 스크립트는 주로 Seafile의 데"
+"이터베이스를 업데이트합니다. 예를 들면, Seafile 이전 버전이 아닌 최신 버전에"
+"서 사용하는 새 데이터베이스 테이블을 만듭니다."
+
+# header
+#: build_seafile/server.md:350
+msgid "### Get and compile the latest libsearpc/ccnet/seafile"
+msgstr "### 최신 libsearpc/ccnet/seafile을 가져온 후 컴파일"
+
+#: build_seafile/server.md:352
+msgid "See the **Building** section above."
+msgstr "상단의 **빌드** 섹션을 참고하십시오."
+
+# header
+#: build_seafile/server.md:354
+msgid "### Get the new seahub tarball and uncompress it"
+msgstr "### 새 seahub 타르볼을 가져온 후 압축 풀기"
+
+# inline html
+#: build_seafile/server.md:356
+msgid ""
+"<pre>\n"
+"cd haiwen/seafile-server\n"
+"mv seahub/ seahub-old # move away the old seahub folder\n"
+"tar xf /path/to/new/seahub-x.x.x-server.tar.gz\n"
+"mv seahub-x.x.x-server seahub\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd haiwen/seafile-server\n"
+"mv seahub/ seahub-old # move away the old seahub folder\n"
+"tar xf /path/to/new/seahub-x.x.x-server.tar.gz\n"
+"mv seahub-x.x.x-server seahub\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:364
+msgid "### Do the upgrade"
+msgstr "### 업그레이드 수행"
+
+# unordered list
+#: build_seafile/server.md:366
+msgid "* copy the scripts/upgrade/ subdir outside"
+msgstr "* scripts/upgrade/ 하위 디렉터리를 다른 곳으로 복사하십시오"
+
+#: build_seafile/server.md:368
+msgid ""
+"The upgrade scripts is distributed in the <code>scripts/upgrade</code> "
+"subdir of seafile source code, we need to copy it to **seafile-server** "
+"directory before run the scripts."
+msgstr ""
+"업그레이드 스크립트는 Seafile 소스 코드의 <code>scripts/upgrade</code> 하위 "
+"디렉터리에 마련했습니다. 이 스크립트를 실행하기 전 **seafile-server** 디렉터"
+"리에 복사해야합니다."
+
+# inline html
+#: build_seafile/server.md:370
+msgid ""
+"<pre>\n"
+"cd /data/haiwen/seafile-server\n"
+"cp -rf seafile-{version}/scripts/upgrade .\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd /data/haiwen/seafile-server\n"
+"cp -rf seafile-{version}/scripts/upgrade .\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:375
+msgid "#### Continuous Upgrade (like from 1.1 to 1.2)"
+msgstr "#### 연속 버전 업그레이드(1.1에서 1.2로 업그레이드하는 방식)"
+
+#: build_seafile/server.md:377
+msgid ""
+"Continuous upgrade means to upgrade from one version of seafile server to "
+"the next version. For example, upgrading from 1.1.0 to 1.2.0 is a continuous "
+"upgrade."
+msgstr ""
+"연속 버전 업그레이드란 Seafile 서버의 임의 버전에서 바로 다음버전으로의 업그"
+"레이드를 말합니다. 예를 들면 1.1.0에서 1.2.0으로 업그레이드 하는 절차를 연속 "
+"버전 업그레이드로 볼 수 있습니다."
+
+#: build_seafile/server.md:379
+msgid ""
+"**Note:** Minor upgrade, like upgrade from 1.3.0 to 1.3.1, is documented in "
+"a separate section below."
+msgstr ""
+"**참고:** 1.3.0에서 1.3.1로 업그레이드하는 마이너 업그레이드는 하단의 별도의 "
+"섹션에 문서로 남겨두었습니다."
+
+#: build_seafile/server.md:381
+msgid ""
+"Say you are upgrading from 1.1.0 to 1.2.0, you should run the script "
+"**upgrade_1.1_1.2.sh** in <code>seafile-server</code> directory."
+msgstr ""
+"1.1.0에서 1.2.0으로 업그레이드 한다면, <code>seafile-server</code> 디렉터리에"
+"서 **upgrade_1.1_1.2.sh** 스크립트를 실행해야합니다."
+
+# inline html
+#: build_seafile/server.md:383
+msgid ""
+"<pre>\n"
+"cd /data/haiwen/seafile-server\n"
+"./upgrade/upgrade_1.1_1.2.sh\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd /data/haiwen/seafile-server\n"
+"./upgrade/upgrade_1.1_1.2.sh\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:388
+msgid "#### Non-continous version upgrade(like from 1.1 to 1.3)"
+msgstr "#### 비연속 버전 업그레이드(1.1에서 1.3으로 업그레이드하는 방식)"
+
+#: build_seafile/server.md:390
+msgid ""
+"If you upgrade a few versions at once, e.g. from 1.1.0 to 1.3.0. The "
+"procedure is:"
+msgstr ""
+"1.1.0에서 1.3.0으로 업그레이드 하는 방식과 같이, 어떤 버전에서 건너뛰어 업그"
+"레이드 하는 절차는:"
+
+# unordered list
+#: build_seafile/server.md:392
+msgid "* upgrade from 1.1.0 to 1.2.0"
+msgstr "* 1.1.0에서 1.2.0으로 업그레이드"
+
+# unordered list
+#: build_seafile/server.md:393
+msgid "* upgrade from 1.2.0 to 1.3.0"
+msgstr "* 1.2.0에서 1.3.0으로 업그레이드"
+
+#: build_seafile/server.md:395
+msgid "Just run the upgrade scripts in sequence."
+msgstr "다음 업그레이드 스크립트를 차례대로 실행하십시오."
+
+# header
+#: build_seafile/server.md:397
+msgid "#### Minor Upgrade (like from 1.3.0 to 1.3.1)"
+msgstr "#### 마이너 업그레이드(1.3.0에서 1.3.1로 업그레이드 하는 방식)마"
+
+#: build_seafile/server.md:399
+msgid ""
+"Minor upgrade Minor upgrade is like an upgrade from 1.3.0 to 1.3.1. For this "
+"type of upgrade, you only need to update the avatar link:"
+msgstr ""
+"1.3.0에서 1.3.1로 업그레이드 하는 이런 방식을 마이너 업그레이드라고 합니다. "
+"이런 업그레이드 방식에서는 아바타 링크 업데이트만 수행하면 됩니다:"
+
+# inline html
+#: build_seafile/server.md:401
+msgid ""
+"<pre>\n"
+"cd /data/haiwen/seafile-server/seahub/media\n"
+"cp -rf avatars/* ../../../seahub-data/avatars/\n"
+"rm -rf avatars\n"
+"ln -s ../../../seahub-data/avatars\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd /data/haiwen/seafile-server/seahub/media\n"
+"cp -rf avatars/* ../../../seahub-data/avatars/\n"
+"rm -rf avatars\n"
+"ln -s ../../../seahub-data/avatars\n"
+"</pre>"
+
+# header
+#: build_seafile/server.md:408
+msgid "## Problems Report"
+msgstr "## 문제 보고"
+
+#: build_seafile/server.md:410
+msgid ""
+"If you encounter any problem when building/deploying Seafile, please leave "
+"us a message or [open an issue](https://github.com/haiwen/seafile/issues)."
+msgstr ""
+"Seafile을 빌드/배포 가동하는 과정에 문제가 있다면, 메시지를 전달하든지 [문제"
+"점 글타래를 열어주십시오](https://github.com/haiwen/seafile/issues)."
+
+# header
+#: build_seafile/windows.md:1
+msgid "# Windows"
+msgstr "# 윈도우"
+

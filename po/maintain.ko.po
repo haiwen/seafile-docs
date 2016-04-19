@@ -1,0 +1,1270 @@
+# Korean translation for the seafile-docs package.
+# This file is distributed under the same license as the seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-18 23:34:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: maintain/README.md:1
+# header
+msgid "# Administration"
+msgstr ""
+
+#: maintain/README.md:3
+# header
+msgid "### Enter the admin panel"
+msgstr ""
+
+#: maintain/README.md:5
+msgid "As the system admin, you can enter the admin panel by click the `tools` button at the top-right, beside the avatar:"
+msgstr ""
+
+#: maintain/README.md:7
+msgid "![Admin tools](../images/tools-button.png)"
+msgstr ""
+
+#: maintain/README.md:9
+msgid "After clicking the button, you will get into the admin panel:"
+msgstr ""
+
+#: maintain/README.md:11
+msgid "![System admin panel](../images/system-admin.png)"
+msgstr ""
+
+#: maintain/README.md:13
+# header
+msgid "### Account management"
+msgstr ""
+
+#: maintain/README.md:15
+# unordered list
+msgid "* [Account management](account.md)"
+msgstr ""
+
+#: maintain/README.md:17
+# header
+msgid "### Logs"
+msgstr ""
+
+#: maintain/README.md:19
+# unordered list
+msgid "* [The location of log files](logs.md)"
+msgstr ""
+
+#: maintain/README.md:21
+# header
+msgid "### Backup and Recovery"
+msgstr ""
+
+#: maintain/README.md:23
+msgid "Backup and recovery:"
+msgstr ""
+
+#: maintain/README.md:25
+# unordered list
+msgid "* [Backup and recovery](backup_recovery.md)"
+msgstr ""
+
+#: maintain/README.md:27
+msgid "Recover corrupt files after server hard shutdown or system crash:"
+msgstr ""
+
+#: maintain/README.md:29
+# unordered list
+msgid "* [Seafile FSCK](seafile_fsck.md)"
+msgstr ""
+
+#: maintain/README.md:31
+msgid "You can run Seafile GC to remove unused files:"
+msgstr ""
+
+#: maintain/README.md:33
+# unordered list
+msgid "* [Seafile GC](seafile_gc.md)"
+msgstr ""
+
+#: maintain/README.md:35
+# header
+msgid "### Clean database"
+msgstr ""
+
+#: maintain/README.md:37
+# unordered list
+msgid "* [Clean database](clean_database.md)"
+msgstr ""
+
+#: maintain/account.md:1
+# header
+msgid "# Account Management"
+msgstr ""
+
+#: maintain/account.md:3
+# header
+msgid "#### User Management"
+msgstr ""
+
+#: maintain/account.md:5
+msgid "When you setup seahub website, you should have setup a admin account. After you logged in a admin, you may add/delete users and file libraries."
+msgstr ""
+
+#: maintain/account.md:7
+# header
+msgid "#### Resetting User Password"
+msgstr ""
+
+#: maintain/account.md:9
+msgid "Administrator can reset password for a user in \"System Admin\" page."
+msgstr ""
+
+#: maintain/account.md:11
+msgid "In a private server, the default settings doesn't support users to reset their password by email. If you want to enable this, you have first to [set up notification email](../config/sending_email.md)."
+msgstr ""
+
+#: maintain/account.md:13
+# header
+msgid "#### Forgot Admin Account or Password?"
+msgstr ""
+
+#: maintain/account.md:15
+msgid "You may run `reset-admin.sh` script under seafile-server directory. This script would help you reset the admin account and password."
+msgstr ""
+
+#: maintain/backup_recovery.md:1
+# header
+msgid "## Overview"
+msgstr ""
+
+#: maintain/backup_recovery.md:3
+msgid "There are generally two parts of data to backup"
+msgstr ""
+
+#: maintain/backup_recovery.md:5
+# unordered list
+msgid "* Seafile library data"
+msgstr ""
+
+#: maintain/backup_recovery.md:6
+# unordered list
+msgid "* Databases"
+msgstr ""
+
+#: maintain/backup_recovery.md:8
+msgid "If you setup seafile server according to our manual, you should have a directory layout like:"
+msgstr ""
+
+#: maintain/backup_recovery.md:10
+msgid "    haiwen       # Replace the name with your organization name"
+msgstr ""
+
+#: maintain/backup_recovery.md:11
+msgid "      --seafile-server-2.x.x # untar from seafile package"
+msgstr ""
+
+#: maintain/backup_recovery.md:12
+msgid "      --seafile-data   # seafile configuration and data (if you choose the default)"
+msgstr ""
+
+#: maintain/backup_recovery.md:13
+msgid "      --seahub-data    # seahub data"
+msgstr ""
+
+#: maintain/backup_recovery.md:14
+msgid "      --ccnet          # ccnet configuration and data "
+msgstr ""
+
+#: maintain/backup_recovery.md:15
+msgid "      --seahub.db      # sqlite3 database used by seahub"
+msgstr ""
+
+#: maintain/backup_recovery.md:16
+msgid "      --seahub_settings.py # optional config file for seahub"
+msgstr ""
+
+#: maintain/backup_recovery.md:18
+msgid "All your library data is stored under the 'haiwen' directory."
+msgstr ""
+
+#: maintain/backup_recovery.md:20
+msgid "Seafile also stores some important metadata data in a few databases. The names and locations of these databases depends on which database software you use."
+msgstr ""
+
+#: maintain/backup_recovery.md:22
+msgid "For SQLite, the database files are also under the 'haiwen' directory. The locations are:"
+msgstr ""
+
+#: maintain/backup_recovery.md:24
+# unordered list
+msgid "* ccnet/PeerMgr/usermgr.db: contains user information"
+msgstr ""
+
+#: maintain/backup_recovery.md:25
+# unordered list
+msgid "* ccnet/GroupMgr/groupmgr.db: contains group information"
+msgstr ""
+
+#: maintain/backup_recovery.md:26
+# unordered list
+msgid "* seafile-data/seafile.db: contains library metadata"
+msgstr ""
+
+#: maintain/backup_recovery.md:27
+#: maintain/backup_recovery.md:33
+# unordered list
+msgid "* seahub.db: contains tables used by the web front end (seahub)"
+msgstr ""
+
+#: maintain/backup_recovery.md:29
+msgid "For MySQL, the databases are created by the administrator, so the names can be different from one deployment to another. There are 3 databases:"
+msgstr ""
+
+#: maintain/backup_recovery.md:31
+# unordered list
+msgid "* ccnet-db: contains user and group information"
+msgstr ""
+
+#: maintain/backup_recovery.md:32
+# unordered list
+msgid "* seafile-db: contains library metadata"
+msgstr ""
+
+#: maintain/backup_recovery.md:35
+# header
+msgid "## Backup steps ##"
+msgstr ""
+
+#: maintain/backup_recovery.md:37
+msgid "The backup is a three step procedure:"
+msgstr ""
+
+#: maintain/backup_recovery.md:39
+# ordered list
+msgid "1. Optional: Stop Seafile server first if you're using SQLite as database."
+msgstr ""
+
+#: maintain/backup_recovery.md:40
+# ordered list
+msgid "2. Backup the databases;"
+msgstr ""
+
+#: maintain/backup_recovery.md:41
+# ordered list
+msgid "3. Backup the seafile data directory;"
+msgstr ""
+
+#: maintain/backup_recovery.md:43
+# header
+msgid "### Backup Order: Database First or Data Directory First"
+msgstr ""
+
+#: maintain/backup_recovery.md:45
+# unordered list
+msgid "- backup data directory first, SQL later: When you're backing up data directory, some new objects are written and they're not backed up. Those new objects may be referenced in SQL database. So when you restore, some records in the database cannot find its object. So the library is corrupted."
+msgstr ""
+
+#: maintain/backup_recovery.md:46
+# unordered list
+msgid "- backup SQL first, data directory later: Since you backup database first, all records in the database have valid objects to be referenced. So the libraries won't be corrupted. But new objects written to storage when you're backing up are not referenced by database records. So some libraries are out of date. When you restore, some new data are lost."
+msgstr ""
+
+#: maintain/backup_recovery.md:48
+msgid "The second sequence is better in the sense that it avoids library corruption. Like other backup solutions, some new data can be lost in recovery. There is always a backup window."
+msgstr ""
+
+#: maintain/backup_recovery.md:49
+msgid "However, if your storage backup mechanism can finish quickly enough, using the first sequence can retain more data."
+msgstr ""
+
+#: maintain/backup_recovery.md:51
+msgid "We assume your seafile data directory is in `/data/haiwen`. And you want to backup to `/backup` directory. The `/backup` can be an NFS or Windows share mount exported by another machine, or just an external disk. You can create a layout similar to the following in `/backup` directory:"
+msgstr ""
+
+#: maintain/backup_recovery.md:53
+msgid "    /backup"
+msgstr ""
+
+#: maintain/backup_recovery.md:54
+msgid "    ---- databases/  contains database backup files"
+msgstr ""
+
+#: maintain/backup_recovery.md:55
+msgid "    ---- data/  contains backups of the data directory"
+msgstr ""
+
+#: maintain/backup_recovery.md:57
+# header
+msgid "### Backing up Databases ###"
+msgstr ""
+
+#: maintain/backup_recovery.md:59
+msgid "It's recommended to backup the database to a separate file each time. Don't overwrite older database backups for at least a week."
+msgstr ""
+
+#: maintain/backup_recovery.md:61
+#: maintain/backup_recovery.md:111
+msgid "**MySQL**"
+msgstr ""
+
+#: maintain/backup_recovery.md:63
+msgid "Assume your database names are `ccnet-db`, `seafile-db` and `seahub-db`. mysqldump automatically locks the tables so you don't need to stop Seafile server when backing up MySQL databases. Since the database tables are usually very small, it won't take long to dump."
+msgstr ""
+
+#: maintain/backup_recovery.md:65
+msgid "    mysqldump -h [mysqlhost] -u[username] -p[password] --opt ccnet-db > /backup/databases/ccnet-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+
+#: maintain/backup_recovery.md:67
+msgid "    mysqldump -h [mysqlhost] -u[username] -p[password] --opt seafile-db > /backup/databases/seafile-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+
+#: maintain/backup_recovery.md:69
+msgid "    mysqldump -h [mysqlhost] -u[username] -p[password] --opt seahub-db > /backup/databases/seahub-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+
+#: maintain/backup_recovery.md:71
+#: maintain/backup_recovery.md:117
+msgid "**SQLite**"
+msgstr ""
+
+#: maintain/backup_recovery.md:73
+msgid "You need to stop Seafile server first before backing up SQLite database."
+msgstr ""
+
+#: maintain/backup_recovery.md:75
+msgid "    sqlite3 /data/haiwen/ccnet/GroupMgr/groupmgr.db .dump > /backup/databases/groupmgr.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+
+#: maintain/backup_recovery.md:77
+msgid "    sqlite3 /data/haiwen/ccnet/PeerMgr/usermgr.db .dump > /backup/databases/usermgr.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+
+#: maintain/backup_recovery.md:79
+msgid "    sqlite3 /data/haiwen/seafile-data/seafile.db .dump > /backup/databases/seafile.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+
+#: maintain/backup_recovery.md:81
+msgid "    sqlite3 /data/haiwen/seahub.db .dump > /backup/databases/seahub.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+
+#: maintain/backup_recovery.md:83
+# header
+msgid "### Backing up Seafile library data ###"
+msgstr ""
+
+#: maintain/backup_recovery.md:85
+msgid "The data files are all stored in the `/data/haiwen` directory, so just back up the whole directory. You can directly copy the whole directory to the backup destination, or you can use rsync to do incremental backup. "
+msgstr ""
+
+#: maintain/backup_recovery.md:87
+msgid "To directly copy the whole data directory,"
+msgstr ""
+
+#: maintain/backup_recovery.md:89
+msgid "    cp -R /data/haiwen /backup/data/haiwen-`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+
+#: maintain/backup_recovery.md:91
+msgid "This produces a separate copy of the data directory each time. You can delete older backup copies after a new one is completed."
+msgstr ""
+
+#: maintain/backup_recovery.md:93
+msgid "If you have a lot of data, copying the whole data directory would take long. You can use rsync to do incremental backup."
+msgstr ""
+
+#: maintain/backup_recovery.md:95
+msgid "    rsync -az /data/haiwen /backup/data"
+msgstr ""
+
+#: maintain/backup_recovery.md:97
+msgid "This command backup the data directory to `/backup/data/haiwen`."
+msgstr ""
+
+#: maintain/backup_recovery.md:99
+# header
+msgid "## Restore from backup ##"
+msgstr ""
+
+#: maintain/backup_recovery.md:101
+msgid "Now supposed your primary seafile server is broken, you're switching to a new machine. Using the backup data to restore your Seafile instance:"
+msgstr ""
+
+#: maintain/backup_recovery.md:103
+# ordered list
+msgid "1. Copy `/backup/data/haiwen` to the new machine. Let's assume the seafile deployment location new machine is also `/data/haiwen`."
+msgstr ""
+
+#: maintain/backup_recovery.md:104
+# ordered list
+msgid "2. Restore the database."
+msgstr ""
+
+#: maintain/backup_recovery.md:105
+# ordered list
+msgid "3. Since database and data are backed up separately, they may become a little inconsistent with each other. To correct the potential inconsistency, run seaf-fsck tool to check data integrity on the new machine. See [seaf-fsck documentation](seafile_fsck.md)."
+msgstr ""
+
+#: maintain/backup_recovery.md:107
+# header
+msgid "### Restore the databases"
+msgstr ""
+
+#: maintain/backup_recovery.md:109
+msgid "Now with the latest valid database backup files at hand, you can restore them."
+msgstr ""
+
+#: maintain/backup_recovery.md:113
+msgid "    mysql -u[username] -p[password] ccnet-db < ccnet-db.sql.2013-10-19-16-00-05"
+msgstr ""
+
+#: maintain/backup_recovery.md:114
+msgid "    mysql -u[username] -p[password] seafile-db < seafile-db.sql.2013-10-19-16-00-20"
+msgstr ""
+
+#: maintain/backup_recovery.md:115
+msgid "    mysql -u[username] -p[password] seahub-db < seahub-db.sql.2013-10-19-16-01-05"
+msgstr ""
+
+#: maintain/backup_recovery.md:119
+msgid "    cd /data/haiwen"
+msgstr ""
+
+#: maintain/backup_recovery.md:120
+msgid "    mv ccnet/PeerMgr/usermgr.db ccnet/PeerMgr/usermgr.db.old"
+msgstr ""
+
+#: maintain/backup_recovery.md:121
+msgid "    mv ccnet/GroupMgr/groupmgr.db ccnet/GroupMgr/groupmgr.db.old"
+msgstr ""
+
+#: maintain/backup_recovery.md:122
+msgid "    mv seafile-data/seafile.db seafile-data/seafile.db.old"
+msgstr ""
+
+#: maintain/backup_recovery.md:123
+msgid "    mv seahub.db seahub.db.old"
+msgstr ""
+
+#: maintain/backup_recovery.md:124
+msgid "    sqlite3 ccnet/PeerMgr/usermgr.db < usermgr.db.bak.xxxx"
+msgstr ""
+
+#: maintain/backup_recovery.md:125
+msgid "    sqlite3 ccnet/GroupMgr/groupmgr.db < groupmgr.db.bak.xxxx"
+msgstr ""
+
+#: maintain/backup_recovery.md:126
+msgid "    sqlite3 seafile-data/seafile.db < seafile.db.bak.xxxx"
+msgstr ""
+
+#: maintain/backup_recovery.md:127
+msgid "    sqlite3 seahub.db < seahub.db.bak.xxxx"
+msgstr ""
+
+#: maintain/clean_database.md:1
+# header
+msgid "# Clean Database"
+msgstr ""
+
+#: maintain/clean_database.md:3
+# header
+msgid "## Seahub"
+msgstr ""
+
+#: maintain/clean_database.md:5
+# header
+msgid "### Session"
+msgstr ""
+
+#: maintain/clean_database.md:7
+msgid "Since version 5.0, we offered command to clear expired session records in seahub database."
+msgstr ""
+
+#: maintain/clean_database.md:9
+msgid "    cd <install-path>/seafile-server-latest"
+msgstr ""
+
+#: maintain/clean_database.md:10
+msgid "    ./seahub.sh clearsessions"
+msgstr ""
+
+#: maintain/logs.md:1
+# header
+msgid "# Logs"
+msgstr ""
+
+#: maintain/logs.md:3
+# header
+msgid "### Log files of seafile server:"
+msgstr ""
+
+#: maintain/logs.md:5
+#: maintain/logs.md:19
+# unordered list
+msgid "* seafile.log: logs of Seafile server"
+msgstr ""
+
+#: maintain/logs.md:6
+#: maintain/logs.md:20
+# unordered list
+msgid "* controller.log: logs of Controller"
+msgstr ""
+
+#: maintain/logs.md:7
+#: maintain/logs.md:21
+# unordered list
+msgid "* seahub_django_request.log: logs of Seahub"
+msgstr ""
+
+#: maintain/logs.md:8
+#: maintain/logs.md:22
+# unordered list
+msgid "* seahub.log: logs from Django framework and emails sending"
+msgstr ""
+
+#: maintain/logs.md:9
+#: maintain/logs.md:26
+# unordered list
+msgid "* Ccnet Log: logs/ccnet.log  (logs for internal RPC, not useful)"
+msgstr ""
+
+#: maintain/logs.md:11
+msgid "pro edition only:"
+msgstr ""
+
+#: maintain/logs.md:13
+# unordered list
+msgid "* seafevents.log: logs for background tasks and office file convertion"
+msgstr ""
+
+#: maintain/logs.md:14
+#: maintain/logs.md:25
+# unordered list
+msgid "* seahub_email_sender.log: logs for periodically email sending of background tasks"
+msgstr ""
+
+#: maintain/logs.md:17
+# header
+msgid "### Log files for seafile background node in cluster mode:"
+msgstr ""
+
+#: maintain/logs.md:23
+# unordered list
+msgid "* seafevents.log: Empty"
+msgstr ""
+
+#: maintain/logs.md:24
+# unordered list
+msgid "* seafile-background-tasks.log: logs for background tasks and office file convertion"
+msgstr ""
+
+#: maintain/seafile_cli.md:1
+# header
+msgid "# Seafile"
+msgstr ""
+
+#: maintain/seafile_cli.md:2
+# header
+msgid "## Seafile CLI"
+msgstr ""
+
+#: maintain/seafile_cli.md:4
+#: maintain/seafile_cli.md:68
+# header
+msgid "init\n"
+"----"
+msgstr ""
+
+#: maintain/seafile_cli.md:6
+msgid "Initialize config file"
+msgstr ""
+
+#: maintain/seafile_cli.md:8
+msgid "usage: seaf-cli -c <config-dir> -o init"
+msgstr ""
+
+#: maintain/seafile_cli.md:10
+#: maintain/seafile_cli.md:74
+# header
+msgid "start\n"
+"-----"
+msgstr ""
+
+#: maintain/seafile_cli.md:12
+msgid "Start seafile-applet to run a seafile client"
+msgstr ""
+
+#: maintain/seafile_cli.md:14
+msgid "usage: seaf-cli -c <config-dir> -o start"
+msgstr ""
+
+#: maintain/seafile_cli.md:16
+# header
+msgid "start-ccnet\n"
+"-----------"
+msgstr ""
+
+#: maintain/seafile_cli.md:18
+msgid "Start ccnet daemon"
+msgstr ""
+
+#: maintain/seafile_cli.md:20
+msgid "usage: seaf-cli -c <config-dir> -o start-ccnet"
+msgstr ""
+
+#: maintain/seafile_cli.md:22
+# header
+msgid "start-seafile\n"
+"-------------"
+msgstr ""
+
+#: maintain/seafile_cli.md:24
+msgid "Start seafile daemon"
+msgstr ""
+
+#: maintain/seafile_cli.md:26
+msgid "usage: seaf-cli -c <config-dir> [-w <worktree>] -o start-seafile"
+msgstr ""
+
+#: maintain/seafile_cli.md:28
+# header
+msgid "clone\n"
+"-----"
+msgstr ""
+
+#: maintain/seafile_cli.md:30
+msgid "Clone a repo from seafile server"
+msgstr ""
+
+#: maintain/seafile_cli.md:32
+msgid "A repo id and a url need to be give because this program need to use seafile web"
+msgstr ""
+
+#: maintain/seafile_cli.md:33
+msgid "API v2 to fetch repo information."
+msgstr ""
+
+#: maintain/seafile_cli.md:35
+msgid "usage: seaf-cli -c <config-dir> -r <repo-id> -u <url> [-w <worktree>] -o clone"
+msgstr ""
+
+#: maintain/seafile_cli.md:37
+#: maintain/seafile_cli.md:94
+# header
+msgid "sync\n"
+"----"
+msgstr ""
+
+#: maintain/seafile_cli.md:39
+msgid "Try to synchronize a repo"
+msgstr ""
+
+#: maintain/seafile_cli.md:41
+msgid "usage: seaf-cli -c <config-dir> -r <repo-id> -o clone"
+msgstr ""
+
+#: maintain/seafile_cli.md:43
+# header
+msgid "remove\n"
+"------"
+msgstr ""
+
+#: maintain/seafile_cli.md:45
+msgid "Try to desynchronize a repo"
+msgstr ""
+
+#: maintain/seafile_cli.md:47
+msgid "usage: seaf-cli -c <config-dir> -r <repo-id> -o remove"
+msgstr ""
+
+#: maintain/seafile_cli.md:49
+# header
+msgid "## Usage"
+msgstr ""
+
+#: maintain/seafile_cli.md:51
+msgid "Subcommands:"
+msgstr ""
+
+#: maintain/seafile_cli.md:53
+msgid "    init:           create config files for seafile client"
+msgstr ""
+
+#: maintain/seafile_cli.md:54
+msgid "    start:          start and run seafile client as daemon"
+msgstr ""
+
+#: maintain/seafile_cli.md:55
+msgid "    stop:           stop seafile client"
+msgstr ""
+
+#: maintain/seafile_cli.md:56
+msgid "    list:           list local liraries"
+msgstr ""
+
+#: maintain/seafile_cli.md:57
+msgid "    status:         show syncing status"
+msgstr ""
+
+#: maintain/seafile_cli.md:58
+msgid "    download:       download a library from seafile server"
+msgstr ""
+
+#: maintain/seafile_cli.md:59
+msgid "    sync:           synchronize an existing folder with a library in"
+msgstr ""
+
+#: maintain/seafile_cli.md:60
+msgid "                        seafile server"
+msgstr ""
+
+#: maintain/seafile_cli.md:61
+msgid "    desync:         desynchronize a library with seafile server"
+msgstr ""
+
+#: maintain/seafile_cli.md:64
+msgid "##More details"
+msgstr ""
+
+#: maintain/seafile_cli.md:66
+msgid "Seafile client stores all its configure information in a config dir. The default location is `~/.ccnet`. All the commands below accept an option `-c <config-dir>`."
+msgstr ""
+
+#: maintain/seafile_cli.md:70
+msgid "Initialize seafile client. This command initializes the config dir. It also creates sub-directories `seafile-data` and `seafile` under `parent-dir`. `seafile-data` is used to store internal data, while `seafile` is used as the default location put downloaded libraries."
+msgstr ""
+
+#: maintain/seafile_cli.md:72
+msgid "    seaf-cli init [-c <config-dir>] -d <parent-dir>"
+msgstr ""
+
+#: maintain/seafile_cli.md:76
+msgid "Start seafile client. This command start `ccnet` and `seaf-daemon`, `ccnet` is the network part of seafile client, `seaf-daemon` manages the files."
+msgstr ""
+
+#: maintain/seafile_cli.md:78
+msgid "    seaf-cli start [-c <config-dir>]"
+msgstr ""
+
+#: maintain/seafile_cli.md:80
+# header
+msgid "stop\n"
+"----"
+msgstr ""
+
+#: maintain/seafile_cli.md:82
+msgid "Stop seafile client."
+msgstr ""
+
+#: maintain/seafile_cli.md:84
+msgid "    seaf-cli stop [-c <config-dir>]"
+msgstr ""
+
+#: maintain/seafile_cli.md:87
+# header
+msgid "Download\n"
+"--------"
+msgstr ""
+
+#: maintain/seafile_cli.md:89
+msgid "Download a library from seafile server"
+msgstr ""
+
+#: maintain/seafile_cli.md:91
+msgid "    seaf-cli download -l <library-id> -s <seahub-server-url> -d <parent-directory> -u <username> [-p <password>]"
+msgstr ""
+
+#: maintain/seafile_cli.md:96
+msgid "Synchronize a library with an existing folder."
+msgstr ""
+
+#: maintain/seafile_cli.md:98
+msgid "    seaf-cli sync -l <library-id> -s <seahub-server-url> -d <existing-folder> -u <username> [-p <password>]"
+msgstr ""
+
+#: maintain/seafile_cli.md:100
+# header
+msgid "desync\n"
+"------"
+msgstr ""
+
+#: maintain/seafile_cli.md:102
+msgid "Desynchronize a library from seafile server"
+msgstr ""
+
+#: maintain/seafile_cli.md:104
+msgid "    seaf-cli desync -d <existing-folder>"
+msgstr ""
+
+#: maintain/seafile_fsck.md:1
+# header
+msgid "# Seafile FSCK"
+msgstr ""
+
+#: maintain/seafile_fsck.md:3
+msgid "On the server side, Seafile stores the files in the libraries in an internal format. Seafile has its own representation of directories and files (similar to Git)."
+msgstr ""
+
+#: maintain/seafile_fsck.md:5
+msgid "With default installation, these internal objects are stored in the server's file system directly (such as Ext4, NTFS). But most file systems don't assure the integrity of file contents after a hard shutdown or system crash. So if new Seafile internal objects are being written when the system crashes, they can be corrupt after the system reboots. This will make part of the corresponding library not accessible."
+msgstr ""
+
+#: maintain/seafile_fsck.md:7
+msgid "Note: If you store the seafile-data directory in a battery-backed NAS (like EMC or NetApp), or use S3 backend available in the Pro edition, the internal objects won't be corrupt."
+msgstr ""
+
+#: maintain/seafile_fsck.md:9
+msgid "Starting from version 2.0, Seafile server comes with a seaf-fsck tool to help you recover from this corruption (similar to git-fsck tool). This tool recovers any corrupted library back to its last consistent and usable state."
+msgstr ""
+
+#: maintain/seafile_fsck.md:11
+msgid "Starting from version 4.1, we provide a seaf-fsck.sh script. The seaf-fsck tool accepts the following arguments:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:13
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh [--repair|-r] [--enable-sync|-e] [--export|-E export_path] [repo_id_1 [repo_id_2 ...]]\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:18
+msgid "There are three modes of operation for seaf-fsck:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:20
+# ordered list
+msgid "1. checking integrity of libraries."
+msgstr ""
+
+#: maintain/seafile_fsck.md:21
+# ordered list
+msgid "2. repairing corrupted libraries."
+msgstr ""
+
+#: maintain/seafile_fsck.md:22
+# ordered list
+msgid "3. exporting libraries."
+msgstr ""
+
+#: maintain/seafile_fsck.md:24
+# header
+msgid "## Checking Integrity of Libraries"
+msgstr ""
+
+#: maintain/seafile_fsck.md:26
+msgid "Running seaf-fsck.sh without any arguments will run a **read-only** integrity check for all libraries."
+msgstr ""
+
+#: maintain/seafile_fsck.md:28
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:33
+msgid "If you want to check integrity for specific libraries, just append the library id's as arguments:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:35
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh [library-id1] [library-id2] ...\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:40
+msgid "The output looks like:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:42
+# code block
+msgid "```\n"
+"[02/13/15 16:21:07] fsck.c(470): Running fsck for repo ca1a860d-e1c1-4a52-8123-0bf9def8697f.\n"
+"[02/13/15 16:21:07] fsck.c(413): Checking file system integrity of repo fsck(ca1a860d)...\n"
+"[02/13/15 16:21:07] fsck.c(35): Dir 9c09d937397b51e1283d68ee7590cd9ce01fe4c9 is missing.\n"
+"[02/13/15 16:21:07] fsck.c(200): Dir /bf/pk/(9c09d937) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(105): Block 36e3dd8757edeb97758b3b4d8530a4a8a045d3cb is corrupted.\n"
+"[02/13/15 16:21:07] fsck.c(178): File /bf/02.1.md(ef37e350) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(85): Block 650fb22495b0b199cff0f1e1ebf036e548fcb95a is missing.\n"
+"[02/13/15 16:21:07] fsck.c(178): File /01.2.md(4a73621f) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(514): Fsck finished for repo ca1a860d.\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:54
+msgid "The corrupted files and directories are reported."
+msgstr ""
+
+#: maintain/seafile_fsck.md:56
+msgid "Sometimes you can see output like the following:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:58
+# code block
+msgid "```\n"
+"[02/13/15 16:36:11] Commit 6259251e2b0dd9a8e99925ae6199cbf4c134ec10 is missing\n"
+"[02/13/15 16:36:11] fsck.c(476): Repo ca1a860d HEAD commit is corrupted, need to restore to an old version.\n"
+"[02/13/15 16:36:11] fsck.c(314): Scanning available commits...\n"
+"[02/13/15 16:36:11] fsck.c(376): Find available commit 1b26b13c(created at 2015-02-13 16:10:21) for repo ca1a860d.\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:65
+msgid "This means the \"head commit\" (current state of the library) recorded in database is not consistent with the library data. In such case, fsck will try to find the last consistent state and check the integrity in that state."
+msgstr ""
+
+#: maintain/seafile_fsck.md:67
+msgid "Tips: **If you have many libraries, it's helpful to save the fsck output into a log file for later analysis.**"
+msgstr ""
+
+#: maintain/seafile_fsck.md:69
+# header
+msgid "## Repairing Corruption"
+msgstr ""
+
+#: maintain/seafile_fsck.md:71
+msgid "Corruption repair in seaf-fsck basically works in two steps:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:73
+# ordered list
+msgid "1. If the library state (commit) recorded in database is not found in data directory, find the last available state from data directory."
+msgstr ""
+
+#: maintain/seafile_fsck.md:74
+# ordered list
+msgid "2. Check data integrity in that specific state. If files or directories are corrupted, set them to empty files or empty directories. The corrupted paths will be reported, so that the user can recover them from somewhere else."
+msgstr ""
+
+#: maintain/seafile_fsck.md:76
+msgid "Running the following command repairs all the libraries:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:78
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --repair\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:83
+msgid "Most of time you run the read-only integrity check first, to find out which libraries are corrupted. And then you repair specific libraries with the following command:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:85
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --repair [library-id1] [library-id2] ...\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:90
+msgid "Because corrupted files and directories are emptied after repair, syncing the library after repair may result in data lost in the clients. The good copies on the clients may be replaced by the empty copies. To prevent this from happening, the system prevents a \"repaired\" library from syncing to clients. The system admin should inform the users to recover the corrupted files and folders. And then run the following command to enable syncing for the library again:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:92
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --enable-sync [library-id1] [library-id2] ...\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:97
+# header
+msgid "### Change after CE 5.0.3 and Pro 5.0.2"
+msgstr ""
+
+#: maintain/seafile_fsck.md:99
+msgid "Since community eidition 5.0.3 and Pro edition 5.0.2, we improved seaf-fsck repair operation. Two improvements are added:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:101
+# unordered list
+msgid "- After running \"--repair\" operation, the system admin doesn't need to run \"--enable-sync\" command any more. Instead, seaf-fsck automatically disconnects all syncing clients to the library. So the users are forced to re-sync the library."
+msgstr ""
+
+#: maintain/seafile_fsck.md:102
+# unordered list
+msgid "- In the library history, seaf-fsck includes the list of files and folders that are corrupted. So it's much easier to located corrupted paths."
+msgstr ""
+
+#: maintain/seafile_fsck.md:104
+# header
+msgid "### Best Practice for Repairing a Library"
+msgstr ""
+
+#: maintain/seafile_fsck.md:106
+msgid "To check all libraries and find out which library is corrupted, the system admin can run seaf-fsck.sh without any argument and save the output to a log file. Search for keyword \"Fail\" in the log file to locate corrupted libraries."
+msgstr ""
+
+#: maintain/seafile_fsck.md:108
+msgid "When the system admin find a library is corrupted, he/she should run seaf-fsck.sh with \"--repair\" for the library. After the command fixes the library, the admin should inform user to recover files from other places. There are two ways:"
+msgstr ""
+
+#: maintain/seafile_fsck.md:110
+# unordered list
+msgid "- Upload corrupted files or folders via the web interface"
+msgstr ""
+
+#: maintain/seafile_fsck.md:111
+# unordered list
+msgid "- If the library was synced to some desktop computer, and that computer has a correct version of the corrupted file, resyncing the library on that computer will upload the corrupted files to the server."
+msgstr ""
+
+#: maintain/seafile_fsck.md:113
+# header
+msgid "## Exporting Libraries to File System"
+msgstr ""
+
+#: maintain/seafile_fsck.md:115
+msgid "Since version 4.2.0, you can use seaf-fsck to export all the files in libraries to external file system (such as Ext4). This procedure doesn't rely on the seafile database. As long as you have your seafile-data directory, you can always export your files from Seafile to external file system."
+msgstr ""
+
+#: maintain/seafile_fsck.md:117
+msgid "The command syntax is"
+msgstr ""
+
+#: maintain/seafile_fsck.md:119
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --export top_export_path [library-id1] [library-id2] ...\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_fsck.md:124
+msgid "The argument `top_export_path` is a directory to place the exported files. Each library will be exported as a sub-directory of the export path. If you don't specify library ids, all libraries will be exported."
+msgstr ""
+
+#: maintain/seafile_fsck.md:126
+msgid "Currently only un-encrypted libraries can be exported. Encrypted libraries will be skipped."
+msgstr ""
+
+#: maintain/seafile_gc.md:1
+# header
+msgid "# Seafile GC"
+msgstr ""
+
+#: maintain/seafile_gc.md:3
+msgid "Seafile uses storage de-duplication technology to reduce storage usage. The underlying data blocks will not be removed immediately after you delete a file or a library. As a result, the number of unused data blocks will increase on Seafile server."
+msgstr ""
+
+#: maintain/seafile_gc.md:5
+msgid "To release the storage space occupied by unused blocks, you have to run a"
+msgstr ""
+
+#: maintain/seafile_gc.md:6
+msgid "\"garbage collection\" program to clean up unused blocks on your server."
+msgstr ""
+
+#: maintain/seafile_gc.md:8
+msgid "The GC program cleans up two types of unused blocks:"
+msgstr ""
+
+#: maintain/seafile_gc.md:10
+# ordered list
+msgid "1. Blocks that no library references to, that is, the blocks belong to deleted libraries;"
+msgstr ""
+
+#: maintain/seafile_gc.md:11
+# ordered list
+msgid "2. If you set history length limit on some libraries, the out-dated blocks in those libraries will also be removed."
+msgstr ""
+
+#: maintain/seafile_gc.md:13
+msgid "**Before running GC, you must shutdown the Seafile program on your server if you use the community edition. For professional edition, from version 3.1.11, online GC operation is supported. If you use Professional edition, you don't need to shutdown the Seafile program if you are using MySQL or PostgreSQL as database.**  This is because new blocks written into Seafile while GC is running may be mistakenly deleted by the GC program. "
+msgstr ""
+
+#: maintain/seafile_gc.md:15
+# header
+msgid "## Run GC in version 4.1.1 and later"
+msgstr ""
+
+#: maintain/seafile_gc.md:17
+msgid "In community edition 4.1.1 and Pro edition 4.1.0, GC program's command line and output are improved."
+msgstr ""
+
+#: maintain/seafile_gc.md:19
+# header
+msgid "### Dry-run Mode"
+msgstr ""
+
+#: maintain/seafile_gc.md:21
+msgid "To see how much garbage can be collected without actually removing any garbage, use the dry-run option:"
+msgstr ""
+
+#: maintain/seafile_gc.md:23
+# code block
+msgid "```\n"
+"seaf-gc.sh --dry-run [repo-id1] [repo-id2] ...\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_gc.md:27
+msgid "The output should look like:"
+msgstr ""
+
+#: maintain/seafile_gc.md:29
+# code block
+msgid "```\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo My Library(ffa57d93)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 265.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo ffa57d93.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 5 commits, 265 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 265 blocks total, about 265 reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo aa(f3d0a8d0)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 5.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo f3d0a8d0.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 8 commits, 5 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(264): Populating index for sub-repo 9217622a.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 4 commits, 4 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 5 blocks total, about 9 reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo test2(e7d26d93)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 507.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo e7d26d93.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 577 commits, 507 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 507 blocks total, about 507 reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:50] seafserv-gc.c(124): === Repos deleted by users ===\n"
+"[03/19/15 19:41:50] seafserv-gc.c(145): === GC is finished ===\n"
+"\n"
+"[03/19/15 19:41:50] Following repos have blocks to be removed:\n"
+"repo-id1\n"
+"repo-id2\n"
+"repo-id3\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_gc.md:68
+msgid "If you give specific library ids, only those libraries will be checked; otherwise all libraries will be checked."
+msgstr ""
+
+#: maintain/seafile_gc.md:70
+msgid "Notice that at the end of the output there is a \"repos have blocks to be removed\" section. It contains the list of librareis that have garbage blocks. Later when you run GC without --dry-run option, you can use these libraris ids as input arguments to GC program."
+msgstr ""
+
+#: maintain/seafile_gc.md:72
+# header
+msgid "### Removing Garbage"
+msgstr ""
+
+#: maintain/seafile_gc.md:74
+msgid "To actually remove garbage blocks, run without the --dry-run option:"
+msgstr ""
+
+#: maintain/seafile_gc.md:76
+# code block
+msgid "```\n"
+"seaf-gc.sh [repo-id1] [repo-id2] ...\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_gc.md:80
+msgid "If libraries ids are specified, only those libraries will be checked for garbage."
+msgstr ""
+
+#: maintain/seafile_gc.md:82
+msgid "As described before, there are two types of garbage blocks to be removed. Sometimes just removing the first type (those belong to deleted libraries) of unused blocks is good enough. In this case, the GC program won't bother to check the libraries for outdated historic blocks. The \"-r\" option implements this feature:"
+msgstr ""
+
+#: maintain/seafile_gc.md:84
+# code block
+msgid "```\n"
+"seaf-gc.sh -r\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_gc.md:88
+msgid "**In Seafile version 4.1.1 and later, libraries deleted by the users are not immediately removed from the system. Instead, they're moved into a \"trash\" in the system admin page. Before they're cleared from the trash, their blocks won't be garbage collected.**"
+msgstr ""
+
+#: maintain/seafile_gc.md:90
+# header
+msgid "### Using Multiple Threads in GC"
+msgstr ""
+
+#: maintain/seafile_gc.md:92
+msgid "Since Pro server 5.1.0, you can specify the thread number in GC. By default,"
+msgstr ""
+
+#: maintain/seafile_gc.md:94
+# unordered list
+msgid "- If storage backend is S3/Swift/Ceph, 10 threads are started to do the GC work."
+msgstr ""
+
+#: maintain/seafile_gc.md:95
+# unordered list
+msgid "- If storage backend is file system, only 1 thread is started."
+msgstr ""
+
+#: maintain/seafile_gc.md:97
+msgid "You can specify the thread number in with \"-t\" option. \"-t\" option can be used together with all other options. Each thread will do GC on one library. For example, the following command will use 20 threads to GC all libraries:"
+msgstr ""
+
+#: maintain/seafile_gc.md:99
+# code block
+msgid "```\n"
+"seaf-gc.sh -t 20\n"
+"```"
+msgstr ""
+
+#: maintain/seafile_gc.md:103
+msgid "Since the threads are concurrent, the output of each thread may mix with each others. Library ID is printed in each line of output."
+msgstr ""
+
+#: maintain/seafile_gc.md:105
+# header
+msgid "## Run GC in older versions (before 4.1.1)"
+msgstr ""
+
+#: maintain/seafile_gc.md:107
+msgid "To run GC program"
+msgstr ""
+
+#: maintain/seafile_gc.md:109
+msgid "    ./seaf-gc.sh run"
+msgstr ""
+
+#: maintain/seafile_gc.md:111
+msgid "If you want to do sanity check before actually removing any data, you can use the --dry-run option"
+msgstr ""
+
+#: maintain/seafile_gc.md:113
+msgid "    ./seaf-gc.sh dry-run"
+msgstr ""
+
+#: maintain/seafile_gc.md:115
+msgid "It will show you the total block number vs. the number of blocks to be removed."
+msgstr ""
+
+#: maintain/seafile_gc.md:117
+msgid "To check data integrity after running GC, you can use [seaf-fsck](seafile_fsck.md)"
+msgstr ""
+

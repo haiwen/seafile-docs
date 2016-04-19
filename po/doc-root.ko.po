@@ -1,0 +1,1233 @@
+# Korean translation for the seafile-docs package.
+# This file is distributed under the same license as the seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-19 21:46:37+0900\n"
+"PO-Revision-Date: 2016-04-20 04:28+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# header
+#: README.md:1
+msgid "# Introduction"
+msgstr "# 도입부"
+
+#: README.md:3
+msgid ""
+"Seafile is an open source cloud storage system with file encryption and "
+"group sharing. "
+msgstr ""
+"Seafile은 파일 암호화 및 그룹 공유 기능을 지원하는 오픈소스 클라우드 저장소 "
+"시스템입니다. "
+
+#: README.md:5
+msgid ""
+"Collections of files are called libraries, and each library can be synced "
+"separately. A library can be encrypted with a user chosen password. This "
+"password is not stored on the server, so even the server admin cannot view a "
+"file's contents."
+msgstr ""
+"파일 모음은 라이브러리라고 하며, 각 라이브러리별로 동기화할 수 있습니다. 라이"
+"브러리는 사용자 지정 암호로 암호화 처리할 수 있습니다. 이 암호는 서버에 저장"
+"하지 않으므로, 서버 관리자는 파일의 내용을 볼 수 없습니다."
+
+#: README.md:7
+msgid ""
+"Seafile allows users to create groups with file syncing, wiki, and "
+"discussion to enable easy collaboration around documents within a team."
+msgstr ""
+"Seafile에서 사용자는 그룹을 만들고 파일을 동기화하며, 위키, 토론 페이지를 통"
+"해 모임에서 활용하는 문서로 협업을 쉽게 진행할 수 있습니다."
+
+# header
+#: README.md:9
+msgid "## LICENSE"
+msgstr "## 라이선스"
+
+#: README.md:11
+msgid "Seafile server is public under GPLv2."
+msgstr "Seafile 서버는 GPLv2에 따라 공개합니다."
+
+#: README.md:13 contribution.md:6
+msgid ""
+"The Seafile server's web end, i.e. Seahub, is published under the Apache "
+"License."
+msgstr ""
+"Seahub와 같은 Seafile 서버 웹 엔드는 Apache 라이선스에 따라 배포합니다."
+
+# header
+#: README.md:15
+msgid "## About this manual"
+msgstr "## 설명서 정보"
+
+#: README.md:17
+msgid ""
+"The \"source code\" of this manual is hosted on GitHub: https://github.com/"
+"haiwen/seafile-docs"
+msgstr ""
+"이 설명서의 \"소스 코드\"는 github에서 제공합니다: https://github.com/haiwen/"
+"seafile-docs"
+
+# header
+#: README.md:19
+msgid "## Contact information"
+msgstr "## 연락 정보"
+
+# unordered list
+#: README.md:21
+msgid "* Twitter: @seafile https://twitter.com/seafile"
+msgstr "* 트위터: @seafile https://twitter.com/seafile"
+
+# unordered list
+#: README.md:22
+msgid "* Forum: https://forum.seafile-server.org"
+msgstr "* 포럼: https://forum.seafile-server.org"
+
+# header
+#: README.md:24
+msgid "## More Documents"
+msgstr "## 추가 문서"
+
+# unordered list
+#: README.md:26
+msgid ""
+"* [Wiki containing general information of Seafile](https://seacloud.cc/"
+"group/3/wiki/)"
+msgstr "* [Seafile 일반 정보 위키](https://seacloud.cc/group/3/wiki/)"
+
+# header
+#: SUMMARY.md:1
+msgid "# Summary"
+msgstr "# 요약"
+
+# unordered list
+#: SUMMARY.md:3
+msgid "* [Introduction](README.md)"
+msgstr "* [도입부](README.md)"
+
+# unordered list
+#: SUMMARY.md:4
+msgid "* [Overview](overview/README.md)"
+msgstr "* [둘러보기](overview/README.md)"
+
+# unordered list
+#: SUMMARY.md:5
+msgid "   * [Seafile Components](overview/components.md)"
+msgstr "   * [Seafile 구성요소](overview/components.md)"
+
+# unordered list
+#: SUMMARY.md:6
+msgid ""
+"   * [File permission management](overview/file_permission_management.md)"
+msgstr "   * [파일 권한 관리](overview/file_permission_management.md)"
+
+# unordered list
+#: SUMMARY.md:7
+msgid "   * [Roadmap](roadmap.md)"
+msgstr "   * [로드맵](roadmap.md)"
+
+# unordered list
+#: SUMMARY.md:8
+msgid "   * [FAQ](faq.md)"
+msgstr "   * [자주 묻는 질문](faq.md)"
+
+# unordered list
+#: SUMMARY.md:9
+msgid "   * [Changelog](changelog.md)"
+msgstr "   * [Changelog](changelog.md)"
+
+# unordered list
+#: SUMMARY.md:10
+msgid "   * [Contribution](contribution.md)"
+msgstr "   * [기여하기](contribution.md)"
+
+# unordered list
+#: SUMMARY.md:11
+msgid "* [Deploying Seafile under Linux](deploy/README.md)"
+msgstr "* [Linux에서 Seafile 가동](deploy/README.md)"
+
+# unordered list
+#: SUMMARY.md:12
+msgid "   * [Deploying Seafile with SQLite](deploy/using_sqlite.md)"
+msgstr "   * [Seafile과 SQLite 가동](deploy/using_sqlite.md)"
+
+# unordered list
+#: SUMMARY.md:13
+msgid "   * [Deploying Seafile with MySQL](deploy/using_mysql.md)"
+msgstr "   * [Seafile과 MySQL 가동](deploy/using_mysql.md)"
+
+# unordered list
+#: SUMMARY.md:14
+msgid "   * [Config Seahub with Nginx](deploy/deploy_with_nginx.md)"
+msgstr "   * [Seahub와 Nginx 설정](deploy/deploy_with_nginx.md)"
+
+# unordered list
+#: SUMMARY.md:15
+msgid "   * [Enabling Https with Nginx](deploy/https_with_nginx.md)"
+msgstr "   * [Nginx https 활성화](deploy/https_with_nginx.md)"
+
+# unordered list
+#: SUMMARY.md:16
+msgid "   * [Config Seahub with Apache](deploy/deploy_with_apache.md)"
+msgstr "   * [Seahub와 Apache 설정](deploy/deploy_with_apache.md)"
+
+# unordered list
+#: SUMMARY.md:17
+msgid "   * [Enabling Https with Apache](deploy/https_with_apache.md)"
+msgstr "   * [Apache https 활성화](deploy/https_with_apache.md)"
+
+# unordered list
+#: SUMMARY.md:18
+msgid "   * [Configure Seafile to use LDAP](deploy/using_ldap.md)"
+msgstr "   * [Seafile LDAP 사용 설정](deploy/using_ldap.md)"
+
+# unordered list
+#: SUMMARY.md:19
+msgid ""
+"   * [Configure Seafile to use Shibboleth Authentication](deploy/"
+"shibboleth_config.md)"
+msgstr "   * [Seafile 시볼레스 인증 사용 설정](deploy/shibboleth_config.md)"
+
+# unordered list
+#: SUMMARY.md:20
+msgid "   * [Upgrade Seafile server](deploy/upgrade.md)"
+msgstr "   * [Seafile 서버 업그레이드](deploy/upgrade.md)"
+
+# unordered list
+#: SUMMARY.md:21
+msgid "   * Other Deployment Notes"
+msgstr "   * 기타 가동 참고서"
+
+# unordered list
+#: SUMMARY.md:22
+msgid ""
+"       * [Start Seafile at System Bootup](deploy/"
+"start_seafile_at_system_bootup.md)"
+msgstr ""
+"       * [시스템 부팅시 Seafile 시작하기](deploy/"
+"start_seafile_at_system_bootup.md)"
+
+# unordered list
+#: SUMMARY.md:23
+msgid "       * [Firewall settings](deploy/using_firewall.md)"
+msgstr "       * [방화벽 설정](deploy/using_firewall.md)"
+
+# unordered list
+#: SUMMARY.md:24
+msgid "       * [Logrotate](deploy/using_logrotate.md)"
+msgstr "       * [Logrotate](deploy/using_logrotate.md)"
+
+# unordered list
+#: SUMMARY.md:25
+msgid "       * [Add Memcached](deploy/add_memcached.md)"
+msgstr "       * [Memcached 추가](deploy/add_memcached.md)"
+
+# unordered list
+#: SUMMARY.md:26
+msgid ""
+"       * [Deploy Seafile behind NAT](deploy/deploy_seafile_behind_nat.md)"
+msgstr "       * [NAT망에서 Seafile 가동](deploy/deploy_seafile_behind_nat.md)"
+
+# unordered list
+#: SUMMARY.md:27
+msgid ""
+"       * [Deploy Seahub at Non-root domain](deploy/deploy_seahub_at_non-"
+"root_domain.md)"
+msgstr ""
+"       * [비 루트 영역에서 Seafile 가동](deploy/deploy_seahub_at_non-"
+"root_domain.md)"
+
+# unordered list
+#: SUMMARY.md:28
+msgid ""
+"       * [Migrate From SQLite to MySQL](deploy/migrate_from_sqlite_to_mysql."
+"md)"
+msgstr ""
+"       * [SQLite에서 MySQL로 이전](deploy/migrate_from_sqlite_to_mysql.md)"
+
+# unordered list
+#: SUMMARY.md:29
+msgid "   * [Common Problems for Setting up Server](faq.md)"
+msgstr "   * [서버 설정 시 일반 문제](faq.md)"
+
+# unordered list
+#: SUMMARY.md:30
+msgid ""
+"   * [New Directory Layout in Seafile Server 5.0.0](deploy/"
+"new_directory_layout_5_0_0.md)"
+msgstr ""
+"   * [Seafile 서버 5.0.0의 새 디렉터리 배치](deploy/"
+"new_directory_layout_5_0_0.md)"
+
+# unordered list
+#: SUMMARY.md:31
+msgid "* [Deploy Seafile under Windows](deploy_windows/deploy_with_windows.md)"
+msgstr "* [윈도우에서 Seafile 가동](deploy_windows/deploy_with_windows.md)"
+
+# unordered list
+#: SUMMARY.md:32
+msgid ""
+"   * [Download and Setup Seafile Windows Server](deploy_windows/"
+"download_and_setup_seafile_windows_server.md)"
+msgstr ""
+"   * [Seafile 윈도우 서버 다운로드 및 설정](deploy_windows/"
+"download_and_setup_seafile_windows_server.md)"
+
+# unordered list
+#: SUMMARY.md:33
+msgid ""
+"   * [Configure Seafile to use LDAP on Windows](deploy_windows/using_ldap.md)"
+msgstr "   * [윈도우에서 Seafile LDAP 사용 설정](deploy_windows/using_ldap.md)"
+
+# unordered list
+#: SUMMARY.md:34
+msgid "   * [Deploy Seafile with MySQL](deploy_windows/deploy_with_mysql.md)"
+msgstr "   * [Seafile과 MySQL 가동](deploy_windows/deploy_with_mysql.md)"
+
+# unordered list
+#: SUMMARY.md:35
+msgid "   * [Deploy Seafile with Apache](deploy_windows/deploy_with_apache.md)"
+msgstr "   * [Seafile과 Apache 가동](deploy_windows/deploy_with_apache.md)"
+
+# unordered list
+#: SUMMARY.md:36
+msgid "   * [Deploy Seafile with Nginx](deploy_windows/deploy_with_nginx.md)"
+msgstr "   * [Seafile과 Nginx 가동](deploy_windows/deploy_with_apache.md)"
+
+# unordered list
+#: SUMMARY.md:37
+msgid ""
+"   * [Install Seafile Server as a Windows Service](deploy_windows/"
+"install_seafile_server_as_a_windows_service.md)"
+msgstr ""
+"   * [윈도우 서비스로 Seafile 서버 설치](deploy_windows/"
+"install_seafile_server_as_a_windows_service.md)"
+
+# unordered list
+#: SUMMARY.md:38
+msgid ""
+"   * [Ports used by Seafile Windows Server](deploy_windows/"
+"ports_used_by_seafile_windows_server.md)"
+msgstr ""
+"   * [Seafile 윈도우 서버에서 사용하는 포트](deploy_windows/"
+"ports_used_by_seafile_windows_server.md)"
+
+# unordered list
+#: SUMMARY.md:39
+msgid ""
+"   * [Upgrading Seafile Windows Server](deploy_windows/"
+"upgrading_seafile_windows_server.md)"
+msgstr ""
+"   * [Seafile 윈도우 서버 업그레이드](deploy_windows/"
+"upgrading_seafile_windows_server.md)"
+
+# unordered list
+#: SUMMARY.md:40
+msgid ""
+"   * [Migrate Seafile From Windows To Linux](deploy_windows/"
+"migrate_from_win_to_linux.md)"
+msgstr ""
+"   * [윈도우에서 리눅스로 Seafile 옮기기](deploy_windows/"
+"migrate_from_win_to_linux.md)"
+
+# unordered list
+#: SUMMARY.md:41
+msgid ""
+"   * [Garbage Collecting Unused Blocks on Seafile Server](deploy_windows/"
+"windows_gc.md)"
+msgstr ""
+"   * [Seafile 서버 미사용 블록 가비지 콜렉션](deploy_windows/windows_gc.md)"
+
+# unordered list
+#: SUMMARY.md:42
+msgid ""
+"   * [Running seaf-fsck on corrupted repositories](deploy_windows/"
+"windows_fsck.md)"
+msgstr ""
+"   * [손상된 저장소에 대해 seaf-fsck 실행](deploy_windows/windows_fsck.md)"
+
+# unordered list
+#: SUMMARY.md:43
+msgid "* [Deploy Seafile Pro Edition](deploy_pro/README.md)"
+msgstr "* [Seafile 전문가판 가동](deploy_pro/README.md)"
+
+# unordered list
+#: SUMMARY.md:44
+msgid ""
+"   * [Download and Setup Seafile Professional Server](deploy_pro/"
+"download_and_setup_seafile_professional_server.md)"
+msgstr ""
+"   * [Seafile 전문가 서버 다운로드 및 설치](deploy_pro/"
+"download_and_setup_seafile_professional_server.md)"
+
+# unordered list
+#: SUMMARY.md:45
+msgid ""
+"   * [Migrate from Seafile Community Server](deploy_pro/"
+"migrate_from_seafile_community_server.md)"
+msgstr ""
+"   * [Seafile 커뮤니티 서버에서 옮기기](deploy_pro/"
+"migrate_from_seafile_community_server.md)"
+
+# unordered list
+#: SUMMARY.md:46
+msgid ""
+"   * [Upgrading Seafile Professional Server](deploy_pro/"
+"upgrading_seafile_professional_server.md)"
+msgstr ""
+"   * [Seafile 전문가 서버 업그레이드](deploy_pro/"
+"upgrading_seafile_professional_server.md)"
+
+# unordered list
+#: SUMMARY.md:47
+msgid "   * [LDAP Configuration for Seafile Pro](deploy_pro/using_ldap_pro.md)"
+msgstr "   * [Seafile 전문가판의 LDAP 설정](deploy_pro/using_ldap_pro.md)"
+
+# unordered list
+#: SUMMARY.md:48
+msgid "   * [Importing Groups from LDAP](deploy_pro/ldap_group_sync.md)"
+msgstr "   * [LDAP에서 그룹 가져오기](deploy_pro/ldap_group_sync.md)"
+
+# unordered list
+#: SUMMARY.md:49
+msgid "   * [Multi-Institutions Support](deploy_pro/multi_institutions.md)"
+msgstr "   * [다중 단체 지원](deploy_pro/configurable_options.md)"
+
+# unordered list
+#: SUMMARY.md:50
+msgid ""
+"   * [Enable Office/PDF Documents Online Preview](deploy_pro/"
+"office_documents_preview.md)"
+msgstr ""
+"   * [Office/PDF 문서 온라인 미리 보기 활성화](deploy_pro/"
+"office_documents_preview.md)"
+
+# unordered list
+#: SUMMARY.md:51
+msgid "   * [Integrating with Office Web App](deploy_pro/office_web_app.md)"
+msgstr "   * [오피스 웹 앱 통합](deploy_pro/office_web_app.md)"
+
+# unordered list
+#: SUMMARY.md:52
+msgid ""
+"   * [Details about File Search](deploy_pro/details_about_file_search.md)"
+msgstr "   * [파일 검색 세부 안내](deploy_pro/details_about_file_search.md)"
+
+# unordered list
+#: SUMMARY.md:53
+msgid "   * [Virus Scan](deploy_pro/virus_scan.md)"
+msgstr "   * [바이러스 검사](deploy_pro/virus_scan.md)"
+
+# unordered list
+#: SUMMARY.md:54
+msgid "       * [Virus Scan With Kav4fs](deploy_pro/virus_scan_with_kav4fs.md)"
+msgstr ""
+"       * [kav4fs로 바이러스 검사](deploy_pro/virus_scan_with_kav4fs.md)"
+
+# unordered list
+#: SUMMARY.md:55
+msgid "   * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)"
+msgstr ""
+"   * [재개 가능한 웹 기반 파일 업로드](deploy_pro/web_resumable_upload.md)"
+
+# unordered list
+#: SUMMARY.md:56
+msgid "   * Storage Backends"
+msgstr "   * 저장소 백엔드"
+
+# unordered list
+#: SUMMARY.md:57
+msgid "       * [Amazon S3 Backend](deploy_pro/setup_with_amazon_s3.md)"
+msgstr "       * [아마존 S3 백엔드](deploy_pro/setup_with_amazon_s3.md)"
+
+# unordered list
+#: SUMMARY.md:58
+msgid "       * [Ceph Backend](deploy_pro/setup_with_ceph.md)"
+msgstr "       * [Ceph 백엔드](deploy_pro/setup_with_ceph.md)"
+
+# unordered list
+#: SUMMARY.md:59
+msgid "       * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)"
+msgstr "       * [오픈스택 Swift 백엔드](deploy_pro/setup_with_swift.md)"
+
+# unordered list
+#: SUMMARY.md:60
+msgid "   * Cluster Deployment"
+msgstr "   * 클러스터 가동"
+
+# unordered list
+#: SUMMARY.md:61
+msgid "       * [Deploy in a cluster](deploy_pro/deploy_in_a_cluster.md)"
+msgstr "       * [클러스터에서 가동](deploy_pro/deploy_in_a_cluster.md)"
+
+# unordered list
+#: SUMMARY.md:62
+msgid ""
+"       * [Setup with MariaDB and Ceph](deploy_pro/"
+"clustering_with_mariadb_ceph.md)"
+msgstr ""
+"       * [MariaDB와 Ceph 설정](deploy_pro/clustering_with_mariadb_ceph.md)"
+
+# unordered list
+#: SUMMARY.md:63
+msgid ""
+"       * [Setup Seafile cluster with NFS](deploy_pro/"
+"setup_seafile_cluster_with_nfs.md)"
+msgstr ""
+"       * [NFS와 Seafile 클러스터 설정](deploy_pro/"
+"setup_seafile_cluster_with_nfs.md)"
+
+# unordered list
+#: SUMMARY.md:64
+msgid ""
+"       * [Enable search and background tasks in a cluster](deploy_pro/"
+"enable_search_and_background_tasks_in_a_cluster.md)"
+msgstr ""
+"       * [클러스터에서 검색 및 백그라운드 작업 활성화](deploy_pro/"
+"enable_search_and_background_tasks_in_a_cluster.md)"
+
+# unordered list
+#: SUMMARY.md:65
+msgid "       * [Upgrade a cluster](deploy_pro/upgrade_a_cluster.md)"
+msgstr "       * [클러스터 업그레이드](deploy_pro/upgrade_a_cluster.md)"
+
+# unordered list
+#: SUMMARY.md:66
+msgid "   * [Real-time Backup Server](deploy_pro/real_time_backup.md)"
+msgstr "   * [실시간 백업 서버](deploy_pro/real_time_backup.md)"
+
+# unordered list
+#: SUMMARY.md:67
+msgid "   * [Configurable Options](deploy_pro/configurable_options.md)"
+msgstr "   * [설정 가능 항목](deploy_pro/configurable_options.md)"
+
+# unordered list
+#: SUMMARY.md:68
+msgid "   * [FAQ](deploy_pro/faq_for_seafile_pro_server.md)"
+msgstr "   * [자주 묻는 질문](deploy_pro/faq_for_seafile_pro_server.md)"
+
+# unordered list
+#: SUMMARY.md:69
+msgid ""
+"   * [License](deploy_pro/"
+"seafile_professional_sdition_software_license_agreement.md)"
+msgstr ""
+"   * [라이선스](deploy_pro/"
+"seafile_professional_sdition_software_license_agreement.md)"
+
+# unordered list
+#: SUMMARY.md:70
+msgid "* [Server Configuration and Customization](config/README.md)"
+msgstr "* [서버 설정 및 개별 설정](config/README.md)"
+
+# unordered list
+#: SUMMARY.md:71
+msgid "   * [ccnet.conf](config/ccnet-conf.md)"
+msgstr "   * [ccnet.conf](config/ccnet-conf.md)"
+
+# unordered list
+#: SUMMARY.md:72
+msgid "   * [seafile.conf](config/seafile-conf.md)"
+msgstr "   * [seafile.conf](config/seafile-conf.md)"
+
+# unordered list
+#: SUMMARY.md:73
+msgid "   * [seahub_settings.py](config/seahub_settings_py.md)"
+msgstr "   * [seahub_settings.py](config/seahub_settings_py.md)"
+
+# unordered list
+#: SUMMARY.md:74
+msgid "   * [Seahub customization](config/seahub_customization.md)"
+msgstr "   * [Seahub 개별 설정](config/seahub_customization.md)"
+
+# unordered list
+#: SUMMARY.md:75
+msgid "   * [Desktop client customization](config/desktop_customization.md)"
+msgstr "   * [Desktop 클라이언트 개별 설정](config/desktop_customization.md)"
+
+# unordered list
+#: SUMMARY.md:76
+msgid "   * [Email Sending](config/sending_email.md)"
+msgstr "   * [전자메일 보내기](config/sending_email.md)"
+
+# unordered list
+#: SUMMARY.md:77
+msgid "   * [User management options](config/user_options.md)"
+msgstr "   * [사용자 관리 설정 항목](config/user_options.md)"
+
+# unordered list
+#: SUMMARY.md:78
+msgid ""
+"   * [Storage Quota and File size limits](config/quota_and_size_options.md)"
+msgstr ""
+"   * [저장소 용량 제한 및 파일 크기 제한](config/quota_and_size_options.md)"
+
+# unordered list
+#: SUMMARY.md:79
+msgid "* [Administration](maintain/README.md)"
+msgstr "* [관리](maintain/README.md)"
+
+# unordered list
+#: SUMMARY.md:80
+msgid "   * [Account management](maintain/account.md)"
+msgstr "   * [계정 관리](maintain/account.md)"
+
+# unordered list
+#: SUMMARY.md:81
+msgid "   * [Logs](maintain/logs.md)"
+msgstr "   * [로그](maintain/logs.md)"
+
+# unordered list
+#: SUMMARY.md:82
+msgid "   * [Backup and Recovery](maintain/backup_recovery.md)"
+msgstr "   * [백업 및 복원](maintain/backup_recovery.md)"
+
+# unordered list
+#: SUMMARY.md:83
+msgid "   * [Seafile FSCK](maintain/seafile_fsck.md)"
+msgstr "   * [Seafile FSCK](maintain/seafile_fsck.md)"
+
+# unordered list
+#: SUMMARY.md:84
+msgid "   * [Seafile GC](maintain/seafile_gc.md)"
+msgstr "   * [Seafile GC](maintain/seafile_gc.md)"
+
+# unordered list
+#: SUMMARY.md:85
+msgid "   * [Clean database](maintain/clean_database.md)"
+msgstr "   * [데이터베이스 정리](maintain/clean_database.md)"
+
+# unordered list
+#: SUMMARY.md:86
+msgid "* [WebDAV and FUSE extensions](extension/README.md)"
+msgstr "* [WebDAV 및 FUSE 확장 기능](extension/README.md)"
+
+# unordered list
+#: SUMMARY.md:87
+msgid "   * [WebDAV extension](extension/webdav.md)"
+msgstr "   * [WebDAV 확장 기능](extension/webdav.md)"
+
+# unordered list
+#: SUMMARY.md:88
+msgid "   * [FUSE extension](extension/fuse.md)"
+msgstr "   * [FUSE 확장 기능](extension/fuse.md)"
+
+# unordered list
+#: SUMMARY.md:89
+msgid "* [Security and Auditing](security/README.md)"
+msgstr "* [보안 및 감사](security/README.md)"
+
+# unordered list
+#: SUMMARY.md:90
+msgid "   * [Security features](security/security_features.md)"
+msgstr "   * [보안 기능](security/security_features.md)"
+
+# unordered list
+#: SUMMARY.md:91
+msgid "   * [Access logs and auditing](security/auditing.md)"
+msgstr "   * [접근 기록 및 감사](security/auditing.md)"
+
+# unordered list
+#: SUMMARY.md:92
+msgid "* [Developing](develop/README.md)"
+msgstr "* [개발](develop/README.md)"
+
+# unordered list
+#: SUMMARY.md:93
+msgid "   * [How to Build Seafile](build_seafile/README.md)"
+msgstr "   * [Seafile 빌드 방법](build_seafile/README.md)"
+
+# unordered list
+#: SUMMARY.md:94
+msgid "       * [Linux](build_seafile/linux.md)"
+msgstr "       * [리눅스](build_seafile/linux.md)"
+
+# unordered list
+#: SUMMARY.md:95
+msgid "       * [FreeBSD](build_seafile/freebsd.md)"
+msgstr "       * [FreeBSD](build_seafile/freebsd.md)"
+
+# unordered list
+#: SUMMARY.md:96
+msgid "       * [Windows](build_seafile/windows.md)"
+msgstr "       * [윈도우](build_seafile/windows.md)"
+
+# unordered list
+#: SUMMARY.md:97
+msgid "       * [Mac OS X](build_seafile/osx.md)"
+msgstr "       * [Mac OS X](build_seafile/osx.md)"
+
+# unordered list
+#: SUMMARY.md:98
+msgid "       * [Server](build_seafile/server.md)"
+msgstr "       * [서버](build_seafile/server.md)"
+
+# unordered list
+#: SUMMARY.md:99
+msgid "       * [Raspberry Pi](build_seafile/rpi.md)"
+msgstr "       * [라즈베리 파이](build_seafile/rpi.md)"
+
+# unordered list
+#: SUMMARY.md:100
+msgid "   * [Develop env](develop/env.md)"
+msgstr "   * [개발 환경](develop/env.md)"
+
+# unordered list
+#: SUMMARY.md:101
+msgid "   * [Code Standard](develop/code_standard.md)"
+msgstr "   * [코딩 표준](develop/code_standard.md)"
+
+# unordered list
+#: SUMMARY.md:102
+msgid "   * [Web API](develop/web_api.md)"
+msgstr "   * [웹 API](develop/web_api.md)"
+
+# unordered list
+#: SUMMARY.md:103
+msgid "   * [Web API V2.1](develop/web_api_v2.1.md)"
+msgstr "   * [웹 API V2.1](develop/web_api_v2.1.md)"
+
+# unordered list
+#: SUMMARY.md:104
+msgid "   * [Python API](develop/python_api.md)"
+msgstr "   * [파이썬 API](develop/python_api.md)"
+
+# unordered list
+#: SUMMARY.md:105
+msgid "   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)"
+msgstr "   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)"
+
+# unordered list
+#: SUMMARY.md:106
+msgid "   * [Data Model](develop/data_model.md)"
+msgstr "   * [데이터 모델](develop/data_model.md)"
+
+# unordered list
+#: SUMMARY.md:107
+msgid "   * [Server Components](develop/server-components.md)"
+msgstr "   * [서버 구성 요소](develop/server-components.md)"
+
+# unordered list
+#: SUMMARY.md:108
+msgid "   * [Sync algorithm](develop/sync_algorithm.md)"
+msgstr "   * [동기화 알고리즘](develop/sync_algorithm.md)"
+
+# header
+#: changelog.md:1
+msgid "# Changelog"
+msgstr "# Changelog"
+
+# header
+#: changelog.md:3
+msgid "### Changelog for this manual"
+msgstr "### 이 설명서의 Changelog"
+
+# unordered list
+#: changelog.md:5
+msgid ""
+"* 2015.11.20: Update document for file copy and add document for multiple "
+"file/folder delete/copy/move"
+msgstr ""
+"* 2015.11.20: 다중 파일/폴더 삭제/복사/이동 목적으로 파일 복사 및 문서 추가"
+"로 문서를 업데이트함"
+
+# unordered list
+#: changelog.md:6
+msgid ""
+"* 2015.11.18: Add document for [cleaning database](maintain/clean_database."
+"md)."
+msgstr ""
+"* 2015.11.18: [데이터베이스 정리](maintain/clean_database.md) 문서 추가."
+
+# header
+#: changelog.md:9
+msgid "### Changelogs"
+msgstr "### Changelog"
+
+# unordered list
+#: changelog.md:11
+msgid ""
+"- [Seafile Community Edition](https://seacloud.cc/group/3/wiki/server-"
+"changelog/)"
+msgstr ""
+"- [Seafile 커뮤니티판](https://seacloud.cc/group/3/wiki/server-changelog/)"
+
+# unordered list
+#: changelog.md:12
+msgid ""
+"- [Seafile Professional Edition](https://seacloud.cc/group/3/wiki/changelog-"
+"for-seafile-professional-server/)"
+msgstr ""
+"- [Seafile 전문가판](https://seacloud.cc/group/3/wiki/changelog-for-seafile-"
+"professional-server/)"
+
+# unordered list
+#: changelog.md:13
+msgid "- [Seafile Client](https://seacloud.cc/group/3/wiki/client-changelog/)"
+msgstr ""
+"- [Seafile 클라이언트](https://seacloud.cc/group/3/wiki/client-changelog/)"
+
+# unordered list
+#: changelog.md:14
+msgid ""
+"- [Android Client](https://seacloud.cc/group/3/wiki/android-client-"
+"changelog/)"
+msgstr ""
+"- [Android 클라이언트](https://seacloud.cc/group/3/wiki/android-client-"
+"changelog/)"
+
+# unordered list
+#: changelog.md:15
+msgid "- [iOS Client](https://seacloud.cc/group/3/wiki/ios-client-changelog/)"
+msgstr ""
+"- [iOS 클라이언트](https://seacloud.cc/group/3/wiki/ios-client-changelog/)"
+
+# header
+#: contribution.md:1
+msgid "# Contribution"
+msgstr "# 기여하기"
+
+# header
+#: contribution.md:3
+msgid "## Licensing"
+msgstr "## 라이선스 "
+
+#: contribution.md:4
+msgid ""
+"Seafile and its desktop and mobile clients are published under the GPLv3."
+msgstr ""
+"Seafile 및 데스크톱, 모바일 클라이언트는 GPLv3 라이선스 하에 출시합니다."
+
+# header
+#: contribution.md:8
+msgid "## Discussion"
+msgstr "## 토론방"
+
+#: contribution.md:9
+msgid ""
+"Google Group: https://groups.google.com/forum/?fromgroups#!forum/seafile"
+msgstr ""
+"구글 그룹스: https://groups.google.com/forum/?fromgroups#!forum/seafile"
+
+#: contribution.md:11
+msgid "IRC: #seafile on freenode"
+msgstr "IRC: freenode의 #seafile"
+
+#: contribution.md:13
+msgid "Follow us @seafile https://twitter.com/seafile"
+msgstr "@seafile https://twitter.com/seafile 을 팔로우하십시오"
+
+# header
+#: contribution.md:15
+msgid "## Reporting a Bug?"
+msgstr "## 버그 보고?"
+
+# unordered list
+#: contribution.md:16
+msgid ""
+"- Find the existing issues that fit your situation if any, or create a new "
+"issue. We are using github as our issue tracer https://github.com/haiwen/"
+"seafile/issues?state=open"
+msgstr ""
+"- 상황에 맞는 기존의 문제 보고를 찾거나 새 문제 보고를 작성하십시오. 문제 추"
+"적기로 github를 사용합니다. https://github.com/haiwen/seafile/issues?"
+"state=open"
+
+# unordered list
+#: contribution.md:17
+msgid ""
+"- Join us on Google Group: https://groups.google.com/forum/?fromgroups#!"
+"forum/seafile"
+msgstr ""
+"- 구글 그룹스에 참여하십시오: https://groups.google.com/forum/?fromgroups#!"
+"forum/seafile"
+
+# header
+#: contribution.md:19
+msgid "## Code Style"
+msgstr "## 코딩 방식"
+
+#: contribution.md:20
+msgid ""
+"  The source code of seafile is ISO/IEC 9899:1999 (E) (a.k.a. C99) "
+"compatible. Take a look at [code standard](develop/code_standard.md)."
+msgstr ""
+"  Seafile 소스 코드는 ISO/IEC 9899:1999 (E) (C99) 호환 문법을 사용합니다. [코"
+"딩 표준](develop/code_standard.md)을 살펴보십시오."
+
+# header
+#: faq.md:1
+msgid "# FAQ"
+msgstr "# 자주 묻는 질문"
+
+# header
+#: faq.md:3
+msgid "## Questions about file syncing"
+msgstr "## 파일 동기화 관련 질문"
+
+# header
+#: faq.md:5
+msgid ""
+"#### When downloading a library, the client hangs at \"connecting server\""
+msgstr "#### 라이브러리를 다운로드할 때 \"서버 연결 중\"에서 클라이언트가 멈춤"
+
+#: faq.md:7
+msgid ""
+"First, you can check the Seafile client log (`~/.ccnet/logs/seafile.log` for "
+"Linux, `C:/users/your_name/ccnet/logs/seafile.log` for Windows) to see "
+"what's wrong."
+msgstr ""
+"우선 Seafile 클라이언트 로그(리눅스에서는 `~/.ccnet/logs/seafile.log`, 윈도우"
+"에서는 `C:/users/your_name/ccnet/logs/seafile.log`)를 확인하여 문제를 살펴볼 "
+"수 있습니다."
+
+#: faq.md:9
+msgid "Possible reasons:"
+msgstr "가능성 있는 이유는 다음과 같습니다:"
+
+# unordered list
+#: faq.md:11
+msgid ""
+"* Firewall: Ensure the firewall is configured properly. See [Firewall "
+"Settings for Seafile Server](deploy/using_firewall.md)"
+msgstr ""
+"* 방화벽: 방화벽을 올바르게 설정했는지 확인하십시오. [Seafile 서버용 방화벽 "
+"설정](deploy/using_firewall.md)을 참고하십시오"
+
+# header
+#: faq.md:13
+msgid "#### How to add more verbose log information at the client"
+msgstr "#### 클라이언트 측에서 더 자세한 로그 정보를 추가하는 방법"
+
+#: faq.md:15
+msgid ""
+"Set environment variable `SEAFILE_DEBUG = all` before running Seafile "
+"desktop client. On Linux, you can open a terminal and type: "
+msgstr ""
+"Seafile 데스크톱 클라이언트를 실행하기 전 `SEAFILE_DEBUG = all` 환경 변수를 "
+"설정하십시오. 라눅스에서, 터미널을 열어 다음 명령을 입력할 수 있습니다: "
+
+# code block
+#: faq.md:17
+msgid ""
+"```\n"
+"export SEAFILE_DEBUG=all\n"
+"./seafile-applet\n"
+"```"
+msgstr ""
+"```\n"
+"export SEAFILE_DEBUG=all\n"
+"./seafile-applet\n"
+"```"
+
+# header
+#: faq.md:22
+msgid "## Questions about server setup"
+msgstr "## 서버 설정 관련 질문"
+
+# header
+#: faq.md:24
+msgid "#### Failed to upload/download file online"
+msgstr "#### 온라인 파일 업로드/다운로드 실패"
+
+# unordered list
+#: faq.md:26
+msgid "* Make sure you firewall for seafile fileserver is opened."
+msgstr "* Seafile 파일 서버에 맞춰 방화벽을 열어두었는지 확인하십시오."
+
+# unordered list
+#: faq.md:27
+msgid ""
+"* Make `SERVICE_URL` in ccnet.conf and `FILE_SERVER_ROOT` in seahub_settings."
+"py are set correctly."
+msgstr ""
+"* ccnet.conf의 `SERVICE_URL`과 seahub_settings.py의 `FILE_SERVER_ROOT`를 올바"
+"르게 설정했는지 확인하십시오."
+
+# unordered list
+#: faq.md:28
+msgid ""
+"* Using chrome/firefox debug mode to find which link is given when click "
+"download button and what's wrong with this link"
+msgstr ""
+"* 크롬/파이어폭스 디버깅 모드로 다운로드 단추를 눌렀을 때 어떤 링크가 나타나"
+"는지 이 링크에 어떤 문제가 있는지 확인하십시오"
+
+# header
+#: faq.md:30
+msgid "#### Does Seafile server support Python 3?"
+msgstr "#### Seafile 서버에서 파이썬 3을 지원하나요?"
+
+#: faq.md:32
+msgid "No, You must have python 2.6.5+ or 2.7 installed on your server."
+msgstr "아니요, 서버에 파이썬 2.6.5 이상 또는 2.7 버전을 설치해야합니다."
+
+# header
+#: faq.md:34
+msgid "#### Can Seafile server run on FreeBSD?"
+msgstr "#### FreeBSD에서 Seafile 서버를 실행할 수 있을까요?"
+
+#: faq.md:36
+msgid ""
+"There was an unconfirmed solution on the internet, which later has vanished."
+msgstr "인터넷에 검증되지 않은 방법이 있으며, 이 방법은 나중에 정리하겠습니다."
+
+#: faq.md:37
+msgid ""
+"(Please explain the installation routine if you successfully set up Seafile "
+"in FreeBSD.)"
+msgstr "(FreeBSD에서 Seafile 설치에 성공하면 설치 과정을 설명할 것.)"
+
+# header
+#: faq.md:39
+msgid "#### Website displays \"Page unavailable\", what can I do?"
+msgstr "#### 웹사이트에 \"페이지를 찾을 수 없음\"이라고 뜨는데 어떻게 하죠?"
+
+# unordered list
+#: faq.md:41
+msgid ""
+"* You can check the back trace in seahub log files(`installation folder/logs/"
+"seahub_django_request.log`)"
+msgstr ""
+"* Seahub 로그 파일(`installation folder/logs/seahub_django_request.log`)을 역"
+"추적하여 확인할 수 있습니다"
+
+# unordered list
+#: faq.md:43
+msgid ""
+"* You can also turn on debug by adding <code>DEBUG = True</code> to "
+"seahub_settings.py and restart seahub by <code>./seahub.sh restart</code>, "
+"then refresh that page, all the debug infomations will be displayed. Make "
+"sure ./seahub.sh was started as: ./seahub.sh start-fastcgi"
+msgstr ""
+"* 또한 seahub_settings.py에 <code>DEBUG = True</code> 설정을 추가하고 "
+"<code>./seahub.sh restart</code> 명령으로 seahub를 다시 시작한 다음 페이지를 "
+"새로 고쳐 모든 디버깅 정보를 화면에 표시하여 디버깅 기능을 활성화할 수 있습니"
+"다. ./seahub.sh를 ./seahub.sh start-fastcgi 명령으로 시작했는지 확인하십시오."
+
+# header
+#: faq.md:45
+msgid "#### Avatar pictures vanished after upgrading server, what can I do?"
+msgstr "#### 아바타 그림이 vanished 됐는데 어떻게 하죠?"
+
+# unordered list
+#: faq.md:47
+msgid ""
+"* You need to check whether the \"avatars\" symbolic link under seahub/"
+"media/ is correctly link to ../../../seahub-data/avatars. If not, you need "
+"to correct the link according to the \"minor upgrade\" section in [Upgrading-"
+"Seafile-Server](deploy/upgrade.md)"
+msgstr ""
+"* seahub/media/의 \"avatars\" 심볼릭 링크를 ../../../seahub-data/avatars에 올"
+"바르게 연결했는지 확인하십시오. 올바르게 연결하지 않았다면, [Seafile 서버 업"
+"그레이드](deploy/upgrade.md)의 \"마이너 버전 업그레이드\"를 따라 링크를 고쳐"
+"야합니다."
+
+# unordered list
+#: faq.md:49
+msgid ""
+"* If your avatars link is correctly linked, and avatars are still broken, "
+"you may refresh seahub cache by `rm -rf /tmp/seahub_cache/*`"
+msgstr ""
+"* 아바타 링크를 올바르게 연결했고 아바타가 여전히 깨져있으면 `rm -rf /tmp/"
+"seahub_archive/*` 명령으로 seahub 캐시를 새로 고치십시오"
+
+# header
+#: faq.md:51
+msgid "#### How to change seafile-data location after setup?"
+msgstr "#### 설치 후 seafile-data 위치를 어떻게 바꾸죠?"
+
+#: faq.md:53
+msgid ""
+"Modify file seafile.ini under ccnet. This file contains the location of "
+"seafile-data. Move seafile-data to another place, like `/opt/new/seafile-"
+"data`. Then modify the file accordingly."
+msgstr ""
+"ccnet의 seafile.ini 파일을 수정하십시오. 이 파일에 seafile-dasta 위치가 들어"
+"있습니다. seafile-data 위치를 `/opt/new/seafile-data`와 같은 다른 위치로 이동"
+"하십시오. 그 다음 파일을 올바르게 수정하십시오."
+
+# header
+#: faq.md:55
+msgid "#### Failed to send email, what can I do?"
+msgstr "#### 전자메일 전송에 실패했는데 어떻게 하죠?"
+
+#: faq.md:57
+msgid "Please check logs/seahub.log."
+msgstr "logs/seahub.log를 확인하십시오."
+
+#: faq.md:59
+msgid "There are some common mistakes:"
+msgstr "보통 저지르는 몇가지 실수가 있습니다:"
+
+# ordered list
+#: faq.md:61
+msgid ""
+"1. Check whether there are some typos in the config, e.g., forget single "
+"quote, `EMAIL_HOST_USER = XXX`, which should be `EMAIL_HOST_USER = 'XXX'`"
+msgstr ""
+"1. `EMAIL_HOST_USER = XXX`와 같은 부분이 `EMAIL_HOST_USER = 'XXX'`로 설정해"
+"야 하는 상황에서 작은 따옴표를 빠뜨린 식으로 설정 입력이 잘못되었는지 확인하"
+"십시오."
+
+# ordered list
+#: faq.md:62
+msgid "1. Your mail server is not available."
+msgstr "1. 메일 서버가 동작하지 않을 수 있습니다."
+
+# header
+#: faq.md:64
+msgid "#### After upgrade Web UI is broken because CSS files can't be loaded"
+msgstr "#### 업그레이드가 끝난 후 CSS 파일을 불러오지 못하여 웹 UI가 깨집니다"
+
+#: faq.md:66
+msgid ""
+"Please remove the cache and try again, `rm -rf /tmp/seahub_cache/*`. If you "
+"configured memecached, restart memcached, then restart Seahub."
+msgstr ""
+"`rm -rf /tmp/seahub_cache/*` 명령으로 캐시를 제거 후 다시 시도하십시오. "
+"memcached 를 설정했다면, memcached를 다시 시작한 후 seahub를 다시 시작하십시"
+"오."
+
+#: faq.md:68
+msgid ""
+"If the problem is not fixed, check whether seafile-server-latest point to "
+"the right folder. Then check whether `seafile-server-latest/seahub/media/"
+"CACHE` is correctly generated (it should contain the auto-generated CSS "
+"file). "
+msgstr ""
+"문제를 해결하지 못했다면 seafile-server-latest 심볼릭 링크가 올바른 폴더를 가"
+"리키는지 확인하십시오. 그 다음 `seafile-server-latest/seahub/media/CACHE` 위"
+"치를 올바르게 만들었는지 확인하십시오(자동으로 만든 CSS 파일이 들어갑니다)."
+
+# header
+#: faq.md:70
+msgid "## Questions about Clustering"
+msgstr "## 클러스터링 관련 질문"
+
+# header
+#: faq.md:72
+msgid ""
+"### Page layout broken because seahub/media/CACHE is created only on first "
+"node"
+msgstr "### 첫 노드에만 seahub/media/CACHE를 만들어 페이지 배치가 깨집니다"
+
+#: faq.md:74
+msgid "Please add"
+msgstr "다음 설정을 추가하십시오"
+
+#: faq.md:76
+msgid "    COMPRESS_CACHE_BACKEND = 'locmem://'"
+msgstr "    COMPRESS_CACHE_BACKEND = 'locmem://'"
+
+#: faq.md:78
+msgid ""
+"to seahub_settings.py as documented http://manual.seafile.com/deploy_pro/"
+"deploy_in_a_cluster.html"
+msgstr ""
+"http://manual.seafile.com/deploy_pro/deploy_in_a_cluster.html 문서에 언급한대"
+"로 seahub_settings.py를 실행하십시오"
+
+#: faq.md:80
+msgid ""
+"This will tell every node to generate the CSS CACHE in its local folder."
+msgstr "이 명령은 모든 노드의 자체 로컬 폴더에 CSS 캐시를 만들도록 지시합니다."
+
+# header
+#: faq.md:83
+msgid "## Questions about server maintenance"
+msgstr "## 서버 운영 관련 질문"
+
+# header
+#: faq.md:85
+msgid "### How to migrate libraries and groups from one account to another?"
+msgstr "### 한 계정에서 다른 계정으로 라이브러리 및 그룹을 어떻게 옮길까요?"
+
+#: faq.md:87
+msgid ""
+"Since version 4.4.2, system admin can migrate libraries and groups from one "
+"account to another existing account using [RESTful web api](https://github."
+"com/haiwen/seafile-docs/blob/master/develop/web_api.md#migrate-account)."
+msgstr ""
+"4.4.2 버전 부터 시스템 관리자는 [RESTful 웹 API](https://github.com/haiwen/"
+"seafile-docs/blob/master/develop/web_api.md#migrate-account)를 활용하여 어떤 "
+"계정에서 기존의 다른 계정으로 라이브러리 및 그룹을 옮길 수 있습니다."
+
+# header
+#: faq.md:89
+msgid "### Seafile GC shows errors, FSCK can’t fix them"
+msgstr "### Seafile GC에서 FSCK cannot fix them 오류가 뜹니다"
+
+#: faq.md:91
+msgid ""
+"GC scans the history. But FSCK only scan the currently version. You can "
+"ignore the error. It is a minor issue."
+msgstr ""
+"GC는 이전 기록을 검사합니다. 하지만 FSCK는 현재 버전만 검사합니다. 이 오류를 "
+"무시할 수 있습니다. 사소한 문제일 뿐입니다."
+
+# header
+#: faq.md:93
+msgid "## Questions about LDAP and User management"
+msgstr "## LDAP 및 사용자 관리 관련 질문"
+
+# header
+#: faq.md:95
+msgid "### How to restrict Seafile access to a certain accounts in AD"
+msgstr "### AD에서 계정별 Seafile 접근 권한을 제한하는 방법"
+
+#: faq.md:97
+msgid ""
+"You can use FILTER field in LDAP configuration in `ccnet.conf`. For example, "
+"the following filter restricts the access to Seafile to members of a group."
+msgstr ""
+"`ccnet.conf` 에서 LDAP 설정에 FILTER 필드를 사용할 수 있습니다. 예를 들어 다"
+"음 필터는 그룹 구성원의 Seafile 접근 권한을 제한합니다."
+
+#: faq.md:99
+msgid "    FILTER = (memberOf=cn=group,cn=users,DC=x)"
+msgstr "    FILTER = (memberOf=cn=group,cn=users,DC=x)"
+
+#: faq.md:101
+msgid ""
+"AD also supports groups within group. The following filter restricts the "
+"access to Seafile to members/groups of a group."
+msgstr ""
+"AD는 그룹의 그룹 기능을 지원합니다. 다음 필터는 그룹의 구성원/그룹의 Seafile "
+"접근을 제한합니다."
+
+#: faq.md:103
+msgid "    FILTER = (memberOf:1.2.840.113556.1.4.1941:=cn=group,cn=users,DC=x)"
+msgstr ""
+"    FILTER = (memberOf:1.2.840.113556.1.4.1941:=cn=group,cn=users,DC=x)"
+
+#: faq.md:105
+msgid ""
+"For more information on the Filter syntax, see http://msdn.microsoft.com/en-"
+"us/library/aa746475%28VS.85%29.aspx"
+msgstr ""
+"필터 문법 정보는, http://msdn.microsoft.com/en-us/library/"
+"aa746475%28VS.85%29.aspx를 참고하십시오"
+
+# header
+#: overview.md:1
+msgid "# Overview"
+msgstr "# 둘러보기"
+
+#: roadmap.md:1
+msgid "#Roadmap"
+msgstr "# 로드맵"
+
+#: roadmap.md:3
+msgid "Please check https://seacloud.cc/group/3/wiki/seafile-roadmap/"
+msgstr "https://seacloud.cc/group/3/wiki/seafile-roadmap/ 을 확인하십시오"

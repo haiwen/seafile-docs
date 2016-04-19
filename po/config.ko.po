@@ -1,0 +1,2014 @@
+# Korean translation for the seafile-docs package.
+# This file is distributed under the same license as the Seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-19 22:28:21+0900\n"
+"PO-Revision-Date: 2016-04-20 01:13+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+
+# header
+#: config/README.md:1
+msgid "# Server Configuration and Customization"
+msgstr "# 서버 설정 및 개별 설정"
+
+# header
+#: config/README.md:3
+msgid "## Config Files"
+msgstr "## 설정 파일"
+
+#: config/README.md:5
+msgid ""
+"**Important**: Since Seafile Server 5.0.0, all config files are moved to the "
+"central **conf** folder. [Read More](../deploy/new_directory_layout_5_0_0."
+"md)."
+msgstr ""
+"**중요**: Seafile 서버 5.0.0 부터 모든 설정 파일은 **conf** 폴더로 옮겨 모아"
+"놓습니다. [좀 더 읽어보십시오](../deploy/new_directory_layout_5_0_0.md)."
+
+#: config/README.md:7
+msgid "There are three config files in the community edition:"
+msgstr "커뮤니티판에는 세가지 설정 파일이 있습니다:"
+
+# unordered list
+#: config/README.md:9
+msgid "- [ccnet.conf](ccnet-conf.md): contains the LDAP settings"
+msgstr "- [ccnet.conf](ccnet-conf.md): LDAP 설정이 들어있습니다"
+
+# unordered list
+#: config/README.md:10
+msgid ""
+"- [seafile.conf](seafile-conf.md): contains settings for seafile daemon and "
+"fileserver."
+msgstr ""
+"- [seafile.conf](seafile-conf.md): Seafile 데몬 및 파일 서버 설정이 들어있습"
+"니다."
+
+# unordered list
+#: config/README.md:11
+msgid ""
+"- [seahub_settings.py](seahub_settings_py.md): contains settings for Seahub"
+msgstr ""
+"- [seahub_settings.py](seahub_settings_py.md): Seahub 설정이 들어있습니다"
+
+#: config/README.md:13
+msgid "There is one additional config file in the pro edition:"
+msgstr "전문가판에는 추가 설정 파일이 들어있습니다:"
+
+# unordered list
+#: config/README.md:15
+msgid "- `seafevents.conf`: contains settings for search and documents preview"
+msgstr "- `seafevents.conf`: 검색 및 문서 미리 보기 설정이 들어있습니다"
+
+#: config/README.md:17
+msgid ""
+"Note: Since version 5.0.0, you can also modify most of the config items via "
+"web interface.The config items are saved in database table (seahub-dab/"
+"constance_config). They have a higher priority over the items in config "
+"files."
+msgstr ""
+"참고: 5.0.0 버전 부터 대부분의 설정 항목은 웹 인터페이스에서 수정할 수 있습니"
+"다. 설정 항목은 데이터베이스 테이블(seahub_dab/constance_config)에 저장합니"
+"다. 설정 파일의 항목보다 높은 우선순위를 갖습니다."
+
+#: config/README.md:19
+msgid "![Seafile Config via Web](../images/seafile-server-config.png)"
+msgstr "![Seafile 웹에서 설정하기](../images/seafile-server-config.png)"
+
+# header
+#: config/README.md:21
+msgid "## Config Items"
+msgstr "## 설정 항목"
+
+#: config/README.md:23
+msgid "Email:"
+msgstr "전자메일:"
+
+# unordered list
+#: config/README.md:25
+msgid "* [Sending email notifications](sending_email.md)"
+msgstr "* [전자메일 알림 전송](sending_email.md)"
+
+# unordered list
+#: config/README.md:26
+msgid "* [Customize email notifications](customize_email_notifications.md)"
+msgstr "* [전자메일 알림 개별 설정](customize_email_notifications.md)"
+
+#: config/README.md:28
+msgid "User management"
+msgstr "사용자 관리"
+
+# unordered list
+#: config/README.md:30
+msgid "* [User management options](user_options.md)"
+msgstr "* [사용자 관리 설정 항목](user_options.md)"
+
+#: config/README.md:32
+msgid "User quota and download/upload size limits"
+msgstr "사용자 저장 용량 제한 및 다운로드/업로드 파일 크기 제한"
+
+# unordered list
+#: config/README.md:34
+msgid ""
+"* [User quota and download/upload size limits options]"
+"(quota_and_size_options.md)"
+msgstr ""
+"* [사용자 저장 용량 제한 및 다운로드/업로드 파일 크기 제한 설정 항목]"
+"(quota_and_size_options.md)"
+
+# header
+#: config/README.md:36
+msgid "## Customize Web"
+msgstr "## 웹 개별 설정"
+
+# unordered list
+#: config/README.md:38
+msgid "* [Customize web inferface](seahub_customization.md)"
+msgstr "* [웹 인터페이스 개별 설정](seahub_customization.md)"
+
+# header
+#: config/ccnet-conf.md:1
+msgid "# Seafile Network Configurations (ccnet.conf)"
+msgstr "# Seafile 네트워크 설정(ccnet.conf)"
+
+#: config/ccnet-conf.md:3 config/quota_and_size_options.md:3
+#: config/seafile-conf.md:3
+msgid ""
+"**Note**: Since Seafile Server 5.0.0, all config files are moved to the "
+"central **conf** folder. [Read More](../deploy/new_directory_layout_5_0_0."
+"md)."
+msgstr ""
+"**참고**: Seafile 서버 5.0.0 부터 모든 설정 파일은 **conf** 폴더로 옮겨 모아"
+"놓습니다. [좀 더 읽어보십시오](../deploy/new_directory_layout_5_0_0.md)."
+
+#: config/ccnet-conf.md:5
+msgid ""
+"You may change Seafile's network options by modifying `ccnet.conf` file. "
+"Let's walk through the options by an example."
+msgstr ""
+"`ccnet.conf` 파일을 수정하여 Seafile의 네트워크 설정 항목 값을 바꿀 수 있습니"
+"다. 예쩨를 통해 설정 항목을 차근차근 살펴보겠습니다."
+
+# inline html
+#: config/ccnet-conf.md:7
+msgid ""
+"<pre>\n"
+"[General]\n"
+"\n"
+"# Used internally. Don't delete.\n"
+"ID=eb812fd276432eff33bcdde7506f896eb4769da0\n"
+"\n"
+"# Used internally. Don't delete.\n"
+"NAME=example\n"
+"\n"
+"# This is outside URL for Seahub(Seafile Web). \n"
+"# The domain part (i.e., www.example.com) will be used in generating share "
+"links and download/upload file via web.\n"
+"# Note: Outside URL means \"if you use Nginx, it should be the Nginx's "
+"address\"\n"
+"SERVICE_URL=http://www.example.com:8000\n"
+"\n"
+"\n"
+"[Network]\n"
+"# Not used anymore\n"
+"PORT=10001\n"
+"\n"
+"[Client]\n"
+"# Not used anymore\n"
+"PORT=13419\n"
+"\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[General]\n"
+"\n"
+"# Used internally. Don't delete.\n"
+"ID=eb812fd276432eff33bcdde7506f896eb4769da0\n"
+"\n"
+"# Used internally. Don't delete.\n"
+"NAME=example\n"
+"\n"
+"# This is outside URL for Seahub(Seafile Web). \n"
+"# The domain part (i.e., www.example.com) will be used in generating share "
+"links and download/upload file via web.\n"
+"# Note: Outside URL means \"if you use Nginx, it should be the Nginx's "
+"address\"\n"
+"SERVICE_URL=http://www.example.com:8000\n"
+"\n"
+"\n"
+"[Network]\n"
+"# Not used anymore\n"
+"PORT=10001\n"
+"\n"
+"[Client]\n"
+"# Not used anymore\n"
+"PORT=13419\n"
+"\n"
+"</pre>"
+
+#: config/ccnet-conf.md:32
+msgid "**Note**: You should restart seafile so that your changes take effect."
+msgstr ""
+"**참고**: 바꾼 설정 항목 값을 적용하려면 Seafile을 다시 시작해야합니다."
+
+# inline html
+#: config/ccnet-conf.md:34
+msgid ""
+"<pre>\n"
+"cd seafile-server\n"
+"./seafile.sh restart\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"cd seafile-server\n"
+"./seafile.sh restart\n"
+"</pre>"
+
+# header
+#: config/ccnet-conf.md:39 config/seafile-conf.md:63
+msgid "## Changing MySQL Connection Pool Size"
+msgstr "## MySQL 연결 풀 크기 설정 바꾸기"
+
+#: config/ccnet-conf.md:41
+msgid ""
+"When you configure ccnet to use MySQL, the default connection pool size is "
+"100, which should be enough for most use cases. You can change this value by "
+"adding following options to ccnet.conf:"
+msgstr ""
+"MySQL을 사용하도록 Seafile 서버를 설정할 때 기본 연결 풀 갯수는 100이며, 대부"
+"분의 경우 충분합니다. ccnet.conf에 다음 옵션을 추가하여 이 값을 바꿀 수 있습"
+"니다:"
+
+# code block
+#: config/ccnet-conf.md:43
+msgid ""
+"```\n"
+"[Database]\n"
+"......\n"
+"# Use larger connection pool\n"
+"MAX_CONNECTIONS = 200\n"
+"```"
+msgstr ""
+"```\n"
+"[Database]\n"
+"......\n"
+"# Use larger connection pool\n"
+"MAX_CONNECTIONS = 200\n"
+"```"
+
+# header
+#: config/customize_email_notifications.md:1
+msgid "# Customize Email Notifications"
+msgstr "# 전자메일 알림 개별 설정"
+
+#: config/customize_email_notifications.md:3
+msgid ""
+"**Note:** Subject line may vary between different releases, this is based on "
+"Release 2.0.1. Restart Seahub so that your changes take effect."
+msgstr ""
+"**참고:** 제목 줄은 개정판 별로 바뀔 수 있습니다. 이 도움말은 2.0.1 개정판을 "
+"기반으로 합니다. Seahub를 다시 시작하여 바꾼 설정 값을 적용하십시오."
+
+# header
+#: config/customize_email_notifications.md:5
+msgid "## User reset his/her password ##"
+msgstr "## 사용자 암호 재설정 ##"
+
+#: config/customize_email_notifications.md:7
+#: config/customize_email_notifications.md:19
+#: config/customize_email_notifications.md:31
+#: config/customize_email_notifications.md:43 config/sending_email.md:90
+#: config/sending_email.md:108 config/sending_email.md:125
+#: config/sending_email.md:142 config/sending_email.md:174
+msgid "**Subject**"
+msgstr "**제목**"
+
+#: config/customize_email_notifications.md:9
+msgid "seahub/seahub/auth/forms.py line:103"
+msgstr "seahub/seahub/auth/forms.py 103번째 줄"
+
+#: config/customize_email_notifications.md:11
+#: config/customize_email_notifications.md:23
+#: config/customize_email_notifications.md:35
+#: config/customize_email_notifications.md:47 config/sending_email.md:99
+#: config/sending_email.md:117 config/sending_email.md:134
+#: config/sending_email.md:163 config/sending_email.md:182
+msgid "**Body**"
+msgstr "**본문**"
+
+#: config/customize_email_notifications.md:13
+msgid "seahub/seahub/templates/registration/password_reset_email.html"
+msgstr "seahub/seahub/templates/registration/password_reset_email.html"
+
+#: config/customize_email_notifications.md:15
+msgid ""
+"Note: You can copy password_reset_email.html to `seahub-data/custom/"
+"templates/registration/password_reset_email.html` and modify the new one. In "
+"this way, the customization will be maintained after upgrade. "
+msgstr ""
+"참고: password_reset_email.html 파일을 `seahub-data/custom/templates/"
+"registration/password_reset_email.html`에 복사하고 새로운 내용으로 수정할 수 "
+"있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니"
+"다. "
+
+# header
+#: config/customize_email_notifications.md:17
+msgid "## System admin add new member ##"
+msgstr "## 시스템 관리자의 새 구성원 추가 ##"
+
+#: config/customize_email_notifications.md:21 config/sending_email.md:110
+msgid "seahub/seahub/views/sysadmin.py line:424"
+msgstr "seahub/seahub/views/sysadmin.py 424번째 줄"
+
+#: config/customize_email_notifications.md:25
+msgid "seahub/seahub/templates/sysadmin/user_add_email.html"
+msgstr "seahub/seahub/templates/sysadmin/user_add_email.html"
+
+#: config/customize_email_notifications.md:27
+msgid ""
+"Note: You can copy user_add_email.html to `seahub-data/custom/templates/"
+"sysadmin/user_add_email.html` and modify the new one. In this way, the "
+"customization will be maintained after upgrade. "
+msgstr ""
+"참고: user_add_email.html 파일을 `seahub-data/custom/templates/sysadmin/"
+"user_add_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으"
+"로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. "
+
+# header
+#: config/customize_email_notifications.md:29
+msgid "## System admin reset user password ##"
+msgstr "## 시스템 관리자의 사용자 암호 재설정 ##"
+
+#: config/customize_email_notifications.md:33
+msgid "seahub/seahub/views/sysadmin.py line:368"
+msgstr "seahub/seahub/views/sysadmin.py 368번째 줄"
+
+#: config/customize_email_notifications.md:37
+msgid "seahub/seahub/templates/sysadmin/user_reset_email.html"
+msgstr "seahub/seahub/templates/sysadmin/user_reset_email.html"
+
+#: config/customize_email_notifications.md:39
+msgid ""
+"Note: You can copy user_reset_email.html to `seahub-data/custom/templates/"
+"sysadmin/user_reset_email.html` and modify the new one. In this way, the "
+"customization will be maintained after upgrade. "
+msgstr ""
+"참고: user_reset_email.html 파일을 `seahub-data/custom/templates/sysadmin/"
+"user_reset_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식"
+"으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. "
+
+# header
+#: config/customize_email_notifications.md:41
+msgid "## User send file/folder share link ##"
+msgstr "## 사용자의 파일/폴더 공유 링크 전송 ##"
+
+#: config/customize_email_notifications.md:45
+msgid "seahub/seahub/share/views.py line:668"
+msgstr "seahub/seahub/share/views.py 668번째 줄"
+
+#: config/customize_email_notifications.md:49
+msgid "seahub/seahub/templates/shared_link_email.html"
+msgstr "seahub/seahub/templates/shared_link_email.html"
+
+# header
+#: config/desktop_customization.md:1
+msgid "# Seafile Desktop customization"
+msgstr "# Seafile 데스크톱 개별 설정"
+
+# header
+#: config/desktop_customization.md:3
+msgid ""
+"## Customize the logo and name displayed on seafile desktop clients (Seafile "
+"Professional Only)"
+msgstr ""
+"## Seafile 데스크톱 클라이언트에 나타나는 로고 및 이름 개별 설정(Seafile 전문"
+"가판 전용)"
+
+#: config/desktop_customization.md:5
+msgid ""
+"Note: The feature is only available in seafile desktop client 4.4.0 and "
+"later."
+msgstr ""
+"참고: 이 기능은 Seafile 데스크톱 클라이언트 4.4.0 이상에서만 가능합니다."
+
+#: config/desktop_customization.md:7
+msgid ""
+"By default, the text \"Seafile\" is displayed in the top of seafile desktop "
+"client window, along side with the seafile logo. To customize them, set "
+"`DESKTOP_CUSTOM_LOGO` and `DESKTOP_CUSTOM_BRAND` in `seahub_settings.py`."
+msgstr ""
+"기본적으로 \"Seafile\"을 Seafile 데스크톱 클라이언트 창 상단에 로고와 함께 나"
+"타냅니다. 개별 설정하려면, `seahub_settings.py`의 `DESKTOP_CUSTOM_LOGO` 및 "
+"`DESKTOP_CUSTOM_BRAND` 값을 설정하십시오."
+
+#: config/desktop_customization.md:9
+msgid "![desktop-customization](../images/desktop-customization.png)"
+msgstr "![desktop-customization](../images/desktop-customization.png)"
+
+#: config/desktop_customization.md:11
+msgid ""
+"The size of the image must be `24x24`, and generally you should put it in "
+"the `custom` folder."
+msgstr ""
+"그림 크기는 `24x24`여야 하며, 보통 `custom` 폴더에 그림을 복사해야합니다."
+
+# code block
+#: config/desktop_customization.md:13
+msgid ""
+"```python\n"
+"DESKTOP_CUSTOM_LOGO = 'custom/desktop-custom-logo.png'\n"
+"DESKTOP_CUSTOM_BRAND = 'Seafile For My Company'\n"
+"```"
+msgstr ""
+"```python\n"
+"DESKTOP_CUSTOM_LOGO = 'custom/desktop-custom-logo.png'\n"
+"DESKTOP_CUSTOM_BRAND = 'Seafile For My Company'\n"
+"```"
+
+# header
+#: config/desktop_customization.md:18
+msgid "## Auto Install Seafile Client on All Windows PCs"
+msgstr "## 모든 윈도우 PC에 Seafile 클라이언트 자동 설치"
+
+#: config/desktop_customization.md:20
+msgid ""
+"You can setup a group policy object (GPO) in your Windows Domain Controller "
+"to auto install seafile client on all Windows PCs in your company network. "
+"The Seafile client is provided as an MSI installer. So you just need to "
+"following the instructioin on [Microsoft's documentation](https://support."
+"microsoft.com/en-us/kb/816102) to auto install the client."
+msgstr ""
+"윈도우 도메인 컨트롤러의 그룹 정책 객체(GPO)를 설정하여 회사 네트워크의 모든 "
+"윈도우 PC에 Seafile 클라이언트를 자동으로 설치하도록 할 수 있습니다. Seafile "
+"클라이언트는 MSI 설치 관리자로 제공합니다. 따라서 클라이언트를 자동으로 설치"
+"하려면 [마이크로소프트 문서](https://support.microsoft.com/en-us/kb/816102)"
+"를 따라가시면 됩니다."
+
+# header
+#: config/desktop_customization.md:22
+msgid "## Preconfigure Seafile Client for All Windows PCs"
+msgstr "## 모든 윈도우 PC에 맞게 Seafile 클라이언트 미리 설정하기"
+
+#: config/desktop_customization.md:24
+msgid ""
+"Some behavior of the Seafile client can be configured via registry entries "
+"on Windows. So it's possible to control the client's behavior in a "
+"centralized way, via group policy objects (GPO)."
+msgstr ""
+"Seafile 클라이언트의 일부 동작은 윈도우의 레지스트리 항목으로 설정할 수 있습"
+"니다. 따라서, 그룹 정책 객체(GPO)로 집중화 방식을 통해 클라이언트의 동작을 관"
+"리할 수 있습니다."
+
+#: config/desktop_customization.md:26
+msgid ""
+"The registry entries used to configure Seafile client are described in [this "
+"documentation](https://github.com/haiwen/seafile-user-manual/blob/master/en/"
+"faq.md). To setup GPO to set these registry entries on Windows, please refer "
+"to [Microsoft's documentation](https://technet.microsoft.com/en-us/library/"
+"cc753092.aspx)."
+msgstr ""
+"Seafile 클라이언트에서 사용하는 레지스트리 항목은 [이 문서](https://github."
+"com/haiwen/seafile-user-manual/blob/master/en/faq.md)에서 설명합니다. 윈도우"
+"의 이 레지스트리 항목으로 GPO를 설정하려면, [마이크로소프트 문서](https://"
+"technet.microsoft.com/en-us/library/cc753092.aspx)를 참고하십시오."
+
+# header
+#: config/quota_and_size_options.md:1
+msgid "# Quota and other options"
+msgstr "# 용량 제한 및 기타 설정 항목"
+
+# header
+#: config/quota_and_size_options.md:5
+msgid "#### Quota"
+msgstr "#### 용량 제한"
+
+#: config/quota_and_size_options.md:7
+msgid ""
+"You may set a default quota (e.g. 2GB) for all users. To do this, just add "
+"the following lines to [seafile.conf](../config/seafile-conf.md) file"
+msgstr ""
+"모든 사용자에 대해 기본 제한 용량(2GB)을 설정할 수 있습니다. 이 제한 용량을 "
+"설정하려면 [seafile.conf](../config/seafile-conf.md) 파일에 다음 줄을 추가하"
+"십시오."
+
+# inline html
+#: config/quota_and_size_options.md:9 config/seafile-conf.md:9
+msgid ""
+"<pre>\n"
+"[quota]\n"
+"# default user quota in GB, integer only\n"
+"default = 2\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[quota]\n"
+"# default user quota in GB, integer only\n"
+"default = 2\n"
+"</pre>"
+
+#: config/quota_and_size_options.md:15
+msgid ""
+"After Community Edition 5.0.5, you can also set the default quota in KB, MB, "
+"GB or TB. For example,"
+msgstr ""
+"커뮤니티판 5.0.5 이후에는 KB, MB, GB, TB 단위로 기본 제한 용량을 설정할 수 있"
+"습니다. 예를 들면,"
+
+# code block
+#: config/quota_and_size_options.md:17
+msgid ""
+"```\n"
+"[quota]\n"
+"default = 200MB\n"
+"```"
+msgstr ""
+"```\n"
+"[quota]\n"
+"default = 200MB\n"
+"```"
+
+#: config/quota_and_size_options.md:22
+msgid "Note that 1TB = 1000GB = 1000*1000MB and so forth."
+msgstr "참고로 1TB = 1000GB = 1000*1000MB 등 입니다."
+
+#: config/quota_and_size_options.md:24 config/seafile-conf.md:15
+msgid ""
+"This setting applies to all users. If you want to set quota for a specific "
+"user, you may log in to seahub website as administrator, then set it in "
+"\"System Admin\" page."
+msgstr ""
+"이 설정은 모든 사용자에게 적용합니다. 특정 사용자에게 제한 용량을 설정하려"
+"면, Seahub 웹사이트에 관리자 권한으로 설정한 후 \"시스템 관리자\" 페이지에서 "
+"설정하십시오."
+
+# header
+#: config/quota_and_size_options.md:26
+msgid "#### Default history length limit (seafile.conf)"
+msgstr "#### 기본 기록 분량 제한(seafile.conf)"
+
+#: config/quota_and_size_options.md:28
+msgid ""
+"If you don't want to keep all file revision history, you may set a default "
+"history length limit for all libraries. In `seafile.conf`:"
+msgstr ""
+"모든 파일 리비전 기록을 유지하고 싶지 않다면 모든 라이브러리의 기본 기록 제"
+"한 분량을 설정할 수 있습니다. `seafile.conf`에서:"
+
+# inline html
+#: config/quota_and_size_options.md:30 config/seafile-conf.md:21
+msgid ""
+"<pre>\n"
+"[history]\n"
+"keep_days = days of history to keep\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[history]\n"
+"keep_days = days of history to keep\n"
+"</pre>"
+
+# header
+#: config/quota_and_size_options.md:36
+msgid "#### Change upload/download size limit."
+msgstr "#### 업로드/다운로드 파일 크기 제한 설정 값 바꾸기"
+
+#: config/quota_and_size_options.md:38
+msgid "In `seafile.conf`:"
+msgstr "`seafile.conf`에서:"
+
+# inline html
+#: config/quota_and_size_options.md:40 config/seafile-conf.md:40
+msgid ""
+"<pre>\n"
+"[fileserver]\n"
+"# Set maximum upload file size to 200M.\n"
+"max_upload_size=200\n"
+"\n"
+"# Set maximum download directory size to 200M.\n"
+"max_download_dir_size=200\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[fileserver]\n"
+"# Set maximum upload file size to 200M.\n"
+"max_upload_size=200\n"
+"\n"
+"# Set maximum download directory size to 200M.\n"
+"max_download_dir_size=200\n"
+"</pre>"
+
+# header
+#: config/seafile-conf.md:1
+msgid "# Seafile.conf settings"
+msgstr "# Seafile.conf 설정"
+
+# header
+#: config/seafile-conf.md:5
+msgid "## Storage Quota Setting (seafile.conf)"
+msgstr "## 저장소 용량 제한 설정(seafile.conf)"
+
+#: config/seafile-conf.md:7
+msgid ""
+"You may set a default quota (e.g. 2GB) for all users. To do this, just add "
+"the following lines to `seafile.conf` file"
+msgstr ""
+"모든 사용자의 기본 제한 용량(2GB)을 설정할 수 있습니다. 이 제한 용량을 설정하"
+"려면 `seafile.conf` 파일에 다음 줄을 추가하십시오"
+
+# header
+#: config/seafile-conf.md:17
+msgid "## Default history length limit (seafile.conf)"
+msgstr "## 기본 기록 분량 제한(seafile.conf)"
+
+#: config/seafile-conf.md:19
+msgid ""
+"If you don't want to keep all file revision history, you may set a default "
+"history length limit for all libraries."
+msgstr ""
+"모든 파일 리비전 기록을 유지하고 싶지 않다면, 모든 라이브러리의 기본 기록 제"
+"한 분량을 설정할 수 있습니다."
+
+# header
+#: config/seafile-conf.md:26
+msgid "## Seafile fileserver configuration (seafile.conf)"
+msgstr "## Seafile 파일 서버 설정(seafile.conf)"
+
+#: config/seafile-conf.md:28
+msgid ""
+"The configuration of seafile fileserver is in the <code>[fileserver]</code> "
+"section of the file `seafile.conf`"
+msgstr ""
+"Seafile 파일 서버의 설정은 `seafile.conf` 파일의 <code>[fileserver]</code> 섹"
+"션에 있습니다"
+
+# inline html
+#: config/seafile-conf.md:30
+msgid ""
+"<pre>\n"
+"[fileserver]\n"
+"# bind address for fileserver, default to 0.0.0.0\n"
+"host = 0.0.0.0\n"
+"# tcp port for fileserver\n"
+"port = 8082\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[fileserver]\n"
+"# bind address for fileserver, default to 0.0.0.0\n"
+"host = 0.0.0.0\n"
+"# tcp port for fileserver\n"
+"port = 8082\n"
+"</pre>"
+
+#: config/seafile-conf.md:38
+msgid "Change upload/download settings."
+msgstr "업로드/다운로드 설정 바꾸기."
+
+#: config/seafile-conf.md:49
+msgid ""
+"After a file is uploaded via the web interface, or the cloud file browser in "
+"the client, it needs to be divided into fixed size blocks and stored into "
+"storage backend. We call this procedure \"indexing\". By default, the file "
+"server uses 1 thread to sequentially index the file and store the blocks one "
+"by one. This is suitable for most cases. But if you're using S3/Ceph/Swift "
+"backends, you may have more bandwidth in the storage backend for storing "
+"multiple blocks in parallel. We provide an option to define the number of "
+"concurrent threads in indexing:"
+msgstr ""
+"웹 인터페이스 또는 클라이언트 클라우드 파일 브라우저에서 파일을 업로드한 후, "
+"고정 길이 블록으로 나누어 저장소 백엔드에 저장합니다. 이를 \"색인 처리\" 과정"
+"이라고 합니다. 기본적으로 파일 서버는 파일 순차 색인 처리에 스레드 하나를 사"
+"용하고 블록을 하나 하나 저장합니다. 대부분의 경우 이런 방식이 적당합니다. 다"
+"만 S3/Ceph/Swift 백엔드가 있다면, 여러 블록을 동시에 저장하기 위해 저장소 백"
+"엔드에 더 많은 대역폭이 필요합니다. 색인화 과정에서 동시 처리 스레드 수를 지"
+"정하는 설정 항목을 제공합니다:"
+
+# code block
+#: config/seafile-conf.md:51
+msgid ""
+"```\n"
+"[fileserver]\n"
+"max_indexing_threads = 10\n"
+"```"
+msgstr ""
+"```\n"
+"[fileserver]\n"
+"max_indexing_threads = 10\n"
+"```"
+
+#: config/seafile-conf.md:56
+msgid ""
+"You can download a folder as a zip archive from seahub, but some zip "
+"software on windows doesn't support UTF-8, in which case you can use the "
+"\"windows_encoding\" settings to solve it."
+msgstr ""
+"Seahub에서 zip 압축 파일로 폴더를 다운로드할 수 있지만, 일부 윈도우용 zip 프"
+"로그램에서 UTF-8을 지원하지 않는 경우, \"windows_encoding\" 설정으로 이 문제"
+"를 해결할 수 있습니다."
+
+# inline html
+#: config/seafile-conf.md:57
+msgid ""
+"<pre>\n"
+"[zip]\n"
+"# The file name encoding of the downloaded zip file.\n"
+"windows_encoding = iso-8859-1\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"[zip]\n"
+"# The file name encoding of the downloaded zip file.\n"
+"windows_encoding = iso-8859-1\n"
+"</pre>"
+
+#: config/seafile-conf.md:65
+msgid ""
+"When you configure seafile server to use MySQL, the default connection pool "
+"size is 100, which should be enough for most use cases. You can change this "
+"value by adding following options to seafile.conf:"
+msgstr ""
+"MySQL을 사용하도록 Seafile 서버를 설정할 때 기본 연결 풀 갯수는 100이며, 대부"
+"분의 경우 충분합니다. seafile.conf에 다음 옵션을 추가하여 이 값을 바꿀 수 있"
+"습니다:"
+
+# code block
+#: config/seafile-conf.md:67
+msgid ""
+"```\n"
+"[database]\n"
+"......\n"
+"# Use larger connection pool\n"
+"max_connections = 200\n"
+"```"
+msgstr ""
+"```\n"
+"[database]\n"
+"......\n"
+"# Use larger connection pool\n"
+"max_connections = 200\n"
+"```"
+
+#: config/seafile-conf.md:74
+msgid ""
+"**Note**: You need to restart seafile and seahub so that your changes take "
+"effect."
+msgstr ""
+"**참고**: 바뀐 설정을 다시 적용하려면 Seafile 및 Seahub 를 다시 시작해야합니"
+"다."
+
+# inline html
+#: config/seafile-conf.md:75
+msgid ""
+"<pre>\n"
+"./seahub.sh restart\n"
+"./seafile.sh restart\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"./seahub.sh restart\n"
+"./seafile.sh restart\n"
+"</pre>"
+
+# header
+#: config/seahub_customization.md:1
+msgid "# Seahub customization"
+msgstr "# Seahub 개별 설정"
+
+# header
+#: config/seahub_customization.md:3
+msgid "## Customize Seahub Logo and CSS"
+msgstr "## Seahub 로고 및 CSS 개별 설정"
+
+#: config/seahub_customization.md:5
+msgid ""
+"Create a folder ``<seafile-install-path>/seahub-data/custom``. Create a "
+"symbolic link in `seafile-server-latest/seahub/media` by `ln -s ../../../"
+"seahub-data/custom custom`."
+msgstr ""
+"``<seafile-install-path>/seahub-data/custom`` 폴더를 만드십시오. `ln -"
+"s ../../../seahub-data/custom custom` 명령으로 `seafile-server-latest/seahub/"
+"media` 심볼릭 링크를 만드십시오."
+
+#: config/seahub_customization.md:7
+msgid ""
+"During upgrading, Seafile upgrade script will create symbolic link "
+"automatically to preserve your customization."
+msgstr ""
+"업그레이드 과정에서, Seafile 업그레이드 스크립트는 개별 설정을 보존하면서 심"
+"볼릭 링크를 자동으로 만듭니다."
+
+# header
+#: config/seahub_customization.md:9
+msgid "### Customize Logo"
+msgstr "### 로고 개별 설정"
+
+# ordered list
+#: config/seahub_customization.md:11
+msgid "1. Add your logo file to `custom/`"
+msgstr "1. `custom/`에 로고 파일을 추가하십시오"
+
+# ordered list
+#: config/seahub_customization.md:12
+msgid "2. Overwrite `LOGO_PATH` in `seahub_settings.py`"
+msgstr "2. `seahub_settings.py`에 `LOGO_PATH`값을 덮어쓰십시오"
+
+# code block
+#: config/seahub_customization.md:14
+msgid ""
+"   ```python\n"
+"   LOGO_PATH = 'custom/mylogo.png'\n"
+"   ```"
+msgstr ""
+"   ```python\n"
+"   LOGO_PATH = 'custom/mylogo.png'\n"
+"   ```"
+
+# ordered list
+#: config/seahub_customization.md:18
+msgid ""
+"3. Default width and height for logo is 149px and 32px, you may need to "
+"change that according to yours."
+msgstr ""
+"3. 로고의 기본 너비와 높이 값은 149px 및 32px 입니다. 상황에 따라 바꿔야합니"
+"다."
+
+# code block
+#: config/seahub_customization.md:20
+msgid ""
+"   ```python\n"
+"   LOGO_WIDTH = 149\n"
+"   LOGO_HEIGHT = 32\n"
+"   ```"
+msgstr ""
+"   ```python\n"
+"   LOGO_WIDTH = 149\n"
+"   LOGO_HEIGHT = 32\n"
+"   ```"
+
+# header
+#: config/seahub_customization.md:25
+msgid "### Customize Seahub CSS"
+msgstr "### Seahub CSS 개별 설정"
+
+# ordered list
+#: config/seahub_customization.md:27
+msgid "1. Add your css file to `custom/`, for example, `custom.css`"
+msgstr "1. `custom/`에 `custom.css` 같은 CSS 파일을 추가하십시오"
+
+# ordered list
+#: config/seahub_customization.md:28
+msgid "2. Overwrite `BRANDING_CSS` in `seahub_settings.py`"
+msgstr "2. `seahub_settings.py`에 `BRANDING_CSS` 값을 덮어쓰십시오"
+
+# code block
+#: config/seahub_customization.md:30
+msgid ""
+"   ```python\n"
+"   BRANDING_CSS = 'custom/custom.css'\n"
+"   ```"
+msgstr ""
+"   ```python\n"
+"   BRANDING_CSS = 'custom/custom.css'\n"
+"   ```"
+
+# header
+#: config/seahub_customization.md:34
+msgid "## Customize footer and other Seahub Pages"
+msgstr "## 푸터 및 기타 Seahub 페이지 개별 설정"
+
+#: config/seahub_customization.md:36
+msgid "**Note:** Since version 2.1."
+msgstr "**참고:** 2.1 버전 부터."
+
+#: config/seahub_customization.md:38
+msgid ""
+"Create a folder ``templates`` under ``<seafile-install-path>/seahub-data/"
+"custom``"
+msgstr ""
+"``<seafile-install-path>/seahub-data/custom``에 ``templates``  폴더를 만드십"
+"시오"
+
+# header
+#: config/seahub_customization.md:40
+msgid "### Customize footer"
+msgstr "### 푸터 개별 설정"
+
+# ordered list
+#: config/seahub_customization.md:42
+msgid ""
+"1. Copy ``seahub/seahub/templates/footer.html`` to ``seahub-data/custom/"
+"templates``."
+msgstr ""
+"1. ``seahub-data/custom/templates``에  ``seahub/seahub/templates/footer."
+"html`` 파일을 복사하십시오."
+
+# ordered list
+#: config/seahub_customization.md:43
+msgid "2. Modify `footer.html`."
+msgstr "2. `footer.html`을 수정하십시오."
+
+# header
+#: config/seahub_customization.md:45
+msgid "### Customize Download page"
+msgstr "### 다운로드 페이지 개별 설정"
+
+# ordered list
+#: config/seahub_customization.md:47
+msgid ""
+"1. Copy ``seahub/seahub/templates/download.html`` to ``seahub-data/custom/"
+"templates``."
+msgstr ""
+"1. ``seahub-data/custom/templates``에 ``seahub/seahub/templates/download."
+"html`` 파일을 복사하십시오."
+
+# ordered list
+#: config/seahub_customization.md:48
+msgid "2. Modify `download.html`."
+msgstr "2. `download.html`을 수정하십시오."
+
+# header
+#: config/seahub_customization.md:50
+msgid "### Customize Help page"
+msgstr "### 도움말 페이지 개별 설정"
+
+# ordered list
+#: config/seahub_customization.md:52
+msgid ""
+"1. Copy ``seahub/seahub/help/templates/help`` to ``seahub-data/custom/"
+"templates/help``."
+msgstr ""
+"1. ``seahub-data/custom/templates/help``에 ``seahub/seahub/help/templates/"
+"help`` 디렉터리를 복사하십시오."
+
+# ordered list
+#: config/seahub_customization.md:53
+msgid "2. Modify pages under `help`."
+msgstr "2. `help` 아래의 페이지를 수정하십시오."
+
+# header
+#: config/seahub_settings_py.md:1
+msgid "# Seahub Settings"
+msgstr "# Seahub 설정"
+
+# header
+#: config/seahub_settings_py.md:3
+msgid "##  Sending Email Notifications on Seahub"
+msgstr "## Seahub에서 전자메일 알림 전송"
+
+#: config/seahub_settings_py.md:5
+msgid ""
+"A few features work better if it can send email notifications, such as "
+"notifying users about new messages."
+msgstr ""
+"Seahub 자체에서 사용자에게 새 메시지 알림과 같은 전자메일 알림을 전송할 수 있"
+"다면 몇가지 기능이 잘 동작할 수 있습니다."
+
+#: config/seahub_settings_py.md:6
+msgid ""
+"If you want to setup email notifications, please add the following lines to "
+"`seahub_settings.py` (and set your email server)."
+msgstr ""
+"전자메일 알림을 설정하려면, `seahub_settings.py`에 다음 줄을 추가하십시오(그"
+"리고 전자메일 서버를 설정하십시오)."
+
+# code block
+#: config/seahub_settings_py.md:8
+msgid ""
+"```python\n"
+"EMAIL_USE_TLS = False\n"
+"EMAIL_HOST = 'smtp.example.com'        # smpt server\n"
+"EMAIL_HOST_USER = 'username@example.com'    # username and domain\n"
+"EMAIL_HOST_PASSWORD = 'password'    # password\n"
+"EMAIL_PORT = 25\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"```"
+msgstr ""
+"```python\n"
+"EMAIL_USE_TLS = False\n"
+"EMAIL_HOST = 'smtp.example.com'        # smpt server\n"
+"EMAIL_HOST_USER = 'username@example.com'    # username and domain\n"
+"EMAIL_HOST_PASSWORD = 'password'    # password\n"
+"EMAIL_PORT = 25\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"```"
+
+#: config/seahub_settings_py.md:18 config/sending_email.md:29
+msgid "If you are using Gmail as email server, use following lines:"
+msgstr "Gmail을 전자메일 서버로 사용한다면, 다음 줄을 추가하십시오:"
+
+# code block
+#: config/seahub_settings_py.md:20
+msgid ""
+"```python\n"
+"EMAIL_USE_TLS = True\n"
+"EMAIL_HOST = 'smtp.gmail.com'\n"
+"EMAIL_HOST_USER = 'username@gmail.com'\n"
+"EMAIL_HOST_PASSWORD = 'password'\n"
+"EMAIL_PORT = 587\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"```"
+msgstr ""
+"```python\n"
+"EMAIL_USE_TLS = True\n"
+"EMAIL_HOST = 'smtp.gmail.com'\n"
+"EMAIL_HOST_USER = 'username@gmail.com'\n"
+"EMAIL_HOST_PASSWORD = 'password'\n"
+"EMAIL_PORT = 587\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"```"
+
+#: config/seahub_settings_py.md:30 config/sending_email.md:41
+msgid ""
+"**Note**: If your Email service still can not work, you may checkout the log "
+"file <code>logs/seahub.log</code> to see what may cause the problem. For "
+"complete email notification list, please refer to [Email notification list]"
+"(customize_email_notifications.md)."
+msgstr ""
+"**참고**: 전자메일 서비스가 여전히 동작하지 않는다면, <code>logs/seahub.log</"
+"code> 로그 파일을 보고 어디서 문제가 있는지 확인하십시오. 완전한 전자메일 알"
+"림 리스트 동작을 수행하려면 [전자메일 알림 리스트]"
+"(customize_email_notifications.md)를 참고하십시오."
+
+#: config/seahub_settings_py.md:32
+msgid ""
+"**Note2**: If you want to use the Email service without authentication leaf "
+"<code>EMAIL_HOST_PASSWORD</code> **blank** (<code>''</code>)."
+msgstr ""
+"**참고2**: 전자메일 서비스를 인증 없이 사용하려면 <code>EMAIL_HOST_PASSWORD</"
+"code>  값을 **빈** 상태(<code>''</code>)로 두십시오."
+
+# header
+#: config/seahub_settings_py.md:35
+msgid "## Memcached"
+msgstr "## Memcached"
+
+#: config/seahub_settings_py.md:37
+msgid ""
+"Seahub caches items(avatars, profiles, etc) on file system by default(/tmp/"
+"seahub_cache/). You can replace with Memcached."
+msgstr ""
+"Seahub에서는 기본적으로 파일 시스템에 사용자 설정 항목(아바타, 프로파일 등)"
+"을 캐시(/tmp/seahub_cache/)에 저장합니다. 이 부분을 Memcached로 바꿀 수 있습"
+"니다."
+
+#: config/seahub_settings_py.md:38
+msgid ""
+"After install **python-memcache**, add the following lines to "
+"**seahub_settings.py**."
+msgstr ""
+"**python-memcache**를 설치한 후, **seahub_settings.py**에 다음 줄을 추가하십"
+"시오."
+
+# code block
+#: config/seahub_settings_py.md:40
+msgid ""
+"```python\n"
+"CACHES = {\n"
+"    'default': {\n"
+"        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',\n"
+"        'LOCATION': '127.0.0.1:11211',\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+"```python\n"
+"CACHES = {\n"
+"    'default': {\n"
+"        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',\n"
+"        'LOCATION': '127.0.0.1:11211',\n"
+"    }\n"
+"}\n"
+"```"
+
+# header
+#: config/seahub_settings_py.md:49
+msgid "## User management options"
+msgstr "## 사용자 관리 설정 항목"
+
+#: config/seahub_settings_py.md:51
+msgid "The following options affect user registration, password and session."
+msgstr "다음 설정 항목은 사용자 등록, 암호, 세션에 영향을 줍니다."
+
+# code block
+#: config/seahub_settings_py.md:53
+msgid ""
+"```python\n"
+"# Enalbe or disalbe registration on web. Default is `False`.\n"
+"ENABLE_SIGNUP = False\n"
+"\n"
+"# Activate or deactivate user when registration complete. Default is "
+"`True`.\n"
+"# If set to `False`, new users need to be activated by admin in admin "
+"panel.\n"
+"ACTIVATE_AFTER_REGISTRATION = False\n"
+"\n"
+"# Whether to send email when a system admin adding a new member. Default is "
+"`True`.\n"
+"SEND_EMAIL_ON_ADDING_SYSTEM_MEMBER = True\n"
+"\n"
+"# Whether to send email when a system admin resetting a user's password. "
+"Default is `True`.\n"
+"SEND_EMAIL_ON_RESETTING_USER_PASSWD = True\n"
+"\n"
+"# Remember days for login. Default is 7\n"
+"LOGIN_REMEMBER_DAYS = 7\n"
+"\n"
+"# Attempt limit before showing a captcha when login.\n"
+"LOGIN_ATTEMPT_LIMIT = 3\n"
+"    \n"
+"# mininum length for user's password\n"
+"USER_PASSWORD_MIN_LENGTH = 6\n"
+"\n"
+"# LEVEL based on four types of input:\n"
+"# num, upper letter, lower letter, other symbols\n"
+"# '3' means password must have at least 3 types of the above.\n"
+"USER_PASSWORD_STRENGTH_LEVEL = 3\n"
+"\n"
+"# default False, only check USER_PASSWORD_MIN_LENGTH\n"
+"# when True, check password strength level, STRONG(or above) is allowed\n"
+"USER_STRONG_PASSWORD_REQUIRED = False\n"
+"\n"
+"# Force user to change password when admin add/reset a user.\n"
+"# Added in 5.1.1, deafults to True.\n"
+"FORCE_PASSWORD_CHANGE = True\n"
+"\n"
+"# Age of cookie, in seconds (default: 2 weeks).\n"
+"SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2\n"
+"\n"
+"# Whether a user's session cookie expires when the Web browser is closed.\n"
+"SESSION_EXPIRE_AT_BROWSER_CLOSE = False\n"
+"\n"
+"# Whether to save the session data on every request. Default is `False`\n"
+"SESSION_SAVE_EVERY_REQUEST = False\n"
+"\n"
+"```"
+msgstr ""
+"```python\n"
+"# Enalbe or disalbe registration on web. Default is `False`.\n"
+"ENABLE_SIGNUP = False\n"
+"\n"
+"# Activate or deactivate user when registration complete. Default is "
+"`True`.\n"
+"# If set to `False`, new users need to be activated by admin in admin "
+"panel.\n"
+"ACTIVATE_AFTER_REGISTRATION = False\n"
+"\n"
+"# Whether to send email when a system admin adding a new member. Default is "
+"`True`.\n"
+"SEND_EMAIL_ON_ADDING_SYSTEM_MEMBER = True\n"
+"\n"
+"# Whether to send email when a system admin resetting a user's password. "
+"Default is `True`.\n"
+"SEND_EMAIL_ON_RESETTING_USER_PASSWD = True\n"
+"\n"
+"# Remember days for login. Default is 7\n"
+"LOGIN_REMEMBER_DAYS = 7\n"
+"\n"
+"# Attempt limit before showing a captcha when login.\n"
+"LOGIN_ATTEMPT_LIMIT = 3\n"
+"    \n"
+"# mininum length for user's password\n"
+"USER_PASSWORD_MIN_LENGTH = 6\n"
+"\n"
+"# LEVEL based on four types of input:\n"
+"# num, upper letter, lower letter, other symbols\n"
+"# '3' means password must have at least 3 types of the above.\n"
+"USER_PASSWORD_STRENGTH_LEVEL = 3\n"
+"\n"
+"# default False, only check USER_PASSWORD_MIN_LENGTH\n"
+"# when True, check password strength level, STRONG(or above) is allowed\n"
+"USER_STRONG_PASSWORD_REQUIRED = False\n"
+"\n"
+"# Force user to change password when admin add/reset a user.\n"
+"# Added in 5.1.1, deafults to True.\n"
+"FORCE_PASSWORD_CHANGE = True\n"
+"\n"
+"# Age of cookie, in seconds (default: 2 weeks).\n"
+"SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2\n"
+"\n"
+"# Whether a user's session cookie expires when the Web browser is closed.\n"
+"SESSION_EXPIRE_AT_BROWSER_CLOSE = False\n"
+"\n"
+"# Whether to save the session data on every request. Default is `False`\n"
+"SESSION_SAVE_EVERY_REQUEST = False\n"
+"\n"
+"```"
+
+# header
+#: config/seahub_settings_py.md:101
+msgid "## Library options"
+msgstr "## 라이브러리 설정 항목"
+
+#: config/seahub_settings_py.md:103
+msgid "Options for libraries:"
+msgstr "라이브러리 설정 항목:"
+
+# code block
+#: config/seahub_settings_py.md:105
+msgid ""
+"```python\n"
+"# mininum length for password of encrypted library\n"
+"REPO_PASSWORD_MIN_LENGTH = 8\n"
+"\n"
+"# mininum length for password for share link (since version 4.4)\n"
+"SHARE_LINK_PASSWORD_MIN_LENGTH = 8\n"
+"\n"
+"# Disable sync with any folder. Default is `False`\n"
+"# NOTE: since version 4.2.4\n"
+"DISABLE_SYNC_WITH_ANY_FOLDER = True\n"
+"\n"
+"# Enable or disable library history setting\n"
+"ENABLE_REPO_HISTORY_SETTING = True\n"
+"\n"
+"# Enable or disable normal user to create organization libraries\n"
+"# Since version 5.0.5\n"
+"ENABLE_USER_CREATE_ORG_REPO = True\n"
+"```"
+msgstr ""
+"```python\n"
+"# mininum length for password of encrypted library\n"
+"REPO_PASSWORD_MIN_LENGTH = 8\n"
+"\n"
+"# mininum length for password for share link (since version 4.4)\n"
+"SHARE_LINK_PASSWORD_MIN_LENGTH = 8\n"
+"\n"
+"# Disable sync with any folder. Default is `False`\n"
+"# NOTE: since version 4.2.4\n"
+"DISABLE_SYNC_WITH_ANY_FOLDER = True\n"
+"\n"
+"# Enable or disable library history setting\n"
+"ENABLE_REPO_HISTORY_SETTING = True\n"
+"\n"
+"# Enable or disable normal user to create organization libraries\n"
+"# Since version 5.0.5\n"
+"ENABLE_USER_CREATE_ORG_REPO = True\n"
+"```"
+
+#: config/seahub_settings_py.md:124
+msgid "Options for online file preview:"
+msgstr "온라인 파일 미리 보기 설정 항목:"
+
+# code block
+#: config/seahub_settings_py.md:126
+msgid ""
+"```python\n"
+"# Whether to use pdf.js to view pdf files online. Default is `True`,  you "
+"can turn it off.\n"
+"# NOTE: since version 1.4.\n"
+"USE_PDFJS = True\n"
+"\n"
+"# Online preview maximum file size, defaults to 30M.\n"
+"# Note, this option controls files that can be previewed online, like "
+"pictures, txt, pdf.\n"
+"# In pro edition, for preview doc/ppt/excel/pdf, there is another option "
+"`max-size` \n"
+"# in seafevents.conf that controls the limit of files that can be "
+"previewed.\n"
+"FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024\n"
+"\n"
+"# Enable or disable thumbnails\n"
+"# NOTE: since version 4.0.2 \n"
+"ENABLE_THUMBNAIL = True\n"
+"\n"
+"# Absolute filesystem path to the directory that will hold thumbnail files.\n"
+"THUMBNAIL_ROOT = '/haiwen/seahub-data/thumbnail/thumb/'\n"
+"```"
+msgstr ""
+"```python\n"
+"# Whether to use pdf.js to view pdf files online. Default is `True`,  you "
+"can turn it off.\n"
+"# NOTE: since version 1.4.\n"
+"USE_PDFJS = True\n"
+"\n"
+"# Online preview maximum file size, defaults to 30M.\n"
+"# Note, this option controls files that can be previewed online, like "
+"pictures, txt, pdf.\n"
+"# In pro edition, for preview doc/ppt/excel/pdf, there is another option "
+"`max-size` \n"
+"# in seafevents.conf that controls the limit of files that can be "
+"previewed.\n"
+"FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024\n"
+"\n"
+"# Enable or disable thumbnails\n"
+"# NOTE: since version 4.0.2 \n"
+"ENABLE_THUMBNAIL = True\n"
+"\n"
+"# Absolute filesystem path to the directory that will hold thumbnail files.\n"
+"THUMBNAIL_ROOT = '/haiwen/seahub-data/thumbnail/thumb/'\n"
+"```"
+
+# header
+#: config/seahub_settings_py.md:146
+msgid "## Cloud Mode"
+msgstr "## 클라우드 모드"
+
+#: config/seahub_settings_py.md:148
+msgid ""
+"You should enable cloud mode if you use Seafile with an unknown user base. "
+"It disables the organization tab in Seahub's website to ensure that users "
+"can't access the user list. Cloud mode provides some nice features like "
+"sharing content with unregistered users and sending invitations to them. "
+"Therefore you also want to enable user registration. Through the global "
+"address book (since version 4.2.3) you can do a search for every user "
+"account. So you probably want to disable it."
+msgstr ""
+"알 수 없는 사용자 기반으로 Seafile을 사용한다면 클라우드 모드를 활성화해야합"
+"니다. 사용자가 사용자 목록에 접근하지 못하도록 Seahub 웹 사이트의 조직 탭을 "
+"비활성화합니다. 클라우드 모드에서는 비등록 사용자 에게 컨텐트를 공유하고 초대"
+"하는 일부 멋들어진 기능이 있습니다. 이리하여 사용자 등록을 가능케 할 수 있습"
+"니다. 글로벌 주소록(4.2.3부터)으로 모든 사용자 계정을 검색할 수 있습니다. 이 "
+"부분을 비활성화할 수도 있습니다."
+
+# code block
+#: config/seahub_settings_py.md:150
+msgid ""
+"```python\n"
+"# Enable cloude mode and hide `Organization` tab.\n"
+"CLOUD_MODE = True\n"
+"\n"
+"# Disable global address book\n"
+"ENABLE_GLOBAL_ADDRESSBOOK = False\n"
+"```"
+msgstr ""
+"```python\n"
+"# Enable cloude mode and hide `Organization` tab.\n"
+"CLOUD_MODE = True\n"
+"\n"
+"# Disable global address book\n"
+"ENABLE_GLOBAL_ADDRESSBOOK = False\n"
+"```"
+
+# header
+#: config/seahub_settings_py.md:159
+msgid "## Other options"
+msgstr "## 기타 설정 항목"
+
+# code block
+#: config/seahub_settings_py.md:162
+msgid ""
+"```python\n"
+"\n"
+"# Choices can be found here:\n"
+"# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name\n"
+"# although not all choices may be available on all operating systems.\n"
+"# If running in a Windows environment this must be set to the same as your\n"
+"# system time zone.\n"
+"TIME_ZONE = 'UTC'\n"
+"\n"
+"# Language code for this installation. All choices can be found here:\n"
+"# http://www.i18nguy.com/unicode/language-identifiers.html\n"
+"# Default language for sending emails.\n"
+"LANGUAGE_CODE = 'en'\n"
+"\n"
+"# Set this to your website's name. This is contained in email "
+"notifications.\n"
+"SITE_NAME = 'example.com'\n"
+"\n"
+"# Set seahub website's title\n"
+"SITE_TITLE = 'Seafile'\n"
+"\n"
+"# If you don't want to run seahub website on your site's root path, set this "
+"option to your preferred path.\n"
+"# e.g. setting it to '/seahub/' would run seahub on http://example.com/"
+"seahub/.\n"
+"SITE_ROOT = '/'\n"
+"```"
+msgstr ""
+"```python\n"
+"\n"
+"# Choices can be found here:\n"
+"# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name\n"
+"# although not all choices may be available on all operating systems.\n"
+"# If running in a Windows environment this must be set to the same as your\n"
+"# system time zone.\n"
+"TIME_ZONE = 'UTC'\n"
+"\n"
+"# Language code for this installation. All choices can be found here:\n"
+"# http://www.i18nguy.com/unicode/language-identifiers.html\n"
+"# Default language for sending emails.\n"
+"LANGUAGE_CODE = 'en'\n"
+"\n"
+"# Set this to your website's name. This is contained in email "
+"notifications.\n"
+"SITE_NAME = 'example.com'\n"
+"\n"
+"# Set seahub website's title\n"
+"SITE_TITLE = 'Seafile'\n"
+"\n"
+"# If you don't want to run seahub website on your site's root path, set this "
+"option to your preferred path.\n"
+"# e.g. setting it to '/seahub/' would run seahub on http://example.com/"
+"seahub/.\n"
+"SITE_ROOT = '/'\n"
+"```"
+
+# header
+#: config/seahub_settings_py.md:187
+msgid "## Pro edition only options"
+msgstr "## 전문가판 전용 설정 항목"
+
+# code block
+#: config/seahub_settings_py.md:189
+msgid ""
+"```python\n"
+"# Whether to show the used traffic in user's profile popup dialog. Default "
+"is True\n"
+"SHOW_TRAFFIC = True\n"
+"\n"
+"# Allow administrator to view user's file in UNENCRYPTED libraries\n"
+"# through Libraries page in System Admin. Default is False.\n"
+"ENABLE_SYS_ADMIN_VIEW_REPO = True\n"
+"```"
+msgstr ""
+"```python\n"
+"# Whether to show the used traffic in user's profile popup dialog. Default "
+"is True\n"
+"SHOW_TRAFFIC = True\n"
+"\n"
+"# Allow administrator to view user's file in UNENCRYPTED libraries\n"
+"# through Libraries page in System Admin. Default is False.\n"
+"ENABLE_SYS_ADMIN_VIEW_REPO = True\n"
+"```"
+
+# header
+#: config/seahub_settings_py.md:198
+msgid "## Note"
+msgstr "## 참고"
+
+# unordered list
+#: config/seahub_settings_py.md:200
+msgid "* You need to restart seahub so that your changes take effect."
+msgstr "* 바꾼 설정 값을 적용하려면 Seahub를 다시 시작해야합니다."
+
+# unordered list
+#: config/seahub_settings_py.md:201
+msgid ""
+"* If your changes don't take effect, You may need to delete 'seahub_setting."
+"pyc'. (A cache file)"
+msgstr ""
+"* 설정 값을 적용하지 않으려면 `seahub_setting.pyc`(캐시 파일)을 삭제해야합니"
+"다"
+
+# code block
+#: config/seahub_settings_py.md:203
+msgid ""
+"```bash\n"
+"./seahub.sh restart\n"
+"```"
+msgstr ""
+"```bash\n"
+"./seahub.sh restart\n"
+"```"
+
+# header
+#: config/sending_email.md:1
+msgid "# Sending Email Notifications on Seahub"
+msgstr "# Seahub의 전자 메일 알림 전송"
+
+# header
+#: config/sending_email.md:3
+msgid "## Types of email sending in Seafile"
+msgstr "## Seafile 의 전자메일 전송 형식"
+
+#: config/sending_email.md:5
+msgid "There are currently five types of Emails sent in Seafile:"
+msgstr "현재 Seafile에서 보내는 메일에는 다섯가지 형식이 있습니다:"
+
+# unordered list
+#: config/sending_email.md:7
+msgid "- User reset his/her password"
+msgstr "- 사용자의 암호 재설정"
+
+# unordered list
+#: config/sending_email.md:8
+msgid "- System admin add new member"
+msgstr "- 시스템 관리자의 새 구성원 추가"
+
+# unordered list
+#: config/sending_email.md:9
+msgid "- System admin reset user password"
+msgstr "- 시스템 관리자의 사용자 암호 재설정"
+
+# unordered list
+#: config/sending_email.md:10
+msgid "- User send file/folder share link and upload link"
+msgstr "- 사용자의 파일/폴더 공유 링크 및 업로드 링크 전송"
+
+# unordered list
+#: config/sending_email.md:11
+msgid ""
+"- [pro] Reminder of unread notifications (It is sent by a background task "
+"which is pro edition only)"
+msgstr ""
+"- [전문가판] 읽지 않은 알림 전송(전문가판에서만 백그라운드 작업으로 전송)"
+
+#: config/sending_email.md:13
+msgid ""
+"The first four types of Email are sent immediately. The last type is sent by "
+"a background task running periodically."
+msgstr ""
+"처음 네가지 유형은 전자메일을 직접 보냅니다. 마지막 유형은 주기적으로 실행하"
+"는 백그라운드 작업으로 보냅니다."
+
+# header
+#: config/sending_email.md:15
+msgid "## Options of email sending"
+msgstr "## 전자메일 전송 설정 항목"
+
+#: config/sending_email.md:17
+msgid ""
+"Please add the following lines to seahub_settings.py to enable Email sending."
+msgstr ""
+"seahub_settings.py에 다음 줄을 추가하여 전자메일 전송을 활성화하십시오."
+
+# inline html
+#: config/sending_email.md:19
+msgid ""
+"<pre>\n"
+"EMAIL_USE_TLS = False\n"
+"EMAIL_HOST = 'smtp.example.com'        # smpt server\n"
+"EMAIL_HOST_USER = 'username@example.com'    # username and domain\n"
+"EMAIL_HOST_PASSWORD = 'password'    # password\n"
+"EMAIL_PORT = 25\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"EMAIL_USE_TLS = False\n"
+"EMAIL_HOST = 'smtp.example.com'        # smpt server\n"
+"EMAIL_HOST_USER = 'username@example.com'    # username and domain\n"
+"EMAIL_HOST_PASSWORD = 'password'    # password\n"
+"EMAIL_PORT = 25\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"</pre>"
+
+# inline html
+#: config/sending_email.md:31
+msgid ""
+"<pre>\n"
+"EMAIL_USE_TLS = True\n"
+"EMAIL_HOST = 'smtp.gmail.com'\n"
+"EMAIL_HOST_USER = 'username@gmail.com'\n"
+"EMAIL_HOST_PASSWORD = 'password'\n"
+"EMAIL_PORT = 587\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"EMAIL_USE_TLS = True\n"
+"EMAIL_HOST = 'smtp.gmail.com'\n"
+"EMAIL_HOST_USER = 'username@gmail.com'\n"
+"EMAIL_HOST_PASSWORD = 'password'\n"
+"EMAIL_PORT = 587\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"</pre>"
+
+#: config/sending_email.md:43
+msgid ""
+"**Note2**: If you want to use the Email service without authentication leaf "
+"<code>EMAIL_HOST_USER</code> and <code>EMAIL_HOST_PASSWORD</code> **blank** "
+"(<code>''</code>). (But notice that the emails then will be sent without a "
+"<code>From:</code> address.)"
+msgstr ""
+"**참고2**: 인증 없이 전자메일 서비스를 사용한다면 <code>EMAIL_HOST_USER</"
+"code> 및 <code>EMAIL_HOST_PASSWORD</code> 값을 **비워**(<code>''</code>)두십"
+"시오(하지만 이렇게 하면 <code>From:</code> 주소 없이 전자메일을 보낼 수 있습"
+"니다)."
+
+#: config/sending_email.md:45
+msgid "**Note3**: About using SSL connection (using port 465)"
+msgstr "**참고3**: SSL 연결 사용 정보(465번 포트 사용)"
+
+#: config/sending_email.md:47
+msgid ""
+"Port 587 is for using TLS connection to the Email server. Port 465 is for "
+"using SSL connection.  Starting from Django 1.8, it support both. But we are "
+"still using Django 1.5 in version 5.0, which only support  TLS connection. "
+"If your email server only support SSL connection, you can find a work around "
+"here: https://github.com/bancek/django-smtp-ssl."
+msgstr ""
+"587번 포트는 전자메일 서버에 사용하는 TLS 연결 포트입니다. 465번 포트는 SSL "
+"연결에 사용하는 포트입니다. 장고 1.8부터 모두를 지원합니다. 하지만 아직은 "
+"TLS 연결만 지원하는 장고 5.0을 사용합니다. 전자메일 서버에서 SSL 연결만 지원"
+"한다면 https://github.com/bancek/django-smtp-ssl 에서 소스코드를 찾아볼 수 있"
+"습니다."
+
+# header
+#: config/sending_email.md:49
+msgid "## Change the `sender` and `reply to` of email"
+msgstr "## 전자메일의 `송신자` 및 `회신 주소` 바꾸기"
+
+#: config/sending_email.md:51
+msgid ""
+"You can change the sender and reply to field of email by add the following "
+"settings to seahub_settings.py. This only affects email sending for file "
+"share link."
+msgstr ""
+"전자메일의 송신자 및 회신 주소 부분을 seahub_settings.py의 다음 설정을 추가하"
+"여 바꿀 수 있습니다. 이 설정은 파일 공유 링크를 전자메일로 보낼 때만 유효합니"
+"다."
+
+# inline html
+#: config/sending_email.md:53
+msgid ""
+"<pre>\n"
+"# Replace default from email with user's email or not, defaults to "
+"``False``\n"
+"REPLACE_FROM_EMAIL = True\n"
+"\n"
+"# Set reply-to header to user's email or not, defaults to ``False``. For "
+"details,\n"
+"# please refer to http://www.w3.org/Protocols/rfc822/\n"
+"ADD_REPLY_TO_HEADER = True\n"
+"</pre>"
+msgstr ""
+"<pre>\n"
+"# Replace default from email with user's email or not, defaults to "
+"``False``\n"
+"REPLACE_FROM_EMAIL = True\n"
+"\n"
+"# Set reply-to header to user's email or not, defaults to ``False``. For "
+"details,\n"
+"# please refer to http://www.w3.org/Protocols/rfc822/\n"
+"ADD_REPLY_TO_HEADER = True\n"
+"</pre>"
+
+# header
+#: config/sending_email.md:62
+msgid "## Config background email sending task (Pro Edition Only)"
+msgstr "## 백그라운드 전자메일 전송 작업 설정(전문가판 전용)"
+
+#: config/sending_email.md:64
+msgid ""
+"The background task will run periodically to check whether an user have new "
+"unread notifications. If there are any, it will send a reminder email to "
+"that user. The background email sending task is controlled by `seafevents."
+"conf`."
+msgstr ""
+"백그라운드 작업은 사용자에게 읽지 않은 새로운 알림이 있는지 주기적으로 실행하"
+"여 확인합니다. 만약 읽지 않은 알림이 있다면 사용자에게 알림 전자메일을 보냅니"
+"다. 백그라운드 전자메일 전송 작업은 `seafevents.conf`에서 설정합니다."
+
+# code block
+#: config/sending_email.md:66
+msgid ""
+"```\n"
+"[SEAHUB EMAIL]\n"
+"\n"
+"## must be \"true\" to enable user email notifications when there are new "
+"unread notifications\n"
+"enabled = true\n"
+"\n"
+"## interval of sending seahub email. Can be s(seconds), m(minutes), "
+"h(hours), d(days)\n"
+"interval = 30m\n"
+"```"
+msgstr ""
+"```\n"
+"[SEAHUB EMAIL]\n"
+"\n"
+"## must be \"true\" to enable user email notifications when there are new "
+"unread notifications\n"
+"enabled = true\n"
+"\n"
+"## interval of sending seahub email. Can be s(seconds), m(minutes), "
+"h(hours), d(days)\n"
+"interval = 30m\n"
+"```"
+
+# header
+#: config/sending_email.md:76
+msgid "## Customize Email messages"
+msgstr "## 전자메일 메시지 개별 설정"
+
+#: config/sending_email.md:78
+msgid ""
+"The simplest way to customize the Email message is setting the `SITE_NAME` "
+"variable in seahub_settings.py. If it is not enough for your case, you can "
+"customize the Email templates."
+msgstr ""
+"전자메일 메시지를 개별 설정하는 가장 단순한 방법은 seahub_settings.py의 "
+"`SITE_NAME`을 설정하는 방법입니다. 이게 충분하지 않은 경우라면 전자메일 양식"
+"을 개별 설정할 수 있습니다."
+
+#: config/sending_email.md:80
+msgid ""
+"**Note:** Subject line may vary between different releases, this is based on "
+"Release 5.0.0. Restart Seahub so that your changes take effect."
+msgstr ""
+"**참고**: 제목 줄은 각 개정판 별로 다를 수 있으며, 현재는 5.0.0 개정판을 기반"
+"으로 합니다. 바꾼 값을 적용하려면 Seahub를 다시 시작하십시오."
+
+# header
+#: config/sending_email.md:82
+msgid "### The Email base template"
+msgstr "### 전자메일 기반 양식"
+
+#: config/sending_email.md:84
+msgid ""
+"[seahub/seahub/templates/email_base.html](https://github.com/haiwen/seahub/"
+"blob/master/seahub/templates/email_base.html)"
+msgstr ""
+"[seahub/seahub/templates/email_base.html](https://github.com/haiwen/seahub/"
+"blob/master/seahub/templates/email_base.html)"
+
+#: config/sending_email.md:86
+msgid ""
+"Note: You can copy email_base.html to `seahub-data/custom/templates/"
+"email_base.html` and modify the new one. In this way, the customization will "
+"be maintained after upgrade."
+msgstr ""
+"참고: email_base.html 파일을 `seahub-data/custom/templates/email_base.html`"
+"에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후"
+"에도 개별 설정 값을 유지할 수 있습니다. "
+
+# header
+#: config/sending_email.md:88
+msgid "### User reset his/her password"
+msgstr "### 사용자 암호 재설정"
+
+#: config/sending_email.md:92
+msgid "seahub/seahub/auth/forms.py line:127"
+msgstr "seahub/seahub/auth/forms.py line번째 줄"
+
+# code block
+#: config/sending_email.md:94
+msgid ""
+"```\n"
+"        send_html_email(_(\"Reset Password on %s\") % site_name,\n"
+"                  email_template_name, c, None, [user.username])\n"
+"```"
+msgstr ""
+"```\n"
+"        send_html_email(_(\"Reset Password on %s\") % site_name,\n"
+"                  email_template_name, c, None, [user.username])\n"
+"```"
+
+#: config/sending_email.md:101
+msgid ""
+"[seahub/seahub/templates/registration/password_reset_email.html](https://"
+"github.com/haiwen/seahub/blob/master/seahub/templates/registration/"
+"password_reset_email.html)"
+msgstr ""
+"[seahub/seahub/templates/registration/password_reset_email.html](https://"
+"github.com/haiwen/seahub/blob/master/seahub/templates/registration/"
+"password_reset_email.html)"
+
+#: config/sending_email.md:104
+msgid ""
+"Note: You can copy password_reset_email.html to `seahub-data/custom/"
+"templates/registration/password_reset_email.html` and modify the new one. In "
+"this way, the customization will be maintained after upgrade."
+msgstr ""
+"에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후"
+"에도 개별 설정 값을 유지할 수 있습니다. "
+
+# header
+#: config/sending_email.md:106
+msgid "### System admin add new member"
+msgstr "### 시스템 관리자의 새 구성원 추가"
+
+# code block
+#: config/sending_email.md:112 config/sending_email.md:129
+msgid ""
+"```\n"
+"send_html_email(_(u'Password has been reset on %s') % SITE_NAME,\n"
+"            'sysadmin/user_reset_email.html', c, None, [email])\n"
+"```"
+msgstr ""
+"```\n"
+"send_html_email(_(u'Password has been reset on %s') % SITE_NAME,\n"
+"            'sysadmin/user_reset_email.html', c, None, [email])\n"
+"```"
+
+#: config/sending_email.md:119
+msgid ""
+"[seahub/seahub/templates/sysadmin/user_add_email.html](https://github.com/"
+"haiwen/seahub/blob/master/seahub/templates/sysadmin/user_add_email.html)"
+msgstr ""
+"[seahub/seahub/templates/sysadmin/user_add_email.html](https://github.com/"
+"haiwen/seahub/blob/master/seahub/templates/sysadmin/user_add_email.html)"
+
+#: config/sending_email.md:121
+msgid ""
+"Note: You can copy user_add_email.html to `seahub-data/custom/templates/"
+"sysadmin/user_add_email.html` and modify the new one. In this way, the "
+"customization will be maintained after upgrade."
+msgstr ""
+"참고: user_add_email.html 파일을 `seahub-data/custom/templates/sysadmin/"
+"user_reset_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식"
+"으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. "
+
+# header
+#: config/sending_email.md:123
+msgid "### System admin reset user password"
+msgstr "### 시스템 관리자의 사용자 암호 재설정"
+
+#: config/sending_email.md:127
+msgid "seahub/seahub/views/sysadmin.py line:1224"
+msgstr "seahub/seahub/views/sysadmin.py 1224번째 줄"
+
+#: config/sending_email.md:136
+msgid ""
+"[seahub/seahub/templates/sysadmin/user_reset_email.html](https://github.com/"
+"haiwen/seahub/blob/master/seahub/templates/sysadmin/user_reset_email.html)"
+msgstr ""
+"[seahub/seahub/templates/sysadmin/user_reset_email.html](https://github.com/"
+"haiwen/seahub/blob/master/seahub/templates/sysadmin/user_reset_email.html)"
+
+#: config/sending_email.md:138
+msgid ""
+"Note: You can copy user_reset_email.html to `seahub-data/custom/templates/"
+"sysadmin/user_reset_email.html` and modify the new one. In this way, the "
+"customization will be maintained after upgrade."
+msgstr ""
+"참고: user_reset_email.html 파일을 `seahub-data/custom/templates/sysadmin/"
+"user_reset_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식"
+"으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. "
+
+# header
+#: config/sending_email.md:140
+msgid "### User send file/folder share link"
+msgstr "### 사용자의 파일/폴더 공유 링크 및 업로드 링크 전송"
+
+#: config/sending_email.md:144
+msgid "seahub/seahub/share/views.py line:913"
+msgstr "seahub/seahub/share/views.py 913번째 줄"
+
+# code block
+#: config/sending_email.md:146
+msgid ""
+"```\n"
+"try:\n"
+"    if file_shared_type == 'f':\n"
+"        c['file_shared_type'] = _(u\"file\")\n"
+"        send_html_email(_(u'A file is shared to you on %s') % SITE_NAME,\n"
+"                        'shared_link_email.html',\n"
+"                        c, from_email, [to_email],\n"
+"                        reply_to=reply_to\n"
+"                        )\n"
+"    else:\n"
+"        c['file_shared_type'] = _(u\"directory\")\n"
+"        send_html_email(_(u'A directory is shared to you on %s') % "
+"SITE_NAME,\n"
+"                        'shared_link_email.html',\n"
+"                        c, from_email, [to_email],\n"
+"                        reply_to=reply_to)\n"
+"```"
+msgstr ""
+"```\n"
+"try:\n"
+"    if file_shared_type == 'f':\n"
+"        c['file_shared_type'] = _(u\"file\")\n"
+"        send_html_email(_(u'A file is shared to you on %s') % SITE_NAME,\n"
+"                        'shared_link_email.html',\n"
+"                        c, from_email, [to_email],\n"
+"                        reply_to=reply_to\n"
+"                        )\n"
+"    else:\n"
+"        c['file_shared_type'] = _(u\"directory\")\n"
+"        send_html_email(_(u'A directory is shared to you on %s') % "
+"SITE_NAME,\n"
+"                        'shared_link_email.html',\n"
+"                        c, from_email, [to_email],\n"
+"                        reply_to=reply_to)\n"
+"```"
+
+#: config/sending_email.md:165
+msgid ""
+"[seahub/seahub/templates/shared_link_email.html](https://github.com/haiwen/"
+"seahub/blob/master/seahub/templates/shared_link_email.html)"
+msgstr ""
+"[seahub/seahub/templates/shared_link_email.html](https://github.com/haiwen/"
+"seahub/blob/master/seahub/templates/shared_link_email.html)"
+
+#: config/sending_email.md:167
+msgid ""
+"[seahub/seahub/templates/shared_upload_link_email.html](https://github.com/"
+"haiwen/seahub/blob/master/seahub/templates/shared_upload_link_email.html)"
+msgstr ""
+"[seahub/seahub/templates/shared_upload_link_email.html](https://github.com/"
+"haiwen/seahub/blob/master/seahub/templates/shared_upload_link_email.html)"
+
+#: config/sending_email.md:169
+msgid ""
+"Note: You can copy shared_link_email.html to `seahub-data/custom/templates/"
+"shared_link_email.html` and modify the new one. In this way, the "
+"customization will be maintained after upgrade."
+msgstr ""
+"참고: shared_link_email.html 파일을 `seahub-data/custom/templates/"
+"shared_link_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방"
+"식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. "
+
+# header
+#: config/sending_email.md:172
+msgid "### Reminder of unread notifications"
+msgstr "### 읽지 않은 알림 다시 알림"
+
+# code block
+#: config/sending_email.md:176
+msgid ""
+"```\n"
+"send_html_email(_('New notice on %s') % settings.SITE_NAME,\n"
+"                                'notifications/notice_email.html', c,\n"
+"                                None, [to_user])\n"
+"```"
+msgstr ""
+"```\n"
+"send_html_email(_('New notice on %s') % settings.SITE_NAME,\n"
+"                                'notifications/notice_email.html', c,\n"
+"                                None, [to_user])\n"
+"```"
+
+#: config/sending_email.md:184
+msgid ""
+"[seahub/seahub/notifications/templates/notifications/notice_email.html]"
+"(https://github.com/haiwen/seahub/blob/master/seahub/notifications/templates/"
+"notifications/notice_email.html)"
+msgstr ""
+"[seahub/seahub/notifications/templates/notifications/notice_email.html]"
+"(https://github.com/haiwen/seahub/blob/master/seahub/notifications/templates/"
+"notifications/notice_email.html)"
+
+# header
+#: config/user_options.md:1
+msgid "# Customize user management"
+msgstr "# 사용자 관리 개별 설정"
+
+# header
+#: config/user_options.md:3
+msgid "## Options for user management"
+msgstr "## 사용자 관리 설정 항목"
+
+#: config/user_options.md:5
+msgid ""
+"Here we summarize options related to user management in `seahub_settings.py`"
+msgstr "`seahub_settings.py`의 사용자 관리 관련 설정 항목을 정리해보았습니다"
+
+# code block
+#: config/user_options.md:7
+msgid ""
+"```python\n"
+"\n"
+"# Enalbe or disalbe registration on web. Default is `False`.\n"
+"ENABLE_SIGNUP = False\n"
+"\n"
+"# Activate or deactivate user when registration complete. Default is "
+"`True`.\n"
+"# If set to `False`, new users need to be activated by admin in admin "
+"panel.\n"
+"ACTIVATE_AFTER_REGISTRATION = False\n"
+"\n"
+"# Whether to send email when a system admin adding a new member. Default is "
+"`True`.\n"
+"# NOTE: since version 1.4.\n"
+"SEND_EMAIL_ON_ADDING_SYSTEM_MEMBER = True\n"
+"\n"
+"# Attempt limit before showing a captcha when login.\n"
+"LOGIN_ATTEMPT_LIMIT = 3\n"
+"\n"
+"# Whether a user's session cookie expires when the Web browser is closed.\n"
+"SESSION_EXPIRE_AT_BROWSER_CLOSE = False\n"
+"\n"
+"```"
+msgstr ""
+"```python\n"
+"\n"
+"# Enalbe or disalbe registration on web. Default is `False`.\n"
+"ENABLE_SIGNUP = False\n"
+"\n"
+"# Activate or deactivate user when registration complete. Default is "
+"`True`.\n"
+"# If set to `False`, new users need to be activated by admin in admin "
+"panel.\n"
+"ACTIVATE_AFTER_REGISTRATION = False\n"
+"\n"
+"# Whether to send email when a system admin adding a new member. Default is "
+"`True`.\n"
+"# NOTE: since version 1.4.\n"
+"SEND_EMAIL_ON_ADDING_SYSTEM_MEMBER = True\n"
+"\n"
+"# Attempt limit before showing a captcha when login.\n"
+"LOGIN_ATTEMPT_LIMIT = 3\n"
+"\n"
+"# Whether a user's session cookie expires when the Web browser is closed.\n"
+"SESSION_EXPIRE_AT_BROWSER_CLOSE = False\n"
+"\n"
+"```"

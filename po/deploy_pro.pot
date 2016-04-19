@@ -1,0 +1,5630 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-20 05:34:41+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: deploy_pro/README.md:1
+# header
+msgid "# Deploy Seafile Pro Edition"
+msgstr ""
+
+#: deploy_pro/README.md:4
+msgid "Install Seafile Pro Edition"
+msgstr ""
+
+#: deploy_pro/README.md:6
+# unordered list
+msgid "- Method 1 (For Debian and CentOS 7): [Deploy Seafile with an installation script](https://github.com/SeafileDE/seafile-server-installer#auto-install-seafile-server-ce-and-pro). The installer offer a quick and easy way to set up a production ready Seafile Server using MariaDB, Memcached and NGINX as a reverse proxy in under 5 minutes."
+msgstr ""
+
+#: deploy_pro/README.md:7
+# unordered list
+msgid "- Method 2:  [Download and Setup Seafile Professional Server Step by Step](download_and_setup_seafile_professional_server.md)"
+msgstr ""
+
+#: deploy_pro/README.md:9
+msgid "LDAP/AD Integration for Pro:"
+msgstr ""
+
+#: deploy_pro/README.md:11
+# unordered list
+msgid "- [Configure LDAP in Seafile Pro](using_ldap_pro.md)"
+msgstr ""
+
+#: deploy_pro/README.md:12
+# unordered list
+msgid "- [Syncing Groups from LDAP/AD](ldap_group_sync.md)"
+msgstr ""
+
+#: deploy_pro/README.md:14
+msgid "Migration and Upgrading"
+msgstr ""
+
+#: deploy_pro/README.md:16
+# unordered list
+msgid "- [Migrate from Seafile Community Server](migrate_from_seafile_community_server.md)"
+msgstr ""
+
+#: deploy_pro/README.md:17
+# unordered list
+msgid "- [Upgrade Seafile Professional Server](upgrading_seafile_professional_server.md)"
+msgstr ""
+
+#: deploy_pro/README.md:19
+msgid "S3/OpenSwift/Ceph"
+msgstr ""
+
+#: deploy_pro/README.md:21
+# unordered list
+msgid "- [Setup Seafile Professional Server With Amazon S3](setup_with_mazon_S3.md)"
+msgstr ""
+
+#: deploy_pro/README.md:22
+# unordered list
+msgid "- [Setup Seafile Professional Server With OpenStack Swift](setup_with_swift.md)"
+msgstr ""
+
+#: deploy_pro/README.md:23
+# unordered list
+msgid "- [Setup Seafile Professional Server With Ceph](setup_with_Ceph.md)"
+msgstr ""
+
+#: deploy_pro/README.md:25
+msgid "Config Options"
+msgstr ""
+
+#: deploy_pro/README.md:27
+# unordered list
+msgid "- [Seafile Professional Server Configurable Options](configurable_options.md)"
+msgstr ""
+
+#: deploy_pro/README.md:29
+# header
+msgid "## Search"
+msgstr ""
+
+#: deploy_pro/README.md:31
+# unordered list
+msgid "- [Details about File Search](details_about_file_search.md)"
+msgstr ""
+
+#: deploy_pro/README.md:33
+# header
+msgid "## Preview office files"
+msgstr ""
+
+#: deploy_pro/README.md:35
+# unordered list
+msgid "- [Enable Office/PDF Documents Online Preview](office_documents_preview.md)"
+msgstr ""
+
+#: deploy_pro/README.md:37
+# header
+msgid "## Office Web App"
+msgstr ""
+
+#: deploy_pro/README.md:39
+# unordered list
+msgid "- [Integrating with Office Web App](office_web_app.md)"
+msgstr ""
+
+#: deploy_pro/README.md:41
+# header
+msgid "## Cluster"
+msgstr ""
+
+#: deploy_pro/README.md:43
+# unordered list
+msgid "- [Deploy seafile servers in a cluster](deploy_in_a_cluster.md)"
+msgstr ""
+
+#: deploy_pro/README.md:44
+# unordered list
+msgid "- [Enable search and background tasks in a cluster](enable_search_and_background_tasks_in_a_cluster.md)"
+msgstr ""
+
+#: deploy_pro/README.md:46
+# header
+msgid "## Backup"
+msgstr ""
+
+#: deploy_pro/README.md:48
+# unordered list
+msgid "- [Real-time Backup Server](real_time_backup.md)"
+msgstr ""
+
+#: deploy_pro/README.md:50
+# header
+msgid "## FAQ"
+msgstr ""
+
+#: deploy_pro/README.md:52
+# unordered list
+msgid "- [FAQ For Seafile Professional Server](FAQ_for_seafile_pro_server.md)"
+msgstr ""
+
+#: deploy_pro/README.md:55
+# header
+msgid "## License"
+msgstr ""
+
+#: deploy_pro/README.md:57
+# unordered list
+msgid "- [Seafile Professional Edition Software License Agreement](seafile_professional_sdition_software_license_agreement.md)"
+msgstr ""
+
+#: deploy_pro/change_default_java.md:2
+msgid "When you have both java6 and java7 installed, the default java may not be java 7."
+msgstr ""
+
+#: deploy_pro/change_default_java.md:4
+msgid "Do this by typing `java -version`, and check the output."
+msgstr ""
+
+#: deploy_pro/change_default_java.md:6
+# unordered list
+msgid "- If the output is like **\"java version \"1.7.0_xx\"**, then the default java is java 7, which is good."
+msgstr ""
+
+#: deploy_pro/change_default_java.md:7
+# unordered list
+msgid "- If the output is like **\"java version \"1.6.0_xx\"**, then the default java is java 6, we need to configure default java to java 7."
+msgstr ""
+
+#: deploy_pro/change_default_java.md:9
+msgid "If the default java is java 6, then do"
+msgstr ""
+
+#: deploy_pro/change_default_java.md:11
+#: deploy_pro/deploy_in_a_cluster.md:153
+#: deploy_pro/setup_with_ceph.md:33
+msgid "On Debian/Ubuntu:"
+msgstr ""
+
+#: deploy_pro/change_default_java.md:12
+# code block
+msgid "```\n"
+"sudo update-alternatives --config java\n"
+"```"
+msgstr ""
+
+#: deploy_pro/change_default_java.md:16
+msgid "On CentOS/RHEL:"
+msgstr ""
+
+#: deploy_pro/change_default_java.md:17
+# code block
+msgid "```\n"
+"sudo alternatives --config java\n"
+"```"
+msgstr ""
+
+#: deploy_pro/change_default_java.md:21
+msgid "The above command will ask you to choose one of the installed java as the default. You should choose java 7 here."
+msgstr ""
+
+#: deploy_pro/change_default_java.md:23
+msgid "After that, you should re-run `java -version` to make sure the change has taken effect."
+msgstr ""
+
+#: deploy_pro/change_default_java.md:25
+msgid "[Reference link](http://unix.stackexchange.com/questions/35185/installing-openjdk-7-jdk-does-not-update-java-which-is-still-version-1-6)"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:1
+# header
+msgid "# Seafile Clustering with MariaDB and Ceph"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:3
+msgid "In this document we describe the detailed solution of deploying a high scalable Seafile cluster with MariaDB and Ceph. The document is not a finished one. We will improve it continuously as our knowledge grow with several on going projects."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:5
+# header
+msgid "## Backgrounds"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:7
+msgid "Seafile organizes files into libraries. Each library is a GIT repository like file system tree with each file and folder identified by a unique hash value. These unique IDs are used in the syncing algorithm and there is no need to storing syncing state for each file in the database. Tranditional database like MySQL are not scalable to tens of millions of records, while object storages like Ceph and Swift are highly scalable. So in theory, Seafile is capable to storing billions of files for syncing and sharing."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:9
+msgid "While files are saved into object storage, other information like sharing and permission has to be stored in database. MariaDB Galera can be used to provide a scalable and reliable database storage."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:11
+# header
+msgid "## Hardware and system requirement"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:13
+msgid "In the minimum, we use three machines to setup the cluster. Each machine should be of"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:15
+# unordered list
+msgid "* 4 cores with 8GB or more memory."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:16
+# unordered list
+msgid "* 1 SSD disk to storing Ceph journal."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:17
+# unordered list
+msgid "* 1 SATA disk to storing the operating system"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:18
+# unordered list
+msgid "* 1 SATA disk to storing MariaDB database"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:19
+# unordered list
+msgid "* 4 or more SATA disk to store Ceph data"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:21
+msgid "We use Ubuntu 14.04 server as the operating system. In the following, we denote the three server as node1, node2 and node3."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:23
+# header
+msgid "## Setup Ceph cluster"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:25
+# header
+msgid "#### Preparation"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:27
+msgid "Choose one node (say, node1) as admin node for installation. Install ceph-deploy on it."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:29
+# unordered list
+msgid "* Add the release key:  "
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:31
+# code block
+msgid "```\n"
+"wget -q -O- 'https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc' | sudo apt-key add -\n"
+"```"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:35
+# unordered list
+msgid "* Add the Ceph packages to your repository. Replace {ceph-stable-release} with a stable Ceph release (e.g., emperor, firefly, giant etc.). The latest stable release is 'giant'."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:37
+# code block
+msgid "```\n"
+"echo deb http://ceph.com/debian-{ceph-stable-release}/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list\n"
+"```"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:41
+# unordered list
+msgid "* Update your repository and install ceph-deploy:  "
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:43
+# code block
+msgid "```\n"
+"sudo apt-get update && sudo apt-get install ceph-deploy\n"
+"```"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:47
+msgid "Install ntp on all nodes, and restart ntp  "
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:49
+msgid "    sudo apt-get install ntp"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:50
+msgid "    sudo service ntp restart"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:52
+msgid "Install openssh on all nodes"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:54
+msgid "    sudo apt-get install openssh-server"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:56
+msgid "We'll use a non-root user for installation. Make sure this user has password-less sudo privileges."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:58
+msgid "    echo \"{username} ALL = (root) NOPASSWD:ALL\" | sudo tee /etc/sudoers.d/{username}"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:59
+msgid "    sudo chmod 0440 /etc/sudoers.d/{username}"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:61
+msgid "Generate ssh public key for the installation user on node1. Then copy that public key to other nodes `~/.ssh/authorized_keys`."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:63
+# header
+msgid "#### Create Ceph Cluster"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:65
+msgid "Create a `ceph-cluster` directory on node1 for storing the generated config files. All commands should be run under this directory."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:67
+msgid "Install Ceph on all nodes"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:69
+msgid "    ceph-deploy install node1 node2 node3"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:71
+msgid "Create the cluster  "
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:73
+msgid "    ceph-deploy new node1 node2 node3"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:75
+msgid "Create Ceph monitors. You should open port 6789 on all nodes."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:77
+msgid "    ceph-deploy mon create node1 node2 node3 "
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:79
+msgid "Gather keys"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:81
+msgid "    ceph-deploy gatherkeys node1"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:83
+# header
+msgid "#### Add OSDs"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:85
+msgid "In Ceph, every OSD daemon manages one disk. The OSDs can share one SSD disk for journal."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:86
+msgid "Suppose the SSD disk for journal is `/dev/sdb` and the SATA disks are `/dev/sdc`, `/dev/sdd`, etc. Add OSDs by the following commands:"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:88
+msgid "    ceph-deploy osd create node1:/dev/sdc:/dev/sdb"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:89
+msgid "    ceph-deploy osd create node2:/dev/sdc:/dev/sdb"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:90
+msgid "    ceph-deploy osd create node3:/dev/sdc:/dev/sdb"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:91
+msgid "    ceph-deploy osd create node1:/dev/sdd:/dev/sdb"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:92
+msgid "    ceph-deploy osd create node2:/dev/sdd:/dev/sdb"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:93
+msgid "    ceph-deploy osd create node3:/dev/sdd:/dev/sdb"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:95
+msgid "**note** By default Ceph uses a journal partition of size 5GB. The creation of OSD will fail if your journal disk is too small. You can add the following config to /etc/ceph/ceph.conf:"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:97
+# code block
+msgid "```\n"
+"[osd]\n"
+"	# set journal size to 4GB\n"
+"        osd journal size = 4000\n"
+"```"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:103
+# header
+msgid "#### Check Cluster Status"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:105
+msgid "Ceph cluster setup is done. You can check cluster status by `sudo ceph -s`."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:107
+#: deploy_pro/clustering_with_mariadb_ceph.md:183
+# header
+msgid "#### References"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:109
+msgid "http://ceph.com/docs/master/rados/deployment/"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:111
+# header
+msgid "## Setup MariaDB cluster"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:113
+# header
+msgid "#### Install MariaDB and Galera"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:115
+msgid "First, set apt source for MariaDB and Galera. Choose a repository for 5.5 in [this page](https://downloads.mariadb.org/mariadb/repositories)."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:116
+msgid "Then you can install mariadb and galera."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:118
+msgid "    sudo apt-get install mariadb-galera-server galera"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:119
+msgid "    sudo apt-get install rsync"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:121
+# header
+msgid "#### Config MariaDB"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:123
+msgid "In `/etc/mysql/conf.d/cluster.cnf`"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:125
+msgid "    [mysqld]"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:127
+msgid "    query_cache_size=0"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:128
+msgid "    binlog_format=ROW"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:129
+msgid "    default-storage-engine=innodb"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:130
+msgid "    innodb_autoinc_lock_mode=2"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:131
+msgid "    query_cache_type=0"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:132
+msgid "    bind-address=0.0.0.0"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:134
+msgid "    # Galera Provider Configuration"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:135
+msgid "    wsrep_provider=/usr/lib/galera/libgalera_smm.so"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:136
+msgid "    #wsrep_provider_options=\"gcache.size=32G\""
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:138
+msgid "    # Galera Cluster Configuration"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:139
+msgid "    wsrep_cluster_name=\"test_cluster\""
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:140
+msgid "    wsrep_cluster_address=\"gcomm://first_ip,second_ip,third_ip"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:142
+msgid "    # Galera Synchronization Congifuration"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:143
+msgid "    wsrep_sst_method=rsync"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:144
+msgid "    #wsrep_sst_auth=user:pass"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:146
+msgid "    # Galera Node Configuration"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:147
+msgid "    wsrep_node_address=\"this_node_ip\""
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:148
+msgid "    wsrep_node_name=\"this_node_name\""
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:150
+msgid "Here first_ip, second_ip and third_ip are corresponding to the IP address of node1, node2 and node3."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:152
+# header
+msgid "#### Change the data directory for MariaDB"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:154
+msgid "We want to store the database data in a separate disk. Supposed the disk is mounted to the path `/mysql`."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:156
+msgid "Stop MariaDB using the following command:"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:158
+msgid "    sudo /etc/init.d/mysql stop"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:160
+msgid "Copy the existing data directory (default located in /var/lib/mysql) using the following command:"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:162
+msgid "    sudo cp -R -p /var/lib/mysql/* /mysql"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:164
+msgid "Edit /etc/mysql/my.cnf, update `datadir` option to `/mysql`."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:166
+msgid "Restart MariaDB with the command:"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:168
+msgid "    sudo /etc/init.d/mysql restart"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:170
+# header
+msgid "#### Start"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:172
+msgid "Before staring the MariaDB cluster, make sure port 3456 and 4444 are open on all database nodes."
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:174
+msgid "In node1:"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:176
+msgid "    node1# sudo service mysql start --wsrep-new-cluster"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:178
+msgid "In node2 and node3:"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:180
+msgid "    node2# sudo service mysql start"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:181
+msgid "    node3# sudo service mysql start"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:185
+msgid "https://www.digitalocean.com/community/tutorials/how-to-configure-a-galera-cluster-with-mariadb-on-ubuntu-12-04-servers"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:187
+# header
+msgid "## Setup Seafile cluster"
+msgstr ""
+
+#: deploy_pro/clustering_with_mariadb_ceph.md:189
+msgid "Please follow http://manual.seafile.com/deploy_pro/setup_with_ceph.html to set seafile with Ceph and follow http://manual.seafile.com/deploy_pro/deploy_in_a_cluster.html for setup Seafile cluster."
+msgstr ""
+
+#: deploy_pro/configurable_options.md:1
+# header
+msgid "# Configurable Options"
+msgstr ""
+
+#: deploy_pro/configurable_options.md:3
+#: deploy_pro/deploy_in_a_cluster.md:3
+#: deploy_pro/details_about_file_search.md:3
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:5
+#: deploy_pro/setup_with_amazon_s3.md:3
+#: deploy_pro/setup_with_ceph.md:3
+#: deploy_pro/setup_with_openstackswift.md:3
+#: deploy_pro/setup_with_swift.md:3
+#: deploy_pro/virus_scan.md:3
+msgid "**Note**: Since Seafile Server 5.0.0, all config files are moved to the central **conf** folder. [Read More](../deploy/new_directory_layout_5_0_0.md)."
+msgstr ""
+
+#: deploy_pro/configurable_options.md:5
+msgid "In the file `seafevents.conf`:"
+msgstr ""
+
+#: deploy_pro/configurable_options.md:7
+# code block
+msgid "```\n"
+"[Audit]\n"
+"## Audit log is disabled default.\n"
+"enabled = true\n"
+"\n"
+"[INDEX FILES]\n"
+"## must be \"true\" to enable search\n"
+"enabled = true\n"
+"\n"
+"## The interval the search index is updated. Can be s(seconds), m(minutes), h(hours), d(days)\n"
+"interval=10m\n"
+"\n"
+"## If true, index the contents of office/pdf files while updating search index\n"
+"## Note: If you change this option from \"false\" to \"true\", then you need to clear the search index and update the index again. See the FAQ for details.\n"
+"index_office_pdf=false\n"
+"\n"
+"[SEAHUB EMAIL]\n"
+"\n"
+"## must be \"true\" to enable user email notifications when there are new new unread notifications\n"
+"enabled = true\n"
+"\n"
+"## interval of sending seahub email. Can be s(seconds), m(minutes), h(hours), d(days)\n"
+"interval = 30m\n"
+"\n"
+"\n"
+"[OFFICE CONVERTER]\n"
+"\n"
+"## must be \"true\" to enable office/pdf file online preview\n"
+"enabled = true\n"
+"\n"
+"## How many libreoffice worker processes to run concurrenlty\n"
+"workers = 1\n"
+"\n"
+"## where to store the converted office/pdf files. Deafult is /tmp/.\n"
+"outputdir = /tmp/\n"
+"\n"
+"## how many pages are allowed to be previewed online. Default is 50 pages\n"
+"max-pages = 50\n"
+"\n"
+"## the max size of documents to allow to be previewed online, in MB. Default is 2 MB\n"
+"## Preview a large file (for example >30M) online will freeze the browser.\n"
+"max-size = 2\n"
+"\n"
+"```"
+msgstr ""
+
+#: deploy_pro/configurable_options.md:52
+# header
+msgid "### <a id=\"wiki-options-you-may-want-to-modify\"></a>Options you may want to modify"
+msgstr ""
+
+#: deploy_pro/configurable_options.md:54
+msgid "The section above listed all the options in `seafevents.conf`. Most of the time you can use the default settings. But you may want to modify some of them to fit your own use case."
+msgstr ""
+
+#: deploy_pro/configurable_options.md:56
+msgid "We list them in the following table, as well as why we choose the default value."
+msgstr ""
+
+#: deploy_pro/configurable_options.md:58
+# inline html
+msgid "<table>\n"
+"<tr>\n"
+"<th>section</th>\n"
+"<th>option</th>\n"
+"<th>default value</th>\n"
+"<th>description</th>\n"
+"</tr>\n"
+"\n"
+"<tr>\n"
+"<td>INDEX FILES</td>\n"
+"<td>index_office_pdf</td>\n"
+"<td>false</td>\n"
+"<td>\n"
+"The full text search of office/pdf documents is not enabled by default. This is because it may consume quite some space for the search index. To turn it on, set this value to \"true\" and recreate the search index. See the [FAQ For Seafile Professional Server](faq_for_seafile_pro_server.md) for detail.\n"
+"</td>\n"
+"</tr>\n"
+"\n"
+"<tr>\n"
+"<td>OFFICE CONVERTER</td>\n"
+"<td>max-size</td>\n"
+"<td>2</td>\n"
+"<td>\n"
+"The max file size allowed to be previewed online is 2MB. The preview is converted office/pdf to HTML and display it in the browser. If the file size is too large, the conversion may take too long time and consume much space\n"
+"</td>\n"
+"</tr>\n"
+"\n"
+"<tr>\n"
+"<td>OFFICE CONVERTER</td>\n"
+"<td>max-pages</td>\n"
+"<td>50</td>\n"
+"<td>\n"
+"When previewing a office/pdf document online, the pages displayed is the first 50 pages. If the value is too large, the conversion may take too long time and consume much space.\n"
+"</td>\n"
+"</tr>\n"
+"\n"
+"</table>"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:1
+# header
+msgid "# Deploy in a cluster"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:5
+# header
+msgid "## <a id=\"wiki-arch\"></a> Architecture"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:7
+msgid "The Seafile cluster solution employs a 3-tier architecture:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:9
+# unordered list
+msgid "* Load balancer tier: Distribute incoming traffic to Seafile servers. HA can be achieved by deploying multiple load balancer instances."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:10
+# unordered list
+msgid "* Seafile server cluster: a cluster of Seafile server instances. If one instance fails, the load balancer will stop handing traffic to it. So HA is achieved."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:11
+# unordered list
+msgid "* Backend storage: Distributed storage cluster, such as S3, Openstack Swift, Ceph."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:13
+msgid "This architecture scales horizontally. That is, you can handle more traffic by adding more machines. The architecture is presented in the following picture."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:15
+msgid "![seafile-cluster](../images/seafile-cluster.png)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:17
+msgid "There are two main components on the Seafile server node: web server (Nginx/Apache) and Seafile app server. The web server passes requests from the clients to Seafile app server. The Seafile app servers work independently. They don't know about each other's state. That means each app server can fail independently without affecting other app server instances. The load balancer is responsible for detecting failure and re-routing requests."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:19
+msgid "Even though Seafile app servers work independently, they still have to share some session information. All shared session information are stored in memcached. So all Seafile app servers have to connect to the same memcached (cluster). More details about memcached configuration will discussed later."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:21
+msgid "All Seafile app servers access the same set of user data. The user data has two parts: in MySQL database and in backend storage cluster (S3, Ceph etc.). All app servers serve the data equally to the clients."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:23
+msgid "For database, all app servers have to connect to the same database or database cluster. We recommend to use MariaDB Galera Cluster if you need a database cluster."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:25
+msgid "There are a few steps to deploy a Seafile cluster:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:27
+# ordered list
+msgid "1. Prepare hardware, operating systems, memcached and database"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:28
+# ordered list
+msgid "2. Setup a single Seafile server node"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:29
+# ordered list
+msgid "3. Copy the deployment to other Seafile nodes"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:30
+# ordered list
+msgid "4. Setup Nginx/Apache and firewall rules"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:31
+# ordered list
+msgid "5. Setup load balancer"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:32
+# ordered list
+msgid "6. [Setup backgroup task node](enable_search_and_background_tasks_in_a_cluster.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:34
+# header
+msgid "## <a id=\"wiki-preparation\"></a>Preparation"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:36
+# header
+msgid "### Hardware"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:38
+msgid "At least 2 Linux server with at least 2GB RAM."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:40
+#: deploy_pro/download_and_setup_seafile_professional_server.md:64
+# header
+msgid "### Install Python libraries ###"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:42
+msgid "On each mode, you need to install some python libraries."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:44
+msgid "First make sure your have installed python 2.6 or 2.7, then:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:45
+#: deploy_pro/download_and_setup_seafile_professional_server.md:67
+# code block
+msgid "```\n"
+"sudo easy_install pip\n"
+"sudo pip install boto\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:50
+#: deploy_pro/download_and_setup_seafile_professional_server.md:72
+msgid "If you receive an error about \"Wheel installs require setuptools >= ...\", run this between the pip and boto lines above"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:51
+#: deploy_pro/download_and_setup_seafile_professional_server.md:73
+# code block
+msgid "```\n"
+"sudo pip install setuptools --no-use-wheel --upgrade\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:55
+# header
+msgid "### Setup Memcached"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:57
+msgid "All seafile server instances will share the same memcached servers. Let's assume that the address of memcached server is 192.168.1.134, listening on port 11211 (the default)."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:59
+msgid "By default, memcached only listen on 127.0.0.1. So you should modify memcached.conf and restart memcached."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:61
+# code block
+msgid "```\n"
+"# Specify which IP address to listen on. The default is to listen on all IP addresses\n"
+"# This parameter is one of the only security measures that memcached has, so make sure\n"
+"# it's listening on a firewalled interface.\n"
+"-l 0.0.0.0\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:68
+msgid "It's also recommended to set a higher limit for memcached's memory, such as 256MB."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:70
+# code block
+msgid "```\n"
+"# Start with a cap of 64 megs of memory. It's reasonable, and the daemon default\n"
+"# Note that the daemon will grow to this size, but does not start out holding this much\n"
+"# memory\n"
+"-m 256\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:77
+msgid "Seafile servers share session information within memcached. If you set up a memcached cluster, please make sure all the seafile server nodes connects to all the memcached nodes."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:79
+msgid "When setting up a memcached cluster, you can either run one memcached instance on each Seafile server node, or set up separate machines for the memcached cluster. It usually saves you some money if you run memcached on Seafile server nodes."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:81
+# header
+msgid "### (Optional) Setup MariaDB Cluster"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:83
+msgid "MariaDB cluster helps you to remove single point of failure from the cluster architecture. Every update in the database cluster is synchronously replicated to all instances."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:85
+msgid "It's recommended that you run one database instance on each Seafile server node. There are a few benefits about this approach:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:87
+# unordered list
+msgid "* The Seafile app server always access its local database intance, which is faster."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:88
+# unordered list
+msgid "* You don't have to set up another load balancer for the database instances."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:90
+msgid "This architecture should scale well for a few tens of database nodes, since Seafile has no much write operations to the db. For bigger deployment, you'd better use more sophiscated load balancing techiques for the databases."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:92
+msgid "Details about setting up MariaDB cluster is covered in [this document](clustering_with_mariadb_ceph.md)."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:94
+# header
+msgid "## <a id=\"wiki-configure-single-node\"></a> Configure a Single Node"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:96
+msgid "You should make sure the config files on every Seafile server are consistent. **It's critical that you don't set up seafile server on each machine separately. You should set up seafile server on one machine then copy the config directory to the other machines.**"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:98
+#: deploy_pro/download_and_setup_seafile_professional_server.md:89
+#: deploy_pro/migrate_from_seafile_community_server.md:48
+# header
+msgid "### Get the license ###"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:100
+#: deploy_pro/download_and_setup_seafile_professional_server.md:91
+msgid "Put the license you get under the top level diretory. In our wiki, we use the diretory `/data/haiwen/` as the top level directory."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:103
+# header
+msgid "### Download/Uncompress Seafile Professional Server ###"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:105
+# code block
+msgid "```\n"
+"tar xf seafile-pro-server_2.1.3_x86-64.tar.gz\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:109
+#: deploy_pro/download_and_setup_seafile_professional_server.md:101
+#: deploy_pro/migrate_from_seafile_community_server.md:63
+#: deploy_pro/migrate_from_seafile_community_server.md:111
+msgid "Now you have:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:111
+# code block
+msgid "```\n"
+"haiwen\n"
+"├── seafile-license.txt\n"
+"└── seafile-pro-server-2.1.3/\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:116
+# header
+msgid "### Setup Seafile Config"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:118
+msgid "The setup process of Seafile Professional Server is the same as the Seafile Community Server. See [Download and Setup Seafile Server With MySQL](../deploy/using_mysql.md) in the community wiki."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:120
+msgid "Note: **Use the load balancer's address or domain name for the server address. Don't use the local IP address of each Seafile server machine. This assures the user will always access your service via the load balancers.**"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:122
+msgid "After the setup process is done, you still have to do a few manually changes to the config files."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:124
+# header
+msgid "#### seafile.conf"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:126
+msgid "You have to add the following configuration to `seafile.conf`"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:128
+# code block
+msgid "```\n"
+"[cluster]\n"
+"enabled = true\n"
+"memcached_options = --SERVER=192.168.1.134 --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:134
+msgid "If you have a memcached cluster, you need to specify all the memcached server addresses in seafile.conf. The format is"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:136
+# code block
+msgid "```\n"
+"[cluster]\n"
+"enabled = true\n"
+"memcached_options = --SERVER=192.168.1.134 --SERVER=192.168.1.135 --SERVER=192.168.1.136 --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:142
+msgid "(Optional) The Seafile server also opens a port for the load balancers to run health checks. Seafile by default use port 11001. You can change this by adding the following config to `seafile.conf`"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:144
+# code block
+msgid "```\n"
+"[cluster]\n"
+"health_check_port = 12345\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:149
+# header
+msgid "#### seahub_settings.py"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:151
+msgid "Install python memcache library."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:155
+# code block
+msgid "```\n"
+"sudo apt-get install python-memcache\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:159
+msgid "On CentOS/RedHat:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:161
+# code block
+msgid "```\n"
+"sudo yum install python-memcached\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:165
+msgid "Add following configuration to `seahub_settings.py`. These settings tell Seahub to store avatar in database and cache avatar in memcached, and store css CACHE to local memory of every node."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:167
+# code block
+msgid "```\n"
+"CACHES = {\n"
+"    'default': {\n"
+"        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',\n"
+"        'LOCATION': '192.168.1.134:11211',\n"
+"    }\n"
+"}\n"
+"\n"
+"AVATAR_FILE_STORAGE = 'seahub.base.database_storage.DatabaseStorage'\n"
+"\n"
+"COMPRESS_CACHE_BACKEND = 'locmem://'\n"
+"\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:181
+msgid "If you use memcached cluster, please replace the `CACHES` variable with the following:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:183
+# code block
+msgid "```\n"
+"CACHES = {\n"
+"    'default': {\n"
+"        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',\n"
+"        'LOCATION': ['192.168.1.134:11211', '192.168.1.135:11211', '192.168.1.136:11211',],\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:192
+msgid "If you enable thumbnail feature, you'd better set thumbnail storage path to a **Shared Folder**, so that every node will create/get thumbnail through the same **Shared Folder**."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:194
+# code block
+msgid "```\n"
+"THUMBNAIL_ROOT = 'path/to/shared/folder/'\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:198
+# header
+msgid "#### seafevents.conf"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:200
+msgid "Add following to `seafevents.conf` to disable file indexing service on the local server. The file indexing service should be started on a dedicated background server."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:202
+# code block
+msgid "```\n"
+"[INDEX FILES]\n"
+"external_es_server = true\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:207
+# header
+msgid "### Update Seahub Database"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:209
+msgid "In cluster environment, we have to store avatars in the database instead of in a local disk."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:211
+# code block
+msgid "```\n"
+"CREATE TABLE `avatar_uploaded` (`filename` TEXT NOT NULL, `filename_md5` CHAR(32) NOT NULL PRIMARY KEY, `data` MEDIUMTEXT NOT NULL, `size` INTEGER NOT NULL, `mtime` datetime NOT NULL);\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:215
+# header
+msgid "### Backend Storage Settings"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:217
+msgid "You also need to add the settings for backend cloud storage systems to the config files."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:219
+# unordered list
+msgid "* For NFS: [Setup Seafile cluster with NFS](setup_seafile_cluster_with_nfs.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:220
+# unordered list
+msgid "* For S3: [Setup With Amazon S3](setup_with_mazon_S3.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:221
+# unordered list
+msgid "* For OpenStack Swift: [Setup With OpenStackSwift](setup_with_OpenStackSwift.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:222
+# unordered list
+msgid "* For Ceph: [Setup With Ceph](setup_with_Ceph.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:225
+# header
+msgid "### Run and Test the Single Node"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:227
+msgid "Once you have finished configuring this single node, start it to test if it can run correctly:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:229
+# code block
+msgid "```\n"
+"cd /data/haiwen/seafile-server-latest\n"
+"./seafile.sh start\n"
+"./seahub.sh start\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:235
+msgid "*Note:* The first time you start seahub, the script would prompt you to create an admin account for your seafile server. "
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:237
+msgid "Open your browser and visit http://ip-address-of-this-node:8000, login with the admin account."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:240
+# header
+msgid "## <a id=\"wiki-configure-other-nodes\"></a> Configure other nodes"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:242
+msgid "Now you have one node working fine, let's continue to configure other nodes."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:244
+# header
+msgid "### Copy the config to all Seafile servers"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:246
+msgid "Supposed your seafile installation directory is `/data/haiwen`, compress this whole directory into a tar ball and copy the tar ball to all other Seafile server machines. You can simply uncompress the tar ball and use it."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:248
+msgid "On each node, run `./seafile.sh` and `./seahub.sh` to start seafile server."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:250
+# header
+msgid "## Setup Nginx/Apache and Https"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:252
+msgid "You'll usually want to use Nginx/Apache and https for web access. You need to set it up on each machine running Seafile server. **Make sure the certificate on all the servers are the same.**"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:254
+# unordered list
+msgid "* For Nginx:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:255
+# unordered list
+msgid "   * [Config Seahub with Nginx](../deploy/deploy_with_nginx.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:256
+# unordered list
+msgid "   * [Enabling Https with Nginx](../deploy/https_with_nginx.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:257
+# unordered list
+msgid "* For Apache:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:258
+# unordered list
+msgid "   * [Config Seahub with Apache](../deploy/deploy_with_apache.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:259
+# unordered list
+msgid "   * [Enabling Https with Apache](../deploy/https_with_apache.md)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:261
+# header
+msgid "## Firewall Settings"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:263
+msgid "Beside [standard ports of a seafile server](../deploy/using_firewall.md), there are 2 firewall rule changes for Seafile cluster:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:265
+# unordered list
+msgid "* On each Seafile server machine, you should open the health check port (default 11001);"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:266
+# unordered list
+msgid "* On the memcached server, you should open the port 11211. For security, only the Seafile servers should be allow to access this port."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:269
+# header
+msgid "## <a id=\"wiki-lb-settings\"></a>Load Balancer Setting"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:271
+msgid "Now that your cluster is already running, fire up the load balancer and welcome your users."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:273
+# header
+msgid "### AWS Elastic Load Balancer (ELB)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:275
+msgid "In the AWS ELB management console, after you've added the Seafile server instances to the instance list, you should do two more configurations."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:277
+msgid "First you should setup TCP listeners"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:279
+msgid "![elb-listeners](../images/elb-listeners.png)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:281
+msgid "Then you setup health check"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:283
+msgid "![elb-health-check](../images/elb-health-check.png)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:285
+# header
+msgid "### HAProxy"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:287
+msgid "This is a sample `/etc/haproxy/haproxy.cfg`:"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:289
+msgid "(Assume your health check port is `11001`)"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:291
+# code block
+msgid "```\n"
+"global\n"
+"    log 127.0.0.1 local1 notice\n"
+"    maxconn 4096\n"
+"    user haproxy\n"
+"    group haproxy\n"
+"\n"
+"defaults\n"
+"    log global\n"
+"    mode http\n"
+"    retries 3\n"
+"    maxconn 2000\n"
+"    timeout connect 10000\n"
+"    timeout client 300000\n"
+"    timeout server 300000\n"
+"\n"
+"listen seahub 0.0.0.0:80\n"
+"    mode http\n"
+"    option httplog\n"
+"    option dontlognull\n"
+"    option forwardfor\n"
+"    server seahubserver01 192.168.1.165:80 check port 11001\n"
+"    server seahubserver02 192.168.1.200:80 check port 11001\n"
+"\n"
+"listen seahub-https 0.0.0.0:443\n"
+"    mode tcp\n"
+"    option tcplog\n"
+"    option dontlognull\n"
+"    server seahubserver01 192.168.1.165:443 check port 11001\n"
+"    server seahubserver02 192.168.1.200:443 check port 11001\n"
+"```"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:323
+# header
+msgid "## See how it runs"
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:325
+msgid "Now you should be able to test your cluster. Open https://seafile.example.com in your browser and enjoy. You can also sync file with Seafile clients."
+msgstr ""
+
+#: deploy_pro/deploy_in_a_cluster.md:327
+msgid "If the above works, the next step would be [Enable search and background tasks in a cluster](enable_search_and_background_tasks_in_a_cluster.md)."
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:1
+# header
+msgid "# Details about File Search"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:5
+# header
+msgid "## <a id=\"search-opt\"></a>Search Options"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:7
+msgid "Following options should be set in file **seafevents.conf**, and need to restart seafile and seahub to take effect."
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:9
+# code block
+msgid "```\n"
+"[INDEX FILES]\n"
+"...\n"
+"# Enable full-text search for PDF/Word/PPT\n"
+"index_office_pdf = false\n"
+"\n"
+"```"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:17
+# header
+msgid "## Use existing ElasticSearch server"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:19
+msgid "The search module use an elasticsearch server bundled within the seafile pro server tarball. However, you may have an existing ElasticSearch server or cluster running in your company. In this situation, you can change the config file to use your existing ES server or cluster."
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:21
+msgid "This feature is added since `Seafile Professional Server 2.0.5`."
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:23
+# header
+msgid "### Notes"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:25
+# unordered list
+msgid "- Your ES cluster must have thrift transport plugin installed. If not, install it:"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:27
+# code block
+msgid "```\n"
+"bin/plugin -install elasticsearch/elasticsearch-transport-thrift/1.6.0\n"
+"```"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:31
+msgid "Restart your ES server after this."
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:33
+# unordered list
+msgid "- Currently the seafile search module use the default analyzer in your ES server settings. "
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:36
+# header
+msgid "### Change the config file"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:38
+# unordered list
+msgid "- Edit `seafevents.conf`, add settings in the section **[INDEX FILES]** to specify your ES server host and port:"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:40
+# code block
+msgid "```\n"
+"vim seafevents.conf\n"
+"```"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:44
+# code block
+msgid "```\n"
+"[INDEX FILES]\n"
+"...\n"
+"es_host = 192.168.1.101\n"
+"es_port = 9500\n"
+"```"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:51
+# unordered list
+msgid "- `es_host`: The ip address of your ES server"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:52
+# unordered list
+msgid "- `es_port`: The listening port of the Thrift transport module. By default it should be `9500`"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:54
+# header
+msgid "## <a id=\"wiki-faq\"></a>Common problems"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:56
+# header
+msgid "### <a id=\"how-to-rebuild-search-index\"></a>How to rebuild index if something goes wrong"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:58
+msgid "You can rebuild search index by:"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:60
+# code block
+msgid "```\n"
+"./pro/pro.py search --clear\n"
+"./pro/pro.py search --update\n"
+"```"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:65
+msgid "If this not work, you can try the following steps:"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:67
+# ordered list
+msgid "1. Stop Seafile"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:68
+# ordered list
+msgid "2. Remove old search index `rm -rf pro-data/search`"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:69
+# ordered list
+msgid "3. Restart Seafile"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:70
+# ordered list
+msgid "4. Wait one minute then run `./pro/pro.py search --update`"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:73
+# header
+msgid "### <a id=\"wiki-search-no-result\"></a>I get no result when I search a keyword"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:75
+msgid "The search index is updated every 10 minutes by default. So before the first index update is performed, you get nothing no matter what you search."
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:77
+#: deploy_pro/faq_for_seafile_pro_server.md:12
+msgid "  To be able to search immediately,"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:79
+#: deploy_pro/faq_for_seafile_pro_server.md:14
+# unordered list
+msgid "  - Make sure you have started seafile server"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:80
+#: deploy_pro/faq_for_seafile_pro_server.md:15
+# unordered list
+msgid "  - Update the search index manually:"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:81
+# code block
+msgid "```\n"
+"      cd haiwen/seafile-pro-server-2.0.4\n"
+"     ./pro/pro.py search --update\n"
+"```"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:86
+# header
+msgid "### <a id=\"wiki-cannot-search-encrypted-files\"></a>Encrypted files cannot be searched"
+msgstr ""
+
+#: deploy_pro/details_about_file_search.md:88
+msgid "This is because the server can't index encrypted files, since, they are encrypted."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:1
+# header
+msgid "# Download and Setup Seafile Professional Server"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:2
+#: deploy_pro/migrate_from_seafile_community_server.md:11
+# header
+msgid "## <a id=\"wiki-preparation\"></a>Preparation ##"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:4
+msgid "The following document is tested in Ubuntu 14.04. We recommend that you use Ubuntu 14.04 as your server."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:6
+# blockquote, which can be cascaded
+msgid "> NOTE: "
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:7
+#: deploy_pro/download_and_setup_seafile_professional_server.md:9
+#: deploy_pro/download_and_setup_seafile_professional_server.md:13
+#: deploy_pro/download_and_setup_seafile_professional_server.md:16
+#: deploy_pro/download_and_setup_seafile_professional_server.md:18
+#: deploy_pro/download_and_setup_seafile_professional_server.md:28
+# blockquote, which can be cascaded
+msgid "> "
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:8
+# blockquote, which can be cascaded
+msgid "> If you are using Ubuntu 14.04, you can use the following command to install all the dependency that Seafile requires at one time."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:10
+#: deploy_pro/download_and_setup_seafile_professional_server.md:15
+#: deploy_pro/download_and_setup_seafile_professional_server.md:19
+#: deploy_pro/download_and_setup_seafile_professional_server.md:27
+# blockquote, which can be cascaded
+msgid "> ```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:11
+# blockquote, which can be cascaded
+msgid "> sudo apt-get install openjdk-7-jre poppler-utils libpython2.7 python-pip \\"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:12
+# blockquote, which can be cascaded
+msgid "> mysql-server python-setuptools python-imaging python-mysqldb python-memcache python-ldap"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:14
+#: deploy_pro/download_and_setup_seafile_professional_server.md:25
+# blockquote, which can be cascaded
+msgid "> sudo pip install boto"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:17
+# blockquote, which can be cascaded
+msgid "> CentOS 6.6:"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:20
+# blockquote, which can be cascaded
+msgid "> wget https://bootstrap.pypa.io/get-pip.py"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:21
+# blockquote, which can be cascaded
+msgid "> sudo python get-pip.py"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:22
+# blockquote, which can be cascaded
+msgid "> sudo yum install java-1.7.0-openjdk poppler-utils python-dev python-setuptools \\"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:23
+# blockquote, which can be cascaded
+msgid "> python-imaging MySQL-python mysql-server.x86_64 python-memcached python-ldap"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:24
+msgid ">"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:26
+# blockquote, which can be cascaded
+msgid "> sudo /etc/init.d/mysqld start"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:29
+# blockquote, which can be cascaded
+msgid "> For more information please see bellow."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:31
+# header
+msgid "### Minimum System Requirement ###"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:33
+# unordered list
+msgid "- A Linux server with 2GB RAM"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:35
+#: deploy_pro/migrate_from_seafile_community_server.md:13
+# header
+msgid "### Install Java Runtime Environment (JRE) ###"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:37
+#: deploy_pro/download_and_setup_seafile_professional_server.md:53
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:27
+#: deploy_pro/migrate_from_seafile_community_server.md:17
+#: deploy_pro/migrate_from_seafile_community_server.md:33
+#: deploy_pro/office_documents_preview.md:7
+msgid "On Ubuntu/Debian:"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:38
+#: deploy_pro/migrate_from_seafile_community_server.md:18
+# code block
+msgid "```\n"
+"sudo apt-get install openjdk-7-jre\n"
+"```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:42
+#: deploy_pro/download_and_setup_seafile_professional_server.md:58
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:32
+#: deploy_pro/migrate_from_seafile_community_server.md:22
+#: deploy_pro/migrate_from_seafile_community_server.md:38
+msgid "On CentOS/Red Hat:"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:43
+#: deploy_pro/migrate_from_seafile_community_server.md:23
+# code block
+msgid "```\n"
+"sudo yum install java-1.7.0-openjdk\n"
+"```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:47
+#: deploy_pro/migrate_from_seafile_community_server.md:27
+msgid "*Note*: Since version 3.1.12, java 1.7 is required, please check your java version by `java -version`. If not, please [change the default java version](./change_default_java.md)."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:49
+#: deploy_pro/migrate_from_seafile_community_server.md:29
+# header
+msgid "### Install poppler-utils ###"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:51
+#: deploy_pro/migrate_from_seafile_community_server.md:31
+msgid "We need poppler-utils for full text search of pdf files."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:54
+#: deploy_pro/migrate_from_seafile_community_server.md:34
+# code block
+msgid "```\n"
+"sudo apt-get install poppler-utils\n"
+"```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:59
+#: deploy_pro/migrate_from_seafile_community_server.md:39
+# code block
+msgid "```\n"
+"sudo yum install poppler-utils\n"
+"```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:66
+msgid "First make sure your have installed python 2.7"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:77
+# header
+msgid "### Install libpython2.7 if you use Ubuntu 14.04"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:79
+# code block
+msgid "```\n"
+"sudo apt-get install libpython2.7\n"
+"```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:83
+# header
+msgid "### Install other libraries as required in the community edition"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:85
+msgid "See [Download and Setup Seafile Server With MySQL](../deploy/using_mysql.md)."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:87
+# header
+msgid "## <a id=\"wiki-download-and-setup\"></a>Download and Setup Seafile Professional Server ##"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:94
+#: deploy_pro/migrate_from_seafile_community_server.md:54
+# header
+msgid "### <a id=\"wiki-download-and-uncompress\"></a>Download/Uncompress Seafile Professional Server ###"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:97
+#: deploy_pro/migrate_from_seafile_community_server.md:59
+# code block
+msgid "```\n"
+"tar xf seafile-pro-server_1.8.0_x86-64.tar.gz\n"
+"```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:103
+# code block
+msgid "```\n"
+"haiwen\n"
+"├── seafile-license.txt\n"
+"└── seafile-pro-server-1.8.0/\n"
+"```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:110
+#: deploy_pro/download_and_setup_seafile_professional_server.md:117
+#: deploy_pro/migrate_from_seafile_community_server.md:79
+#: deploy_pro/migrate_from_seafile_community_server.md:86
+msgid "-----------"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:112
+#: deploy_pro/migrate_from_seafile_community_server.md:81
+msgid "You should notice the difference between the names of the Community Server and Professional Server. Take the 1.8.0 64bit version as an example:"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:114
+# unordered list
+msgid "- Seafile Community Server tarball is `seafile-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-1.7.0`"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:115
+# unordered list
+msgid "- Seafile Professional Server tarball is `seafile-pro-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-1.7.0`"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:120
+# header
+msgid "### Setup ###"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:122
+msgid "The setup process of Seafile Professional Server is the same as the Seafile Community Server. See [Download and Setup Seafile Server With MySQL](../deploy/using_mysql.md)."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:124
+msgid "If you have any problem in setting up the service, please check [Common problems in setting up Seafile server](../deploy/common_problems_for_setting_up_server.md)."
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:126
+msgid "After you have succesfully setup Seafile Professional Server, you would have a directory layout like this:"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:128
+# code block
+msgid "```\n"
+"#tree haiwen -L 2\n"
+"haiwen\n"
+"├── seafile-license.txt # license file\n"
+"├── ccnet               # configuration files\n"
+"│   ├── ccnet.conf\n"
+"│   ├── mykey.peer\n"
+"│   ├── PeerMgr\n"
+"│   └── seafile.ini\n"
+"├── pro-data            # data specific for professional version\n"
+"│   └── seafevents.conf\n"
+"├── seafile-data\n"
+"│   └── seafile.conf\n"
+"├── seafile-pro-server-1.8.0\n"
+"│   ├── reset-admin.sh\n"
+"│   ├── runtime\n"
+"│   ├── seafile\n"
+"│   ├── seafile.sh\n"
+"│   ├── seahub\n"
+"│   ├── seahub-extra\n"
+"│   ├── seahub.sh\n"
+"│   ├── setup-seafile.sh\n"
+"│   ├── setup-seafile-mysql.py\n"
+"│   ├── setup-seafile-mysql.sh\n"
+"│   └── upgrade\n"
+"├── seahub-data\n"
+"│   └── avatars         # for user avatars\n"
+"├── seahub.db\n"
+"├── seahub_settings.py   # seahub config file\n"
+"```"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:159
+# header
+msgid "## Performance turning"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:161
+msgid "If you have more than 50 users in your Seafile system, we highly recommand you to [add memcached](../deploy/add_memcached.md). This will make the web 10x faster.  "
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:163
+# header
+msgid "## <a id=\"wiki-done\"></a>Done"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:165
+msgid "At this point, the basic setup of Seafile Professional Server is done. "
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:167
+msgid "You may want to read more about Seafile Professional Server:"
+msgstr ""
+
+#: deploy_pro/download_and_setup_seafile_professional_server.md:169
+# unordered list
+msgid "- [FAQ For Seafile Professional Server](faq_for_seafile_pro_server.md)"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:1
+msgid "*Note:* Before you try to deploy file search office documents preview, make sure other parts of your seafile cluster are already working, e.g upload/download files in a web browser. Make sure memcached is configured as described in [\"Deploy in a cluster\"](./deploy_in_a_cluster.md)."
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:3
+# header
+msgid "# Enable search and background tasks in a cluster"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:7
+msgid "In the seafile cluster, only one server should run the background tasks, including:"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:9
+# unordered list
+msgid "- indexing files for search"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:10
+# unordered list
+msgid "- email notification"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:11
+# unordered list
+msgid "- office documents converts service"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:13
+msgid "Let's assume you have three nodes in your cluster: A, B, and C."
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:15
+# unordered list
+msgid "* Node A is backend node that run background tasks."
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:16
+# unordered list
+msgid "* Node B and C are frontend nodes that serving requests from clients."
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:18
+msgid "![cluster-nodes](../images/cluster-nodes.png)"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:21
+# header
+msgid "## Configuring Node A (the backend node)"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:23
+msgid "If you following the steps on settings up a cluster, node B and node C should have already be configed as frontend node. You can copy the configuration of node B as a base for node A. Then do the following steps:"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:25
+# header
+msgid "### Install Dependencies (Java, LibreOffice, poppler)"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:28
+# code block
+msgid "```\n"
+"sudo apt-get install openjdk-7-jre libreoffice poppler-utils python-uno # or python3-uno for ubuntu 14.04+\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:33
+# code block
+msgid "```\n"
+"sudo yum install java-1.7.0-openjdk\n"
+"sudo yum install libreoffice libreoffice-headless libreoffice-pyuno\n"
+"sudo yum install poppler-utils\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:40
+msgid "Edit **seafevents.conf** and ensure this line does NOT exist:"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:42
+# code block
+msgid "```\n"
+"external_es_server = true\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:46
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:68
+msgid "Edit **seahub_settings.py** and add a line:"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:48
+# code block
+msgid "```\n"
+"OFFICE_CONVERTOR_NODE = True\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:52
+# header
+msgid "### Edit the firewall rules"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:54
+msgid "In your firewall rules for node A, you should open the port 9500 (for search requests)."
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:56
+# header
+msgid "## Configure Other Nodes"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:58
+msgid "On nodes B and C, you need to:"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:60
+# unordered list
+msgid "* Edit `seafevents.conf`, add the following lines:"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:61
+# code block
+msgid "```\n"
+"[INDEX FILES]\n"
+"external_es_server = true\n"
+"es_host = <ip of node A>\n"
+"es_port = 9500\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:70
+# code block
+msgid "```\n"
+"OFFICE_CONVERTOR_ROOT = http://<ip of node A>\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:74
+msgid "Make sure requests to http://<ip of node A> is also handled by seahub. For example , you may need to add this nginx configuration in the background node:"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:76
+# code block
+msgid "```\n"
+"server {\n"
+"      listen 80;\n"
+"      server_name <IP of node A>;\n"
+"      location / {\n"
+"          fastcgi_pass    127.0.0.1:8000;\n"
+"          ...\n"
+"  }\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:86
+msgid "As a simple test, you can use this command to test if you set it up correctly."
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:88
+# code block
+msgid "```\n"
+"curl -v http://<IP of node A>/office-convert/internal/status/\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:92
+msgid "It should say \"400 Bad Request\" when you have nginx config updated."
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:95
+# header
+msgid "## Start the background tasks"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:97
+msgid "Before starting background tasks, you have to start seafile and seahub on the backend node, too."
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:99
+# code block
+msgid "```\n"
+"./seafile.sh start\n"
+"./seahub.sh start-fastcgi\n"
+"```"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:104
+msgid "On node A (the background tasks node), you can start/stop background tasks by:"
+msgstr ""
+
+#: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:106
+# code block
+msgid "```\n"
+"./seafile-background-tasks.sh { start | stop | restart }\n"
+"```"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:1
+# header
+msgid "# FAQ"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:2
+# header
+msgid "## <a id=\"wiki-search-faq\"></a>FAQ about Search ##"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:4
+# unordered list
+msgid "- Q: However I tried, files in an encrypted library aren't listed in the search results"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:6
+msgid "  A: This is because the server can't index encrypted files, since, they are encrypted."
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:8
+# unordered list
+msgid "- Q: I switched to Professional Server from Community Server, but whatever I search, I get no results"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:10
+msgid "  A: The search index is updated every 10 minutes by default. So before the first index update is performed, you get nothing no matter what you search."
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:16
+# code block
+msgid "  ```\n"
+"  cd haiwen/seafile-pro-server-1.7.0\n"
+"  ./pro/pro.py search --update\n"
+"  ```"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:21
+msgid "  If you have lots of files, this process may take quite a while."
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:23
+# unordered list
+msgid "- Q: I want to enable full text search for office/pdf documents, so I set `index_office_pdf` to `true` in the configuration file, but it doesn't work."
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:25
+msgid "  A: In this case, you need to:"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:26
+msgid "  1. Edit the value of `index_office_pdf` option in `seafevents.conf` to `true`"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:27
+msgid "  2. Restart seafile server"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:28
+# code block
+msgid "  ```\n"
+"  cd /data/haiwen/seafile-pro-server-1.7.0/\n"
+"  ./seafile.sh restart\n"
+"  ```"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:32
+msgid "  3. Delete the existing search index"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:33
+# code block
+msgid "  ```\n"
+"  ./pro/pro.py search --clear\n"
+"  ```"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:36
+msgid "  4. Create and update the search index again"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:37
+# code block
+msgid "  ```\n"
+"  ./pro/pro.py search --update\n"
+"  ```"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:42
+# header
+msgid "## <a id=\"wiki-office-preview-faq\"></a>FAQ about libreoffice-based office documents preview ##"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:44
+# unordered list
+msgid "- Q: The browser displays \"document conversion failed\", and in the logs I see messages like `[WARNING] failed to convert xxx to ...`, what should I do?"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:46
+msgid "  A: Sometimes the libreoffice process need to be restarted, especially if it's the first time seafile server is running on the server."
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:48
+msgid "  Try to kill the libreoffice process:"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:49
+# code block
+msgid "  ```sh\n"
+"  pkill -f soffice.bin\n"
+"  ```"
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:52
+msgid "  Now try re-opening the preview page in the brower again."
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:54
+msgid "  Also if you are deploying seafile in cluster mode, make sure memcached is working on each server."
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:56
+# unordered list
+msgid "- Q: The above solution does not solve my problem."
+msgstr ""
+
+#: deploy_pro/faq_for_seafile_pro_server.md:58
+msgid "  A: Please check whether the user you run Seafile can correctly start the libreoffice process. There may be permission problems."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:1
+# header
+msgid "# Importing Groups from LDAP/AD"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:3
+msgid "Since version 4.1.0, the Pro Edition supports importing (syncing) groups from LDAP or Active Directory."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:5
+# header
+msgid "## How It Works"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:7
+msgid "The importing or syncing process maps groups from LDAP directory server to groups in Seafile's internal database. This process is one-way."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:9
+# unordered list
+msgid "* Any changes to groups in the database won't propagate back to LDAP;"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:10
+# unordered list
+msgid "* Any changes to groups in the database, except for \"setting a member as group admin\", will be overwritten in the next LDAP sync operation. If you want to add or delete members, you can only do that on LDAP server."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:11
+# unordered list
+msgid "* The creator of imported groups will be set to the system admin."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:13
+msgid "Some LDAP servers, such as AD, allows setting a group as member of another group. This is called \"nested group\". Our process supports syncing nested groups. Supposed group B is a member of group A, the result would be: every member of group B will be imported as a member of both group A and group B."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:15
+msgid "There are two modes of operation:"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:17
+# unordered list
+msgid "* Periodical: the syncing process will be executed in a fixed interval"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:18
+# unordered list
+msgid "* Manual: there is a script you can run to trigger the syncing once"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:20
+#: deploy_pro/virus_scan_with_kav4fs.md:3
+# header
+msgid "## Prerequisite"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:22
+msgid "You have to install python-ldap library in your system."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:24
+msgid "For Debian or Ubuntu"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:26
+#: deploy_pro/using_ldap_pro.md:79
+# code block
+msgid "```\n"
+"sudo apt-get install python-ldap\n"
+"```"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:30
+msgid "For CentOS or RedHat"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:32
+# code block
+msgid "```\n"
+"sudo yum install python-ldap\n"
+"```"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:36
+# header
+msgid "## Configuration"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:38
+msgid "Before enabling LDAP group sync, you should have configured LDAP authentication. See [Configure Seafile to use LDAP](using_ldap.md) for details."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:40
+msgid "The following are LDAP group sync related options. They're in the \"[LDAP_SYNC]\" section of [ccnet.conf](../config/ccnet-conf.md)."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:42
+# unordered list
+msgid "* **ENABLE_GROUP_SYNC**: set to \"true\" if you want to enable ldap group syncing"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:43
+# unordered list
+msgid "* **SYNC_INTERVAL**: The interval to sync. Unit is minutes. Default to 60 minutes."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:44
+# unordered list
+msgid "* **GROUP_OBJECT_CLASS**: This is the name of the class used to search for group objects. In Active Directory, it's usually \"group\"; in OpenLDAP or others, you may use \"groupOfNames\" or \"groupOfUniqueNames\", depends on your LDAP server. The default value is \"group\"."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:45
+# unordered list
+msgid "* **GROUP_FILTER**: An additional filter to use when searching group objects. If it's set, the final filter used to run search is \"(&(objectClass=GROUP_OBJECT_CLASS)(GROUP_FILTER))\"; otherwise the final filter would be \"(objectClass=GROUP_OBJECT_CLASS)\"."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:46
+# unordered list
+msgid "* **GROUP_MEMBER_ATTR**: The attribute field to use when loading the group's members. For most directory servers, the attributes is \"member\", which is the default value."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:48
+msgid "The search base for groups is the \"BASE_DN\" set in \"[LDAP]\" section of ccnet.conf. "
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:50
+msgid "Here is an example configuration for Active Directory:"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:52
+# code block
+msgid "```\n"
+"[LDAP]\n"
+"HOST = ldap://192.168.1.123/\n"
+"BASE = cn=users,dc=example,dc=com\n"
+"USER_DN = administrator@example.local\n"
+"PASSWORD = secret\n"
+"LOGIN_ATTR = mail\n"
+"\n"
+"[LDAP_SYNC]\n"
+"ENABLE_GROUP_SYNC = true\n"
+"SYNC_INTERVAL = 60\n"
+"```"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:65
+msgid "For AD, you usually don't need to configure other options except for \"ENABLE_GROUP_SYNC\". That's because the default values for other options are the usual values for AD. If you have special settings in your LDAP server, just set the corresponding options."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:67
+msgid "Here is an example configuration for OpenLDAP:"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:69
+# code block
+msgid "```\n"
+"[LDAP]\n"
+"HOST = ldap://192.168.1.123/\n"
+"BASE = ou=users,dc=example,dc=com\n"
+"USER_DN = cn=admin,dc=example,dc=com\n"
+"PASSWORD = secret\n"
+"LOGIN_ATTR = mail\n"
+"\n"
+"[LDAP_SYNC]\n"
+"ENABLE_GROUP_SYNC = true\n"
+"SYNC_INTERVAL = 60\n"
+"GROUP_OBJECT_CLASS = groupOfNames\n"
+"```"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:83
+msgid "**NOTE** Periodical sync won't happen immediately after you restart seafile server. It gets scheduled after the first sync interval. For example if you set sync interval to 30 minutes, the first auto sync will happen after 30 minutes you restarts. To sync immediately, you need to manually trigger it. This is covered in the next section."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:85
+msgid "After the sync is run, you should see log messages like the following in logs/seafevents.log. And you should be able to see the groups in system admin page."
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:87
+# code block
+msgid "```\n"
+"[2015-03-30 18:15:05,109] [DEBUG] create group 1, and add dn pair CN=DnsUpdateProxy,CN=Users,DC=Seafile,DC=local<->1 success.\n"
+"[2015-03-30 18:15:05,145] [DEBUG] create group 2, and add dn pair CN=Domain Computers,CN=Users,DC=Seafile,DC=local<->2 success.\n"
+"[2015-03-30 18:15:05,154] [DEBUG] create group 3, and add dn pair CN=Domain Users,CN=Users,DC=Seafile,DC=local<->3 success.\n"
+"[2015-03-30 18:15:05,164] [DEBUG] create group 4, and add dn pair CN=Domain Admins,CN=Users,DC=Seafile,DC=local<->4 success.\n"
+"[2015-03-30 18:15:05,176] [DEBUG] create group 5, and add dn pair CN=RAS and IAS Servers,CN=Users,DC=Seafile,DC=local<->5 success.\n"
+"[2015-03-30 18:15:05,186] [DEBUG] create group 6, and add dn pair CN=Enterprise Admins,CN=Users,DC=Seafile,DC=local<->6 success.\n"
+"[2015-03-30 18:15:05,197] [DEBUG] create group 7, and add dn pair CN=dev,CN=Users,DC=Seafile,DC=local<->7 success.\n"
+"```"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:97
+# header
+msgid "## Manually Trigger Syncing"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:99
+#: deploy_pro/using_ldap_pro.md:171
+msgid "To trigger LDAP sync manually,"
+msgstr ""
+
+#: deploy_pro/ldap_group_sync.md:101
+#: deploy_pro/using_ldap_pro.md:173
+# code block
+msgid "```\n"
+"cd seafile-server-lastest\n"
+"./pro/pro.py ldapsync\n"
+"```"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:1
+# header
+msgid "# Migrate from Seafile Community Server"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:3
+# header
+msgid "## <a id=\"wiki-restriction\"></a>Restriction ##"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:5
+msgid "It's quite likely you have deployed the Seafile Community Server and want to switch to the [Professional Server](http://seafile.com/en/product/private_server/), or vice versa. But there is some restriction:"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:7
+# unordered list
+msgid "- You can only switch between Community Server and Professional Server of the same minor version."
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:9
+msgid "That is, if you are using Community Server 1.6, and want to switch to the Professional Server 1.7, you must first upgrade to Community Server 1.7, and then follow the guides below to switch to the Professional Server 1.7. (The last tiny version number in 1.7.x is not important.)"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:15
+msgid "Java 7 or higher is required."
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:43
+# header
+msgid "## <a id=\"wiki-do-migration\"></a>Do the migration ##"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:45
+msgid "We assume you have already deployed Seafile Community Server 1.8.0 under `/data/haiwen/seafile-server-1.8.0`. "
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:51
+msgid "Put the license you get under the top level directory of your Seafile installation. In our example, it is `/data/haiwen/`."
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:57
+msgid "You should uncompress the tarball to the top level directory of your installation, in our example, `/data/haiwen`."
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:65
+# code block
+msgid "```\n"
+"haiwen\n"
+"├── seafile-license.txt\n"
+"├── seafile-pro-server-1.8.0/\n"
+"├── seafile-server-1.8.0/\n"
+"├── ccnet/\n"
+"├── seafile-data/\n"
+"├── seahub-data/\n"
+"├── seahub.db\n"
+"└── seahub_settings.py\n"
+"\n"
+"\n"
+"```"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:83
+# unordered list
+msgid "- Seafile Community Server tarball is `seafile-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-1.8.0`"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:84
+# unordered list
+msgid "- Seafile Professional Server tarball is `seafile-pro-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-1.8.0`"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:89
+# header
+msgid "### Do the migration ###"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:91
+# unordered list
+msgid "- Stop Seafile Community Server if it's running"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:92
+# code block
+msgid "```\n"
+"cd haiwen/seafile-server-1.8.0\n"
+"./seafile.sh stop\n"
+"./seahub.sh stop\n"
+"```"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:97
+# unordered list
+msgid "- Run the migration script "
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:98
+# code block
+msgid "```\n"
+"cd haiwen/seafile-pro-server-1.8.0/\n"
+"./pro/pro.py setup --migrate\n"
+"```"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:103
+msgid "The migration script would do the following for you:"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:105
+# unordered list
+msgid "- ensure your have all the prerequisites met"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:106
+# unordered list
+msgid "- create necessary extra configurations"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:107
+# unordered list
+msgid "- update the avatar directory"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:108
+# unordered list
+msgid "- create extra database tables  "
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:113
+# inline html
+msgid "<blockquote>\n"
+"haiwen<br/>\n"
+"├── seafile-license.txt<br/>\n"
+"├── seafile-pro-server-1.8.0/<br/>\n"
+"├── seafile-server-1.8.0/<br/>\n"
+"├── ccnet/<br/>\n"
+"├── seafile-data/<br/>\n"
+"├── seahub-data/<br/>\n"
+"├── seahub.db<br/>\n"
+"├── seahub_settings.py<br/>\n"
+"└── <span style=\"color:green;font-weight:bold;\">pro-data/</span><br/>\n"
+"</blockquote>"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:126
+# header
+msgid "### Start Seafile Professional Server ###"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:128
+# code block
+msgid "```\n"
+"cd haiwen/seafile-pro-server-1.8.0\n"
+"./seafile.sh start\n"
+"./seahub.sh start\n"
+"```"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:135
+# header
+msgid "## <a id=\"wiki-switch-back\"></a>Switch Back to Community Server ##"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:137
+# unordered list
+msgid "- Stop Seafile Professional Server if it's running"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:138
+# code block
+msgid "```\n"
+"cd haiwen/seafile-pro-server-1.8.0/\n"
+"./seafile.sh stop\n"
+"./seahub.sh stop\n"
+"```"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:143
+# unordered list
+msgid "- Update the avatar directory link just like in [Minor Upgrade](https://github.com/haiwen/seafile/wiki/Upgrading-Seafile-Server#minor-upgrade-like-from-150-to-151)"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:144
+# code block
+msgid "```\n"
+"cd haiwen/seafile-server-1.8.0/\n"
+"./upgrade/minor-upgrade.sh\n"
+"```"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:148
+# unordered list
+msgid "- Start Seafile Community Server"
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:149
+# code block
+msgid "```\n"
+"cd haiwen/seafile-server-1.8.0/\n"
+"./seafile.sh start\n"
+"./seahub.sh start\n"
+"```"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:1
+# header
+msgid "# Multiple Organization/Institution User Management"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:3
+msgid "Start from version 5.1, you can add institutions into Seafile and assign users into institutions. Each institution can have one or more administrators. This feature is to ease user administration when multiple organizations (universities) share a single Seafile instance. Unlike multi-tenancy, the users are not-isolated. An user from one institution can share files with another institution."
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:5
+# header
+msgid "## Turn on the feature"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:7
+msgid "In `seahub_settings.py`, add `MULTI_INSTITUTION = True` to enable multi-institution feature. And add"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:9
+# code block
+msgid "```\n"
+"EXTRA_MIDDLEWARE_CLASSES += (\n"
+"    'seahub.institutions.middleware.InstitutionMiddleware',\n"
+")\n"
+"```"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:15
+msgid "or"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:17
+# code block
+msgid "```\n"
+"EXTRA_MIDDLEWARE_CLASSES = (\n"
+"    'seahub.institutions.middleware.InstitutionMiddleware',\n"
+")\n"
+"```"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:23
+msgid "if `EXTRA_MIDDLEWARE_CLASSES` is not defined."
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:25
+# header
+msgid "## Add institutions and institution admins"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:27
+msgid "After restart service, system admin can add institutions by adding institution name in admin panel. He can also click into an institution, which will list all users whose `profile.institution` match the name."
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:29
+# header
+msgid "## Assign users to institutions"
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:31
+msgid "If you are using Shibboleth, you can map a Shibboleth attribute into institution. For example, the following configuration map organization attribute to institution."
+msgstr ""
+
+#: deploy_pro/multi_institutions.md:33
+# code block
+msgid "```\n"
+"SHIBBOLETH_ATTRIBUTE_MAP = {\n"
+"    \"givenname\": (False, \"givenname\"),\n"
+"    \"sn\": (False, \"surname\"),\n"
+"    \"mail\": (False, \"contact_email\"),\n"
+"    \"organization\": (False, \"institution\"),\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:1
+msgid "Seafile Professional server supports previewing office/pdf documents online, to use it you need to follow the steps described on this page."
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:3
+# header
+msgid "### Install Libreoffice/UNO ###"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:5
+msgid "Libreoffice 4.1+ and Python-uno library are needed to enable office files online preview."
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:8
+# code block
+msgid "```\n"
+"sudo apt-get install libreoffice libreoffice-script-provider-python\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:11
+# blockquote, which can be cascaded
+msgid "> For older version of Ubuntu: `sudo apt-get install libreoffice python-uno`"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:13
+msgid "On Centos/RHEL:"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:14
+# code block
+msgid "```\n"
+"sudo yum install libreoffice libreoffice-headless libreoffice-pyuno\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:18
+msgid "For other Linux distro: [Installation of LibreOffice on Linux](http://www.libreoffice.org/get-help/installation/linux/)"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:20
+msgid "Also, you may need to install fonts for your language, especially for Asians, otherwise the  office/pdf document may not display correctly."
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:22
+msgid "For example, Chinese users may wish to install the WenQuanYi series of truetype fonts:"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:24
+# code block
+msgid "```\n"
+"# For ubuntu/debian\n"
+"sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:29
+# header
+msgid "### Enable Office Preview"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:31
+# ordered list
+msgid "1. Open file `seafevents.conf`, in the `OFFICE CONVERTER` section:"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:32
+# code block
+msgid "```conf\n"
+"[OFFICE CONVERTER]\n"
+"enabled = true\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:36
+# ordered list
+msgid "2. After modifying and saving `seafevents.conf`, restart seafile server by `./seafile.sh restart`"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:37
+# ordered list
+msgid "3. Open a doc/ppt/xls/pdf file on seahub, you should be about the previewing it in your browser."
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:39
+# header
+msgid "### Other Configurable Options"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:41
+msgid "Here are full list of options you can fine tune:"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:43
+# code block
+msgid "```conf\n"
+"[OFFICE CONVERTER]\n"
+"\n"
+"## must be \"true\" to enable office/pdf file online preview\n"
+"enabled = true\n"
+"\n"
+"## How many libreoffice worker processes to run concurrenlty\n"
+"workers = 1\n"
+"\n"
+"## where to store the converted office/pdf files. Deafult is /tmp/.\n"
+"outputdir = /tmp/\n"
+"\n"
+"## how many pages are allowed to be previewed online. Default is 50 pages\n"
+"max-pages = 50\n"
+"\n"
+"## the max size of documents to allow to be previewed online, in MB. Default is 2 MB\n"
+"## Preview a large file (for example >30M) online will freeze the browser.\n"
+"max-size = 2\n"
+"\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:64
+# header
+msgid "## <a id=\"wiki-doc-preview\"></a>FAQ about Office/PDF document preview ##"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:66
+# unordered list
+msgid "- Document preview doesn't work, where to find more information?"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:68
+msgid "    You can check the log at logs/seafevents.log"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:71
+# unordered list
+msgid "- How can I change max size and max pages of documents that can be previewed online ?"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:73
+msgid " 1. Locate the `OFFICE CONVERTER` section in `seafevents.conf`."
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:74
+msgid " 2. Append following lines to the section"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:75
+# code block
+msgid "```\n"
+"# the max size of documents to allow to be previewed online, in MB. Default is 2 MB\n"
+"max-size = 2\n"
+"# how many pages are allowed to be previewed online. Default is 50 pages\n"
+"max-pages = 50\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:82
+msgid "Then, restart seafile server"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:83
+# code block
+msgid "```\n"
+"cd /data/haiwen/seafile-server-latest/\n"
+"./seafile.sh restart\n"
+"./seahub.sh restart\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:89
+# unordered list
+msgid "- Document preview doesn't work on my Ubuntu/Debian server, what can I do?"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:91
+msgid "Current office online preview works with libreoffice 4.0-4.2. If the version of libreoffice installed by `apt-get` is too old or too new, you can solve this by:"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:93
+# unordered list
+msgid "- Remove the installed libreoffice:"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:94
+# code block
+msgid "```\n"
+"sudo apt-get remove libreoffice* python-uno python3-uno\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:97
+# unordered list
+msgid "- Download libreoffice packages from [libreoffice official site](http://sourceforge.net/projects/libreoffice.mirror/files/LibreOffice%204.1.6/)"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:99
+# unordered list
+msgid "- Install the downloaded pacakges:"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:100
+# code block
+msgid "```\n"
+"tar xf LibreOffice_4.1.6_Linux_x86-64_deb.tar.gz\n"
+"cd LibreOffice_4.1.6.2_Linux_x86-64_deb\n"
+"cd DEBS\n"
+"sudo dpkg -i *.deb\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:107
+# unordered list
+msgid "- Restart your seafile server and try again. It should work now."
+msgstr ""
+
+#: deploy_pro/office_documents_preview.md:108
+# code block
+msgid "```\n"
+"./seafile.sh restart\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:1
+# header
+msgid "# Office Web app"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:3
+msgid "In pro version 4.4.0(or above), you can use Microsoft Office Web App to preview document online. Office Web App provides the best preview for all Office format files. For organizations with Microsoft Office Volume License, it's free to use Office Web App. For more information about Office Web App and how to deploy it, please refer to https://technet.microsoft.com/en-us/library/jj219456.aspx ."
+msgstr ""
+
+#: deploy_pro/office_web_app.md:5
+msgid "Seafile's own Office file preview is still the default. To use Office Web App for preview, please add following config to seahub_settings.py."
+msgstr ""
+
+#: deploy_pro/office_web_app.md:7
+# code block
+msgid "``` python\n"
+"# Enable Office Web App\n"
+"ENABLE_OFFICE_WEB_APP = True\n"
+"\n"
+"# Url of Office Web App's discovery page\n"
+"# The discovery page tells Seafile how to interact with Office Web App when view file online\n"
+"# You should change `http://example.office-web-app.com` to your actual Office Web App server address\n"
+"OFFICE_WEB_APP_BASE_URL = 'http://example.office-web-app.com/hosting/discovery'\n"
+"\n"
+"# Expiration of WOPI access token\n"
+"# WOPI access token is a string used by Seafile to determine the file's\n"
+"# identity and permissions when use Office Web App view it online\n"
+"# And for security reason, this token should expire after a set time period\n"
+"WOPI_ACCESS_TOKEN_EXPIRATION = 30 * 60 # seconds\n"
+"\n"
+"# Tuple of file format that you want to view through Office Web App\n"
+"# You can change this value according to your preferences\n"
+"# And of course you should make sure your Office Web App support to preview\n"
+"# the specified extension file you add below\n"
+"OFFICE_WEB_APP_FILE_EXTENSION = ('ods', 'xls', 'xlsb', 'xlsm', 'xlsx','ppsx', 'ppt',\n"
+"    'pptm', 'pptx', 'doc', 'docm', 'docx')\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:30
+msgid "Then restart"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:32
+# code block
+msgid "```\n"
+"./seafile.sh restart\n"
+"./seahub.sh restart\n"
+"```"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:37
+msgid "After you click the document you specified in seahub_settings.py, you will see the new preview page."
+msgstr ""
+
+#: deploy_pro/office_web_app.md:39
+msgid "![office-web-app](../images/office-web-app.png)"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:41
+# header
+msgid "## Trouble shooting"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:43
+msgid "Understanding how the web app integration work will help you debug the problem. When a user visit a file page:"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:45
+# ordered list
+msgid "1. (seahub->browser) Seahub will generate a page containing an iframe and send to the browser"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:46
+# ordered list
+msgid "2. (broswer->office web app) With the iframe, the browser will try to load the file preview page from the office web app"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:47
+# ordered list
+msgid "3. (office web app->seahub) Office web app receives the request and send a request to Seahub to get the file content"
+msgstr ""
+
+#: deploy_pro/office_web_app.md:48
+# ordered list
+msgid "4. (office web app->browser) Office web app send the file preview page to the browser."
+msgstr ""
+
+#: deploy_pro/office_web_app.md:50
+msgid "Please check the Nginx log for Seahub (for step 3) and Office Web App to see which step is wrong."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:1
+# header
+msgid "# Seafile Real-Time Backup Server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:3
+msgid "NOTE: The real-time backup feature is currently in beta state. It may have minor issues on the backup server side. But this feature will not affect the functionality or data integrity of the primary server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:5
+msgid "Backup is the procedure that copies data from a primary server (which is running production service) to a backup server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:7
+msgid "Backup is an important procedure to keep data safe. The basic backup procedure described in [this documentation](../maintain/backup_recovery.md) has a few drawbacks:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:9
+# unordered list
+msgid "- The backup is done in fixed \"backup windows\" (once per day or a few times per day). The latest data written between two backup windows will be lost if the primary server storage is damaged."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:10
+# unordered list
+msgid "- The backup procedure backup database and data directory separately. In the backup server, some entries in the database may become inconsistent with the data directory. This causes some libraries become \"corrupted\" after restore."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:12
+msgid "The real-time backup server uses a syncing algorithm similar to the Seafile desktop client to retrieve data from the primary server. It works as follows:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:14
+# unordered list
+msgid "- Whenever a library is updated, the primary server notifies the backup server to retrieve the changed data. With a delta syncing algorithm, this procedure runs quickly and updates the backup server in nearly real-time."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:15
+# unordered list
+msgid "- The backup server also checks all libraries on the primary server at a fixed period. Any new or updated libraries will be synced to the backup server. This will pick up any legged updates due to glitches in the above real-time sync procedure."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:16
+# unordered list
+msgid "- The backup server always keep the database and data directory consistent. So no libraries on the backup server will be in corrupted state (unless they're already corrupted on the primary server)."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:17
+# unordered list
+msgid "- The full history of all libraries will be backed up. This is not like the desktop client, which only syncs the latest state of a library."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:19
+msgid "There are two sets of data that need to be backup:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:21
+# unordered list
+msgid "- The seafile-data directory and the core library metadata tables in the seafile database. This data is the core data structures of the libraries in Seafile. They're synced to the backup server with Seafile's syncing algorithm. In this procedure, the metadata tables are kept consistent with the seafile-data directory."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:22
+# unordered list
+msgid "- All other tables in the database (including seafile, ccnet and seahub databases) are backup with MySQL replication."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:24
+# header
+msgid "## Configure Real-Time Backup Server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:26
+msgid "We assume you already have a primary server running, and now you want to setup a backup server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:28
+msgid "The steps to setup the backup server are:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:30
+# ordered list
+msgid "1. Install Seafile on the backup server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:31
+# ordered list
+msgid "2. Configure MySQL replication between the primary server and the backup server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:32
+# ordered list
+msgid "3. Configure Seafile syncing between the primary server and the backup server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:34
+# header
+msgid "### Install Seafile on the Backup Server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:36
+msgid "You should install Seafile Pro Edition on the backup server according to [this documentation](../deploy_pro/download_and_setup_seafile_professional_server.md). Since the real-time backup feature is only available for 5.1.0 or later, you also have to upgrade your primary server to 5.1.0 version or later."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:38
+msgid "When installing Seafile on the backup server, you have to notice:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:40
+# unordered list
+msgid "- The database names (ccnet, seafile and seahub database) should be the same as the names on the primary server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:41
+# unordered list
+msgid "- You don't need to enable other Pro features, such as Office file preview, search indexing, file auditing etc."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:43
+# header
+msgid "### Configure MySQL Replication"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:45
+msgid "MySQL replication asynchronously replicates database updates from a Master server (in our case, the primary server) to a Slave server (the backup server). To better understand how MySQL replication works and how to configure it, you should first read [MySQL official documentation](https://dev.mysql.com/doc/refman/5.6/en/replication-howto.html). The following steps are based on the steps in MySQL documentation, with some modifications for Seafile."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:47
+msgid "In the following discussion, we'll use \"primary server\" and \"master server\", \"backup server\" and \"slave server\" interchangeably."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:49
+# header
+msgid "#### Modify MySQL Server Configuration on Primary Server (my.cnf)"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:51
+msgid "On the primary server, add following options to my.cnf:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:53
+# code block
+msgid "```\n"
+"[mysqld]\n"
+"log-bin=mysql-bin\n"
+"server-id=1\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:59
+msgid "In the my.cnf of the primary server, another important option is `expire_logs_days` ([reference](http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_expire_logs_days)). This option controls the retention time of the binary log, which is used for replication. The default value of this option is to keep binary log files forever. You can set this option to keep the binary log files for specific days. Binary log files older than the specified days will be deleted. So if the backup server is offline for more than `expire_logs_days`, the replication cannot be resumed after the backup server is online. We recommend to set this option to a long enough time."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:61
+msgid "After saving the changes, you should restart MySQL on primary server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:63
+# header
+msgid "#### Create a User for Replication in MySQL"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:65
+msgid "On the primary server, create a user dedicated for replication. In MySQL client prompt,"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:67
+# code block
+msgid "```\n"
+"CREATE USER 'repl'@'%' IDENTIFIED BY 'slavepass';\n"
+"GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:72
+msgid "Replace the user name and password with your own choice."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:74
+# header
+msgid "#### Obtain the Replication Master Binary Log Coordinates"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:76
+msgid "Before running this step, you should stop Seafile service on the primary server, so that no update will be written into database."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:78
+msgid "On the primary (Master) server, in MySQL client prompt,"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:80
+# code block
+msgid "```\n"
+"FLUSH TABLES WITH READ LOCK;\n"
+"SHOW MASTER STATUS;\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:85
+msgid "You'll get output similar to the following:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:87
+# code block
+msgid "```\n"
+"+------------------+----------+--------------+------------------+-------------------+\n"
+"| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |\n"
+"+------------------+----------+--------------+------------------+-------------------+\n"
+"| mysql-bin.000002 |   368915 |              |                  |                   |\n"
+"+------------------+----------+--------------+------------------+-------------------+\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:95
+msgid "The `File` and `Position` fields in output will be used to configure the backup server (replication Slave)."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:97
+# header
+msgid "#### Export Existing Data on the Primary Server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:99
+msgid "Exporting data from the databases on the primary server with mysqldump:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:101
+# code block
+msgid "```\n"
+"mysqldump -u <user> -p<password> --databases \\\n"
+"--ignore-table=<seafile_db>.Repo --ignore-table=<seafile_db>.Branch --ignore-table=<seafile_db>.RepoHead \\\n"
+"--ignore-table=<seahub_db>.base_userlastlogin --ignore-table=<seahub_db>.django_session \\\n"
+"--ignore-table=<seahub_db>.sysadmin_extra_userloginlog --ignore-table=<seahub_db>.UserTrafficStat \\\n"
+"--ignore-table=<seahub_db>.FileAudit --ignore-table=<seahub_db>.FileUpdate --ignore-table=<seahub_db>.PermAudit \\\n"
+"--ignore-table=<seahub_db>.Event --ignore-table=<seahub_db>.UserEvent --ignore-table=<seahub_db>.avatar_avatar \\\n"
+"--ignore-table=<seahub_db>.avatar_groupavatar --ignore-table=<seahub_db>.avatar_uploaded \\\n"
+"--master-data <seafile_db> <ccnet_db> <seahub_db> > dbdump.sql\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:112
+msgid "You should replace `<user>`, `<password>` with your MySQL admin user and password. You should replace `<seafile_db>`, `<seahub_db>` and `<ccnet_db>` with your database names."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:114
+# header
+msgid "#### Modify MySQL Server Configuration on Backup Server (my.cnf)"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:116
+msgid "On the backup server, add following options to my.cnf:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:118
+# code block
+msgid "```\n"
+"[mysqld]\n"
+"server-id=2\n"
+"replicate-ignore-table = <seafile db>.Repo\n"
+"replicate-ignore-table = <seafile db>.Branch\n"
+"replicate-ignore-table = <seafile db>.RepoHead\n"
+"replicate-ignore-table = <seahub db>.base_userlastlogin\n"
+"replicate-ignore-table = <seahub db>.django_session\n"
+"replicate-ignore-table = <seahub db>.sysadmin_extra_userloginlog\n"
+"replicate-ignore-table = <seahub db>.UserTrafficStat\n"
+"replicate-ignore-table = <seahub db>.FileAudit\n"
+"replicate-ignore-table = <seahub db>.FileUpdate\n"
+"replicate-ignore-table = <seahub db>.PermAudit\n"
+"replicate-ignore-table = <seahub db>.avatar_avatar\n"
+"replicate-ignore-table = <seahub db>.avatar_groupavatar\n"
+"replicate-ignore-table = <seahub db>.avatar_uploaded\n"
+"replicate-ignore-table = <seahub db>.Event\n"
+"replicate-ignore-table = <seahub db>.UserEvent\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:138
+msgid "The above configuration tells the backup server to ignore following tables on replication:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:140
+# unordered list
+msgid "- The library metadata tables in Seafile db：Repo, Branch, RepoHead。These tables will be synced by Seafile backup server itself."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:141
+# unordered list
+msgid "- Local or temporary tables in Seahub database. When the admin logs into the backup server to view the data, these tables may be updated on the backup server. To avoid conflicts with the replicated entries, we ignore them on replication."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:143
+msgid "Notes:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:145
+# unordered list
+msgid "- The `server-id` for the primary and backup server must be different."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:146
+# unordered list
+msgid "- You should replace `<seafile db>` and `<seahub db>` with your database names."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:148
+msgid "Restart MySQL server on backup server, with `--skip-slave-start` option so that replication does not start."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:150
+# code block
+msgid "```\n"
+"sudo /etc/init.d/mysql start --skip-slave-start\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:154
+# header
+msgid "#### Import Existing Data into backup server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:156
+msgid "Importing existing data into the backup server's MySQL:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:158
+# code block
+msgid "```\n"
+"mysql -u <usr> -p<pas> < dbdump.sql\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:162
+msgid "Replace `<user>` and `<pass>` with your MySQL admin user name and password."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:164
+# header
+msgid "#### Start Replication"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:166
+msgid "Unlock MySQL on the primary server. In MySQL client prompt,"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:168
+# code block
+msgid "```\n"
+"unlock tables;\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:172
+msgid "On the backup server, setup replication start coordinates:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:174
+# code block
+msgid "```\n"
+"CHANGE MASTER TO MASTER_HOST='primary-host', MASTER_USER='user', MASTER_PASSWORD='slavepass', MASTER_LOG_FILE='bin-log-file', MASTER_LOG_POS=position;\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:178
+msgid "Replace `primary-host` with the MySQL master server address; Replace `user` with the dedicated user for replication; Replace `slavepass` with the dedicated user's password; Replace `bin-log-file` and `position` with the information you obtained in the \"Obtain the Replication Master Binary Log Coordinates\" section."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:180
+msgid "Start replication on the backup server. In MySQL client prompt,"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:182
+# code block
+msgid "```\n"
+"start slave;\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:186
+msgid "After staring replication, you should see some log messages in MySQL's error.log on the backup server, stating the replication is started. And the slave will catch up with any new updates on the master server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:188
+# header
+msgid "### Configure Real-time Backup in Seafile"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:190
+msgid "On the primary server, add following options to seafile.conf:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:192
+# code block
+msgid "```\n"
+"[backup]\n"
+"backup_url = http://backup-server\n"
+"sync_token = c7a78c0210c2470e14a20a8244562ab8ad509734\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:198
+msgid "On the backup server, add following options to seafile.conf:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:200
+# code block
+msgid "```\n"
+"[backup]\n"
+"primary_url = http://primary-server\n"
+"sync_token = c7a78c0210c2470e14a20a8244562ab8ad509734\n"
+"sync_poll_interval = 3\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:207
+# unordered list
+msgid "- `backup_url`: the backup server's address in url format. You can use http or https."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:208
+# unordered list
+msgid "- `primary_url`: the primary server's address in url format."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:209
+# unordered list
+msgid "- `sync_token`: a secret that shared between the primary and backup server. It's 40 character SHA1 generated by the system admin. You can use `uuidgen | openssl sha1` command to generate a random token."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:210
+# unordered list
+msgid "- `sync_poll_interval`: The backup server polls all libraries of the primary server periodically. You can set the poll interval in the unit of hours. The default interval is 1 hour, which mean the backup server will poll the primary every hour. You should choose larger intervals if you have large number of libraries."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:212
+msgid "After saving the configuration, restart seafile service on the primary and backup servers. The backup server will automatically start backup on restart."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:214
+# header
+msgid "### Setup Backup Server for Seafile Cluster"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:216
+msgid "If your primary service runs as a Seafile cluster, you have two points to notice when setting up a backup server:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:218
+# ordered list
+msgid "1. You should only use one MySQL instance as the replication master, if you're using MariaDB cluster."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:219
+# ordered list
+msgid "2. You have to change seafile.conf and set the `backup_url` and `sync_token` options on each Seafile node. The configuration on all primary Seafile node should be the same. They all point to the same backup server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:221
+msgid "Currently you cannot deploy the backup service **as** a cluster. That is, you can only use a single node as backup server. This support may be added in the future."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:223
+# header
+msgid "## Managing the Real-time Backup Server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:225
+msgid "Once set up, the backup server is a fully working Seafile instance. The admin can manage the backup server in two ways:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:227
+# ordered list
+msgid "1. Access the server via Seahub web interface, just like a normal Seafile instance."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:228
+# ordered list
+msgid "2. Use the `seaf-backup-cmd.sh` script in the server package to manage the backup function."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:230
+msgid "The `seaf-backup-cmd.sh` script provides the following commands:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:232
+# header
+msgid "### Checking Backup Status"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:234
+msgid "`seaf-backup-cmd.sh` provides `status` command to view the backup status. The output is like:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:236
+# code block
+msgid "```\n"
+"# ./seaf-backup-cmd.sh status\n"
+"Total number of libraries: xxx\n"
+"Number of synchronized libraries: xxx\n"
+"Number of libraries waiting for sync: xxx\n"
+"Number of libraries syncing: xxx\n"
+"Number of libraries failed to sync: xxx\n"
+"\n"
+"List of syncing libraries:\n"
+"xxx\n"
+"xxx\n"
+"\n"
+"List of libraries failed to sync:\n"
+"xxx\n"
+"xxx\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:253
+msgid "There are a few reasons that may fail the backup of a library:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:255
+# unordered list
+msgid "- Some data in the primary server is corrupted. The data may be in the latest state or in history. Since the backup procedure syncs the full history, corruption in history will fail the backup."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:256
+# unordered list
+msgid "- The primary server has run seaf-fsck, which may restore a library back to an older state."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:258
+# header
+msgid "### Manually Trigger Syncing a Library"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:260
+msgid "You can use the `sync` command to manually schedule backup of a library:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:262
+# code block
+msgid "```\n"
+"# ./seaf-backup-cmd.sh sync <library id>\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:266
+msgid "The command will block until the backup is finished."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:268
+# header
+msgid "### Handling Backup Errors"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:270
+msgid "The `--force` option of `sync` command can be used to force failing backup to complete. Permanent backup failures are usually caused by data corruption of a library in the primary server. The `--force` option asks the backup to skip corrupted objects and finish the backup."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:272
+msgid "When you find a backup error, follow two steps:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:274
+# ordered list
+msgid "1. Run seaf-fsck on the primary server, for the failing libraries. Fsck fixes any corruption for the latest state of the libraries."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:275
+# ordered list
+msgid "2. Run `seaf-backup-cmd.sh sync --force <library id>` on the backup server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:277
+# header
+msgid "## Restore from the Backup Server"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:279
+msgid "Since the backup server is a fully workable Seafile instance, you can switch your service to the backup server after your primary is severely damaged. But you need to take a few points into consideration before switching to the backup server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:281
+# unordered list
+msgid "- You should first try to repair the primary server as long as possible. Running seaf-fsck will fix most daily corruptions on the primary server."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:282
+# unordered list
+msgid "- Even with the near real-time feature of the backup server, the data on the backup server may still be a bit older than the primary server. This is especially true for the libraries failed to backup."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:284
+msgid "Before switching to the backup server, you should first unsync all clients which is syncing with \"failed to backup\" libraries."
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:286
+msgid "Supposed the output of `seaf-backup-cmd.sh status` is as follows:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:288
+# code block
+msgid "```\n"
+"List of libraries failed to sync:\n"
+"f690ea2c-fe4d-459a-ba1e-165cdc6df391\n"
+"e2df70b5-cd80-496f-98cf-c9f038cf1307\n"
+"```"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:294
+msgid "You run the following command within MySQL on the backup server:"
+msgstr ""
+
+#: deploy_pro/real_time_backup.md:296
+# code block
+msgid "```\n"
+"use seafile-db;\n"
+"delete from RepoUserToken where repo_id in ('f690ea2c-fe4d-459a-ba1e-165cdc6df391', 'e2df70b5-cd80-496f-98cf-c9f038cf1307');\n"
+"```"
+msgstr ""
+
+#: deploy_pro/seafile_professional_sdition_software_license_agreement.md:1
+# header
+msgid "# Seafile Professional Edition Software License Agreement"
+msgstr ""
+
+#: deploy_pro/seafile_professional_sdition_software_license_agreement.md:2
+# code block
+msgid "```\n"
+"Seafile Professional Edition\n"
+"SOFTWARE LICENSE AGREEMENT\n"
+"\n"
+"NOTICE: READ THE FOLLOWING TERMS AND CONDITIONS CAREFULLY BEFORE YOU DOWNLOAD, INSTALL OR USE Seafile, Inc'S PROPRIETARY SOFTWARE. BY INSTALLING OR USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THE FOLLOWING TERMS AND CONDITIONS. IF YOU DO NOT AGREE TO THE FOLLOWING TERMS AND CONDITIONS, DO NOT INSTALL OR USE THE SOFTWARE.\n"
+"\n"
+"1. DEFINITIONS\n"
+"\"Seafile, Inc\" means Seafile, Inc\n"
+"\n"
+"\"You and Your\" means the party licensing the Software hereunder.\n"
+"\n"
+"\"Software\" means the computer programs provided under the terms of this license by Seafile, Inc together with any documentation provided therewith.\n"
+"\n"
+"2. GRANT OF RIGHTS\n"
+"2.1 General\n"
+"The License granted for Software under this Agreement authorizes You on a non-exclusive basis to use the Software. The Software is licensed, not sold to You and Seafile, Inc reserves all rights not expressly granted to You in this Agreement. The License is personal to You and may not be assigned by You to any third party.\n"
+"\n"
+"2.2 License Provisions\n"
+"Subject to the receipt by Seafile, Inc of the applicable license fees, You have the right use the Software as follows:\n"
+"\n"
+"* You may use and install the Software on an unlimited number of computers that are owned, leased, or controlled by you.\n"
+"* Nothing in this Agreement shall permit you, or any third party to disclose or otherwise make available to any third party the licensed Software, source code or any portion thereof.\n"
+"* You agree to indemnify, hold harmless and defend Seafile, Inc from and against any claims or lawsuits, including attorney's fees, that arise as a result from the use of the Software;\n"
+"* You do not permit further redistribution of the Software by Your end-user customers\n"
+"\n"
+"5. NO DERIVATIVE WORKS\n"
+"The inclusion of source code with the License is explicitly not for your use to customize a solution or re-use in your own projects or products. The benefit of including the source code is for purposes of security auditing. You may modify the code only for emergency bug fixes that impact security or performance and only for use within your enterprise. You may not create or distribute derivative works based on the Software or any part thereof. If you need enhancements to the software features, you should suggest them to Source Tree Solutions for version improvements.\n"
+"\n"
+"6. OWNERSHIP\n"
+"You acknowledge that all copies of the Software in any form are the sole property of Seafile, Inc. You have no right, title or interest to any such Software or copies thereof except as provided in this Agreement.\n"
+"\n"
+"7. CONFIDENTIALITY\n"
+"You hereby acknowledge and agreed that the Software constitute and contain valuable proprietary products and trade secrets of Seafile, Inc, embodying substantial creative efforts and confidential information, ideas, and expressions. You agree to treat, and take precautions to ensure that your employees and other third parties treat, the Software as confidential in accordance with the confidentiality requirements herein.\n"
+"\n"
+"8. DISCLAIMER OF WARRANTIES\n"
+"EXCEPT AS OTHERWISE SET FORTH IN THIS AGREEMENT THE SOFTWARE IS PROVIDED TO YOU \"AS IS\", AND Seafile, Inc MAKES NO EXPRESS OR IMPLIED WARRANTIES WITH RESPECT TO ITS FUNCTIONALITY, CONDITION, PERFORMANCE, OPERABILITY OR USE. WITHOUT LIMITING THE FOREGOING, Seafile, Inc DISCLAIMS ALL IMPLIED WARRANTIES INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR FREEDOM FROM INFRINGEMENT. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSIONS MAY NOT APPLY TO YOU. THE LIMITED WARRANTY HEREIN GIVES YOU SPECIFIC LEGAL RIGHTS, AND YOU MAY ALSO HAVE OTHER RIGHTS THAT VARY FROM ONE JURISDICTION TO ANOTHER.\n"
+"\n"
+"9. LIMITATION OF LIABILITY\n"
+"YOU ACKNOWLEDGE AND AGREE THAT THE CONSIDERATION WHICH Seafile, Inc IS CHARGING HEREUNDER DOES NOT INCLUDE ANY CONSIDERATION FOR ASSUMPTION BY Seafile, Inc OF THE RISK OF YOUR CONSEQUENTIAL OR INCIDENTAL DAMAGES WHICH MAY ARISE IN CONNECTION WITH YOUR USE OF THE SOFTWARE. ACCORDINGLY, YOU AGREE THAT Seafile, Inc SHALL NOT BE RESPONSIBLE TO YOU OR ANY THIRD PARTY FOR ANY LOSS-OF-PROFIT, LOST SAVINGS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF A LICENSING OR USE OF THE SOFTWARE.\n"
+"\n"
+"10. INDEMNIFICATION\n"
+"You agree to defend, indemnify and hold Seafile, Inc and its employees, agents, representatives and assigns harmless from and against any claims, proceedings, damages, injuries, liabilities, costs, attorney's fees relating to or arising out of Your use of the Software or any breach of this Agreement.\n"
+"\n"
+"11. TERMINATION\n"
+"Your license is effective until terminated. You may terminate it at any time by destroying the Software or returning all copies of the Software to Seafile, Inc. Your license will terminate immediately without notice if You breach any of the terms and conditions of this Agreement, including non or incomplete payment of the license fee. Upon termination of this Agreement for any reason: You will uninstall all copies of the Software; You will immediately cease and desist all use of the Software; and will destroy all copies of the software in your possesion.\n"
+"\n"
+"12. UPDATES AND SUPPORT\n"
+"Seafile, Inc has the right, but no obligation, to periodically update the Software, at its complete discretion, without the consent or obligation to You or any licensee or user.\n"
+"\n"
+"13. TAXES AND OTHER CHARGES\n"
+"You are responsible for paying all sales, use, excise valuated or other taxes or governmental charges in addition to freight, insurance and installation charges and import or export duties.\n"
+"\n"
+"YOU HEREBY ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS.\n"
+"\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:1
+# header
+msgid "# Setup Seafile cluster with NFS"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:3
+msgid "In a Seafile cluster, one common way to share data among the Seafile server instances is to use NFS. You should only share the files objects on NFS. Here we'll provide a tutorial about how and what to share."
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:5
+msgid "How to setup nfs server and client is beyond the scope of this wiki. Here are few references:"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:7
+# unordered list
+msgid "* Ubuntu: https://help.ubuntu.com/community/SettingUpNFSHowTo"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:8
+# unordered list
+msgid "* CentOS: http://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-nfs.html"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:10
+msgid "Supposed your seafile server installation directory is `/data/haiwen`, after you run the setup script there should be a `seafile-data` directory in it. And supposed you mount the NFS drive on `/seafile-nfs`, you should follow a few steps:"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:12
+# unordered list
+msgid "* Move the `seafile-data` folder to `/seafile-nfs`:"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:14
+# code block
+msgid "```\n"
+"mv /data/haiwen/seafile-data /seafile-nfs/\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:19
+# unordered list
+msgid "* On every node in the cluster, make a symbolic link to the shared seafile-data folder "
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:21
+# code block
+msgid "```\n"
+"cd /data/haiwen\n"
+"ln -s /seafile-nfs/seafile-data /data/haiwen/seafile-data\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_seafile_cluster_with_nfs.md:27
+msgid "This way the instances will share the same `seafile-data` folder. All other config files and log files will remain independent."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:1
+# header
+msgid "# Setup With Amazon S3"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:5
+#: deploy_pro/setup_with_swift.md:7
+# header
+msgid "## Prepare"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:7
+msgid "To setup Seafile Professional Server with Amazon S3:"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:9
+#: deploy_pro/setup_with_swift.md:11
+# unordered list
+msgid "- Setup the basic Seafile Professional Server following the guide on [Download and setup Seafile Professional Server](download_and_setup_seafile_professional_server.md)"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:10
+# unordered list
+msgid "- Install the python `boto` library. It's needed to access S3 service."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:11
+#: deploy_pro/setup_with_openstackswift.md:15
+# code block
+msgid "```\n"
+"sudo easy_install boto\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:14
+#: deploy_pro/setup_with_swift.md:12
+# unordered list
+msgid "- Install and configure memcached. For best performance, Seafile requires install memcached and enable memcache for objects. We recommend to allocate 128MB memory for memcached. Edit /etc/memcached.conf"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:16
+#: deploy_pro/setup_with_ceph.md:21
+#: deploy_pro/setup_with_openstackswift.md:23
+#: deploy_pro/setup_with_swift.md:14
+# code block
+msgid "```\n"
+"# Start with a cap of 64 megs of memory. It's reasonable, and the daemon default\n"
+"# Note that the daemon will grow to this size, but does not start out holding this much\n"
+"# memory\n"
+"# -m 64\n"
+"-m 128\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:24
+#: deploy_pro/setup_with_swift.md:22
+# header
+msgid "## Modify Seafile.conf"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:26
+#: deploy_pro/setup_with_ceph.md:47
+#: deploy_pro/setup_with_swift.md:24
+msgid "Edit `seafile.conf`, add the following lines:"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:28
+# code block
+msgid "```\n"
+"[commit_object_backend]\n"
+"name = s3\n"
+"# bucket name can only use lowercase characters, numbers, periods and dashes. Period cannot be used in Frankfurt region.\n"
+"bucket = my-commit-objects\n"
+"key_id = your-key-id\n"
+"key = your-secret-key\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[fs_object_backend]\n"
+"name = s3\n"
+"# bucket name can only use lowercase characters, numbers, periods and dashes. Period cannot be used in Frankfurt region.\n"
+"bucket = my-fs-objects\n"
+"key_id = your-key-id\n"
+"key = your-secret-key\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[block_backend]\n"
+"name = s3\n"
+"# bucket name can only use lowercase characters, numbers, periods and dashes. Period cannot be used in Frankfurt region.\n"
+"bucket = my-block-objects\n"
+"key_id = your-key-id\n"
+"key = your-secret-key\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:54
+msgid "It's recommended to create separate buckets for commit, fs, and block objects."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:55
+msgid "The key_id and key are required to authenticate you to S3. You can find the key_id and key in the \"security credentials\" section on your AWS account page."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:57
+msgid "When creating your buckets on S3, please first read [S3 bucket naming rules][1]. Note especially not to use **UPPERCASE** letters in bucket names (don't use camel style names, such as MyCommitOjbects)."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:59
+# header
+msgid "### Use S3 in newer regions"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:61
+msgid "After Januaray 2014, new regions of AWS will only support authentication signature version 4 for S3. At this time, new region includes Frankfurt and China."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:63
+msgid "To use S3 backend in these regions, add following options to commit_object_backend, fs_object_backend and block_backend section in seafile.conf"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:65
+# code block
+msgid "```\n"
+"use_v4_signature = true\n"
+"# eu-central-1 for Frankfurt region\n"
+"aws_region = eu-central-1\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:71
+msgid "For file search and webdav to work with the v4 signature mechanism, you need to add following lines to ~/.boto"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:73
+# code block
+msgid "```\n"
+"[s3]\n"
+"use-sigv4 = True\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:78
+#: deploy_pro/setup_with_ceph.md:77
+#: deploy_pro/setup_with_openstackswift.md:153
+#: deploy_pro/setup_with_swift.md:64
+# header
+msgid "### Using memcached cluster"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:80
+#: deploy_pro/setup_with_ceph.md:79
+#: deploy_pro/setup_with_openstackswift.md:155
+#: deploy_pro/setup_with_swift.md:66
+msgid "In a cluster environment, you may want to use a memcached cluster. In the above configuration, you have to specify all the memcached server node addresses in seafile.conf"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:82
+#: deploy_pro/setup_with_ceph.md:81
+#: deploy_pro/setup_with_openstackswift.md:157
+#: deploy_pro/setup_with_swift.md:68
+# code block
+msgid "```\n"
+"memcached_options = --SERVER=192.168.1.134 --SERVER=192.168.1.135 --SERVER=192.168.1.136 --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:86
+# header
+msgid "### Use HTTPS connections to S3"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:88
+msgid "Since Pro 5.0.4, you can use HTTPS connections to S3. Add the following options to seafile.conf:"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:90
+# code block
+msgid "```\n"
+"[commit_object_backend]\n"
+"name = s3\n"
+"......\n"
+"use_https = true\n"
+"\n"
+"[fs_object_backend]\n"
+"name = s3\n"
+"......\n"
+"use_https = true\n"
+"\n"
+"[block_backend]\n"
+"name = s3\n"
+"......\n"
+"use_https = true\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:107
+#: deploy_pro/setup_with_swift.md:93
+msgid "Because the server package is built on CentOS 6, if you're using Debian/Ubuntu, you have to copy the system CA bundle to CentOS's CA bundle path. Otherwise Seafile can't find the CA bundle so that the SSL connection will fail."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:109
+#: deploy_pro/setup_with_swift.md:95
+# code block
+msgid "```\n"
+"sudo mkdir -p /etc/pki/tls/certs\n"
+"sudo cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt\n"
+"sudo ln -s /etc/pki/tls/certs/ca-bundle.crt /etc/pki/tls/cert.pem\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:115
+msgid "Another important note is that you **must not use '.' in your bucket names**. Otherwise the wildcard certificate for AWS S3 cannot be resolved. This is a limitation on AWS."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:117
+# header
+msgid "## Use S3-compatible Object Storage"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:119
+msgid "Many object storage systems are now compatible with the S3 API, such as OpenStack Swift and Ceph's RADOS Gateway. You can use these S3-compatible storage systems as backend for Seafile. Here is an example config:"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:121
+# code block
+msgid "```\n"
+"[commit_object_backend]\n"
+"name = s3\n"
+"bucket = my-commit-objects\n"
+"key_id = your-key-id\n"
+"key = your-secret-key\n"
+"host = 192.168.1.123:8080\n"
+"path_style_request = true\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[fs_object_backend]\n"
+"name = s3\n"
+"bucket = my-fs-objects\n"
+"key_id = your-key-id\n"
+"key = your-secret-key\n"
+"host = 192.168.1.123:8080\n"
+"path_style_request = true\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[block_backend]\n"
+"name = s3\n"
+"bucket = my-block-objects\n"
+"key_id = your-key-id\n"
+"key = your-secret-key\n"
+"host = 192.168.1.123:8080\n"
+"path_style_request = true\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:150
+msgid "`host` is the address and port of the S3-compatible service. You cannot prepend \"http\" or \"https\" to the `host` option. By default it'll use http connections. If you want to use https connection, please set `https = true` option."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:152
+msgid "`path_style_request` asks Seafile to use URLs like `https://192.168.1.123:8080/bucketname/object` to access objects. In Amazon S3, the default URL format is in virtual host style, such as `https://bucketname.s3.amazonaws.com/object`. But this style relies on advanced DNS server setup. So most S3-compatible storage systems only implement the path style format."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:154
+#: deploy_pro/setup_with_openstackswift.md:161
+#: deploy_pro/setup_with_swift.md:101
+# header
+msgid "## Run and Test ##"
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:156
+#: deploy_pro/setup_with_openstackswift.md:163
+#: deploy_pro/setup_with_swift.md:103
+msgid "Now you can start Seafile by `./seafile.sh start` and `./seahub.sh start` and visit the website."
+msgstr ""
+
+#: deploy_pro/setup_with_amazon_s3.md:158
+msgid "  [1]: http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html \"the bucket naming rules\""
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:1
+# header
+msgid "# Setup With Ceph"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:5
+msgid "Ceph is a scalable distributed storage system. Seafile can use Ceph's RADOS object storage layer for storage backend."
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:7
+# header
+msgid "## Copy ceph conf file and client keyring"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:9
+msgid "Seafile acts as a client to Ceph/RADOS, so it needs to access ceph cluster's conf file and keyring. You have to copy these files from a ceph admin node's /etc/ceph directory to the seafile machine."
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:11
+# code block
+msgid "```\n"
+"seafile-machine# sudo scp user@ceph-admin-node:/etc/ceph/ /etc\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:15
+# header
+msgid "## Install and enable memcached"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:17
+#: deploy_pro/setup_with_openstackswift.md:19
+msgid "For best performance, Seafile requires install memcached and enable memcache for objects. "
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:19
+#: deploy_pro/setup_with_openstackswift.md:21
+msgid "We recommend to allocate 128MB memory for memcached. Edit /etc/memcached.conf"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:29
+# header
+msgid "## Install Python Ceph Library"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:31
+msgid "File search and WebDAV functions rely on Python Ceph library installed in the system."
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:35
+# code block
+msgid "```\n"
+"sudo apt-get install python-ceph\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:39
+msgid "On RedHat/CentOS:"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:41
+# code block
+msgid "```\n"
+"sudo yum install python-rados\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:45
+# header
+msgid "## Edit seafile configuration"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:49
+# code block
+msgid "```\n"
+"[block_backend]\n"
+"name = ceph\n"
+"ceph_config = /etc/ceph/ceph.conf\n"
+"pool = seafile-blocks\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[commit_object_backend]\n"
+"name = ceph\n"
+"ceph_config = /etc/ceph/ceph.conf\n"
+"pool = seafile-commits\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[fs_object_backend]\n"
+"name = ceph\n"
+"ceph_config = /etc/ceph/ceph.conf\n"
+"pool = seafile-fs\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:69
+msgid "It's recommended to create separate pools for commit, fs, and block objects."
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:71
+# code block
+msgid "```\n"
+"ceph-admin-node# rados mkpool seafile-blocks\n"
+"ceph-admin-node# rados mkpool seafile-commits\n"
+"ceph-admin-node# rados mkpool seafile-fs\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:85
+# header
+msgid "## Use arbitary Ceph user"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:87
+msgid "The above configuration will use the default (client.admin) user to connect to Ceph."
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:88
+msgid "You may want to use some other Ceph user to connect. This is supported in Seafile."
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:89
+msgid "To specify the Ceph user, you have to add a `ceph_client_id` option to seafile.conf, as the following:"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:91
+# code block
+msgid "```\n"
+"[block_backend]\n"
+"name = ceph\n"
+"ceph_config = /etc/ceph/ceph.conf\n"
+"# Sepcify Ceph user for Seafile here\n"
+"ceph_client_id = seafile\n"
+"pool = seafile-blocks\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[commit_object_backend]\n"
+"name = ceph\n"
+"ceph_config = /etc/ceph/ceph.conf\n"
+"# Sepcify Ceph user for Seafile here\n"
+"ceph_client_id = seafile\n"
+"pool = seafile-commits\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[fs_object_backend]\n"
+"name = ceph\n"
+"ceph_config = /etc/ceph/ceph.conf\n"
+"# Sepcify Ceph user for Seafile here\n"
+"ceph_client_id = seafile\n"
+"pool = seafile-fs\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:117
+msgid "You also have to add this user's keyring path to /etc/ceph/ceph.conf:"
+msgstr ""
+
+#: deploy_pro/setup_with_ceph.md:119
+# code block
+msgid "```\n"
+"[client.seafile]\n"
+"keyring = <path to user's keyring file>\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:1
+# header
+msgid "# Setup With OpenStackSwift"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:5
+msgid "Note: This documentation is obsolete. Please refer to [the new documentation about how to use Swift](setup_with_swift.md)."
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:7
+msgid "Starting from professional server 2.0.5, Seafile can use S3-compatible cloud storage (such as OpenStack/Swift) as backend. This document will use Swift as example."
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:9
+# header
+msgid "## Seafile Server Preparation"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:11
+msgid "To setup Seafile Professional Server with OpenStack Swift:"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:13
+# unordered list
+msgid "- Setup the basic Seafile Professional Server following the guide on [Download and Setup Seafile Professional Server](download_and_setup_seafile_professional_server.md)"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:14
+# unordered list
+msgid "- Install the python `boto` library. It's needed to access Swift."
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:31
+# header
+msgid "## Swift Preparation"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:33
+msgid "In a production environment, you'll configure Swift with S3 middleware and use Keystone for authentication. The following instructions assumes you've already setup Swift with Keystone authentication. We'll focus on the change you need to make Swift work with S3 middleware."
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:35
+# header
+msgid "### Install Swift3"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:37
+msgid "This middleware implements S3 API for Swift."
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:39
+# code block
+msgid "```\n"
+"git clone https://github.com/fujita/swift3.git\n"
+"cd swift3\n"
+"sudo python setup.py install\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:45
+# header
+msgid "### Install keystonmiddleware"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:47
+msgid "This middleware contains the `s3token` filter for authentication between S3 API and Keystone. If you've configured Swift to work with Keystone, you should have this middleware installed already."
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:49
+# code block
+msgid "```\n"
+"git clone https://github.com/openstack/keystonemiddleware.git\n"
+"cd keystonmiddleware\n"
+"sudo pip install -r requirements.txt\n"
+"sudo python setup.py install\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:56
+# header
+msgid "### Modify proxy-server.conf for Swift"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:58
+msgid "On Ubuntu, the config file is `/etc/swift/proxy-server.conf`."
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:60
+msgid "First check whether you've replaced `tempauth` with `authtoken keystoneauth` in the main pipeline. This should have been done if you configured Swift to work with Keystone."
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:62
+msgid "Add `swift3 s3token` to `[pipeline:main]`:"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:64
+# code block
+msgid "```\n"
+"[pipeline:main]\n"
+"pipeline = [...] swift3 s3token authtoken keystoneauth proxy-server\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:69
+msgid "Add filters:"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:71
+# code block
+msgid "```\n"
+"[filter:swift3]  \n"
+"use = egg:swift3#swift3\n"
+"\n"
+"[filter:s3token]  \n"
+"paste.filter_factory = keystonemiddleware.s3_token:filter_factory  \n"
+"auth_port = 35357  \n"
+"auth_host = [keystone-ip]  \n"
+"auth_protocol = http  \n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:82
+# header
+msgid "### Restart Swift"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:84
+# code block
+msgid "```\n"
+"swift-init proxy restart\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:88
+# header
+msgid "### Accessing Swift via S3 API"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:90
+msgid "To access it via S3 API, you'll need AWS-like access key id and secret access key. Generate it with the following command for your specific tenant and user (You should change the tenant-id and user-id):"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:92
+# code block
+msgid "```\n"
+"keystone ec2-credentials-create --tenant-id=d6fdc8460c7b46d0ad24aa23667b85c3 --user-id=b66742a744eb4fc98abd945781bf969d\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:96
+msgid "After successfully setup S3 middleware, you should be able to access it with any S3 clients. The next thing you need to do is to create buckets for Seafile. With Python boto library you can do as follows (replace `key_id` and `secret_key` with your own):"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:98
+# code block
+msgid "```\n"
+"import boto\n"
+"import boto.s3.connection\n"
+"\n"
+"connection = boto.connect_s3(\n"
+"    aws_access_key_id='<key_id>',\n"
+"    aws_secret_access_key='<secret_key>',\n"
+"    port=8080,\n"
+"    host='swift-proxy-server-address',\n"
+"    is_secure=False,\n"
+"    calling_format=boto.s3.connection.OrdinaryCallingFormat())\n"
+"connection.create_bucket('seafile-commits')\n"
+"connection.create_bucket('seafile-fs')\n"
+"connection.create_bucket('seafile-blocks')\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:114
+msgid "Each S3 bucket maps to a container in Swift. So you can use native Swift command line to check the containers. For example:"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:116
+# code block
+msgid "```\n"
+"swift -V 2 -A http://[keystone_ip]:5000/v2.0 -U [tenant]:[user] -K [pas] list\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:120
+# header
+msgid "## Modify seafile.conf"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:122
+msgid "Append the following lines to `seafile.conf` (replace `key_id` and `secret_key` with your own)"
+msgstr ""
+
+#: deploy_pro/setup_with_openstackswift.md:124
+# code block
+msgid "```\n"
+"[block_backend]\n"
+"name = s3\n"
+"bucket = seafile-blocks\n"
+"key_id = <key_id>\n"
+"key = <secret_key>\n"
+"host = <swift-proxy-server-address>:8080\n"
+"path_style_request = true\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[commit_object_backend]\n"
+"name = s3\n"
+"bucket = seafile-commits\n"
+"key_id = <key_id>\n"
+"key = <secret_key>\n"
+"host = <swift-proxy-server-address>:8080\n"
+"path_style_request = true\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[fs_object_backend]\n"
+"name = s3\n"
+"bucket = seafile-fs\n"
+"key_id = <key_id>\n"
+"key = <secret_key>\n"
+"host = <swift-proxy-server-address>:8080\n"
+"path_style_request = true\n"
+"memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:1
+# header
+msgid "# Setup With OpenStack Swift"
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:5
+msgid "Seafile supports OpenStack Swift as storage backend since 5.1.0. This backend uses the native Swift API. Previously users can only use the S3-compatibility layer of Swift. That way is obsolete now. The old documentation is still available [here](setup_with_openstackswift.md)."
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:9
+msgid "To setup Seafile Professional Server with Swift:"
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:26
+# code block
+msgid "```\n"
+"[block_backend]\n"
+"name = swift\n"
+"tenant = yourTenant\n"
+"user_name = user\n"
+"password = secret\n"
+"container = seafile-blocks\n"
+"auth_host = 192.168.56.31:5000\n"
+"auth_ver = v2.0\n"
+"memcached_options = --SERVER=192.168.1.134:11211 --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[commit_object_backend]\n"
+"name = swift\n"
+"tenant = yourTenant\n"
+"user_name = user\n"
+"password = secret\n"
+"container = seafile-commits\n"
+"auth_host = 192.168.56.31:5000\n"
+"auth_ver = v2.0\n"
+"memcached_options = --SERVER=192.168.1.134:11211 --POOL-MIN=10 --POOL-MAX=100\n"
+"\n"
+"[fs_object_backend]\n"
+"name = swift\n"
+"tenant = yourTenant\n"
+"user_name = user\n"
+"password = secret\n"
+"container = seafile-fs\n"
+"auth_host = 192.168.56.31:5000\n"
+"auth_ver = v2.0\n"
+"memcached_options = --SERVER=192.168.1.134:11211 --POOL-MIN=10 --POOL-MAX=100\n"
+"```"
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:58
+msgid "The above config is just an example. You should replace the options according to your own environment."
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:60
+msgid "Seafile only supports Swift with Keystone as authentication mechanism. Currently only the v2.0 auth protocol is supported. The `auth_host` option is the address and port of Keystone service."
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:62
+msgid "It's recommended to create separate containers for commit, fs, and block objects."
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:72
+# header
+msgid "### Use HTTPS connections to Swift"
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:74
+msgid "Since Pro 5.0.4, you can use HTTPS connections to Swift. Add the following options to seafile.conf:"
+msgstr ""
+
+#: deploy_pro/setup_with_swift.md:76
+# code block
+msgid "```\n"
+"[commit_object_backend]\n"
+"name = swift\n"
+"......\n"
+"use_https = true\n"
+"\n"
+"[fs_object_backend]\n"
+"name = swift\n"
+"......\n"
+"use_https = true\n"
+"\n"
+"[block_backend]\n"
+"name = swift\n"
+"......\n"
+"use_https = true\n"
+"```"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:1
+# header
+msgid "# Upgrade a Seafile cluster"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:3
+# header
+msgid "## Major and minor version upgrade"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:5
+msgid "Seafile adds new features in major and minor versions. It is likely that some database tables need to be modified or the search index need to be updated. In general, upgrading a cluster contains the following steps:"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:7
+# ordered list
+msgid "1. Upgrade the database"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:8
+# ordered list
+msgid "2. Update symbolic link at frontend and backend nodes to point to the newest version"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:9
+# ordered list
+msgid "3. Update configuration files at each node"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:10
+# ordered list
+msgid "4. Update search index in the backend node"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:12
+msgid "In general, to upgrade a cluster, you need:"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:14
+# ordered list
+msgid "1. Run the upgrade script (for example, ./upgrade/upgrade_4_0_4_1.sh) in one frontend node"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:15
+# ordered list
+msgid "2. Run the minor upgrade script (./upgrade/minor_upgrade.sh) in all other nodes to update symbolic link"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:16
+# ordered list
+msgid "3. Update configuration files at each node according to the documentation for each version"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:17
+# ordered list
+msgid "4. Delete old search index in the backend node if needed"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:19
+# header
+msgid "## Maintanence upgrade"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:21
+msgid "Doing maintanence upgrading is simple, you only need to run the script `./upgrade/minor_upgrade.sh` at each node to update the symbolic link."
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:23
+# header
+msgid "## Specific instructions for each version"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:25
+# header
+msgid "### From v4.4 to v5.0"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:27
+msgid "v5.0 introduces some database schema change, and all configuration files (ccnet.conf, seafile.conf, seafevents.conf, seahub_settings.py) are moved to a central config directory."
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:29
+#: deploy_pro/upgrade_a_cluster.md:66
+msgid "Perform the following steps to upgrade:"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:31
+# unordered list
+msgid "- Run the upgrade script at one fronend node to upgrade the database."
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:32
+# code block
+msgid "```\n"
+"./upgrade/upgrade_4.4_5.0.sh\n"
+"```"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:35
+# unordered list
+msgid "- Then, on all other frontend nodes and the background node, run the upgrade script with `SEAFILE_SKIP_DB_UPGRADE` environmental variable turned on:"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:36
+# code block
+msgid "```\n"
+"SEAFILE_SKIP_DB_UPGRADE=1 ./upgrade/upgrade_4.4_5.0.sh\n"
+"```"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:40
+msgid "After the upgrade, you should see the configuration files has been moved to the conf/ folder."
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:42
+# code block
+msgid "```\n"
+"conf/\n"
+"  |__ ccnet.conf\n"
+"  |__ seafile.conf\n"
+"  |__ seafevent.conf\n"
+"  |__ seafdav.conf\n"
+"  |__ seahub_settings.conf\n"
+"```"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:52
+# header
+msgid "### From v4.3 to v4.4"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:54
+msgid "There are no database and search index upgrade from v4.3 to v4.4. Perform the following steps to upgrade:"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:56
+# ordered list
+msgid "1. Run the minor upgrade script at frontend and backend nodes"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:58
+# header
+msgid "### From v4.2 to v4.3"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:60
+msgid "v4.3 contains no database table change from v4.2. But the old search index will be deleted and regenerated."
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:62
+msgid "A new option COMPRESS_CACHE_BACKEND = 'locmem://' should be added to seahub_settings.py"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:64
+msgid "The secret key in seahub_settings.py need to be regenerated, the old secret key lack enough randomness."
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:68
+# ordered list
+msgid "1. Run the upgrade script at one fronend node to modify the seahub_settings.py"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:69
+# ordered list
+msgid "2. Modify seahub_settings.py at each node, replacing the old secret key with the new one and add option COMPRESS_CACHE_BACKEND"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:70
+# ordered list
+msgid "3. Run the minor upgrade script at frontend and backend nodes"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:71
+# ordered list
+msgid "4. Delete the old search index (the folder pro-data/search) at the backend node"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:72
+# ordered list
+msgid "5. Delete the old office preview output folder (/tmp/seafile-office-output) at the backend node"
+msgstr ""
+
+#: deploy_pro/upgrading_seafile_professional_server.md:1
+# header
+msgid "# Upgrading Seafile Professional Server"
+msgstr ""
+
+#: deploy_pro/upgrading_seafile_professional_server.md:3
+msgid "Upgrading pro server is the same as [upgrading a community server](../deploy/upgrade.md)"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:1
+# header
+msgid "# Configure Seafile Pro Edition to use LDAP"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:3
+# header
+msgid "## How does LDAP User Management Works in Seafile"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:5
+msgid "When Seafile is integrated with LDAP/AD, users in the system can be divided into two tiers:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:7
+# unordered list
+msgid "- Users within Seafile's internal user database. Some attributes are attached to these users, such as whether it's a system admin user, whether it's activated. This tier includes two types of users:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:8
+# unordered list
+msgid "    * Native users: these users are created by the admin on Seafile's system admin interface. These users are stored in the `EmailUser` table of the `ccnet` database."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:9
+# unordered list
+msgid "    * Users imported from LDAP/AD server: When a user in LDAP/AD logs into Seafile, its information will be imported from LDAP/AD server into Seafile's database. These users are stored in the `LDAPUsers` table of the `ccnet` database."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:10
+# unordered list
+msgid "- Users in LDAP/AD server. These are all the intended users of Seafile inside the LDAP server. Seafile doesn't manipulate these users directly. It has to import them into its internal database before setting attributes on them."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:12
+msgid "When Seafile counts the user number in the system, it only counts the **activated** users in its internal database."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:14
+msgid "When Seafile is integrated with LDAP/AD, it'll look up users from both the internal database and LDAP server. As long as the user exists in one of these two sources, he/she can log into the system."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:16
+# header
+msgid "## Basic LDAP/AD Integration"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:18
+msgid "The only requirement for Seafile to use LDAP/AD for authentication is that, there must be a unique identifier for each user in the LDAP/AD server. Seafile can only use email-address-format user identifiers. So there are usually only two options for this unique identifier:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:20
+# unordered list
+msgid "- Email address: this is the most common choice. Most organizations assign unique email address for each member."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:21
+# unordered list
+msgid "- UserPrincipalName: this is a user attribute only available in Active Directory. It's format is `user-login-name@domain-name`, e.g. `john@example.com`. It's not a real email address, but it works fine as the unique identifier."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:23
+# header
+msgid "### Connecting to Active Directory"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:25
+msgid "To use AD to authenticate user, please add the following lines to ccnet.conf."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:27
+msgid "If you choose email address as unique identifier:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:29
+#: deploy_pro/using_ldap_pro.md:38
+#: deploy_pro/using_ldap_pro.md:64
+msgid "    [LDAP]"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:30
+#: deploy_pro/using_ldap_pro.md:39
+#: deploy_pro/using_ldap_pro.md:65
+msgid "    HOST = ldap://192.168.1.123/"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:31
+#: deploy_pro/using_ldap_pro.md:40
+msgid "    BASE = cn=users,dc=example,dc=com"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:32
+#: deploy_pro/using_ldap_pro.md:41
+msgid "    USER_DN = administrator@example.local"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:33
+#: deploy_pro/using_ldap_pro.md:42
+#: deploy_pro/using_ldap_pro.md:68
+msgid "    PASSWORD = secret"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:34
+#: deploy_pro/using_ldap_pro.md:69
+msgid "    LOGIN_ATTR = mail"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:36
+msgid "If you choose UserPrincipalName as unique identifier:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:43
+msgid "    LOGIN_ATTR = userPrincipalName"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:45
+msgid "Meaning of each config options:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:47
+# unordered list
+msgid "* HOST: LDAP URL for the host. ldap://, ldaps:// and ldapi:// are supported. You can also include port number in the URL, like ldap://ldap.example.com:389. To use TLS, you should configure the LDAP server to listen on LDAPS port and specify ldaps:// here. More details about TLS will be covered below."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:48
+# unordered list
+msgid "* BASE: The root distinguished name (DN) to use when running queries against the directory server. **You cannot use the root DN (e.g. dc=example,dc=com) as BASE**."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:49
+# unordered list
+msgid "* USER_DN: The distinguished name of the user that Seafile will use when connecting to the directory server. This user should have sufficient privilege to access all the nodes under BASE. It's recommended to use a user in the administrator group."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:50
+# unordered list
+msgid "* PASSWORD: Password of the above user."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:51
+# unordered list
+msgid "* LOGIN_ATTR: The attribute used for user's unique identifier. Use `mail` or `userPrincipalName`."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:53
+msgid "Tips for choosing BASE and USER_DN:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:55
+# unordered list
+msgid "* To determine the BASE, you first have to navigate your organization hierachy on the domain controller GUI."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:56
+# unordered list
+msgid "    * If you want to allow all users to use Seafile, you can use 'cn=users,dc=yourdomain,dc=com' as BASE (with proper adjustment for your own needs)."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:57
+# unordered list
+msgid "    * If you want to limit users to a certain OU (Organization Unit), you run `dsquery` command on the domain controller to find out the DN for this OU. For example, if the OU is 'staffs', you can run 'dsquery ou -name staff'. More information can be found [here](https://technet.microsoft.com/en-us/library/cc770509.aspx)."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:58
+# unordered list
+msgid "* AD supports 'user@domain.name' format for the USER_DN option. For example you can use administrator@example.com for USER_DN. Sometime the domain controller doesn't recognize this format. You can still use `dsquery` command to find out user's DN. For example, if the user name is 'seafileuser', run `dsquery user -name seafileuser`. More information [here](https://technet.microsoft.com/en-us/library/cc725702.aspx)."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:60
+# header
+msgid "### Connecting to other LDAP servers"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:62
+msgid "Please add the following options to ccnet.conf:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:66
+msgid "    BASE = ou=users,dc=example,dc=com"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:67
+msgid "    USER_DN = cn=admin,dc=example,dc=com"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:71
+msgid "The meaning of the options are the same as described in the previous section. With other LDAP servers, you can only use `mail` attribute as user's unique identifier."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:73
+# header
+msgid "### Testing Your LDAP Configuration"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:75
+msgid "Since 5.0.0 Pro Edition, we provide a command line tool for checking your LDAP configuration."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:77
+msgid "To use this tool, make sure you have `python-ldap` package installed on your system."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:83
+msgid "Then you can run the test:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:85
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./pro/pro.py ldapsync --test\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:90
+msgid "The test script will test your LDAP settings under the `[LDAP]` section of ccnet.conf. If everything works, it'll print the first ten users in the search results. Otherwise, it'll print out possible errors in your config."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:92
+# header
+msgid "## Setting Up LADP/AD User Sync (Optional)"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:94
+msgid "In Seafile Pro, except for importing users into internal database when they log in, you can also configure Seafile to periodically sync user information from LDAP/AD server into the internal database."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:96
+# unordered list
+msgid "- User's full name, department, contact email address can be synced to internal database. Users can use this information to more easily search for specific user."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:97
+# unordered list
+msgid "- User's Windows or Unix login id can be synced the internal database. This allows the user to log in with his/her familiar login id."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:98
+# unordered list
+msgid "- When a user is removed from LDAP/AD, the corresponding user in Seafile will be deactivated. Otherwise, he/she can still sync files with Seafile client or access the web interface."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:100
+msgid "After syncing is complete, you can see the user's full name, department and contact email on the user's profile page."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:102
+# header
+msgid "### Active Directory"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:104
+msgid "If you're using Active Directory, add the following options to ccnet.conf:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:106
+# code block
+msgid "```\n"
+"[LDAP]\n"
+"......\n"
+"\n"
+"[LDAP_SYNC]\n"
+"ENABLE_USER_SYNC = true\n"
+"SYNC_INTERVAL = 60\n"
+"USER_OBJECT_CLASS = person\n"
+"ENABLE_EXTRA_USER_INFO_SYNC = true\n"
+"FIRST_NAME_ATTR = givenName\n"
+"LAST_NAME_ATTR = sn\n"
+"DEPT_ATTR = department\n"
+"UID_ATTR = sAMAccountName\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:121
+#: deploy_pro/using_ldap_pro.md:155
+msgid "Meaning of each options:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:123
+#: deploy_pro/using_ldap_pro.md:157
+# unordered list
+msgid "- **ENABLE_USER_SYNC**: set to \"true\" if you want to enable ldap user syncing"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:124
+#: deploy_pro/using_ldap_pro.md:158
+# unordered list
+msgid "- **SYNC_INTERVAL**: The interval to sync. Unit is minutes. Default to 60 minutes."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:125
+# unordered list
+msgid "- **USER_OBJECT_CLASS**: This is the name of the class used to search for user objects. In Active Directory, it's usually \"person\". The default value is \"person\"."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:126
+# unordered list
+msgid "- **ENABLE_EXTRA_USER_INFO_SYNC**: Enable syncing additional user information, including user full name, department, and Windows login name, etc."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:127
+#: deploy_pro/using_ldap_pro.md:161
+# unordered list
+msgid "- **FIRST_NAME_ATTR**: Attribute for user's first name. It's \"givenName\" by default."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:128
+#: deploy_pro/using_ldap_pro.md:162
+# unordered list
+msgid "- **LAST_NAME_ATTR**: Attribute for user's last name. It's \"sn\" by default."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:129
+#: deploy_pro/using_ldap_pro.md:163
+# unordered list
+msgid "- **USER_NAME_REVERSE**: In some laguages, such as Chinese, the display order of first name and last name is reversed. Set this option if you need it."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:130
+#: deploy_pro/using_ldap_pro.md:164
+# unordered list
+msgid "- **DEPT_ATTR**: Attribute for user's department. It's \"department\" by default."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:131
+# unordered list
+msgid "- **UID_ATTR**: Attribute for Windows login name. If this is synced, users can also log in with their Windows login name. In AD, the attribute `sAMAccountName` can be used as `UID_ATTR`."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:133
+msgid "If you choose `userPrincipalName` as the unique identifier for user, Seafile cannot use that as real email address to send notification emails to user. If the users in AD also have email address attributes, you can sync these email addresses into Seafile's internal database. Seafile can then use them to send emails. The configuration option is:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:134
+# unordered list
+msgid "- **CONTACT_EMAIL_ATTR**: usually you can set it to the `mail` attribute."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:136
+# header
+msgid "### Other LDAP servers"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:138
+msgid "Add the following options to ccnet.conf:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:140
+# code block
+msgid "```\n"
+"[LDAP]\n"
+"......\n"
+"\n"
+"[LDAP_SYNC]\n"
+"ENABLE_USER_SYNC = true\n"
+"SYNC_INTERVAL = 60\n"
+"USER_OBJECT_CLASS = userOfNames\n"
+"ENABLE_EXTRA_USER_INFO_SYNC = true\n"
+"FIRST_NAME_ATTR = givenName\n"
+"LAST_NAME_ATTR = sn\n"
+"DEPT_ATTR = department\n"
+"UID_ATTR = uid\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:159
+# unordered list
+msgid "- **USER_OBJECT_CLASS**: This is the name of the class used to search for user objects. In OpenLDAP, you can use \"userOfNames\". The default value is \"person\"."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:160
+# unordered list
+msgid "- **ENABLE_EXTRA_USER_INFO_SYNC**: Enable syncing additional user information, including user full name, department, and Windows/Unix login name, etc."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:165
+# unordered list
+msgid "- **UID_ATTR**: Attribute for Windows/Unix login name. If this is synced, users can also log in with their Windows/Unix login name. In OpenLDAP, the attribute `uid` or something similar can be used."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:167
+# header
+msgid "### Manually Trigger Syncing"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:169
+msgid "To test your LDAP sync configuration, you can run the sync command manually."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:178
+# header
+msgid "### Don't Import New Users in LDAP Sync"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:180
+msgid "By default, when LDAP sync process detects that a new user is added in the LDAP server, it'll automatically sync that user into internal database. And the new users will be activated by default. This will consume one more user license. "
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:182
+msgid "Let's consider the following situation: you have a lot of users in the LDAP server, but you don't buy enough licenses to add all these users into Seafile. Enabling LDAP sync will consume all the licenses you buy and make your Seafile installation unusable. The ideal solution would be: new users are only added to Seafile when they log in for the first time. And LDAP sync only sync information from LDAP server for existing users. The following option is for this exact purpose:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:184
+# code block
+msgid "```\n"
+"[LDAP_SYNC]\n"
+"IMPORT_NEW_USER = false\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:189
+# header
+msgid "## Advanced LDAP/AD Integration Options"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:191
+# header
+msgid "### Multiple BASE"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:193
+msgid "Multiple base DN is useful when your company has more than one OUs to use Seafile. You can specify a list of base DN in the \"BASE\" config. The DNs are separated by \";\", e.g. `ou=developers,dc=example,dc=com;ou=marketing,dc=example,dc=com`"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:195
+# header
+msgid "### Additional Search Filter"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:197
+msgid "Search filter is very useful when you have a large organization but only a portion of people want to use Seafile. The filter can be given by setting \"FILTER\" config. The value of this option follows standard LDAP search filter syntax (https://msdn.microsoft.com/en-us/library/aa746475(v=vs.85).aspx)."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:199
+msgid "The final filter used for searching for users is `(&($LOGIN_ATTR=*)($FILTER))`. `$LOGIN_ATTR` and `$FILTER` will be replaced by your option values."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:201
+msgid "For example, add the following line to LDAP config:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:203
+# code block
+msgid "```\n"
+"FILTER = memberOf=CN=group,CN=developers,DC=example,DC=com\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:207
+msgid "The final search filter would be `(&(mail=*)(memberOf=CN=group,CN=developers,DC=example,DC=com))`"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:209
+msgid "Note that the cases in the above example is significant. The `memberOf` attribute is only available in Active Directory."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:211
+# header
+msgid "### Limiting Seafile Users to a Group in Active Directory"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:213
+msgid "You can use the FILTER option to limit user scope to a certain AD group."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:215
+# ordered list
+msgid "1. First, you should find out the DN for the group. Again, we'll use `dsquery` command on the domain controller. For example, if group name is 'seafilegroup', run `dsquery group -name seafilegroup`."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:216
+# ordered list
+msgid "2. Add following line to LDAP config:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:218
+# code block
+msgid "```\n"
+"FILTER = memberOf={output of dsquery command}\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:222
+# header
+msgid "### Using TLS connection to LDAP/AD server"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:224
+msgid "To use TLS connection to the directory server, you should install a valid SSL certificate on the directory server."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:226
+msgid "The current version of Seafile Linux server package is compiled on CentOS. We include the ldap client library in the package to maintain compatibility with older Linux distributions. But since different Linux distributions have different path or configuration for OpenSSL library, sometimes Seafile is unable to connect to the directory server with TLS."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:228
+msgid "The ldap library (libldap) bundled in the Seafile package is of version 2.4. If your Linux distribution is new enough (like CentOS 6, Debian 7 or Ubuntu 12.04 or above), you can use system's libldap instead."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:230
+msgid "On Ubuntu 14.04 and Debian 7/8, moving the bundled ldap related libraries out of the library path should make TLS connection work."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:232
+# code block
+msgid "```\n"
+"cd ${SEAFILE_INSTALLATION_DIR}/seafile-server-latest/seafile/lib\n"
+"mkdir disabled_libs_use_local_ones_instead\n"
+"mv liblber-2.4.so.2 libldap-2.4.so.2 libsasl2.so.2 libldap_r-2.4.so.2 disabled_libs_use_local_ones_instead/\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:238
+msgid "On CentOS 6, you have to move the libnssutil library:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:240
+# code block
+msgid "```\n"
+"cd ${SEAFILE_INSTALLATION_DIR}/seafile-server-latest/seafile/lib\n"
+"mkdir disabled_libs_use_local_ones_instead\n"
+"mv libnssutil3.so disabled_libs_use_local_ones_instead/\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:246
+msgid "This effectively removes the bundled libraries from the library search path. "
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:247
+msgid "When the server starts, it'll instead find and use the system libraries (if they are installed). "
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:248
+msgid "This change has to be repeated after each update of the Seafile installation."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:251
+# header
+msgid "### Use paged results extension"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:253
+msgid "LDAP protocol version 3 supports \"paged results\" (PR) extension. When you have large number of users, this option can greatly improve the performance of listing users. Most directory server nowadays support this extension."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:255
+msgid "In Seafile Pro Edition, add this option to LDAP section of ccnet.conf to enable PR:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:257
+# code block
+msgid "```\n"
+"USE_PAGED_RESULT = true\n"
+"```"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:261
+# header
+msgid "### Follow referrals"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:263
+msgid "Starting from Pro Edition 4.0.4, Seafile supports auto following referrals in LDAP search. This is useful for partitioned LDAP or AD servers, where users may be spreaded on multiple directory servers. For more information about referrals, you can refer to [this article](https://technet.microsoft.com/en-us/library/cc978014.aspx)."
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:265
+msgid "To configure, add following option to ccnet.conf in the [LDAP] section:"
+msgstr ""
+
+#: deploy_pro/using_ldap_pro.md:267
+# code block
+msgid "```\n"
+"FOLLOW_REFERRALS = true\n"
+"```"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:1
+# header
+msgid "# Virus Scan"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:5
+msgid "In Seafile Pro Edition 4.4.0 (or above), Seafile can scan virus for uploaded files in the background. When configured to run periodically, the scan process scans all existing libraries on the server. In each scan, the process only scans newly uploaded/updated files since the last scan. For each file, the process executes a user-specified virus scan command to check whether the file is a virus or not. Most anti-virus programs provide command line utility for Linux."
+msgstr ""
+
+#: deploy_pro/virus_scan.md:7
+msgid "To enable this feature, add the following options to `seafile.conf`:"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:9
+# code block
+msgid "```\n"
+"[virus_scan]\n"
+"scan_command = (command for checking virus)\n"
+"virus_code = (command exit codes when file is virus)\n"
+"nonvirus_code = (command exit codes when file is not virus)\n"
+"scan_interval = (scanning interval, in unit of minutes, default to 60 minutes)\n"
+"```"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:17
+msgid "More details about the options:"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:19
+# unordered list
+msgid "* On Linux/Unix, most virus scan commands returns specific exit codes for virus and non-virus. You should consult the manual of your anti-virus program for more information."
+msgstr ""
+
+#: deploy_pro/virus_scan.md:21
+msgid "An example for ClamAV (http://www.clamav.net/) is provided below:"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:23
+# code block
+msgid "```\n"
+"[virus_scan]\n"
+"scan_command = clamscan\n"
+"virus_code = 1\n"
+"nonvirus_code = 0\n"
+"```"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:30
+msgid "To test whether your configuration works, you can trigger a scan manually:"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:32
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"./pro/pro.py virus_scan\n"
+"```"
+msgstr ""
+
+#: deploy_pro/virus_scan.md:37
+msgid "If virus is detected, you can see scan records and delete infected files in Virus Scan page."
+msgstr ""
+
+#: deploy_pro/virus_scan.md:38
+msgid "![virus-scan](../images/virus-scan.png)"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:1
+# header
+msgid "# Virus Scan with kav4fs"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:5
+msgid "Assume you have installed Kaspersky Anti-Virus for Linux File Server in Seafile server machine."
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:7
+msgid "If the user that runs Seafile server is not root, it should have sudoers privilege to avoid writing password when running kav4fs-control. Add following content to /etc/sudoers:"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:9
+# code block
+msgid "```\n"
+"<user of running seafile server>	ALL=(ALL:ALL) ALL\n"
+"<user of running seafile server> ALL=NOPASSWD: /opt/kaspersky/kav4fs/bin/kav4fs-control\n"
+"```"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:14
+# header
+msgid "## Script"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:16
+msgid "As the return code of kav4fs can not reflect the file scan result, we use a shell script to parse"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:17
+msgid "the scan output and based on the parse result to return different return code to reflect the scan result."
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:19
+msgid "Save following contents to a file such as `kav4fs_scan.sh`:"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:21
+# code block
+msgid "```\n"
+"#!/bin/bash\n"
+"\n"
+"TEMP_LOG_FILE=`mktemp /tmp/XXXXXXXXXX`\n"
+"VIRUS_FOUND=1\n"
+"CLEAN=0\n"
+"UNDEFINED=2\n"
+"KAV4FS='/opt/kaspersky/kav4fs/bin/kav4fs-control'\n"
+"if [ ! -x $KAV4FS ]\n"
+"then\n"
+"    echo \"Binary not executable\"\n"
+"    exit $UNDEFINED\n"
+"fi\n"
+"\n"
+"sudo $KAV4FS --scan-file $1 > $TEMP_LOG_FILE\n"
+"if [ \"$?\" -ne 0 ]\n"
+"then\n"
+"    echo \"Error due to check file '$1'\"\n"
+"    exit 3\n"
+"fi\n"
+"THREATS_C=`grep 'Threats found:' $TEMP_LOG_FILE|cut -d':' -f 2|sed 's/ //g'`\n"
+"RISKWARE_C=`grep 'Riskware found:' $TEMP_LOG_FILE|cut -d':' -f 2|sed 's/ //g'`\n"
+"INFECTED=`grep 'Infected:' $TEMP_LOG_FILE|cut -d':' -f 2|sed 's/ //g'`\n"
+"SUSPICIOUS=`grep 'Suspicious:' $TEMP_LOG_FILE|cut -d':' -f 2|sed 's/ //g'`\n"
+"SCAN_ERRORS_C=`grep 'Scan errors:' $TEMP_LOG_FILE|cut -d':' -f 2|sed 's/ //g'`\n"
+"PASSWORD_PROTECTED=`grep 'Password protected:' $TEMP_LOG_FILE|cut -d':' -f 2|sed 's/ //g'`\n"
+"CORRUPTED=`grep 'Corrupted:' $TEMP_LOG_FILE|cut -d':' -f 2|sed 's/ //g'`\n"
+"\n"
+"rm -f $TEMP_LOG_FILE\n"
+"\n"
+"if [ $THREATS_C -gt 0 -o $RISKWARE_C -gt 0 -o $INFECTED -gt 0 -o $SUSPICIOUS -gt 0 ]\n"
+"then\n"
+"    exit $VIRUS_FOUND\n"
+"elif [ $SCAN_ERRORS_C -gt 0 -o $PASSWORD_PROTECTED -gt 0 -o $CORRUPTED -gt 0 ]\n"
+"then\n"
+"    exit $UNDEFINED\n"
+"else\n"
+"    exit $CLEAN\n"
+"fi\n"
+"```"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:62
+msgid "Grant executable privilege to the script:"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:64
+# code block
+msgid "```\n"
+"chmod u+x kav4fs_scan.sh\n"
+"```"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:68
+msgid "The meaing of the script return code:"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:70
+# code block
+msgid "```\n"
+"1: found virus\n"
+"0: no virus\n"
+"other: scan failed\n"
+"```"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:76
+# header
+msgid "## configuration"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:78
+msgid "Add following content to `seafile.conf`:"
+msgstr ""
+
+#: deploy_pro/virus_scan_with_kav4fs.md:80
+# code block
+msgid "```\n"
+"[virus_scan]\n"
+"scan_command = <absolute path of kav4fs_scan.sh>\n"
+"virus_code = 1\n"
+"nonvirus_code = 0\n"
+"scan_interval = <scanning interval, in unit of minutes, default to 60 minutes>\n"
+"```"
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:1
+# header
+msgid "# Web Resumable File Upload"
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:3
+msgid "When upload a large file in the web interface, if the network is unreliable, the upload is often interrupted. It's convenient if the upload can be resumed from where it stopped last time. In Seafile Pro Edition 4.4.0 and above, this feature is supported."
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:5
+msgid "This feature works as following:"
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:7
+# ordered list
+msgid "1. A user uploads a large file on the web interface, and the connection is interrupted after some part of the file is uploaded."
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:8
+# ordered list
+msgid "2. The server remembers where the upload stopped."
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:9
+# ordered list
+msgid "3. When the same file is uploaded to the same library and folder, the server tells the browser where to start the upload."
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:11
+msgid "Limitations:"
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:13
+# ordered list
+msgid "1. Only supports resumble upload. File update and folder upload is not resumable."
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:14
+# ordered list
+msgid "2. Only supports Chrome, Firefox, IE 10+."
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:16
+msgid "To enable this feature, add following options to seahub_settings.py:"
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:18
+# code block
+msgid "```\n"
+"ENABLE_RESUMABLE_FILEUPLOAD = True\n"
+"```"
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:22
+msgid "In Seafile cluster, in order to make this feature function normally, one of the following two special configuration must be done:"
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:24
+# ordered list
+msgid "1. seafile-server-latest/seafile-data/httptemp folder should be shared amoung all front end Seafile server via NFS."
+msgstr ""
+
+#: deploy_pro/web_resumable_upload.md:25
+# ordered list
+msgid "2. Or, configure the load balancer to always send requests from the same IP address to a fixed back end server."
+msgstr ""
+

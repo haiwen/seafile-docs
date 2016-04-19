@@ -1,0 +1,417 @@
+# Korean translation for the seafile-docs.
+# This file is distributed under the same license as the seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-18 23:31:01+0900\n"
+"PO-Revision-Date: 2016-04-11 19:52+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+# header
+#: client/client.md:1
+msgid "# Client"
+msgstr "# 클라이언트"
+
+#: client/client.md:2
+msgid ""
+"This manual explains how to setup and run Seafile client from a pre-built "
+"package."
+msgstr ""
+"이 설명서는 이미 빌드한 Seafile 꾸러미를 설정하고 실행하는 방법을 설명합니다."
+
+# header
+#: client/client.md:4
+msgid "## Components"
+msgstr "## 구성 요소"
+
+#: client/client.md:5
+msgid "Seafile client v3.0 consists of three components:"
+msgstr "Seafile 클라이언트 v3.0에는 다음 세가지 구성요소가 있습니다:"
+
+# unordered list
+#: client/client.md:7
+msgid "* ccnet-daemon: for networking"
+msgstr "* ccnet-daemon: 네트워크 기능 담당"
+
+# unordered list
+#: client/client.md:8
+msgid "* seafile-daemon: for file syncing"
+msgstr "* seafile-daemon: 파일 동기화용"
+
+# unordered list
+#: client/client.md:9
+msgid "* seafile-applet: GUI Client"
+msgstr "* seafile-applet: GUI 클라이언트"
+
+# header
+#: client/client.md:11
+msgid "## Platform Support"
+msgstr "## 플랫폼 지원"
+
+# unordered list
+#: client/client.md:12
+msgid "- GUI Client (seafile-applet)"
+msgstr "- GUI 클라이언트(seafile-applet)"
+
+# unordered list
+#: client/client.md:13
+msgid "    - Availabe on Ubuntu 12.04 or above"
+msgstr "    - Ubuntu 12.04 이상"
+
+# unordered list
+#: client/client.md:14
+msgid "    - Availabe on Windows XP/Vista/7/8"
+msgstr "    - 윈도우 XP/Vista/7/8"
+
+# unordered list
+#: client/client.md:15
+msgid "    - Availabe on Mac OS X 10.6 or above"
+msgstr "    - Mac OS X 10.6 이상"
+
+# unordered list
+#: client/client.md:16
+msgid "    - Availabe on Android"
+msgstr "    - Android"
+
+# unordered list
+#: client/client.md:17
+msgid "    - Availabe on iOS (App Store)"
+msgstr "    - iOS (App Store)"
+
+# unordered list
+#: client/client.md:18
+msgid "- Terminal Client (ccnet-daemon, and seafile-applet)"
+msgstr "- 터미널 클라이언트(ccnet-daemon, seafile-applet)"
+
+# unordered list
+#: client/client.md:19
+msgid "    - Runs on Generic Linux"
+msgstr "    - 일반 리눅스 운영체제에서 실행"
+
+# unordered list
+#: client/client.md:20
+msgid "    - Runs on Windows XP/Vista/7/8"
+msgstr "    - Windows XP/Vista/7/8에서 실행"
+
+# unordered list
+#: client/client.md:21
+msgid "    - Runs on Mac OS X 10.6 or above"
+msgstr "    - Mac OS X 10.6 이상에서 실행"
+
+# header
+#: client/client.md:23
+msgid "## Download"
+msgstr "## 다운로드"
+
+#: client/client.md:25
+msgid ""
+"Visit [our download page](http://www.seafile.com/en/download), download the "
+"latest client package."
+msgstr ""
+"[다운로드 페이지](http://www.seafile.com/en/download)를 방문하여, 최신 클라이"
+"언트 꾸러미를 다운로드하십시오."
+
+#: client/client.md:27
+msgid "Changelog: http://seacloud.cc/group/3/wiki/client-changelog/"
+msgstr "Changelog: http://seacloud.cc/group/3/wiki/client-changelog/"
+
+# header
+#: client/seafile_cli.md:1
+msgid "# Seafile CLI"
+msgstr "# Seafile CLI"
+
+# header
+#: client/seafile_cli.md:3 client/seafile_cli.md:65
+msgid ""
+"init\n"
+"----"
+msgstr ""
+"init\n"
+"----"
+
+#: client/seafile_cli.md:5
+msgid "Initialize config file"
+msgstr "설정 파일을 초기화합니다"
+
+#: client/seafile_cli.md:7
+msgid "usage: seaf-cli -c <config-dir> -o init"
+msgstr "사용법: seaf-cli -c <설정-디렉터리> -o init"
+
+# header
+#: client/seafile_cli.md:9 client/seafile_cli.md:71
+msgid ""
+"start\n"
+"-----"
+msgstr ""
+"start\n"
+"-----"
+
+#: client/seafile_cli.md:11
+msgid "Start seafile-applet to run a seafile client"
+msgstr "seafile 클라이언트를 실행하려면 seafile-applet을 시작하십시오"
+
+#: client/seafile_cli.md:13
+msgid "usage: seaf-cli -c <config-dir> -o start"
+msgstr "사용법: seaf-cli -c <설정-디렉터리> -o start"
+
+# header
+#: client/seafile_cli.md:15
+msgid ""
+"start-ccnet\n"
+"-----------"
+msgstr ""
+"start-ccnet\n"
+"-----------"
+
+# header
+#: client/seafile_cli.md:17
+msgid "Start ccnet daemon"
+msgstr "ccnet 데몬을 시작하십시오"
+
+#: client/seafile_cli.md:19
+msgid "usage: seaf-cli -c <config-dir> -o start-ccnet"
+msgstr "사용법: seaf-cli -c <설정-디렉터리> -o start-ccnet"
+
+# header
+#: client/seafile_cli.md:21
+msgid ""
+"start-seafile\n"
+"-------------"
+msgstr ""
+"start-seafile\n"
+"-------------"
+
+#: client/seafile_cli.md:23
+msgid "Start seafile daemon"
+msgstr "seafile 데몬을 시작하십시오"
+
+#: client/seafile_cli.md:25
+msgid "usage: seaf-cli -c <config-dir> [-w <worktree>] -o start-seafile"
+msgstr "사용법: seaf-cli -c <설정-디렉터리> [-w <작업트리>] -o start-seafile"
+
+# header
+#: client/seafile_cli.md:27
+msgid ""
+"clone\n"
+"-----"
+msgstr ""
+"clone\n"
+"-----"
+
+#: client/seafile_cli.md:29
+msgid "Clone a repo from seafile server"
+msgstr "seafile 서버의 저장소를 복제합니다"
+
+#: client/seafile_cli.md:31
+msgid ""
+"A repo id and a url need to be give because this program need to use seafile "
+"web API v2 to fetch repo information."
+msgstr ""
+"이 프로그램에서 저장소 정보를 가져올 때 seafile 웹 API v2을 활용하므로 저장"
+"소 ID와 URL값을 지정해야합니다."
+
+#: client/seafile_cli.md:33
+msgid ""
+"usage: seaf-cli -c <config-dir> -r <repo-id> -u <url> [-w <worktree>] -o "
+"clone"
+msgstr ""
+"사용법: seaf-cli -c <설정-디렉터리> -r <저장소-ID> -u <URL> [-w <작업트리>] -"
+"o clone"
+
+# header
+#: client/seafile_cli.md:35 client/seafile_cli.md:91
+msgid ""
+"sync\n"
+"----"
+msgstr ""
+"sync\n"
+"----"
+
+#: client/seafile_cli.md:37
+msgid "Try to synchronize a repo"
+msgstr "저장소 동기화를 시도합니다"
+
+#: client/seafile_cli.md:39
+msgid "usage: seaf-cli -c <config-dir> -r <repo-id> -o clone"
+msgstr "사용법: seaf-cli -c <설정-디렉터리> -r <저장소-ID> -o clone"
+
+# header
+#: client/seafile_cli.md:41
+msgid ""
+"remove\n"
+"------"
+msgstr ""
+"remove\n"
+"------"
+
+#: client/seafile_cli.md:43
+msgid "Try to desynchronize a repo"
+msgstr "저장소 동기화 관계를 끊습니다"
+
+#: client/seafile_cli.md:45
+msgid "usage: seaf-cli -c <config-dir> -r <repo-id> -o remove"
+msgstr "사용법: seaf-cli -c <설정-디렉터리> -r <저장소-ID> -o remove"
+
+# header
+#: client/seafile_cli.md:47
+msgid "## Usage"
+msgstr "## 사용법"
+
+#: client/seafile_cli.md:49
+msgid "Subcommands:"
+msgstr "하위 명령:"
+
+#: client/seafile_cli.md:51
+msgid "    init:           create config files for seafile client"
+msgstr "    init:           seafile 클라이언트 설정 파일을 만듭니다"
+
+#: client/seafile_cli.md:52
+msgid "    start:          start and run seafile client as daemon"
+msgstr "    start:          Seafile 클라이언트를 데몬으로 시작하고 실행합니다"
+
+#: client/seafile_cli.md:53
+msgid "    stop:           stop seafile client"
+msgstr "    stop:           seafile 클라이언트를 멈춥니다"
+
+#: client/seafile_cli.md:54
+msgid "    list:           list local liraries"
+msgstr "    list:           로컬 라이브러리를 나타냅니다"
+
+#: client/seafile_cli.md:55
+msgid "    status:         show syncing status"
+msgstr "    status:         동기화 상태를 표시합니다"
+
+#: client/seafile_cli.md:56
+msgid "    download:       download a library from seafile server"
+msgstr "    download:       seafile 서버에서 라이브러리를 다운로드합니다"
+
+#: client/seafile_cli.md:57
+msgid ""
+"    sync:           synchronize an existing folder with a library in seafile "
+"server"
+msgstr ""
+"    sync:           seafile 서버에 있는 라이브러리의 폴더를 동기화합니다"
+
+#: client/seafile_cli.md:58
+msgid "    desync:         desynchronize a library with seafile server"
+msgstr "    desync:         seafile 서버와의 라이브러리 동기화를 해제합니다"
+
+# header
+#: client/seafile_cli.md:61
+msgid "##More details"
+msgstr "## 더 자세한 내용"
+
+#: client/seafile_cli.md:63
+msgid ""
+"Seafile client stores all its configure information in a config dir. The "
+"default location is `~/.ccnet`. All the commands below accept an option `-c "
+"<config-dir>`."
+msgstr ""
+"Seafile 클라이언트의 모든 설정 정보는 설정 디렉터리에 저장합니다. 기본 위치"
+"는 `~/.ccnet` 입니다. 하단의 모든 명령은 `-c <설정-디렉터리>` 설정을 받아들입"
+"니다."
+
+#: client/seafile_cli.md:67
+msgid ""
+"Initialize seafile client. This command initializes the config dir. It also "
+"creates sub-directories `seafile-data` and `seafile` under `parent-dir`. "
+"`seafile-data` is used to store internal data, while `seafile` is used as "
+"the default location put downloaded libraries."
+msgstr ""
+"seafile 클라이언트를 초기화합니다. 이 명령은 `상위-디렉터리`에 `seafile-data`"
+"와 `seafile` 하위 디렉터리를 만듭니다. `seafile-data`는 내부 데이터 저장에 활"
+"용하며 `seafile`은 다운로드한 라이브러리의 기본 위치로 활용합니다."
+
+#: client/seafile_cli.md:69
+msgid "    seaf-cli init [-c <config-dir>] -d <parent-dir>"
+msgstr "    seaf-cli init [-c <설정-디렉터리>] -d <상위-디렉터리>"
+
+#: client/seafile_cli.md:73
+msgid ""
+"Start seafile client. This command start `ccnet` and `seaf-daemon`, `ccnet` "
+"is the network part of seafile client, `seaf-daemon` manages the files."
+msgstr ""
+"Seafile 클라이언트를 시작합니다. 이 명령은 `ccnet`, `seaf-daemon`, seafile 클"
+"라이언트의 네트워크 기능을 담당하는 `ccnet`, 파일을 관리하는 `seaf-daemon`을 "
+"시작합니다."
+
+#: client/seafile_cli.md:75
+msgid "    seaf-cli start [-c <config-dir>]"
+msgstr "    seaf-cli start [-c <설정-디렉터리>]"
+
+# header
+#: client/seafile_cli.md:77
+msgid ""
+"stop\n"
+"----"
+msgstr ""
+"stop\n"
+"----"
+
+#: client/seafile_cli.md:79
+msgid "Stop seafile client."
+msgstr "seafile 클라이언트를 멈춥니다."
+
+#: client/seafile_cli.md:81
+msgid "    seaf-cli stop [-c <config-dir>]"
+msgstr "    seaf-cli stop [-c <설정-디렉터리>]"
+
+# header
+#: client/seafile_cli.md:84
+msgid ""
+"Download\n"
+"--------"
+msgstr ""
+"download\n"
+"--------"
+
+#: client/seafile_cli.md:86
+msgid "Download a library from seafile server"
+msgstr "seafile 서버에서 라이브러리를 다운로드합니다"
+
+#: client/seafile_cli.md:88
+msgid ""
+"    seaf-cli download -l <library-id> -s <seahub-server-url> -d <parent-"
+"directory> -u <username> [-p <password>]"
+msgstr ""
+"    seaf-cli download -l <라이브러리-ID> -s <seahub-server-url> -d <상위-디렉"
+"터리> -u <사용자이름> [-p <암호>]"
+
+#: client/seafile_cli.md:93
+msgid "Synchronize a library with an existing folder."
+msgstr "기존 폴더에 라이브러리를 동기화합니다."
+
+# header
+#: client/seafile_cli.md:95
+msgid ""
+"    seaf-cli sync -l <library-id> -s <seahub-server-url> -d <existing-"
+"folder> -u <username> [-p <password>]"
+msgstr ""
+"    seaf-cli sync -l <라이브러리-ID> -s <seahub-서버-URL> -d <기존-폴더> -u <"
+"사용자이름> [-p <암호>]"
+
+#: client/seafile_cli.md:97
+msgid ""
+"desync\n"
+"------"
+msgstr ""
+"desync\n"
+"------"
+
+#: client/seafile_cli.md:99
+msgid "Desynchronize a library from seafile server"
+msgstr "seafile 서버의 라이브러리 동기화 관계를 끊습니다"
+
+#: client/seafile_cli.md:101
+msgid "    seaf-cli desync -d <existing-folder>"
+msgstr "    seaf-cli desync -d <기존-폴더>"
