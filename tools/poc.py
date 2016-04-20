@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- Mode: python -*-
 # -*- coding: utf-8 -*-
 
 import glob
@@ -25,7 +26,7 @@ class MissingCreditException(Exception):
     def __str__(self):
         crdt = '# FULL NAME <EMAIL@ADDRESS>, YEAR1, YEAR2.'
         return 'Credit is missing on the header description, ' \
-                'should be like this \"{}\"'.format(crdt)
+               'should be like this \"{}\"'.format(crdt)
 
 
 class CreditMismatchException(Exception):
@@ -42,6 +43,7 @@ class LocaleMismatchException(Exception):
 
 
 class LangTeamMissingException(Exception):
+
     def __str__(self):
         return 'Language team email address is missing.\n' \
                'If there isn\'t, write Language name follows by yours or' \
@@ -68,9 +70,9 @@ class PoCompiler:
                         '\s\<[a-zA-Z0-9\.\-_]+\@'\
                         '[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>' \
                         '(,\s([1-2][0-9]{3})(\-([1-2][0-9]{3}))?)+\.\n?$'
-        self.langteam = '^\"Language\-team: ([A-Z][a-z]+)' \
-                        '\s\<[a-zA-Z0-9\.\-_]+\@' \
-                        '[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>\\n\"\n?$'
+        self.langteam = r'^\"Language\-Team: ' \
+                        r'([A-Z][a-z]+)\s\<[a-zA-Z0-9\.\-_]+\@' \
+                        r'[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>\\n\"\n?$'
 
         self.cmeta = False
         self.pofile = None
@@ -132,7 +134,7 @@ class PoCompiler:
                         raise CreditMismatchException()
                 elif keyval[0] == 'Language-Team':
                     if not re.match(r'{}'.format(self.langteam), poline) or \
-                                    poline == '\"Language-Team: LANGUAGE <LL@li.org>\n\"':
+                       poline == '\"Language-Team: LANGUAGE <LL@li.org>\n\"':
                         raise LangTeamMissingException()
 
     def get_msg_set(self, poline):
@@ -267,15 +269,17 @@ class PoCompiler:
                 if len(pomobj.msgstr()) == 0:
                     lim = pomobj.msgid().count('\\n')
                     self.outfile.write(
-                        pomobj.msgid().replace('\\n', '\n').replace('\\"',
-                                                                    '\"').replace(
-                            '\\\\', '\\'))
+                        pomobj.msgid()
+                              .replace('\\n', '\n')
+                              .replace('\\"', '\"')
+                              .replace('\\\\', '\\'))
                 else:
                     lim = pomobj.msgstr().count('\\n')
                     self.outfile.write(
-                        pomobj.msgstr().replace('\\n', '\n').replace('\\"',
-                                                                     '\"').replace(
-                            '\\\\', '\\'))
+                        pomobj.msgstr()
+                              .replace('\\n', '\n')
+                              .replace('\\"', '\"')
+                              .replace('\\\\', '\\'))
 
                 cln = nln
 
@@ -290,9 +294,10 @@ class PoCompiler:
         for lang in self.langlist:
             polist = glob.glob('{}/*.{}.po'.format(self.sourcedir, lang))
             if len(polist) != 0:
-                print('Compiling for *.{}.po ...'.format(lang))
+                print('Compiling *.{}.po ...'.format(lang))
             self.clocale = lang
             for po in polist:
+                print('Compiling {} ...'.format(po))
                 self.f = open(po, 'r')
 
                 self.verify()
