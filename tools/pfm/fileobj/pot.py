@@ -174,6 +174,9 @@ class PoTemplate:
                 elif pobj.is_tagopen():
                     self.fo.write('# inline html\n')
 
+                elif pobj.is_tableopen():
+                    self.fo.write('# table\n')
+
                 elif pobj.is_rule():
                     self.fo.write(
                         '# horizontal rule. just copy and paste from the msgid')

@@ -96,7 +96,6 @@ class PFMMain:
 
             # if paragraph is code block
             if mdp.is_codeblock():
-                cline = line
                 while 1:
                     mdstr = mdfile.readline()
                     line += 1
@@ -122,6 +121,18 @@ class PFMMain:
 
                     if self.mdparser.parse(
                             mdstr) == 'tagclose' and tagcls == mdstr[:-1]:
+                        break
+
+            elif mdp.is_tableopen():
+                while 1:
+                    mdstr = mdfile.readline()
+                    line += 1
+                    if not mdstr:
+                        break
+
+                    mdp.set_type(mdp.para_type(), mdp.para_msg() + mdstr)
+
+                    if self.mdparser.parse(mdstr) == 'tableclose':
                         break
 
             mdp.add_line_number(cline)

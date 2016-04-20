@@ -54,6 +54,12 @@ class MdPara:
     def is_tagclose(self):
         return self.check_type('tagclose')
 
+    def is_tableopen(self):
+        return self.check_type('tableopen')
+
+    def is_tableclose(self):
+        return self.check_type('tableclose')
+
     def is_rule(self):
         return self.check_type('hr')
 

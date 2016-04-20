@@ -16,6 +16,9 @@ class MdParser:
         self.toc = re.compile(r'^<[\w]+>\n$')
         self.tcc = re.compile(r'^</[\w]+>\n$')
         self.blc = re.compile(r'^\s*\n$')
+        self.wtoc = re.compile(r'^\{\|(\s[a-z]+\=\"[0-9A-Za-z]+\")+\n$')
+        self.wtcc = re.compile(r'^\|\}\n$')
+
 
     def parse(self, mstr):
         if self.bqc.match(mstr):
@@ -47,6 +50,12 @@ class MdParser:
 
         elif self.tcc.match(mstr):
             return 'tagclose'
+
+        elif self.wtoc.match(mstr):
+            return 'tableopen'
+
+        elif self.wtcc.match(mstr):
+            return 'tableclose'
 
         else:
             return 'common'
