@@ -5,7 +5,8 @@ import re
 
 class MdParser:
     def __init__(self):
-        self.hc = re.compile(r'(^[\s\S]+\n(-[-]+|=[=]+)|^([#]{1,6})\s[\s\S]+(\s\3)?)')
+        self.hc = re.compile(r'(^[\s\S]+\n(-[-]+|=[=]+)|' +
+                             r'^([#]{1,6})\s[\s\S]+(\s\3)?)')
         self.hlc = re.compile(r'^(-[-]+|=[=]+)\n?$')
         self.bqc = re.compile(r'^(> )+[\s\S]+$')
         self.ulc = re.compile(r"^([\s]*[\*\+\-]\s)[\S\s]+$")

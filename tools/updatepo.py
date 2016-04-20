@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- Mode: python -*-
 # -*- coding: utf-8 -*-
 
 import glob
@@ -30,8 +31,6 @@ class UpdatePo:
                 cmd = self.create_cmd(po, pot)
                 print('$ {}'.format(cmd))
                 os.system(cmd)
-
-
 
 
 if __name__ == '__main__':

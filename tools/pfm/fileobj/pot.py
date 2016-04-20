@@ -25,9 +25,10 @@ class PoTemplate:
         self.mdp = None
 
         self.poc = PoParser()
-        self.creditpt = r'^#' + \
-                        r'\s([A-Z][a-z\W]+)([\-\s][A-Z][a-z\W]+)+' + \
-                        r'\s\<[a-zA-Z0-9\.\-_]+\@[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>' + \
+        self.creditpt = r'^#' \
+                        r'\s([A-Z][a-z\W]+)([\-\s][A-Z][a-z\W]+)+' \
+                        r'\s\<[a-zA-Z0-9\.\-_]+\@' \
+                        r'[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>' \
                         r'(,\s([1-2][0-9]{3})(\-([1-2][0-9]{3}))?)+\.$'
         self.fileline = ''
         self.msgdesc = ''
@@ -129,7 +130,8 @@ class PoTemplate:
 
     def export(self):
         fpath = '{}/{}/{}.pot'.format(os.getcwd(), 'po', self.filename)
-        print('Creating {} ... '.format(fpath.replace(os.getcwd() + '/', '')), end='')
+        print('Creating {} ... '.format(
+            fpath.replace(os.getcwd() + '/', '')), end='')
         self.fo = open(fpath, 'w')
 
         self.prepare_header()
@@ -173,11 +175,14 @@ class PoTemplate:
                     self.fo.write('# inline html\n')
 
                 elif pobj.is_rule():
-                    self.fo.write('# horizontal rule. just copy and paste from the msgid')
+                    self.fo.write(
+                        '# horizontal rule. just copy and paste from the msgid')
 
                 # message id
                 self.fo.write('msgid "')
-                msg = pobj.para_msg()[:-1].replace('\\', '\\\\').replace('\"', '\\"')
+                msg = pobj.para_msg()[:-1] \
+                    .replace('\\', '\\\\') \
+                    .replace('\"', '\\"')
                 self.fo.write('\\n"\n"'.join(msg.split('\n')) + '"\n')
 
                 # message string placeholder

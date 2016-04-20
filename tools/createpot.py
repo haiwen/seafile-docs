@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- Mode: python -*-
 # -*- coding: utf-8 -*-
 
 import glob
@@ -109,7 +110,8 @@ class PFMMain:
 
             # if paragraph is inline HTML
             elif mdp.is_tagopen():
-                tagcls = '</{}>'.format(re.search('\<(\S+)\>', mdp.para_msg()).group(1))
+                tagcls = '</{}>'.format(
+                    re.search('<(\S+)>', mdp.para_msg()).group(1))
                 while 1:
                     mdstr = mdfile.readline()
                     line += 1
@@ -118,7 +120,8 @@ class PFMMain:
                     # print('%d: %s' % (line, mdstr), end="", flush=True)
                     mdp.set_type(mdp.para_type(), mdp.para_msg() + mdstr)
 
-                    if self.mdparser.parse(mdstr) == 'tagclose' and tagcls == mdstr[:-1]:
+                    if self.mdparser.parse(
+                            mdstr) == 'tagclose' and tagcls == mdstr[:-1]:
                         break
 
             mdp.add_line_number(cline)
@@ -149,7 +152,8 @@ class PFMMain:
         self.potobj = PoTemplate()
         self.potobj.set_filename(dstr)
         self.potobj.set_project_title(os.getcwd().split('/')[-1])
-        self.potobj.set_report_bug('https://github.com/haiwen/seafile-docs/issues')
+        self.potobj.set_report_bug(
+            'https://github.com/haiwen/seafile-docs/issues')
 
     def run(self):
         # check all of exist md files

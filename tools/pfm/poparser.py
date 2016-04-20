@@ -6,9 +6,12 @@ import re
 class PoParser:
     def __init__(self):
         self.dsc = re.compile(r'^#\s[a-zA-Z0-9\-\._<>@,\s]*$')
-        self.phc = re.compile(r'^\"([A-Z][A-Za-z0-9]+)(\-[A-Z][A-Za-z0-9]+)+:\s[a-zA-Z0-9@<>:;=/\.\-\+\s]+\\n\"')
+        self.phc = re.compile(
+            r'^\"([A-Z][A-Za-z0-9]+)(\-[A-Z][A-Za-z0-9]+)+' +
+            r':\s[a-zA-Z0-9@<>:;=/\.\-\+\s]+\\n\"')
         self.fnc = re.compile(
-            r'^#:(\s[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*(/[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*)*:[1-9][0-9]*)+')
+            r'^#:(\s[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*' +
+            r'(/[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*)*:[1-9][0-9]*)+')
         self.fzc = re.compile(r'^#, fuzzy\n?$')
         self.mhc = re.compile(r'^msgid\s\"\"')
         self.mic = re.compile(r'^msgid\s\"[\w\W]*\"')
