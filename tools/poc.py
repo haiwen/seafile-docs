@@ -5,6 +5,7 @@ import glob
 import os
 import re
 from datetime import datetime
+
 from dateutil.tz import tzlocal
 from pfm.fileobj.mdfile import MdFile
 from pfm.fileobj.pofile import PoFile
@@ -14,14 +15,17 @@ from pfm.poparser import PoParser
 
 class CopyrightException(Exception):
     def __str__(self):
-        crdesc = '# This file is distributed under the same license as the PACKAGE package.'
-        return 'Copyright is missing. copyright description should say this \"{}\"'.format(crdesc)
+        crdesc = '# This file is distributed under the same license ' \
+                 'as the PACKAGE package.'
+        return 'Copyright is missing. copyright description should say this ' \
+               ' \"{}\"'.format(crdesc)
 
 
 class MissingCreditException(Exception):
     def __str__(self):
         crdt = '# FULL NAME <EMAIL@ADDRESS>, YEAR1, YEAR2.'
-        return 'Credit is missing on the header description, should be like this \"{}\"'.format(crdt)
+        return 'Credit is missing on the header description, ' \
+                'should be like this \"{}\"'.format(crdt)
 
 
 class CreditMismatchException(Exception):
@@ -35,6 +39,13 @@ class LocaleMismatchException(Exception):
 
     def __str__(self):
         return self.errlocale
+
+
+class LangTeamMissingException(Exception):
+    def __str__(self):
+        return 'Language team email address is missing.\n' \
+               'If there isn\'t, write Language name follows by yours or' \
+               ' coordinator\'s email address\n'
 
 
 class PoCompiler:
@@ -51,10 +62,15 @@ class PoCompiler:
         self.clocale = ''
 
         self.poparser = PoParser()
-        self.crpt = r'^# This file is distributed under the same license as the [a-zA-Z0-9\-\.\_]+ package\.\n?$'
+        self.crpt = r'^# This file is distributed under the same license as ' \
+                    r'the [a-zA-Z0-9\-\.\_]+ package\.\n?$'
         self.creditpt = '^#\s([A-Z][a-z\W]+)([\-\s][A-Z][a-z\W]+)+' \
-                        '\s\<[a-zA-Z0-9\.\-_]+\@[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>' \
+                        '\s\<[a-zA-Z0-9\.\-_]+\@'\
+                        '[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>' \
                         '(,\s([1-2][0-9]{3})(\-([1-2][0-9]{3}))?)+\.\n?$'
+        self.langteam = '^\"Language\-team: ([A-Z][a-z]+)' \
+                        '\s\<[a-zA-Z0-9\.\-_]+\@' \
+                        '[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>\\n\"\n?$'
 
         self.cmeta = False
         self.pofile = None
@@ -82,7 +98,8 @@ class PoCompiler:
                     exist_copyright = True
                 elif re.match(r'{}'.format(self.creditpt), poline):
                     self.last_trans_name.append(poline.split('<')[0].strip())
-                    self.last_trans_email.append(poline.split('<')[1].split('>')[0])
+                    self.last_trans_email.append(
+                        poline.split('<')[1].split('>')[0])
                     years = poline[:-1].split('>')[1].split(', ')[1]
                     if '-' in years:
                         years = years.split('-')[1]
@@ -113,6 +130,10 @@ class PoCompiler:
                     if self.last_trans_name[-1] != name \
                             and self.last_trans_email[-1] != email:
                         raise CreditMismatchException()
+                elif keyval[0] == 'Language-Team':
+                    if not re.match(r'{}'.format(self.langteam), poline) or \
+                                    poline == '\"Language-Team: LANGUAGE <LL@li.org>\n\"':
+                        raise LangTeamMissingException()
 
     def get_msg_set(self, poline):
         msgid = poline[:-2].split(' "')[1]
@@ -181,7 +202,7 @@ class PoCompiler:
                     fa = poline[3:-1].split(' ')
                     for f in fa:
                         fnarr.append(f)
-                    # print (fnarr)
+                        # print (fnarr)
                 else:
                     fnarr.append(poline[3:-1])
 
@@ -211,12 +232,14 @@ class PoCompiler:
         mdlist = self.pofile.msg_object()
         for mdfn in sorted(mdlist.keys()):
             mdfo = mdlist.get(mdfn)
-            tpath = '{}/{}/{}'.format(self.outputdir, self.clocale, mdfn.split('/')[0])
+            tpath = '{}/{}/{}'.format(self.outputdir, self.clocale,
+                                      mdfn.split('/')[0])
             if not os.path.exists(tpath) and '/' in mdfn:
                 os.makedirs(tpath, 0o755)
 
             # writeout to md
-            self.outfile = open('{}/{}/{}'.format(self.outputdir, self.clocale, mdfn), 'w')
+            self.outfile = open(
+                '{}/{}/{}'.format(self.outputdir, self.clocale, mdfn), 'w')
             print('Writing {} ... '.format(self.outfile.name), end='')
 
             # cln : current line number
@@ -243,10 +266,16 @@ class PoCompiler:
                 pomobj = pomarr.get(poln)
                 if len(pomobj.msgstr()) == 0:
                     lim = pomobj.msgid().count('\\n')
-                    self.outfile.write(pomobj.msgid().replace('\\n', '\n').replace('\\"', '\"').replace('\\\\', '\\'))
+                    self.outfile.write(
+                        pomobj.msgid().replace('\\n', '\n').replace('\\"',
+                                                                    '\"').replace(
+                            '\\\\', '\\'))
                 else:
                     lim = pomobj.msgstr().count('\\n')
-                    self.outfile.write(pomobj.msgstr().replace('\\n', '\n').replace('\\"', '\"').replace('\\\\', '\\'))
+                    self.outfile.write(
+                        pomobj.msgstr().replace('\\n', '\n').replace('\\"',
+                                                                     '\"').replace(
+                            '\\\\', '\\'))
 
                 cln = nln
 
