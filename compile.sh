@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/python tools/poc.py 
+/usr/bin/python3 tools/poc.py 

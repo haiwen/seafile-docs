@@ -1,3 +1,3 @@
 #!/bin/sh
-/usr/bin/python tools/createpot.py
-/usr/bin/python tools/updatepo.py
+/usr/bin/python3 tools/createpot.py
+/usr/bin/python3 tools/updatepo.py
