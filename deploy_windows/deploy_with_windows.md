@@ -19,6 +19,7 @@ For more information on Seafile server, check the documents on [Seafile Linux ve
 ## Server Administration
 
 - [Garbage Collecting Unused Blocks on Seafile Server](windows_gc.md)
+- [Running seaf-fsck on corrupted repositories](windows_fsck.md)
 
 ## Common Issues
 

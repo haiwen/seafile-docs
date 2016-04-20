@@ -39,6 +39,7 @@
    * [Upgrading Seafile Windows Server](deploy_windows/upgrading_seafile_windows_server.md)
    * [Migrate Seafile From Windows To Linux](deploy_windows/migrate_from_win_to_linux.md)
    * [Garbage Collecting Unused Blocks on Seafile Server](deploy_windows/windows_gc.md)
+   * [Running seaf-fsck on corrupted repositories](deploy_windows/windows_fsck.md)
 * [Deploy Seafile Pro Edition](deploy_pro/README.md)
    * [Download and Setup Seafile Professional Server](deploy_pro/download_and_setup_seafile_professional_server.md)
    * [Migrate from Seafile Community Server](deploy_pro/migrate_from_seafile_community_server.md)
