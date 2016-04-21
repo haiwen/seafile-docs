@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-20 05:34:40+0900\n"
+"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2277,109 +2277,38 @@ msgid "The script will guide you through the settings of various configuration o
 msgstr ""
 
 #: deploy/server.md:93
-msgid "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\""
-msgstr ""
-
-#: deploy/server.md:94
-msgid "|+ Seafile configuration options"
-msgstr ""
-
-#: deploy/server.md:95
-msgid "! Option"
-msgstr ""
-
-#: deploy/server.md:96
-msgid "! Description"
-msgstr ""
-
-#: deploy/server.md:97
-msgid "! Note"
-msgstr ""
-
-#: deploy/server.md:98
-#: deploy/server.md:102
-#: deploy/server.md:106
-#: deploy/server.md:110
-#: deploy/server.md:114
-#: deploy/server.md:118
-#: deploy/server.md:122
-msgid "|-"
-msgstr ""
-
-#: deploy/server.md:99
-msgid "| server name"
-msgstr ""
-
-#: deploy/server.md:100
-msgid "| Name of this seafile server"
-msgstr ""
-
-#: deploy/server.md:101
-msgid "| 3-15 characters, only English letters, digits and underscore ('_') are allowed"
-msgstr ""
-
-#: deploy/server.md:103
-msgid "| server ip or domain"
-msgstr ""
-
-#: deploy/server.md:104
-msgid "| The IP address or domain name used by this server"
-msgstr ""
-
-#: deploy/server.md:105
-msgid "| Seafile client program will access the server with this address"
-msgstr ""
-
-#: deploy/server.md:107
-msgid "| ccnet server port"
-msgstr ""
-
-#: deploy/server.md:108
-msgid "| The TCP port used by ccnet, the underlying networking service of Seafile"
-msgstr ""
-
-#: deploy/server.md:109
-msgid "| Default is 10001. If it's been used by other service, you can set it to another port."
-msgstr ""
-
-#: deploy/server.md:111
-msgid "| seafile data dir"
-msgstr ""
-
-#: deploy/server.md:112
-msgid "| Seafile stores your data in this directory. By default it'll be placed in the current directory."
-msgstr ""
-
-#: deploy/server.md:113
-msgid "| The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space."
-msgstr ""
-
-#: deploy/server.md:115
-msgid "| seafile server port"
-msgstr ""
-
-#: deploy/server.md:116
-msgid "| The TCP port used by Seafile to transfer data"
-msgstr ""
-
-#: deploy/server.md:117
-msgid "| Default is 12001. If it's been used by other service, you can set it to another port."
-msgstr ""
-
-#: deploy/server.md:119
-msgid "| fileserver  port"
-msgstr ""
-
-#: deploy/server.md:120
-msgid "| The TCP port used by Seafile fileserver"
-msgstr ""
-
-#: deploy/server.md:121
-msgid "| Default is 8082. If it's been used by other service, you can set it to another port."
-msgstr ""
-
-#: deploy/server.md:123
-msgid "|}"
+# table
+msgid "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\"\n"
+"|+ Seafile configuration options\n"
+"! Option\n"
+"! Description\n"
+"! Note\n"
+"|-\n"
+"| server name\n"
+"| Name of this seafile server\n"
+"| 3-15 characters, only English letters, digits and underscore ('_') are allowed\n"
+"|-\n"
+"| server ip or domain\n"
+"| The IP address or domain name used by this server\n"
+"| Seafile client program will access the server with this address\n"
+"|-\n"
+"| ccnet server port\n"
+"| The TCP port used by ccnet, the underlying networking service of Seafile\n"
+"| Default is 10001. If it's been used by other service, you can set it to another port.\n"
+"|-\n"
+"| seafile data dir\n"
+"| Seafile stores your data in this directory. By default it'll be placed in the current directory.\n"
+"| The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space.\n"
+"|-\n"
+"| seafile server port\n"
+"| The TCP port used by Seafile to transfer data\n"
+"| Default is 12001. If it's been used by other service, you can set it to another port.\n"
+"|-\n"
+"| fileserver  port\n"
+"| The TCP port used by Seafile fileserver\n"
+"| Default is 8082. If it's been used by other service, you can set it to another port.\n"
+"|-\n"
+"|}"
 msgstr ""
 
 #: deploy/server.md:126

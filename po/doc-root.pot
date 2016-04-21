@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-20 05:34:40+0900\n"
+"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,48 +34,80 @@ msgstr ""
 
 #: README.md:9
 # header
-msgid "## LICENSE"
+msgid "## Translation (Work In Progress)"
 msgstr ""
 
 #: README.md:11
-msgid "Seafile server is public under GPLv2."
+msgid "Even if you are not familiar with [gettext](https://en.wikipedia.org/wiki/Gettext) system, you can start translating this manual following 3 simple steps."
 msgstr ""
 
 #: README.md:13
+msgid "As an example to translate files from **overview/** folder to *Spanish*, these 3 steps are:"
+msgstr ""
+
+#: README.md:15
+# ordered list
+msgid "1. copy **po/overview.pot** to  **po/overview.es.po**."
+msgstr ""
+
+#: README.md:16
+# ordered list
+msgid "1. Translate messages in **po/overview.es.po** to spanish language."
+msgstr ""
+
+#: README.md:17
+# ordered list
+msgid "1. Send us your **po/overview.es.po** for integration. You can also make a pull request, if you modified an already existing po file."
+msgstr ""
+
+#: README.md:20
+msgid "If you are familiar with POT and PO files, you can use the one in **po/** folder."
+msgstr ""
+
+#: README.md:22
+# header
+msgid "## LICENSE"
+msgstr ""
+
+#: README.md:24
+msgid "Seafile server is public under GPLv2."
+msgstr ""
+
+#: README.md:26
 #: contribution.md:6
 msgid "The Seafile server's web end, i.e. Seahub, is published under the Apache License."
 msgstr ""
 
-#: README.md:15
+#: README.md:28
 # header
 msgid "## About this manual"
 msgstr ""
 
-#: README.md:17
+#: README.md:30
 msgid "The \"source code\" of this manual is hosted on GitHub: https://github.com/haiwen/seafile-docs"
 msgstr ""
 
-#: README.md:19
+#: README.md:32
 # header
 msgid "## Contact information"
 msgstr ""
 
-#: README.md:21
+#: README.md:34
 # unordered list
 msgid "* Twitter: @seafile https://twitter.com/seafile"
 msgstr ""
 
-#: README.md:22
+#: README.md:35
 # unordered list
 msgid "* Forum: https://forum.seafile-server.org"
 msgstr ""
 
-#: README.md:24
+#: README.md:37
 # header
 msgid "## More Documents"
 msgstr ""
 
-#: README.md:26
+#: README.md:39
 # unordered list
 msgid "* [Wiki containing general information of Seafile](https://seacloud.cc/group/3/wiki/)"
 msgstr ""

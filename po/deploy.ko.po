@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-20 05:34:40+0900\n"
+"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
 "PO-Revision-Date: 2016-04-19 05:42+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <darkcircle.0426@gmail.com>\n"
@@ -439,8 +439,8 @@ msgid ""
 msgstr ""
 
 # header
-#: deploy/db.md:1 deploy/server.md:1 deploy/upgrade.md:1 deploy/using_fuse.md:1
-#: deploy/using_postgresql.md:1
+#: deploy/db.md:1 deploy/server.md:1 deploy/upgrade.md:1
+#: deploy/using_fuse.md:1 deploy/using_postgresql.md:1
 msgid "# Seafile"
 msgstr "# Seafile"
 
@@ -3186,136 +3186,47 @@ msgid ""
 "options."
 msgstr "스크립트는 다양한 설정 옵션 설정을 안내합니다."
 
+# table
 #: deploy/server.md:93
-msgid "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\""
-msgstr "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\""
-
-# header
-#: deploy/server.md:94
-msgid "|+ Seafile configuration options"
-msgstr "|+ Seafile 설정 항목"
-
-#: deploy/server.md:95
-msgid "! Option"
-msgstr "! 항목"
-
-#: deploy/server.md:96
-msgid "! Description"
-msgstr "! 설명"
-
-#: deploy/server.md:97
-msgid "! Note"
-msgstr "! 참고"
-
-#: deploy/server.md:98 deploy/server.md:102 deploy/server.md:106
-#: deploy/server.md:110 deploy/server.md:114 deploy/server.md:118
-#: deploy/server.md:122
-msgid "|-"
-msgstr "|-"
-
-#: deploy/server.md:99
-msgid "| server name"
-msgstr "| 서버 이름"
-
-# unordered list
-#: deploy/server.md:100
-msgid "| Name of this seafile server"
-msgstr "| 이 Seafile 서버의 이름"
-
-#: deploy/server.md:101
 msgid ""
+"{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\"\n"
+"|+ Seafile configuration options\n"
+"! Option\n"
+"! Description\n"
+"! Note\n"
+"|-\n"
+"| server name\n"
+"| Name of this seafile server\n"
 "| 3-15 characters, only English letters, digits and underscore ('_') are "
-"allowed"
-msgstr "| 3-15 문자, 영문자, 숫자, 밑줄 문자('_')만 허용"
-
-#: deploy/server.md:103
-msgid "| server ip or domain"
-msgstr "| 서버 IP 또는 도메인"
-
-#: deploy/server.md:104
-msgid "| The IP address or domain name used by this server"
-msgstr "| 이 서버에서 사용하는 IP 주소 또는 도메인 이름"
-
-#: deploy/server.md:105
-msgid "| Seafile client program will access the server with this address"
-msgstr "| Seafile 클라이언트 프로그램에서 이 주소로 서버에 접근합니다\t"
-
-# unordered list
-#: deploy/server.md:107
-msgid "| ccnet server port"
-msgstr "| ccnet server port"
-
-#: deploy/server.md:108
-msgid ""
-"| The TCP port used by ccnet, the underlying networking service of Seafile"
-msgstr ""
-"| Seafile의 하부 네트워크 서비스를 담당하는 ccnet에서 사용하는 TCP 포트입니다"
-
-#: deploy/server.md:109
-msgid ""
+"allowed\n"
+"|-\n"
+"| server ip or domain\n"
+"| The IP address or domain name used by this server\n"
+"| Seafile client program will access the server with this address\n"
+"|-\n"
+"| ccnet server port\n"
+"| The TCP port used by ccnet, the underlying networking service of Seafile\n"
 "| Default is 10001. If it's been used by other service, you can set it to "
-"another port."
-msgstr ""
-"| 기본 값은 10001입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설정"
-"할 수 있습니다."
-
-#: deploy/server.md:111
-msgid "| seafile data dir"
-msgstr "| seafile data dir"
-
-#: deploy/server.md:112
-msgid ""
+"another port.\n"
+"|-\n"
+"| seafile data dir\n"
 "| Seafile stores your data in this directory. By default it'll be placed in "
-"the current directory."
-msgstr ""
-"| Seafile에서 이 디렉터리로 데이터를 저장합니다. 기본적으로 현재 디렉터리에 "
-"있습니다."
-
-#: deploy/server.md:113
-msgid ""
+"the current directory.\n"
 "| The size of this directory will increase as you put more and more data "
-"into Seafile. Please select a disk partition with enough free space."
-msgstr ""
-"| 이 디렉터리의 크기는 Seafile에 데이터를 계속 넣을 때마다 증가합니다. 충분"
-"한 공간이 있는 디스크 분할 영역을 선택하십시오."
-
-# unordered list
-#: deploy/server.md:115
-msgid "| seafile server port"
-msgstr "| seafile server port"
-
-#: deploy/server.md:116
-msgid "| The TCP port used by Seafile to transfer data"
-msgstr "| Seafile에서 데이터를 전송할 때 사용하는 TCP 포트입니다"
-
-#: deploy/server.md:117
-msgid ""
+"into Seafile. Please select a disk partition with enough free space.\n"
+"|-\n"
+"| seafile server port\n"
+"| The TCP port used by Seafile to transfer data\n"
 "| Default is 12001. If it's been used by other service, you can set it to "
-"another port."
-msgstr ""
-"| 기본 값은 12001입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설정"
-"할 수 있습니다."
-
-# unordered list
-#: deploy/server.md:119
-msgid "| fileserver  port"
-msgstr "| fileserver  port"
-
-#: deploy/server.md:120
-msgid "| The TCP port used by Seafile fileserver"
-msgstr "| Seafile 파일 서버에서 사용할 TCP 포트"
-
-#: deploy/server.md:121
-msgid ""
+"another port.\n"
+"|-\n"
+"| fileserver  port\n"
+"| The TCP port used by Seafile fileserver\n"
 "| Default is 8082. If it's been used by other service, you can set it to "
-"another port."
+"another port.\n"
+"|-\n"
+"|}"
 msgstr ""
-"| 기본 값은 8082입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설정할 "
-"수 있습니다."
-
-#: deploy/server.md:123
-msgid "|}"
-msgstr "|}"
 
 #: deploy/server.md:126 deploy/using_mysql.md:170
 msgid "If the setup is successful, you'll see the following output"
@@ -8799,3 +8710,109 @@ msgstr "다 됐습니다! 이제 Seafile에 대한 내용을 더 읽어 볼 차�
 #: deploy/using_sqlite.md:212
 msgid "- [Administration](../maintain/README.md)"
 msgstr "- [관리](../maintain/README.md)"
+
+#~ msgid "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\""
+#~ msgstr ""
+#~ "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\""
+
+# header
+#~ msgid "|+ Seafile configuration options"
+#~ msgstr "|+ Seafile 설정 항목"
+
+#~ msgid "! Option"
+#~ msgstr "! 항목"
+
+#~ msgid "! Description"
+#~ msgstr "! 설명"
+
+#~ msgid "! Note"
+#~ msgstr "! 참고"
+
+#~ msgid "|-"
+#~ msgstr "|-"
+
+#~ msgid "| server name"
+#~ msgstr "| 서버 이름"
+
+# unordered list
+#~ msgid "| Name of this seafile server"
+#~ msgstr "| 이 Seafile 서버의 이름"
+
+#~ msgid ""
+#~ "| 3-15 characters, only English letters, digits and underscore ('_') are "
+#~ "allowed"
+#~ msgstr "| 3-15 문자, 영문자, 숫자, 밑줄 문자('_')만 허용"
+
+#~ msgid "| server ip or domain"
+#~ msgstr "| 서버 IP 또는 도메인"
+
+#~ msgid "| The IP address or domain name used by this server"
+#~ msgstr "| 이 서버에서 사용하는 IP 주소 또는 도메인 이름"
+
+#~ msgid "| Seafile client program will access the server with this address"
+#~ msgstr "| Seafile 클라이언트 프로그램에서 이 주소로 서버에 접근합니다\t"
+
+# unordered list
+#~ msgid "| ccnet server port"
+#~ msgstr "| ccnet server port"
+
+#~ msgid ""
+#~ "| The TCP port used by ccnet, the underlying networking service of Seafile"
+#~ msgstr ""
+#~ "| Seafile의 하부 네트워크 서비스를 담당하는 ccnet에서 사용하는 TCP 포트입"
+#~ "니다"
+
+#~ msgid ""
+#~ "| Default is 10001. If it's been used by other service, you can set it to "
+#~ "another port."
+#~ msgstr ""
+#~ "| 기본 값은 10001입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설"
+#~ "정할 수 있습니다."
+
+#~ msgid "| seafile data dir"
+#~ msgstr "| seafile data dir"
+
+#~ msgid ""
+#~ "| Seafile stores your data in this directory. By default it'll be placed "
+#~ "in the current directory."
+#~ msgstr ""
+#~ "| Seafile에서 이 디렉터리로 데이터를 저장합니다. 기본적으로 현재 디렉터리"
+#~ "에 있습니다."
+
+#~ msgid ""
+#~ "| The size of this directory will increase as you put more and more data "
+#~ "into Seafile. Please select a disk partition with enough free space."
+#~ msgstr ""
+#~ "| 이 디렉터리의 크기는 Seafile에 데이터를 계속 넣을 때마다 증가합니다. 충"
+#~ "분한 공간이 있는 디스크 분할 영역을 선택하십시오."
+
+# unordered list
+#~ msgid "| seafile server port"
+#~ msgstr "| seafile server port"
+
+#~ msgid "| The TCP port used by Seafile to transfer data"
+#~ msgstr "| Seafile에서 데이터를 전송할 때 사용하는 TCP 포트입니다"
+
+#~ msgid ""
+#~ "| Default is 12001. If it's been used by other service, you can set it to "
+#~ "another port."
+#~ msgstr ""
+#~ "| 기본 값은 12001입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설"
+#~ "정할 수 있습니다."
+
+# unordered list
+#~ msgid "| fileserver  port"
+#~ msgstr "| fileserver  port"
+
+#~ msgid "| The TCP port used by Seafile fileserver"
+#~ msgstr "| Seafile 파일 서버에서 사용할 TCP 포트"
+
+#~ msgid ""
+#~ "| Default is 8082. If it's been used by other service, you can set it to "
+#~ "another port."
+#~ msgstr ""
+#~ "| 기본 값은 8082입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설정"
+#~ "할 수 있습니다."
+
+#~ msgid "|}"
+#~ msgstr "|}"

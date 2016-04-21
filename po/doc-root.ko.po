@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-19 21:46:37+0900\n"
+"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
 "PO-Revision-Date: 2016-04-20 04:28+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <darkcircle.0426@gmail.com>\n"
@@ -51,14 +51,55 @@ msgstr ""
 
 # header
 #: README.md:9
+msgid "## Translation (Work In Progress)"
+msgstr ""
+
+#: README.md:11
+msgid ""
+"Even if you are not familiar with [gettext](https://en.wikipedia.org/wiki/"
+"Gettext) system, you can start translating this manual following 3 simple "
+"steps."
+msgstr ""
+
+#: README.md:13
+msgid ""
+"As an example to translate files from **overview/** folder to *Spanish*, "
+"these 3 steps are:"
+msgstr ""
+
+# ordered list
+#: README.md:15
+msgid "1. copy **po/overview.pot** to  **po/overview.es.po**."
+msgstr ""
+
+# ordered list
+#: README.md:16
+msgid "1. Translate messages in **po/overview.es.po** to spanish language."
+msgstr ""
+
+# ordered list
+#: README.md:17
+msgid ""
+"1. Send us your **po/overview.es.po** for integration. You can also make a "
+"pull request, if you modified an already existing po file."
+msgstr ""
+
+#: README.md:20
+msgid ""
+"If you are familiar with POT and PO files, you can use the one in **po/** "
+"folder."
+msgstr ""
+
+# header
+#: README.md:22
 msgid "## LICENSE"
 msgstr "## 라이선스"
 
-#: README.md:11
+#: README.md:24
 msgid "Seafile server is public under GPLv2."
 msgstr "Seafile 서버는 GPLv2에 따라 공개합니다."
 
-#: README.md:13 contribution.md:6
+#: README.md:26 contribution.md:6
 msgid ""
 "The Seafile server's web end, i.e. Seahub, is published under the Apache "
 "License."
@@ -66,11 +107,11 @@ msgstr ""
 "Seahub와 같은 Seafile 서버 웹 엔드는 Apache 라이선스에 따라 배포합니다."
 
 # header
-#: README.md:15
+#: README.md:28
 msgid "## About this manual"
 msgstr "## 설명서 정보"
 
-#: README.md:17
+#: README.md:30
 msgid ""
 "The \"source code\" of this manual is hosted on GitHub: https://github.com/"
 "haiwen/seafile-docs"
@@ -79,27 +120,27 @@ msgstr ""
 "seafile-docs"
 
 # header
-#: README.md:19
+#: README.md:32
 msgid "## Contact information"
 msgstr "## 연락 정보"
 
 # unordered list
-#: README.md:21
+#: README.md:34
 msgid "* Twitter: @seafile https://twitter.com/seafile"
 msgstr "* 트위터: @seafile https://twitter.com/seafile"
 
 # unordered list
-#: README.md:22
+#: README.md:35
 msgid "* Forum: https://forum.seafile-server.org"
 msgstr "* 포럼: https://forum.seafile-server.org"
 
 # header
-#: README.md:24
+#: README.md:37
 msgid "## More Documents"
 msgstr "## 추가 문서"
 
 # unordered list
-#: README.md:26
+#: README.md:39
 msgid ""
 "* [Wiki containing general information of Seafile](https://seacloud.cc/"
 "group/3/wiki/)"
