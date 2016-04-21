@@ -121,48 +121,48 @@ msgid ""
 "Seafile manages files into libraries. Every library has an owner, who can "
 "share the library to other users or share it into groups. The sharing can be "
 "read-only or read-write."
-msgstr ""
+msgstr "Seafile gère les fichiers dans les bibliothèques. Chaque bibliothèque a un propriétaire, qui peut partager la bibliothèque à d'autres utilisateurs ou la partager avec des groupes. Le partage peut être en lecture seule ou en lecture-écriture."
 
 # header
 #: overview/file_permission_management.md:5
 msgid "## Read-only syncing"
-msgstr ""
+msgstr "## Synchronisation en lecture seule"
 
 #: overview/file_permission_management.md:7
 msgid ""
 "Read-only libraries can be synced to local desktop. The modifications at the "
 "client will not be synced back. If an user has modified some file contents, "
 "he/she can use \"resync\" to revert the modifications."
-msgstr ""
+msgstr "Les bibliothèques en lecture seule peuvent être synchronisées localement. Les modifications sur le client local ne seront pas synchronisées. Si un utilisateurs a modifié le contenu d'un fichier, il/elle peut utiliser la \"resynchronisation\" pour annuler les modifications."
 
 # header
 #: overview/file_permission_management.md:10
 msgid "## Cascading permission/Sub-folder permissions (Pro edition)"
-msgstr ""
+msgstr "## Permissions héritées/permissions sur les sous-dossiers (édition Pro)"
 
 #: overview/file_permission_management.md:12
 msgid ""
 "Sharing controls whether an user/group can see an library, while sub-foler "
 "permissions is used to modify permissions on specific folders."
-msgstr ""
+msgstr "Le partage contrôle si un utilisateur/groupe peut voir une bibliothèque, tandis que les permissions sur les sous-dossiers sont utilisées pour les permissions de modifications sur ces dossiers uniquement. "
 
 #: overview/file_permission_management.md:14
 msgid ""
 "Suppose you share a library as read-only to a group and then want specific "
 "sub-folders to be read-write by a few users. You can set permissions on sub-"
 "folders for shared users and groups."
-msgstr ""
+msgstr "Supposons que vous partagez une bibliothèque en lecture seule à un groupe et que vous voulez ensuite que certains sous-dossiers soient en lecture-écriture pour quelques utilisateurs. Vous pouvez donner les permissions sur ces sous-dossiers aux utilisateurs et aux groupes ayant déjà accès au partage."
 
 #: overview/file_permission_management.md:16
 msgid "Note:"
-msgstr ""
+msgstr "Note:"
 
 # unordered list
 #: overview/file_permission_management.md:18
 msgid ""
 "* Setting sub-folder permission for an user without sharing the folder or "
 "parent folder to that user will have no effect."
-msgstr ""
+msgstr "Donner les permissions sur un sous-dossier à un utilisateur sans avoir partagé le sous-dossier ou le dossier parent avec cet utilisateur n'aura aucun effet."
 
 # unordered list
 #: overview/file_permission_management.md:19
@@ -170,4 +170,4 @@ msgid ""
 "* Sharing a library read-only to an user and then sharing a sub-folder read-"
 "write to that user will lead to two shared items for that user. This will "
 "cause confusing. Use sub-folder permission instead."
-msgstr ""
+msgstr "Partager une bibliothèque en lecture seule avec un utilisateur puis partager un sous-dossier en lecture-écriture avec cet utilisateur aura pour conséquence d'avoir deux éléments partagés avec cet utilisateur. Cela peut prêter à confusion. Utilisez plutôt les permissions sur les sous-dossiers."
