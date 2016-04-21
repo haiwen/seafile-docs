@@ -3,3 +3,6 @@ node_modules
 _book
 *~
 tools/pfm
+
+# French is translated with gettext only
+locale/fr
