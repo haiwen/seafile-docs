@@ -74,7 +74,7 @@ If the problem is not fixed, check whether seafile-server-latest point to the ri
 
 Please add
 
-    COMPRESS_CACHE_BACKEND = 'locmem://'
+    COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
 
 to seahub_settings.py as documented http://manual.seafile.com/deploy_pro/deploy_in_a_cluster.html
 

@@ -1,21 +1,21 @@
 # Download and Setup Seafile Professional Server
 ## <a id="wiki-preparation"></a>Preparation ##
 
-The following document is tested in Ubuntu 14.04. We recommend that you use Ubuntu 14.04 as your server.
+The following document is tested in Ubuntu 14.04 and CentOS 7. We recommend that you use Ubuntu 14.04 or CentOS 7 as your server.
 
-> NOTE: 
-> 
+> NOTE:
+>
 > If you are using Ubuntu 14.04, you can use the following command to install all the dependency that Seafile requires at one time.
-> 
+>
 > ```
 > sudo apt-get install openjdk-7-jre poppler-utils libpython2.7 python-pip \
 > mysql-server python-setuptools python-imaging python-mysqldb python-memcache python-ldap
-> 
+>
 > sudo pip install boto
 > ```
-> 
-> CentOS 6.6:
-> 
+>
+> CentOS 7:
+>
 > ```
 > wget https://bootstrap.pypa.io/get-pip.py
 > sudo python get-pip.py
@@ -25,7 +25,7 @@ The following document is tested in Ubuntu 14.04. We recommend that you use Ubun
 > sudo pip install boto
 > sudo /etc/init.d/mysqld start
 > ```
-> 
+>
 > For more information please see bellow.
 
 ### Minimum System Requirement ###
@@ -43,8 +43,6 @@ On CentOS/Red Hat:
 ```
 sudo yum install java-1.7.0-openjdk
 ```
-
-*Note*: Since version 3.1.12, java 1.7 is required, please check your java version by `java -version`. If not, please [change the default java version](./change_default_java.md).
 
 ### Install poppler-utils ###
 
@@ -113,7 +111,7 @@ You should notice the difference between the names of the Community Server and P
 
 - Seafile Community Server tarball is `seafile-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-1.7.0`
 - Seafile Professional Server tarball is `seafile-pro-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-1.7.0`
-    
+
 -----------
 
 
@@ -130,14 +128,16 @@ After you have succesfully setup Seafile Professional Server, you would have a d
 haiwen
 ├── seafile-license.txt # license file
 ├── ccnet               # configuration files
-│   ├── ccnet.conf
 │   ├── mykey.peer
 │   ├── PeerMgr
 │   └── seafile.ini
-├── pro-data            # data specific for professional version
-│   └── seafevents.conf
-├── seafile-data
+├── conf
+│   └── ccnet.conf
 │   └── seafile.conf
+│   └── seahub_settings.py
+│   └── seafevents.conf
+├── pro-data            # data specific for professional version
+├── seafile-data
 ├── seafile-pro-server-1.8.0
 │   ├── reset-admin.sh
 │   ├── runtime
@@ -153,7 +153,6 @@ haiwen
 ├── seahub-data
 │   └── avatars         # for user avatars
 ├── seahub.db
-├── seahub_settings.py   # seahub config file
 ```
 
 ## Performance turning
@@ -162,7 +161,7 @@ If you have more than 50 users in your Seafile system, we highly recommand you t
 
 ## <a id="wiki-done"></a>Done
 
-At this point, the basic setup of Seafile Professional Server is done. 
+At this point, the basic setup of Seafile Professional Server is done.
 
 You may want to read more about Seafile Professional Server:
 

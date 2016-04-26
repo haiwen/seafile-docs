@@ -174,7 +174,7 @@ CACHES = {
 
 AVATAR_FILE_STORAGE = 'seahub.base.database_storage.DatabaseStorage'
 
-COMPRESS_CACHE_BACKEND = 'locmem://'
+COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
 
 ```
 
