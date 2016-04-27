@@ -102,7 +102,7 @@
    * [Web API](develop/web_api.md)
    * [Web API V2.1](develop/web_api_v2.1.md)
    * [Python API](develop/python_api.md)
-   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)
+   * [PHP API](develop/php_api.md)
    * [Data Model](develop/data_model.md)
    * [Server Components](develop/server-components.md)
    * [Sync algorithm](develop/sync_algorithm.md)

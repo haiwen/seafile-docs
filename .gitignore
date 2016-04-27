@@ -2,7 +2,7 @@ node_modules
 .grunt
 _book
 *~
-tools/pfm
+#tools/pfm
 
 # French is translated with gettext only
 locale/fr
