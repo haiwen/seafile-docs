@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
+"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -663,19 +663,23 @@ msgid "# Seahub Settings"
 msgstr ""
 
 #: config/seahub_settings_py.md:3
+msgid "Note: You can also modify most of the config items via web interface.The config items are saved in database table (seahub-dab/constance_config). They have a higher priority over the items in config files."
+msgstr ""
+
+#: config/seahub_settings_py.md:5
 # header
 msgid "##  Sending Email Notifications on Seahub"
 msgstr ""
 
-#: config/seahub_settings_py.md:5
+#: config/seahub_settings_py.md:7
 msgid "A few features work better if it can send email notifications, such as notifying users about new messages."
 msgstr ""
 
-#: config/seahub_settings_py.md:6
+#: config/seahub_settings_py.md:8
 msgid "If you want to setup email notifications, please add the following lines to `seahub_settings.py` (and set your email server)."
 msgstr ""
 
-#: config/seahub_settings_py.md:8
+#: config/seahub_settings_py.md:10
 # code block
 msgid "```python\n"
 "EMAIL_USE_TLS = False\n"
@@ -688,12 +692,12 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:18
+#: config/seahub_settings_py.md:20
 #: config/sending_email.md:29
 msgid "If you are using Gmail as email server, use following lines:"
 msgstr ""
 
-#: config/seahub_settings_py.md:20
+#: config/seahub_settings_py.md:22
 # code block
 msgid "```python\n"
 "EMAIL_USE_TLS = True\n"
@@ -706,29 +710,29 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:30
+#: config/seahub_settings_py.md:32
 #: config/sending_email.md:41
 msgid "**Note**: If your Email service still can not work, you may checkout the log file <code>logs/seahub.log</code> to see what may cause the problem. For complete email notification list, please refer to [Email notification list](customize_email_notifications.md)."
 msgstr ""
 
-#: config/seahub_settings_py.md:32
+#: config/seahub_settings_py.md:34
 msgid "**Note2**: If you want to use the Email service without authentication leaf <code>EMAIL_HOST_PASSWORD</code> **blank** (<code>''</code>)."
 msgstr ""
 
-#: config/seahub_settings_py.md:35
+#: config/seahub_settings_py.md:37
 # header
 msgid "## Memcached"
 msgstr ""
 
-#: config/seahub_settings_py.md:37
+#: config/seahub_settings_py.md:39
 msgid "Seahub caches items(avatars, profiles, etc) on file system by default(/tmp/seahub_cache/). You can replace with Memcached."
 msgstr ""
 
-#: config/seahub_settings_py.md:38
+#: config/seahub_settings_py.md:40
 msgid "After install **python-memcache**, add the following lines to **seahub_settings.py**."
 msgstr ""
 
-#: config/seahub_settings_py.md:40
+#: config/seahub_settings_py.md:42
 # code block
 msgid "```python\n"
 "CACHES = {\n"
@@ -740,16 +744,16 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:49
+#: config/seahub_settings_py.md:51
 # header
 msgid "## User management options"
 msgstr ""
 
-#: config/seahub_settings_py.md:51
+#: config/seahub_settings_py.md:53
 msgid "The following options affect user registration, password and session."
 msgstr ""
 
-#: config/seahub_settings_py.md:53
+#: config/seahub_settings_py.md:55
 # code block
 msgid "```python\n"
 "# Enalbe or disalbe registration on web. Default is `False`.\n"
@@ -770,7 +774,11 @@ msgid "```python\n"
 "\n"
 "# Attempt limit before showing a captcha when login.\n"
 "LOGIN_ATTEMPT_LIMIT = 3\n"
-"    \n"
+"\n"
+"# deactivate user account when login attempts exceed limit\n"
+"# Since version 5.1.2 or pro 5.1.3\n"
+"FREEZE_USER_ON_LOGIN_FAILED = False\n"
+"\n"
 "# mininum length for user's password\n"
 "USER_PASSWORD_MIN_LENGTH = 6\n"
 "\n"
@@ -799,16 +807,16 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:101
+#: config/seahub_settings_py.md:107
 # header
 msgid "## Library options"
 msgstr ""
 
-#: config/seahub_settings_py.md:103
+#: config/seahub_settings_py.md:109
 msgid "Options for libraries:"
 msgstr ""
 
-#: config/seahub_settings_py.md:105
+#: config/seahub_settings_py.md:111
 # code block
 msgid "```python\n"
 "# mininum length for password of encrypted library\n"
@@ -830,11 +838,11 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:124
+#: config/seahub_settings_py.md:130
 msgid "Options for online file preview:"
 msgstr ""
 
-#: config/seahub_settings_py.md:126
+#: config/seahub_settings_py.md:132
 # code block
 msgid "```python\n"
 "# Whether to use pdf.js to view pdf files online. Default is `True`,  you can turn it off.\n"
@@ -843,12 +851,12 @@ msgid "```python\n"
 "\n"
 "# Online preview maximum file size, defaults to 30M.\n"
 "# Note, this option controls files that can be previewed online, like pictures, txt, pdf.\n"
-"# In pro edition, for preview doc/ppt/excel/pdf, there is another option `max-size` \n"
+"# In pro edition, for preview doc/ppt/excel/pdf, there is another option `max-size`\n"
 "# in seafevents.conf that controls the limit of files that can be previewed.\n"
 "FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024\n"
 "\n"
 "# Enable or disable thumbnails\n"
-"# NOTE: since version 4.0.2 \n"
+"# NOTE: since version 4.0.2\n"
 "ENABLE_THUMBNAIL = True\n"
 "\n"
 "# Absolute filesystem path to the directory that will hold thumbnail files.\n"
@@ -856,16 +864,16 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:146
+#: config/seahub_settings_py.md:152
 # header
 msgid "## Cloud Mode"
 msgstr ""
 
-#: config/seahub_settings_py.md:148
+#: config/seahub_settings_py.md:154
 msgid "You should enable cloud mode if you use Seafile with an unknown user base. It disables the organization tab in Seahub's website to ensure that users can't access the user list. Cloud mode provides some nice features like sharing content with unregistered users and sending invitations to them. Therefore you also want to enable user registration. Through the global address book (since version 4.2.3) you can do a search for every user account. So you probably want to disable it."
 msgstr ""
 
-#: config/seahub_settings_py.md:150
+#: config/seahub_settings_py.md:156
 # code block
 msgid "```python\n"
 "# Enable cloude mode and hide `Organization` tab.\n"
@@ -876,12 +884,12 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:159
+#: config/seahub_settings_py.md:165
 # header
 msgid "## Other options"
 msgstr ""
 
-#: config/seahub_settings_py.md:162
+#: config/seahub_settings_py.md:168
 # code block
 msgid "```python\n"
 "\n"
@@ -909,12 +917,12 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:187
+#: config/seahub_settings_py.md:193
 # header
 msgid "## Pro edition only options"
 msgstr ""
 
-#: config/seahub_settings_py.md:189
+#: config/seahub_settings_py.md:195
 # code block
 msgid "```python\n"
 "# Whether to show the used traffic in user's profile popup dialog. Default is True\n"
@@ -926,22 +934,22 @@ msgid "```python\n"
 "```"
 msgstr ""
 
-#: config/seahub_settings_py.md:198
+#: config/seahub_settings_py.md:204
 # header
 msgid "## Note"
 msgstr ""
 
-#: config/seahub_settings_py.md:200
+#: config/seahub_settings_py.md:206
 # unordered list
 msgid "* You need to restart seahub so that your changes take effect."
 msgstr ""
 
-#: config/seahub_settings_py.md:201
+#: config/seahub_settings_py.md:207
 # unordered list
 msgid "* If your changes don't take effect, You may need to delete 'seahub_setting.pyc'. (A cache file)"
 msgstr ""
 
-#: config/seahub_settings_py.md:203
+#: config/seahub_settings_py.md:209
 # code block
 msgid "```bash\n"
 "./seahub.sh restart\n"

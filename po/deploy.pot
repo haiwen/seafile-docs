@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
+"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgid "Seafile supports a few external user authentication methods."
 msgstr ""
 
 #: deploy/README.md:36
-#: deploy/using_mysql.md:298
+#: deploy/using_mysql.md:303
 # unordered list
 msgid "* [Configure Seafile to use LDAP](using_ldap.md)"
 msgstr ""
@@ -2248,7 +2248,7 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/server.md:79
-#: deploy/using_sqlite.md:74
+#: deploy/using_sqlite.md:79
 # header
 msgid "#### Setup"
 msgstr ""
@@ -2262,7 +2262,7 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/server.md:86
-#: deploy/using_mysql.md:107
+#: deploy/using_mysql.md:112
 msgid "If some of the prerequisites are not installed, the seafile initialization script will ask you to install them."
 msgstr ""
 
@@ -2271,8 +2271,8 @@ msgid "[[images/server-setup.png|You'll see these outputs when you run the setup
 msgstr ""
 
 #: deploy/server.md:90
-#: deploy/using_mysql.md:109
-#: deploy/using_sqlite.md:83
+#: deploy/using_mysql.md:114
+#: deploy/using_sqlite.md:88
 msgid "The script will guide you through the settings of various configuration options."
 msgstr ""
 
@@ -2312,7 +2312,7 @@ msgid "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\"\n"
 msgstr ""
 
 #: deploy/server.md:126
-#: deploy/using_mysql.md:170
+#: deploy/using_mysql.md:175
 msgid "If the setup is successful, you'll see the following output"
 msgstr ""
 
@@ -2321,7 +2321,7 @@ msgid "[[images/server-setup-successfully.png]]"
 msgstr ""
 
 #: deploy/server.md:130
-#: deploy/using_mysql.md:174
+#: deploy/using_mysql.md:179
 msgid "Now you should have the following directory layout :"
 msgstr ""
 
@@ -2358,19 +2358,19 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/server.md:160
-#: deploy/using_mysql.md:203
+#: deploy/using_mysql.md:208
 msgid "The folder <code>seafile-server-latest</code> is a symbolic link to the current seafile server folder. When later you upgrade to a new version, the upgrade scripts would update this link to keep it always point to the latest seafile server folder."
 msgstr ""
 
 #: deploy/server.md:163
-#: deploy/using_mysql.md:205
-#: deploy/using_sqlite.md:128
+#: deploy/using_mysql.md:210
+#: deploy/using_sqlite.md:133
 # header
 msgid "## Running Seafile Server"
 msgstr ""
 
 #: deploy/server.md:165
-#: deploy/using_sqlite.md:130
+#: deploy/using_sqlite.md:135
 # header
 msgid "#### Before Running"
 msgstr ""
@@ -2387,7 +2387,7 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/server.md:173
-#: deploy/using_sqlite.md:136
+#: deploy/using_sqlite.md:141
 # header
 msgid "#### Starting Seafile Server and Seahub Website"
 msgstr ""
@@ -2444,24 +2444,24 @@ msgid "'''Congratulations!''' Now you have successfully setup your private Seafi
 msgstr ""
 
 #: deploy/server.md:199
-#: deploy/using_sqlite.md:158
+#: deploy/using_sqlite.md:163
 # header
 msgid "#### Run Seahub on another port"
 msgstr ""
 
 #: deploy/server.md:201
-#: deploy/using_mysql.md:232
+#: deploy/using_mysql.md:237
 msgid "If you want to run seahub in a port other than the default 8000, say 8001, you must:"
 msgstr ""
 
 #: deploy/server.md:203
-#: deploy/using_mysql.md:234
+#: deploy/using_mysql.md:239
 # unordered list
 msgid "* stop the seafile server"
 msgstr ""
 
 #: deploy/server.md:204
-#: deploy/using_mysql.md:235
+#: deploy/using_mysql.md:240
 # inline html
 msgid "<pre>\n"
 "./seahub.sh stop\n"
@@ -2482,13 +2482,13 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/server.md:214
-#: deploy/using_mysql.md:245
+#: deploy/using_mysql.md:250
 # unordered list
 msgid "* restart seafile server"
 msgstr ""
 
 #: deploy/server.md:215
-#: deploy/using_mysql.md:246
+#: deploy/using_mysql.md:251
 # inline html
 msgid "<pre>\n"
 "./seafile.sh start\n"
@@ -2501,20 +2501,20 @@ msgid "see [[Seafile server configuration options]] for more details about <code
 msgstr ""
 
 #: deploy/server.md:222
-#: deploy/using_mysql.md:253
+#: deploy/using_mysql.md:258
 # header
 msgid "## Stopping and Restarting Seafile and Seahub"
 msgstr ""
 
 #: deploy/server.md:224
-#: deploy/using_mysql.md:255
-#: deploy/using_sqlite.md:182
+#: deploy/using_mysql.md:260
+#: deploy/using_sqlite.md:187
 # header
 msgid "#### Stopping"
 msgstr ""
 
 #: deploy/server.md:226
-#: deploy/using_mysql.md:257
+#: deploy/using_mysql.md:262
 # inline html
 msgid "<pre>\n"
 "./seahub.sh stop # stop seahub website\n"
@@ -2523,14 +2523,14 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/server.md:231
-#: deploy/using_mysql.md:262
-#: deploy/using_sqlite.md:187
+#: deploy/using_mysql.md:267
+#: deploy/using_sqlite.md:192
 # header
 msgid "#### Restarting"
 msgstr ""
 
 #: deploy/server.md:233
-#: deploy/using_mysql.md:264
+#: deploy/using_mysql.md:269
 # inline html
 msgid "<pre>\n"
 "./seafile.sh restart\n"
@@ -2539,14 +2539,14 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/server.md:238
-#: deploy/using_mysql.md:269
-#: deploy/using_sqlite.md:192
+#: deploy/using_mysql.md:274
+#: deploy/using_sqlite.md:197
 # header
 msgid "#### When the Scripts Fail"
 msgstr ""
 
 #: deploy/server.md:240
-#: deploy/using_mysql.md:271
+#: deploy/using_mysql.md:276
 msgid "Most of the time, seafile.sh and seahub.sh work fine. But if they fail, you may"
 msgstr ""
 
@@ -2556,7 +2556,7 @@ msgid "* Use '''pgrep''' command to check if seafile/seahub processes are still 
 msgstr ""
 
 #: deploy/server.md:244
-#: deploy/using_mysql.md:275
+#: deploy/using_mysql.md:280
 # inline html
 msgid "<pre>\n"
 "pgrep -f seafile-controller # check seafile processes\n"
@@ -2570,7 +2570,7 @@ msgid "* Use '''pkill''' to kill the processes"
 msgstr ""
 
 #: deploy/server.md:251
-#: deploy/using_mysql.md:282
+#: deploy/using_mysql.md:287
 # inline html
 msgid "<pre>\n"
 "pkill -f seafile-controller\n"
@@ -2579,14 +2579,14 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/server.md:256
-#: deploy/using_mysql.md:291
-#: deploy/using_sqlite.md:208
+#: deploy/using_mysql.md:296
+#: deploy/using_sqlite.md:213
 # header
 msgid "## That's it!"
 msgstr ""
 
 #: deploy/server.md:257
-#: deploy/using_mysql.md:293
+#: deploy/using_mysql.md:298
 msgid "That's it! Now you may want read more about seafile."
 msgstr ""
 
@@ -5416,7 +5416,7 @@ msgstr ""
 
 #: deploy/using_mysql.md:86
 # unordered list
-msgid "* python 2.7 or 2.6.5+"
+msgid "* python 2.7"
 msgstr ""
 
 #: deploy/using_mysql.md:89
@@ -5437,7 +5437,7 @@ msgstr ""
 #: deploy/using_mysql.md:93
 # inline html
 msgid "<pre>\n"
-"#on Debian/Ubuntu\n"
+"# on Debian/Ubuntu\n"
 "apt-get update\n"
 "apt-get install python2.7 libpython2.7 python-setuptools python-imaging \\\n"
 "  python-ldap python-mysqldb python-memcache\n"
@@ -5445,11 +5445,19 @@ msgid "<pre>\n"
 msgstr ""
 
 #: deploy/using_mysql.md:100
+# inline html
+msgid "<pre>\n"
+"# on CentOS 7\n"
+"sudo yum install python-imaging MySQL-python python-memcached python-ldap\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_mysql.md:105
 # header
 msgid "### Setup"
 msgstr ""
 
-#: deploy/using_mysql.md:102
+#: deploy/using_mysql.md:107
 # inline html
 msgid "<pre>\n"
 "cd seafile-server-*\n"
@@ -5457,43 +5465,43 @@ msgid "<pre>\n"
 "</pre>"
 msgstr ""
 
-#: deploy/using_mysql.md:111
+#: deploy/using_mysql.md:116
 msgid "** Seafile configuration options **"
 msgstr ""
 
-#: deploy/using_mysql.md:113
-#: deploy/using_sqlite.md:87
+#: deploy/using_mysql.md:118
+#: deploy/using_sqlite.md:92
 msgid "| Option | Description | Note |"
 msgstr ""
 
-#: deploy/using_mysql.md:114
-#: deploy/using_mysql.md:143
-#: deploy/using_mysql.md:160
-#: deploy/using_sqlite.md:88
+#: deploy/using_mysql.md:119
+#: deploy/using_mysql.md:148
+#: deploy/using_mysql.md:165
+#: deploy/using_sqlite.md:93
 msgid "| -- | -- | ---- |"
 msgstr ""
 
-#: deploy/using_mysql.md:115
+#: deploy/using_mysql.md:120
 msgid "| server name | Name of this seafile server | 3-15 characters, only English letters, digits and underscore ('_') are allowed |"
 msgstr ""
 
-#: deploy/using_mysql.md:116
+#: deploy/using_mysql.md:121
 msgid "| server ip or domain | The IP address or domain name used by this server | Seafile client program will access the server with this address |"
 msgstr ""
 
-#: deploy/using_mysql.md:117
+#: deploy/using_mysql.md:122
 msgid "| seafile data dir | Seafile stores your data in this directory. By default it'll be placed in the current directory.  | The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space.  |"
 msgstr ""
 
-#: deploy/using_mysql.md:118
+#: deploy/using_mysql.md:123
 msgid "| fileserver port | The TCP port used by Seafile fileserver | Default is 8082. If it's been used by other service, you can set it to another port.  |"
 msgstr ""
 
-#: deploy/using_mysql.md:121
+#: deploy/using_mysql.md:126
 msgid "At this moment, you will be asked to choose a way to initialize seafile databases:"
 msgstr ""
 
-#: deploy/using_mysql.md:123
+#: deploy/using_mysql.md:128
 # code block
 msgid "```sh\n"
 "-------------------------------------------------------\n"
@@ -5506,112 +5514,114 @@ msgid "```sh\n"
 "```"
 msgstr ""
 
-#: deploy/using_mysql.md:134
+#: deploy/using_mysql.md:139
 msgid "Which one to choose depends on if you have the root password."
 msgstr ""
 
-#: deploy/using_mysql.md:136
+#: deploy/using_mysql.md:141
 # unordered list
 msgid "* If you choose \"1\", you need to provide the root password. The script would create the databases and a new user to access the databases"
 msgstr ""
 
-#: deploy/using_mysql.md:137
+#: deploy/using_mysql.md:142
 # unordered list
 msgid "* If you choose \"2\", the ccnet/seafile/seahub databases must have already been created, either by you, or someone else."
 msgstr ""
 
-#: deploy/using_mysql.md:139
+#: deploy/using_mysql.md:144
 msgid "If you choose \"[1] Create new ccnet/seafile/seahub databases\", you would be asked these questions:"
 msgstr ""
 
-#: deploy/using_mysql.md:142
+#: deploy/using_mysql.md:147
 msgid "| Question | Description | Note"
 msgstr ""
 
-#: deploy/using_mysql.md:144
-#: deploy/using_mysql.md:161
+#: deploy/using_mysql.md:149
+#: deploy/using_mysql.md:166
 msgid "| mysql server host | the host address of the mysql server | the default is localhost |"
 msgstr ""
 
-#: deploy/using_mysql.md:145
+#: deploy/using_mysql.md:150
 msgid "| mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port.  |"
 msgstr ""
 
-#: deploy/using_mysql.md:146
+#: deploy/using_mysql.md:151
 msgid "| root password | the password of mysql root account | the root password is required to create new databases and a new user |"
 msgstr ""
 
-#: deploy/using_mysql.md:147
+#: deploy/using_mysql.md:152
 msgid "| mysql user for seafile | the username for seafile programs to use to access MySQL server | if the user does not exist, it would be created |"
 msgstr ""
 
-#: deploy/using_mysql.md:148
-#: deploy/using_mysql.md:164
+#: deploy/using_mysql.md:153
+#: deploy/using_mysql.md:169
 msgid "| password for seafile mysql user | the password for the user above | |"
 msgstr ""
 
-#: deploy/using_mysql.md:149
+#: deploy/using_mysql.md:154
 msgid "| ccnet dabase name | the name of the database used by ccnet, default is \"ccnet-db\" | the database would be created if not existing |"
 msgstr ""
 
-#: deploy/using_mysql.md:150
+#: deploy/using_mysql.md:155
 msgid "| seafile dabase name | the name of the database used by seafile, default is \"seafile-db\" | the database would be created if not existing |"
 msgstr ""
 
-#: deploy/using_mysql.md:151
+#: deploy/using_mysql.md:156
 msgid "| seahub dabase name | the name of the database used by seahub, default is \"seahub-db\" | the database would be created if not existing |"
 msgstr ""
 
-#: deploy/using_mysql.md:154
+#: deploy/using_mysql.md:159
 msgid "If you choose \"[2] Use existing ccnet/seafile/seahub databases\", you would be asked these questions:"
 msgstr ""
 
-#: deploy/using_mysql.md:157
+#: deploy/using_mysql.md:162
 msgid "** related questions for \"Use existing ccnet/seafile/seahub databases\" **"
 msgstr ""
 
-#: deploy/using_mysql.md:159
+#: deploy/using_mysql.md:164
 msgid "| Question | Description | Note |"
 msgstr ""
 
-#: deploy/using_mysql.md:162
+#: deploy/using_mysql.md:167
 msgid "| mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port |"
 msgstr ""
 
-#: deploy/using_mysql.md:163
+#: deploy/using_mysql.md:168
 msgid "| mysql user for seafile | the user for seafile programs to use to access MySQL server | the user must already exists |"
 msgstr ""
 
-#: deploy/using_mysql.md:165
+#: deploy/using_mysql.md:170
 msgid "| ccnet dabase name | the name of the database used by ccnet | this database must already exist |"
 msgstr ""
 
-#: deploy/using_mysql.md:166
+#: deploy/using_mysql.md:171
 msgid "| seafile dabase name | the name of the database used by seafile, default is \"seafile-db\" | this database must already exist |"
 msgstr ""
 
-#: deploy/using_mysql.md:167
+#: deploy/using_mysql.md:172
 msgid "| seahub dabase name | the name of the database used by seahub, default is \"seahub-db\" | this database must already exist |"
 msgstr ""
 
-#: deploy/using_mysql.md:172
+#: deploy/using_mysql.md:177
 msgid "![server-setup-succesfully](../images/Server-setup-successfully.png)"
 msgstr ""
 
-#: deploy/using_mysql.md:175
+#: deploy/using_mysql.md:180
 # code block
 msgid "```sh\n"
 "#tree haiwen -L 2\n"
 "haiwen\n"
 "├── ccnet               # configuration files\n"
-"│   ├── ccnet.conf\n"
 "│   ├── mykey.peer\n"
 "│   ├── PeerMgr\n"
 "│   └── seafile.ini\n"
+"├── conf\n"
+"│   └── ccnet.conf\n"
+"│   └── seafile.conf\n"
+"│   └── seahub_settings.py\n"
 "├── installed\n"
 "│   └── seafile-server_1.8.2_x86-64.tar.gz\n"
 "├── seafile-data\n"
-"│   └── seafile.conf\n"
 "├── seafile-server-1.8.2  # active version\n"
 "│   ├── reset-admin.sh\n"
 "│   ├── runtime\n"
@@ -5624,21 +5634,19 @@ msgid "```sh\n"
 "├── seafile-server-latest  # symbolic link to seafile-server-1.8.2\n"
 "├── seahub-data\n"
 "│   └── avatars\n"
-"├── seahub_settings.py   # optional config file\n"
-"└── seahub_settings.pyc\n"
 "```"
 msgstr ""
 
-#: deploy/using_mysql.md:208
+#: deploy/using_mysql.md:213
 # header
 msgid "### Starting Seafile Server and Seahub Website"
 msgstr ""
 
-#: deploy/using_mysql.md:210
+#: deploy/using_mysql.md:215
 msgid "Under seafile-server-1.8.2 directory, run the following commands"
 msgstr ""
 
-#: deploy/using_mysql.md:213
+#: deploy/using_mysql.md:218
 # code block
 msgid "```\n"
 "./seafile.sh start # Start seafile service\n"
@@ -5646,76 +5654,76 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_mysql.md:218
+#: deploy/using_mysql.md:223
 msgid "Note: The first time you start seahub, the script would prompt you to create an admin account for your seafile server."
 msgstr ""
 
-#: deploy/using_mysql.md:220
+#: deploy/using_mysql.md:225
 msgid "After starting the services, you may open a web browser and visit Seafile web interface at (assume your server IP is 192.168.1.111):"
 msgstr ""
 
-#: deploy/using_mysql.md:222
+#: deploy/using_mysql.md:227
 # code block
 msgid "```\n"
 "http://192.168.1.111:8000/\n"
 "```"
 msgstr ""
 
-#: deploy/using_mysql.md:227
+#: deploy/using_mysql.md:232
 msgid "Congratulations! Now you have successfully setup your private Seafile server."
 msgstr ""
 
-#: deploy/using_mysql.md:230
+#: deploy/using_mysql.md:235
 # header
 msgid "### Run Seahub on another port"
 msgstr ""
 
-#: deploy/using_mysql.md:240
+#: deploy/using_mysql.md:245
 # unordered list
 msgid "* modify the value of `SERVICE_URL` in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is `192.168.1.111`)"
 msgstr ""
 
-#: deploy/using_mysql.md:241
+#: deploy/using_mysql.md:246
 # inline html
 msgid "<pre>\n"
 "SERVICE_URL = http://192.168.1.111:8001\n"
 "</pre>"
 msgstr ""
 
-#: deploy/using_mysql.md:251
+#: deploy/using_mysql.md:256
 msgid "see [Seafile server configuration options](server_configuration.md) for more details about <code>ccnet.conf</code>."
 msgstr ""
 
-#: deploy/using_mysql.md:273
+#: deploy/using_mysql.md:278
 # unordered list
 msgid "* Use `pgrep` command to check if seafile/seahub processes are still running"
 msgstr ""
 
-#: deploy/using_mysql.md:280
+#: deploy/using_mysql.md:285
 # unordered list
 msgid "* Use `pkill` to kill the processes"
 msgstr ""
 
-#: deploy/using_mysql.md:287
+#: deploy/using_mysql.md:292
 # header
 msgid "## Performance turning"
 msgstr ""
 
-#: deploy/using_mysql.md:289
+#: deploy/using_mysql.md:294
 msgid "If you have more than 50 users in your Seafile system, we highly recommand you to [add memcached](../deploy/add_memcached.md). This will make the web 10x faster.  "
 msgstr ""
 
-#: deploy/using_mysql.md:296
+#: deploy/using_mysql.md:301
 # unordered list
 msgid "* [Deploy Seafile with Nginx](deploy_with_nginx.md) / [Deploy Seafile with Apache](deploy_with_apache.md)"
 msgstr ""
 
-#: deploy/using_mysql.md:297
+#: deploy/using_mysql.md:302
 # unordered list
 msgid "* [Enable Https on Seafile Web with Nginx](https_with_nginx.md) / [Enable Https on Seafile Web with Apache](https_with_apache.md)"
 msgstr ""
 
-#: deploy/using_mysql.md:299
+#: deploy/using_mysql.md:304
 # unordered list
 msgid "* [How to manage the server](../maintain/README.md)"
 msgstr ""
@@ -6020,7 +6028,7 @@ msgstr ""
 
 #: deploy/using_sqlite.md:62
 # unordered list
-msgid "- python 2.7 or python 2.6.5+"
+msgid "- python 2.7"
 msgstr ""
 
 #: deploy/using_sqlite.md:63
@@ -6052,7 +6060,15 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:76
+#: deploy/using_sqlite.md:74
+# code block
+msgid "```\n"
+"# on CentOS 7\n"
+"sudo yum install python-imaging MySQL-python python-memcached python-ldap\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:81
 # code block
 msgid "```sh\n"
 "cd seafile-server-*\n"
@@ -6060,48 +6076,50 @@ msgid "```sh\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:81
+#: deploy/using_sqlite.md:86
 msgid "If some of the prerequisites are not installed, the Seafile initialization script will ask you to install them."
 msgstr ""
 
-#: deploy/using_sqlite.md:85
+#: deploy/using_sqlite.md:90
 msgid "**Seafile configuration options**"
 msgstr ""
 
-#: deploy/using_sqlite.md:89
+#: deploy/using_sqlite.md:94
 msgid "| server name | Name of this Seafile server | 3-15 characters, only English letters, digits and underscore ('_') are allowed |"
 msgstr ""
 
-#: deploy/using_sqlite.md:90
+#: deploy/using_sqlite.md:95
 msgid "| server ip or domain  | The IP address or domain name used by this server  | Seafile client program will access the server with this address |"
 msgstr ""
 
-#: deploy/using_sqlite.md:91
+#: deploy/using_sqlite.md:96
 msgid "| Seafile data dir  | Seafile stores your data in this directory. By default it'll be placed in the current directory.  | The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space. |"
 msgstr ""
 
-#: deploy/using_sqlite.md:92
+#: deploy/using_sqlite.md:97
 msgid "| fileserver port | The TCP port used by Seafile fileserver  | Default is 8082. If it's been used by other service, you can set it to another port. |"
 msgstr ""
 
-#: deploy/using_sqlite.md:95
+#: deploy/using_sqlite.md:100
 msgid "Now you should have the following directory layout:"
 msgstr ""
 
-#: deploy/using_sqlite.md:97
+#: deploy/using_sqlite.md:102
 # code block
 msgid "```sh\n"
 "#tree haiwen -L 2\n"
 "haiwen\n"
 "├── ccnet               # configuration files\n"
-"│   ├── ccnet.conf\n"
 "│   ├── mykey.peer\n"
 "│   ├── PeerMgr\n"
 "│   └── seafile.ini\n"
+"├── conf\n"
+"│   └── ccnet.conf\n"
+"│   └── seafile.conf\n"
+"│   └── seahub_settings.py\n"
 "├── installed\n"
 "│   └── seafile-server_1.4.0_x86-64.tar.gz\n"
 "├── seafile-data\n"
-"│   └── seafile.conf\n"
 "├── seafile-server-1.4.0  # active version\n"
 "│   ├── reset-admin.sh\n"
 "│   ├── runtime\n"
@@ -6115,77 +6133,75 @@ msgid "```sh\n"
 "├── seahub-data\n"
 "│   └── avatars\n"
 "├── seahub.db\n"
-"├── seahub_settings.py   # optional config file\n"
-"└── seahub_settings.pyc\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:126
+#: deploy/using_sqlite.md:131
 msgid "The folder seafile-server-latest is a symbolic link to the current Seafile server folder. When later you upgrade to a new version, the upgrade scripts would update this link to keep it always point to the latest Seafile server folder."
 msgstr ""
 
-#: deploy/using_sqlite.md:132
+#: deploy/using_sqlite.md:137
 msgid "Since Seafile uses persistent connections between client and server, you should increase Linux file descriptors by ulimit if you have a large number of clients before start Seafile, like:"
 msgstr ""
 
-#: deploy/using_sqlite.md:134
+#: deploy/using_sqlite.md:139
 msgid "``ulimit -n 30000``"
 msgstr ""
 
-#: deploy/using_sqlite.md:138
+#: deploy/using_sqlite.md:143
 # unordered list
 msgid "- Start Seafile:"
 msgstr ""
 
-#: deploy/using_sqlite.md:139
+#: deploy/using_sqlite.md:144
 # code block
 msgid "```\n"
 "./seafile.sh start # Start Seafile service\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:143
+#: deploy/using_sqlite.md:148
 # unordered list
 msgid "- Start Seahub:"
 msgstr ""
 
-#: deploy/using_sqlite.md:144
+#: deploy/using_sqlite.md:149
 # code block
 msgid "```\n"
 "./seahub.sh start <port>  # Start Seahub website, port defaults to 8000\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:148
+#: deploy/using_sqlite.md:153
 msgid "**Note**: The first time you start Seahub, the script is going to prompt you to create an admin account for your Seafile server."
 msgstr ""
 
-#: deploy/using_sqlite.md:150
+#: deploy/using_sqlite.md:155
 msgid "After starting the services, you may open a web browser and type in"
 msgstr ""
 
-#: deploy/using_sqlite.md:152
+#: deploy/using_sqlite.md:157
 msgid "``http://192.168.1.111:8000``"
 msgstr ""
 
-#: deploy/using_sqlite.md:154
-msgid "you will be redirected to the Login page. Just enter the admin username and password. "
+#: deploy/using_sqlite.md:159
+msgid "you will be redirected to the Login page. Just enter the admin username and password."
 msgstr ""
 
-#: deploy/using_sqlite.md:156
+#: deploy/using_sqlite.md:161
 msgid "**Congratulations!** Now you have successfully setup your private Seafile server."
 msgstr ""
 
-#: deploy/using_sqlite.md:160
+#: deploy/using_sqlite.md:165
 msgid "If you want to run Seahub on a port other than the default 8000, say 8001, you must:"
 msgstr ""
 
-#: deploy/using_sqlite.md:162
+#: deploy/using_sqlite.md:167
 # unordered list
 msgid "- stop the Seafile server"
 msgstr ""
 
-#: deploy/using_sqlite.md:163
+#: deploy/using_sqlite.md:168
 # code block
 msgid "```\n"
 "./seahub.sh stop\n"
@@ -6193,24 +6209,24 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:168
+#: deploy/using_sqlite.md:173
 # unordered list
 msgid "- modify the value of SERVICE_URL in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is 192.168.1.100). For Seafile version 5.0+, you can modify SERVICE_URL via web UI in \"System Admin->Settings\""
 msgstr ""
 
-#: deploy/using_sqlite.md:169
+#: deploy/using_sqlite.md:174
 # code block
 msgid "```\n"
 "SERVICE_URL = http://192.168.1.100:8001\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:173
+#: deploy/using_sqlite.md:178
 # unordered list
 msgid "- restart Seafile server"
 msgstr ""
 
-#: deploy/using_sqlite.md:174
+#: deploy/using_sqlite.md:179
 # code block
 msgid "```\n"
 "./seafile.sh start\n"
@@ -6218,16 +6234,16 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:179
+#: deploy/using_sqlite.md:184
 msgid "See Seafile [Server Configuration Manual](deploy/server_configuration.md) for more details about ``ccnet.conf``."
 msgstr ""
 
-#: deploy/using_sqlite.md:181
+#: deploy/using_sqlite.md:186
 # header
 msgid "## Manage Seafile and Seahub"
 msgstr ""
 
-#: deploy/using_sqlite.md:183
+#: deploy/using_sqlite.md:188
 # code block
 msgid "```\n"
 "./seahub.sh stop # stop seahub website\n"
@@ -6235,7 +6251,7 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:188
+#: deploy/using_sqlite.md:193
 # code block
 msgid "```\n"
 "./seafile.sh restart\n"
@@ -6243,16 +6259,16 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:194
+#: deploy/using_sqlite.md:199
 msgid "Most of the time, `seafile.sh` and `seahub.sh` work fine. But if they fail, you might want to"
 msgstr ""
 
-#: deploy/using_sqlite.md:196
+#: deploy/using_sqlite.md:201
 # unordered list
 msgid "- Use pgrep command to check if Seafile/Seahub processes are still running"
 msgstr ""
 
-#: deploy/using_sqlite.md:197
+#: deploy/using_sqlite.md:202
 # code block
 msgid "```\n"
 "pgrep -f seafile-controller # check Seafile processes\n"
@@ -6260,12 +6276,12 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:202
+#: deploy/using_sqlite.md:207
 # unordered list
 msgid "- Use pkill to kill the processes"
 msgstr ""
 
-#: deploy/using_sqlite.md:203
+#: deploy/using_sqlite.md:208
 # code block
 msgid "```\n"
 "pkill -f seafile-controller\n"
@@ -6273,15 +6289,15 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_sqlite.md:209
+#: deploy/using_sqlite.md:214
 msgid "For a production server we highly recommend to setup with Nginx/Apache and enable SSL/TLS."
 msgstr ""
 
-#: deploy/using_sqlite.md:211
+#: deploy/using_sqlite.md:216
 msgid "That's it! Now you might want read more about Seafile."
 msgstr ""
 
-#: deploy/using_sqlite.md:212
+#: deploy/using_sqlite.md:217
 # unordered list
 msgid "- [Administration](../maintain/README.md)"
 msgstr ""

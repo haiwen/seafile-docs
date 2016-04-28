@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
+"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -897,7 +897,7 @@ msgid "At least 2 Linux server with at least 2GB RAM."
 msgstr ""
 
 #: deploy_pro/deploy_in_a_cluster.md:40
-#: deploy_pro/download_and_setup_seafile_professional_server.md:64
+#: deploy_pro/download_and_setup_seafile_professional_server.md:62
 # header
 msgid "### Install Python libraries ###"
 msgstr ""
@@ -911,7 +911,7 @@ msgid "First make sure your have installed python 2.6 or 2.7, then:"
 msgstr ""
 
 #: deploy_pro/deploy_in_a_cluster.md:45
-#: deploy_pro/download_and_setup_seafile_professional_server.md:67
+#: deploy_pro/download_and_setup_seafile_professional_server.md:65
 # code block
 msgid "```\n"
 "sudo easy_install pip\n"
@@ -920,12 +920,12 @@ msgid "```\n"
 msgstr ""
 
 #: deploy_pro/deploy_in_a_cluster.md:50
-#: deploy_pro/download_and_setup_seafile_professional_server.md:72
+#: deploy_pro/download_and_setup_seafile_professional_server.md:70
 msgid "If you receive an error about \"Wheel installs require setuptools >= ...\", run this between the pip and boto lines above"
 msgstr ""
 
 #: deploy_pro/deploy_in_a_cluster.md:51
-#: deploy_pro/download_and_setup_seafile_professional_server.md:73
+#: deploy_pro/download_and_setup_seafile_professional_server.md:71
 # code block
 msgid "```\n"
 "sudo pip install setuptools --no-use-wheel --upgrade\n"
@@ -1018,14 +1018,14 @@ msgid "You should make sure the config files on every Seafile server are consist
 msgstr ""
 
 #: deploy_pro/deploy_in_a_cluster.md:98
-#: deploy_pro/download_and_setup_seafile_professional_server.md:89
+#: deploy_pro/download_and_setup_seafile_professional_server.md:87
 #: deploy_pro/migrate_from_seafile_community_server.md:48
 # header
 msgid "### Get the license ###"
 msgstr ""
 
 #: deploy_pro/deploy_in_a_cluster.md:100
-#: deploy_pro/download_and_setup_seafile_professional_server.md:91
+#: deploy_pro/download_and_setup_seafile_professional_server.md:89
 msgid "Put the license you get under the top level diretory. In our wiki, we use the diretory `/data/haiwen/` as the top level directory."
 msgstr ""
 
@@ -1042,7 +1042,7 @@ msgid "```\n"
 msgstr ""
 
 #: deploy_pro/deploy_in_a_cluster.md:109
-#: deploy_pro/download_and_setup_seafile_professional_server.md:101
+#: deploy_pro/download_and_setup_seafile_professional_server.md:99
 #: deploy_pro/migrate_from_seafile_community_server.md:63
 #: deploy_pro/migrate_from_seafile_community_server.md:111
 msgid "Now you have:"
@@ -1160,7 +1160,7 @@ msgid "```\n"
 "\n"
 "AVATAR_FILE_STORAGE = 'seahub.base.database_storage.DatabaseStorage'\n"
 "\n"
-"COMPRESS_CACHE_BACKEND = 'locmem://'\n"
+"COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'\n"
 "\n"
 "```"
 msgstr ""
@@ -1657,12 +1657,12 @@ msgid "## <a id=\"wiki-preparation\"></a>Preparation ##"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:4
-msgid "The following document is tested in Ubuntu 14.04. We recommend that you use Ubuntu 14.04 as your server."
+msgid "The following document is tested in Ubuntu 14.04 and CentOS 7. We recommend that you use Ubuntu 14.04 or CentOS 7 as your server."
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:6
 # blockquote, which can be cascaded
-msgid "> NOTE: "
+msgid "> NOTE:"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:7
@@ -1670,9 +1670,9 @@ msgstr ""
 #: deploy_pro/download_and_setup_seafile_professional_server.md:13
 #: deploy_pro/download_and_setup_seafile_professional_server.md:16
 #: deploy_pro/download_and_setup_seafile_professional_server.md:18
+#: deploy_pro/download_and_setup_seafile_professional_server.md:24
 #: deploy_pro/download_and_setup_seafile_professional_server.md:28
-# blockquote, which can be cascaded
-msgid "> "
+msgid ">"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:8
@@ -1706,7 +1706,7 @@ msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:17
 # blockquote, which can be cascaded
-msgid "> CentOS 6.6:"
+msgid "> CentOS 7:"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:20
@@ -1727,10 +1727,6 @@ msgstr ""
 #: deploy_pro/download_and_setup_seafile_professional_server.md:23
 # blockquote, which can be cascaded
 msgid "> python-imaging MySQL-python mysql-server.x86_64 python-memcached python-ldap"
-msgstr ""
-
-#: deploy_pro/download_and_setup_seafile_professional_server.md:24
-msgid ">"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:26
@@ -1760,7 +1756,7 @@ msgid "### Install Java Runtime Environment (JRE) ###"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:37
-#: deploy_pro/download_and_setup_seafile_professional_server.md:53
+#: deploy_pro/download_and_setup_seafile_professional_server.md:51
 #: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:27
 #: deploy_pro/migrate_from_seafile_community_server.md:17
 #: deploy_pro/migrate_from_seafile_community_server.md:33
@@ -1777,7 +1773,7 @@ msgid "```\n"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:42
-#: deploy_pro/download_and_setup_seafile_professional_server.md:58
+#: deploy_pro/download_and_setup_seafile_professional_server.md:56
 #: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:32
 #: deploy_pro/migrate_from_seafile_community_server.md:22
 #: deploy_pro/migrate_from_seafile_community_server.md:38
@@ -1793,22 +1789,17 @@ msgid "```\n"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:47
-#: deploy_pro/migrate_from_seafile_community_server.md:27
-msgid "*Note*: Since version 3.1.12, java 1.7 is required, please check your java version by `java -version`. If not, please [change the default java version](./change_default_java.md)."
-msgstr ""
-
-#: deploy_pro/download_and_setup_seafile_professional_server.md:49
 #: deploy_pro/migrate_from_seafile_community_server.md:29
 # header
 msgid "### Install poppler-utils ###"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:51
+#: deploy_pro/download_and_setup_seafile_professional_server.md:49
 #: deploy_pro/migrate_from_seafile_community_server.md:31
 msgid "We need poppler-utils for full text search of pdf files."
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:54
+#: deploy_pro/download_and_setup_seafile_professional_server.md:52
 #: deploy_pro/migrate_from_seafile_community_server.md:34
 # code block
 msgid "```\n"
@@ -1816,7 +1807,7 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:59
+#: deploy_pro/download_and_setup_seafile_professional_server.md:57
 #: deploy_pro/migrate_from_seafile_community_server.md:39
 # code block
 msgid "```\n"
@@ -1824,43 +1815,43 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:66
+#: deploy_pro/download_and_setup_seafile_professional_server.md:64
 msgid "First make sure your have installed python 2.7"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:77
+#: deploy_pro/download_and_setup_seafile_professional_server.md:75
 # header
 msgid "### Install libpython2.7 if you use Ubuntu 14.04"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:79
+#: deploy_pro/download_and_setup_seafile_professional_server.md:77
 # code block
 msgid "```\n"
 "sudo apt-get install libpython2.7\n"
 "```"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:83
+#: deploy_pro/download_and_setup_seafile_professional_server.md:81
 # header
 msgid "### Install other libraries as required in the community edition"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:85
+#: deploy_pro/download_and_setup_seafile_professional_server.md:83
 msgid "See [Download and Setup Seafile Server With MySQL](../deploy/using_mysql.md)."
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:87
+#: deploy_pro/download_and_setup_seafile_professional_server.md:85
 # header
 msgid "## <a id=\"wiki-download-and-setup\"></a>Download and Setup Seafile Professional Server ##"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:94
+#: deploy_pro/download_and_setup_seafile_professional_server.md:92
 #: deploy_pro/migrate_from_seafile_community_server.md:54
 # header
 msgid "### <a id=\"wiki-download-and-uncompress\"></a>Download/Uncompress Seafile Professional Server ###"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:97
+#: deploy_pro/download_and_setup_seafile_professional_server.md:95
 #: deploy_pro/migrate_from_seafile_community_server.md:59
 # code block
 msgid "```\n"
@@ -1868,7 +1859,7 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:103
+#: deploy_pro/download_and_setup_seafile_professional_server.md:101
 # code block
 msgid "```\n"
 "haiwen\n"
@@ -1877,60 +1868,62 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:110
-#: deploy_pro/download_and_setup_seafile_professional_server.md:117
+#: deploy_pro/download_and_setup_seafile_professional_server.md:108
+#: deploy_pro/download_and_setup_seafile_professional_server.md:115
 #: deploy_pro/migrate_from_seafile_community_server.md:79
 #: deploy_pro/migrate_from_seafile_community_server.md:86
 msgid "-----------"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:112
+#: deploy_pro/download_and_setup_seafile_professional_server.md:110
 #: deploy_pro/migrate_from_seafile_community_server.md:81
 msgid "You should notice the difference between the names of the Community Server and Professional Server. Take the 1.8.0 64bit version as an example:"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:114
+#: deploy_pro/download_and_setup_seafile_professional_server.md:112
 # unordered list
 msgid "- Seafile Community Server tarball is `seafile-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-1.7.0`"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:115
+#: deploy_pro/download_and_setup_seafile_professional_server.md:113
 # unordered list
 msgid "- Seafile Professional Server tarball is `seafile-pro-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-1.7.0`"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:120
+#: deploy_pro/download_and_setup_seafile_professional_server.md:118
 # header
 msgid "### Setup ###"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:122
+#: deploy_pro/download_and_setup_seafile_professional_server.md:120
 msgid "The setup process of Seafile Professional Server is the same as the Seafile Community Server. See [Download and Setup Seafile Server With MySQL](../deploy/using_mysql.md)."
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:124
+#: deploy_pro/download_and_setup_seafile_professional_server.md:122
 msgid "If you have any problem in setting up the service, please check [Common problems in setting up Seafile server](../deploy/common_problems_for_setting_up_server.md)."
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:126
+#: deploy_pro/download_and_setup_seafile_professional_server.md:124
 msgid "After you have succesfully setup Seafile Professional Server, you would have a directory layout like this:"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:128
+#: deploy_pro/download_and_setup_seafile_professional_server.md:126
 # code block
 msgid "```\n"
 "#tree haiwen -L 2\n"
 "haiwen\n"
 "├── seafile-license.txt # license file\n"
 "├── ccnet               # configuration files\n"
-"│   ├── ccnet.conf\n"
 "│   ├── mykey.peer\n"
 "│   ├── PeerMgr\n"
 "│   └── seafile.ini\n"
-"├── pro-data            # data specific for professional version\n"
-"│   └── seafevents.conf\n"
-"├── seafile-data\n"
+"├── conf\n"
+"│   └── ccnet.conf\n"
 "│   └── seafile.conf\n"
+"│   └── seahub_settings.py\n"
+"│   └── seafevents.conf\n"
+"├── pro-data            # data specific for professional version\n"
+"├── seafile-data\n"
 "├── seafile-pro-server-1.8.0\n"
 "│   ├── reset-admin.sh\n"
 "│   ├── runtime\n"
@@ -1946,33 +1939,32 @@ msgid "```\n"
 "├── seahub-data\n"
 "│   └── avatars         # for user avatars\n"
 "├── seahub.db\n"
-"├── seahub_settings.py   # seahub config file\n"
 "```"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:159
+#: deploy_pro/download_and_setup_seafile_professional_server.md:158
 # header
 msgid "## Performance turning"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:161
+#: deploy_pro/download_and_setup_seafile_professional_server.md:160
 msgid "If you have more than 50 users in your Seafile system, we highly recommand you to [add memcached](../deploy/add_memcached.md). This will make the web 10x faster.  "
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:163
+#: deploy_pro/download_and_setup_seafile_professional_server.md:162
 # header
 msgid "## <a id=\"wiki-done\"></a>Done"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:165
-msgid "At this point, the basic setup of Seafile Professional Server is done. "
+#: deploy_pro/download_and_setup_seafile_professional_server.md:164
+msgid "At this point, the basic setup of Seafile Professional Server is done."
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:167
+#: deploy_pro/download_and_setup_seafile_professional_server.md:166
 msgid "You may want to read more about Seafile Professional Server:"
 msgstr ""
 
-#: deploy_pro/download_and_setup_seafile_professional_server.md:169
+#: deploy_pro/download_and_setup_seafile_professional_server.md:168
 # unordered list
 msgid "- [FAQ For Seafile Professional Server](faq_for_seafile_pro_server.md)"
 msgstr ""
@@ -2302,7 +2294,7 @@ msgid "- Q: The above solution does not solve my problem."
 msgstr ""
 
 #: deploy_pro/faq_for_seafile_pro_server.md:58
-msgid "  A: Please check whether the user you run Seafile can correctly start the libreoffice process. There may be permission problems."
+msgid "  A: Please check whether the user you run Seafile can correctly start the libreoffice process. There may be permission problems. For example, if you use www-data user to run Seafile, make sure www-data has a home directory and can write to the home directory."
 msgstr ""
 
 #: deploy_pro/ldap_group_sync.md:1
@@ -2541,6 +2533,10 @@ msgstr ""
 
 #: deploy_pro/migrate_from_seafile_community_server.md:15
 msgid "Java 7 or higher is required."
+msgstr ""
+
+#: deploy_pro/migrate_from_seafile_community_server.md:27
+msgid "*Note*: Since version 3.1.12, java 1.7 is required, please check your java version by `java -version`. If not, please [change the default java version](./change_default_java.md)."
 msgstr ""
 
 #: deploy_pro/migrate_from_seafile_community_server.md:43
@@ -3049,14 +3045,22 @@ msgid "``` python\n"
 "# the specified extension file you add below\n"
 "OFFICE_WEB_APP_FILE_EXTENSION = ('ods', 'xls', 'xlsb', 'xlsm', 'xlsx','ppsx', 'ppt',\n"
 "    'pptm', 'pptx', 'doc', 'docm', 'docx')\n"
+"\n"
+"# Enable edit file through Office Web App\n"
+"ENABLE_OFFICE_WEB_APP_EDIT = True\n"
+"\n"
+"# Currently we only support `xlsx` and `pptx`\n"
+"# type of file editing through Office Web App\n"
+"OFFICE_WEB_APP_EDIT_FILE_EXTENSION = ('xlsx', 'pptx')\n"
+"\n"
 "```"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:30
+#: deploy_pro/office_web_app.md:38
 msgid "Then restart"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:32
+#: deploy_pro/office_web_app.md:40
 # code block
 msgid "```\n"
 "./seafile.sh restart\n"
@@ -3064,44 +3068,44 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:37
+#: deploy_pro/office_web_app.md:45
 msgid "After you click the document you specified in seahub_settings.py, you will see the new preview page."
 msgstr ""
 
-#: deploy_pro/office_web_app.md:39
+#: deploy_pro/office_web_app.md:47
 msgid "![office-web-app](../images/office-web-app.png)"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:41
+#: deploy_pro/office_web_app.md:49
 # header
 msgid "## Trouble shooting"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:43
+#: deploy_pro/office_web_app.md:51
 msgid "Understanding how the web app integration work will help you debug the problem. When a user visit a file page:"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:45
+#: deploy_pro/office_web_app.md:53
 # ordered list
 msgid "1. (seahub->browser) Seahub will generate a page containing an iframe and send to the browser"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:46
+#: deploy_pro/office_web_app.md:54
 # ordered list
 msgid "2. (broswer->office web app) With the iframe, the browser will try to load the file preview page from the office web app"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:47
+#: deploy_pro/office_web_app.md:55
 # ordered list
 msgid "3. (office web app->seahub) Office web app receives the request and send a request to Seahub to get the file content"
 msgstr ""
 
-#: deploy_pro/office_web_app.md:48
+#: deploy_pro/office_web_app.md:56
 # ordered list
 msgid "4. (office web app->browser) Office web app send the file preview page to the browser."
 msgstr ""
 
-#: deploy_pro/office_web_app.md:50
+#: deploy_pro/office_web_app.md:58
 msgid "Please check the Nginx log for Seahub (for step 3) and Office Web App to see which step is wrong."
 msgstr ""
 
@@ -4097,7 +4101,7 @@ msgid "```\n"
 msgstr ""
 
 #: deploy_pro/setup_with_amazon_s3.md:150
-msgid "`host` is the address and port of the S3-compatible service. You cannot prepend \"http\" or \"https\" to the `host` option. By default it'll use http connections. If you want to use https connection, please set `https = true` option."
+msgid "`host` is the address and port of the S3-compatible service. You cannot prepend \"http\" or \"https\" to the `host` option. By default it'll use http connections. If you want to use https connection, please set `use_https = true` option."
 msgstr ""
 
 #: deploy_pro/setup_with_amazon_s3.md:152
@@ -4674,47 +4678,64 @@ msgstr ""
 
 #: deploy_pro/upgrade_a_cluster.md:25
 # header
-msgid "### From v4.4 to v5.0"
+msgid "### From v5.0 to v5.1"
 msgstr ""
 
 #: deploy_pro/upgrade_a_cluster.md:27
-msgid "v5.0 introduces some database schema change, and all configuration files (ccnet.conf, seafile.conf, seafevents.conf, seahub_settings.py) are moved to a central config directory."
+msgid "Because Django is upgraded to 1.8, the COMPRESS_CACHE_BACKEND should be changed"
 msgstr ""
 
 #: deploy_pro/upgrade_a_cluster.md:29
-#: deploy_pro/upgrade_a_cluster.md:66
+# code block
+msgid "```\n"
+"   -    COMPRESS_CACHE_BACKEND = 'locmem://'\n"
+"   +    COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'\n"
+"```"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:34
+# header
+msgid "### From v4.4 to v5.0"
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:36
+msgid "v5.0 introduces some database schema change, and all configuration files (ccnet.conf, seafile.conf, seafevents.conf, seahub_settings.py) are moved to a central config directory."
+msgstr ""
+
+#: deploy_pro/upgrade_a_cluster.md:38
+#: deploy_pro/upgrade_a_cluster.md:75
 msgid "Perform the following steps to upgrade:"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:31
+#: deploy_pro/upgrade_a_cluster.md:40
 # unordered list
 msgid "- Run the upgrade script at one fronend node to upgrade the database."
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:32
+#: deploy_pro/upgrade_a_cluster.md:41
 # code block
 msgid "```\n"
 "./upgrade/upgrade_4.4_5.0.sh\n"
 "```"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:35
+#: deploy_pro/upgrade_a_cluster.md:44
 # unordered list
 msgid "- Then, on all other frontend nodes and the background node, run the upgrade script with `SEAFILE_SKIP_DB_UPGRADE` environmental variable turned on:"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:36
+#: deploy_pro/upgrade_a_cluster.md:45
 # code block
 msgid "```\n"
 "SEAFILE_SKIP_DB_UPGRADE=1 ./upgrade/upgrade_4.4_5.0.sh\n"
 "```"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:40
+#: deploy_pro/upgrade_a_cluster.md:49
 msgid "After the upgrade, you should see the configuration files has been moved to the conf/ folder."
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:42
+#: deploy_pro/upgrade_a_cluster.md:51
 # code block
 msgid "```\n"
 "conf/\n"
@@ -4726,58 +4747,58 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:52
+#: deploy_pro/upgrade_a_cluster.md:61
 # header
 msgid "### From v4.3 to v4.4"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:54
+#: deploy_pro/upgrade_a_cluster.md:63
 msgid "There are no database and search index upgrade from v4.3 to v4.4. Perform the following steps to upgrade:"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:56
+#: deploy_pro/upgrade_a_cluster.md:65
 # ordered list
 msgid "1. Run the minor upgrade script at frontend and backend nodes"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:58
+#: deploy_pro/upgrade_a_cluster.md:67
 # header
 msgid "### From v4.2 to v4.3"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:60
+#: deploy_pro/upgrade_a_cluster.md:69
 msgid "v4.3 contains no database table change from v4.2. But the old search index will be deleted and regenerated."
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:62
-msgid "A new option COMPRESS_CACHE_BACKEND = 'locmem://' should be added to seahub_settings.py"
+#: deploy_pro/upgrade_a_cluster.md:71
+msgid "A new option COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache' should be added to seahub_settings.py"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:64
+#: deploy_pro/upgrade_a_cluster.md:73
 msgid "The secret key in seahub_settings.py need to be regenerated, the old secret key lack enough randomness."
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:68
+#: deploy_pro/upgrade_a_cluster.md:77
 # ordered list
 msgid "1. Run the upgrade script at one fronend node to modify the seahub_settings.py"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:69
+#: deploy_pro/upgrade_a_cluster.md:78
 # ordered list
 msgid "2. Modify seahub_settings.py at each node, replacing the old secret key with the new one and add option COMPRESS_CACHE_BACKEND"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:70
+#: deploy_pro/upgrade_a_cluster.md:79
 # ordered list
 msgid "3. Run the minor upgrade script at frontend and backend nodes"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:71
+#: deploy_pro/upgrade_a_cluster.md:80
 # ordered list
 msgid "4. Delete the old search index (the folder pro-data/search) at the backend node"
 msgstr ""
 
-#: deploy_pro/upgrade_a_cluster.md:72
+#: deploy_pro/upgrade_a_cluster.md:81
 # ordered list
 msgid "5. Delete the old office preview output folder (/tmp/seafile-office-output) at the backend node"
 msgstr ""

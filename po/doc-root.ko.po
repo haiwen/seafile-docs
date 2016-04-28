@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
+"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
 "PO-Revision-Date: 2016-04-20 04:28+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <darkcircle.0426@gmail.com>\n"
@@ -745,8 +745,9 @@ msgstr "   * [파이썬 API](develop/python_api.md)"
 
 # unordered list
 #: SUMMARY.md:105
-msgid "   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)"
-msgstr "   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)"
+#, fuzzy
+msgid "   * [PHP API](develop/php_api.md)"
+msgstr "   * [파이썬 API](develop/python_api.md)"
 
 # unordered list
 #: SUMMARY.md:106
@@ -1168,7 +1169,9 @@ msgid "Please add"
 msgstr "다음 설정을 추가하십시오"
 
 #: faq.md:76
-msgid "    COMPRESS_CACHE_BACKEND = 'locmem://'"
+#, fuzzy
+msgid ""
+"    COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'"
 msgstr "    COMPRESS_CACHE_BACKEND = 'locmem://'"
 
 #: faq.md:78
@@ -1272,3 +1275,7 @@ msgstr "# 로드맵"
 #: roadmap.md:3
 msgid "Please check https://seacloud.cc/group/3/wiki/seafile-roadmap/"
 msgstr "https://seacloud.cc/group/3/wiki/seafile-roadmap/ 을 확인하십시오"
+
+# unordered list
+#~ msgid "   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)"
+#~ msgstr "   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)"

@@ -93,6 +93,7 @@ develop/README.md
 develop/code_standard.md
 develop/data_model.md
 develop/env.md
+develop/php_api.md
 develop/python_api.md
 develop/server-components.md
 develop/sync_algorithm.md
@@ -106,7 +107,6 @@ maintain/account.md
 maintain/backup_recovery.md
 maintain/clean_database.md
 maintain/logs.md
-maintain/seafile_cli.md
 maintain/seafile_fsck.md
 maintain/seafile_gc.md
 overview/README.md

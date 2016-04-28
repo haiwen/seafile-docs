@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-21 08:45:33+0200\n"
+"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -629,7 +629,7 @@ msgstr ""
 
 #: SUMMARY.md:105
 # unordered list
-msgid "   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)"
+msgid "   * [PHP API](develop/php_api.md)"
 msgstr ""
 
 #: SUMMARY.md:106
@@ -934,7 +934,7 @@ msgid "Please add"
 msgstr ""
 
 #: faq.md:76
-msgid "    COMPRESS_CACHE_BACKEND = 'locmem://'"
+msgid "    COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'"
 msgstr ""
 
 #: faq.md:78

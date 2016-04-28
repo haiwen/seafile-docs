@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-19 22:28:21+0900\n"
+"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
 "PO-Revision-Date: 2016-04-20 01:13+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <darkcircle.0426@gmail.com>\n"
@@ -959,12 +959,23 @@ msgstr "2. `help` 아래의 페이지를 수정하십시오."
 msgid "# Seahub Settings"
 msgstr "# Seahub 설정"
 
-# header
 #: config/seahub_settings_py.md:3
+#, fuzzy
+msgid ""
+"Note: You can also modify most of the config items via web interface.The "
+"config items are saved in database table (seahub-dab/constance_config). They "
+"have a higher priority over the items in config files."
+msgstr ""
+"참고: 5.0.0 버전 부터 대부분의 설정 항목은 웹 인터페이스에서 수정할 수 있습니"
+"다. 설정 항목은 데이터베이스 테이블(seahub_dab/constance_config)에 저장합니"
+"다. 설정 파일의 항목보다 높은 우선순위를 갖습니다."
+
+# header
+#: config/seahub_settings_py.md:5
 msgid "##  Sending Email Notifications on Seahub"
 msgstr "## Seahub에서 전자메일 알림 전송"
 
-#: config/seahub_settings_py.md:5
+#: config/seahub_settings_py.md:7
 msgid ""
 "A few features work better if it can send email notifications, such as "
 "notifying users about new messages."
@@ -972,7 +983,7 @@ msgstr ""
 "Seahub 자체에서 사용자에게 새 메시지 알림과 같은 전자메일 알림을 전송할 수 있"
 "다면 몇가지 기능이 잘 동작할 수 있습니다."
 
-#: config/seahub_settings_py.md:6
+#: config/seahub_settings_py.md:8
 msgid ""
 "If you want to setup email notifications, please add the following lines to "
 "`seahub_settings.py` (and set your email server)."
@@ -981,7 +992,7 @@ msgstr ""
 "리고 전자메일 서버를 설정하십시오)."
 
 # code block
-#: config/seahub_settings_py.md:8
+#: config/seahub_settings_py.md:10
 msgid ""
 "```python\n"
 "EMAIL_USE_TLS = False\n"
@@ -1003,12 +1014,12 @@ msgstr ""
 "SERVER_EMAIL = EMAIL_HOST_USER\n"
 "```"
 
-#: config/seahub_settings_py.md:18 config/sending_email.md:29
+#: config/seahub_settings_py.md:20 config/sending_email.md:29
 msgid "If you are using Gmail as email server, use following lines:"
 msgstr "Gmail을 전자메일 서버로 사용한다면, 다음 줄을 추가하십시오:"
 
 # code block
-#: config/seahub_settings_py.md:20
+#: config/seahub_settings_py.md:22
 msgid ""
 "```python\n"
 "EMAIL_USE_TLS = True\n"
@@ -1030,7 +1041,7 @@ msgstr ""
 "SERVER_EMAIL = EMAIL_HOST_USER\n"
 "```"
 
-#: config/seahub_settings_py.md:30 config/sending_email.md:41
+#: config/seahub_settings_py.md:32 config/sending_email.md:41
 msgid ""
 "**Note**: If your Email service still can not work, you may checkout the log "
 "file <code>logs/seahub.log</code> to see what may cause the problem. For "
@@ -1042,7 +1053,7 @@ msgstr ""
 "림 리스트 동작을 수행하려면 [전자메일 알림 리스트]"
 "(customize_email_notifications.md)를 참고하십시오."
 
-#: config/seahub_settings_py.md:32
+#: config/seahub_settings_py.md:34
 msgid ""
 "**Note2**: If you want to use the Email service without authentication leaf "
 "<code>EMAIL_HOST_PASSWORD</code> **blank** (<code>''</code>)."
@@ -1051,11 +1062,11 @@ msgstr ""
 "code>  값을 **빈** 상태(<code>''</code>)로 두십시오."
 
 # header
-#: config/seahub_settings_py.md:35
+#: config/seahub_settings_py.md:37
 msgid "## Memcached"
 msgstr "## Memcached"
 
-#: config/seahub_settings_py.md:37
+#: config/seahub_settings_py.md:39
 msgid ""
 "Seahub caches items(avatars, profiles, etc) on file system by default(/tmp/"
 "seahub_cache/). You can replace with Memcached."
@@ -1064,7 +1075,7 @@ msgstr ""
 "을 캐시(/tmp/seahub_cache/)에 저장합니다. 이 부분을 Memcached로 바꿀 수 있습"
 "니다."
 
-#: config/seahub_settings_py.md:38
+#: config/seahub_settings_py.md:40
 msgid ""
 "After install **python-memcache**, add the following lines to "
 "**seahub_settings.py**."
@@ -1073,7 +1084,7 @@ msgstr ""
 "시오."
 
 # code block
-#: config/seahub_settings_py.md:40
+#: config/seahub_settings_py.md:42
 msgid ""
 "```python\n"
 "CACHES = {\n"
@@ -1094,16 +1105,17 @@ msgstr ""
 "```"
 
 # header
-#: config/seahub_settings_py.md:49
+#: config/seahub_settings_py.md:51
 msgid "## User management options"
 msgstr "## 사용자 관리 설정 항목"
 
-#: config/seahub_settings_py.md:51
+#: config/seahub_settings_py.md:53
 msgid "The following options affect user registration, password and session."
 msgstr "다음 설정 항목은 사용자 등록, 암호, 세션에 영향을 줍니다."
 
 # code block
-#: config/seahub_settings_py.md:53
+#: config/seahub_settings_py.md:55
+#, fuzzy
 msgid ""
 "```python\n"
 "# Enalbe or disalbe registration on web. Default is `False`.\n"
@@ -1128,7 +1140,11 @@ msgid ""
 "\n"
 "# Attempt limit before showing a captcha when login.\n"
 "LOGIN_ATTEMPT_LIMIT = 3\n"
-"    \n"
+"\n"
+"# deactivate user account when login attempts exceed limit\n"
+"# Since version 5.1.2 or pro 5.1.3\n"
+"FREEZE_USER_ON_LOGIN_FAILED = False\n"
+"\n"
 "# mininum length for user's password\n"
 "USER_PASSWORD_MIN_LENGTH = 6\n"
 "\n"
@@ -1208,16 +1224,16 @@ msgstr ""
 "```"
 
 # header
-#: config/seahub_settings_py.md:101
+#: config/seahub_settings_py.md:107
 msgid "## Library options"
 msgstr "## 라이브러리 설정 항목"
 
-#: config/seahub_settings_py.md:103
+#: config/seahub_settings_py.md:109
 msgid "Options for libraries:"
 msgstr "라이브러리 설정 항목:"
 
 # code block
-#: config/seahub_settings_py.md:105
+#: config/seahub_settings_py.md:111
 msgid ""
 "```python\n"
 "# mininum length for password of encrypted library\n"
@@ -1257,12 +1273,13 @@ msgstr ""
 "ENABLE_USER_CREATE_ORG_REPO = True\n"
 "```"
 
-#: config/seahub_settings_py.md:124
+#: config/seahub_settings_py.md:130
 msgid "Options for online file preview:"
 msgstr "온라인 파일 미리 보기 설정 항목:"
 
 # code block
-#: config/seahub_settings_py.md:126
+#: config/seahub_settings_py.md:132
+#, fuzzy
 msgid ""
 "```python\n"
 "# Whether to use pdf.js to view pdf files online. Default is `True`,  you "
@@ -1274,13 +1291,13 @@ msgid ""
 "# Note, this option controls files that can be previewed online, like "
 "pictures, txt, pdf.\n"
 "# In pro edition, for preview doc/ppt/excel/pdf, there is another option "
-"`max-size` \n"
+"`max-size`\n"
 "# in seafevents.conf that controls the limit of files that can be "
 "previewed.\n"
 "FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024\n"
 "\n"
 "# Enable or disable thumbnails\n"
-"# NOTE: since version 4.0.2 \n"
+"# NOTE: since version 4.0.2\n"
 "ENABLE_THUMBNAIL = True\n"
 "\n"
 "# Absolute filesystem path to the directory that will hold thumbnail files.\n"
@@ -1311,11 +1328,11 @@ msgstr ""
 "```"
 
 # header
-#: config/seahub_settings_py.md:146
+#: config/seahub_settings_py.md:152
 msgid "## Cloud Mode"
 msgstr "## 클라우드 모드"
 
-#: config/seahub_settings_py.md:148
+#: config/seahub_settings_py.md:154
 msgid ""
 "You should enable cloud mode if you use Seafile with an unknown user base. "
 "It disables the organization tab in Seahub's website to ensure that users "
@@ -1333,7 +1350,7 @@ msgstr ""
 "부분을 비활성화할 수도 있습니다."
 
 # code block
-#: config/seahub_settings_py.md:150
+#: config/seahub_settings_py.md:156
 msgid ""
 "```python\n"
 "# Enable cloude mode and hide `Organization` tab.\n"
@@ -1352,12 +1369,12 @@ msgstr ""
 "```"
 
 # header
-#: config/seahub_settings_py.md:159
+#: config/seahub_settings_py.md:165
 msgid "## Other options"
 msgstr "## 기타 설정 항목"
 
 # code block
-#: config/seahub_settings_py.md:162
+#: config/seahub_settings_py.md:168
 msgid ""
 "```python\n"
 "\n"
@@ -1416,12 +1433,12 @@ msgstr ""
 "```"
 
 # header
-#: config/seahub_settings_py.md:187
+#: config/seahub_settings_py.md:193
 msgid "## Pro edition only options"
 msgstr "## 전문가판 전용 설정 항목"
 
 # code block
-#: config/seahub_settings_py.md:189
+#: config/seahub_settings_py.md:195
 msgid ""
 "```python\n"
 "# Whether to show the used traffic in user's profile popup dialog. Default "
@@ -1444,17 +1461,17 @@ msgstr ""
 "```"
 
 # header
-#: config/seahub_settings_py.md:198
+#: config/seahub_settings_py.md:204
 msgid "## Note"
 msgstr "## 참고"
 
 # unordered list
-#: config/seahub_settings_py.md:200
+#: config/seahub_settings_py.md:206
 msgid "* You need to restart seahub so that your changes take effect."
 msgstr "* 바꾼 설정 값을 적용하려면 Seahub를 다시 시작해야합니다."
 
 # unordered list
-#: config/seahub_settings_py.md:201
+#: config/seahub_settings_py.md:207
 msgid ""
 "* If your changes don't take effect, You may need to delete 'seahub_setting."
 "pyc'. (A cache file)"
@@ -1463,7 +1480,7 @@ msgstr ""
 "다"
 
 # code block
-#: config/seahub_settings_py.md:203
+#: config/seahub_settings_py.md:209
 msgid ""
 "```bash\n"
 "./seahub.sh restart\n"

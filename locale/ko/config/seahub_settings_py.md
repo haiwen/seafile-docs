@@ -1,5 +1,7 @@
 # Seahub 설정
 
+Note: You can also modify most of the config items via web interface.The config items are saved in database table (seahub-dab/constance_config). They have a higher priority over the items in config files.
+
 ## Seahub에서 전자메일 알림 전송
 
 Seahub 자체에서 사용자에게 새 메시지 알림과 같은 전자메일 알림을 전송할 수 있다면 몇가지 기능이 잘 동작할 수 있습니다.
@@ -69,7 +71,11 @@ LOGIN_REMEMBER_DAYS = 7
 
 # Attempt limit before showing a captcha when login.
 LOGIN_ATTEMPT_LIMIT = 3
-    
+
+# deactivate user account when login attempts exceed limit
+# Since version 5.1.2 or pro 5.1.3
+FREEZE_USER_ON_LOGIN_FAILED = False
+
 # mininum length for user's password
 USER_PASSWORD_MIN_LENGTH = 6
 
@@ -130,12 +136,12 @@ USE_PDFJS = True
 
 # Online preview maximum file size, defaults to 30M.
 # Note, this option controls files that can be previewed online, like pictures, txt, pdf.
-# In pro edition, for preview doc/ppt/excel/pdf, there is another option `max-size` 
+# In pro edition, for preview doc/ppt/excel/pdf, there is another option `max-size`
 # in seafevents.conf that controls the limit of files that can be previewed.
 FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024
 
 # Enable or disable thumbnails
-# NOTE: since version 4.0.2 
+# NOTE: since version 4.0.2
 ENABLE_THUMBNAIL = True
 
 # Absolute filesystem path to the directory that will hold thumbnail files.

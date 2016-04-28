@@ -19,7 +19,7 @@ port = 8080
 # Change the value of fastcgi to true if fastcgi is to be used
 fastcgi = false
 
-# If you deploy seafdav behind nginx/apache, you need to modify "share_name".
+# If you deploy SeafDAV behind nginx/apache, you need to modify "share_name".
 share_name = /
 </pre>
 
@@ -54,7 +54,7 @@ fastcgi = true
 share_name = /seafdav
 </pre>
 
-위 설정에서, '''share_name''' 값은 seafdav 서버에 할당할 주소의 접미부인 '''/seafdav'''로 바꾸었습니다.
+In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to SeafDAV server.
 
 #### https를 활용하지 않는 Nginx
 
@@ -116,7 +116,7 @@ https를 활용하는 nginx 설정:
     }
 </pre>
 
-기본적으로 Nginx에서 임시 파일에 있는 대형 요청 본문을 버퍼에 저장합니다. 다음 요청 본문을 완전히 받으면, Nginx에서 업스트림 서버에 요청 본문을 보냅니다(이 경우 seafdav). 하지만 파일 크기가 상당히 큰 것 같으면, 버퍼링 기능이 제대로 동작하지 않습니다. 중간에서 요청 본문 중개가 멈출 수도 있습니다. 따라서 4GB 이상의 파일 업로드를 지원하려면 Nginx 1.8.0 이상의 버전을 설치하시고 `proxy_request_buffering off` 설정을  Nginx 설정에 추가하십시오.
+By default Nginx will buffer large request body in temp file. After the body is completely received, Nginx will send the body to the upstream server (SeafDAV in our case). But it seems when file size is very large, the buffering mechanism dosen't work well. It may stop proxying the body in the middle. So if you want to support file upload larger for 4GB, we suggest you install Nginx version >= 1.8.0 and add `proxy_request_buffering off` to Nginx configuration.
 
 ### 예제 설정 3: Apache
 
@@ -132,7 +132,7 @@ fastcgi = false
 share_name = /seafdav
 </pre>
 
-위 설정에서 '''share_name''' 값은 SeafDAV 서버의 주소 접미부 '''/seafdav'''로 바꾸었습니다. **참고로 이 부분은 Apache에서 fastcgi를 사용하지 않습니다.**
+In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to SeafDAV server. **Note that we do not use fastcgi for Apache.**
 
 Apache 설정 파일(site-enabled/000-default)을 수정하십시오:
 
@@ -265,9 +265,9 @@ Finder의 WebDAV 지원은 안정적이지 않으며 느립니다. 따라서 Cyb
 
 ## 자주 묻는 질문
 
-### 클라이언트에서 seafdav 서버에 연결할 수 없음
+### Clients can't connect to SeafDAV server
 
-기본적으로, seafdav는 비활성 기능입니다. <code>seafdav.conf</code>에 <code>enabled = true</code> 설정 값이 들어있는지 확인하십시오.
+By default, SeafDAV is disabled. Check whether you have <code>enabled = true</code> in <code>seafdav.conf</code>.
 비활성 상태로 두고 싶지 않으면, 수정하시고 Seafile 서버를 다시 시작하십시오.
 
 

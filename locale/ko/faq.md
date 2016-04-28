@@ -73,7 +73,7 @@ logs/seahub.log를 확인하십시오.
 
 다음 설정을 추가하십시오
 
-    COMPRESS_CACHE_BACKEND = 'locmem://'
+    COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
 
 http://manual.seafile.com/deploy_pro/deploy_in_a_cluster.html 문서에 언급한대로 seahub_settings.py를 실행하십시오
 

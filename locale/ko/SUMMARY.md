@@ -102,7 +102,7 @@
    * [웹 API](develop/web_api.md)
    * [웹 API V2.1](develop/web_api_v2.1.md)
    * [파이썬 API](develop/python_api.md)
-   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)
+   * [PHP API](develop/php_api.md)
    * [데이터 모델](develop/data_model.md)
    * [서버 구성 요소](develop/server-components.md)
    * [동기화 알고리즘](develop/sync_algorithm.md)

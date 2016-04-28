@@ -8,7 +8,7 @@ This tutorial assumes you run at least Apache 2.4.
 
 ## 준비
 
-Apache 모듈을 설치하고 활성화하십시오
+Install and enable Apache modules
 
 우분투라면 다음 명령으로 활성화할 수 있습니다:
 
@@ -115,7 +115,7 @@ In this case, you can write:
 ```apache
   Alias /media  /home/user/haiwen/seafile-server-latest/seahub;
 ```
-This way, you no longer need to update the apache config file each time you upgrade your seafile server.
+This way, you no longer need to update the Apache config file each time you upgrade your seafile server.
 
 
 ## Detailed explanation

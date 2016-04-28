@@ -59,7 +59,7 @@ Benefits of this layout are
 
 Seafile 서버 꾸러미에서는 시스템에 우선 설치한 다음 꾸러미가 필요합니다.
 
-- python 2.7 or python 2.6.5+
+- python 2.7
 - python-setuptools
 - python-imaging
 - python-ldap
@@ -69,6 +69,11 @@ Seafile 서버 꾸러미에서는 시스템에 우선 설치한 다음 꾸러미
 #on Debian
 apt-get update
 apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap sqlite3
+```
+
+```
+# on CentOS 7
+sudo yum install python-imaging MySQL-python python-memcached python-ldap
 ```
 
 #### 설정
@@ -98,14 +103,16 @@ Now you should have the following directory layout:
 #tree haiwen -L 2
 haiwen
 ├── ccnet               # configuration files
-│   ├── ccnet.conf
 │   ├── mykey.peer
 │   ├── PeerMgr
 │   └── seafile.ini
+├── conf
+│   └── ccnet.conf
+│   └── seafile.conf
+│   └── seahub_settings.py
 ├── installed
 │   └── seafile-server_1.4.0_x86-64.tar.gz
 ├── seafile-data
-│   └── seafile.conf
 ├── seafile-server-1.4.0  # active version
 │   ├── reset-admin.sh
 │   ├── runtime
@@ -119,8 +126,6 @@ haiwen
 ├── seahub-data
 │   └── avatars
 ├── seahub.db
-├── seahub_settings.py   # optional config file
-└── seahub_settings.pyc
 ```
 
 seafile-server-latest 폴더는 현재 Seafile 서버 폴더의 심볼릭 링크입니다. 나중에 새 버전으로 업그레이드하면, 업그레이드 스크립트에서 이 링크를 업데이트하여 최신 Seafile 서버 폴더를 항상 가리키도록합니다.
@@ -151,7 +156,7 @@ After starting the services, you may open a web browser and type in
 
 ``http://192.168.1.111:8000``
 
-you will be redirected to the Login page. Just enter the admin username and password. 
+you will be redirected to the Login page. Just enter the admin username and password.
 
 **Congratulations!** Now you have successfully setup your private Seafile server.
 

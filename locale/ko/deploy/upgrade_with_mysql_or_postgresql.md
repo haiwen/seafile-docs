@@ -107,7 +107,7 @@ Apache:
 Alias /media  /data/haiwen/seafile-server-latest/seahub/media
 ```
 
-이 방법으로 Seafile 서버를 업그레이드할 때마다 더 이상 Nginx/Apache 설정 파일을 업데이트할 필요가 없습니다.
+This way, you no longer need to update the Nginx/Apache config file each time you upgrade your seafile server.
 
 
 ### 4. Seafile/Seahub/Nginx/Apache 다시 시작
@@ -127,7 +127,7 @@ The procedure is:
 
 부 버전 업그레이드는 1.5.0에서 1.5.1로 업그레이드 하는 방식과 같습니다.
 
-디렉터리 구조는 다음과 같습니다
+Here is our dir structure
 
 <pre>
 haiwen

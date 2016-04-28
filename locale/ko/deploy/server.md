@@ -91,34 +91,34 @@ If some of the prerequisites are not installed, the seafile initialization scrip
 
 
 {| border="1" cellspacing="0" cellpadding="5" align="center"
-|+ Seafile 설정 항목
-! 항목
-! 설명
-! 참고
+|+ Seafile configuration options
+! Option
+! Description
+! Note
 |-
-| 서버 이름
-| 이 Seafile 서버의 이름
-| 3-15 문자, 영문자, 숫자, 밑줄 문자('_')만 허용
+| server name
+| Name of this seafile server
+| 3-15 characters, only English letters, digits and underscore ('_') are allowed
 |-
-| 서버 IP 또는 도메인
-| 이 서버에서 사용하는 IP 주소 또는 도메인 이름
-| Seafile 클라이언트 프로그램에서 이 주소로 서버에 접근합니다\t
+| server ip or domain
+| The IP address or domain name used by this server
+| Seafile client program will access the server with this address
 |-
 | ccnet server port
-| Seafile의 하부 네트워크 서비스를 담당하는 ccnet에서 사용하는 TCP 포트입니다
-| 기본 값은 10001입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설정할 수 있습니다.
+| The TCP port used by ccnet, the underlying networking service of Seafile
+| Default is 10001. If it's been used by other service, you can set it to another port.
 |-
 | seafile data dir
-| Seafile에서 이 디렉터리로 데이터를 저장합니다. 기본적으로 현재 디렉터리에 있습니다.
-| 이 디렉터리의 크기는 Seafile에 데이터를 계속 넣을 때마다 증가합니다. 충분한 공간이 있는 디스크 분할 영역을 선택하십시오.
+| Seafile stores your data in this directory. By default it'll be placed in the current directory.
+| The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space.
 |-
 | seafile server port
-| Seafile에서 데이터를 전송할 때 사용하는 TCP 포트입니다
-| 기본 값은 12001입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설정할 수 있습니다.
+| The TCP port used by Seafile to transfer data
+| Default is 12001. If it's been used by other service, you can set it to another port.
 |-
 | fileserver  port
-| Seafile 파일 서버에서 사용할 TCP 포트
-| 기본 값은 8082입니다. 다른 서비스에서 이미 사용할 경우, 다른 포트로 설정할 수 있습니다.
+| The TCP port used by Seafile fileserver
+| Default is 8082. If it's been used by other service, you can set it to another port.
 |-
 |}
 
