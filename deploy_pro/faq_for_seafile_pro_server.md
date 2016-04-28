@@ -55,4 +55,4 @@
 
 - Q: The above solution does not solve my problem.
 
-  A: Please check whether the user you run Seafile can correctly start the libreoffice process. There may be permission problems.
+  A: Please check whether the user you run Seafile can correctly start the libreoffice process. There may be permission problems. For example, if you use www-data user to run Seafile, make sure www-data has a home directory and can write to the home directory.

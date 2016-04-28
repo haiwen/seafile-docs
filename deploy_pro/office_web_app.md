@@ -25,6 +25,14 @@ WOPI_ACCESS_TOKEN_EXPIRATION = 30 * 60 # seconds
 # the specified extension file you add below
 OFFICE_WEB_APP_FILE_EXTENSION = ('ods', 'xls', 'xlsb', 'xlsm', 'xlsx','ppsx', 'ppt',
     'pptm', 'pptx', 'doc', 'docm', 'docx')
+
+# Enable edit file through Office Web App
+ENABLE_OFFICE_WEB_APP_EDIT = True
+
+# Currently we only support `xlsx` and `pptx`
+# type of file editing through Office Web App
+OFFICE_WEB_APP_EDIT_FILE_EXTENSION = ('xlsx', 'pptx')
+
 ```
 
 Then restart
