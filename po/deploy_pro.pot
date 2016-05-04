@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,86 +81,101 @@ msgstr ""
 msgid "- [Setup Seafile Professional Server With Ceph](setup_with_Ceph.md)"
 msgstr ""
 
-#: deploy_pro/README.md:25
+#: deploy_pro/README.md:24
+# unordered list
+msgid "- [Storage Backend Encryption](seaf_encrypt.md)"
+msgstr ""
+
+#: deploy_pro/README.md:26
 msgid "Config Options"
 msgstr ""
 
-#: deploy_pro/README.md:27
+#: deploy_pro/README.md:28
 # unordered list
 msgid "- [Seafile Professional Server Configurable Options](configurable_options.md)"
 msgstr ""
 
-#: deploy_pro/README.md:29
+#: deploy_pro/README.md:30
 # header
 msgid "## Search"
 msgstr ""
 
-#: deploy_pro/README.md:31
+#: deploy_pro/README.md:32
 # unordered list
 msgid "- [Details about File Search](details_about_file_search.md)"
 msgstr ""
 
-#: deploy_pro/README.md:33
+#: deploy_pro/README.md:34
 # header
 msgid "## Preview office files"
 msgstr ""
 
-#: deploy_pro/README.md:35
+#: deploy_pro/README.md:36
 # unordered list
 msgid "- [Enable Office/PDF Documents Online Preview](office_documents_preview.md)"
 msgstr ""
 
-#: deploy_pro/README.md:37
+#: deploy_pro/README.md:38
 # header
 msgid "## Office Web App"
 msgstr ""
 
-#: deploy_pro/README.md:39
+#: deploy_pro/README.md:40
 # unordered list
 msgid "- [Integrating with Office Web App](office_web_app.md)"
 msgstr ""
 
-#: deploy_pro/README.md:41
+#: deploy_pro/README.md:42
 # header
 msgid "## Cluster"
 msgstr ""
 
-#: deploy_pro/README.md:43
+#: deploy_pro/README.md:44
 # unordered list
 msgid "- [Deploy seafile servers in a cluster](deploy_in_a_cluster.md)"
 msgstr ""
 
-#: deploy_pro/README.md:44
+#: deploy_pro/README.md:45
 # unordered list
 msgid "- [Enable search and background tasks in a cluster](enable_search_and_background_tasks_in_a_cluster.md)"
 msgstr ""
 
-#: deploy_pro/README.md:46
+#: deploy_pro/README.md:47
 # header
 msgid "## Backup"
 msgstr ""
 
-#: deploy_pro/README.md:48
+#: deploy_pro/README.md:49
 # unordered list
 msgid "- [Real-time Backup Server](real_time_backup.md)"
 msgstr ""
 
-#: deploy_pro/README.md:50
+#: deploy_pro/README.md:51
 # header
-msgid "## FAQ"
+msgid "## Admin Tools"
 msgstr ""
 
-#: deploy_pro/README.md:52
+#: deploy_pro/README.md:53
 # unordered list
-msgid "- [FAQ For Seafile Professional Server](FAQ_for_seafile_pro_server.md)"
+msgid "- [Import Directory to Seafile](seaf_import.md)"
 msgstr ""
 
 #: deploy_pro/README.md:55
 # header
-msgid "## License"
+msgid "## FAQ"
 msgstr ""
 
 #: deploy_pro/README.md:57
+# unordered list
+msgid "- [FAQ For Seafile Professional Server](FAQ_for_seafile_pro_server.md)"
+msgstr ""
+
+#: deploy_pro/README.md:60
+# header
+msgid "## License"
+msgstr ""
+
+#: deploy_pro/README.md:62
 # unordered list
 msgid "- [Seafile Professional Edition Software License Agreement](seafile_professional_sdition_software_license_agreement.md)"
 msgstr ""
@@ -1881,13 +1896,15 @@ msgid "You should notice the difference between the names of the Community Serve
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:112
+#: deploy_pro/migrate_from_seafile_community_server.md:83
 # unordered list
-msgid "- Seafile Community Server tarball is `seafile-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-1.7.0`"
+msgid "- Seafile Community Server tarball is `seafile-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-1.8.0`"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:113
+#: deploy_pro/migrate_from_seafile_community_server.md:84
 # unordered list
-msgid "- Seafile Professional Server tarball is `seafile-pro-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-1.7.0`"
+msgid "- Seafile Professional Server tarball is `seafile-pro-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-1.8.0`"
 msgstr ""
 
 #: deploy_pro/download_and_setup_seafile_professional_server.md:118
@@ -2021,7 +2038,7 @@ msgid "## Configuring Node A (the backend node)"
 msgstr ""
 
 #: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:23
-msgid "If you following the steps on settings up a cluster, node B and node C should have already be configed as frontend node. You can copy the configuration of node B as a base for node A. Then do the following steps:"
+msgid "If you following the steps on settings up a cluster, node B and node C should have already be configured as frontend node. You can copy the configuration of node B as a base for node A. Then do the following steps:"
 msgstr ""
 
 #: deploy_pro/enable_search_and_background_tasks_in_a_cluster.md:25
@@ -2573,16 +2590,6 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy_pro/migrate_from_seafile_community_server.md:83
-# unordered list
-msgid "- Seafile Community Server tarball is `seafile-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-server-1.8.0`"
-msgstr ""
-
-#: deploy_pro/migrate_from_seafile_community_server.md:84
-# unordered list
-msgid "- Seafile Professional Server tarball is `seafile-pro-server_1.8.0_x86-86.tar.gz`; After uncompressing, the folder is `seafile-pro-server-1.8.0`"
-msgstr ""
-
 #: deploy_pro/migrate_from_seafile_community_server.md:89
 # header
 msgid "### Do the migration ###"
@@ -2857,7 +2864,7 @@ msgstr ""
 
 #: deploy_pro/office_documents_preview.md:32
 # code block
-msgid "```conf\n"
+msgid "```\n"
 "[OFFICE CONVERTER]\n"
 "enabled = true\n"
 "```"
@@ -2884,7 +2891,7 @@ msgstr ""
 
 #: deploy_pro/office_documents_preview.md:43
 # code block
-msgid "```conf\n"
+msgid "```\n"
 "[OFFICE CONVERTER]\n"
 "\n"
 "## must be \"true\" to enable office/pdf file online preview\n"
@@ -3725,6 +3732,216 @@ msgid "```\n"
 "```"
 msgstr ""
 
+#: deploy_pro/seaf_encrypt.md:1
+# header
+msgid "# Seafile Storage Backend Encryption"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:3
+msgid "Since seafile 5.1.3 pro edition, we support storage backend encryption functionality. When enabled, all seafile objects (commit, fs, block) will be encrypted with AES 256 CBC algorithm, before writing to the storage backend. Currently supported backends are: file system, Ceph, Swift, S3."
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:5
+msgid "Note that all objects will be encrypted with the same global key/iv pair. The key/iv pair has to be generated by the system admin and stored safely. If the key/iv pair is lost, all data cannot be recovered."
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:7
+# header
+msgid "## Configure Storage Backend Encryption"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:9
+# header
+msgid "### Generate Key and IV"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:11
+msgid "Go to <INSTALL_PATH>/seafile-server-latest, execute `./seaf-gen-key.sh -h`. it will print follow usage information:"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:13
+# code block
+msgid "```\n"
+"usage :\n"
+"seaf-gen-key.sh\n"
+" -p <file path to write key iv, default ./seaf-key.txt>\n"
+"```"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:19
+msgid "By default, the key/iv pair will be saved to a file named seaf-key.txt in the current directory. You can use '-p' option to change the path."
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:21
+# header
+msgid "### Configure a Freshly Installed Seafile Server"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:23
+msgid "Add following configuration to seafile.conf:"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:25
+#: deploy_pro/seaf_encrypt.md:55
+# code block
+msgid "```\n"
+"[store_crypt]\n"
+"key_path = <the key file path generated in previous section>\n"
+"```"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:30
+msgid "Now the encryption feature should be working."
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:32
+# header
+msgid "### Migrating Existing Seafile Server"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:34
+msgid "If you have existing data in the Seafile server, you have to migrate/encrypt the existing data. **You must stop Seafile server before migrating the data.**"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:36
+# header
+msgid "#### Create Directories for Encrypted Data"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:38
+msgid "Create new configuration and data directories for the encrypted data."
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:40
+# code block
+msgid "```\n"
+"cd seafile-server-latest\n"
+"cp -r conf conf-enc\n"
+"mkdir seafile-data-enc\n"
+"cp -r seafile-data/library-template seafile-data-enc\n"
+"# If you use SQLite database\n"
+"cp seafile-data/seafile.db seafile-data-enc/\n"
+"```"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:49
+# header
+msgid "#### Edit Config Files"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:51
+msgid "If you configured s3/swift/ceph backend, edit <INSTALL_PATH>/conf-enc/seafile.conf. You must use a different bucket/container/pool to store the encrypted data."
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:53
+msgid "Then add the following configuration to <INSTALL_PATH>/conf-enc/seafile.conf"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:60
+# header
+msgid "#### Migrate the Data"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:62
+msgid "Go to <INSTALL_PATH>/seafile-server-latest, use the seaf-encrypt.sh script to migrate the data."
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:64
+msgid "Run `./seaf-encrypt.sh -f ../conf-enc -e ../seafile-data-enc`,"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:66
+# code block
+msgid "```\n"
+"Starting seaf-encrypt, please wait ...\n"
+"[04/26/16 06:59:40] seaf-encrypt.c(444): Start to encrypt 57 block among 12 repo.\n"
+"[04/26/16 06:59:40] seaf-encrypt.c(444): Start to encrypt 102 fs among 12 repo.\n"
+"[04/26/16 06:59:41] seaf-encrypt.c(454): Success encrypt all fs.\n"
+"[04/26/16 06:59:40] seaf-encrypt.c(444): Start to encrypt 66 commit among 12 repo.\n"
+"[04/26/16 06:59:41] seaf-encrypt.c(454): Success encrypt all commit.\n"
+"[04/26/16 06:59:41] seaf-encrypt.c(454): Success encrypt all block.\n"
+"seaf-encrypt run done\n"
+"Done.\n"
+"```"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:78
+msgid "If there are error messages output after executing seaf-encrypt.sh, you can fix the problem and run the script again. Objects that already migrated will not be copied again."
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:80
+# header
+msgid "#### Clean Up"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:82
+msgid "Go to <INSTALL_PATH>, execute following commands:"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:84
+# code block
+msgid "```\n"
+"mv conf conf-bak\n"
+"mv seafile-data seafile-data-bak\n"
+"mv conf-enc conf\n"
+"mv seafile-data-enc seafile-data\n"
+"```"
+msgstr ""
+
+#: deploy_pro/seaf_encrypt.md:91
+msgid "Restart seafile server. If everything works okay, you can remove the backup directories later."
+msgstr ""
+
+#: deploy_pro/seaf_import.md:1
+# header
+msgid "# Import Directory To Seafile"
+msgstr ""
+
+#: deploy_pro/seaf_import.md:3
+msgid "Since seafile 5.1.3 pro edition, we support importing a local directory on the server to seafile. It's a handy tool for the system admin to import files from existing file servers (NFS, Samba etc.)."
+msgstr ""
+
+#: deploy_pro/seaf_import.md:5
+msgid "To import a directory, use the `seaf-import.sh` script in seafile-server-latest directory."
+msgstr ""
+
+#: deploy_pro/seaf_import.md:7
+# code block
+msgid "```\n"
+"usage :\n"
+"seaf-import.sh\n"
+" -p <import dir path, must set>\n"
+" -n <repo name, must set>\n"
+" -u <repo owner, must set>\n"
+"```"
+msgstr ""
+
+#: deploy_pro/seaf_import.md:15
+msgid "The specified directory will be imported into Seafile as a library. You can set the name and owner of the imported library."
+msgstr ""
+
+#: deploy_pro/seaf_import.md:17
+msgid "Run `./seaf-import.sh -p <dir you want to import> -n <repo name> -u <repo owner>`,"
+msgstr ""
+
+#: deploy_pro/seaf_import.md:19
+# code block
+msgid "```\n"
+"Starting seaf-import, please wait ...\n"
+"[04/26/16 03:36:23] seaf-import.c(79): Import file ./runtime/seahub.pid successfully.\n"
+"[04/26/16 03:36:23] seaf-import.c(79): Import file ./runtime/error.log successfully.\n"
+"[04/26/16 03:36:23] seaf-import.c(79): Import file ./runtime/seahub.conf successfully.\n"
+"[04/26/16 03:36:23] seaf-import.c(79): Import file ./runtime/access.log successfully.\n"
+"[04/26/16 03:36:23] seaf-import.c(183): Import dir ./runtime/ to repo 5ffb1f43 successfully.\n"
+" run done\n"
+"Done.\n"
+"```"
+msgstr ""
+
+#: deploy_pro/seaf_import.md:30
+msgid "Login to seafile server with the specified library owner, you will find a new library with the specified name."
+msgstr ""
+
 #: deploy_pro/seafile_professional_sdition_software_license_agreement.md:1
 # header
 msgid "# Seafile Professional Edition Software License Agreement"
@@ -3949,7 +4166,7 @@ msgid "The key_id and key are required to authenticate you to S3. You can find t
 msgstr ""
 
 #: deploy_pro/setup_with_amazon_s3.md:57
-msgid "When creating your buckets on S3, please first read [S3 bucket naming rules][1]. Note especially not to use **UPPERCASE** letters in bucket names (don't use camel style names, such as MyCommitOjbects)."
+msgid "When creating your buckets on S3, please first read [S3 bucket naming rules][1]. Note especially not to use **UPPERCASE** letters in bucket names (don't use camel style names, such as MyCommitObjects)."
 msgstr ""
 
 #: deploy_pro/setup_with_amazon_s3.md:59

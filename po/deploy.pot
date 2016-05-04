@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -311,32 +311,28 @@ msgid "Solution:"
 msgstr ""
 
 #: deploy/common_problems_for_setting_up_server.md:32
-msgid "Change in in httpd.conf or apache2.conf from \"FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000\""
+msgid "Change in in httpd.conf or apache2.conf from \"FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000\" to \"FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000 -idle-timeout 60\""
 msgstr ""
 
-#: deploy/common_problems_for_setting_up_server.md:33
-msgid "to \"FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000 -idle-timeout 60\""
-msgstr ""
-
-#: deploy/common_problems_for_setting_up_server.md:35
+#: deploy/common_problems_for_setting_up_server.md:34
 # header
 msgid "#### Seafile with Apache / HTTPS has text only (no CSS formatting / images)"
 msgstr ""
 
-#: deploy/common_problems_for_setting_up_server.md:37
-msgid "The media folder (Alias location identified in /etc/apache2/sites-enabled/000-default (Ubuntu) has inappropriate permissions"
+#: deploy/common_problems_for_setting_up_server.md:36
+msgid "The media folder (Alias location identified in /etc/apache2/sites-enabled/000-default (Ubuntu)) has inappropriate permissions"
 msgstr ""
 
-#: deploy/common_problems_for_setting_up_server.md:39
+#: deploy/common_problems_for_setting_up_server.md:38
 msgid "Solutions:"
 msgstr ""
 
-#: deploy/common_problems_for_setting_up_server.md:41
+#: deploy/common_problems_for_setting_up_server.md:40
 # ordered list
 msgid "1. Run installation script as non-root user"
 msgstr ""
 
-#: deploy/common_problems_for_setting_up_server.md:42
+#: deploy/common_problems_for_setting_up_server.md:41
 # ordered list
 msgid "2. Copy /media folder to var/www/ and edit the Alias location in /etc/apache2/sites-enabled/000-default"
 msgstr ""
@@ -758,7 +754,7 @@ msgstr ""
 
 #: deploy/deploy_seafile_behind_nat.md:91
 # header
-msgid "### Why use a Dynamic DNS(DDNS)  Service?"
+msgid "### Why use a Dynamic DNS(DDNS) Service?"
 msgstr ""
 
 #: deploy/deploy_seafile_behind_nat.md:93
@@ -770,7 +766,7 @@ msgid "You can use a dynamic DNS(DDNS) Service to overcome this problem. By usin
 msgstr ""
 
 #: deploy/deploy_seafile_behind_nat.md:97
-msgid "There are a dozen of dynmaic DNS service providers on the internet. If you don't know what service to choose We recommend using [www.noip.com](http://www.noip.com) since it performs well in our testing."
+msgid "There are a dozen of dynamic DNS service providers on the internet. If you don't know what service to choose We recommend using [www.noip.com](http://www.noip.com) since it performs well in our testing."
 msgstr ""
 
 #: deploy/deploy_seafile_behind_nat.md:99
@@ -3191,61 +3187,61 @@ msgid "The content of this script is: (You need to modify the value of **user** 
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:14
-#: deploy/start_seafile_at_system_bootup.md:260
-#: deploy/start_seafile_at_system_bootup.md:330
+#: deploy/start_seafile_at_system_bootup.md:259
+#: deploy/start_seafile_at_system_bootup.md:329
 msgid "    #!/bin/bash"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:16
-#: deploy/start_seafile_at_system_bootup.md:219
-#: deploy/start_seafile_at_system_bootup.md:241
+#: deploy/start_seafile_at_system_bootup.md:218
+#: deploy/start_seafile_at_system_bootup.md:240
 msgid "    # Change the value of \"user\" to your linux user name"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:17
 #: deploy/start_seafile_at_system_bootup.md:125
-#: deploy/start_seafile_at_system_bootup.md:220
-#: deploy/start_seafile_at_system_bootup.md:242
+#: deploy/start_seafile_at_system_bootup.md:219
+#: deploy/start_seafile_at_system_bootup.md:241
 msgid "    user=haiwen"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:19
 #: deploy/start_seafile_at_system_bootup.md:127
-#: deploy/start_seafile_at_system_bootup.md:222
-#: deploy/start_seafile_at_system_bootup.md:244
+#: deploy/start_seafile_at_system_bootup.md:221
+#: deploy/start_seafile_at_system_bootup.md:243
 msgid "    # Change the value of \"seafile_dir\" to your path of seafile installation"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:20
 #: deploy/start_seafile_at_system_bootup.md:128
-#: deploy/start_seafile_at_system_bootup.md:223
-#: deploy/start_seafile_at_system_bootup.md:245
+#: deploy/start_seafile_at_system_bootup.md:222
+#: deploy/start_seafile_at_system_bootup.md:244
 msgid "    # usually the home directory of $user"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:21
 #: deploy/start_seafile_at_system_bootup.md:129
-#: deploy/start_seafile_at_system_bootup.md:224
-#: deploy/start_seafile_at_system_bootup.md:246
+#: deploy/start_seafile_at_system_bootup.md:223
+#: deploy/start_seafile_at_system_bootup.md:245
 msgid "    seafile_dir=/data/haiwen"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:22
 #: deploy/start_seafile_at_system_bootup.md:130
-#: deploy/start_seafile_at_system_bootup.md:225
-#: deploy/start_seafile_at_system_bootup.md:247
+#: deploy/start_seafile_at_system_bootup.md:224
+#: deploy/start_seafile_at_system_bootup.md:246
 msgid "    script_path=${seafile_dir}/seafile-server-latest"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:23
 #: deploy/start_seafile_at_system_bootup.md:131
-#: deploy/start_seafile_at_system_bootup.md:248
+#: deploy/start_seafile_at_system_bootup.md:247
 msgid "    seafile_init_log=${seafile_dir}/logs/seafile.init.log"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:24
 #: deploy/start_seafile_at_system_bootup.md:132
-#: deploy/start_seafile_at_system_bootup.md:249
+#: deploy/start_seafile_at_system_bootup.md:248
 msgid "    seahub_init_log=${seafile_dir}/logs/seahub.init.log"
 msgstr ""
 
@@ -3259,13 +3255,13 @@ msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:28
 #: deploy/start_seafile_at_system_bootup.md:136
-#: deploy/start_seafile_at_system_bootup.md:254
+#: deploy/start_seafile_at_system_bootup.md:253
 msgid "    # Set the port of fastcgi, default is 8000. Change it if you need different."
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:29
 #: deploy/start_seafile_at_system_bootup.md:137
-#: deploy/start_seafile_at_system_bootup.md:255
+#: deploy/start_seafile_at_system_bootup.md:254
 msgid "    fastcgi_port=8000"
 msgstr ""
 
@@ -3273,40 +3269,40 @@ msgstr ""
 #: deploy/start_seafile_at_system_bootup.md:32
 #: deploy/start_seafile_at_system_bootup.md:139
 #: deploy/start_seafile_at_system_bootup.md:141
-#: deploy/start_seafile_at_system_bootup.md:261
-#: deploy/start_seafile_at_system_bootup.md:264
-#: deploy/start_seafile_at_system_bootup.md:303
-#: deploy/start_seafile_at_system_bootup.md:305
-#: deploy/start_seafile_at_system_bootup.md:331
-#: deploy/start_seafile_at_system_bootup.md:334
-#: deploy/start_seafile_at_system_bootup.md:378
-#: deploy/start_seafile_at_system_bootup.md:380
+#: deploy/start_seafile_at_system_bootup.md:260
+#: deploy/start_seafile_at_system_bootup.md:263
+#: deploy/start_seafile_at_system_bootup.md:302
+#: deploy/start_seafile_at_system_bootup.md:304
+#: deploy/start_seafile_at_system_bootup.md:330
+#: deploy/start_seafile_at_system_bootup.md:333
+#: deploy/start_seafile_at_system_bootup.md:377
+#: deploy/start_seafile_at_system_bootup.md:379
 msgid "    #"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:31
 #: deploy/start_seafile_at_system_bootup.md:140
-#: deploy/start_seafile_at_system_bootup.md:304
-#: deploy/start_seafile_at_system_bootup.md:379
+#: deploy/start_seafile_at_system_bootup.md:303
+#: deploy/start_seafile_at_system_bootup.md:378
 msgid "    # Write a polite log message with date and time"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:33
 #: deploy/start_seafile_at_system_bootup.md:142
-#: deploy/start_seafile_at_system_bootup.md:306
+#: deploy/start_seafile_at_system_bootup.md:305
 msgid "    echo -e \"\\n \\n About to perform $1 for seafile at `date -Iseconds` \\n \" >> ${seafile_init_log}"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:34
 #: deploy/start_seafile_at_system_bootup.md:143
-#: deploy/start_seafile_at_system_bootup.md:381
+#: deploy/start_seafile_at_system_bootup.md:380
 msgid "    echo -e \"\\n \\n About to perform $1 for seahub at `date -Iseconds` \\n \" >> ${seahub_init_log}"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:35
 #: deploy/start_seafile_at_system_bootup.md:145
-#: deploy/start_seafile_at_system_bootup.md:309
-#: deploy/start_seafile_at_system_bootup.md:384
+#: deploy/start_seafile_at_system_bootup.md:308
+#: deploy/start_seafile_at_system_bootup.md:383
 msgid "    case \"$1\" in"
 msgstr ""
 
@@ -3335,7 +3331,7 @@ msgstr ""
 #: deploy/start_seafile_at_system_bootup.md:48
 #: deploy/start_seafile_at_system_bootup.md:149
 #: deploy/start_seafile_at_system_bootup.md:158
-#: deploy/start_seafile_at_system_bootup.md:358
+#: deploy/start_seafile_at_system_bootup.md:357
 msgid "                    then"
 msgstr ""
 
@@ -3350,7 +3346,7 @@ msgstr ""
 #: deploy/start_seafile_at_system_bootup.md:50
 #: deploy/start_seafile_at_system_bootup.md:151
 #: deploy/start_seafile_at_system_bootup.md:160
-#: deploy/start_seafile_at_system_bootup.md:360
+#: deploy/start_seafile_at_system_bootup.md:359
 msgid "                    else"
 msgstr ""
 
@@ -3365,7 +3361,7 @@ msgstr ""
 #: deploy/start_seafile_at_system_bootup.md:52
 #: deploy/start_seafile_at_system_bootup.md:153
 #: deploy/start_seafile_at_system_bootup.md:162
-#: deploy/start_seafile_at_system_bootup.md:362
+#: deploy/start_seafile_at_system_bootup.md:361
 msgid "                    fi"
 msgstr ""
 
@@ -3377,12 +3373,12 @@ msgstr ""
 #: deploy/start_seafile_at_system_bootup.md:163
 #: deploy/start_seafile_at_system_bootup.md:167
 #: deploy/start_seafile_at_system_bootup.md:171
-#: deploy/start_seafile_at_system_bootup.md:312
-#: deploy/start_seafile_at_system_bootup.md:315
-#: deploy/start_seafile_at_system_bootup.md:320
-#: deploy/start_seafile_at_system_bootup.md:387
-#: deploy/start_seafile_at_system_bootup.md:390
-#: deploy/start_seafile_at_system_bootup.md:395
+#: deploy/start_seafile_at_system_bootup.md:311
+#: deploy/start_seafile_at_system_bootup.md:314
+#: deploy/start_seafile_at_system_bootup.md:319
+#: deploy/start_seafile_at_system_bootup.md:386
+#: deploy/start_seafile_at_system_bootup.md:389
+#: deploy/start_seafile_at_system_bootup.md:394
 msgid "            ;;"
 msgstr ""
 
@@ -3418,8 +3414,8 @@ msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:62
 #: deploy/start_seafile_at_system_bootup.md:172
-#: deploy/start_seafile_at_system_bootup.md:324
-#: deploy/start_seafile_at_system_bootup.md:399
+#: deploy/start_seafile_at_system_bootup.md:323
+#: deploy/start_seafile_at_system_bootup.md:398
 msgid "    esac"
 msgstr ""
 
@@ -3495,7 +3491,7 @@ msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:99
 #: deploy/start_seafile_at_system_bootup.md:195
-#: deploy/start_seafile_at_system_bootup.md:480
+#: deploy/start_seafile_at_system_bootup.md:479
 # header
 msgid "### Done"
 msgstr ""
@@ -3555,12 +3551,12 @@ msgid "    # Change the value of \"user\" to linux user name who runs seafile"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:134
-#: deploy/start_seafile_at_system_bootup.md:251
+#: deploy/start_seafile_at_system_bootup.md:250
 msgid "    # Change the value of fastcgi to true if fastcgi is to be used"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:135
-#: deploy/start_seafile_at_system_bootup.md:252
+#: deploy/start_seafile_at_system_bootup.md:251
 msgid "    fastcgi=false"
 msgstr ""
 
@@ -3576,7 +3572,7 @@ msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:179
 #: deploy/start_seafile_at_system_bootup.md:206
-#: deploy/start_seafile_at_system_bootup.md:213
+#: deploy/start_seafile_at_system_bootup.md:212
 msgid "<!-- -->"
 msgstr ""
 
@@ -3627,488 +3623,484 @@ msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:210
 # unordered list
-msgid "-   In /etc/rc.local, add the directory of python2.6(2.7) to **PATH**,"
+msgid "-   In /etc/rc.local, add the directory of python2.6(2.7) to **PATH**, and add the seafile/seahub start command"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:211
-msgid "    and add the seafile/seahub start command"
-msgstr ""
-
-#: deploy/start_seafile_at_system_bootup.md:215
+#: deploy/start_seafile_at_system_bootup.md:214
 msgid "    `"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:216
+#: deploy/start_seafile_at_system_bootup.md:215
 msgid "    # Assume the python 2.6(2.7) executable is in \"/usr/local/bin\""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:217
+#: deploy/start_seafile_at_system_bootup.md:216
 msgid "    PATH=$PATH:/usr/local/bin/"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:227
+#: deploy/start_seafile_at_system_bootup.md:226
 msgid "    sudo -u ${user} ${script_path}/seafile.sh start > /tmp/seafile.init.log 2>&1"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:228
+#: deploy/start_seafile_at_system_bootup.md:227
 msgid "    sudo -u ${user} ${script_path}/seahub.sh start > /tmp/seahub.init.log 2>&1"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:230
+#: deploy/start_seafile_at_system_bootup.md:229
 msgid "**Note**: If you want to start seahub in fastcgi, just change the **\"seahub.sh start\"** in the last line above to **\"seahub.sh start-fastcgi\"**"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:232
+#: deploy/start_seafile_at_system_bootup.md:231
 # unordered list
 msgid "-   Done. Don't forget to update the value of **seafile\\_dir** later if you update your seafile server."
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:234
+#: deploy/start_seafile_at_system_bootup.md:233
 # header
 msgid "For RHEL/CentOS run as service\n"
 "------------------------------"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:237
+#: deploy/start_seafile_at_system_bootup.md:236
 msgid "On RHEL/CentOS , we make use of the /etc/init.d/ scripts to start seafile/seahub at system boot as service."
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:239
+#: deploy/start_seafile_at_system_bootup.md:238
 # header
 msgid "### Create a file **/etc/sysconfig/seafile**"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:258
+#: deploy/start_seafile_at_system_bootup.md:257
 # header
 msgid "### Create a script **/etc/init.d/seafile**"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:262
+#: deploy/start_seafile_at_system_bootup.md:261
 msgid "    # seafile"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:265
+#: deploy/start_seafile_at_system_bootup.md:264
 msgid "    # chkconfig: - 68 32"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:266
+#: deploy/start_seafile_at_system_bootup.md:265
 msgid "    # description: seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:267
+#: deploy/start_seafile_at_system_bootup.md:337
+msgid "    # Source function library."
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:268
 #: deploy/start_seafile_at_system_bootup.md:338
-msgid "    # Source function library."
+msgid "    . /etc/init.d/functions"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:269
-#: deploy/start_seafile_at_system_bootup.md:339
-msgid "    . /etc/init.d/functions"
+#: deploy/start_seafile_at_system_bootup.md:270
+#: deploy/start_seafile_at_system_bootup.md:340
+msgid "    # Source networking configuration."
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:271
 #: deploy/start_seafile_at_system_bootup.md:341
-msgid "    # Source networking configuration."
+msgid "    . /etc/sysconfig/network"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:272
-#: deploy/start_seafile_at_system_bootup.md:342
-msgid "    . /etc/sysconfig/network"
+#: deploy/start_seafile_at_system_bootup.md:273
+#: deploy/start_seafile_at_system_bootup.md:343
+msgid "    if [ -f /etc/sysconfig/seafile ];then"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:274
 #: deploy/start_seafile_at_system_bootup.md:344
-msgid "    if [ -f /etc/sysconfig/seafile ];then"
+msgid "            . /etc/sysconfig/seafile"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:275
 #: deploy/start_seafile_at_system_bootup.md:345
-msgid "            . /etc/sysconfig/seafile"
+msgid "            else"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:276
 #: deploy/start_seafile_at_system_bootup.md:346
-msgid "            else"
+msgid "                echo \"Config file /etc/sysconfig/seafile not found! Bye.\""
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:277
 #: deploy/start_seafile_at_system_bootup.md:347
-msgid "                echo \"Config file /etc/sysconfig/seafile not found! Bye.\""
+msgid "                exit 200"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:278
 #: deploy/start_seafile_at_system_bootup.md:348
-msgid "                exit 200"
-msgstr ""
-
-#: deploy/start_seafile_at_system_bootup.md:279
-#: deploy/start_seafile_at_system_bootup.md:349
 msgid "            fi"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:281
-#: deploy/start_seafile_at_system_bootup.md:351
+#: deploy/start_seafile_at_system_bootup.md:280
+#: deploy/start_seafile_at_system_bootup.md:350
 msgid "    RETVAL=0"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:282
+#: deploy/start_seafile_at_system_bootup.md:352
+msgid "    start() {"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:283
 #: deploy/start_seafile_at_system_bootup.md:353
-msgid "    start() {"
-msgstr ""
-
-#: deploy/start_seafile_at_system_bootup.md:284
-#: deploy/start_seafile_at_system_bootup.md:354
 msgid "            # Start daemons."
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:285
+#: deploy/start_seafile_at_system_bootup.md:284
 msgid "            echo -n $\"Starting seafile: \""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:286
-#: deploy/start_seafile_at_system_bootup.md:356
+#: deploy/start_seafile_at_system_bootup.md:285
+#: deploy/start_seafile_at_system_bootup.md:355
 msgid "            ulimit -n 30000"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:287
+#: deploy/start_seafile_at_system_bootup.md:286
 msgid "            su - ${user} -c\"${script_path}/seafile.sh start >> ${seafile_init_log} 2>&1\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:287
+#: deploy/start_seafile_at_system_bootup.md:296
+#: deploy/start_seafile_at_system_bootup.md:318
+#: deploy/start_seafile_at_system_bootup.md:362
+#: deploy/start_seafile_at_system_bootup.md:371
+#: deploy/start_seafile_at_system_bootup.md:393
+msgid "            RETVAL=$?"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:288
 #: deploy/start_seafile_at_system_bootup.md:297
-#: deploy/start_seafile_at_system_bootup.md:319
 #: deploy/start_seafile_at_system_bootup.md:363
 #: deploy/start_seafile_at_system_bootup.md:372
-#: deploy/start_seafile_at_system_bootup.md:394
-msgid "            RETVAL=$?"
-msgstr ""
-
-#: deploy/start_seafile_at_system_bootup.md:289
-#: deploy/start_seafile_at_system_bootup.md:298
-#: deploy/start_seafile_at_system_bootup.md:364
-#: deploy/start_seafile_at_system_bootup.md:373
 msgid "            echo"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:290
+#: deploy/start_seafile_at_system_bootup.md:289
 msgid "            [ $RETVAL -eq 0 ] && touch /var/lock/subsys/seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:290
+#: deploy/start_seafile_at_system_bootup.md:299
+#: deploy/start_seafile_at_system_bootup.md:365
+#: deploy/start_seafile_at_system_bootup.md:374
+msgid "            return $RETVAL"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:291
 #: deploy/start_seafile_at_system_bootup.md:300
 #: deploy/start_seafile_at_system_bootup.md:366
 #: deploy/start_seafile_at_system_bootup.md:375
-msgid "            return $RETVAL"
-msgstr ""
-
-#: deploy/start_seafile_at_system_bootup.md:292
-#: deploy/start_seafile_at_system_bootup.md:301
-#: deploy/start_seafile_at_system_bootup.md:367
-#: deploy/start_seafile_at_system_bootup.md:376
 msgid "    }"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:294
-#: deploy/start_seafile_at_system_bootup.md:369
+#: deploy/start_seafile_at_system_bootup.md:293
+#: deploy/start_seafile_at_system_bootup.md:368
 msgid "    stop() {"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:295
+#: deploy/start_seafile_at_system_bootup.md:294
 msgid "            echo -n $\"Shutting down seafile: \""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:296
+#: deploy/start_seafile_at_system_bootup.md:295
 msgid "            su - ${user} -c\"${script_path}/seafile.sh stop >> ${seafile_init_log} 2>&1\""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:299
+#: deploy/start_seafile_at_system_bootup.md:298
 msgid "            [ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/seafile"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:308
-#: deploy/start_seafile_at_system_bootup.md:383
+#: deploy/start_seafile_at_system_bootup.md:307
+#: deploy/start_seafile_at_system_bootup.md:382
 msgid "    # See how we were called."
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:310
-#: deploy/start_seafile_at_system_bootup.md:385
+#: deploy/start_seafile_at_system_bootup.md:309
+#: deploy/start_seafile_at_system_bootup.md:384
 msgid "      start)"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:311
-#: deploy/start_seafile_at_system_bootup.md:318
-#: deploy/start_seafile_at_system_bootup.md:386
-#: deploy/start_seafile_at_system_bootup.md:393
+#: deploy/start_seafile_at_system_bootup.md:310
+#: deploy/start_seafile_at_system_bootup.md:317
+#: deploy/start_seafile_at_system_bootup.md:385
+#: deploy/start_seafile_at_system_bootup.md:392
 msgid "            start"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:313
-#: deploy/start_seafile_at_system_bootup.md:388
+#: deploy/start_seafile_at_system_bootup.md:312
+#: deploy/start_seafile_at_system_bootup.md:387
 msgid "      stop)"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:314
-#: deploy/start_seafile_at_system_bootup.md:317
-#: deploy/start_seafile_at_system_bootup.md:389
-#: deploy/start_seafile_at_system_bootup.md:392
+#: deploy/start_seafile_at_system_bootup.md:313
+#: deploy/start_seafile_at_system_bootup.md:316
+#: deploy/start_seafile_at_system_bootup.md:388
+#: deploy/start_seafile_at_system_bootup.md:391
 msgid "            stop"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:316
-#: deploy/start_seafile_at_system_bootup.md:391
+#: deploy/start_seafile_at_system_bootup.md:315
+#: deploy/start_seafile_at_system_bootup.md:390
 msgid "      restart|reload)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:320
+#: deploy/start_seafile_at_system_bootup.md:395
+msgid "      *)"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:321
 #: deploy/start_seafile_at_system_bootup.md:396
-msgid "      *)"
+msgid "            echo $\"Usage: $0 {start|stop|restart}\""
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:322
 #: deploy/start_seafile_at_system_bootup.md:397
-msgid "            echo $\"Usage: $0 {start|stop|restart}\""
-msgstr ""
-
-#: deploy/start_seafile_at_system_bootup.md:323
-#: deploy/start_seafile_at_system_bootup.md:398
 msgid "            RETVAL=3"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:326
-#: deploy/start_seafile_at_system_bootup.md:401
+#: deploy/start_seafile_at_system_bootup.md:325
+#: deploy/start_seafile_at_system_bootup.md:400
 msgid "    exit $RETVAL"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:328
+#: deploy/start_seafile_at_system_bootup.md:327
 # header
 msgid "### Create a script **/etc/init.d/seahub**"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:332
+#: deploy/start_seafile_at_system_bootup.md:331
 msgid "    # seahub"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:335
+#: deploy/start_seafile_at_system_bootup.md:334
 msgid "    # chkconfig: - 69 31"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:336
+#: deploy/start_seafile_at_system_bootup.md:335
 msgid "    # description: seahub"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:355
+#: deploy/start_seafile_at_system_bootup.md:354
 msgid "            echo -n $\"Starting seahub: \""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:357
+#: deploy/start_seafile_at_system_bootup.md:356
 msgid "            if [  $fastcgi = true ];"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:359
+#: deploy/start_seafile_at_system_bootup.md:358
 msgid "                    su - ${user} -c\"${script_path}/seahub.sh start-fastcgi ${fastcgi_port} >> ${seahub_init_log} 2>&1\""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:361
+#: deploy/start_seafile_at_system_bootup.md:360
 msgid "                    su - ${user} -c\"${script_path}/seahub.sh start >> ${seahub_init_log} 2>&1\""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:365
+#: deploy/start_seafile_at_system_bootup.md:364
 msgid "            [ $RETVAL -eq 0 ] && touch /var/lock/subsys/seahub"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:370
+#: deploy/start_seafile_at_system_bootup.md:369
 msgid "            echo -n $\"Shutting down seahub: \""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:371
+#: deploy/start_seafile_at_system_bootup.md:370
 msgid "            su - ${user} -c\"${script_path}/seahub.sh stop >> ${seahub_init_log} 2>&1\""
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:374
+#: deploy/start_seafile_at_system_bootup.md:373
 msgid "            [ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/seahub"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:403
+#: deploy/start_seafile_at_system_bootup.md:402
 msgid "Next, enable services:"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:405
+#: deploy/start_seafile_at_system_bootup.md:404
 msgid "    chmod 550 /etc/init.d/seafile"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:406
+#: deploy/start_seafile_at_system_bootup.md:405
 msgid "    chmod 550 /etc/init.d/seahub"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:407
+#: deploy/start_seafile_at_system_bootup.md:406
 msgid "    chkconfig --add seafile"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:408
+#: deploy/start_seafile_at_system_bootup.md:407
 msgid "    chkconfig --add seahub"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:409
+#: deploy/start_seafile_at_system_bootup.md:408
 msgid "    chkconfig seahub on"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:410
+#: deploy/start_seafile_at_system_bootup.md:409
 msgid "    chkconfig seafile on"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:412
+#: deploy/start_seafile_at_system_bootup.md:411
 msgid "and run:"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:414
+#: deploy/start_seafile_at_system_bootup.md:413
 msgid "    service seafile start"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:415
+#: deploy/start_seafile_at_system_bootup.md:414
 msgid "    service seahub start"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:417
+#: deploy/start_seafile_at_system_bootup.md:416
 # header
 msgid "For systems running systemd\n"
 "---------------------------"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:420
+#: deploy/start_seafile_at_system_bootup.md:419
 msgid "Create systemd service files, change **${seafile\\_dir}** to your **seafile** installation location and **seafile** to user, who runs **seafile** (if appropriate). Then you need to reload systemd's daemons: **systemctl daemon-reload**."
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:422
+#: deploy/start_seafile_at_system_bootup.md:421
 # header
 msgid "### Create systemd service file /etc/systemd/system/seafile.service"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:424
-#: deploy/start_seafile_at_system_bootup.md:442
-#: deploy/start_seafile_at_system_bootup.md:462
+#: deploy/start_seafile_at_system_bootup.md:423
+#: deploy/start_seafile_at_system_bootup.md:441
+#: deploy/start_seafile_at_system_bootup.md:461
 msgid "    [Unit]"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:425
+#: deploy/start_seafile_at_system_bootup.md:424
 msgid "    Description=Seafile"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:426
+#: deploy/start_seafile_at_system_bootup.md:425
 msgid "    # add mysql.service or postgresql.service depending on your database to the line below"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:427
+#: deploy/start_seafile_at_system_bootup.md:426
 msgid "    After=network.target"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:429
-#: deploy/start_seafile_at_system_bootup.md:446
-#: deploy/start_seafile_at_system_bootup.md:469
+#: deploy/start_seafile_at_system_bootup.md:428
+#: deploy/start_seafile_at_system_bootup.md:445
+#: deploy/start_seafile_at_system_bootup.md:468
 msgid "    [Service]"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:430
-#: deploy/start_seafile_at_system_bootup.md:452
-#: deploy/start_seafile_at_system_bootup.md:470
+#: deploy/start_seafile_at_system_bootup.md:429
+#: deploy/start_seafile_at_system_bootup.md:451
+#: deploy/start_seafile_at_system_bootup.md:469
 msgid "    Type=oneshot"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:431
+#: deploy/start_seafile_at_system_bootup.md:430
 msgid "    ExecStart=${seafile_dir}/seafile-server-latest/seafile.sh start"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:432
+#: deploy/start_seafile_at_system_bootup.md:431
 msgid "    ExecStop=${seafile_dir}/seafile-server-latest/seafile.sh stop"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:433
-#: deploy/start_seafile_at_system_bootup.md:453
-#: deploy/start_seafile_at_system_bootup.md:473
+#: deploy/start_seafile_at_system_bootup.md:432
+#: deploy/start_seafile_at_system_bootup.md:452
+#: deploy/start_seafile_at_system_bootup.md:472
 msgid "    RemainAfterExit=yes"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:433
+#: deploy/start_seafile_at_system_bootup.md:449
+#: deploy/start_seafile_at_system_bootup.md:473
+msgid "    User=seafile"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:434
 #: deploy/start_seafile_at_system_bootup.md:450
 #: deploy/start_seafile_at_system_bootup.md:474
-msgid "    User=seafile"
+msgid "    Group=seafile"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:435
-#: deploy/start_seafile_at_system_bootup.md:451
-#: deploy/start_seafile_at_system_bootup.md:475
-msgid "    Group=seafile"
+#: deploy/start_seafile_at_system_bootup.md:436
+#: deploy/start_seafile_at_system_bootup.md:454
+#: deploy/start_seafile_at_system_bootup.md:476
+msgid "    [Install]"
 msgstr ""
 
 #: deploy/start_seafile_at_system_bootup.md:437
 #: deploy/start_seafile_at_system_bootup.md:455
 #: deploy/start_seafile_at_system_bootup.md:477
-msgid "    [Install]"
-msgstr ""
-
-#: deploy/start_seafile_at_system_bootup.md:438
-#: deploy/start_seafile_at_system_bootup.md:456
-#: deploy/start_seafile_at_system_bootup.md:478
 msgid "    WantedBy=multi-user.target"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:440
+#: deploy/start_seafile_at_system_bootup.md:439
 # header
 msgid "### Create systemd service file /etc/systemd/system/seahub.service"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:443
+#: deploy/start_seafile_at_system_bootup.md:442
 msgid "    Description=Seafile hub"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:444
+#: deploy/start_seafile_at_system_bootup.md:443
 msgid "    After=network.target seafile.service"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:447
+#: deploy/start_seafile_at_system_bootup.md:446
 msgid "    # change start to start-fastcgi if you want to run fastcgi"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:448
+#: deploy/start_seafile_at_system_bootup.md:447
 msgid "    ExecStart=${seafile_dir}/seafile-server-latest/seahub.sh start"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:449
+#: deploy/start_seafile_at_system_bootup.md:448
 msgid "    ExecStop=${seafile_dir}/seafile-server-latest/seahub.sh stop"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:458
+#: deploy/start_seafile_at_system_bootup.md:457
 # header
 msgid "### Create systemd service file /etc/systemd/system/seafile-client.service (optional)"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:460
+#: deploy/start_seafile_at_system_bootup.md:459
 msgid "You need to create this service file only if you have **seafile** console client and you want to run it on system boot."
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:463
+#: deploy/start_seafile_at_system_bootup.md:462
 msgid "    Description=Seafile client"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:464
+#: deploy/start_seafile_at_system_bootup.md:463
 msgid "    # Uncomment the next line you are running seafile client on the same computer as server"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:465
+#: deploy/start_seafile_at_system_bootup.md:464
 msgid "    # After=seafile.service"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:466
+#: deploy/start_seafile_at_system_bootup.md:465
 msgid "    # Or the next one in other case"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:467
+#: deploy/start_seafile_at_system_bootup.md:466
 msgid "    # After=network.target"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:471
+#: deploy/start_seafile_at_system_bootup.md:470
 msgid "    ExecStart=/usr/bin/seaf-cli start"
 msgstr ""
 
-#: deploy/start_seafile_at_system_bootup.md:472
+#: deploy/start_seafile_at_system_bootup.md:471
 msgid "    ExecStop=/usr/bin/seaf-cli stop"
 msgstr ""
 
@@ -4340,7 +4332,7 @@ msgstr ""
 
 #: deploy/upgrade.md:139
 # ordered list
-msgid "4. If the new version works file, the old version can be removed"
+msgid "4. If the new version works fine, the old version can be removed"
 msgstr ""
 
 #: deploy/upgrade.md:141
@@ -4360,7 +4352,7 @@ msgid "## Upgrade with MySQL or PostgreSQL"
 msgstr ""
 
 #: deploy/upgrade_with_mysql_or_postgresql.md:4
-msgid "First, download the new version, for example seafile-server_1.6.0_x86-64.tar.gz, and extract it to the directory where you put all Seafile related staff. You should have a directory layout similar to this:"
+msgid "First, download the new version, for example seafile-server_1.6.0_x86-64.tar.gz, and extract it to the directory where you put all Seafile related stuff. You should have a directory layout similar to this:"
 msgstr ""
 
 #: deploy/upgrade_with_mysql_or_postgresql.md:6
@@ -5205,45 +5197,41 @@ msgid "seaf-server and ccnet-server now (since version 3.1) support reopenning l
 msgstr ""
 
 #: deploy/using_logrotate.md:7
-msgid "This feature is very useful when you need cut logfile while you don't want to shutdown the server programs. All you need to do now is cutting the logfile on"
+msgid "This feature is very useful when you need cut logfile while you don't want to shutdown the server programs. All you need to do now is cutting the logfile on the fly."
 msgstr ""
 
-#: deploy/using_logrotate.md:8
-msgid "the fly."
-msgstr ""
-
-#: deploy/using_logrotate.md:10
+#: deploy/using_logrotate.md:9
 # blockquote, which can be cascaded
 msgid "> **NOTE**: signal is not supported by windows, so the feature is not available in windows"
 msgstr ""
 
-#: deploy/using_logrotate.md:12
+#: deploy/using_logrotate.md:11
 # header
 msgid "## Default logrotate configuration directory"
 msgstr ""
 
-#: deploy/using_logrotate.md:14
+#: deploy/using_logrotate.md:13
 msgid "For debian, the default directory for logrotate should be ``/etc/logrotate.d/``"
 msgstr ""
 
-#: deploy/using_logrotate.md:16
+#: deploy/using_logrotate.md:15
 # header
 msgid "## Sample configuration"
 msgstr ""
 
-#: deploy/using_logrotate.md:18
+#: deploy/using_logrotate.md:17
 msgid "Assuming your ccnet-server's logfile is `/home/haiwen/logs/ccnet.log`, and your ccnet-server's pidfile for ccnet-server is ``/home/haiwen/pids/ccnet.pid``."
 msgstr ""
 
-#: deploy/using_logrotate.md:20
+#: deploy/using_logrotate.md:19
 msgid "Assuming your seaf-server's logfile is setup to ``/home/haiwen/logs/seaf-server.log``, and your seaf-server's pidfile for seaf-server is setup to ``/home/haiwen/pids/seaf-server.pid``:"
 msgstr ""
 
-#: deploy/using_logrotate.md:22
+#: deploy/using_logrotate.md:21
 msgid "The configuration for logroate could be like this:"
 msgstr ""
 
-#: deploy/using_logrotate.md:23
+#: deploy/using_logrotate.md:22
 # code block
 msgid "```\n"
 "/home/haiwen/logs/seaf-server.log\n"
@@ -5276,16 +5264,16 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: deploy/using_logrotate.md:53
+#: deploy/using_logrotate.md:52
 msgid "You can save this file, for example in debian, to ``/etc/logrotate.d/seafile``"
 msgstr ""
 
-#: deploy/using_logrotate.md:55
+#: deploy/using_logrotate.md:54
 # header
 msgid "## That's it"
 msgstr ""
 
-#: deploy/using_logrotate.md:57
+#: deploy/using_logrotate.md:56
 msgid "You now gets all the things done, just sit and enjoy your time :-D"
 msgstr ""
 
@@ -5533,6 +5521,7 @@ msgid "If you choose \"[1] Create new ccnet/seafile/seahub databases\", you woul
 msgstr ""
 
 #: deploy/using_mysql.md:147
+#: deploy/using_mysql.md:164
 msgid "| Question | Description | Note"
 msgstr ""
 
@@ -5576,10 +5565,6 @@ msgstr ""
 
 #: deploy/using_mysql.md:162
 msgid "** related questions for \"Use existing ccnet/seafile/seahub databases\" **"
-msgstr ""
-
-#: deploy/using_mysql.md:164
-msgid "| Question | Description | Note |"
 msgstr ""
 
 #: deploy/using_mysql.md:167
