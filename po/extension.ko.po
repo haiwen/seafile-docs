@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-20 05:34:41+0900\n"
-"PO-Revision-Date: 2016-04-19 19:35+0900\n"
+"POT-Creation-Date: 2016-04-20 19:37:56+0900\n"
+"PO-Revision-Date: 2016-04-26 04:47+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <darkcircle.0426@gmail.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.7\n"
 
 # header
 #: extension/README.md:1
@@ -359,7 +359,6 @@ msgstr ""
 
 # inline html
 #: extension/webdav.md:11
-#, fuzzy
 msgid ""
 "<pre>\n"
 "[WEBDAV]\n"
@@ -388,7 +387,7 @@ msgstr ""
 "# Change the value of fastcgi to true if fastcgi is to be used\n"
 "fastcgi = false\n"
 "\n"
-"# If you deploy seafdav behind nginx/apache, you need to modify \"share_name"
+"# If you deploy SeafDAV behind nginx/apache, you need to modify \"share_name"
 "\".\n"
 "share_name = /\n"
 "</pre>"
@@ -477,7 +476,6 @@ msgstr ""
 "</pre>"
 
 #: extension/webdav.md:57
-#, fuzzy
 msgid ""
 "In the above config, the value of '''share_name''' is changed to '''/"
 "seafdav''', which is the address suffix you assign to SeafDAV server."
@@ -622,7 +620,6 @@ msgstr ""
 "</pre>"
 
 #: extension/webdav.md:119
-#, fuzzy
 msgid ""
 "By default Nginx will buffer large request body in temp file. After the body "
 "is completely received, Nginx will send the body to the upstream server "
@@ -668,7 +665,6 @@ msgstr ""
 "</pre>"
 
 #: extension/webdav.md:135
-#, fuzzy
 msgid ""
 "In the above config, the value of '''share_name''' is changed to '''/"
 "seafdav''', which is the address suffix you assign to SeafDAV server. **Note "
@@ -1036,12 +1032,10 @@ msgstr "## 자주 묻는 질문"
 
 # header
 #: extension/webdav.md:268
-#, fuzzy
 msgid "### Clients can't connect to SeafDAV server"
 msgstr "### 클라이언트에서 seafdav 서버에 연결할 수 없음"
 
 #: extension/webdav.md:270
-#, fuzzy
 msgid ""
 "By default, SeafDAV is disabled. Check whether you have <code>enabled = "
 "true</code> in <code>seafdav.conf</code>."
