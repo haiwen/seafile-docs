@@ -229,6 +229,7 @@
             <li><a href="#admin-only-get-mobile-devices">Get Mobile Devices</a></li>
             <li><a href="#admin-only-unlink-user-device">Unlink User Device</a></li>
             <li><a href="#admin-only-get-device-errors">Get Device Errors</a></li>
+            <li><a href="#admin-only-clean-device-errors">Clean Device Errors</a></li>
         </ul>
     </li>
 
@@ -3236,7 +3237,28 @@ Get first page (50 records per page) of mobile devices.
 
 **Errors**
 
-* 403 Permission denied.
+* 403 Feature disabled.
+* 500 Internal Server Error
+
+**NOTE** This api only supported in pro edition.
+
+### <a id="admin-only-clean-device-errors"></a>Clean Device Errors ##
+
+**DELETE** https://cloud.seafile.com/api/v2.1/admin/device-errors/
+
+**Sample request**
+
+    curl -X DELETE -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/admin/device-errors/
+
+**Sample response**
+
+```
+{"success":true}
+```
+
+**Errors**
+
+* 403 Feature disabled.
 * 500 Internal Server Error
 
 **NOTE** This api only supported in pro edition.

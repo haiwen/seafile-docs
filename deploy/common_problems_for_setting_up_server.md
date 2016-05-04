@@ -29,12 +29,11 @@ When accessing file history in huge libraries you get HTTP 500 Error.
 
 Solution:
 
-Change in in httpd.conf or apache2.conf from "FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000"
-to "FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000 -idle-timeout 60"
+Change in in httpd.conf or apache2.conf from "FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000" to "FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000 -idle-timeout 60"
 
 #### Seafile with Apache / HTTPS has text only (no CSS formatting / images)
 
-The media folder (Alias location identified in /etc/apache2/sites-enabled/000-default (Ubuntu) has inappropriate permissions
+The media folder (Alias location identified in /etc/apache2/sites-enabled/000-default (Ubuntu)) has inappropriate permissions
 
 Solutions:
 

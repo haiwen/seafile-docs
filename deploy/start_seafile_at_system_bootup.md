@@ -207,8 +207,7 @@ On RHEL/CentOS, the script [/etc/rc.local](http://www.centos.org/docs/5/html/Ins
 
     which python2.6 # or "which python2.7"
 
--   In /etc/rc.local, add the directory of python2.6(2.7) to **PATH**,
-    and add the seafile/seahub start command
+-   In /etc/rc.local, add the directory of python2.6(2.7) to **PATH**, and add the seafile/seahub start command
 
 <!-- -->
 

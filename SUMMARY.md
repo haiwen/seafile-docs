@@ -50,13 +50,15 @@
    * [Enable Office/PDF Documents Online Preview](deploy_pro/office_documents_preview.md)
    * [Integrating with Office Web App](deploy_pro/office_web_app.md)
    * [Details about File Search](deploy_pro/details_about_file_search.md)
-   * [Virus Scan](deploy_pro/virus_scan.md)
+   * Virus Scan
+       * [Virus Scan](deploy_pro/virus_scan.md)
        * [Virus Scan With Kav4fs](deploy_pro/virus_scan_with_kav4fs.md)
    * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)
    * Storage Backends
        * [Amazon S3 Backend](deploy_pro/setup_with_amazon_s3.md)
        * [Ceph Backend](deploy_pro/setup_with_ceph.md)
        * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)
+       * [Storage Backend Encryption](deploy_pro/seaf_encrypt.md)
    * Cluster Deployment
        * [Deploy in a cluster](deploy_pro/deploy_in_a_cluster.md)
        * [Setup with MariaDB and Ceph](deploy_pro/clustering_with_mariadb_ceph.md)
@@ -64,6 +66,7 @@
        * [Enable search and background tasks in a cluster](deploy_pro/enable_search_and_background_tasks_in_a_cluster.md)
        * [Upgrade a cluster](deploy_pro/upgrade_a_cluster.md)
    * [Real-time Backup Server](deploy_pro/real_time_backup.md)
+   * [Import Directory To Seafile](deploy_pro/seaf_import.md)
    * [Configurable Options](deploy_pro/configurable_options.md)
    * [FAQ](deploy_pro/faq_for_seafile_pro_server.md)
    * [License](deploy_pro/seafile_professional_sdition_software_license_agreement.md)
@@ -90,7 +93,8 @@
    * [Security features](security/security_features.md)
    * [Access logs and auditing](security/auditing.md)
 * [Developing](develop/README.md)
-   * [How to Build Seafile](build_seafile/README.md)
+   * How to Build Seafile
+       * [Intro](build_seafile/README.md)
        * [Linux](build_seafile/linux.md)
        * [FreeBSD](build_seafile/freebsd.md)
        * [Windows](build_seafile/windows.md)

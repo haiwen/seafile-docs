@@ -29,7 +29,7 @@ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy
 ### Enable Office Preview
 
 1. Open file `seafevents.conf`, in the `OFFICE CONVERTER` section:
-```conf
+```
 [OFFICE CONVERTER]
 enabled = true
 ```
@@ -40,7 +40,7 @@ enabled = true
 
 Here are full list of options you can fine tune:
 
-```conf
+```
 [OFFICE CONVERTER]
 
 ## must be "true" to enable office/pdf file online preview
