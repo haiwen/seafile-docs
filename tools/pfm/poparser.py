@@ -13,6 +13,7 @@ class PoParser:
             r'^#:(\s[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*' +
             r'(/[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*)*:[1-9][0-9]*)+')
         self.fzc = re.compile(r'^#, fuzzy\n?$')
+        self.osc = re.compile(r'^#~ [\s\S]+\n?$')
         self.mhc = re.compile(r'^msgid\s\"\"')
         self.mic = re.compile(r'^msgid\s\"[\w\W]*\"')
         self.msc = re.compile(r'^msgstr\s\"[\w\W]*\"')
@@ -30,6 +31,9 @@ class PoParser:
 
         elif self.fzc.match(ostr):
             return 'fuzzy'
+
+        elif self.osc.match(ostr):
+            return 'obsolete'
 
         elif self.mhc.match(ostr):
             return 'msgheader'
