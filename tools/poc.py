@@ -214,6 +214,14 @@ class PoCompiler:
             elif pt == 'fuzzy':
                 # consider that this isn't translated
                 poline = self.f.readline()
+                pt = self.poparser.parse(poline)
+                if pt == 'obsolete':
+                    while pt != 'blankline':
+                        poline = self.f.readline()
+                        pt = self.poparser.parse(poline)
+
+                    continue
+
                 msgid, msgstr = self.get_msg_set(poline)
 
                 for fn in fnarr:
