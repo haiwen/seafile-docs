@@ -45,7 +45,7 @@ class PoTemplate:
 
     def prepare_header_description(self):
         self.fo.write('# SOME DESCRIPTIVE TITLE.\n')
-        self.fo.write('# Copyright (C) YEAR Free Software Foundation, Inc.\n')
+        self.fo.write('# Copyright (C) YEAR THE PACKAGE\'S COPYRIGHT HOLDER\n')
         self.fo.write('# This file is distributed under the same license ')
         self.fo.write('as the PACKAGE package.\n')
         self.fo.write('# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.\n')
