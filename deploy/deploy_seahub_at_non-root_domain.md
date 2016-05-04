@@ -1,7 +1,7 @@
 # Deploy Seahub at Non-root domain
 This documentation will talk about how to deploy Seafile Web using Apache/Nginx at Non-root directory of the website(e.g., www.example.com/seafile/). Please note that the file server path will still be e.g. www.example.com/seafhttp (rather than www.example.com/seafile/seafhttp) because this path is hardcoded in the clients.
 
-**Note:** We assume you have read [Deploy Seafile with nginx](deploy_with_nginx.md) or [Deploy Seafile with apache](deploy_with_apache.md).
+**Note:** We assume you have read [Deploy Seafile with Nginx](deploy_with_nginx.md) or [Deploy Seafile with Apache](deploy_with_apache.md).
 
 ## Configure Seahub
 
@@ -26,8 +26,7 @@ We deploy Seafile at <code>/seafile/</code> directory instead of root directory,
 
 ### Modify ccnet.conf
 
-You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md)
-to let Seafile know the domain you choose.
+You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md) to let Seafile know the domain you choose.
 
 <pre>
 SERVICE_URL = http://www.myseafile.com/seafile

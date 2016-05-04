@@ -8,7 +8,7 @@ This tutorial assumes you run at least Apache 2.4.
 
 ## Prepare
 
-Install and enable apache modules
+Install and enable Apache modules
 
 On Ubuntu you can use:
 
@@ -27,8 +27,7 @@ Seahub is the web interface of Seafile server. FileServer is used to handle raw 
 
 Here we deploy Seahub using fastcgi, and deploy FileServer with reverse proxy. We assume you are running Seahub using domain '''www.myseafile.com'''.
 
-Modify Apache config file:
-(`sites-enabled/000-default`) for ubuntu/debian, (`vhost.conf`) for centos/fedora
+Modify Apache config file: (`sites-enabled/000-default`) for ubuntu/debian, (`vhost.conf`) for centos/fedora
 
 ```apache
 <VirtualHost *:80>
@@ -64,8 +63,7 @@ Modify Apache config file:
 
 ### Modify ccnet.conf
 
-You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md)
-to let Seafile know the domain you choose.
+You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md) to let Seafile know the domain you choose.
 
 ```python
 SERVICE_URL = http://www.myseafile.com
@@ -117,7 +115,7 @@ In this case, you can write:
 ```apache
   Alias /media  /home/user/haiwen/seafile-server-latest/seahub;
 ```
-This way, you no longer need to update the apache config file each time you upgrade your seafile server.
+This way, you no longer need to update the Apache config file each time you upgrade your seafile server.
 
 
 ## Detailed explanation

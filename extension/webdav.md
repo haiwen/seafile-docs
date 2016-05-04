@@ -19,7 +19,7 @@ port = 8080
 # Change the value of fastcgi to true if fastcgi is to be used
 fastcgi = false
 
-# If you deploy seafdav behind nginx/apache, you need to modify "share_name".
+# If you deploy SeafDAV behind nginx/apache, you need to modify "share_name".
 share_name = /
 </pre>
 
@@ -54,7 +54,7 @@ fastcgi = true
 share_name = /seafdav
 </pre>
 
-In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to seafdav server.
+In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to SeafDAV server.
 
 #### Nginx without HTTPS
 
@@ -116,7 +116,7 @@ Nginx conf with https:
     }
 </pre>
 
-By default Nginx will buffer large request body in temp file. After the body is completely received, Nginx will send the body to the upstream server (seafdav in our case). But it seems when file size is very large, the buffering mechanism dosen't work well. It may stop proxying the body in the middle. So if you want to support file upload larger for 4GB, we suggest you install Nginx version >= 1.8.0 and add `proxy_request_buffering off` to Nginx configuration.
+By default Nginx will buffer large request body in temp file. After the body is completely received, Nginx will send the body to the upstream server (SeafDAV in our case). But it seems when file size is very large, the buffering mechanism dosen't work well. It may stop proxying the body in the middle. So if you want to support file upload larger for 4GB, we suggest you install Nginx version >= 1.8.0 and add `proxy_request_buffering off` to Nginx configuration.
 
 ### Sample Configuration 3: With Apache
 
@@ -132,13 +132,13 @@ fastcgi = false
 share_name = /seafdav
 </pre>
 
-In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to seafdav server. **Note that we do not use fastcgi for Apache.**
+In the above config, the value of '''share_name''' is changed to '''/seafdav''', which is the address suffix you assign to SeafDAV server. **Note that we do not use fastcgi for Apache.**
 
 Modify Apache config file (site-enabled/000-default):
 
 #### Apache without HTTPS
 
-Based on your apache configuration when you [deploy Seafile with Apache](,,/deploy/deploy_with_apache.md), add seafdav related config:
+Based on your apache configuration when you [deploy Seafile with Apache](../deploy/deploy_with_apache.md), add seafdav related config:
 
 <pre>
 <VirtualHost *:80>
@@ -238,7 +238,7 @@ So WebDAV is more suitable for infrequent file access. If you want better perfor
 
 The client recommendation for WebDAV depends on your Windows version:
 - For Windows XP: Only non-encryped HTTP connection is supported by the Windows Explorer. So for security, the only viable option is to use third-party clients, such as Cyberduck or Bitkinex.
-- For Vista and later versions: Windows Explorer supports HTTPS connection. But it requires a valid certificate on the server. It's generally recommended to use Windows Explorer to map a webdav server as network dirve. If you use a self-signed certificate, you have to add the certificate's CA into Windows' system CA store.
+- For Vista and later versions: Windows Explorer supports HTTPS connection. But it requires a valid certificate on the server. It's generally recommended to use Windows Explorer to map a webdav server as network drive. If you use a self-signed certificate, you have to add the certificate's CA into Windows' system CA store.
 
 ### Linux
 
@@ -265,9 +265,9 @@ Finder's support for WebDAV is also not very stable and slow. So it is recommend
 
 ## Frequently Asked Questions
 
-### Clients can't connect to seafdav sersver
+### Clients can't connect to SeafDAV server
 
-By default, seafdav is disabled. Check whether you have <code>enabled = true</code> in <code>seafdav.conf</code>.
+By default, SeafDAV is disabled. Check whether you have <code>enabled = true</code> in <code>seafdav.conf</code>.
 If not, modify it and restart seafile server.
 
 

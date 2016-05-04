@@ -3,16 +3,13 @@
 For Ubuntu
 ----------
 
-On Ubuntu, we make use of the
-[/etc/init.d/](https://help.ubuntu.com/community/UbuntuBootupHowto)
-scripts to start seafile/seahub at system boot.
+On Ubuntu, we make use of the [/etc/init.d/](https://help.ubuntu.com/community/UbuntuBootupHowto) scripts to start seafile/seahub at system boot.
 
 ### Create a script **/etc/init.d/seafile-server**
 
     sudo vim /etc/init.d/seafile-server
 
-The content of this script is: (You need to modify the value of **user**
-and **seafile\_dir** accordingly)
+The content of this script is: (You need to modify the value of **user** and **seafile\_dir** accordingly)
 
     #!/bin/bash
 
@@ -101,8 +98,7 @@ and **seafile\_dir** accordingly)
 
 ### Done
 
-Don't forget to update the value of **script\_path** later if you update
-your seafile server.
+Don't forget to update the value of **script\_path** later if you update your seafile server.
 
 For other Debian based Linux
 ----------------------------
@@ -111,8 +107,7 @@ For other Debian based Linux
 
     sudo vim /etc/init.d/seafile-server
 
-The content of this script is: (You need to modify the value of **user**
-and **seafile\_dir** accordingly)
+The content of this script is: (You need to modify the value of **user** and **seafile\_dir** accordingly)
 
     #!/bin/sh
 
@@ -178,10 +173,8 @@ and **seafile\_dir** accordingly)
 
 **Note**:
 
-1.  If you want to start seahub in fastcgi, just change the **fastcgi**
-    variable to **true**
-2.  If you deployed Seafile with MySQL, append "mysql" to the
-    Required-Start line:
+1.  If you want to start seahub in fastcgi, just change the **fastcgi** variable to **true**
+2.  If you deployed Seafile with MySQL, append "mysql" to the Required-Start line:
 
 <!-- -->
 
@@ -201,15 +194,12 @@ and **seafile\_dir** accordingly)
 
 ### Done
 
-Don't forget to update the value of **seafile\_dir** later if you update
-your seafile server.
+Don't forget to update the value of **seafile\_dir** later if you update your seafile server.
 
 For RHEL/CentOS
 ---------------
 
-On RHEL/CentOS, the script
-[/etc/rc.local](http://www.centos.org/docs/5/html/Installation_Guide-en-US/s1-boot-init-shutdown-run-boot.html)
-is executed by the system at bootup, so we start seafile/seahub there.
+On RHEL/CentOS, the script [/etc/rc.local](http://www.centos.org/docs/5/html/Installation_Guide-en-US/s1-boot-init-shutdown-run-boot.html) is executed by the system at bootup, so we start seafile/seahub there.
 
 -   Locate your python executable (python 2.6 or 2.7)
 
@@ -217,8 +207,7 @@ is executed by the system at bootup, so we start seafile/seahub there.
 
     which python2.6 # or "which python2.7"
 
--   In /etc/rc.local, add the directory of python2.6(2.7) to **PATH**,
-    and add the seafile/seahub start command
+-   In /etc/rc.local, add the directory of python2.6(2.7) to **PATH**, and add the seafile/seahub start command
 
 <!-- -->
 
@@ -237,18 +226,14 @@ is executed by the system at bootup, so we start seafile/seahub there.
     sudo -u ${user} ${script_path}/seafile.sh start > /tmp/seafile.init.log 2>&1
     sudo -u ${user} ${script_path}/seahub.sh start > /tmp/seahub.init.log 2>&1
 
-**Note**: If you want to start seahub in fastcgi, just change the
-**"seahub.sh start"** in the last line above to **"seahub.sh
-start-fastcgi"**
+**Note**: If you want to start seahub in fastcgi, just change the **"seahub.sh start"** in the last line above to **"seahub.sh start-fastcgi"**
 
--   Done. Don't forget to update the value of **seafile\_dir** later if
-    you update your seafile server.
+-   Done. Don't forget to update the value of **seafile\_dir** later if you update your seafile server.
 
 For RHEL/CentOS run as service
 ------------------------------
 
-On RHEL/CentOS , we make use of the /etc/init.d/ scripts to start
-seafile/seahub at system boot as service.
+On RHEL/CentOS , we make use of the /etc/init.d/ scripts to start seafile/seahub at system boot as service.
 
 ### Create a file **/etc/sysconfig/seafile**
 
@@ -431,10 +416,7 @@ and run:
 For systems running systemd
 ---------------------------
 
-Create systemd service files, change **${seafile\_dir}** to your
-**seafile** installation location and **seafile** to user, who runs
-**seafile** (if appropriate). Then you need to reload systemd's daemons:
-**systemctl daemon-reload**.
+Create systemd service files, change **${seafile\_dir}** to your **seafile** installation location and **seafile** to user, who runs **seafile** (if appropriate). Then you need to reload systemd's daemons: **systemctl daemon-reload**.
 
 ### Create systemd service file /etc/systemd/system/seafile.service
 
@@ -474,8 +456,7 @@ Create systemd service files, change **${seafile\_dir}** to your
 
 ### Create systemd service file /etc/systemd/system/seafile-client.service (optional)
 
-You need to create this service file only if you have **seafile**
-console client and you want to run it on system boot.
+You need to create this service file only if you have **seafile** console client and you want to run it on system boot.
 
     [Unit]
     Description=Seafile client

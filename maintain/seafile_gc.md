@@ -2,8 +2,7 @@
 
 Seafile uses storage de-duplication technology to reduce storage usage. The underlying data blocks will not be removed immediately after you delete a file or a library. As a result, the number of unused data blocks will increase on Seafile server.
 
-To release the storage space occupied by unused blocks, you have to run a
-"garbage collection" program to clean up unused blocks on your server.
+To release the storage space occupied by unused blocks, you have to run a "garbage collection" program to clean up unused blocks on your server.
 
 The GC program cleans up two types of unused blocks:
 
