@@ -1,12 +1,12 @@
-# Migrate From SQLite to MySQL
+# SQLite에서 MySQL로 이전
 
-First make sure the python module for MySQL is installed. On Ubuntu, use `apt-get install python-mysqldb` to install it.
+우선 MySQL 파이썬 모듈을 설치했는지 확인하십시오. 우분투에서 설치하려면 `apt-get install python-mysqldb` 명령을 활용하십시오.
 
-SQLite에서 MySQL로 옮겨가는 단계는 다음과 같습니다:
+SQLite에서 MySQL로 이전하는 단계는 다음과 같습니다:
 
 0. Seafile 및 Seahub를 멈춥니다
 
-1. Seafile 설치 경로 상단에 [sqlite2mysql.sh](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.sh)와 [sqlite2mysql.py](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.py) 스크립트를 다운로드합니다. 최상단 디렉터리의 예는 /data/haiwen 과 같습니다.
+1. Seafile 설치 경로 상단에 [sqlite2mysql.sh](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.sh)와 [sqlite2mysql.py](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.py) 스크립트를 다운로드합니다. 최상단 디렉터리의 예는 /data/haiwen과 같습니다.
 
 2. sqlite2mysql.sh를 실행합니다
 ```
@@ -76,7 +76,7 @@ SQLite에서 MySQL로 옮겨가는 단계는 다음과 같습니다:
 
 **참고**
 
-User notifications will be cleared during migration due to the slight difference between MySQL and SQLite, if you only see the busy icon when click the notitfications button beside your avatar, please remove `user_notitfications` table manually by:
+MySQL 및 SQLite의 약간의 차이점 때문에 사용자 알림을 삭제합니다. 아바타 옆의 알림 단추를 눌렀을 때 사용 중 아이콘만 나타내려면 `user_notifications` 표를 다음과 같이 제거하십시오:
 
     use seahub-db
     delete from notifications_usernotification;

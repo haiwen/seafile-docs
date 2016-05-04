@@ -1,6 +1,6 @@
 # Seahub 설정
 
-Note: You can also modify most of the config items via web interface.The config items are saved in database table (seahub-dab/constance_config). They have a higher priority over the items in config files.
+Note: You can also modify most of the config items via web interface. The config items are saved in database table (seahub-db/constance_config). They have a higher priority over the items in config files.
 
 ## Seahub에서 전자메일 알림 전송
 

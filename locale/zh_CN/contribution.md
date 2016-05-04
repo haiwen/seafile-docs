@@ -3,7 +3,7 @@
 ## Licensing
 Seafile and its desktop and mobile clients are published under the GPLv3.
 
-The Seafile server's web end, i.e. Seahub, is published under the Apache License.
+Seahub（Seafile 服务器的 web 端）遵循 Apache License。
 
 ## Discussion
 Google Group: https://groups.google.com/forum/?fromgroups#!forum/seafile

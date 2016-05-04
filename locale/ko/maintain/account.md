@@ -1,16 +1,16 @@
-# Account Management
+# 계정 관리
 
-#### User Management
+#### 사용자 관리
 
-When you setup seahub website, you should have setup a admin account. After you logged in a admin, you may add/delete users and file libraries.
+Seahub 웹 사이트를 설정할 때 admin 계정을 설정해야합니다. admin 계정으로 로그인하면, 사용자 및 라이브러리를 추가/제거할 수 있습니다.
 
-#### Resetting User Password
+#### 사용자 암호 재설정
 
-Administrator can reset password for a user in "System Admin" page.
+관리자는 "시스템 관리자" 페이지에서 사용자 암호를 재설정할 수 있습니다.
 
-In a private server, the default settings doesn't support users to reset their password by email. If you want to enable this, you have first to [set up notification email](../config/sending_email.md).
+개인 서버의 기본 설정은 전자메일을 통한 사용자 암호 재설정을 지원하지 않습니다. 이 기능을 활성화하려면 [알림 메일 설정](../config/sending_email.md)을 우선 진행해야합니다.
 
-#### Forgot Admin Account or Password?
+#### 관리자 계정 또는 암호 분실?
 
-You may run `reset-admin.sh` script under seafile-server directory. This script would help you reset the admin account and password.
+seafile-server 디렉터리의 `reset-admin.sh` 스크립트를 실행하십시오. 이 스크립트는 관리자 계정 및 암호 재설정 과정을 안내합니다.
 

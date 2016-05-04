@@ -6,18 +6,18 @@ Seafile은 파일 암호화 및 그룹 공유 기능을 지원하는 오픈소�
 
 Seafile에서 사용자는 그룹을 만들고 파일을 동기화하며, 위키, 토론 페이지를 통해 모임에서 활용하는 문서로 협업을 쉽게 진행할 수 있습니다.
 
-## Translation (Work In Progress)
+## 번역 (작업중)
 
-Even if you are not familiar with [gettext](https://en.wikipedia.org/wiki/Gettext) system, you can start translating this manual following 3 simple steps.
+[gettext](https://en.wikipedia.org/wiki/Gettext) 시스템에 익숙하지 않아도, 간단한 다음의 3단계로 시작할 수 있습니다.
 
-As an example to translate files from **overview/** folder to *Spanish*, these 3 steps are:
+예를 들어 **overview/** 폴더의 파일을 *스페인어*로 번역하려 한다면, 이에 대한 3단계 절차는:
 
-1. copy **po/overview.pot** to  **po/overview.es.po**.
-1. Translate messages in **po/overview.es.po** to spanish language.
-1. Send us your **po/overview.es.po** for integration. You can also make a pull request, if you modified an already existing po file.
+1. **po/overview.pot**를  **po/overview.es.po**로 복사하십시오.
+1. **po/overview.es.po** 메시지를 스페인어로 번역하십시오.
+1. **po/overview.es.po** 파일 병합을 위해 보내주십시오. 이미 po 파일이 있다면 pull 요청하셔도 됩니다.
 
 
-If you are familiar with POT and PO files, you can use the one in **po/** folder.
+POT 및 PO 파일에 익숙하다면, **po/** 폴더의 pot를 골라 사용하시면 됩니다.
 
 ## 라이선스
 

@@ -1,140 +1,150 @@
-# Apache 下配置 Seahub
+# Config Seahub with Apache
 
-## 准备工作
+## Important
 
-1. Ubuntu 下安装<code>python-flup</code>库:
+According to the [security advisory](https://www.djangoproject.com/weblog/2013/aug/06/breach-and-django/) published by Django team, we recommend disable [GZip compression](http://httpd.apache.org/docs/2.2/mod/mod_deflate.html) to mitigate [BREACH attack](http://breachattack.com/).
 
-    <pre>
-    sudo apt-get install python-flup
-    </pre>
+This tutorial assumes you run at least Apache 2.4.
 
-2. Ubuntu 下安装和启用 mod_fastcgi 和 mod_rewrite :
+## Prepare
 
-    <pre>
-    sudo apt-get install libApache2-mod-fastcgi
-    sudo a2enmod rewrite
-    sudo a2enmod fastcgi
-    </pre>
+Install and enable Apache modules
 
-    CentOS/Redhat 下需要从源码编译安装 mod_fastcgi, 请参考[这里](http://www.cyberciti.biz/tips/rhel-centos-fedora-apache2-fastcgi-php-configuration.html)。
+On Ubuntu you can use:
 
-3. 启用 Apache proxy
-
-    <pre>
-    sudo a2enmod proxy_http
-    </pre>
-
-
-## Apache 环境下部署 Seahub/FileServer
-
-Seahub 是 Seafile 服务器的网站界面. FileServer 用来处理浏览器端文件的上传与下载. 默认情况下, 它在 8082 端口上监听 HTTP 请求.
-
-这里我们通过 fastcgi 部署 Seahub, 通过反向代理（Reverse Proxy）部署 FileServer. 我们假设你已经将 Seahub 绑定了域名"www.myseafile.com".
-
-首先编辑你的 Apache 配置文件.根据你的 Linux 版本, 你需要在**文件末尾**增加以下语句:
-
-`Apache2.conf`, for ubuntu/debian:
-```
-FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000
+```bash
+sudo a2enmod rewrite
+sudo a2enmod proxy_fcgi
+sudo a2enmod proxy_http
 ```
 
-`httpd.conf`, for centos/fedora:
-```
-FastCGIExternalServer /var/www/html/seahub.fcgi -host 127.0.0.1:8000
-```
 
-注意, `seahub.fcgi`只是一个位置标识符, 你并不需要在你的系统中新建这个文件夹.
+On raspbian install fcgi like [this](http://raspberryserver.blogspot.co.at/2013/02/installing-lamp-with-fastcgi-php-fpm.html)
 
-二, 修改 Apache 配置文件:
-(`sites-enabled/000-default`) for ubuntu/debian
-(`vhost.conf`) for centos/fedora
+## Deploy Seahub/FileServer With Apache
 
-```
+Seahub is the web interface of Seafile server. FileServer is used to handle raw file uploading/downloading through browsers. By default, it listens on port 8082 for HTTP request.
+
+Here we deploy Seahub using fastcgi, and deploy FileServer with reverse proxy. We assume you are running Seahub using domain '''www.myseafile.com'''.
+
+Modify Apache config file: (`sites-enabled/000-default`) for ubuntu/debian, (`vhost.conf`) for centos/fedora
+
+```apache
 <VirtualHost *:80>
-  ServerName www.myseafile.com
-  DocumentRoot /var/www
-  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
+    ServerName www.myseafile.com
+    # Use "DocumentRoot /var/www/html" for Centos/Fedora
+    # Use "DocumentRoot /var/www" for Ubuntu/Debian
+    DocumentRoot /var/www
+    Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
 
-  RewriteEngine On
+    RewriteEngine On
 
-  <Location /media>
-    Require all granted
-  </Location>
+    <Location /media>
+        Require all granted
+    </Location>
 
-  #
-  # seafile fileserver
-  #
-  ProxyPass /seafhttp http://127.0.0.1:8082
-  ProxyPassReverse /seafhttp http://127.0.0.1:8082
-  RewriteRule ^/seafhttp - [QSA,L]
+    #
+    # seafile fileserver
+    #
+    ProxyPass /seafhttp http://127.0.0.1:8082
+    ProxyPassReverse /seafhttp http://127.0.0.1:8082
+    RewriteRule ^/seafhttp - [QSA,L]
 
-  #
-  # seahub
-  #
-  RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    #
+    # seahub
+    #
+    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+    ProxyPass / fcgi://127.0.0.1:8000/
 </VirtualHost>
 ```
 
-## 修改 SERVICE_URL 和 FILE_SERVER_ROOT
+## Modify ccnet.conf and seahub_setting.py
 
-下面还需要更新 SERVICE_URL 和 FILE_SERVER_ROOT 这两个配置项。否则无法通过 Web 正常的上传和下载文件。
+### 更改 ccnet.conf
 
-5.0 版本开始，您可以直接通过管理员 Web 界面来设置这两个值：
-```
-SERVICE_URL: http://www.myseafile.com
-FILE_SERVER_ROOT: http://www.myseafile.com/seafhttp
-```
+为使 Seafile 知道你所使用的域名，请更改 [/data/haiwen/conf/ccnet.conf](../config/ccnet-conf.md) 中 <code>SERVICE_URL</code> 变量的值。
 
-5.0 版本之前需要修改 ccnet.conf 文件和 seahub_settings.py 文件
-
-### 修改 ccnet.conf
-
-<pre>
+```python
 SERVICE_URL = http://www.myseafile.com
-</pre>
+```
 
-### 修改 seahub_settings.py （增加一行，这是一个 python 文件，注意引号）
+注意: 如果以后域名有所变动，请记得更改 <code>SERVICE_URL</code>.
+
+### 更改 seahub_settings.py
+
+You need to add a line in <code>seahub_settings.py</code> to set the value of `FILE_SERVER_ROOT` (or `HTTP_SERVER_ROOT` before version 3.1)
 
 ```python
 FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'
 ```
 
-
-
 ## 启动 Seafile 和 Seahub
 
-<pre>
-sudo service Apache2 restart
+```bash
+sudo service apache2 restart
 ./seafile.sh start
 ./seahub.sh start-fastcgi
-</pre>
+```
+
+## Troubleshooting
+
+### Problems with paths and files containing spaces
+
+If there are problems with paths or files containing spaces, make sure to have at least Apache 2.4.12.
+
+References
+ * https://github.com/haiwen/seafile/issues/1258#issuecomment-188866740
+ * https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/1284641
+ * https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/1284641/comments/5
+ * https://svn.apache.org/viewvc/httpd/httpd/tags/2.4.12/CHANGES?view=markup#l45
+
+## Notes when Upgrading Seafile Server
+
+When [upgrading seafile server](upgrade.md), besides the normal steps you should take, there is one extra step to do: '''Update the path of the static files in your Nginx/Apache configuration'''. For example, assume your are upgrading seafile server 1.3.0 to 1.4.0, then:
+
+```apache
+  Alias /media  /home/user/haiwen/seafile-server-1.4.0/seahub/media
+```
+
+**Tip:**
+You can create a symbolic link <code>seafile-server-latest</code>, and make it point to your current seafile server folder (Since seafile server 2.1.0, the <code>setup-seafile.sh</code> script will do this for you). Then, each time you run a upgrade script, it would update the <code>seafile-server-latest</code> symbolic link to keep it always point to the latest version seafile server folder.
+
+In this case, you can write:
+
+```apache
+  Alias /media  /home/user/haiwen/seafile-server-latest/seahub;
+```
+This way, you no longer need to update the Apache config file each time you upgrade your seafile server.
 
 
-## 其他说明
+## Detailed explanation
 
-阅读[Seafile 组件](../overview/components.md)会帮你更好的理解 Seafile
+This may help you understand seafile server better: [Seafile Components](../overview/components.md)
 
-在 Seafile 服务器端有两个组件：Seahub 和 FileServer。 FileServer 通过监听 8082 端口处理文件的上传与下载. Seahub 通过监听 8000 端口负责其他的WEB页面。在 https 下, Seahub 应该通过 fastcgi 模式监听 8000 端口 (运行./seahub.sh start-fastcgi). 而且在 fastcgi 模式下, 如果直接访问`http://domain:8000`时，会返回错误页面.
+There are two components in Seafile server, Seahub and FileServer. FileServer only servers for raw file uploading/downloading, it listens on 8082. Seahub that serving all the other pages, is still listen on 8000. But under https, Seahub should listen as in fastcgi mode on 8000 (run as ./seahub.sh start-fastcgi). And as in fastcgi mode, when you visit  http://domain:8000 directly, it should return an error page.
 
-当一个用户访问`https://domain.com/home/my/`时, Apache 接受到访问请求后，通过 fastcgi 将其转发至 Seahub。 可通过以下配置来实现:
+When a user visit https://example.com/home/my/, Apache receives this request and sends it to Seahub via fastcgi. This is controlled by the following config items:
 
+```apache
     #
     # seahub
     #
-    RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^/(seahub.*)$ /seahub.fcgi/$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+    ProxyPass / fcgi://127.0.0.1:8000/
+```
 
-和
+When a user click a file download link in Seahub, Seahub reads the value of `FILE_SERVER_ROOT` and redirects the user to address `https://example.com/seafhttp/xxxxx/`. `https://example.com/seafhttp` is the value of `FILE_SERVER_ROOT`. Here, the `FILE_SERVER` means the FileServer component of Seafile, which only serves for raw file downloading/uploading.
 
-    FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000
+When Apache receives the request at 'https://example.com/seafhttp/xxxxx/', it proxies the request to FileServer, which is listening at 127.0.0.1:8082. This is controlled by the following config items:
 
-
-当一个用户在 Seahub 中点击文件下载链接时， Seahub 读取<code>FILE_SERVER_ROOT</code>的值，并将其用户重定向到
-`https://domain.com/seafhttp/xxxxx/`。当 Apache 在 `https://domain.com/seafhttp/xxxxx/`接收到访问请求后, 它把请求发送到正在监听 127.0.0.1:8082 的 FileServer 组件, 可通过以下配置来实现:
-
+```apache
+    #
+    # seafile fileserver
+    #
     ProxyPass /seafhttp http://127.0.0.1:8082
     ProxyPassReverse /seafhttp http://127.0.0.1:8082
     RewriteRule ^/seafhttp - [QSA,L]
+```
+

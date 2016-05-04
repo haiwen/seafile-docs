@@ -1,43 +1,43 @@
 # Seafile FSCK
 
-On the server side, Seafile stores the files in the libraries in an internal format. Seafile has its own representation of directories and files (similar to Git).
+Seafile 서버 측에서는 자체 형식으로 라이브러리에 파일을 저장합니다. Seafile에는 각각에 자체 디렉터리와 파일 형상을 지니고 있습니다(git와 유사).
 
-With default installation, these internal objects are stored in the server's file system directly (such as Ext4, NTFS). But most file systems don't assure the integrity of file contents after a hard shutdown or system crash. So if new Seafile internal objects are being written when the system crashes, they can be corrupt after the system reboots. This will make part of the corresponding library not accessible.
+기본 설치 후, 자체 객체는 서버 파일 시스템(ext4, NTFS)에 바로 저장합니다. 허나 대부분의 파일 시스템은 갑작스러운 전원 꺼짐 또는 시스템 손상시 파일 내용의 무결성을 보증할 수 없습니다. 따라서 시스템 손상시 Seafile 자체 객체를 기록했다면, 시스템을 다시 부팅했을 때 객체가 깨질 수 있습니다. 이렇게 되면 각각의 라이브러리의 일부에 접근할 수 없습니다.
 
-Note: If you store the seafile-data directory in a battery-backed NAS (like EMC or NetApp), or use S3 backend available in the Pro edition, the internal objects won't be corrupt.
+참고: 배터리 보조 NAS(EMC 또는 NetApp)에 seafile-data 디렉터리를 저장하거나, 전문가판의 S3 백엔드를 사용한다면 자체 객체는 깨지지 않습니다.
 
-Starting from version 2.0, Seafile server comes with a seaf-fsck tool to help you recover from this corruption (similar to git-fsck tool). This tool recovers any corrupted library back to its last consistent and usable state.
+Seafile 버전 2.0 부터는 Seafile 서버에 seaf-fsck 도구(git-fsck 도구와 유사)를 도입하여 깨진 데이터 복구를 도와줍니다. 이 도구는 어떤 깨진 라이브러리도 최근의 일관성을 유지하고 안정적으로 사용할 수 있도록 복구합니다.
 
-Starting from version 4.1, we provide a seaf-fsck.sh script. The seaf-fsck tool accepts the following arguments:
+Seafile 버전 4.1 부터는 seaf-fsck.sh 스크립트를 제공합니다. seaf-fsck 도구는 다음 인자를 받아들입니다:
 
 ```
 cd seafile-server-latest
 ./seaf-fsck.sh [--repair|-r] [--enable-sync|-e] [--export|-E export_path] [repo_id_1 [repo_id_2 ...]]
 ```
 
-There are three modes of operation for seaf-fsck:
+seaf-fsck 동작 방식은 세가지가 있습니다:
 
-1. checking integrity of libraries.
-2. repairing corrupted libraries.
-3. exporting libraries.
+1.  라이브러리 무결성을 검사합니다.
+2. 깨진 라이브러리를 복구합니다.
+3. 라이브러리를 내보냅니다.
 
-## Checking Integrity of Libraries
+## 라이브러리 무결성 검사
 
-Running seaf-fsck.sh without any arguments will run a **read-only** integrity check for all libraries.
+어떤 인자도 붙이지 않고 seaf-fsck.sh를 실행하면 모든 라이브러리에 대해 **읽기 전용** 상태로 무결성을 검사합니다.
 
 ```
 cd seafile-server-latest
 ./seaf-fsck.sh
 ```
 
-If you want to check integrity for specific libraries, just append the library id's as arguments:
+일부 라이브러리의 무결성을 검사하려면 라이브러리 ID를 인자로 붙이십시오:
 
 ```
 cd seafile-server-latest
 ./seaf-fsck.sh [library-id1] [library-id2] ...
 ```
 
-The output looks like:
+출력 결과는 다음과 같습니다:
 
 ```
 [02/13/15 16:21:07] fsck.c(470): Running fsck for repo ca1a860d-e1c1-4a52-8123-0bf9def8697f.
@@ -51,9 +51,9 @@ The output looks like:
 [02/13/15 16:21:07] fsck.c(514): Fsck finished for repo ca1a860d.
 ```
 
-The corrupted files and directories are reported.
+깨진 파일과 디렉터리가 나타납니다.
 
-Sometimes you can see output like the following:
+때로는 다음과 같은 출력 내용을 볼 수 있습니다:
 
 ```
 [02/13/15 16:36:11] Commit 6259251e2b0dd9a8e99925ae6199cbf4c134ec10 is missing
@@ -62,66 +62,66 @@ Sometimes you can see output like the following:
 [02/13/15 16:36:11] fsck.c(376): Find available commit 1b26b13c(created at 2015-02-13 16:10:21) for repo ca1a860d.
 ```
 
-This means the "head commit" (current state of the library) recorded in database is not consistent with the library data. In such case, fsck will try to find the last consistent state and check the integrity in that state.
+데이터베이스에 기록한 "가장 최근의 커밋"(라이브러리 현재 상태)이 라이브러리 데이터와 일치하지 않음을 나타냅니다. 이 경우, fsck에서 최근 일관성 확보 상태를 찾아 해당 상태의 무결성을 확인합니다.
 
-Tips: **If you have many libraries, it's helpful to save the fsck output into a log file for later analysis.**
+요령: **라이브러리가 많다면, 추후 분석 용도로 로그 파일에 출력 내용을 저장하는 것이 좋습니다.**
 
-## Repairing Corruption
+## 손상 복구
 
-Corruption repair in seaf-fsck basically works in two steps:
+seaf-fsck의 손상 복구 기능은 기본적으로 두 단계에 걸쳐 동작합니다:
 
-1. If the library state (commit) recorded in database is not found in data directory, find the last available state from data directory.
-2. Check data integrity in that specific state. If files or directories are corrupted, set them to empty files or empty directories. The corrupted paths will be reported, so that the user can recover them from somewhere else.
+1. 데이터베이스에 기록한 라이브러리 상태(커밋)을 데이터 디렉터리에서 찾을 수 없으면 데이터 디렉터리에서 최근의 상태를 확인합니다.
+2. 각각의 상태에 대해 데이터 무결성을 확인합니다. 파일 또는 디렉터리가 깨졌다면 빈 파일 또는 빈 디렉터리로 설정합니다. 깨진 경로는 보고하여 사용자가 다른 어떤 방편으로든 복구할 수 있게 합니다.
 
-Running the following command repairs all the libraries:
+다음 명령을 실행하면 모든 라이브러리를 복구합니다:
 
 ```
 cd seafile-server-latest
 ./seaf-fsck.sh --repair
 ```
 
-Most of time you run the read-only integrity check first, to find out which libraries are corrupted. And then you repair specific libraries with the following command:
+대부분 읽기 전용 방식으로 무결성 검사를 먼저 실행하여 어떤 라이브러리가 깨졌는지 확인합니다. 그리고 각각의 라이브러리를 다음 명령으로 복구합니다:
 
 ```
 cd seafile-server-latest
 ./seaf-fsck.sh --repair [library-id1] [library-id2] ...
 ```
 
-Because corrupted files and directories are emptied after repair, syncing the library after repair may result in data lost in the clients. The good copies on the clients may be replaced by the empty copies. To prevent this from happening, the system prevents a "repaired" library from syncing to clients. The system admin should inform the users to recover the corrupted files and folders. And then run the following command to enable syncing for the library again:
+손상된 파일 및 디렉터리는 복구 후 비워둔 상태가 되기 때문에, 복구 과정이 끝나고 라이브러리를 동기화하면 클라이언트의 데이터를 잃을 수 있습니다. 클라이언트의 제대로 된 사본을 빈 사본으로 바꿉니다. 이 문제를 막으려, 시스템에서는 클라이언트와의 동기화로 라이브러리의 "복구"를 막습니다. 시스템 관리자는 사용자에게 손상 파일과 폴더를 복구하라고 알려야합니다. 그리고 다음 명령을 실행하여 라이브러리 동기화를 다시금 활성화하십시오:
 
 ```
 cd seafile-server-latest
 ./seaf-fsck.sh --enable-sync [library-id1] [library-id2] ...
 ```
 
-### Change after CE 5.0.3 and Pro 5.0.2
+### 커뮤니티판 5.0.3 및 전문가판 5.0.2 이후 버전에서 바뀐 사항
 
-Since community eidition 5.0.3 and Pro edition 5.0.2, we improved seaf-fsck repair operation. Two improvements are added:
+커뮤니티판 5.0.3 및 전문가판 5.0.2부터 seaf-fsck 복구 동작을 개선했습니다. 개선사항 두가지를 추가했습니다:
 
-- After running "--repair" operation, the system admin doesn't need to run "--enable-sync" command any more. Instead, seaf-fsck automatically disconnects all syncing clients to the library. So the users are forced to re-sync the library.
-- In the library history, seaf-fsck includes the list of files and folders that are corrupted. So it's much easier to located corrupted paths.
+- "--repair" 동작 실행 후, 시스템 관리자는 더 이상 "--enable-sync" 명령을 실행하지 않아도 됩니다. 대신, seaf-fsck에서 자동으로 라이브러리에 연결한 모든 클라이언트 연결을 끊습니다. 따라서 사용자는 라이브러리를 강제로 다시 동기화 해야합니다.
+- 라이브러리 기록에서, seaf-fsck 결과에는 손상된 파일 및 폴더가 들어갑니다. 따라서 손상된 경로를 쉽게 찾을 수 있습니다.
 
-### Best Practice for Repairing a Library
+### 라이브러리 복구 사례
 
-To check all libraries and find out which library is corrupted, the system admin can run seaf-fsck.sh without any argument and save the output to a log file. Search for keyword "Fail" in the log file to locate corrupted libraries.
+모든 라이브러리를 검사하여 어떤 라이브러리가 손상되었는지 찾으려면, 시스템 관리자가 어떤 인자도 설정하지 않은 상태에서 seaf-fsck.sh를 실행한 후 로그 파일에 출력 내용을 저장할 수 있습니다. 손상된 라이브러리를 찾으려면 로그 파일에서 "Fail" 키워드를 찾으십시오.
 
-When the system admin find a library is corrupted, he/she should run seaf-fsck.sh with "--repair" for the library. After the command fixes the library, the admin should inform user to recover files from other places. There are two ways:
+시스템 관리자가 손상된 라이브러리를 찾으면, 라이브러리를 복구하는 "--repair" 인자를 주어 seaf-fsck.sh를 실행하십시오. 명령 실행으로 라이브러리 문제를 수정하면, 관리자는 다른 위치의 파일로 라이브러리의 파일을 복구하라고 알려주어야합니다. 두가지 방법이 있습니다:
 
-- Upload corrupted files or folders via the web interface
-- If the library was synced to some desktop computer, and that computer has a correct version of the corrupted file, resyncing the library on that computer will upload the corrupted files to the server.
+- 웹 인터페이스로 깨진 파일 또는 폴더를 업로드
+- 임의의 데스크톱 컴퓨터에서 라이브러리를 동기화했고, 컴퓨터에 손상된 파일의 올바른 버전이 있다면, 해당 컴퓨터의 라이브러리를 다시 동기화할 때 서버에서 손상된 파일을 업로드합니다.
 
-## Exporting Libraries to File System
+## 라이브러리를 파일 시스템으로 내보내기
 
-Since version 4.2.0, you can use seaf-fsck to export all the files in libraries to external file system (such as Ext4). This procedure doesn't rely on the seafile database. As long as you have your seafile-data directory, you can always export your files from Seafile to external file system.
+버전 4.2.0 부터, seaf-fsck 명령으로 라이브러리의 모든 파일을 외부 파일 시스템(ext4 등)으로 내보낼 수 있습니다. 이 절차는 Seafile 데이터베이스 상태에 의존하지 않습니다. seafile-data 디렉터리를 보유하는 동안 Seafile의 파일을 외부 파일 시스템으로 언제든 내보낼 수 있습니다.
 
-The command syntax is
+명령 문법은 다음과 같습니다
 
 ```
 cd seafile-server-latest
 ./seaf-fsck.sh --export top_export_path [library-id1] [library-id2] ...
 ```
 
-The argument `top_export_path` is a directory to place the exported files. Each library will be exported as a sub-directory of the export path. If you don't specify library ids, all libraries will be exported.
+`top_export_path` 인자는 내보낸 파일이 들어가는 디렉터리입니다. 각 라이브러리는 내보내기 경로의 하위 디렉터리 형태로 내보냅니다. 라이브러리 ID를 지정하지 않으면 모든 라이브러리를 내보냅니다.
 
-Currently only un-encrypted libraries can be exported. Encrypted libraries will be skipped.
+현재 암호화하지 않은 라이브러리만 내보낼 수 있습니다. 암호화 한 라이브러리는 건너뜁니다.
 

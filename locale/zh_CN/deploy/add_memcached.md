@@ -1,6 +1,6 @@
 # 使用 memcached
 
-安装 Memcached 能够显著提高系统性能，首先安装 memcached 和相应的库：
+Seahub caches items (avatars, profiles, etc) on the file system in /tmp/seahub_cache/ by default. You can replace it with Memcached. You need to install
 
 * memcached
 * python memcached module (python-memcache or python-memcached)
@@ -16,8 +16,3 @@ CACHES = {
 }
 ```
 
-最后重启 Seahub 以使更改生效：
-
-    ./seahub.sh restart
-
-如果更改没有生效，请删除`seahub_setting.pyc`缓存文件.

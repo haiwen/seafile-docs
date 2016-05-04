@@ -1,30 +1,29 @@
 # Seafile GC
 
-Seafile uses storage de-duplication technology to reduce storage usage. The underlying data blocks will not be removed immediately after you delete a file or a library. As a result, the number of unused data blocks will increase on Seafile server.
+Seafile은 저장소 사용을 줄이는 저장장치 중복 방지 기술을 사용합니다. 파일 또는 라이브러리를 삭제하고 나서도 기반 데이터 블록을 바로 제거하지 않습니다. 결과적으로 사용하지 않는 여러 데이터 블록은 Seafile 서버에서 계속 늘어납니다.
 
-To release the storage space occupied by unused blocks, you have to run a
-"garbage collection" program to clean up unused blocks on your server.
+사용하지 않은 블록이 차지하는 저장 공간을 확보하려면 "가비지 수집" 프로그램을 실행하여 서버에서 사용하지 않는 블록을 정리해야합니다.
 
-The GC program cleans up two types of unused blocks:
+GC 프로그램에서는 사용하지 않는 두가지 형식의 블록을 정리합니다:
 
-1. Blocks that no library references to, that is, the blocks belong to deleted libraries;
-2. If you set history length limit on some libraries, the out-dated blocks in those libraries will also be removed.
+1. 삭제한 라이브러리에 있던, 어떤 라이브러리에서도 참조하지 않는 블록
+2. 일부 라이브러리의 기록 분량 제한 값을 설정하면, 이 라이브러리의 오래된 블록도 제거합니다.
 
-**Before running GC, you must shutdown the Seafile program on your server if you use the community edition. For professional edition, from version 3.1.11, online GC operation is supported. If you use Professional edition, you don't need to shutdown the Seafile program if you are using MySQL or PostgreSQL as database.**  This is because new blocks written into Seafile while GC is running may be mistakenly deleted by the GC program. 
+**GC를 실행하기 전, 커뮤니티판을 사용한다면 서버에서 실행중인 Seafile 프로그램 가동을 멈춰야합니다. 전문가판에서는 3.1.11부터 온라인 GC 처리를 지원합니다. 전문가판을 사용한다면 MySQL또는 PostgreSQL을 데이터베이스로 사용할 때 Seafile 프로그램의 가동을 멈출 필요가 없습니다.** 왜냐면 GC를 실행하는 동안 Seafile에서 기록한 새 블록은 GC 프로그램에서 실수로 삭제할 수 있기 때문입니다.
 
-## Run GC in version 4.1.1 and later
+## 버전 4.1.1 이상에서 GC 실행
 
-In community edition 4.1.1 and Pro edition 4.1.0, GC program's command line and output are improved.
+커뮤니티판 4.1.1 및 전문가판 4.1.0에서 GC 프로그램 명령행 메시지 및 출력 내용을 개선했습니다.
 
-### Dry-run Mode
+### Dry-run 모드
 
-To see how much garbage can be collected without actually removing any garbage, use the dry-run option:
+가비지를 제거하지 않고 가비지를 얼마나 많이 수집할 수 있는지 보려면 dry-run 옵션을 사용하십시오:
 
 ```
 seaf-gc.sh --dry-run [repo-id1] [repo-id2] ...
 ```
 
-The output should look like:
+출력 내용은 다음과 같습니다:
 
 ```
 [03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo My Library(ffa57d93)
@@ -65,54 +64,54 @@ repo-id2
 repo-id3
 ```
 
-If you give specific library ids, only those libraries will be checked; otherwise all libraries will be checked.
+라이브러리 ID를 지정하면, 해당 라이브러리만 검사합니다. 그렇지 않으면 모든 라이브러리를 검사합니다.
 
-Notice that at the end of the output there is a "repos have blocks to be removed" section. It contains the list of librareis that have garbage blocks. Later when you run GC without --dry-run option, you can use these libraris ids as input arguments to GC program.
+출력 마지막 부분에 "repos have blocks to be removed" 섹션이 있습니다. 여기에는 가비지 블록이 있는 라이브러리 목록이 나타납니다. 그 다음 --dry-run 옵션을 빼고 GC를 실행할 때, GC 프로그램의 입력 인자로 출력에 나타난 라이브러리 ID를 넣을 수 있습니다.
 
-### Removing Garbage
+### 쓸모 없는 파일 제거
 
-To actually remove garbage blocks, run without the --dry-run option:
+실제로 가비지 블록을 제거하려면 --dry-run 옵션 없이 실행하십시오:
 
 ```
 seaf-gc.sh [repo-id1] [repo-id2] ...
 ```
 
-If libraries ids are specified, only those libraries will be checked for garbage.
+라이브러리 ID를 지정하면, 해당 라이브러리만 가비지 검사를 합니다.
 
-As described before, there are two types of garbage blocks to be removed. Sometimes just removing the first type (those belong to deleted libraries) of unused blocks is good enough. In this case, the GC program won't bother to check the libraries for outdated historic blocks. The "-r" option implements this feature:
+이전에 설명한 바와 같이, 제거할 가비지 블록 형식은 두가지가 있습니다. 사용하지 않는 블록의 첫번째 형식을 제거하는 것만드로도(삭제한 라이브러리의 소유) 충분할 수도 있습니다. 이 경우 GC 프로그램에서는 오래된 기록 블록의 라이브러리 검사 동작으로 사용자를 귀찮게 하지 않습니다. "-r" 옵션은 다음 기능을 수행합니다:
 
 ```
 seaf-gc.sh -r
 ```
 
-**In Seafile version 4.1.1 and later, libraries deleted by the users are not immediately removed from the system. Instead, they're moved into a "trash" in the system admin page. Before they're cleared from the trash, their blocks won't be garbage collected.**
+**Seafile 버전 4.1.1 이후에서는, 사용자가 삭제한 라이브러리를 시스템에서 바로 제거하지 않습니다. 시스템 관리자 페이지의 "휴지통"에 이동합니다. 휴지동에서 완전히 지우기 전, 해당 블록은 가비지 수집 과정에서 정리하지 않습니다.**
 
-### Using Multiple Threads in GC
+### GC 다중 스레드 활용
 
-Since Pro server 5.1.0, you can specify the thread number in GC. By default,
+전문가판 서버 5.1.0부터, GC 스레드 갯수를 지정할 수 있습니다. 기본적으로,
 
-- If storage backend is S3/Swift/Ceph, 10 threads are started to do the GC work.
-- If storage backend is file system, only 1 thread is started.
+- 저장소 백엔드가 S3/Swift/Ceph라면, GC 동작에 스레드 10개를 시작합니다.
+- 저장소 백엔드가 파일 시스템이라면, 스레드 하나만 시작합니다.
 
-You can specify the thread number in with "-t" option. "-t" option can be used together with all other options. Each thread will do GC on one library. For example, the following command will use 20 threads to GC all libraries:
+"-t" 옵션을 사용하여 스레드 갯수를 지정할 수 있습니다. "-t" 옵션은 다른 옵션과 함께 사용할 수 있습니다. 각 스레드는 라이브러리에 대해 GC 작업을 수행합니다. 예를 들어, 다음 명령은 모든 라이브러리에 대해 GC 작업을 수행하는데 스레드 20개를 사용합니다:
 
 ```
 seaf-gc.sh -t 20
 ```
 
-Since the threads are concurrent, the output of each thread may mix with each others. Library ID is printed in each line of output.
+스레드는 동시 처리 작업이므로, 각 스레드 출력은 서로 섞일 수 있습니다. 라이브러리 ID는 각 줄 마다 나타납니다.
 
-## Run GC in older versions (before 4.1.1)
+## 이전 버전(4.1.1 이전)에서 GC 실행
 
-To run GC program
+GC 프로그램을 실행하려면
 
     ./seaf-gc.sh run
 
-If you want to do sanity check before actually removing any data, you can use the --dry-run option
+데이터를 제거하기 전 상태를 검사한다면 --dry-run 옵션을 사용할 수 있습니다
 
     ./seaf-gc.sh dry-run
 
-It will show you the total block number vs. the number of blocks to be removed.
+전체 블록 수와 제거 블록 갯수를 보여줍니다.
 
-To check data integrity after running GC, you can use [seaf-fsck](seafile_fsck.md)
+GC 실행 후 데이터 무결성을 검사한다면 [seaf-fsck](seafile_fsck.md)를 활용할 수 있습니다
 

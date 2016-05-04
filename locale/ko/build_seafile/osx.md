@@ -7,7 +7,7 @@
 1. xcode를 설치하십시오
 
   - [웹 사이트](https://developer.apple.com/xcode/downloads/) 또는 [App Store](http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)에서 Xcode를 다운로드하십시오
-  - Seafile을 빌드할 때 Xcode 명령행 유틸리티로 충분할 수 있지만, 아직 시험해보진 않았습니다. :P
+  - Seafile을 빌드할 때 Xcode 명령행 유틸리티로 충분할 수 있지만, 아직 시험해보진 않았습니다.
 
 2. homebrew를 설치하십시오
 

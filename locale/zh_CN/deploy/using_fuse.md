@@ -87,3 +87,4 @@ sudo usermod -a -G fuse <your-user-name>
 </pre>
 * Logout your shell and login again
 * Now try <code>./seaf-fuse.sh start <path></code> again.
+

@@ -7,7 +7,7 @@
 커뮤니티판에는 세가지 설정 파일이 있습니다:
 
 - [ccnet.conf](ccnet-conf.md): 네트워크 설정이 들어있습니다
-- [seafile.conf](seafile-conf.md): Seafile 데몬 및 파일 서버 설정이 들어있습니다.
+- [seafile.conf](seafile-conf.md): Seafile 데몬 및 FileServer 설정이 들어있습니다.
 - [seahub_settings.py](seahub_settings_py.md): Seahub 설정이 들어있습니다
 
 전문가판에는 추가 설정 파일이 있습니다:
@@ -19,7 +19,7 @@
 
 ## 저장소 용량 제한 설정(seafile.conf)
 
-You may set a default quota (e.g. 2GB) for all users. To do this, just add the following lines to `seafile.conf` file
+모든 사용자에게 기본 제한 용량(예: 2GB)을 설정할 수 있습니다. 이 부분을 설정하려면 `seafile.conf` 파일에 다음 줄을 추가하십시오.
 
 <pre>
 [quota]
@@ -27,11 +27,11 @@ You may set a default quota (e.g. 2GB) for all users. To do this, just add the f
 default = 2
 </pre>
 
-This setting applies to all users. If you want to set quota for a specific user, you may log in to seahub website as administrator, then set it in "System Admin" page.
+이 설정은 모든 사용자에게 적용합니다. 개별 사용자에게 용량 제한을 설정하려면, 관리자 권한으로 Seahub 웹 사이트에 로그인 한 후 "시스템 관리자" 페이지에서 설정하십시오.
 
 ## 기본 기록 용량 제한(seafile.conf)
 
-If you don't want to keep all file revision history, you may set a default history length limit for all libraries.
+파일 개정 기록을 모두 유지하고 싶지 않다면, 모든 라이브러리의 기본 기록 분량 한계를 설정하시면 좋습니다.
 
 <pre>
 [history]
@@ -71,8 +71,8 @@ max_download_dir_size=200
 
 #### Seahub에서 전자메일 알림 보내기
 
-A few features work better if it can send email notifications, such as notifying users about new messages.
-If you want to setup email notifications, please add the following lines to seahub_settings.py (and set your email server).
+전자메일 알림을 보낼 수 있다면 사용자 새 메시지 알림 같은 기능에 잘 동작합니다.
+전자메일 알림을 설정하려면 seahub_settings.py에 다음 줄을 추가하십시오(그리고 전자메일 서버를 설정하십시오).
 
 <pre>
 EMAIL_USE_TLS = False
@@ -98,7 +98,7 @@ SERVER_EMAIL = EMAIL_HOST_USER
 
 **참고**: 여전히 전자메일 서비스가 동작하지 않으면, <code>logs/seahub.log</code> 로그 파일에서 어떤 부분에 문제가 있는지 확인하십시오. 완벽한 전자메일 알림 목록 기능을 갖추려면, [전자메일 알림 목록](customize_email_notifications.md)을 참고하십시오.
 
-**Note2**: If you want to use the Email service without authentication leaf <code>EMAIL_HOST_USER</code> and <code>EMAIL_HOST_PASSWORD</code> **blank** (<code>''</code>). (But notice that the emails then will be sent without a <code>From:</code> address.)
+**참고2**: 전자메일 서비스를 인증 과정 없이 사용한다면 <code>EMAIL_HOST_USER</code> 및 <code>EMAIL_HOST_PASSWORD</code> 변수 값을 **빈**(<code>''</code>) 채로 두십시오(이렇게 하면 <code>From:</code>(발신) 주소 없이 전자메일을 보냅니다).
 
 #### 캐시
 
@@ -115,7 +115,7 @@ CACHES = {
 
 #### Seahub 설정
 
-You may change seahub website's settings by adding variables in `seahub_settings.py`.
+`seahub_settings.py`에 변수 값을 추가하여 Seahub 웹사이트 설정을 바꿀 수 있습니다.
 
 <pre>
 
@@ -183,8 +183,8 @@ FORCE_SERVER_CRYPTO = True
 
 **참고**:
 
-* You need to restart seahub so that your changes take effect.
-* If your changes don't take effect, You may need to delete 'seahub_setting.pyc'. (A cache file)
+* 바뀐 설정 값을 반영하려면 Seahub를 다시 시작해야합니다.
+* 바뀐 설정값을 반영하지 않는다면 'seahub_settings.pyc'(캐치 파일)을 삭제해야합니다.
 
 <pre>
 ./seahub.sh restart

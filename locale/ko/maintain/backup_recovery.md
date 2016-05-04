@@ -1,76 +1,76 @@
-## Overview
+## 둘러보기
 
-There are generally two parts of data to backup
+백업할 데이터는 두 부분으로 이루어져있습니다
 
-* Seafile library data
-* Databases
+* Seafile 라이브러리 데이터
+* 데이터베이스
 
-If you setup seafile server according to our manual, you should have a directory layout like:
+설명서를 따라 Seafile 서버를 설정했다면, 디렉터리 구조는 다음과 같습니다:
 
-    haiwen       # Replace the name with your organization name
-      --seafile-server-2.x.x # untar from seafile package
-      --seafile-data   # seafile configuration and data (if you choose the default)
-      --seahub-data    # seahub data
-      --ccnet          # ccnet configuration and data 
-      --seahub.db      # sqlite3 database used by seahub
-      --seahub_settings.py # optional config file for seahub
+    haiwen       # 조직 이름으로 바꿈
+      --seafile-server-2.x.x # Seafile 꾸러미 압축 해제본
+      --seafile-data   # Seafile 설정 및 데이터(기본으로 선택했을 경우)
+      --seahub-data    # Seahub 데이터
+      --ccnet          # ccnet 설정 및 데이터
+      --seahub.db      # Seahub에서 사용하는 SQLite3 데이터베이스
+      --seahub_settings.py # Seahub용 추가 설정 파일
 
-All your library data is stored under the 'haiwen' directory.
+모든 라이브러리 데이터는 'haiwen' 디렉터리에 저장합니다.
 
-Seafile also stores some important metadata data in a few databases. The names and locations of these databases depends on which database software you use.
+Seafile 에는 데이터베이스 몇군데에 중요한 일부 메타데이터를 저장합니다. 이 데이터베이스의 이름 및 위치는 어떤 데이터베이스 프로그램을 사용하느냐에 따라 다릅니다.
 
-For SQLite, the database files are also under the 'haiwen' directory. The locations are:
+SQLite에서 데이터베이스 파일은 'haiwen'  디렉터리에 저장하며 위치는 다음과 같습니다:
 
-* ccnet/PeerMgr/usermgr.db: contains user information
-* ccnet/GroupMgr/groupmgr.db: contains group information
-* seafile-data/seafile.db: contains library metadata
-* seahub.db: contains tables used by the web front end (seahub)
+* ccnet/PeerMgr/usermgr.db: 사용자 정보
+* ccnet/GroupMgr/groupmgr.db: 그룹 정보
+* seafile-data/seafile.db: 라이브러리 메타데이터
+* seahub.db: 웹 프론트엔드(seahub)에서 사용하는 테이블
 
-For MySQL, the databases are created by the administrator, so the names can be different from one deployment to another. There are 3 databases:
+MySQL에서 데이터베이스는 관리자가 만들기 때문에 어떻게 구동하느냐에 따라 이름이 다를 수 있습니다. 데이터베이스는 세가지가 있습니다:
 
-* ccnet-db: contains user and group information
-* seafile-db: contains library metadata
-* seahub.db: contains tables used by the web front end (seahub)
+* ccnet-db: 사용자 및 그룹 정보
+* seafile-db: 라이브러리 메타데이터
+* seahub.db: 웹 프론트엔드(seahub)에서 사용하는 테이블
 
-## Backup steps ##
+## 백업 단계 ##
 
-The backup is a three step procedure:
+백업 단계는 3단계로 구성합니다:
 
-1. Optional: Stop Seafile server first if you're using SQLite as database.
-2. Backup the databases;
-3. Backup the seafile data directory;
+1. 선택: SQLite를 데이터베이스로 사용한다면 Seafile 서버를 우선 멈춥니다.
+2. 데이터베이스 백업
+3. Seafile 데이터 디렉터리 백업
 
-### Backup Order: Database First or Data Directory First
+### 백업 순서: 데이터베이스 먼저 또는 데이터 디렉터리 먼저
 
-- backup data directory first, SQL later: When you're backing up data directory, some new objects are written and they're not backed up. Those new objects may be referenced in SQL database. So when you restore, some records in the database cannot find its object. So the library is corrupted.
-- backup SQL first, data directory later: Since you backup database first, all records in the database have valid objects to be referenced. So the libraries won't be corrupted. But new objects written to storage when you're backing up are not referenced by database records. So some libraries are out of date. When you restore, some new data are lost.
+- 데이터 디렉터리 백업 먼저, SQL 나중 실행: 데이터 디렉터리를 백업할 때 백업하지 않은 일부 새 객체를 기록합니다. 새 객체는 SQL 데이터베이스에서 참조합니다. 복원할 때 데이터베이스 기록 일부는 이 객체를 찾지 못합니다. 때문에, 라이브러리가 깨집니다.
+- SQL 백업 먼저, 데이터 디렉터리 나중: 데이터베이스 백업을 먼저 하면, 모든 데이터베이스 레코드는 올바른 객체를 참조합니다. 따라서 라이브러리가 깨지지 않습니다. 하지만 백업 과정에서 저장소에 보관한 새 객체는 데이터베이스 레코드에서 참조하지 않습니다. 따라서 일부 라이브러리는 오래된 상태가 됩니다. 복원할 때, 일부 새 데이터를 유실합니다.
 
-The second sequence is better in the sense that it avoids library corruption. Like other backup solutions, some new data can be lost in recovery. There is always a backup window.
-However, if your storage backup mechanism can finish quickly enough, using the first sequence can retain more data.
+라이브러리 손상 방지에는 두번째 순서가 더 나을지도 모르겠습니다. 다른 백업 방식으로는 복원 과정에 새 데이터를 잃을 수 있습니다. 때문에 백업에 있어서는 언제나 제한이 있습니다.
+그러나, 신속하게 끝낼 수 있는 저장소 백업 방식이 있다면, 첫번째 순서 방식이 더 많은 데이터를 백업할 수 있습니다.
 
-We assume your seafile data directory is in `/data/haiwen`. And you want to backup to `/backup` directory. The `/backup` can be an NFS or Windows share mount exported by another machine, or just an external disk. You can create a layout similar to the following in `/backup` directory:
+Seafile 데이터 디렉터리는 `/data/haiwen`이며, `/backup` 디렉터리에 백업한다고 가정하겠습니다. `/backup` NFS, 디렉터리는 다른 머신에서 가져온 윈도우 공유 폴더, 외장 디스크일 수 있습니다. `/backup` 디렉터리를 다음과 같이 만들 수 있습니다:
 
     /backup
-    ---- databases/  contains database backup files
-    ---- data/  contains backups of the data directory
+    ---- databases/  데이터베이스 백업 파일
+    ---- data/  데이터 디렉터리 백업본
 
-### Backing up Databases ###
+### 데이터베이스 백업 ###
 
-It's recommended to backup the database to a separate file each time. Don't overwrite older database backups for at least a week.
+데이터베이스를 때때로 파일 제각각으로 백업하심이 좋습니다. 최소한 일주일 단위로 이전 데이터베이스 백업을 덮어쓰지 마십시오.
 
 **MySQL**
 
-Assume your database names are `ccnet-db`, `seafile-db` and `seahub-db`. mysqldump automatically locks the tables so you don't need to stop Seafile server when backing up MySQL databases. Since the database tables are usually very small, it won't take long to dump.
+데이터베이스 이름을 `ccnet-db`, `seafile-db`, `seahub-db`라 하겠습니다. mysqldump는 테이블을 자동으로 잠그므로 MySQL 데이터베이스를 백업할 때 Seafile 서버를 굳이 멈출 필요가 없습니다. 보통 데이터베이스 테이블은 매우 작으므로 덤프의 크기는 그리 작지 않을지도 모릅니다.
 
-    mysqldump -h [mysqlhost] -u[username] -p[password] --opt ccnet-db > /backup/databases/ccnet-db.sql.`date +"%Y-%m-%d-%H-%M-%S"`
+    mysqldump -h [<MySQL 호스트>] -u[<사용자이름>] -p[<암호>] --opt ccnet-db > /backup/databases/ccnet-db.sql.`date +"%Y-%m-%d-%H-%M-%S"`
 
-    mysqldump -h [mysqlhost] -u[username] -p[password] --opt seafile-db > /backup/databases/seafile-db.sql.`date +"%Y-%m-%d-%H-%M-%S"`
+    mysqldump -h [<MySQL 호스트>] -u[<사용자이름>] -p[<암호>] --opt seafile-db > /backup/databases/seafile-db.sql.`date +"%Y-%m-%d-%H-%M-%S"`
 
-    mysqldump -h [mysqlhost] -u[username] -p[password] --opt seahub-db > /backup/databases/seahub-db.sql.`date +"%Y-%m-%d-%H-%M-%S"`
+    mysqldump -h [<MySQL 호스트>] -u[<사용자이름>] -p[<암호>] --opt seahub-db > /backup/databases/seahub-db.sql.`date +"%Y-%m-%d-%H-%M-%S"`
 
 **SQLite**
 
-You need to stop Seafile server first before backing up SQLite database.
+SQLite 데이터베이스를 백업하기 전 Seafile 서버를 우선 멈추어야합니다.
 
     sqlite3 /data/haiwen/ccnet/GroupMgr/groupmgr.db .dump > /backup/databases/groupmgr.db.bak.`date +"%Y-%m-%d-%H-%M-%S"`
 
@@ -80,39 +80,39 @@ You need to stop Seafile server first before backing up SQLite database.
 
     sqlite3 /data/haiwen/seahub.db .dump > /backup/databases/seahub.db.bak.`date +"%Y-%m-%d-%H-%M-%S"`
 
-### Backing up Seafile library data ###
+### Seafile 라이브러리 데이터 백업 ###
 
-The data files are all stored in the `/data/haiwen` directory, so just back up the whole directory. You can directly copy the whole directory to the backup destination, or you can use rsync to do incremental backup. 
+모든 데이터 파일은 `/data/haiwen` 디렉터리에 저장하므로, 디렉터리 전체를 백업합니다. 백업 대상 저장소에 디렉터리 전체를 복사하거나 rsync로 증분 백업을 수행할 수 있습니다.
 
-To directly copy the whole data directory,
+데이터 디렉터리 전체를 직접 복사하려면,
 
     cp -R /data/haiwen /backup/data/haiwen-`date +"%Y-%m-%d-%H-%M-%S"`
 
-This produces a separate copy of the data directory each time. You can delete older backup copies after a new one is completed.
+이 명령은 데이터 디렉터리를 시간별로 따로 복사합니다. 새 디렉터리 복사가 끝나면 이전 백업 사본을 삭제할 수 있습니다.
 
-If you have a lot of data, copying the whole data directory would take long. You can use rsync to do incremental backup.
+데이터가 많으면 데이터 디렉터리 전체 복사에 시간이 걸릴 수 있습니다. rsync를 사용하여 증분 백업할 수 있습니다.
 
     rsync -az /data/haiwen /backup/data
 
-This command backup the data directory to `/backup/data/haiwen`.
+이 명령은 데이터 디렉터리를 `/backup/data/haiwen`으로 백업합니다.
 
-## Restore from backup ##
+## 백업 복원 ##
 
-Now supposed your primary seafile server is broken, you're switching to a new machine. Using the backup data to restore your Seafile instance:
+이제 초기 Seafile 서버가 손상되어, 새 머신으로 전환하는 상황을 가정해보겠습니다. Seafile 인스턴스 복원에 백업 데이터를 사용합니다:
 
-1. Copy `/backup/data/haiwen` to the new machine. Let's assume the seafile deployment location new machine is also `/data/haiwen`.
-2. Restore the database.
-3. Since database and data are backed up separately, they may become a little inconsistent with each other. To correct the potential inconsistency, run seaf-fsck tool to check data integrity on the new machine. See [seaf-fsck documentation](seafile_fsck.md).
+1. `/backup/data/haiwen` 디렉터리를 새 머신으로 복사합니다. 새 머신의 Seafile 가동 위치를 `/data/haiwen` 이라고 하겠습니다.
+2.데이터베이스를 복원합니다.
+3. 데이터베이스 및 데이터를 제각기 백업했으니, 서로 일관성이 없을 수도 있습니다. 잠재적 비 일관성을 해결하려면, seaf-fsck 도구를 실행하여 새 머신에서 데이터 무결성을 확인하십시오. [seaf-fsck 문서를 참고하십시오](seafile_fsck.md).
 
-### Restore the databases
+### 데이터베이스 복원
 
-Now with the latest valid database backup files at hand, you can restore them.
+이제 최신 유효 데이터베이스 파일을 직접 복원할 수 있습니다.
 
 **MySQL**
 
-    mysql -u[username] -p[password] ccnet-db < ccnet-db.sql.2013-10-19-16-00-05
-    mysql -u[username] -p[password] seafile-db < seafile-db.sql.2013-10-19-16-00-20
-    mysql -u[username] -p[password] seahub-db < seahub-db.sql.2013-10-19-16-01-05
+    mysql -u[<사용자이름>] -p[<암호>] ccnet-db < ccnet-db.sql.2013-10-19-16-00-05
+    mysql -u[<사용자이름>] -p[<암호>] seafile-db < seafile-db.sql.2013-10-19-16-00-20
+    mysql -u[<사용자이름>] -p[<암호>] seahub-db < seahub-db.sql.2013-10-19-16-01-05
 
 **SQLite**
 

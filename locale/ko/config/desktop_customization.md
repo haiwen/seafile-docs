@@ -4,7 +4,7 @@
 
 참고: 이 기능은 Seafile 데스크톱 클라이언트 4.4.0 이상에서만 가능합니다.
 
-기본적으로 "Seafile"을 Seafile 데스크톱 클라이언트 창 상단에 로고와 함께 나타냅니다. 개별 설정하려면, `seahub_settings.py`의 `DESKTOP_CUSTOM_LOGO` 및 `DESKTOP_CUSTOM_BRAND` 값을 설정하십시오.
+기본적으로 "Seafile"을 Seafile 데스크톱 클라이언트 창 상단의 로고 옆에 나타냅니다. 개별 설정하려면, `seahub_settings.py`의 `DESKTOP_CUSTOM_LOGO` 및 `DESKTOP_CUSTOM_BRAND` 값을 설정하십시오.
 
 ![desktop-customization](../images/desktop-customization.png)
 

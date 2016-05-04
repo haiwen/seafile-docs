@@ -17,7 +17,7 @@ Seafile 서버 5.0.0 전의 디렉터리 배치는 다음과 같습니다:
 └── seafile-server-latest/
 ```
 
-Seafile 서버 5.0.0 부터 모든 설정 파일을 **conf** 폴더로 이동했습니다:
+Seafile 서버 5.0.0부터 모든 설정 파일을 **conf** 폴더로 이동했습니다:
 
 ```sh
 └── conf/

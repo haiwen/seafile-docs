@@ -2,12 +2,11 @@
 
 ## 동작 방식
 
-seaf-server and ccnet-server now (since version 3.1) support reopenning logfile by receiving SIGUR1 signal.
+seaf-server 및 ccnet-server은 이제(3.1 버전 부터) SIGUR1 시그널을 받았을 때 로그 파일을 다시 여는 기능을 지원합니다.
 
-This feature is very useful when you need cut logfile while you don't want to shutdown the server programs. All you need to do now is cutting the logfile on
-the fly.
+이 기능은 서버 프로그램을 끄지 않고 로그 파일을 자르고 싶을 때 쓸만합니다. 여기서 필요한 동작은 실행 중 로그 파일을 자르는 일 하나 뿐입니다.
 
-> **NOTE**: signal is not supported by windows, so the feature is not available in windows
+> **참고**: 시그널은 윈도우에서 지원하지 않으므로 윈도우에서 사용할 수 없습니다
 
 ## 기본 logrotate 설정 디렉터리
 
@@ -15,9 +14,9 @@ the fly.
 
 ## 예제 설정
 
-Assuming your ccnet-server's logfile is `/home/haiwen/logs/ccnet.log`, and your ccnet-server's pidfile for ccnet-server is ``/home/haiwen/pids/ccnet.pid``.
+ccnet-server의 로그 파일은 `/home/haiwen/logs/ccnet.log`, pid 파일은 ``/home/haiwen/pids/ccnet.pid``라고 가정합니다.
 
-Assuming your seaf-server's logfile is setup to ``/home/haiwen/logs/seaf-server.log``, and your seaf-server's pidfile for seaf-server is setup to ``/home/haiwen/pids/seaf-server.pid``:
+seaf-server의 로그 파일은 ``/home/haiwen/logs/seaf-server.log``, pid 파일은 ``/home/haiwen/pids/seaf-server.pid``라고 가정합니다:
 
 logrotate 설정은 다음과 같을 수 있습니다:
 ```

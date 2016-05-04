@@ -9,7 +9,7 @@
 
     sudo vim /etc/init.d/seafile-server
 
-The content of this script is: (You need to modify the value of **user** and **seafile\_dir** accordingly)
+스크립트의 내용은 다음과 같습니다: (**user** 및 **sefaile\_dir** 값을 각각 수정해야합니다)
 
     #!/bin/bash
 
@@ -111,7 +111,7 @@ Seafile 서버를 업데이트할 때  **script\_path** 값의 업데이트를 �
 
     sudo vim /etc/init.d/seafile-server
 
-The content of this script is: (You need to modify the value of **user** and **seafile\_dir** accordingly)
+스크립트의 내용은 다음과 같습니다: (**user** 및 **sefaile\_dir** 값을 각각 수정해야합니다)
 
     #!/bin/sh
 
@@ -208,14 +208,13 @@ RHEL/CentOS
 
 RHEL/CentOS에서, [/etc/rc.local](http://www.centos.org/docs/5/html/Installation_Guide-en-US/s1-boot-init-shutdown-run-boot.html)스크립트는 시스템을 부팅할 때 실행하여 seafile/seahub를 시작합니다.
 
--   Locate your python executable (python 2.6 or 2.7)
+-   파이썬 실행 파일 위치를 지정하십시오(파이썬 2.6 또는 2.7)
 
 <!-- -->
 
-    which python2.6 # or "which python2.7"
+    which python2.6 # 또는 "which python2.7"
 
--   In /etc/rc.local, add the directory of python2.6(2.7) to **PATH**,
-    and add the seafile/seahub start command
+-   /etc/rc.local에서, python2.6(2.7)의 디렉터리를 **PATH**에 추가하시고, Seafile/Seahub 시작 명령을 추가하십시오
 
 <!-- -->
 
@@ -238,7 +237,7 @@ RHEL/CentOS에서, [/etc/rc.local](http://www.centos.org/docs/5/html/Installatio
 
 -   끝났습니다. Seafile 서버를 업데이트한 다음 **seafile\_dir** 값의 업데이트를 잊지 마십시오.
 
-RHEL/CentOS 에서 서비스로 실행
+RHEL/CentOS에서 서비스로 실행
 ------------------------------
 
 RHEL/CentOS에서 시스템을 부팅할 때 seafile/seahub를 서비스로 가동하는 /etc/init.d/ 스크립트를 사용하도록 하겠습니다.
@@ -426,7 +425,7 @@ RHEL/CentOS에서 시스템을 부팅할 때 seafile/seahub를 서비스로 가�
 systemd를 실행하는 시스템
 ---------------------------
 
-systemd 서비스 파일을 만들고 **${seafile\_dir}** 경로를 **Seafile** 설치 경로로 바꾼 후, (적당하다면) **Seafile**을 실행하는 **seafile** 사용자를 만드십시오. 그 다음 systemd의 데몬을 다시 불러와야합니다: **systemctl daemon-reload**
+systemd 서비스 파일을 만들고 **${seafile\_dir}** 경로를 **Seafile** 설치 경로로 바꾼 후, (적당하다면) **Seafile**을 실행하는 **seafile** 사용자를 만드십시오. 그 다음 systemd의 데몬을 다시 불러와야합니다: **systemctl daemon-reload**.
 
 ### /etc/systemd/system/seafile.service systemd 서비스 파일 만들기
 

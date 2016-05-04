@@ -1,38 +1,38 @@
-# Administration
+# 관리
 
-### Enter the admin panel
+### 관리자 창 들어가기
 
-As the system admin, you can enter the admin panel by click the `tools` button at the top-right, beside the avatar:
+시스템 관리자는 우측 상단의 아바타 옆에 있는 `도구` 단추를 눌러 관리자 창에 들어갈 수 있습니다:
 
-![Admin tools](../images/tools-button.png)
+![관리자 도구](../images/tools-button.png)
 
-After clicking the button, you will get into the admin panel:
+단추를 누르면 관리자 창이 나타납니다:
 
-![System admin panel](../images/system-admin.png)
+![시스템 관리자 창](../images/system-admin.png)
 
-### Account management
+### 계정 관리
 
-* [Account management](account.md)
+* [계정 관리](account.md)
 
-### Logs
+### 기록
 
-* [The location of log files](logs.md)
+* [로그 파일 위치](logs.md)
 
-### Backup and Recovery
+### 백업 및 복구
 
-Backup and recovery:
+백업 및 복구:
 
-* [Backup and recovery](backup_recovery.md)
+* [백업 및 복구](backup_recovery.md)
 
-Recover corrupt files after server hard shutdown or system crash:
+서버를 갑자기 끄거나 시스템이 갑작스럽게 멈추었을 때 깨진 파일을 복구합니다:
 
 * [Seafile FSCK](seafile_fsck.md)
 
-You can run Seafile GC to remove unused files:
+Seafile GC를 실행하여 불필요한 파일을 제거할 수 있습니다:
 
 * [Seafile GC](seafile_gc.md)
 
-### Clean database
+### 데이터베이스 정리
 
-* [Clean database](clean_database.md)
+* [데이터베이스 정리](clean_database.md)
 

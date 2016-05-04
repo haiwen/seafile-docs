@@ -4,7 +4,7 @@
 
 自 3.1 版本以后，seaf-server 和 ccnet-server 支持通过接收 SIGUR1 信号来管理日志文件。
 
-这个功能在你需要剪切日志文件但是不想关闭服务器的时候非常有用。
+This feature is very useful when you need cut logfile while you don't want to shutdown the server programs. All you need to do now is cutting the logfile on the fly.
 
 > **注意**: 此功能在 Windows 下并不适用
 
@@ -15,7 +15,8 @@
 ## 配置示例
 
 假设你的 ccnet-server 的日志文件是 `/home/haiwen/logs/ccnet.log`, ccnet-server 进程的 pidfile 是 `/home/haiwen/pids/ccnet.pid`.
-seaf-server's 的日志文件是 `/home/haiwen/logs/seaf-server.log`, seaf-server 进程的 pidfile 是 `/home/haiwen/pids/seaf-server.pid`:
+
+seaf-server's 的日志文件是 ``/home/haiwen/logs/seaf-server.log``, seaf-server 进程的 pidfile 是 ``/home/haiwen/pids/seaf-server.pid``:
 
 则请按如下配置 logroate:
 ```
@@ -49,3 +50,8 @@ seaf-server's 的日志文件是 `/home/haiwen/logs/seaf-server.log`, seaf-serve
 ```
 
 对于 Debian 用户, 可以将以上配置文件存储在 ``/etc/logrotate.d/seafile``
+
+## That's it
+
+You now gets all the things done, just sit and enjoy your time :-D
+

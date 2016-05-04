@@ -1,11 +1,11 @@
-# Deploy Seahub at Non-root domain
-This documentation will talk about how to deploy Seafile Web using Apache/Nginx at Non-root directory of the website(e.g., www.example.com/seafile/). Please note that the file server path will still be e.g. www.example.com/seafhttp (rather than www.example.com/seafile/seafhttp) because this path is hardcoded in the clients.
+# 비 루트 도메인에서 Seahub 가동
+이 문서는 웹 사이트의 비 루트 디렉터리(예: www.example.com/seafile/)로 Apache/Nginx에서 Seafile을 가동하는 방법을 다룹니다. 클라이언트에서(www.example.com/seafile/seafhttp가 아닌)www.example.com/seafhttp와 같은 경로를 하드코딩 해두었기 때문에 파일 서버 주소는 언급한 그대로임을 참고하십시오.
 
-**Note:** We assume you have read [Deploy Seafile with Nginx](deploy_with_nginx.md) or [Deploy Seafile with Apache](deploy_with_apache.md).
+**참고:** [Seafile과 Nginx 가동](deploy_with_nginx.md) 또는 [Seafile과 Apache 가동](deploy_with_apache.md)을 이미 읽었다고 가정합니다.
 
 ## Seahub 설정
 
-First, we need to overwrite some variables in seahub_settings.py:
+우선 seahub_settings.py의 몇가지 변수 값을 바꿔야합니다:
 
 <pre>
 SERVE_STATIC = False
@@ -16,11 +16,11 @@ SITE_ROOT = '/seafile/'
 LOGIN_URL = '/seafile/accounts/login/'    # NOTE: since version 5.0.4
 </pre>
 
-The webserver will serve static files (js, css, etc), so we just disable <code>SERVE_STATIC</code>.
+웹서버에서 정적 파일(js, css 등)을 제공하므로 <code>SERVE_STATIC</code>을 비활성으로 설정하겠습니다.
 
-<code>MEDIA_URL</code> can be anything you like, just make sure a trailing slash is appended at the end.
+<code>MEDIA_URL</code>은 원하는대로 설정할 수 있습니다만, 마지막에 슬래시를 넣었는지 확인하십시오.
 
-We deploy Seafile at <code>/seafile/</code> directory instead of root directory, so we set <code>SITE_ROOT</code> to <code>/seafile/</code>.
+루트 디렉터리 대신 <code>/seafile/</code>에서 Seafile을 가동하므로 <code>SITE_ROOT</code>는 <code>/seafile/</code> 값으로 설정합니다.
 
 ## ccnet.conf 및 seahub_setting.py 설정 수정
 
@@ -32,23 +32,23 @@ We deploy Seafile at <code>/seafile/</code> directory instead of root directory,
 SERVICE_URL = http://www.myseafile.com/seafile
 </pre>
 
-Note: If you later change the domain assigned to seahub, you also need to change the value of  <code>SERVICE_URL</code>.
+참고: Seahub에 할당한 도메인을 나중에 바꾸면 <code>SERVICE_URL</code>의 값도 바꿔야합니다.
 
 ### seahub_settings.pySeafile 수정
 
-You need to add a line in <code>seahub_settings.py</code> to set the value of `FILE_SERVER_ROOT`
+<code>seahub_settings.py</code>에 설정 줄을 추가하여 `FILE_SERVER_ROOT` 값을 설정해야합니다
 
 ```python
 FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'
 ```
-**Note:** The file server path MUST be `/seafhttp` because this path is hardcoded in the clients.
+**참고:** 파일 서버 경로는 `/seafhttp` 여야 하며, 이 경로는 클라이언트에 하드코딩 처리되어 있습니다.
 
 
 ## 웹 서버 설정
 
 ### Nginx로 가동
 
-Then, we need to configure the Nginx:
+그 다음 Nginx를 설정해야합니다:
 
 <pre>
 server {
@@ -122,17 +122,17 @@ server {
 </VirtualHost>
 </pre>
 
-We use Alias to let Apache serve static files, please change the second argument to your path.
+Apache에서 정적 파일을 제공하도록 Alias 지시문을 사용했으므로 경로에 두번째 인자를 바꾸십시오.
 
-## 캐시 비우기
+## 캐시 정리
 
-By default, Seahub caches some data like the link to the avatar icon in `/tmp/seahub_cache/` (unless memcache is used). We suggest to clear the cache after seafile has been stopped:
+기본적으로 Seahub에서는(memcache를 사용하지 않으면) `/tmp/seahub_cache/`에 아바타 링크 아이콘 같은 일부 데이터를 캐시로 저장합니다. Seafile을 멈추고 나면 캐시를 비우는 것이 좋습니다:
 
 <pre>
 rm -rf /tmp/seahub_cache/
 </pre>
 
-For memcache users, please purge the cache there instead by restarting your memcached server.
+memcache 사용자는, memcached 서버를 다시 시작하는 대신 캐시를 완전히 삭제하십시오.
 
 ## Seafile 및 Seahub를 시작하십시오
 

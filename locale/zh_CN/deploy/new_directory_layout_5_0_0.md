@@ -13,7 +13,7 @@ Seafile 服务器由几个组件组成，每个组件都有自己的配置文件
 └── conf/
     └── seafdav.conf
 └── pro-data/
-    └── seafevents.conf # (专业版)
+    └── seafevents.conf # (professional edition only)
 └── seafile-server-latest/
 ```
 
@@ -25,7 +25,7 @@ Seafile 服务器由几个组件组成，每个组件都有自己的配置文件
     └── seafile.conf
     └── seafdav.conf
     └── seahub_settings.py
-    └── seafevents.conf # (专业版)
+    └── seafevents.conf # (professional edition only)
 └── ccnet/
 └── seafile/
 └── pro-data/
@@ -33,4 +33,5 @@ Seafile 服务器由几个组件组成，每个组件都有自己的配置文件
 
 这样把所有的配置文件都集中放置，管理起来就更方便了。
 
-当您升级到 Seafile 5.0.0 版本时，升级脚本会自动帮您把上述文件移到 **conf** 目录下面。
+当您升级到 Seafile 5.0.0 版本时，升级脚本会自动帮您把上述文件移到 **conf/** 目录下面。
+

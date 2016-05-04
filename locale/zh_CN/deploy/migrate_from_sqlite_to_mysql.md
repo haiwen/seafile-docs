@@ -6,14 +6,14 @@
 
 0. 停止 Seafile 和 Seahub
 
-1. 下载 [sqlite2mysql.sh](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.sh) 和 [sqlite2mysql.py](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.py) 到 Seafile 的安装根目录（`/data/haiwen`）里.
+1. 下载 [sqlite2mysql.sh](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.sh) 和 [sqlite2mysql.py](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.py) 到 Seafile 的安装根目录（/data/haiwen）里.
 
 2. 运行 sqlite2mysql.sh 脚本
 ```
   chmod +x sqlite2mysql.sh
   ./sqlite2mysql.sh
 ```
-  这个脚本将生成三个文件：`ccnet-db.sql`, `seafile-db.sql`, `seahub-db.sql`。
+这个脚本将生成三个文件：`ccnet-db.sql`, `seafile-db.sql`, `seahub-db.sql`。
 
 3. 新建3个数据库，分别命名为 `ccnet-db`, `seafile-db`, `seahub-db`.
 ```
@@ -22,15 +22,7 @@
   create database `seahub-db` character set = 'utf8';
 ```
 
-4. 修改 /etc/my.conf, 添加下列语句，并重启 mysql (sudo service mysql restart)，这个语句主要是确保数据库使用 UTF8 编码
-```
-    [mysqld]
-    collation-server = utf8_unicode_ci
-    init-connect='SET NAMES utf8'
-    character-set-server = utf8
-```
-
-5. 运行 sql 文件:
+4. Loads the sql files to your MySQL databases. For example:
 ```
   mysql> use `ccnet-db`
   mysql> source ccnet-db.sql
@@ -40,9 +32,9 @@
   mysql> source seahub-db.sql
 ```
 
-6. 更改配置
+5. 更改配置
 
-  在 `conf/ccnet.conf` 中增加以下语句:
+  在 [conf/ccnet.conf](../config/ccnet-conf.md) 中增加以下语句:
 
         [Database]
         ENGINE=mysql
@@ -79,6 +71,13 @@
             }
         }
 
-7. 重启 Seafile and Seahub
+6. 重启 Seafile 和 Seahub
 
+
+**NOTE**
+
+User notifications will be cleared during migration due to the slight difference between MySQL and SQLite, if you only see the busy icon when click the notitfications button beside your avatar, please remove `user_notitfications` table manually by:
+
+    use seahub-db
+    delete from notifications_usernotification;
 

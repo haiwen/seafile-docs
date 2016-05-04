@@ -1,6 +1,6 @@
 # Seafile 네트워크 설정(ccnet.conf)
 
-**참고**: Seafile 서버 5.0.0 부터 모든 설정 파일은 **conf** 폴더로 옮겨 모아놓습니다. [좀 더 읽어보십시오](../deploy/new_directory_layout_5_0_0.md).
+**참고**: Seafile 서버 5.0.0부터 모든 설정 파일은 **conf** 폴더로 옮겨 모아놓습니다. [좀 더 읽어보십시오](../deploy/new_directory_layout_5_0_0.md).
 
 `ccnet.conf` 파일을 수정하여 Seafile의 네트워크 설정 항목 값을 바꿀 수 있습니다. 예쩨를 통해 설정 항목을 차근차근 살펴보겠습니다.
 

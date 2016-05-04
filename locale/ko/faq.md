@@ -63,7 +63,7 @@ logs/seahub.log를 확인하십시오.
 
 #### 업그레이드가 끝난 후 CSS 파일을 불러오지 못하여 웹 UI가 깨집니다
 
-`rm -rf /tmp/seahub_cache/*` 명령으로 캐시를 제거 후 다시 시도하십시오. memcached 를 설정했다면, memcached를 다시 시작한 후 seahub를 다시 시작하십시오.
+`rm -rf /tmp/seahub_cache/*` 명령으로 캐시를 제거 후 다시 시도하십시오. memcached를 설정했다면, memcached를 다시 시작한 후 seahub를 다시 시작하십시오.
 
 문제를 해결하지 못했다면 seafile-server-latest 심볼릭 링크가 올바른 폴더를 가리키는지 확인하십시오. 그 다음 `seafile-server-latest/seahub/media/CACHE` 위치를 올바르게 만들었는지 확인하십시오(자동으로 만든 CSS 파일이 들어갑니다).
 
@@ -94,7 +94,7 @@ GC는 이전 기록을 검사합니다. 하지만 FSCK는 현재 버전만 검�
 
 ### AD에서 계정별 Seafile 접근 권한을 제한하는 방법
 
-`ccnet.conf` 에서 LDAP 설정에 FILTER 필드를 사용할 수 있습니다. 예를 들어 다음 필터는 그룹 구성원의 Seafile 접근 권한을 제한합니다.
+`ccnet.conf`에서 LDAP 설정에 FILTER 필드를 사용할 수 있습니다. 예를 들어 다음 필터는 그룹 구성원의 Seafile 접근 권한을 제한합니다.
 
     FILTER = (memberOf=cn=group,cn=users,DC=x)
 

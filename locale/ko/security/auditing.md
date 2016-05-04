@@ -1,13 +1,13 @@
-# Access log and auditing
+# 접근 기록 및 감사
 
-In pro edition, Seafile offers four auditing logs in system admin panel:
+Seafile 전문가판에서는 시스템 관리자 창에서 네가지 감사 로그를 제공합니다:
 
-* Login log
-* File access log
-* File update log
-* Permission change log
+* 로그인 기록
+* 파일 접근 기록
+* 파일 업데이트 기록
+* 권한 변경 기록
 
-![Seafile Auditing Log](../images/admin-audit-log.png)
+![Seafile 감사 로그](../images/admin-audit-log.png)
 
-The logging feature is turned off by default. See [config options for pro edition](../deploy_pro/configurable_options.md) for how to turn it on.
+기록 기능은 기본적으로 꺼져있습니다. 기능을 켜는 방법은 [전문가판 설정 항목](../deploy_pro/configurable_options.md) 편을 참고하십시오.
 

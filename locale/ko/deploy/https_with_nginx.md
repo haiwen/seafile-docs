@@ -1,17 +1,17 @@
 # Nginx https 활성화
 
-Here we use self-signed SSL digital certificate for free. If you use a paid ssl certificate from some authority, just skip the first step.
+무료 자체 서명 SSL 디지털 인증서를 사용하겠습니다. 일부 인증 기관의 유료 SSL 인증서를 사용하신다면 첫 단계를 건너뛰십시오.
 
-### Generate SSL digital certificate with OpenSSL
+### OpenSSL로 SSL 디지털 서명 만들기
 ```bash
     openssl genrsa -out privkey.pem 2048
     openssl req -new -x509 -key privkey.pem -out cacert.pem -days 1095
 ```
 
-If you're using a custom CA to sign your SSL certificate, you have to enable certificate revocation list (CRL) in your certificate. Otherwise http syncing on Windows client may not work. See [this thread](https://forum.seafile-server.org/t/https-syncing-on-windows-machine-using-custom-ca/898) for more information.
+SSL 인증서 서명에 개별 인증서 발급 기관을 사용하면, 인증서에서 인증서 철회 목록(CRL)을 활성화해야합니다. 그렇지 않으면 윈도우 클라이언트의 http 동기화가 동작하지 않을 수 있습니다. 자세한 정보는 [이 글타래](https://forum.seafile-server.org/t/https-syncing-on-windows-machine-using-custom-ca/898)를 참고하십시오.
 
-### Enable SSL module of Nginx (optional)
-If your Nginx does not support SSL, you need to recompile it, the commands are as follows:
+### Nginx의 SSL 모듈 활성화(선택)
+Nginx에서 SSL을 지원하지 않으면, 다음 명령으로 다시 컴파일해야합니다:
 ```bash
     ./configure --with-http_stub_status_module --with-http_ssl_module
     make && make install
@@ -19,7 +19,7 @@ If your Nginx does not support SSL, you need to recompile it, the commands are a
 
 ### Nginx 설정 파일 수정
 
-Assume you have configured Nginx as [Deploy-Seafile-with-nginx](deploy_with_nginx.md). To use https, you need to modify your Nginx configuration file.
+[Seafile과 Nginx 가동](deploy_with_nginx.md) 편을 따라 Nginx를 설정했다고 가정하겠습니다. https를 사용하려면, Nginx 설정 파일을 수정해야합니다.
 ```nginx
     server {
         listen       80;
@@ -97,7 +97,7 @@ Assume you have configured Nginx as [Deploy-Seafile-with-nginx](deploy_with_ngin
 ```
 
 ### 대용량 파일 업로드
-Tip for uploading very large files (> 4GB): By default Nginx will buffer large request body in temp file. After the body is completely received, Nginx will send the body to the upstream server (seaf-server in our case). But it seems when file size is very large, the buffering mechanism dosen't work well. It may stop proxying the body in the middle. So if you want to support file upload larger for 4GB, we suggest you install Nginx version >= 1.8.0 and add the following options to Nginx config file:
+매우 큰(4GB 초과) 파일 업로드 요령: 기본적으로 Nginx는 대형 요청을 버퍼에 임시 파일로 저장합니다. 이 요청 본문을 완전히 받고 나면, Nginx에서는 요청 본문을 업스트림 서버로 보냅니다.(이 경우 seaf-server). 파일 크기가 상당히 커보인다면, 버퍼링 기능이 잘 동작하지 않을 수도 있습니다. 게다가 도중에 요청 본문 전달을 멈출 수도 있습니다. 4GB 용량 보다 큰 파일을 업로드하려면 Nginx 1.8.0 이상을 사용하시고 다음 설정 항목을 Nginx 설정 파일에 추가하십시오:
 
 ```
     location /seafhttp {
@@ -116,23 +116,23 @@ WebDAV를 활성화했다면 다음 동일 부분 추가를 추천합니다:
     }
 ```
 
-### nginx 다시 불러오기
+### Nginx 다시 불러오기
 ```bash
     nginx -s reload
 ```
 
 ## https를 사용하도록 설정 수정
 
-Seafile
+### ccnet conf
 
-Since you change from http to https, you need to modify the value of "SERVICE_URL" in [ccnet.conf](../config/ccnet-conf.md):
+http에서 https로 바꾸려면 [ccnet.conf](../config/ccnet-conf.md)의 "SERVICE_URL"을 수정해야합니다:
 ```bash
 SERVICE_URL = https://www.example.com
 ```
 
-Seafile
+### seahub_settings.py
 
-You need to add a line in seahub_settings.py to set the value of `FILE_SERVER_ROOT` (Or `HTTP_SERVER_ROOT` before version 3.1.0)
+seahub_settings.py에 설정 줄을 추가하여 `FILE_SERVER_ROOT`(3.1.0 버전 이전의 경우 `HTTP_SERVER_ROOT`)의 값을 설정해야 합니다
 
 ```python
 FILE_SERVER_ROOT = 'https://www.example.com/seafhttp'
@@ -145,14 +145,14 @@ FILE_SERVER_ROOT = 'https://www.example.com/seafhttp'
 ./seahub.sh start-fastcgi
 ```
 
-## nginx용 추가 보안 설정(개별 선택)
+## Nginx용 추가 보안 설정(개별 선택)
 
-Add the HSTS header. If you already visited the https version the next time your browser will visit directly the https site and not the http. Prevent man-in-the-middle-attacks.
+HSTS 헤더를 추가하십시오. 이미 https 버전 페이지를 방문했다면 다음에는 http가 아닌 https 사이트로 바로 이동합니다. 이러한 조치는 man-in-the-middle-attack 방식 공격을 막습니다.
 ```nginx
 add_header Strict-Transport-Security "max-age=31536000; includeSubdomains";
 ```
 
-Disable exact server version in header. Prevent scans for vulnerable server.
+헤더에 정확한 서버 버전 표시를 없애십시오. 서버 취약성 탐색을 막아줍니다.
 ```nginx
 server_tokens off;
 ```

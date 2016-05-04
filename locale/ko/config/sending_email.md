@@ -1,6 +1,6 @@
 # Seahub의 전자 메일 알림 전송
 
-## Seafile 의 전자메일 전송 형식
+## Seafile의 전자메일 전송 형식
 
 현재 Seafile에서 보내는 메일에는 다섯가지 형식이 있습니다:
 
@@ -83,7 +83,7 @@ interval = 30m
 
 [seahub/seahub/templates/email_base.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/email_base.html)
 
-참고: email_base.html 파일을 `seahub-data/custom/templates/email_base.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. 
+참고: email_base.html 파일을 `seahub-data/custom/templates/email_base.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다.
 
 ### 사용자 암호 재설정
 
@@ -101,7 +101,7 @@ seahub/seahub/auth/forms.py line번째 줄
 [seahub/seahub/templates/registration/password_reset_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/registration/password_reset_email.html)
 
 
-에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. 
+에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다.
 
 ### 시스템 관리자의 새 구성원 추가
 
@@ -118,7 +118,7 @@ send_html_email(_(u'Password has been reset on %s') % SITE_NAME,
 
 [seahub/seahub/templates/sysadmin/user_add_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/sysadmin/user_add_email.html)
 
-참고: user_add_email.html 파일을 `seahub-data/custom/templates/sysadmin/user_reset_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. 
+참고: user_add_email.html 파일을 `seahub-data/custom/templates/sysadmin/user_reset_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다.
 
 ### 시스템 관리자의 사용자 암호 재설정
 
@@ -135,7 +135,7 @@ send_html_email(_(u'Password has been reset on %s') % SITE_NAME,
 
 [seahub/seahub/templates/sysadmin/user_reset_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/sysadmin/user_reset_email.html)
 
-참고: user_reset_email.html 파일을 `seahub-data/custom/templates/sysadmin/user_reset_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. 
+참고: user_reset_email.html 파일을 `seahub-data/custom/templates/sysadmin/user_reset_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다.
 
 ### 사용자의 파일/폴더 공유 링크 및 업로드 링크 전송
 
@@ -166,7 +166,7 @@ try:
 
 [seahub/seahub/templates/shared_upload_link_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/shared_upload_link_email.html)
 
-참고: shared_link_email.html 파일을 `seahub-data/custom/templates/shared_link_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다. 
+참고: shared_link_email.html 파일을 `seahub-data/custom/templates/shared_link_email.html`에 복사하고 새로운 내용으로 수정할 수 있습니다. 이 방식으로 업그레이드 한 후에도 개별 설정 값을 유지할 수 있습니다.
 
 
 ### 읽지 않은 알림 다시 알림

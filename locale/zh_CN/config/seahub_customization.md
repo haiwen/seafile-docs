@@ -2,32 +2,34 @@
 
 ## 个性化 Logo 及 CSS 样式
 
-假设你目前在使用 2.1.0 版本。
-在 `seafile-server-2.1.0/seahub/media` 下新建 `custom`。将所有的个性化文件放到这个文件夹下。 当你升级到 2.1.1 版本的时候，升级脚本会自动的将此文件夹复制到 `seafile-server-2.1.1/seahub/media` 下。
+Create a folder ``<seafile-install-path>/seahub-data/custom``. Create a symbolic link in `seafile-server-latest/seahub/media` by `ln -s ../../../seahub-data/custom custom`.
+
+During upgrading, Seafile upgrade script will create symbolic link automatically to preserve your customization.
 
 ### 自定义 Logo
 
-1. 将 Logo 文件放在 `seahub/media/custom/` 文件夹下
-2. 在 `seahub_settings.py` 中，重新定义 `LOGO_PATH` 的值。
+1. 将 Logo 文件放在 seahub/media/custom/ 文件夹下
+2. 在 seahub_settings.py 中，重新定义 LOGO_PATH 的值。
 
-   <pre>
+   ```python
    LOGO_PATH = 'custom/mylogo.png'
-   </pre>
+   ```
 
-3. 在 `seahub_settings.py` 中，重新定义 `LOGO_URL` 的值。
+3. Default width and height for logo is 149px and 32px, you may need to change that according to yours.
 
-   <pre>
-   LOGO_URL = 'http://your-seafile.com'
-   </pre>
+   ```python
+   LOGO_WIDTH = 149
+   LOGO_HEIGHT = 32
+   ```
 
 ### 自定义 Seahub CSS 样式
 
 1. 在 `seahub/media/custom/` 中新建 CSS 文件，比如： `custom.css`。
 2. 在 `seahub_settings.py` 中，重新定义 `BRANDING_CSS` 的值。
 
-   <pre>
+   ```python
    BRANDING_CSS = 'custom/custom.css'
-   </pre>
+   ```
 
 ## 个性化 Seahub 页面
 
@@ -49,3 +51,4 @@
 
 1. 复制 ``seahub/seahub/help/templates/help.html``到 ``seahub-data/custom/templates``。
 2. 自行编写 `help.html`。
+

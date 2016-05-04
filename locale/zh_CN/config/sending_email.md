@@ -1,71 +1,185 @@
 # 发送邮件提醒
 
-邮件提醒会使某些功能有更好的用户体验, 比如发送邮件提醒用户新消息到达. 请在`seahub_settings.py`中加入以下语句以开启邮件提醒功能
-(同时需要对你的邮箱进行设置).
+## Types of email sending in Seafile
 
-    EMAIL_USE_TLS = False
-    EMAIL_HOST = 'smtp.domain.com'        # smpt 服务器
-    EMAIL_HOST_USER = 'username@domain.com'    # 用户名和域名
-    EMAIL_HOST_PASSWORD = 'password'    # 密码
-    EMAIL_PORT = '25'
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-    SERVER_EMAIL = EMAIL_HOST_USER
+There are currently five types of Emails sent in Seafile:
 
-Gmail 邮箱示例:
+- User reset his/her password
+- System admin add new member
+- System admin reset user password
+- User send file/folder share link and upload link
+- [pro] Reminder of unread notifications (It is sent by a background task which is pro edition only)
 
-    EMAIL_USE_TLS = True
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = 'username@gmail.com'
-    EMAIL_HOST_PASSWORD = 'password'
-    EMAIL_PORT = 587
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-    SERVER_EMAIL = EMAIL_HOST_USER
+The first four types of Email are sent immediately. The last type is sent by a background task running periodically.
 
-QQ 邮箱示例 (只能在没有使用 TLS 的情况下配置成功，不安全)：
+## Options of email sending
 
-    EMAIL_USE_TLS = False
-    EMAIL_HOST = 'smtp.exmail.qq.com'
-    EMAIL_HOST_USER = 'username@domain.com'
-    EMAIL_HOST_PASSWORD = 'password'
-    EMAIL_PORT = '25'
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-    SERVER_EMAIL = EMAIL_HOST_USER
+Please add the following lines to seahub_settings.py to enable Email sending.
 
-163 邮箱未测试成功 (有些国内公共邮箱做了限制的，是不能配置成功的.)
+<pre>
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.example.com'        # smpt 服务器
+EMAIL_HOST_USER = 'username@example.com'    # 用户名和域名
+EMAIL_HOST_PASSWORD = 'password'    # 密码
+EMAIL_PORT = 25
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+</pre>
 
-126 邮箱:
+If you are using Gmail as email server, use following lines:
 
-    EMAIL_USE_TLS = True
-    EMAIL_HOST = 'smtp.vip.126.com'
-    EMAIL_HOST_USER = 'test@vip.126.com'
-    EMAIL_HOST_PASSWORD = 'password'
-    EMAIL_PORT = 25
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-    SERVER_EMAIL = EMAIL_HOST_USER
+<pre>
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'username@gmail.com'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+</pre>
+
+**注意1**: 如果邮件功能不能正常使用，请在<code>logs/seahub.log</code>日志文件中查看问题原因. 更多信息请见 [Email notification list].
+
+**注意2**: 如果你想在非用户验证情况下使用邮件服务，请将 <code>EMAIL_HOST_USER</code> 和 <code>EMAIL_HOST_PASSWORD</code> 置为 **blank** (<code>''</code>). (但是注意一点，这种情况下，邮件将不会记录发件人<code>From:</code>信息.)
+
+**Note3**: About using SSL connection (using port 465)
+
+Port 587 is for using TLS connection to the Email server. Port 465 is for using SSL connection.  Starting from Django 1.8, it support both. But we are still using Django 1.5 in version 5.0, which only support  TLS connection. If your email server only support SSL connection, you can find a work around here: https://github.com/bancek/django-smtp-ssl.
+
+## Change the `sender` and `reply to` of email
+
+You can change the sender and reply to field of email by add the following settings to seahub_settings.py. This only affects email sending for file share link.
+
+<pre>
+# Replace default from email with user's email or not, defaults to ``False``
+REPLACE_FROM_EMAIL = True
+
+# Set reply-to header to user's email or not, defaults to ``False``. For details,
+# please refer to http://www.w3.org/Protocols/rfc822/
+ADD_REPLY_TO_HEADER = True
+</pre>
+
+## Config background email sending task (Pro Edition Only)
+
+The background task will run periodically to check whether an user have new unread notifications. If there are any, it will send a reminder email to that user. The background email sending task is controlled by `seafevents.conf`.
+
+```
+[SEAHUB EMAIL]
+
+## must be "true" to enable user email notifications when there are new unread notifications
+enabled = true
+
+## interval of sending seahub email. Can be s(seconds), m(minutes), h(hours), d(days)
+interval = 30m
+```
+
+## Customize Email messages
+
+The simplest way to customize the Email message is setting the `SITE_NAME` variable in seahub_settings.py. If it is not enough for your case, you can customize the Email templates.
+
+**Note:** Subject line may vary between different releases, this is based on Release 5.0.0. Restart Seahub so that your changes take effect.
+
+### The Email base template
+
+[seahub/seahub/templates/email_base.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/email_base.html)
+
+Note: You can copy email_base.html to `seahub-data/custom/templates/email_base.html` and modify the new one. In this way, the customization will be maintained after upgrade.
+
+### User reset his/her password
+
+**Subject**
+
+seahub/seahub/auth/forms.py line:127
+
+```
+        send_html_email(_("Reset Password on %s") % site_name,
+                  email_template_name, c, None, [user.username])
+```
+
+**Body**
+
+[seahub/seahub/templates/registration/password_reset_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/registration/password_reset_email.html)
 
 
+Note: You can copy password_reset_email.html to `seahub-data/custom/templates/registration/password_reset_email.html` and modify the new one. In this way, the customization will be maintained after upgrade.
+
+### System admin add new member
+
+**Subject**
+
+seahub/seahub/views/sysadmin.py line:424
+
+```
+send_html_email(_(u'Password has been reset on %s') % SITE_NAME,
+            'sysadmin/user_reset_email.html', c, None, [email])
+```
+
+**Body**
+
+[seahub/seahub/templates/sysadmin/user_add_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/sysadmin/user_add_email.html)
+
+Note: You can copy user_add_email.html to `seahub-data/custom/templates/sysadmin/user_add_email.html` and modify the new one. In this way, the customization will be maintained after upgrade.
+
+### System admin reset user password
+
+**Subject**
+
+seahub/seahub/views/sysadmin.py line:1224
+
+```
+send_html_email(_(u'Password has been reset on %s') % SITE_NAME,
+            'sysadmin/user_reset_email.html', c, None, [email])
+```
+
+**Body**
+
+[seahub/seahub/templates/sysadmin/user_reset_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/sysadmin/user_reset_email.html)
+
+Note: You can copy user_reset_email.html to `seahub-data/custom/templates/sysadmin/user_reset_email.html` and modify the new one. In this way, the customization will be maintained after upgrade.
+
+### User send file/folder share link
+
+**Subject**
+
+seahub/seahub/share/views.py line:913
+
+```
+try:
+    if file_shared_type == 'f':
+        c['file_shared_type'] = _(u"file")
+        send_html_email(_(u'A file is shared to you on %s') % SITE_NAME,
+                        'shared_link_email.html',
+                        c, from_email, [to_email],
+                        reply_to=reply_to
+                        )
+    else:
+        c['file_shared_type'] = _(u"directory")
+        send_html_email(_(u'A directory is shared to you on %s') % SITE_NAME,
+                        'shared_link_email.html',
+                        c, from_email, [to_email],
+                        reply_to=reply_to)
+```
+
+**Body**
+
+[seahub/seahub/templates/shared_link_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/shared_link_email.html)
+
+[seahub/seahub/templates/shared_upload_link_email.html](https://github.com/haiwen/seahub/blob/master/seahub/templates/shared_upload_link_email.html)
+
+Note: You can copy shared_link_email.html to `seahub-data/custom/templates/shared_link_email.html` and modify the new one. In this way, the customization will be maintained after upgrade.
 
 
-**注意1**:如果邮件功能不能正常使用，请在`logs/seahub.log`日志文件中查看问题原因.
-更多信息请见 [Email notification
-list](Email notification list "wikilink").
+### Reminder of unread notifications
 
-推荐以下调试方法：
+**Subject**
 
-- 在管理员界面添加一个用户
-- 如果界面上报告邮件发送出错，检查下 logs/seahub.log
-- 如果日志中有这样的错误 `seahub.views.sysadmin:1334 user_add [Errno 111] Connection refused`，那么是邮件服务器地址或端口号配置有问题。可以参考 http://stackoverflow.com/questions/5802189/django-errno-111-connection-refused
+```
+send_html_email(_('New notice on %s') % settings.SITE_NAME,
+                                'notifications/notice_email.html', c,
+                                None, [to_user])
+```
 
-**注意2**:
-如果你想在非用户验证情况下使用邮件服务，请将`EMAIL_HOST_USER`和
-`EMAIL_HOST_PASSWORD` 置为**blank** (`''`).
-(但是注意一点，这种情况下，邮件将不会记录发件人`From:`信息.)
+**Body**
 
-**注意3**:
+[seahub/seahub/notifications/templates/notifications/notice_email.html](https://github.com/haiwen/seahub/blob/master/seahub/notifications/templates/notifications/notice_email.html)
 
--   请重启 Seahub 以使更改生效.
--   如果更改没有生效，请删除`seahub_setting.pyc`缓存文件.
-
-<!-- -->
-
-    ./seahub.sh restart

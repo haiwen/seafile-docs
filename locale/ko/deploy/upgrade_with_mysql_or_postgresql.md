@@ -1,7 +1,7 @@
 # Seafile
-## Upgrade with MySQL or PostgreSQL
+## MySQL 또는 PostgreSQL과 업그레이드
 
-First, download the new version, for example seafile-server_1.6.0_x86-64.tar.gz, and extract it to the directory where you put all Seafile related staff. You should have a directory layout similar to this:
+우선 seafile-server_1.6.0_x86-64.tar.gz와 같은 새 버전을 다운로드하시고, Seafile 관련 내용을 모두 담을 디렉터리에 압축을 풀어두십시오. 디렉터리 배치는 다음과 비슷해야합니다:
 
 <pre>
 haiwen
@@ -22,7 +22,7 @@ haiwen
 
 ### 2. 아바타 폴더 및 데이터베이스 테이블 업데이트(MySQL 및 Seafile 서버 2.1.1 이후)
 
-Seafile 서버 2.1.1 부터 업그레이트 스크립트로 아바타 폴더와 데이터베이스를 업그레이드할 수 있습니다. 이 스크립트는 `upgrade_X.X_Y.Y.sh`같은 이름이 붙습니다. 예를 들어, Seafile 서버 2.0.0에서 Seafile 서버 2.1.1로 업그레이드 할 경우 `upgrade_2.0_2.1.sh`  스크립트를 실행해야합니다.
+Seafile 서버 2.1.1부터 업그레이트 스크립트로 아바타 폴더와 데이터베이스를 업그레이드할 수 있습니다. 이 스크립트는 `upgrade_X.X_Y.Y.sh`같은 이름이 붙습니다. 예를 들어, Seafile 서버 2.0.0에서 Seafile 서버 2.1.1로 업그레이드 할 경우 `upgrade_2.0_2.1.sh` 스크립트를 실행해야합니다.
 
 ```sh
 cd seafile-server-2.1.1/
@@ -40,7 +40,7 @@ Seafile 서버 2.1.1을 사용하거나 PostgreSQL을 사용한다면 다음 과
 
 #### 아바타 심볼릭 링크 업데이트
 
-Assume your top level directory is `/data/haiwen/`, and you are upgrading to seafile server version 1.6.0:
+최상위 디렉터리는 `/data/haiwen/`이며, Seafile 서버 1.6.0 버전으로 업그레이드 한다고 가정합니다:
 
 ```
 cd /data/haiwen
@@ -52,13 +52,13 @@ ln -s -t seafile-server-1.6.0/seahub/media/  ../../../seahub-data/avatars/
 
 #### 데이터베이스 테이블 업그레이드
 
-When a new version of seafile server is released, there may be changes to the database of seafile/seahub/ccnet. We provide the sql statements to update the databases:
+Seafile 서버 새 버전을 출시하면 Seafile/Seahub/ccnet 데이터베이스가 바뀌었을 수도 있습니다. 데이터베이스를 업그레이드할 SQL 구문을 제공해드립니다:
 
-- `upgrade/sql/<VERSION>/mysql/seahub.sql`, for changes to seahub database
-- `upgrade/sql/<VERSION>/mysql/seafile.sql`, for changes to seafile database
-- `upgrade/sql/<VERSION>/mysql/ccnet.sql`, for changes to ccnet database
+- Seahub 데이터베이스를 바꾸는 `upgrade/sql/<VERSION>/mysql/seahub.sql`
+- Seafile 데이터베이스를 바꾸는`upgrade/sql/<VERSION>/mysql/seafile.sql`
+- ccnet 데이터베이스를 바꾸는`upgrade/sql/<VERSION>/mysql/ccnet.sql`
 
-To apply the changes, just execute the sqls in the correspondent database. If any of the sql files above do not exist, it means the new version does not bring changes to the correspondent database.
+바꾼 설정을 적용하려면 각각의 데이터베이스에 대해 SQL 구문을 그냥 실행하십시오 위 SQL 파일 중 하나라도 없다면, 새 버전에서 관련 데이터베이스에 바뀐 부분이 없음을 의미합니다.
 
 ```sh
 seafile-server-1.6.0
@@ -90,10 +90,10 @@ Nginx:
 Alias /media  /data/haiwen/seafile-server-1.6.0/seahub/media
 ```
 
-**Tip:**
+**요령:**
 <code>seafile-server-latest</code> 심볼릭 링크를 만들어 현재 Seafile 서버 폴더를 가리칠 수 있습니다(Seafile 서버 2.1.0부터 <code>setup-seafile.sh</code> 스크립트에서 심볼링 링크를 만듬). 다음 업그레이드 스크립트를 실행할 때마다 <code>seafile-server-latest</code> 심볼릭 링크는 최신 Seafile 서버 폴더를 가리킵니다.
 
-In this case, you can write:
+이 경우, 다음 설정을 작성할 수 있습니다:
 
 ```
     location /media {
@@ -107,27 +107,27 @@ Apache:
 Alias /media  /data/haiwen/seafile-server-latest/seahub/media
 ```
 
-This way, you no longer need to update the Nginx/Apache config file each time you upgrade your seafile server.
+이 방법으로 Seafile 서버를 업그레이드할 때마다 더 이상 Nginx/Apache 설정 파일을 업데이트할 필요가 없습니다.
 
 
 ### 4. Seafile/Seahub/Nginx/Apache 다시 시작
 
-After done above updating, now restart Seafile/Seahub/Nginx/Apache to see the new version at work!
+위 업그레이드 과정이 끝나면, Seafile/Seahub/Nginx/Apache를 다시 시작하여 새 버전이 동작하는 모습을 살펴보십시오!
 
-## Noncontinuous Upgrade (like from 1.1 to 1.3)
+## 비연속 버전 업그레이드(1.1에서 1.3으로 업그레이드하는 방식)
 
-You may also upgrade a few versions at once, e.g. from 1.1.0 to 1.3.0.
-The procedure is:
+1.1.0버전에서 1.3.0버전으로 업그레이드 하는 방식과 같이 일부 버전을 한번에 업그레이드 할 수 있습니다.
+절차는 다음과 같습니다:
 
-1. upgrade from 1.1.0 to 1.2.0;
-2. upgrade from 1.2.0 to 1.3.0.
+1. 1.1.0에서 1.2.0으로 업그레이드 하십시오
+2. 1.2.0에서 1.3.0으로 업그레이드 하십시오.
 
 
-## 부 버전 업그레이드 (1.5.0에서 1.5.1로 업그레이드 하는 방식)
+## 부 버전 업그레이드(1.5.0에서 1.5.1로 업그레이드 하는 방식)
 
 부 버전 업그레이드는 1.5.0에서 1.5.1로 업그레이드 하는 방식과 같습니다.
 
-Here is our dir structure
+디렉터리 구조는 다음과 같습니다
 
 <pre>
 haiwen
@@ -164,5 +164,5 @@ Alias /media  /data/haiwen/seafile-server-1.5.1/seahub/media
 
 ### Seafile/Seahub/Nginx/Apache 다시 시작
 
-After done above updating, now restart Seafile/Seahub/Nginx/Apache to see the new version at work!
+위 업그레이드 과정이 끝나면, Seafile/Seahub/Nginx/Apache를 다시 시작하여 새 버전이 동작하는 모습을 살펴보십시오!
 
