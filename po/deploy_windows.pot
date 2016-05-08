@@ -1,0 +1,1637 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: po4md\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-05-04 05:40:56+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: deploy_windows/deploy_with_apache.md:1
+# header
+msgid "# Deploy Seafile with Apache"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:3
+#: deploy_windows/deploy_with_mysql.md:3
+# header
+msgid "## Preparation"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:5
+# header
+msgid "### Install mod_fastcgi"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:7
+msgid "Download [mod_fastcgi-*.dll] (http://fastcgi.com/dist/) first, and put it into the `modules/` directory of your Apache installation."
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:9
+msgid "**Note**: You must download the right version of `mod_fastcgi` DLL according for your Apache. For example:"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:11
+# unordered list
+msgid "- If you are using Apache 2.2, you should download http://fastcgi.com/dist/mod_fastcgi-2.4.6-AP22.dll. The **AP22** part of the dll indicate it's for Apache **2.2**."
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:12
+# unordered list
+msgid "- If you are using Apache 2.0, you should download http://fastcgi.com/dist/old/mod_fastcgi-2.4.2-AP20.dll"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:14
+# header
+msgid "## Deploy Seahub/FileServer With Apache"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:16
+#: deploy_windows/deploy_with_nginx.md:5
+msgid "Seahub is the web interface of Seafile server. FileServer is used to handle raw file uploading/downloading through browsers. By default, it listens on port 8082 for HTTP request."
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:18
+#: deploy_windows/deploy_with_nginx.md:7
+msgid "Here we deploy Seahub using fastcgi, and deploy FileServer with reverse proxy. We assume you are running Seahub using domain '''www.myseafile.com'''."
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:20
+# header
+msgid "### Edit httpd.conf"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:22
+msgid "First edit your `httpd.conf`. Add the following lines to **the end of the file**:"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:24
+# code block
+msgid "```\n"
+"LoadModule fastcgi_module modules/mod_fastcgi-2.4.6-AP22.dll\n"
+"LoadModule rewrite_module modules/mod_rewrite.so\n"
+"LoadModule proxy_module modules/mod_proxy.so\n"
+"LoadModule proxy_http_module modules/mod_proxy_http.so\n"
+"Include conf/extra/httpd-vhosts.conf\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:32
+msgid "Then add this line (substitute `YourDocumentRoot` with the value of your apache `DocumentRoot`)"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:34
+# code block
+msgid "```\n"
+"FastCGIExternalServer \"YourDocumentRoot/seahub.fcgi\" -host 127.0.0.1:8000\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:38
+msgid "Note, `seahub.fcgi` is just a placeholder, you don't need to actually have this file in your system."
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:40
+# header
+msgid "### Edit your httpd-vhosts.conf"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:42
+msgid "Assume you have uncompresssed seafile server into `C:/SeafileProgram/seafile-pro-server-2.1.4`."
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:44
+# code block
+msgid "```\n"
+"<VirtualHost *:80>\n"
+"  ServerName www.myseafile.com\n"
+"  Alias /media  \"C:/SeafileProgram/seafile-pro-server-2.1.4/seahub/media\"\n"
+"\n"
+"  RewriteEngine On\n"
+"\n"
+"  #\n"
+"  # seafile fileserver\n"
+"  #\n"
+"  ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"  ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"  RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"  #\n"
+"  # seahub\n"
+"  #\n"
+"  RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]\n"
+"  RewriteCond %{REQUEST_FILENAME} !-f\n"
+"  RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]\n"
+"</VirtualHost>\n"
+"\n"
+"<Directory \"C:/SeafileProgram/seafile-pro-server-2.1.4/seahub/media\">\n"
+"    Options Indexes FollowSymLinks\n"
+"    AllowOverride None\n"
+"    Order allow,deny\n"
+"    Allow from all\n"
+"</Directory>\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:74
+#: deploy_windows/deploy_with_nginx.md:49
+# header
+msgid "## Modify Configurations"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:76
+#: deploy_windows/deploy_with_nginx.md:51
+# header
+msgid "### Modify ccnet.conf"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:79
+#: deploy_windows/deploy_with_nginx.md:54
+# code block
+msgid "```\n"
+"SERVICE_URL = http://www.myseafile.com\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:83
+#: deploy_windows/deploy_with_nginx.md:58
+msgid "Note: If you later change the domain assigned to seahub, you also need to change the value of  <code>SERVICE_URL</code>."
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:85
+#: deploy_windows/deploy_with_nginx.md:60
+# header
+msgid "### Modify seafile-data/seafile.conf"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:87
+#: deploy_windows/deploy_with_nginx.md:62
+msgid "Modify the `seahub` section of `seafile-data/seafile.conf`:"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:89
+#: deploy_windows/deploy_with_nginx.md:64
+# code block
+msgid "```\n"
+"[seahub]\n"
+"port=8000\n"
+"fastcgi=true\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:95
+#: deploy_windows/deploy_with_nginx.md:70
+# header
+msgid "### Modify seahub_settings.py"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:97
+#: deploy_windows/deploy_with_nginx.md:72
+msgid "You need to add a line in <code>seahub_settings.py</code> to set the value of `FILE_SERVER_ROOT`"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:99
+#: deploy_windows/deploy_with_nginx.md:74
+# code block
+msgid "```\n"
+"FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:103
+#: deploy_windows/deploy_with_nginx.md:78
+# header
+msgid "## Notes when Upgrading Seafile Server"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:105
+msgid "When upgrading seafile server, besides the normal steps you should take, there is one extra step to do: '''Update the path of the static files in your apache configuration'''. For example, assume your are upgrading seafile server 2.1.4 to 2.1.5, then:"
+msgstr ""
+
+#: deploy_windows/deploy_with_apache.md:107
+# code block
+msgid "```\n"
+"<VirtualHost *:80>\n"
+"  ...\n"
+"  Alias /media  \"C:/SeafileProgram/seafile-pro-server-2.1.5/seahub/media\"\n"
+"  ...\n"
+"</VirtualHost>\n"
+"\n"
+"<Directory \"C:/SeafileProgram/seafile-pro-server-2.1.5/seahub/media\">\n"
+"  ...\n"
+"</Directory>\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:1
+# header
+msgid "# Deploy Seafile Windows Server With MySQL"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:5
+#: deploy_windows/deploy_with_windows.md:7
+# unordered list
+msgid "- [Download and Setup Seafile Windows Server](download_and_setup_seafile_windows_server.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:6
+# unordered list
+msgid "- Stop seafile windows server"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:7
+# unordered list
+msgid "  - Right click the seafile server tray icon"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:8
+# unordered list
+msgid "  - Choose \"Quit and shutdown Seafile Server\""
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:9
+# unordered list
+msgid "- Make sure your MySQL server is running"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:11
+# header
+msgid "### Install MySQL-python Library"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:13
+# unordered list
+msgid "- download the windows installer from https://pypi.python.org/pypi/MySQL-python/1.2.4"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:14
+# unordered list
+msgid "- install it by double clicking the downloaded exe file"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:16
+# header
+msgid "## Create MySQL Databases"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:18
+msgid "You need to create:"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:20
+# unordered list
+msgid "- databases for ccnet/seafile/seahub"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:21
+# unordered list
+msgid "- a new user to access these databases"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:23
+msgid "Open a termial (cmd, Win + R, cmd) and login to mysql with a privileged user:"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:24
+# code block
+msgid "```\n"
+"mysql -u root -p\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:28
+msgid "Execute these SQL setences on your mysql server:"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:30
+# code block
+msgid "```\n"
+"create database `ccnet-db` character set = 'utf8';\n"
+"create database `seafile-db` character set = 'utf8';\n"
+"create database `seahub-db` character set = 'utf8';\n"
+"\n"
+"create user 'seafile'@'localhost' identified by 'your secure password';\n"
+"\n"
+"GRANT ALL PRIVILEGES ON `ccnet-db`.* to `seafile`;\n"
+"GRANT ALL PRIVILEGES ON `seafile-db`.* to `seafile`;\n"
+"GRANT ALL PRIVILEGES ON `seahub-db`.* to `seafile`;\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:42
+# header
+msgid "## Modify Your Seafile Configuations"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:44
+# unordered list
+msgid "* Append the following lines to **ccnet/ccnet.conf**:"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:46
+# code block
+msgid "```\n"
+"[Database]\n"
+"ENGINE=mysql\n"
+"HOST=localhost\n"
+"USER=seafile\n"
+"PASSWD=your secure password\n"
+"DB=ccnet-db\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:55
+# unordered list
+msgid "* Edit the `database` section of **seafile-data/seafile.conf**:"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:57
+# code block
+msgid "```\n"
+"[database]\n"
+"type=mysql\n"
+"host=localhost\n"
+"user=seafile\n"
+"password=your secure password\n"
+"db_name=seafile-db\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:66
+# unordered list
+msgid "* Append following lines to **seahub_settings.py**"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:68
+# code block
+msgid "```\n"
+"DATABASES = {\n"
+"    'default': {\n"
+"        'ENGINE': 'django.db.backends.mysql',\n"
+"        'NAME' : 'seahub-db',\n"
+"        'USER' : 'seafile',\n"
+"        'PASSWORD' : 'your secure password',\n"
+"        'HOST' : 'localhost',\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:80
+# header
+msgid "### Create Database Tables for Seahub"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:82
+msgid "Now we create the database tables for seahub."
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:84
+msgid "Assume you have uncompressed seafile server to `C:/SeafileProgram/seafile-pro-server-3.1.3`,"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:86
+msgid "Open a window command line prompt, and execute the following command:"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:88
+# code block
+msgid "```\n"
+"mysql -u seafile -p seahub-db < C:/SeafileProgram/seafile-server-3.1.3/seahub/sql/mysql.sql\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:92
+# header
+msgid "## Done"
+msgstr ""
+
+#: deploy_windows/deploy_with_mysql.md:94
+msgid "Now you can start your seafile server."
+msgstr ""
+
+#: deploy_windows/deploy_with_nginx.md:1
+# header
+msgid "# Deploy Seafile with Nginx"
+msgstr ""
+
+#: deploy_windows/deploy_with_nginx.md:3
+# header
+msgid "## Deploy Seahub/FileServer with Nginx"
+msgstr ""
+
+#: deploy_windows/deploy_with_nginx.md:9
+msgid "This is a sample Nginx config file."
+msgstr ""
+
+#: deploy_windows/deploy_with_nginx.md:11
+# code block
+msgid "```\n"
+"server {\n"
+"    listen 80;\n"
+"    server_name www.myseafile.com;\n"
+"\n"
+"    proxy_set_header X-Forwarded-For $remote_addr;\n"
+"\n"
+"    location / {\n"
+"        fastcgi_pass    127.0.0.1:8000;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param	SERVER_PROTOCOL	    $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param	SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param	SERVER_PORT         $server_port;\n"
+"        fastcgi_param	SERVER_NAME         $server_name;\n"
+"        fastcgi_param   REMOTE_ADDR         $remote_addr;\n"
+"\n"
+"        access_log      logs/seahub.access.log;\n"
+"        error_log       logs/seahub.error.log;\n"
+"    }\n"
+"\n"
+"    location /seafhttp {\n"
+"        rewrite ^/seafhttp(.*)$ $1 break;\n"
+"        proxy_pass http://127.0.0.1:8082;\n"
+"        client_max_body_size 0;\n"
+"    }\n"
+"\n"
+"    location /media {\n"
+"        root C:/SeafileProgram/seafile-pro-server-2.1.4/seahub;\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_nginx.md:80
+msgid "When upgrading seafile server, besides the normal steps you should take, there is one extra step to do: '''Update the path of the static files in your nginx configuration'''. For example, assume your are upgrading seafile server 2.1.0 to 2.1.1, then:"
+msgstr ""
+
+#: deploy_windows/deploy_with_nginx.md:82
+# code block
+msgid "```\n"
+"    location /media {\n"
+"        root C:/SeafileProgram/seafile-pro-server-2.1.1/seahub;\n"
+"    }\n"
+"```"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:1
+# header
+msgid "# Deploy with Windows"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:3
+# header
+msgid "## Setup and Upgrade"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:5
+msgid "Seafile Windows Community Edition supports SQLite/MySQL database."
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:8
+#: deploy_windows/download_and_setup_seafile_windows_server.md:64
+# unordered list
+msgid "- [Deploy Seafile with MySQL](deploy_with_mysql.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:9
+#: deploy_windows/download_and_setup_seafile_windows_server.md:65
+# unordered list
+msgid "- [Deploy Seafile with Apache](deploy_with_apache.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:10
+#: deploy_windows/download_and_setup_seafile_windows_server.md:66
+# unordered list
+msgid "- [Deploy Seafile with Nginx](deploy_with_nginx.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:11
+#: deploy_windows/download_and_setup_seafile_windows_server.md:67
+# unordered list
+msgid "- [LDAP Integration](../deploy/using_ldap.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:12
+#: deploy_windows/download_and_setup_seafile_windows_server.md:68
+# unordered list
+msgid "- [Install Seafile Server as a Windows Service](install_seafile_server_as_a_windows_service.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:13
+#: deploy_windows/download_and_setup_seafile_windows_server.md:69
+# unordered list
+msgid "- [Ports used by Seafile Windows Server](ports_used_by_seafile_windows_server.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:14
+#: deploy_windows/download_and_setup_seafile_windows_server.md:70
+# unordered list
+msgid "- [Upgrading Seafile Windows Server](upgrading_seafile_windows_server.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:15
+# unordered list
+msgid "- [Options & Customization](../config/README.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:17
+msgid "For more information on Seafile server, check the documents on [Seafile Linux version](../deploy/README.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:19
+# header
+msgid "## Server Administration"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:21
+# unordered list
+msgid "- [Garbage Collecting Unused Blocks on Seafile Server](windows_gc.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:22
+# unordered list
+msgid "- [Running seaf-fsck on corrupted repositories](windows_fsck.md)"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:24
+# header
+msgid "## Common Issues"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:26
+msgid "If you failed to set up Seafile server, first check seafserv-applet.log."
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:27
+# header
+msgid "### \"ERROR: D:/seafile-server\\seahub.db not found\""
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:29
+msgid "This file is created during Seafile initialization. Please:"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:31
+# unordered list
+msgid "- Check whether your Python and the ``PATH`` for Python is correctly set."
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:32
+# unordered list
+msgid "- Put Seafile server package in a simple path, like ``C:\\seafile-packages``."
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:34
+# header
+msgid "### Failed to create seahub.db"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:36
+msgid "Use python version 2.7.4 32bit, do not use python 3+."
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:37
+# header
+msgid "### Can not upload/download files in the Web interface"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:39
+msgid "Make sure you have modified ``SERVICE_URL`` in ccnet.conf."
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:41
+# header
+msgid "### The browser can't get the css and javascript files"
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:43
+# unordered list
+msgid "- Use python 2.7.4 32bit. If you have installed other python version, uninstall it and install python 2.7.4. Restart seafile server to see whether the problem has gone."
+msgstr ""
+
+#: deploy_windows/deploy_with_windows.md:44
+# unordered list
+msgid "- Delete non-ASCII keys from the registry path ``HKEY_CLASSES_ROOT\\MIME\\Database\\Content`` Type, and try again."
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:1
+# header
+msgid "# Download and Setup Seafile Windows Server"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:3
+# header
+msgid "## Download/Uncompress"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:4
+# header
+msgid "### Install Python 2.7.4 32bit"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:6
+# unordered list
+msgid "- Download and install [python 2.7.4 32bit](http://python.org/ftp/python/2.7.4/python-2.7.4.msi)"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:7
+# unordered list
+msgid "- Add the installation path of python2.7 to the system PATH environment variable. If you installed python 2.7 to ``C:\\Python27`` add ``C:\\Python27`` to the PATH environment variable"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:10
+msgid "**Warning**: Be sure to use Python 2.7.4 32bit. 64 bit and other versions can't work."
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:12
+# header
+msgid "### Download/Uncompress Seafile Server"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:14
+# unordered list
+msgid "- Get the latest version of Seafile Server program"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:15
+# unordered list
+msgid "- Create a new folder to store seafile program, such as ``C:\\SeafileProgram\\``. Please remember the location of the folder, we'll use it later."
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:16
+# unordered list
+msgid "- Uncompress ``seafile-server_5.0.3_win32.tar.gz`` to ``C:\\SeafileProgram\\``"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:18
+msgid "Now you have a folder like this:"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:19
+# code block
+msgid "```sh\n"
+"C:\\SeafileProgram\n"
+"         |__ seafile-server-5.0.3\n"
+"```"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:23
+# header
+msgid "## Start/Initialization"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:25
+# header
+msgid "### Start Seafile Server"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:27
+msgid "Go to the folder ``C:\\SeafileProgram\\seafile-server-5.0.3\\``, and double click run.bat to start Seafile Server. You should notice a seafile icon appears in the system tray."
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:28
+msgid "Choose a disk to store Seafile Server data"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:30
+msgid "Now you'll be prompted a dialog to choose a disk to store the data of seafile server"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:32
+# unordered list
+msgid "- Please choose a disk with enough free space"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:33
+# unordered list
+msgid "- Once you clicked the OK button, Seafile would create a folder named seafile-server under the disk you choosed. That would be the data folder of Seafile Server. If you choose disk D, your data folder would be ``D:\\seafile-server``"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:35
+# header
+msgid "### Add an admin account"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:37
+msgid "Right click the tray icon of Seafile Server, choose __Add an admin__. Input your admin username and password in the prompted dialog."
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:39
+msgid "If the operation is successful, the tray icon would show a bubble saying __Successully added the admin acount__"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:41
+# header
+msgid "### Configure Seafile Server"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:43
+msgid "After initialization, there are some options need to be configured:"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:45
+# unordered list
+msgid "- Right click the tray icon, choose __Open seafile-server folder__. Your seafile-server data folder would be opened."
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:46
+# unordered list
+msgid "- Edit the file `conf/ccnet.conf`. Modify the following line of `ccnet.conf`:"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:47
+# code block
+msgid "```\n"
+"SERVICE_URL = XXX\n"
+"```"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:51
+# unordered list
+msgid "- Change the value of `SERVICE_URL` to `http://<your ip address>:8000`. Say the ip address of your windows server is 192.168.1.100, then change it to `SERVICE_URL = http://192.168.1.100:8000`"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:53
+msgid "After the edit, right click tray icon, choose __Restart seafile__"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:55
+# header
+msgid "### Visit Seahub"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:57
+msgid "Open your browser, and visit `http://127.0.0.1:8000`. Login with the admin account. If you can login, the initialization is successful."
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:58
+msgid "Configuration done"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:60
+msgid "Seafile Server configuration is finished. See Seafile Client Manual for how to use the client"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:62
+# header
+msgid "### You may also want to read about:"
+msgstr ""
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:71
+# unordered list
+msgid "- [Options & Customization](../deploy/server_configuration.md)"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:1
+# header
+msgid "# Install Seafile Server as a Windows Service"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:3
+# header
+msgid "### Why you may want to install Seafile Server as a Windows service"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:5
+# unordered list
+msgid "- Seafile Server can keep on running after all users logout"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:6
+# unordered list
+msgid "- When system boots up, Seafile Server would start running even if no user has logged in"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:8
+# header
+msgid "### Install as a service"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:10
+# unordered list
+msgid "- Right click the tray icon, choose __Install as a Windows service__"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:11
+# unordered list
+msgid "- Choose ``yes`` in the propmted dialog"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:13
+msgid "If the operation succeeds, A dialog would be prompted saying __Successully installed seafile service__."
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:15
+# header
+msgid "### Verify Seafile Server already running as a Windows service"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:17
+# unordered list
+msgid "- Logout the current user"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:18
+# unordered list
+msgid "- Visit seahub from another computer. If the seahub website can still be visited, Seafile server is already running as a Windows server"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:20
+# header
+msgid "### How to start the tray icon after installing as a service"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:22
+msgid "If you have installed seafile server as a service, it would run automatically in the background the next time you boot your system. However, the tray icon would not appear automatically when a user logins in."
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:24
+msgid "To start the tray icon, just doule click the ``run.bat`` file in the folder ``C:\\SeafileProgram\\seafile-server-1.7.0``"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:25
+msgid "Uninstall Seafile Server Windows service"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:27
+# header
+msgid "### If you want to uninstall the Seafile Server service:"
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:29
+# unordered list
+msgid "- Right click the tray icon, choose \"Uninstall Windows service\""
+msgstr ""
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:30
+# unordered list
+msgid "- Choose \"yes\" in the propmted dialog"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:1
+# header
+msgid "# Migrate From Windows to Linux"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:3
+msgid "This tutorial show you how to migrate Seafile from Windows(using SQLite) to Linux."
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:5
+# header
+msgid "### 1. Deploying Seafile Under Linux"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:7
+msgid "First, you should [Deploy Seafile with SQLite](../deploy/using_sqlite.md). And we assume that you deploy Seafile under `/home/haiwen/` directory."
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:9
+# header
+msgid "### 2. Replace Config Files And Databases"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:11
+# header
+msgid "#### Delete config files and databases in Linux"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:13
+# code block
+msgid "```\n"
+"rm /home/haiwen/seahub_settings.py\n"
+"rm /home/haiwen/seahub.db\n"
+"rm -r /home/haiwen/seafile-data\n"
+"cp /home/haiwen/ccnet/seafile.ini /home/haiwen/seafile.ini\n"
+"rm -r /home/haiwen/ccnet\n"
+"```"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:21
+# blockquote, which can be cascaded
+msgid "> Note: `seafile.ini` is used to record the path to `seafile-data`, we will use it later, so we just copy it out, not delete it."
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:23
+# header
+msgid "#### Copy config files and databases to Linux"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:25
+# unordered list
+msgid "- copy file `seahub_settings.py` from Windows **seafile-server** to Linux `/home/haiwen/`;"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:27
+# unordered list
+msgid "- copy file `seahub.db` from Windows **seafile-server** to Linux `/home/haiwen/`;"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:29
+# unordered list
+msgid "- copy sub-directory `seafile-data` from Windows **seafile-server** to Linux `/home/haiwen/`;"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:31
+# unordered list
+msgid "- copy sub-directory `ccnet` from Windows **seafile-server** to Linux `/home/haiwen/`;"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:33
+# unordered list
+msgid "- copy `/home/haiwen/seafile.ini` to new Linux **ccnet** directory."
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:35
+# header
+msgid "### Start Seafile"
+msgstr ""
+
+#: deploy_windows/migrate_from_win_to_linux.md:37
+# code block
+msgid "```\n"
+"./seafile.sh start\n"
+"./seahub.sh start\n"
+"```"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:1
+# header
+msgid "# Ports used by Seafile Windows Server"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:3
+msgid "Seafile server has two components, so two TCP ports are used."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:5
+# header
+msgid "## The two configuration files"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:7
+msgid "All ports related configuration are recorded in ``ccnet.conf`` and ``seafile.conf``."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:8
+# header
+msgid "### How to open ``ccnet.conf``"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:10
+#: deploy_windows/ports_used_by_seafile_windows_server.md:15
+# unordered list
+msgid "- Right click the seafile server trayicon, choose __Open seafile-server folder__"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:11
+# unordered list
+msgid "- Open the folder ``ccnet`` under ``seafile-server`` folder. The file ``ccnet.conf`` is there."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:13
+# header
+msgid "### How to open ``seafile.conf``"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:16
+# unordered list
+msgid "- Open the folder ``seafile-data`` under ``seafile-server`` folder. The file ``seafile.conf`` is there."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:18
+msgid "In the following section we list the TCP ports used by each of seafile components, as well as how to change them (For example, some port may have already been used by some other application)."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:20
+msgid "**Note**: If you change any of the ports, you have to restart seafile server."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:22
+# header
+msgid "## seafile fileserver"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:24
+msgid "seafile fileserver handles raw file upload/download for Seahub"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:26
+# unordered list
+msgid "- default: 8082"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:27
+# unordered list
+msgid "- How to change: The Seafile desktop client will try to connect this port for file syncing. Don't change this port."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:29
+# header
+msgid "## seahub"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:31
+msgid "seahub is the web interface of seafile server."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:33
+msgid "**Note**: If you change the port of seahub, you need to change the ``SERVICE_URL`` in ``ccnet.conf``."
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:35
+# unordered list
+msgid "- default: 8000"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:36
+# unordered list
+msgid "- How to change: Edit the file ``seafile.conf``. Change the value of port under the seahub section. (This is added in Seafile Windows Server 1.7.0.1)"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:38
+# code block
+msgid "```\n"
+"[seahub]\n"
+"port=8000\n"
+"```"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:42
+# unordered list
+msgid "- Edit the file ``ccnet.conf``, modify the value of ``SERVICE_URL`` accordingly. For example, if you have changed the port to 8001, then modify the value of ``SERVICE_URL`` accordingly:"
+msgstr ""
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:44
+# code block
+msgid "```\n"
+"[General]\n"
+"SERVICE_URL = <Your IP OR DOMAIN>:8001\n"
+"```"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:1
+# header
+msgid "# Upgrading Seafile Windows Server"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:3
+# unordered list
+msgid "- Minor Upgrade"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:4
+# unordered list
+msgid "- Major Upgrade"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:5
+# unordered list
+msgid "- Upgrade Windows Service"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:7
+msgid "**Note**：You must shutdown seafile server before you upgrade."
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:8
+# header
+msgid "## Uncompress the new version of Seafile Server"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:10
+msgid "Before you upgrade, assume you have:"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:11
+# code block
+msgid "```\n"
+"C:/SeafileProgram\n"
+"             |______ seafile-server-3.0.0/\n"
+"```"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:15
+msgid "Then the first step is to download the new version of Seafile Server and uncompress it to ``C:/SeafileProgram``. After this you should have:"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:16
+# code block
+msgid "```\n"
+"C:/SeafileProgram\n"
+"             |______ seafile-server-3.0.0/\n"
+"             |______ seafile-server-3.1.0/\n"
+"```"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:21
+# header
+msgid "## Minor upgrade (like upgrade from 3.0.0 to 3.0.1)"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:23
+msgid "Now assume you are upgrading from Seafile Windows Server 3.0.0 to 3.0.1"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:24
+# header
+msgid "### Move the contents of the avatars folder"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:26
+msgid "Go to the folder ``seafile-server-3.0.0/seahub/media/avatars``"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:28
+msgid "The ``avatars`` folder contains all the avatars uploaded by seafile users."
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:30
+msgid "If you have a user ``foo@foo.com``, then in this folder, you will find a subfolder ``foo@foo.com``. This subfolder contains the avatar pictures of the user ``foo@foo.com``."
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:32
+msgid "Copy all subfolders like ``foo@foo.com`` to ``seafile-server-3.0.1/seahub/media/avatars``. So that when you start the new seafile 3.0.1 server, these avatars can be load correctly."
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:33
+# header
+msgid "## Major upgrade (like upgrade from 3.0.0 to 3.1.0)"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:35
+msgid "Now assume you are upgrading from Seafile Windows Server 3.0.x to 3.1.y:"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:37
+# header
+msgid "### Run the major upgrade script"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:39
+msgid "Run the database upgrade script"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:41
+# unordered list
+msgid "- Go to seafile-server-3.1.y/upgrade"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:42
+# unordered list
+msgid "- Right click the file `upgrade_3.0_3.1.bat`"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:43
+# unordered list
+msgid "- Choose \"run as administrator\""
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:45
+msgid "If you're using MySQL, you need to manually upgrade the database yourself:"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:47
+# unordered list
+msgid "- Go to the folder seafile-server-3.1.y/upgrade/sql/3.1.0/mysql/"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:48
+# unordered list
+msgid "- If there are a file `ccnet.sql`, run it with the `ccnet-db` database"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:49
+# code block
+msgid "```\n"
+"mysql ccnet-db < ccnet.sql\n"
+"```"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:52
+# unordered list
+msgid "- If there are a file `seafile.sql`, run it with the `seafile-db` database"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:53
+# code block
+msgid "```\n"
+"mysql ccnet-db < seafile.sql\n"
+"```"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:56
+# unordered list
+msgid "- If there are a file `seahub.sql`, run it with the `seahub-db` database"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:57
+# code block
+msgid "```\n"
+"mysql seahub-db < seafile.sql\n"
+"```"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:61
+# header
+msgid "### Copy avatars"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:63
+msgid "Copy all subfolders of ``seafile-server-3.0.0/seahub/media/avatars`` to ``seafile-server-3.1.0/seahub/media/avatars``"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:64
+# header
+msgid "## Upgrading Windows Service"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:66
+msgid "If you have installed Seafile server as a Windows Service, you need to:"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:68
+# unordered list
+msgid "- Run the old version of seafile windows server, right click the tray icon, and choose uninstall windows service in the menu"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:69
+# unordered list
+msgid "- Exit the old version of seafile windows server"
+msgstr ""
+
+#: deploy_windows/upgrading_seafile_windows_server.md:70
+# unordered list
+msgid "- Start the new version of seafile windows server, right click the tray icon, and choose install as windows service in the menu"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:1
+# header
+msgid "# Configure Seafile to use LDAP"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:3
+msgid "Note: This documentation is for the Community Edition. If you're using Pro Edition, please refer to [the Seafile Pro documentation|../deploy_pro/using_ldap_pro.md]."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:5
+# header
+msgid "## How does LDAP User Management Works in Seafile"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:7
+msgid "When Seafile is integrated with LDAP/AD, users in the system can be divided into two tiers:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:9
+# unordered list
+msgid "- Users within Seafile's internal user database. Some attributes are attached to these users, such as whether it's a system admin user, whether it's activated. This tier includes two types of users:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:10
+# unordered list
+msgid "    * Native users: these users are created by the admin on Seafile's system admin interface. These users are stored in the `EmailUser` table of the `ccnet` database."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:11
+# unordered list
+msgid "    * Users imported from LDAP/AD server: When a user in LDAP/AD logs into Seafile, its information will be imported from LDAP/AD server into Seafile's database. These users are stored in the `LDAPUsers` table of the `ccnet` database."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:12
+# unordered list
+msgid "- Users in LDAP/AD server. These are all the intended users of Seafile inside the LDAP server. Seafile doesn't manipulate these users directly. It has to import them into its internal database before setting attributes on them."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:14
+msgid "When Seafile counts the user number in the system, it only counts the **activated** users in its internal database."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:16
+msgid "When Seafile is integrated with LDAP/AD, it'll look up users from both the internal database and LDAP server. As long as the user exists in one of these two sources, it can log into the system."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:18
+# header
+msgid "## Basic LDAP/AD Integration"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:20
+msgid "The only requirement for Seafile to use LDAP/AD for authentication is that, there must be a unique identifier for each user in the LDAP/AD server. Seafile can only use email-address-format user identifiers. So there are usually only two options for this unique identifier:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:22
+# unordered list
+msgid "- Email address: this is the most common choice. Most organizations assign unique email address for each member."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:23
+# unordered list
+msgid "- UserPrincipalName: this is a user attribute only available in Active Directory. It's format is `user-login-name@domain-name`, e.g. `john@example.com`. It's not a real email address, but it works fine as the unique identifier."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:25
+# header
+msgid "### Connecting to Active Directory"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:27
+msgid "To use AD to authenticate user, please add the following lines to ccnet.conf."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:29
+msgid "If you choose email address as unique identifier:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:31
+#: deploy_windows/using_ldap.md:41
+#: deploy_windows/using_ldap.md:68
+msgid "    [LDAP]"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:32
+#: deploy_windows/using_ldap.md:42
+#: deploy_windows/using_ldap.md:69
+msgid "    HOST = 192.168.1.123"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:33
+#: deploy_windows/using_ldap.md:43
+#: deploy_windows/using_ldap.md:70
+msgid "    USE_SSL = false"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:34
+#: deploy_windows/using_ldap.md:44
+msgid "    BASE = cn=users,dc=example,dc=com"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:35
+#: deploy_windows/using_ldap.md:45
+msgid "    USER_DN = administrator@example.local"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:36
+#: deploy_windows/using_ldap.md:46
+#: deploy_windows/using_ldap.md:73
+msgid "    PASSWORD = secret"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:37
+#: deploy_windows/using_ldap.md:74
+msgid "    LOGIN_ATTR = mail"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:39
+msgid "If you choose UserPrincipalName as unique identifier:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:47
+msgid "    LOGIN_ATTR = userPrincipalName"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:49
+msgid "Meaning of each config options:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:51
+# unordered list
+msgid "* HOST: LDAP URL for the host. ldap://, ldaps:// and ldapi:// are supported. You can also include port number in the URL, like ldap://ldap.example.com:389. To use TLS, you should configure the LDAP server to listen on LDAPS port and specify ldaps:// here. More details about TLS will be covered below."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:52
+# unordered list
+msgid "* BASE: The root distinguished name (DN) to use when running queries against the directory server. **You cannot use the root DN (e.g. dc=example,dc=com) as BASE**."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:53
+# unordered list
+msgid "* USER_DN: The distinguished name of the user that Seafile will use when connecting to the directory server. This user should have sufficient privilege to access all the nodes under BASE. It's recommended to use a user in the administrator group."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:54
+# unordered list
+msgid "* PASSWORD: Password of the above user."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:55
+# unordered list
+msgid "* LOGIN_ATTR: The attribute used for user's unique identifier. Use `mail` or `userPrincipalName`."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:57
+msgid "Tips for choosing BASE and USER_DN:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:59
+# unordered list
+msgid "* To determine the BASE, you first have to navigate your organization hierachy on the domain controller GUI."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:60
+# unordered list
+msgid "    * If you want to allow all users to use Seafile, you can use 'cn=users,dc=yourdomain,dc=com' as BASE (with proper adjustment for your own needs)."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:61
+# unordered list
+msgid "    * If you want to limit users to a certain OU (Organization Unit), you run `dsquery` command on the domain controller to find out the DN for this OU. For example, if the OU is 'staffs', you can run 'dsquery ou -name staff'. More information can be found [here](https://technet.microsoft.com/en-us/library/cc770509.aspx)."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:62
+# unordered list
+msgid "* AD supports 'user@domain.name' format for the USER_DN option. For example you can use administrator@example.com for USER_DN. Sometime the domain controller doesn't recognize this format. You can still use `dsquery` command to find out user's DN. For example, if the user name is 'seafileuser', run `dsquery user -name seafileuser`. More information [here](https://technet.microsoft.com/en-us/library/cc725702.aspx)."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:64
+# header
+msgid "### Connecting to other LDAP servers"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:66
+msgid "Please add the following options to ccnet.conf:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:71
+msgid "    BASE = ou=users,dc=example,dc=com"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:72
+msgid "    USER_DN = cn=admin,dc=example,dc=com"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:76
+msgid "The meaning of the options are the same as described in the previous section. With other LDAP servers, you can only use `mail` attribute as user's unique identifier."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:78
+# header
+msgid "## Advanced LDAP/AD Integration Options"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:80
+# header
+msgid "### Multiple BASE"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:82
+msgid "Multiple base DN is useful when your company has more than one OUs to use Seafile. You can specify a list of base DN in the \"BASE\" config. The DNs are separated by \";\", e.g. `ou=developers,dc=example,dc=com;ou=marketing,dc=example,dc=com`"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:84
+# header
+msgid "### Additional Search Filter"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:86
+msgid "Search filter is very useful when you have a large organization but only a portion of people want to use Seafile. The filter can be given by setting \"FILTER\" config. The value of this option follows standard LDAP search filter syntax (https://msdn.microsoft.com/en-us/library/aa746475(v=vs.85).aspx)."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:88
+msgid "The final filter used for searching for users is `(&($LOGIN_ATTR=*)($FILTER))`. `$LOGIN_ATTR` and `$FILTER` will be replaced by your option values."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:90
+msgid "For example, add the following line to LDAP config:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:92
+# code block
+msgid "```\n"
+"FILTER = memberOf=CN=group,CN=developers,DC=example,DC=com\n"
+"```"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:96
+msgid "The final search filter would be `(&(mail=*)(memberOf=CN=group,CN=developers,DC=example,DC=com))`"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:98
+msgid "Note that the cases in the above example is significant. The `memberOf` attribute is only available in Active Directory."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:100
+# header
+msgid "### Limiting Seafile Users to a Group in Active Directory"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:102
+msgid "You can use the FILTER option to limit user scope to a certain AD group."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:104
+# ordered list
+msgid "1. First, you should find out the DN for the group. Again, we'll use `dsquery` command on the domain controller. For example, if group name is 'seafilegroup', run `dsquery group -name seafilegroup`."
+msgstr ""
+
+#: deploy_windows/using_ldap.md:105
+# ordered list
+msgid "2. Add following line to LDAP config:"
+msgstr ""
+
+#: deploy_windows/using_ldap.md:107
+# code block
+msgid "```\n"
+"FILTER = memberOf={output of dsquery command}\n"
+"```"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:2
+# header
+msgid "### Running seaf-fsck on corrupted repositories ###"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:4
+msgid "For the time being there is no batch file available for running `seaf-fsck.exe` in a Windows environment."
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:5
+msgid "To manually run `seaf-fsck.exe`, follow the following procedure (assuming you've installed Seafile server to `X:\\Seafile\\`:"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:7
+# ordered list
+msgid "1. Open a command prompt by following *either* of these steps"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:8
+# unordered list
+msgid "  - Click **Start**, **Run**, enter `cmd.exe` and then navigate to the binary folder by entering `cd /d X:\\Seafile\\seafile-server-5.x.x\\seafile\\bin`"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:9
+# unordered list
+msgid "  - Or, using the file explorer:"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:10
+# unordered list
+msgid "    * Navigate to the folder where the binaries are located (`X:\\Seafile\\seafile-server-5.x.x\\seafile\\bin`)"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:11
+# unordered list
+msgid "    * Hold shift and right click in free space to bring up the context menu, then select **Open command window here**"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:12
+# ordered list
+msgid "2. Enter the following inside the opened command prompt: `seaf-fsck.exe --repair -c Y:\\seafile-user\\ccnet -d Y:\\seafile-user\\seafile-data -F Y:\\seafile-user\\conf`"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:13
+# unordered list
+msgid "  - *seafile-user* is the folder your Seafile data is stored in"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:14
+# unordered list
+msgid "  - Make sure you are pointing `seaf-fsck.exe` towards the correct directory: *ccnet*, *seafile-data* and *conf* folders must be present"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:15
+# ordered list
+msgid "3. `seaf-fsck` should be running now"
+msgstr ""
+
+#: deploy_windows/windows_fsck.md:17
+msgid "For information on *seaf-fsck*, its usage and syntax, see the chapter [Seafile FSCK](../maintain/seafile_fsck.md)."
+msgstr ""
+
+#: deploy_windows/windows_gc.md:2
+# header
+msgid "### Garbage Collecting Unused Blocks on Seafile Server ###"
+msgstr ""
+
+#: deploy_windows/windows_gc.md:4
+# unordered list
+msgid "- Stop your seafile server by right clicking the server tray icon, and choose *Quit and shutdown Seafile Server*"
+msgstr ""
+
+#: deploy_windows/windows_gc.md:5
+# unordered list
+msgid "- In file explorer, navigate to the seafile program folder `seafile-server-3.x.x`"
+msgstr ""
+
+#: deploy_windows/windows_gc.md:6
+# unordered list
+msgid "- Right click the file **gc.bat**, and choose *Run with admin privileges*"
+msgstr ""
+
+#: deploy_windows/windows_gc.md:8
+msgid "The garbage collection program would run and remove all unused blocks."
+msgstr ""
+

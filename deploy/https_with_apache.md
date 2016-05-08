@@ -13,8 +13,7 @@ If you're using a custom CA to sign your SSL certificate, you have to enable cer
 
 ## Enable https on Seahub
 
-Assume you have configured Apache as [Deploy Seafile with
-Apache](deploy_with_apache.md). To use https, you need to enable mod_ssl
+Assume you have configured Apache as [Deploy Seafile with Apache](deploy_with_apache.md). To use https, you need to enable mod_ssl
 
 ```bash
     sudo a2enmod ssl

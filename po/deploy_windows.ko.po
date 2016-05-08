@@ -1,0 +1,2390 @@
+# Korean translation for the seafile-docs package.
+# This file is distributed under the same license as the seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-05-03 23:36:33+0900\n"
+"PO-Revision-Date: 2016-05-04 00:57+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+
+# header
+#: deploy_windows/deploy_with_apache.md:1
+msgid "# Deploy Seafile with Apache"
+msgstr "# Seafile과 Apache 가동"
+
+# header
+#: deploy_windows/deploy_with_apache.md:3 deploy_windows/deploy_with_mysql.md:3
+msgid "## Preparation"
+msgstr "## 준비"
+
+# header
+#: deploy_windows/deploy_with_apache.md:5
+msgid "### Install mod_fastcgi"
+msgstr "### mod_fastcgi 설치"
+
+#: deploy_windows/deploy_with_apache.md:7
+msgid ""
+"Download [mod_fastcgi-*.dll] (http://fastcgi.com/dist/) first, and put it "
+"into the `modules/` directory of your Apache installation."
+msgstr ""
+"[mod_fastcgi-*.dll] (http://fastcgi.com/dist/)를 우선 다운로드하고, 아파치 설"
+"치 경로의 `modules/` 디렉터리에 복사하십시오."
+
+#: deploy_windows/deploy_with_apache.md:9
+msgid ""
+"**Note**: You must download the right version of `mod_fastcgi` DLL according "
+"for your Apache. For example:"
+msgstr ""
+"**참고**: Apache 버전에 맞는 `mod_fastcgi`를 다운로드해야 합니다. 그러니까 이"
+"를테면:"
+
+# unordered list
+#: deploy_windows/deploy_with_apache.md:11
+msgid ""
+"- If you are using Apache 2.2, you should download http://fastcgi.com/dist/"
+"mod_fastcgi-2.4.6-AP22.dll. The **AP22** part of the dll indicate it's for "
+"Apache **2.2**."
+msgstr ""
+"- Apache 2.2를 사용한다면 http://fastcgi.com/dist/mod_fastcgi-2.4.6-AP22.dll "
+"을 다운로드하십시오. dll의 **AP22**부분은 Apache **2.2**를 나타냅니다."
+
+# unordered list
+#: deploy_windows/deploy_with_apache.md:12
+msgid ""
+"- If you are using Apache 2.0, you should download http://fastcgi.com/dist/"
+"old/mod_fastcgi-2.4.2-AP20.dll"
+msgstr ""
+"- Apache 2.0을 사용한다면 http://fastcgi.com/dist/old/mod_fastcgi-2.4.2-AP20."
+"dll 을 다운로드하십시오"
+
+# header
+#: deploy_windows/deploy_with_apache.md:14
+msgid "## Deploy Seahub/FileServer With Apache"
+msgstr "## Seahub/FileServer와 Apache 가동"
+
+#: deploy_windows/deploy_with_apache.md:16
+#: deploy_windows/deploy_with_nginx.md:5
+msgid ""
+"Seahub is the web interface of Seafile server. FileServer is used to handle "
+"raw file uploading/downloading through browsers. By default, it listens on "
+"port 8082 for HTTP request."
+msgstr ""
+"Seahub는 Seafile 서버의 웹 인터페이스입니다. FileServer는 브라우저로 원시 파"
+"일을 업로드/다운로드하는 동작을 처리할 때 사용합니다. 기본적으로, http 요청"
+"을 8082번 포트에서 대기합니다."
+
+#: deploy_windows/deploy_with_apache.md:18
+#: deploy_windows/deploy_with_nginx.md:7
+msgid ""
+"Here we deploy Seahub using fastcgi, and deploy FileServer with reverse "
+"proxy. We assume you are running Seahub using domain '''www.myseafile.com'''."
+msgstr ""
+"fastcgi로 Seahub를 가동하고 FileServer를 역방향 프록시로 가동하겠습니다. 여기"
+"서 가동 중인 Seahub는 '''www.myseafile.com''' 도메인을 활용한다고 가정하겠습"
+"니다."
+
+# header
+#: deploy_windows/deploy_with_apache.md:20
+msgid "### Edit httpd.conf"
+msgstr "### httpd.conf 편집"
+
+#: deploy_windows/deploy_with_apache.md:22
+msgid ""
+"First edit your `httpd.conf`. Add the following lines to **the end of the "
+"file**:"
+msgstr ""
+"우선 `httpd.conf`를 편집하십시오. **파일 마지막 부분**에 다음 줄을 추가하십시"
+"오:"
+
+# code block
+#: deploy_windows/deploy_with_apache.md:24
+msgid ""
+"```\n"
+"LoadModule fastcgi_module modules/mod_fastcgi-2.4.6-AP22.dll\n"
+"LoadModule rewrite_module modules/mod_rewrite.so\n"
+"LoadModule proxy_module modules/mod_proxy.so\n"
+"LoadModule proxy_http_module modules/mod_proxy_http.so\n"
+"Include conf/extra/httpd-vhosts.conf\n"
+"```"
+msgstr ""
+"```\n"
+"LoadModule fastcgi_module modules/mod_fastcgi-2.4.6-AP22.dll\n"
+"LoadModule rewrite_module modules/mod_rewrite.so\n"
+"LoadModule proxy_module modules/mod_proxy.so\n"
+"LoadModule proxy_http_module modules/mod_proxy_http.so\n"
+"Include conf/extra/httpd-vhosts.conf\n"
+"```"
+
+#: deploy_windows/deploy_with_apache.md:32
+msgid ""
+"Then add this line (substitute `YourDocumentRoot` with the value of your "
+"apache `DocumentRoot`)"
+msgstr ""
+"그 다음 이 줄을 추가하십시오(`YourDocumentRoot`를 Apache의 `DocumentRoot` 값"
+"으로 바꾸십시오)"
+
+# code block
+#: deploy_windows/deploy_with_apache.md:34
+msgid ""
+"```\n"
+"FastCGIExternalServer \"YourDocumentRoot/seahub.fcgi\" -host 127.0.0.1:8000\n"
+"```"
+msgstr ""
+"```\n"
+"FastCGIExternalServer \"YourDocumentRoot/seahub.fcgi\" -host 127.0.0.1:8000\n"
+"```"
+
+#: deploy_windows/deploy_with_apache.md:38
+msgid ""
+"Note, `seahub.fcgi` is just a placeholder, you don't need to actually have "
+"this file in your system."
+msgstr ""
+"참고로, `seahub.fcgi`는 일종의 빈 칸 역할을 하며, 실제로 이 파일을 시스템에 "
+"둘 필요는 없습니다."
+
+# header
+#: deploy_windows/deploy_with_apache.md:40
+msgid "### Edit your httpd-vhosts.conf"
+msgstr "### httpd-vhost.conf 편집"
+
+#: deploy_windows/deploy_with_apache.md:42
+msgid ""
+"Assume you have uncompresssed seafile server into `C:/SeafileProgram/seafile-"
+"pro-server-2.1.4`."
+msgstr ""
+"Seafile 서버 꾸러미 압축을 `C:/SeafileProgram/seafile-pro-server-2.1.4`에 풀"
+"었다고 가정하겠습니다."
+
+# code block
+#: deploy_windows/deploy_with_apache.md:44
+msgid ""
+"```\n"
+"<VirtualHost *:80>\n"
+"  ServerName www.myseafile.com\n"
+"  Alias /media  \"C:/SeafileProgram/seafile-pro-server-2.1.4/seahub/media\"\n"
+"\n"
+"  RewriteEngine On\n"
+"\n"
+"  #\n"
+"  # seafile fileserver\n"
+"  #\n"
+"  ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"  ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"  RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"  #\n"
+"  # seahub\n"
+"  #\n"
+"  RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]\n"
+"  RewriteCond %{REQUEST_FILENAME} !-f\n"
+"  RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:"
+"Authorization}]\n"
+"</VirtualHost>\n"
+"\n"
+"<Directory \"C:/SeafileProgram/seafile-pro-server-2.1.4/seahub/media\">\n"
+"    Options Indexes FollowSymLinks\n"
+"    AllowOverride None\n"
+"    Order allow,deny\n"
+"    Allow from all\n"
+"</Directory>\n"
+"```"
+msgstr ""
+"```\n"
+"<VirtualHost *:80>\n"
+"  ServerName www.myseafile.com\n"
+"  Alias /media  \"C:/SeafileProgram/seafile-pro-server-2.1.4/seahub/media\"\n"
+"\n"
+"  RewriteEngine On\n"
+"\n"
+"  #\n"
+"  # seafile fileserver\n"
+"  #\n"
+"  ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"  ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"  RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"  #\n"
+"  # seahub\n"
+"  #\n"
+"  RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]\n"
+"  RewriteCond %{REQUEST_FILENAME} !-f\n"
+"  RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:"
+"Authorization}]\n"
+"</VirtualHost>\n"
+"\n"
+"<Directory \"C:/SeafileProgram/seafile-pro-server-2.1.4/seahub/media\">\n"
+"    Options Indexes FollowSymLinks\n"
+"    AllowOverride None\n"
+"    Order allow,deny\n"
+"    Allow from all\n"
+"</Directory>\n"
+"```"
+
+# header
+#: deploy_windows/deploy_with_apache.md:74
+#: deploy_windows/deploy_with_nginx.md:49
+msgid "## Modify Configurations"
+msgstr "## 설정 수정"
+
+# header
+#: deploy_windows/deploy_with_apache.md:76
+#: deploy_windows/deploy_with_nginx.md:51
+msgid "### Modify ccnet.conf"
+msgstr "### ccnet.conf 수정"
+
+# code block
+#: deploy_windows/deploy_with_apache.md:79
+#: deploy_windows/deploy_with_nginx.md:54
+msgid ""
+"```\n"
+"SERVICE_URL = http://www.myseafile.com\n"
+"```"
+msgstr ""
+"```\n"
+"SERVICE_URL = http://www.myseafile.com\n"
+"```"
+
+#: deploy_windows/deploy_with_apache.md:83
+#: deploy_windows/deploy_with_nginx.md:58
+msgid ""
+"Note: If you later change the domain assigned to seahub, you also need to "
+"change the value of  <code>SERVICE_URL</code>."
+msgstr ""
+"참고: Seahub에 할당한 도메인을 나중에 바꾸면 <code>SERVICE_URL</code>의 값도 "
+"바꿔야합니다."
+
+# header
+#: deploy_windows/deploy_with_apache.md:85
+#: deploy_windows/deploy_with_nginx.md:60
+msgid "### Modify seafile-data/seafile.conf"
+msgstr "### seafile-data/seafile.conf 수정"
+
+#: deploy_windows/deploy_with_apache.md:87
+#: deploy_windows/deploy_with_nginx.md:62
+msgid "Modify the `seahub` section of `seafile-data/seafile.conf`:"
+msgstr "`seafile-data/seafile.conf`의 `seahub` 섹션을 수정하십시오:"
+
+# code block
+#: deploy_windows/deploy_with_apache.md:89
+#: deploy_windows/deploy_with_nginx.md:64
+msgid ""
+"```\n"
+"[seahub]\n"
+"port=8000\n"
+"fastcgi=true\n"
+"```"
+msgstr ""
+"```\n"
+"[seahub]\n"
+"port=8000\n"
+"fastcgi=true\n"
+"```"
+
+# header
+#: deploy_windows/deploy_with_apache.md:95
+#: deploy_windows/deploy_with_nginx.md:70
+msgid "### Modify seahub_settings.py"
+msgstr "### seahub_settings.py 수정"
+
+#: deploy_windows/deploy_with_apache.md:97
+#: deploy_windows/deploy_with_nginx.md:72
+msgid ""
+"You need to add a line in <code>seahub_settings.py</code> to set the value "
+"of `FILE_SERVER_ROOT`"
+msgstr ""
+"<code>seahub_settings.py</code>에 다음 줄을 추가하여 `FILE_SERVER_ROOT` 값을 "
+"설정하십시오"
+
+# code block
+#: deploy_windows/deploy_with_apache.md:99
+#: deploy_windows/deploy_with_nginx.md:74
+msgid ""
+"```\n"
+"FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'\n"
+"```"
+msgstr ""
+"```\n"
+"FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'\n"
+"```"
+
+# header
+#: deploy_windows/deploy_with_apache.md:103
+#: deploy_windows/deploy_with_nginx.md:78
+msgid "## Notes when Upgrading Seafile Server"
+msgstr "## Seafile 서버 업그레이드 참고"
+
+#: deploy_windows/deploy_with_apache.md:105
+msgid ""
+"When upgrading seafile server, besides the normal steps you should take, "
+"there is one extra step to do: '''Update the path of the static files in "
+"your apache configuration'''. For example, assume your are upgrading seafile "
+"server 2.1.4 to 2.1.5, then:"
+msgstr ""
+"Seafile 서버 업그레이드시, 진행해야 할 과정 말고도, 추가로 진행해야 할 일이 "
+"있습니다: '''nginx 설정에 있는 정적 파일의 경로를 업데이트하십시오'''. 예를 "
+"들자면, Seafile 서버를 2.1.4에서 2.1.5로 업그레이드한다면:"
+
+# code block
+#: deploy_windows/deploy_with_apache.md:107
+msgid ""
+"```\n"
+"<VirtualHost *:80>\n"
+"  ...\n"
+"  Alias /media  \"C:/SeafileProgram/seafile-pro-server-2.1.5/seahub/media\"\n"
+"  ...\n"
+"</VirtualHost>\n"
+"\n"
+"<Directory \"C:/SeafileProgram/seafile-pro-server-2.1.5/seahub/media\">\n"
+"  ...\n"
+"</Directory>\n"
+"```"
+msgstr ""
+"```\n"
+"<VirtualHost *:80>\n"
+"  ...\n"
+"  Alias /media  \"C:/SeafileProgram/seafile-pro-server-2.1.5/seahub/media\"\n"
+"  ...\n"
+"</VirtualHost>\n"
+"\n"
+"<Directory \"C:/SeafileProgram/seafile-pro-server-2.1.5/seahub/media\">\n"
+"  ...\n"
+"</Directory>\n"
+"```"
+
+# header
+#: deploy_windows/deploy_with_mysql.md:1
+msgid "# Deploy Seafile Windows Server With MySQL"
+msgstr "# Seafile 윈도우 서버 및 MySQL 가동"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:5
+#: deploy_windows/deploy_with_windows.md:7
+msgid ""
+"- [Download and Setup Seafile Windows Server]"
+"(download_and_setup_seafile_windows_server.md)"
+msgstr ""
+"- [Seafile 윈도우 서버 다운로드 및 설치]"
+"(download_and_setup_seafile_windows_server.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:6
+msgid "- Stop seafile windows server"
+msgstr "- Seafile 윈도우 서버를 멈추십시오"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:7
+msgid "  - Right click the seafile server tray icon"
+msgstr ""
+"  - Seafile 서버 트레이 아이콘에 마우스 커서를 두고 마우스 오른쪽 단추를 누르"
+"십시오"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:8
+msgid "  - Choose \"Quit and shutdown Seafile Server\""
+msgstr "  - \"Seafile 서버 끝내기\"를 선택하십시오"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:9
+msgid "- Make sure your MySQL server is running"
+msgstr "- MySQL 서버가 동작 중인지 확인하십시오"
+
+# header
+#: deploy_windows/deploy_with_mysql.md:11
+msgid "### Install MySQL-python Library"
+msgstr "### MySQL-python 라이브러리 설치"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:13
+msgid ""
+"- download the windows installer from https://pypi.python.org/pypi/MySQL-"
+"python/1.2.4"
+msgstr ""
+"- https://pypi.python.org/pypi/MySQL-python/1.2.4 에서 윈도우 설치 프로그램"
+"을 다운로드하십시오"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:14
+msgid "- install it by double clicking the downloaded exe file"
+msgstr "- 다운로드한 exe 파일을 두 번 눌러 설치하십시오"
+
+# header
+#: deploy_windows/deploy_with_mysql.md:16
+msgid "## Create MySQL Databases"
+msgstr "## MySQL 데이터베이스 만들기"
+
+#: deploy_windows/deploy_with_mysql.md:18
+msgid "You need to create:"
+msgstr "다음을 만들어야합니다:"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:20
+msgid "- databases for ccnet/seafile/seahub"
+msgstr "- ccnet/seafile/seahub 데이터베이스"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:21
+msgid "- a new user to access these databases"
+msgstr "- 이 데이터베이스에 접근할 새 사용자"
+
+#: deploy_windows/deploy_with_mysql.md:23
+msgid ""
+"Open a termial (cmd, Win + R, cmd) and login to mysql with a privileged user:"
+msgstr ""
+"터미널(cmd, Win + R, cmd)을 열고 허가 받은 사용자로 MySQL에 로그인하십시오:"
+
+# code block
+#: deploy_windows/deploy_with_mysql.md:24
+msgid ""
+"```\n"
+"mysql -u root -p\n"
+"```"
+msgstr ""
+"```\n"
+"mysql -u root -p\n"
+"```"
+
+#: deploy_windows/deploy_with_mysql.md:28
+msgid "Execute these SQL setences on your mysql server:"
+msgstr "MySQL 서버에서 아래 SQL 구문을 실행하십시오:"
+
+# code block
+#: deploy_windows/deploy_with_mysql.md:30
+msgid ""
+"```\n"
+"create database `ccnet-db` character set = 'utf8';\n"
+"create database `seafile-db` character set = 'utf8';\n"
+"create database `seahub-db` character set = 'utf8';\n"
+"\n"
+"create user 'seafile'@'localhost' identified by 'your secure password';\n"
+"\n"
+"GRANT ALL PRIVILEGES ON `ccnet-db`.* to `seafile`;\n"
+"GRANT ALL PRIVILEGES ON `seafile-db`.* to `seafile`;\n"
+"GRANT ALL PRIVILEGES ON `seahub-db`.* to `seafile`;\n"
+"```"
+msgstr ""
+"```\n"
+"create database `ccnet-db` character set = 'utf8';\n"
+"create database `seafile-db` character set = 'utf8';\n"
+"create database `seahub-db` character set = 'utf8';\n"
+"\n"
+"create user 'seafile'@'localhost' identified by 'your secure password';\n"
+"\n"
+"GRANT ALL PRIVILEGES ON `ccnet-db`.* to `seafile`;\n"
+"GRANT ALL PRIVILEGES ON `seafile-db`.* to `seafile`;\n"
+"GRANT ALL PRIVILEGES ON `seahub-db`.* to `seafile`;\n"
+"```"
+
+# header
+#: deploy_windows/deploy_with_mysql.md:42
+msgid "## Modify Your Seafile Configuations"
+msgstr "## Seafile 설정 수정"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:44
+msgid "* Append the following lines to **ccnet/ccnet.conf**:"
+msgstr "* 다음 줄을 **ccnet/ccnet.conf**에 추가하십시오:"
+
+# code block
+#: deploy_windows/deploy_with_mysql.md:46
+msgid ""
+"```\n"
+"[Database]\n"
+"ENGINE=mysql\n"
+"HOST=localhost\n"
+"USER=seafile\n"
+"PASSWD=your secure password\n"
+"DB=ccnet-db\n"
+"```"
+msgstr ""
+"```\n"
+"[Database]\n"
+"ENGINE=mysql\n"
+"HOST=localhost\n"
+"USER=seafile\n"
+"PASSWD=your secure password\n"
+"DB=ccnet-db\n"
+"```"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:55
+msgid "* Edit the `database` section of **seafile-data/seafile.conf**:"
+msgstr "* **seafile-data/seafile.conf**에 `database` 섹션을 편집하십시오:"
+
+# code block
+#: deploy_windows/deploy_with_mysql.md:57
+msgid ""
+"```\n"
+"[database]\n"
+"type=mysql\n"
+"host=localhost\n"
+"user=seafile\n"
+"password=your secure password\n"
+"db_name=seafile-db\n"
+"```"
+msgstr ""
+"```\n"
+"[database]\n"
+"type=mysql\n"
+"host=localhost\n"
+"user=seafile\n"
+"password=your secure password\n"
+"db_name=seafile-db\n"
+"```"
+
+# unordered list
+#: deploy_windows/deploy_with_mysql.md:66
+msgid "* Append following lines to **seahub_settings.py**"
+msgstr "* 다음 줄을 **seahub_settings.py** 에 추가하십시오"
+
+# code block
+#: deploy_windows/deploy_with_mysql.md:68
+msgid ""
+"```\n"
+"DATABASES = {\n"
+"    'default': {\n"
+"        'ENGINE': 'django.db.backends.mysql',\n"
+"        'NAME' : 'seahub-db',\n"
+"        'USER' : 'seafile',\n"
+"        'PASSWORD' : 'your secure password',\n"
+"        'HOST' : 'localhost',\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+"```\n"
+"DATABASES = {\n"
+"    'default': {\n"
+"        'ENGINE': 'django.db.backends.mysql',\n"
+"        'NAME' : 'seahub-db',\n"
+"        'USER' : 'seafile',\n"
+"        'PASSWORD' : 'your secure password',\n"
+"        'HOST' : 'localhost',\n"
+"    }\n"
+"}\n"
+"```"
+
+# header
+#: deploy_windows/deploy_with_mysql.md:80
+msgid "### Create Database Tables for Seahub"
+msgstr "### Seahub 데이터베이스 테이블 만들기"
+
+#: deploy_windows/deploy_with_mysql.md:82
+msgid "Now we create the database tables for seahub."
+msgstr "이제 Seahub에서 사용할 데이터베이스 테이블을 만들겠습니다."
+
+#: deploy_windows/deploy_with_mysql.md:84
+msgid ""
+"Assume you have uncompressed seafile server to `C:/SeafileProgram/seafile-"
+"pro-server-3.1.3`,"
+msgstr ""
+"Seafile 서버 꾸러미 압축을 `C:/SeafileProgram/seafile-pro-server-3.1.3`에 풀"
+"었다고 가정하겠습니다."
+
+#: deploy_windows/deploy_with_mysql.md:86
+msgid "Open a window command line prompt, and execute the following command:"
+msgstr "윈도우 명령 프롬프트를 열고 다음 명령을 실행하십시오:"
+
+# code block
+#: deploy_windows/deploy_with_mysql.md:88
+msgid ""
+"```\n"
+"mysql -u seafile -p seahub-db < C:/SeafileProgram/seafile-server-3.1.3/"
+"seahub/sql/mysql.sql\n"
+"```"
+msgstr ""
+"```\n"
+"mysql -u seafile -p seahub-db < C:/SeafileProgram/seafile-server-3.1.3/"
+"seahub/sql/mysql.sql\n"
+"```"
+
+# header
+#: deploy_windows/deploy_with_mysql.md:92
+msgid "## Done"
+msgstr "## 완료"
+
+#: deploy_windows/deploy_with_mysql.md:94
+msgid "Now you can start your seafile server."
+msgstr "이제 Seafile 서버를 시작할 수 있습니다."
+
+# header
+#: deploy_windows/deploy_with_nginx.md:1
+msgid "# Deploy Seafile with Nginx"
+msgstr "# Seafile과 Nginx 가동"
+
+# header
+#: deploy_windows/deploy_with_nginx.md:3
+msgid "## Deploy Seahub/FileServer with Nginx"
+msgstr "## Seahub/FileServer와 Nginx 가동"
+
+#: deploy_windows/deploy_with_nginx.md:9
+msgid "This is a sample Nginx config file."
+msgstr "아래는 Nginx 설정 파일 예제입니다."
+
+# code block
+#: deploy_windows/deploy_with_nginx.md:11
+msgid ""
+"```\n"
+"server {\n"
+"    listen 80;\n"
+"    server_name www.myseafile.com;\n"
+"\n"
+"    proxy_set_header X-Forwarded-For $remote_addr;\n"
+"\n"
+"    location / {\n"
+"        fastcgi_pass    127.0.0.1:8000;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root"
+"$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param\tSERVER_PROTOCOL\t    $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param\tSERVER_ADDR         $server_addr;\n"
+"        fastcgi_param\tSERVER_PORT         $server_port;\n"
+"        fastcgi_param\tSERVER_NAME         $server_name;\n"
+"        fastcgi_param   REMOTE_ADDR         $remote_addr;\n"
+"\n"
+"        access_log      logs/seahub.access.log;\n"
+"        error_log       logs/seahub.error.log;\n"
+"    }\n"
+"\n"
+"    location /seafhttp {\n"
+"        rewrite ^/seafhttp(.*)$ $1 break;\n"
+"        proxy_pass http://127.0.0.1:8082;\n"
+"        client_max_body_size 0;\n"
+"    }\n"
+"\n"
+"    location /media {\n"
+"        root C:/SeafileProgram/seafile-pro-server-2.1.4/seahub;\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+"```\n"
+"server {\n"
+"    listen 80;\n"
+"    server_name www.myseafile.com;\n"
+"\n"
+"    proxy_set_header X-Forwarded-For $remote_addr;\n"
+"\n"
+"    location / {\n"
+"        fastcgi_pass    127.0.0.1:8000;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root"
+"$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param\tSERVER_PROTOCOL\t    $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param\tSERVER_ADDR         $server_addr;\n"
+"        fastcgi_param\tSERVER_PORT         $server_port;\n"
+"        fastcgi_param\tSERVER_NAME         $server_name;\n"
+"        fastcgi_param   REMOTE_ADDR         $remote_addr;\n"
+"\n"
+"        access_log      logs/seahub.access.log;\n"
+"        error_log       logs/seahub.error.log;\n"
+"    }\n"
+"\n"
+"    location /seafhttp {\n"
+"        rewrite ^/seafhttp(.*)$ $1 break;\n"
+"        proxy_pass http://127.0.0.1:8082;\n"
+"        client_max_body_size 0;\n"
+"    }\n"
+"\n"
+"    location /media {\n"
+"        root C:/SeafileProgram/seafile-pro-server-2.1.4/seahub;\n"
+"    }\n"
+"}\n"
+"```"
+
+#: deploy_windows/deploy_with_nginx.md:80
+msgid ""
+"When upgrading seafile server, besides the normal steps you should take, "
+"there is one extra step to do: '''Update the path of the static files in "
+"your nginx configuration'''. For example, assume your are upgrading seafile "
+"server 2.1.0 to 2.1.1, then:"
+msgstr ""
+"Seafile 서버 업그레이드시, 진행해야 할 과정 말고도, 추가로 진행해야 할 일이 "
+"있습니다: '''nginx 설정에 있는 정적 파일의 경로를 업데이트하십시오'''. 예를 "
+"들자면, Seafile 서버를 2.1.0에서 2.1.1로 업그레이드한다면:"
+
+# code block
+#: deploy_windows/deploy_with_nginx.md:82
+msgid ""
+"```\n"
+"    location /media {\n"
+"        root C:/SeafileProgram/seafile-pro-server-2.1.1/seahub;\n"
+"    }\n"
+"```"
+msgstr ""
+"```\n"
+"    location /media {\n"
+"        root C:/SeafileProgram/seafile-pro-server-2.1.1/seahub;\n"
+"    }\n"
+"```"
+
+# header
+#: deploy_windows/deploy_with_windows.md:1
+msgid "# Deploy with Windows"
+msgstr "# 윈도우에서 가동"
+
+# header
+#: deploy_windows/deploy_with_windows.md:3
+msgid "## Setup and Upgrade"
+msgstr "## 설치 및 업그레이드"
+
+#: deploy_windows/deploy_with_windows.md:5
+msgid "Seafile Windows Community Edition supports SQLite/MySQL database."
+msgstr "Seafile 윈도우 커뮤니티판은 SQLite/MySQL 데이터베이스를 지원합니다."
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:8
+#: deploy_windows/download_and_setup_seafile_windows_server.md:64
+msgid "- [Deploy Seafile with MySQL](deploy_with_mysql.md)"
+msgstr "- [Seafile과 MySQL 가동](deploy_with_mysql.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:9
+#: deploy_windows/download_and_setup_seafile_windows_server.md:65
+msgid "- [Deploy Seafile with Apache](deploy_with_apache.md)"
+msgstr "- [Seafile과 Apache 가동](deploy_with_apache.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:10
+#: deploy_windows/download_and_setup_seafile_windows_server.md:66
+msgid "- [Deploy Seafile with Nginx](deploy_with_nginx.md)"
+msgstr "- [Seafile과 Nginx 가동](deploy_with_nginx.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:11
+#: deploy_windows/download_and_setup_seafile_windows_server.md:67
+msgid "- [LDAP Integration](../deploy/using_ldap.md)"
+msgstr "- [LDAP 통합](../deploy/using_ldap.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:12
+#: deploy_windows/download_and_setup_seafile_windows_server.md:68
+msgid ""
+"- [Install Seafile Server as a Windows Service]"
+"(install_seafile_server_as_a_windows_service.md)"
+msgstr ""
+"- [Seafile 서버를 윈도우 서비스로 설치]"
+"(install_seafile_server_as_a_windows_service.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:13
+#: deploy_windows/download_and_setup_seafile_windows_server.md:69
+msgid ""
+"- [Ports used by Seafile Windows Server]"
+"(ports_used_by_seafile_windows_server.md)"
+msgstr ""
+"- [Seafile 윈도우 서버에서 사용하는 포트]"
+"(ports_used_by_seafile_windows_server.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:14
+#: deploy_windows/download_and_setup_seafile_windows_server.md:70
+msgid ""
+"- [Upgrading Seafile Windows Server](upgrading_seafile_windows_server.md)"
+msgstr ""
+"- [Seafile 윈도우 서버 업그레이드](upgrading_seafile_windows_server.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:15
+msgid "- [Options & Customization](../config/README.md)"
+msgstr "- [설정 항목 및 개별 설정](../config/README.md)"
+
+#: deploy_windows/deploy_with_windows.md:17
+msgid ""
+"For more information on Seafile server, check the documents on [Seafile "
+"Linux version](../deploy/README.md)"
+msgstr ""
+"Seafile 서버에 대한 자세한 내용은, [Seafile 리눅스 버전](../deploy/README."
+"md) 문서를 확인하십시오"
+
+# header
+#: deploy_windows/deploy_with_windows.md:19
+msgid "## Server Administration"
+msgstr "## 서버 관리"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:21
+msgid "- [Garbage Collecting Unused Blocks on Seafile Server](windows_gc.md)"
+msgstr "- [Seafile 서버에서 사용하지 않는 블록 가비지 수집](windows_gc.md)"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:22
+msgid "- [Running seaf-fsck on corrupted repositories](windows_fsck.md)"
+msgstr "- [손상된 저장소에서 seaf-fsck 실행](windows_fsck.md)"
+
+# header
+#: deploy_windows/deploy_with_windows.md:24
+msgid "## Common Issues"
+msgstr "## 일반 문제"
+
+#: deploy_windows/deploy_with_windows.md:26
+msgid ""
+"If you failed to set up Seafile server, first check seafserv-applet.log."
+msgstr ""
+"Seafile 서버 설치에 실패했다면 seafserv-applet.log를 우선 확인하십시오."
+
+# header
+#: deploy_windows/deploy_with_windows.md:27
+msgid "### \"ERROR: D:/seafile-server\\seahub.db not found\""
+msgstr "### \"ERROR: D:/seafile-server\\seahub.db not found\""
+
+#: deploy_windows/deploy_with_windows.md:29
+msgid "This file is created during Seafile initialization. Please:"
+msgstr "이 파일은 Seafile 초기화 과정에서 만듭니다. 다음 과정을 행하십시오:"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:31
+msgid ""
+"- Check whether your Python and the ``PATH`` for Python is correctly set."
+msgstr "- 파이썬 및 파이썬 ``PATH`` 값을 올바르게 설정했는지 확인하십시오."
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:32
+msgid ""
+"- Put Seafile server package in a simple path, like ``C:\\seafile-packages``."
+msgstr ""
+"- Seafile 서버 꾸러미를 ``C:\\seafile-packages``와 같은 단순 경로에 복사하십"
+"시오."
+
+# header
+#: deploy_windows/deploy_with_windows.md:34
+msgid "### Failed to create seahub.db"
+msgstr "### seahub.db 만들기 실패"
+
+#: deploy_windows/deploy_with_windows.md:36
+msgid "Use python version 2.7.4 32bit, do not use python 3+."
+msgstr "파이쏜 2.7.4 32비트 버전을 쓰시고 3 이상의 버전은 사용하지 마십시오."
+
+# header
+#: deploy_windows/deploy_with_windows.md:37
+msgid "### Can not upload/download files in the Web interface"
+msgstr "### 웹 인터페이스에서 파일 업로드/다운로드가 안됩니다"
+
+#: deploy_windows/deploy_with_windows.md:39
+msgid "Make sure you have modified ``SERVICE_URL`` in ccnet.conf."
+msgstr "ccnet.conf에서 ``SERVICE_URL``을 수정했는지 확인하십시오."
+
+# header
+#: deploy_windows/deploy_with_windows.md:41
+msgid "### The browser can't get the css and javascript files"
+msgstr "### 브라우저에서 css 및 자바스크립트 파일이 안뜹니다"
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:43
+msgid ""
+"- Use python 2.7.4 32bit. If you have installed other python version, "
+"uninstall it and install python 2.7.4. Restart seafile server to see whether "
+"the problem has gone."
+msgstr ""
+"- 파이썬 2.7.4 32비트 버전을 사용하십시오. 다른 파이썬 버전을 설치했다면, 설"
+"치를 제거하고 파이썬 2.7.4를 설치하십시오. Seafile 서버를 다시 시작하여 문제"
+"를 해결했는지 확인하십시오."
+
+# unordered list
+#: deploy_windows/deploy_with_windows.md:44
+msgid ""
+"- Delete non-ASCII keys from the registry path ``HKEY_CLASSES_ROOT\\MIME"
+"\\Database\\Content`` Type, and try again."
+msgstr ""
+"- 레지스트리 경로 형식 ``HKEY_CLASSES_ROOT\\MIME\\Database\\Content``에서 비 "
+"아스키 키를 삭제하고 다시 시도하십시오."
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:1
+msgid "# Download and Setup Seafile Windows Server"
+msgstr "# Seafile 윈도우 서버 다운로드 및 설치"
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:3
+msgid "## Download/Uncompress"
+msgstr "## 다운로드/압축 해제"
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:4
+msgid "### Install Python 2.7.4 32bit"
+msgstr "### 파이썬 2.7.4 32비트 버전 설치"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:6
+msgid ""
+"- Download and install [python 2.7.4 32bit](http://python.org/ftp/"
+"python/2.7.4/python-2.7.4.msi)"
+msgstr ""
+"- [파이썬 2.7.4 32비트 버전](http://python.org/ftp/python/2.7.4/python-2.7.4."
+"msi)을 다운로드하고 설치하십시오"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:7
+msgid ""
+"- Add the installation path of python2.7 to the system PATH environment "
+"variable. If you installed python 2.7 to ``C:\\Python27`` add ``C:"
+"\\Python27`` to the PATH environment variable"
+msgstr ""
+"- 파이썬 2.7의 설치 경로를 시스템 PATH 환경 변수에 추가하십시오. 파이썬 2.7"
+"을 ``C:\\Python27``에 설치했다면 PATH 환경 변수에 ``C:\\Python27``을 추가하십"
+"시오"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:10
+msgid ""
+"**Warning**: Be sure to use Python 2.7.4 32bit. 64 bit and other versions "
+"can't work."
+msgstr ""
+"**경고**: 파이썬 2.7.4 32비트 버전을 사용하는지 확인하십시오. 64비트 버전이거"
+"나 다른 버전에서는 동작하지 않습니다."
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:12
+msgid "### Download/Uncompress Seafile Server"
+msgstr "### Seafile 서버 다운로드 및 압축 해제"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:14
+msgid "- Get the latest version of Seafile Server program"
+msgstr "- Seafile 서버 프로그램 최신 버전을 가져오십시오"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:15
+msgid ""
+"- Create a new folder to store seafile program, such as ``C:\\SeafileProgram"
+"\\``. Please remember the location of the folder, we'll use it later."
+msgstr ""
+"- ``C:\\SeafileProgram\\``과 같이 Seafile 프로그램을 저장할 새 폴더를 만드십"
+"시오. 폴더 위치를 기억하십시오. 나중에 활용합니다."
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:16
+msgid ""
+"- Uncompress ``seafile-server_5.0.3_win32.tar.gz`` to ``C:\\SeafileProgram"
+"\\``"
+msgstr ""
+"-  ``seafile-server_5.0.3_win32.tar.gz`` 파일을 ``C:\\SeafileProgram\\`` 폴더"
+"에 압축 해제하십시오"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:18
+msgid "Now you have a folder like this:"
+msgstr "이제 폴더 구성은 다음과 같아야합니다:"
+
+# code block
+#: deploy_windows/download_and_setup_seafile_windows_server.md:19
+msgid ""
+"```sh\n"
+"C:\\SeafileProgram\n"
+"         |__ seafile-server-5.0.3\n"
+"```"
+msgstr ""
+"```sh\n"
+"C:\\SeafileProgram\n"
+"         |__ seafile-server-5.0.3\n"
+"```"
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:23
+msgid "## Start/Initialization"
+msgstr "## 시작/초기화"
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:25
+msgid "### Start Seafile Server"
+msgstr "### Seafile 서버 시작"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:27
+msgid ""
+"Go to the folder ``C:\\SeafileProgram\\seafile-server-5.0.3\\``, and double "
+"click run.bat to start Seafile Server. You should notice a seafile icon "
+"appears in the system tray."
+msgstr ""
+"``C:\\SeafileProgram\\seafile-server-5.0.3\\`` 폴더로 이동한 후 run.bat를 두 "
+"번 눌러 Seafile 서버를 시작하십시오. Seafile 아이콘이 상태 표시줄에 나타나야"
+"합니다."
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:28
+msgid "Choose a disk to store Seafile Server data"
+msgstr "Seafile 서버 데이터를 저장할 디스크를 선택하십시오"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:30
+msgid ""
+"Now you'll be prompted a dialog to choose a disk to store the data of "
+"seafile server"
+msgstr ""
+"이제 Seafile 서버의 데이터를 저장할 디스크를 물어보는 대화상자가 뜹니다"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:32
+msgid "- Please choose a disk with enough free space"
+msgstr "- 충분한 공간이 남아있는 디스크를 선택하십시오"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:33
+msgid ""
+"- Once you clicked the OK button, Seafile would create a folder named "
+"seafile-server under the disk you choosed. That would be the data folder of "
+"Seafile Server. If you choose disk D, your data folder would be ``D:"
+"\\seafile-server``"
+msgstr ""
+"- 확인 단추를 누르면 Seafile은 선택한 디스크에 seafile-server 폴더를 만듭니"
+"다. 이 폴더는 Seafile 서버의 데이터 폴더입니다. D 디스크를 선택했다면 ``D:"
+"\\seafile-server`` 데이터 폴더가 나타납니다"
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:35
+msgid "### Add an admin account"
+msgstr "### admin 계정 추가"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:37
+msgid ""
+"Right click the tray icon of Seafile Server, choose __Add an admin__. Input "
+"your admin username and password in the prompted dialog."
+msgstr ""
+"Seafile 서버의 상태 표시줄 아이콘에 마우스 커서를 가져다 두고 오른쪽 단추를 "
+"누른 후 __관리자 추가__를 선택하십시오. 관리 사용자 이름 및 암호를 프롬프트 "
+"대화상자에 입력하십시오."
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:39
+msgid ""
+"If the operation is successful, the tray icon would show a bubble saying "
+"__Successully added the admin acount__"
+msgstr ""
+"과정이 끝나면 상태 표시줄 아이콘의 풍선 도움말 상자에 __관리자 계정을 성공적"
+"으로 추가했습니다__ 라고 나타납니다"
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:41
+msgid "### Configure Seafile Server"
+msgstr "### Seafile 서버 설정"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:43
+msgid "After initialization, there are some options need to be configured:"
+msgstr "초기화 후, 설정해야 할 몇가지 항목이 있습니다:"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:45
+msgid ""
+"- Right click the tray icon, choose __Open seafile-server folder__. Your "
+"seafile-server data folder would be opened."
+msgstr ""
+"- 상태 표시줄 아이콘에 마우스 커서를 가져다 두고 오른쪽 단추를 누른 후 "
+"__seafile-server 폴더 열기__를 선택하십시오. seafile-server 데이더 폴더를 엽"
+"니다."
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:46
+msgid ""
+"- Edit the file `conf/ccnet.conf`. Modify the following line of `ccnet.conf`:"
+msgstr ""
+"- `conf/ccnet.conf` 파일을 편집하여 `ccnet.conf`의 다음 줄을 수정하십시오:"
+
+# code block
+#: deploy_windows/download_and_setup_seafile_windows_server.md:47
+msgid ""
+"```\n"
+"SERVICE_URL = XXX\n"
+"```"
+msgstr ""
+"```\n"
+"SERVICE_URL = XXX\n"
+"```"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:51
+msgid ""
+"- Change the value of `SERVICE_URL` to `http://<your ip address>:8000`. Say "
+"the ip address of your windows server is 192.168.1.100, then change it to "
+"`SERVICE_URL = http://192.168.1.100:8000`"
+msgstr ""
+"- `SERVICE_URL` 값을 `http://<your ip address>:8000`으로 바꾸십시오. 윈도우 "
+"서버의 IP 주소가 192.168.1.100이라면, `SERVICE_URL = "
+"http://192.168.1.100:8000`으로 바꾸십시오"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:53
+msgid "After the edit, right click tray icon, choose __Restart seafile__"
+msgstr ""
+"편집이 끝난 후 상태 표시줄 아이콘에 마우스 커서를 가져다 둔 후 오른쪽 단추를 "
+"누르고 __Seafile 다시 시작__을 선택하십시오"
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:55
+msgid "### Visit Seahub"
+msgstr "### Seahub 방문"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:57
+msgid ""
+"Open your browser, and visit `http://127.0.0.1:8000`. Login with the admin "
+"account. If you can login, the initialization is successful."
+msgstr ""
+"브라우저를 열고 `http://127.0.0.1:8000` 주소에 들어가십시오. admin 계정으로 "
+"로그인하십시오. 로그인할 수 있다면 초기화는 성공한 상태입니다."
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:58
+msgid "Configuration done"
+msgstr "설정 완료"
+
+#: deploy_windows/download_and_setup_seafile_windows_server.md:60
+msgid ""
+"Seafile Server configuration is finished. See Seafile Client Manual for how "
+"to use the client"
+msgstr ""
+"Seafile 서버 설정이 끝났습니다. 클라이언트 사용법은 Seafile 클라이언트 설명서"
+"를 참고하십시오"
+
+# header
+#: deploy_windows/download_and_setup_seafile_windows_server.md:62
+msgid "### You may also want to read about:"
+msgstr "### 다음 문서를 읽어보시면 좋습니다:"
+
+# unordered list
+#: deploy_windows/download_and_setup_seafile_windows_server.md:71
+msgid "- [Options & Customization](../deploy/server_configuration.md)"
+msgstr "- [설정 항목 및 개별 설정](../deploy/server_configuration.md)"
+
+# header
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:1
+msgid "# Install Seafile Server as a Windows Service"
+msgstr "# 윈도우 서비스로 Seafile 서버 설치"
+
+# header
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:3
+msgid "### Why you may want to install Seafile Server as a Windows service"
+msgstr "### 왜 Seafile 서버를 윈도우 서비스로 설치하는게 좋을까요"
+
+# unordered list
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:5
+msgid "- Seafile Server can keep on running after all users logout"
+msgstr ""
+"- 모든 사용자 계정에서 로그아웃 한 후에도 Seafile 서버는 계속 실행합니다"
+
+# unordered list
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:6
+msgid ""
+"- When system boots up, Seafile Server would start running even if no user "
+"has logged in"
+msgstr ""
+"- 시스템을 부팅했을 때, 그 어떤 사용자가 로그인 한 상태가 아니더라도 Seafile "
+"서버 동작을 시작합니다"
+
+# header
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:8
+msgid "### Install as a service"
+msgstr "### 서비스로 설치"
+
+# unordered list
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:10
+msgid "- Right click the tray icon, choose __Install as a Windows service__"
+msgstr ""
+"- 상태 표시줄 아이콘에 마우스 커서를 올려두고 오른쪽 단추를 누른 후 __윈도우 "
+"서비스로 설치__를 선택하십시오"
+
+# unordered list
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:11
+msgid "- Choose ``yes`` in the propmted dialog"
+msgstr "- 프롬프트 대화상자에서 ``예``를 선택하십시오"
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:13
+msgid ""
+"If the operation succeeds, A dialog would be prompted saying __Successully "
+"installed seafile service__."
+msgstr ""
+"동작이 끝나면 대화상자에서 __Seafile 서비스를 성공적으로 설치했습니다__라고 "
+"뜹니다."
+
+# header
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:15
+msgid "### Verify Seafile Server already running as a Windows service"
+msgstr "### Seafile 서버가 이미 윈도우 서비스로 실행 중인지 확인"
+
+# unordered list
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:17
+msgid "- Logout the current user"
+msgstr "- 현재 사용자 계정에서 로그아웃하십시오"
+
+# unordered list
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:18
+msgid ""
+"- Visit seahub from another computer. If the seahub website can still be "
+"visited, Seafile server is already running as a Windows server"
+msgstr ""
+"- 다른 컴퓨터에서 Seahub에 방문하십시오. 여전히 Seahub 웹 사이트에 들어갈 수 "
+"있다면, Seafile 서버가 윈도우 서버로 동작중임을 의미합니다."
+
+# header
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:20
+msgid "### How to start the tray icon after installing as a service"
+msgstr "### 서비스로 설치한 후 상태 표시줄 아이콘 상태로 시작하는 방법"
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:22
+msgid ""
+"If you have installed seafile server as a service, it would run "
+"automatically in the background the next time you boot your system. However, "
+"the tray icon would not appear automatically when a user logins in."
+msgstr ""
+"Seafile 서버를 서비스로 설치했다면, 다음에 시스템을 부팅할 때 백그라운드에서 "
+"자동으로 실행합니다. 하지만 사용자 로그인을 했을 때 상태 표시줄 아이콘은 자동"
+"으로 나타나지 않습니다."
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:24
+msgid ""
+"To start the tray icon, just doule click the ``run.bat`` file in the folder "
+"``C:\\SeafileProgram\\seafile-server-1.7.0``"
+msgstr ""
+"상태 표시줄 아이콘 표시를 시작하려면 ``C:\\SeafileProgream\\seafile-"
+"server-1.7.0`` 폴더에서 ``run.bat`` 파일을 두 번 눌러 실행하십시오"
+
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:25
+msgid "Uninstall Seafile Server Windows service"
+msgstr "Seafile 서버 윈도우 서비스 설치 제거"
+
+# header
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:27
+msgid "### If you want to uninstall the Seafile Server service:"
+msgstr "### Seafile 서버 서비스 설치를 제거하려면:"
+
+# unordered list
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:29
+msgid "- Right click the tray icon, choose \"Uninstall Windows service\""
+msgstr ""
+"- 상태 표시줄 아이콘에 마우스 커서를 올려두고 오른쪽 단추를 누른 후 \"윈도우 "
+"서비스 설치 제거\"를 선택하십시오"
+
+# unordered list
+#: deploy_windows/install_seafile_server_as_a_windows_service.md:30
+msgid "- Choose \"yes\" in the propmted dialog"
+msgstr "- 프롬프트 대화상자에서 \"예\"를 선택하십시오"
+
+# header
+#: deploy_windows/migrate_from_win_to_linux.md:1
+msgid "# Migrate From Windows to Linux"
+msgstr "# 윈도우에서 리눅스로 이전"
+
+#: deploy_windows/migrate_from_win_to_linux.md:3
+msgid ""
+"This tutorial show you how to migrate Seafile from Windows(using SQLite) to "
+"Linux."
+msgstr ""
+"이 지침서는 윈도우(SQLite 사용)에서 리눅스로 Seafile을 이전하는 방법을 알려드"
+"립니다."
+
+# header
+#: deploy_windows/migrate_from_win_to_linux.md:5
+msgid "### 1. Deploying Seafile Under Linux"
+msgstr "### 1. 리눅스에서 Seafile 가동"
+
+#: deploy_windows/migrate_from_win_to_linux.md:7
+msgid ""
+"First, you should [Deploy Seafile with SQLite](../deploy/using_sqlite.md). "
+"And we assume that you deploy Seafile under `/home/haiwen/` directory."
+msgstr ""
+"우선 [Seafile과 SQLite를 가동](../deploy/using_sqlite.md) 준비 하십시오. 그리"
+"고 `/home/haiwen` 디렉터리에 Seafile 가동을 준비했다고 가정합니다."
+
+# header
+#: deploy_windows/migrate_from_win_to_linux.md:9
+msgid "### 2. Replace Config Files And Databases"
+msgstr "### 2. 설정 파일 및 데이터베이스 바꾸기"
+
+# header
+#: deploy_windows/migrate_from_win_to_linux.md:11
+msgid "#### Delete config files and databases in Linux"
+msgstr "#### 리눅스에서 설정 파일 및 데이터베이스 삭제"
+
+# code block
+#: deploy_windows/migrate_from_win_to_linux.md:13
+msgid ""
+"```\n"
+"rm /home/haiwen/seahub_settings.py\n"
+"rm /home/haiwen/seahub.db\n"
+"rm -r /home/haiwen/seafile-data\n"
+"cp /home/haiwen/ccnet/seafile.ini /home/haiwen/seafile.ini\n"
+"rm -r /home/haiwen/ccnet\n"
+"```"
+msgstr ""
+"```\n"
+"rm /home/haiwen/seahub_settings.py\n"
+"rm /home/haiwen/seahub.db\n"
+"rm -r /home/haiwen/seafile-data\n"
+"cp /home/haiwen/ccnet/seafile.ini /home/haiwen/seafile.ini\n"
+"rm -r /home/haiwen/ccnet\n"
+"```"
+
+# blockquote, which can be cascaded
+#: deploy_windows/migrate_from_win_to_linux.md:21
+msgid ""
+"> Note: `seafile.ini` is used to record the path to `seafile-data`, we will "
+"use it later, so we just copy it out, not delete it."
+msgstr ""
+"> 참고: `seafile.ini`는 `seafile-data`에 경로를 기록할 떄 사용하며, 나중에 활"
+"용하므로, 어딘가에 복사만 해두시고 삭제하지마십시오."
+
+# header
+#: deploy_windows/migrate_from_win_to_linux.md:23
+msgid "#### Copy config files and databases to Linux"
+msgstr "#### 리눅스에 설정 파일 및 데이터베이스 복사"
+
+# unordered list
+#: deploy_windows/migrate_from_win_to_linux.md:25
+msgid ""
+"- copy file `seahub_settings.py` from Windows **seafile-server** to Linux `/"
+"home/haiwen/`;"
+msgstr ""
+"- `seahub_settings.py` 파일을 윈도우의 **seafile-server** 디렉터리에서 `/"
+"home/haiwen/` 디렉터리로 복사하십시오"
+
+# unordered list
+#: deploy_windows/migrate_from_win_to_linux.md:27
+msgid ""
+"- copy file `seahub.db` from Windows **seafile-server** to Linux `/home/"
+"haiwen/`;"
+msgstr ""
+"- `seahub.db` 파일을 윈도우의 **seafile-server** 디렉터리에서 리눅스의 `/"
+"home/haiwen/` 디렉터리로 복사하십시오"
+
+# unordered list
+#: deploy_windows/migrate_from_win_to_linux.md:29
+msgid ""
+"- copy sub-directory `seafile-data` from Windows **seafile-server** to Linux "
+"`/home/haiwen/`;"
+msgstr ""
+"- `seafile-data`의 하위 디렉터리를 윈도우의 **seafile-data** 디렉터리에서 리"
+"눅스의 `/home/haiwen/` 디렉터리로 복사하십시오"
+
+# unordered list
+#: deploy_windows/migrate_from_win_to_linux.md:31
+msgid ""
+"- copy sub-directory `ccnet` from Windows **seafile-server** to Linux `/home/"
+"haiwen/`;"
+msgstr ""
+"- `ccnet` 하위 디렉터리를 윈도우의 **seafile-server** 디렉터리에서 `/home/"
+"haiwen/` 디렉터리로 복사하십시오"
+
+# unordered list
+#: deploy_windows/migrate_from_win_to_linux.md:33
+msgid "- copy `/home/haiwen/seafile.ini` to new Linux **ccnet** directory."
+msgstr ""
+"- `/home/haiwen/seafile.ini`파일을 리눅스의 새 **ccnet** 디렉터리로 복사하십"
+"시오."
+
+# header
+#: deploy_windows/migrate_from_win_to_linux.md:35
+msgid "### Start Seafile"
+msgstr "### Seafile 시작"
+
+# code block
+#: deploy_windows/migrate_from_win_to_linux.md:37
+msgid ""
+"```\n"
+"./seafile.sh start\n"
+"./seahub.sh start\n"
+"```"
+msgstr ""
+"```\n"
+"./seafile.sh start\n"
+"./seahub.sh start\n"
+"```"
+
+# header
+#: deploy_windows/ports_used_by_seafile_windows_server.md:1
+msgid "# Ports used by Seafile Windows Server"
+msgstr "# Seafile 윈도우 서버에서 사용하는 포트"
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:3
+msgid "Seafile server has two components, so two TCP ports are used."
+msgstr "Seafile 서버의 구성 요소는 두 부분이기에, TCP 포트 두개를 사용합니다."
+
+# header
+#: deploy_windows/ports_used_by_seafile_windows_server.md:5
+msgid "## The two configuration files"
+msgstr "## 두 설정 파일"
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:7
+msgid ""
+"All ports related configuration are recorded in ``ccnet.conf`` and ``seafile."
+"conf``."
+msgstr ""
+"설정에 관련된 모든 포트는 ``ccnet.conf``와 ``seafile.conf``에 적어두었습니다."
+
+# header
+#: deploy_windows/ports_used_by_seafile_windows_server.md:8
+msgid "### How to open ``ccnet.conf``"
+msgstr "### ``ccnet.conf`` 열기"
+
+# unordered list
+#: deploy_windows/ports_used_by_seafile_windows_server.md:10
+#: deploy_windows/ports_used_by_seafile_windows_server.md:15
+msgid ""
+"- Right click the seafile server trayicon, choose __Open seafile-server "
+"folder__"
+msgstr ""
+"- Seafile 서버 트레이 아이콘에 마우스 커서를 두고 오른쪽 단추를 누른 후 "
+"__seafile-server 폴더 열기__를 선택하십시오"
+
+# unordered list
+#: deploy_windows/ports_used_by_seafile_windows_server.md:11
+msgid ""
+"- Open the folder ``ccnet`` under ``seafile-server`` folder. The file "
+"``ccnet.conf`` is there."
+msgstr ""
+"-  ``seafile-server`` 폴더의 ``ccnet`` 폴더를 여십시오. 해당 위치에 ``ccnet."
+"conf`` 파일이 있습니다."
+
+# header
+#: deploy_windows/ports_used_by_seafile_windows_server.md:13
+msgid "### How to open ``seafile.conf``"
+msgstr "### ``seafile.conf`` 열기"
+
+# unordered list
+#: deploy_windows/ports_used_by_seafile_windows_server.md:16
+msgid ""
+"- Open the folder ``seafile-data`` under ``seafile-server`` folder. The file "
+"``seafile.conf`` is there."
+msgstr ""
+"- ``seafile-server`` 폴더의 ``seafile-data`` 폴더를 여십시오. 해당 위치에 "
+"``seafile.conf`` 파일이 있습니다."
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:18
+msgid ""
+"In the following section we list the TCP ports used by each of seafile "
+"components, as well as how to change them (For example, some port may have "
+"already been used by some other application)."
+msgstr ""
+"다음 섹션에서는 Seafile의 각 구성 요소가 사용하는 TCP 포트를 확인하고, 또한 "
+"이 설정을 어떻게 바꾸는지도 알아보겠습니다(예를 들면, 일부 포트 설정은 다른 "
+"프로그램에서 이미 사용하고 있을지도 모릅니다)."
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:20
+msgid ""
+"**Note**: If you change any of the ports, you have to restart seafile server."
+msgstr ""
+"**참고**: 어떤 포트 설정이든 바꾸면 Seafile 서버를 다시 시작해야합니다."
+
+# header
+#: deploy_windows/ports_used_by_seafile_windows_server.md:22
+msgid "## seafile fileserver"
+msgstr "## seafile fileserver"
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:24
+msgid "seafile fileserver handles raw file upload/download for Seahub"
+msgstr "Seafile FileServer는 Seahub의 원시 파일 업로드/다운로드를 처리합니다"
+
+# unordered list
+#: deploy_windows/ports_used_by_seafile_windows_server.md:26
+msgid "- default: 8082"
+msgstr "- 기본값: 8082"
+
+# unordered list
+#: deploy_windows/ports_used_by_seafile_windows_server.md:27
+msgid ""
+"- How to change: The Seafile desktop client will try to connect this port "
+"for file syncing. Don't change this port."
+msgstr ""
+"- 포트 바꾸기: Seafile 데스크톱 클라이언트에서는 파일 동기화 목적으로 연결시 "
+"이 포트 번호를 활용합니다. 이 포트 설정을 바꾸지 마십시오."
+
+# header
+#: deploy_windows/ports_used_by_seafile_windows_server.md:29
+msgid "## seahub"
+msgstr "## seahub"
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:31
+msgid "seahub is the web interface of seafile server."
+msgstr "Seahub는 Seafile 서버의 웹 인터페이스입니다."
+
+#: deploy_windows/ports_used_by_seafile_windows_server.md:33
+msgid ""
+"**Note**: If you change the port of seahub, you need to change the "
+"``SERVICE_URL`` in ``ccnet.conf``."
+msgstr ""
+"**참고**: Seahub의 포트 설정을 바꾸면 ``ccnet.conf``의 ``SERVICE_URL`` 값을 "
+"바꾸어야 합니다."
+
+# unordered list
+#: deploy_windows/ports_used_by_seafile_windows_server.md:35
+msgid "- default: 8000"
+msgstr "- 기본값: 8000"
+
+# unordered list
+#: deploy_windows/ports_used_by_seafile_windows_server.md:36
+msgid ""
+"- How to change: Edit the file ``seafile.conf``. Change the value of port "
+"under the seahub section. (This is added in Seafile Windows Server 1.7.0.1)"
+msgstr ""
+"- 포트 바꾸기: ``seafile.conf`` 파일을 편집하십시오. Seahub 섹션에 있는 포트 "
+"값을 바꾸십시오. (Seafile 윈도우 서버 1.7.0.1에 추가했습니다)"
+
+# code block
+#: deploy_windows/ports_used_by_seafile_windows_server.md:38
+msgid ""
+"```\n"
+"[seahub]\n"
+"port=8000\n"
+"```"
+msgstr ""
+"```\n"
+"[seahub]\n"
+"port=8000\n"
+"```"
+
+# unordered list
+#: deploy_windows/ports_used_by_seafile_windows_server.md:42
+msgid ""
+"- Edit the file ``ccnet.conf``, modify the value of ``SERVICE_URL`` "
+"accordingly. For example, if you have changed the port to 8001, then modify "
+"the value of ``SERVICE_URL`` accordingly:"
+msgstr ""
+"- ``ccnet.conf`` 파일을 편집하여 ``SERVICE_URL`` 값을 올바르게 수정하십시오. "
+"예를 들어 포트를 8001로 바꾸었다면, ``SERVICE_URL`` 값을 이에 맞춰 올바르게 "
+"수정하십시오:"
+
+# code block
+#: deploy_windows/ports_used_by_seafile_windows_server.md:44
+msgid ""
+"```\n"
+"[General]\n"
+"SERVICE_URL = <Your IP OR DOMAIN>:8001\n"
+"```"
+msgstr ""
+"```\n"
+"[General]\n"
+"SERVICE_URL = <Your IP OR DOMAIN>:8001\n"
+"```"
+
+# header
+#: deploy_windows/upgrading_seafile_windows_server.md:1
+msgid "# Upgrading Seafile Windows Server"
+msgstr "# Seafile 윈도우 서버 업그레이드"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:3
+msgid "- Minor Upgrade"
+msgstr "- 부 버전 업그레이드"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:4
+msgid "- Major Upgrade"
+msgstr "- 주 버전 업그레이드"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:5
+msgid "- Upgrade Windows Service"
+msgstr "- 윈도우 서비스 업그레이드"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:7
+msgid "**Note**：You must shutdown seafile server before you upgrade."
+msgstr "**참고**: 업그레이드를 진행하기 전 Seafile 서버 가동을 멈추어야합니다."
+
+# header
+#: deploy_windows/upgrading_seafile_windows_server.md:8
+msgid "## Uncompress the new version of Seafile Server"
+msgstr "## Seafile 서버 새 버전 압축 해제"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:10
+msgid "Before you upgrade, assume you have:"
+msgstr "업그레이드 전 다음 디렉터리 구조 상태라고 가정합니다:"
+
+# code block
+#: deploy_windows/upgrading_seafile_windows_server.md:11
+msgid ""
+"```\n"
+"C:/SeafileProgram\n"
+"             |______ seafile-server-3.0.0/\n"
+"```"
+msgstr ""
+"```\n"
+"C:/SeafileProgram\n"
+"             |______ seafile-server-3.0.0/\n"
+"```"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:15
+msgid ""
+"Then the first step is to download the new version of Seafile Server and "
+"uncompress it to ``C:/SeafileProgram``. After this you should have:"
+msgstr ""
+"이 때 첫단계에서 할 일은 Seafile 서버 새 버전을 다운로드하고 ``C:/"
+"SeafileProgram``에 압축 해제하는 일입니다. 이 과정이 끝난 후 디렉터리 구조는 "
+"다음과 같습니다:"
+
+# code block
+#: deploy_windows/upgrading_seafile_windows_server.md:16
+msgid ""
+"```\n"
+"C:/SeafileProgram\n"
+"             |______ seafile-server-3.0.0/\n"
+"             |______ seafile-server-3.1.0/\n"
+"```"
+msgstr ""
+"```\n"
+"C:/SeafileProgram\n"
+"             |______ seafile-server-3.0.0/\n"
+"             |______ seafile-server-3.1.0/\n"
+"```"
+
+# header
+#: deploy_windows/upgrading_seafile_windows_server.md:21
+msgid "## Minor upgrade (like upgrade from 3.0.0 to 3.0.1)"
+msgstr "## 부 버전 업그레이드(3.0.0에서 3.0.1로 업그레이드하는 방식)"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:23
+msgid "Now assume you are upgrading from Seafile Windows Server 3.0.0 to 3.0.1"
+msgstr ""
+"Seafile 윈도우 서버를 3.0.0에서 3.0.1로 업그레이드 한다고 가정하겠습니다"
+
+# header
+#: deploy_windows/upgrading_seafile_windows_server.md:24
+msgid "### Move the contents of the avatars folder"
+msgstr "### 아바타 폴더 내용 이동"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:26
+msgid "Go to the folder ``seafile-server-3.0.0/seahub/media/avatars``"
+msgstr "``seafile-server-3.0.0/seahub/media/avatars`` 폴더로 이동하십시오"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:28
+msgid ""
+"The ``avatars`` folder contains all the avatars uploaded by seafile users."
+msgstr "``avatars`` 폴더에는 Seafile 사용자가 업로드한 모든 아바타가 있습니다."
+
+#: deploy_windows/upgrading_seafile_windows_server.md:30
+msgid ""
+"If you have a user ``foo@foo.com``, then in this folder, you will find a "
+"subfolder ``foo@foo.com``. This subfolder contains the avatar pictures of "
+"the user ``foo@foo.com``."
+msgstr ""
+"``foo@foo.com`` 사용자가 있다면, 이 폴더의 하위 폴더 ``foo@foo.com``을 찾을 "
+"수 있습니다. 하위 폴더에는 사용자 ``foo@foo.com``의 아바타 그림이 들어있습니"
+"다."
+
+#: deploy_windows/upgrading_seafile_windows_server.md:32
+msgid ""
+"Copy all subfolders like ``foo@foo.com`` to ``seafile-server-3.0.1/seahub/"
+"media/avatars``. So that when you start the new seafile 3.0.1 server, these "
+"avatars can be load correctly."
+msgstr ""
+"``foo@foo.com``과 같은 모든 하위 폴더를 ``seafile-server-3.0.1/seahub/media/"
+"avatars``에 복사하십시오. 이리 하여 새 Seafile 서버 3.0.1을 시작하면 이 아바"
+"타를 올바르게 불러올 수 있습니다."
+
+# header
+#: deploy_windows/upgrading_seafile_windows_server.md:33
+msgid "## Major upgrade (like upgrade from 3.0.0 to 3.1.0)"
+msgstr "## 주 버전 업그레이드(3.0.0에서 3.1.0으로 업그레이드하는 방식)"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:35
+msgid ""
+"Now assume you are upgrading from Seafile Windows Server 3.0.x to 3.1.y:"
+msgstr ""
+"Seafile 윈도우 서버를 3.0.x에서 3.1.y로 업그레이드한다고 가정하겠습니다:"
+
+# header
+#: deploy_windows/upgrading_seafile_windows_server.md:37
+msgid "### Run the major upgrade script"
+msgstr "### 주 버전 업그레이드 스크립트 실행"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:39
+msgid "Run the database upgrade script"
+msgstr "데이터베이스 업그레이드 스크립트를 실행하십시오"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:41
+msgid "- Go to seafile-server-3.1.y/upgrade"
+msgstr "- seafile-server-3.1.y/upgrade로 이동하십시오"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:42
+msgid "- Right click the file `upgrade_3.0_3.1.bat`"
+msgstr ""
+"- `upgrade_3.0_3.1.bat` 파일에 마우스 커서를 두고 오른쪽 단추를 누르십시오"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:43
+msgid "- Choose \"run as administrator\""
+msgstr "- \"관리자 권한으로 실행\"을 선택하십시오"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:45
+msgid ""
+"If you're using MySQL, you need to manually upgrade the database yourself:"
+msgstr "MySQL을 사용한다면 데이터베이스를 직접 업그레이드해야합니다:"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:47
+msgid "- Go to the folder seafile-server-3.1.y/upgrade/sql/3.1.0/mysql/"
+msgstr "- seafile-server-3.1.y/upgrade/sql/3.1.0/mysql/ 폴더로 이동하십시오"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:48
+msgid "- If there are a file `ccnet.sql`, run it with the `ccnet-db` database"
+msgstr ""
+"- `ccnet.sql` 파일이 있다면, `ccnet-db` 데이터베이스에 대해 다음 명령을 실행"
+"하십시오"
+
+# code block
+#: deploy_windows/upgrading_seafile_windows_server.md:49
+msgid ""
+"```\n"
+"mysql ccnet-db < ccnet.sql\n"
+"```"
+msgstr ""
+"```\n"
+"mysql ccnet-db < ccnet.sql\n"
+"```"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:52
+msgid ""
+"- If there are a file `seafile.sql`, run it with the `seafile-db` database"
+msgstr ""
+"- `seafile.sql` 파일이 있다면, `seafile-db` 데이터베이스에 대해 다음 명령을 "
+"실행하십시오"
+
+# code block
+#: deploy_windows/upgrading_seafile_windows_server.md:53
+msgid ""
+"```\n"
+"mysql ccnet-db < seafile.sql\n"
+"```"
+msgstr ""
+"```\n"
+"mysql ccnet-db < seafile.sql\n"
+"```"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:56
+msgid ""
+"- If there are a file `seahub.sql`, run it with the `seahub-db` database"
+msgstr ""
+"- `seahub.sql` 파일이 있다면, `seahub-db` 데이터베이스에 대해 다음 명령을 실"
+"행하십시오"
+
+# code block
+#: deploy_windows/upgrading_seafile_windows_server.md:57
+msgid ""
+"```\n"
+"mysql seahub-db < seafile.sql\n"
+"```"
+msgstr ""
+"```\n"
+"mysql seahub-db < seafile.sql\n"
+"```"
+
+# header
+#: deploy_windows/upgrading_seafile_windows_server.md:61
+msgid "### Copy avatars"
+msgstr "### 아바타 복사"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:63
+msgid ""
+"Copy all subfolders of ``seafile-server-3.0.0/seahub/media/avatars`` to "
+"``seafile-server-3.1.0/seahub/media/avatars``"
+msgstr ""
+"``seafile-server-3.0.0/seahub/media/avatars``의 모든 하위 폴더를 ``seafile-"
+"server-3.1.0/seahub/media/avatars``에 복사하십시오"
+
+# header
+#: deploy_windows/upgrading_seafile_windows_server.md:64
+msgid "## Upgrading Windows Service"
+msgstr "## 윈도우 서비스 업그레이드"
+
+#: deploy_windows/upgrading_seafile_windows_server.md:66
+msgid "If you have installed Seafile server as a Windows Service, you need to:"
+msgstr "Seafile 서버를 윈도우 서비스로 설치했다면 다음 과정을 진행해야합니다:"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:68
+msgid ""
+"- Run the old version of seafile windows server, right click the tray icon, "
+"and choose uninstall windows service in the menu"
+msgstr ""
+"- Seafile 윈도우 서버의 이전 버전을 실행하고, 상태 표시줄 아이콘에 마우스 커"
+"서를 올려다 놓은 후 오른쪽 단추를 누르시고 메뉴의 윈도우 서비스 설치 제거를 "
+"선택하십시오"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:69
+msgid "- Exit the old version of seafile windows server"
+msgstr "- Seafile 윈도우 서버 이전 버전에서 빠져나가십시오"
+
+# unordered list
+#: deploy_windows/upgrading_seafile_windows_server.md:70
+msgid ""
+"- Start the new version of seafile windows server, right click the tray "
+"icon, and choose install as windows service in the menu"
+msgstr ""
+"- Seafile 윈도우 서버의 새 버전을 시작하시고, 상태 표시줄 아이콘에 마우스 커"
+"서를 올려다 놓은 후 오른쪽 단추를 누르시고 메뉴의 윈도우 서비스 설치를 선택하"
+"십시오"
+
+# header
+#: deploy_windows/using_ldap.md:1
+msgid "# Configure Seafile to use LDAP"
+msgstr "# Seafile LDAP 사용 설정"
+
+#: deploy_windows/using_ldap.md:3
+msgid ""
+"Note: This documentation is for the Community Edition. If you're using Pro "
+"Edition, please refer to [the Seafile Pro documentation|../deploy_pro/"
+"using_ldap_pro.md]."
+msgstr ""
+"참고: 이 문서는 커뮤니티판용입니다. 전문가판을 사용중이라면, [Seafile 전문가"
+"판 문서|../deploy_pro/using_ldap_pro.md]를 참고하십시오."
+
+# header
+#: deploy_windows/using_ldap.md:5
+msgid "## How does LDAP User Management Works in Seafile"
+msgstr "## Seafile의 LDAP 사용자 관리 동작 방식"
+
+#: deploy_windows/using_ldap.md:7
+msgid ""
+"When Seafile is integrated with LDAP/AD, users in the system can be divided "
+"into two tiers:"
+msgstr "Seafile을 LDAP/AD와 통합하면, 시스템 사용자는 두 티어로 구분합니다:"
+
+# unordered list
+#: deploy_windows/using_ldap.md:9
+msgid ""
+"- Users within Seafile's internal user database. Some attributes are "
+"attached to these users, such as whether it's a system admin user, whether "
+"it's activated. This tier includes two types of users:"
+msgstr ""
+"- Seafile의 자체 사용자 데이터베이스에 있는 사용자. 일부 속성은 이 사용자로 "
+"붙는데, 시스템 관리 사용자인지, 활성 상태인지 여부 속성이 여기에 해당합니다. "
+"이 티어에는 두가지 형태의 사용자가 있습니다:"
+
+# unordered list
+#: deploy_windows/using_ldap.md:10
+msgid ""
+"    * Native users: these users are created by the admin on Seafile's system "
+"admin interface. These users are stored in the `EmailUser` table of the "
+"`ccnet` database."
+msgstr ""
+"    * 자체 사용자: 이 사용자는 Seafile의 시스템 관리자 인터페이스에서 관리자"
+"가 만듭니다. 이 사용자는 `ccnet` 데이터베이스의 `EmailUser` 테이블에 저장합니"
+"다."
+
+# unordered list
+#: deploy_windows/using_ldap.md:11
+msgid ""
+"    * Users imported from LDAP/AD server: When a user in LDAP/AD logs into "
+"Seafile, its information will be imported from LDAP/AD server into Seafile's "
+"database. These users are stored in the `LDAPUsers` table of the `ccnet` "
+"database."
+msgstr ""
+"    * LDAP/AD 서버에서 온 사용자: Seafile에 LDAP/AD 사용자가 로그인하면, "
+"LDAP/AD 서버의 사용자 정보를 Seafile 데이터베이스로 가져옵니다. 이 사용자는 "
+"`ccnet` 데이터베이스의 `LDAPUsers` 테이블에 저장합니다."
+
+# unordered list
+#: deploy_windows/using_ldap.md:12
+msgid ""
+"- Users in LDAP/AD server. These are all the intended users of Seafile "
+"inside the LDAP server. Seafile doesn't manipulate these users directly. It "
+"has to import them into its internal database before setting attributes on "
+"them."
+msgstr ""
+"- LDAP/AD 서버 사용자. 이 사용자는 LDAP 서버에 있는 Seafile을 사용하려는 사용"
+"자입니다. Seafile은 이 사용자를 직접 다루지 못합니다. 설정 속성을 자체 데이터"
+"베이스로 가져옵니다."
+
+#: deploy_windows/using_ldap.md:14
+msgid ""
+"When Seafile counts the user number in the system, it only counts the "
+"**activated** users in its internal database."
+msgstr ""
+"Seafile에서 시스템 사용자를 셀 때는 자체 데이터베이스의 **활성** 사용자만 셉"
+"니다."
+
+#: deploy_windows/using_ldap.md:16
+msgid ""
+"When Seafile is integrated with LDAP/AD, it'll look up users from both the "
+"internal database and LDAP server. As long as the user exists in one of "
+"these two sources, it can log into the system."
+msgstr ""
+"Seafile을 LDAP/AD와 통합하면, 자체 서버와 LDAP 서버 양측에서 사용자를 찾습니"
+"다. 두 곳에 사용자가 있으면 시스템에 로그인할 수 있습니다."
+
+# header
+#: deploy_windows/using_ldap.md:18
+msgid "## Basic LDAP/AD Integration"
+msgstr "## 기본 LDAP/AD 통합"
+
+#: deploy_windows/using_ldap.md:20
+msgid ""
+"The only requirement for Seafile to use LDAP/AD for authentication is that, "
+"there must be a unique identifier for each user in the LDAP/AD server. "
+"Seafile can only use email-address-format user identifiers. So there are "
+"usually only two options for this unique identifier:"
+msgstr ""
+"Seafile에서 LDAP/AD를 인증용으로 사용하는데 필요한 유일한 사항은, LDAP/AD서버"
+"에 있는 각 사용자의 유일 식별자입니다. Seafile은 전자메일 주소 형식 사용자 식"
+"별자만 사용할 수 있습니다. 따라서 유일 식별자 사용에 두가지 선택지만 있습니"
+"다:"
+
+# unordered list
+#: deploy_windows/using_ldap.md:22
+msgid ""
+"- Email address: this is the most common choice. Most organizations assign "
+"unique email address for each member."
+msgstr ""
+"- 전자메일 주소: 대부분 선택하는 수단입니다. 대부분의 조직에서는 각 구성원에"
+"게 유일 전자메일 주소를 할당합니다."
+
+# unordered list
+#: deploy_windows/using_ldap.md:23
+msgid ""
+"- UserPrincipalName: this is a user attribute only available in Active "
+"Directory. It's format is `user-login-name@domain-name`, e.g. `john@example."
+"com`. It's not a real email address, but it works fine as the unique "
+"identifier."
+msgstr ""
+"- UserPrincipalName: 액티브 디렉터리에서만 사용하는 사용자 속성입니다. 형식"
+"은 `user-login-name@domain-name`이며, 예를 들면 `john@example.com`과 같습니"
+"다. 실제 전자메일 주소는 아니지만 유일 식별자로 잘 동작합니다."
+
+# header
+#: deploy_windows/using_ldap.md:25
+msgid "### Connecting to Active Directory"
+msgstr "### 액티브 디렉터리에 연결"
+
+#: deploy_windows/using_ldap.md:27
+msgid ""
+"To use AD to authenticate user, please add the following lines to ccnet.conf."
+msgstr "사용자 인증에 AD를 사용한다면, 다음 줄을 ccnet.conf에 추가하십시오."
+
+#: deploy_windows/using_ldap.md:29
+msgid "If you choose email address as unique identifier:"
+msgstr "전자메일 주소를 유일 식별자로 사용할 경우:"
+
+#: deploy_windows/using_ldap.md:31 deploy_windows/using_ldap.md:41
+#: deploy_windows/using_ldap.md:68
+msgid "    [LDAP]"
+msgstr "    [LDAP]"
+
+#: deploy_windows/using_ldap.md:32 deploy_windows/using_ldap.md:42
+#: deploy_windows/using_ldap.md:69
+msgid "    HOST = 192.168.1.123"
+msgstr "    HOST = 192.168.1.123"
+
+#: deploy_windows/using_ldap.md:33 deploy_windows/using_ldap.md:43
+#: deploy_windows/using_ldap.md:70
+msgid "    USE_SSL = false"
+msgstr "    USE_SSL = false"
+
+#: deploy_windows/using_ldap.md:34 deploy_windows/using_ldap.md:44
+msgid "    BASE = cn=users,dc=example,dc=com"
+msgstr "    BASE = cn=users,dc=example,dc=com"
+
+#: deploy_windows/using_ldap.md:35 deploy_windows/using_ldap.md:45
+msgid "    USER_DN = administrator@example.local"
+msgstr "    USER_DN = administrator@example.local"
+
+#: deploy_windows/using_ldap.md:36 deploy_windows/using_ldap.md:46
+#: deploy_windows/using_ldap.md:73
+msgid "    PASSWORD = secret"
+msgstr "    PASSWORD = secret"
+
+#: deploy_windows/using_ldap.md:37 deploy_windows/using_ldap.md:74
+msgid "    LOGIN_ATTR = mail"
+msgstr "    LOGIN_ATTR = mail"
+
+#: deploy_windows/using_ldap.md:39
+msgid "If you choose UserPrincipalName as unique identifier:"
+msgstr "UserPrincipalName을 유일 식별자로 사용한다면:"
+
+#: deploy_windows/using_ldap.md:47
+msgid "    LOGIN_ATTR = userPrincipalName"
+msgstr "    LOGIN_ATTR = userPrincipalName"
+
+#: deploy_windows/using_ldap.md:49
+msgid "Meaning of each config options:"
+msgstr "각 설정 항목의 의미는 다음과 같습니다:"
+
+# unordered list
+#: deploy_windows/using_ldap.md:51
+msgid ""
+"* HOST: LDAP URL for the host. ldap://, ldaps:// and ldapi:// are supported. "
+"You can also include port number in the URL, like ldap://ldap.example."
+"com:389. To use TLS, you should configure the LDAP server to listen on LDAPS "
+"port and specify ldaps:// here. More details about TLS will be covered below."
+msgstr ""
+"* HOST: 호스트의 LDAP URL입니다. ldap:// ldaps:// ldapi://를 지원합니다. "
+"ldap://ldap.example.com:389처럼 URL에 포트 번호를 넣을 수 있습니다. TLS를 사"
+"용하려면 LDAP 서버에 LDAPS 포트에서 응답 대기하도록 설정하고 ldaps://를 지정"
+"하십시오. TLS에 대한 자세한 내용은 아래에 다룹니다."
+
+# unordered list
+#: deploy_windows/using_ldap.md:52
+msgid ""
+"* BASE: The root distinguished name (DN) to use when running queries against "
+"the directory server. **You cannot use the root DN (e.g. dc=example,dc=com) "
+"as BASE**."
+msgstr ""
+"* BASE: 디렉터리 서버에서 요청문을 실행할 때 사용할 루트 구별 이름(DN)입니"
+"다. **루트 DN(e.g. dc=example,dc=com)을 BASE로 사용할 수 없습니다**."
+
+# unordered list
+#: deploy_windows/using_ldap.md:53
+msgid ""
+"* USER_DN: The distinguished name of the user that Seafile will use when "
+"connecting to the directory server. This user should have sufficient "
+"privilege to access all the nodes under BASE. It's recommended to use a user "
+"in the administrator group."
+msgstr ""
+"* USER_DN: 디렉터리 서버에 연결할 때 Seafile에서 사용할 사용자의 식별 이름입"
+"니다. BASE 기반의 모든 노드에 접근하려면 해당 사용자는 충분한 권한을 가지고 "
+"있어야합니다. 관리자 그룹의 사용자 활용을 추천합니다."
+
+# unordered list
+#: deploy_windows/using_ldap.md:54
+msgid "* PASSWORD: Password of the above user."
+msgstr "* PASSWORD: 위 사용자의 암호."
+
+# unordered list
+#: deploy_windows/using_ldap.md:55
+msgid ""
+"* LOGIN_ATTR: The attribute used for user's unique identifier. Use `mail` or "
+"`userPrincipalName`."
+msgstr ""
+"* LOGIN_ATTR: 사용자 유일 식별자에 사용하는 속성입니다. `mail` 또는 "
+"`userPrincipalName`을 사용하십시오."
+
+#: deploy_windows/using_ldap.md:57
+msgid "Tips for choosing BASE and USER_DN:"
+msgstr "BASE 및 USER_DN을 설정하는 요령:"
+
+# unordered list
+#: deploy_windows/using_ldap.md:59
+msgid ""
+"* To determine the BASE, you first have to navigate your organization "
+"hierachy on the domain controller GUI."
+msgstr ""
+"* BASE 값을 설정하려면, 도메인 컨트롤러 GUI에 있는 조직 계층을 우선 탐색하십"
+"시오."
+
+# unordered list
+#: deploy_windows/using_ldap.md:60
+msgid ""
+"    * If you want to allow all users to use Seafile, you can use 'cn=users,"
+"dc=yourdomain,dc=com' as BASE (with proper adjustment for your own needs)."
+msgstr ""
+"    * 모든 사용자가 Seafile을 쓸 수 있게 한다면, 'cn=users,dc=yourdomain,"
+"dc=com'을 BASE 값으로 활용할 수 있습니다(그리고 필요에 따라 적당히 조절하십시"
+"오)."
+
+# unordered list
+#: deploy_windows/using_ldap.md:61
+msgid ""
+"    * If you want to limit users to a certain OU (Organization Unit), you "
+"run `dsquery` command on the domain controller to find out the DN for this "
+"OU. For example, if the OU is 'staffs', you can run 'dsquery ou -name "
+"staff'. More information can be found [here](https://technet.microsoft.com/"
+"en-us/library/cc770509.aspx)."
+msgstr ""
+"    * 사용자를 일부 OU (조직 단위)로 한정하려면, 도메인 컨트롤러에서 "
+"`dsquery` 명령을 실행하여 이 OU에 있는 DN을 찾으십시오. 예를 들어, OU가 "
+"'staffs'면, 'dsquery ou -name staff'을 실행하시면 됩니다. 더 자세한 내용은 "
+"[여기](https://technet.microsoft.com/en-us/library/cc770509.aspx)에 있습니다."
+
+# unordered list
+#: deploy_windows/using_ldap.md:62
+msgid ""
+"* AD supports 'user@domain.name' format for the USER_DN option. For example "
+"you can use administrator@example.com for USER_DN. Sometime the domain "
+"controller doesn't recognize this format. You can still use `dsquery` "
+"command to find out user's DN. For example, if the user name is "
+"'seafileuser', run `dsquery user -name seafileuser`. More information [here]"
+"(https://technet.microsoft.com/en-us/library/cc725702.aspx)."
+msgstr ""
+"* AD는 USER_DN 옵션에 'user@domain.name' 형식을 지원합니다. 예를 들어 USER_DN"
+"에 administrator@example.com 값을 사용할 수 있습니다. 때로는 도메인 컨트롤러"
+"에서 이 형식을 인지하지 못할 수도 있습니다. 사용자 DN을 찾을 때 `dsquery` 명"
+"령을 사용할 수 있습니다. 예를 들면 `seafileuser` 이름을 가진 사용자라면 "
+"`dsquery user -name seafileuser`를 실행하십시오. 더 자세한 내용은 [여기에 있"
+"습니다](https://technet.microsoft.com/en-us/library/cc725702.aspx)."
+
+# header
+#: deploy_windows/using_ldap.md:64
+msgid "### Connecting to other LDAP servers"
+msgstr "### 기타 LDAP 서버에 연결"
+
+#: deploy_windows/using_ldap.md:66
+msgid "Please add the following options to ccnet.conf:"
+msgstr "ccnet.conf에 다음 설정 항목을 추가하십시오:"
+
+#: deploy_windows/using_ldap.md:71
+msgid "    BASE = ou=users,dc=example,dc=com"
+msgstr "    BASE = ou=users,dc=example,dc=com"
+
+#: deploy_windows/using_ldap.md:72
+msgid "    USER_DN = cn=admin,dc=example,dc=com"
+msgstr "    USER_DN = cn=admin,dc=example,dc=com"
+
+#: deploy_windows/using_ldap.md:76
+msgid ""
+"The meaning of the options are the same as described in the previous "
+"section. With other LDAP servers, you can only use `mail` attribute as "
+"user's unique identifier."
+msgstr ""
+"이 설정 항목은 이전 섹션에 언급한 항목과 의미가 같습니다. 기타 LDAP 서버에서"
+"는 사용자 유일 식별자로 `mail` 속성을 사용할 수 있습니다."
+
+# header
+#: deploy_windows/using_ldap.md:78
+msgid "## Advanced LDAP/AD Integration Options"
+msgstr "## 고급 LDAP/AD 통합 옵션"
+
+# header
+#: deploy_windows/using_ldap.md:80
+msgid "### Multiple BASE"
+msgstr "### 다중 BASE"
+
+#: deploy_windows/using_ldap.md:82
+msgid ""
+"Multiple base DN is useful when your company has more than one OUs to use "
+"Seafile. You can specify a list of base DN in the \"BASE\" config. The DNs "
+"are separated by \";\", e.g. `ou=developers,dc=example,dc=com;ou=marketing,"
+"dc=example,dc=com`"
+msgstr ""
+"다중 베이스 DN은 회사에 Seafile을 사용하려는 조직 단위가 하나 이상일 경우 유"
+"용합니다. \"BASE\" 설정에 베이스 DN을 여러 항목으로 지정할 수 있습니다. DN은 "
+"\";\" 문자로 구분하며 다음과 같이 설정합니다. `ou=developers,dc=example,"
+"dc=com;ou=marketing,dc=example,dc=com`"
+
+# header
+#: deploy_windows/using_ldap.md:84
+msgid "### Additional Search Filter"
+msgstr "### 추가 검색 필터"
+
+#: deploy_windows/using_ldap.md:86
+msgid ""
+"Search filter is very useful when you have a large organization but only a "
+"portion of people want to use Seafile. The filter can be given by setting "
+"\"FILTER\" config. The value of this option follows standard LDAP search "
+"filter syntax (https://msdn.microsoft.com/en-us/library/aa746475(v=vs.85)."
+"aspx)."
+msgstr ""
+"검색 필터는 거대 조직에서 일부 사용자가 Seafile을 사용하려 할 때 유용합니다. "
+"\"FILTER\" 값을 설정하면 필터 조건을 줄 수 있습니다. 이 설정 항목의 값은 표"
+"준 LDAP 검색 필터 문법을 따릅니다(https://msdn.microsoft.com/en-us/library/"
+"aa746475(v=vs.85).aspx)."
+
+#: deploy_windows/using_ldap.md:88
+msgid ""
+"The final filter used for searching for users is `(&($LOGIN_ATTR=*)"
+"($FILTER))`. `$LOGIN_ATTR` and `$FILTER` will be replaced by your option "
+"values."
+msgstr ""
+"사용자 검색에 사용할 최종 필터는 `(&($LOGIN_ATTR=*)($FILTER))`입니다. `"
+"$LOGIN_ATTR` 및 `$FILTER` 변수는 개별 설정 항목 값으로 바뀝니다."
+
+#: deploy_windows/using_ldap.md:90
+msgid "For example, add the following line to LDAP config:"
+msgstr "예를 들자면, LDAP 설정에 다음 줄을 추가하십시오:"
+
+# code block
+#: deploy_windows/using_ldap.md:92
+msgid ""
+"```\n"
+"FILTER = memberOf=CN=group,CN=developers,DC=example,DC=com\n"
+"```"
+msgstr ""
+"```\n"
+"FILTER = memberOf=CN=group,CN=developers,DC=example,DC=com\n"
+"```"
+
+#: deploy_windows/using_ldap.md:96
+msgid ""
+"The final search filter would be `(&(mail=*)(memberOf=CN=group,CN=developers,"
+"DC=example,DC=com))`"
+msgstr ""
+"최종 검색 필터는 `(&(mail=*)(memberOf=CN=group,CN=developers,DC=example,"
+"DC=com))`입니다"
+
+#: deploy_windows/using_ldap.md:98
+msgid ""
+"Note that the cases in the above example is significant. The `memberOf` "
+"attribute is only available in Active Directory."
+msgstr ""
+"참고로 위 예제에서 대소문자는 중요합니다. `memberOf` 속성은 액티브 디렉터리에"
+"서만 사용할 수 있습니다."
+
+# header
+#: deploy_windows/using_ldap.md:100
+msgid "### Limiting Seafile Users to a Group in Active Directory"
+msgstr "### Seafile 사용자를 액티브 디렉터리 그룹으로 제한하기"
+
+#: deploy_windows/using_ldap.md:102
+msgid ""
+"You can use the FILTER option to limit user scope to a certain AD group."
+msgstr ""
+"FILTER 옵션을 사용하여 사용자 범위를 각각의 AD 그룹으로 제한할 수 있습니다."
+
+# ordered list
+#: deploy_windows/using_ldap.md:104
+msgid ""
+"1. First, you should find out the DN for the group. Again, we'll use "
+"`dsquery` command on the domain controller. For example, if group name is "
+"'seafilegroup', run `dsquery group -name seafilegroup`."
+msgstr ""
+"1. 우선 그룹의 DN을 확인하십시오. 다시 말씀드리지만, 도메인 컨트롤러의 "
+"`dsquery` 명령을 사용합니다. 예를 들어 그룹 이름이 `seafilegroup`이라면, "
+"`dsquery group -name seafilegroup`을 실행하십시오."
+
+# ordered list
+#: deploy_windows/using_ldap.md:105
+msgid "2. Add following line to LDAP config:"
+msgstr "2. 다음 줄을 LDAP 설정에 추가하십시오:"
+
+# code block
+#: deploy_windows/using_ldap.md:107
+msgid ""
+"```\n"
+"FILTER = memberOf={output of dsquery command}\n"
+"```"
+msgstr ""
+"```\n"
+"FILTER = memberOf={output of dsquery command}\n"
+"```"
+
+# header
+#: deploy_windows/windows_fsck.md:2
+msgid "### Running seaf-fsck on corrupted repositories ###"
+msgstr "### 손상 저장소에서 seaf-fsck 실행 ###"
+
+#: deploy_windows/windows_fsck.md:4
+msgid ""
+"For the time being there is no batch file available for running `seaf-fsck."
+"exe` in a Windows environment."
+msgstr ""
+"윈도우 환경에서 `seaf-fsck.exe`를 실행할 배치 파일이 현재로서는 없습니다."
+
+#: deploy_windows/windows_fsck.md:5
+msgid ""
+"To manually run `seaf-fsck.exe`, follow the following procedure (assuming "
+"you've installed Seafile server to `X:\\Seafile\\`:"
+msgstr ""
+"`seaf-fsck.exe`를 직접 실행하려면 다음 과정을 따르십시오(Seafile 서버를 `X:"
+"\\Seafile\\`에 설치했다고 가정합니다):"
+
+# ordered list
+#: deploy_windows/windows_fsck.md:7
+msgid "1. Open a command prompt by following *either* of these steps"
+msgstr "1. 다음 *둘 중 한가지* 과정을 따라 명령 프롬프트를 여십시오"
+
+# unordered list
+#: deploy_windows/windows_fsck.md:8
+msgid ""
+"  - Click **Start**, **Run**, enter `cmd.exe` and then navigate to the "
+"binary folder by entering `cd /d X:\\Seafile\\seafile-server-5.x.x\\seafile"
+"\\bin`"
+msgstr ""
+"- **시작**, **실행**을 누르고 `cmd.exe`를 입력한 후 `cd /d X:\\Seafile"
+"\\seafile-server-5.x.x\\seafile\\bin` 명령을 입력하여 바이너리 폴더로 들어가"
+"십시오"
+
+# unordered list
+#: deploy_windows/windows_fsck.md:9
+msgid "  - Or, using the file explorer:"
+msgstr "  - 또는 파일 탐색기에서:"
+
+# unordered list
+#: deploy_windows/windows_fsck.md:10
+msgid ""
+"    * Navigate to the folder where the binaries are located (`X:\\Seafile"
+"\\seafile-server-5.x.x\\seafile\\bin`)"
+msgstr ""
+"    * 바이너리가 있는 폴더(`X:\\Seafile\\seafile-server-5.x.x\\seafile\\bin`)"
+"로 들어가십시오"
+
+# unordered list
+#: deploy_windows/windows_fsck.md:11
+msgid ""
+"    * Hold shift and right click in free space to bring up the context menu, "
+"then select **Open command window here**"
+msgstr ""
+"    * 빈 공간에 마우스 커서를 대고 Shift 키를 누른 상태에서 오른쪽 단추를 누"
+"른 후 단축 메뉴를 띄운 다음 **여기서 명령 창 열기**를 선택하십시오"
+
+# ordered list
+#: deploy_windows/windows_fsck.md:12
+msgid ""
+"2. Enter the following inside the opened command prompt: `seaf-fsck.exe --"
+"repair -c Y:\\seafile-user\\ccnet -d Y:\\seafile-user\\seafile-data -F Y:"
+"\\seafile-user\\conf`"
+msgstr ""
+"2. 열어둔 명령 프롬프트 창에 다음 명령을 입력하십시오: `seaf-fsck.exe --"
+"repair -c Y:\\seafile-user\\ccnet -d Y:\\seafile-user\\seafile-data -F Y:"
+"\\seafile-user\\conf`"
+
+# unordered list
+#: deploy_windows/windows_fsck.md:13
+msgid "  - *seafile-user* is the folder your Seafile data is stored in"
+msgstr "  - *seafile-user*는 Seafile 데이터를 저장한 폴더입니다"
+
+# unordered list
+#: deploy_windows/windows_fsck.md:14
+msgid ""
+"  - Make sure you are pointing `seaf-fsck.exe` towards the correct "
+"directory: *ccnet*, *seafile-data* and *conf* folders must be present"
+msgstr ""
+"  - `seaf-fsck.exe`에서 올바른 디렉터리를 가리키는지 확인하십시오: *ccnet*, "
+"*seafile-data*, *conf* 폴더가 나타나야합니다"
+
+# ordered list
+#: deploy_windows/windows_fsck.md:15
+msgid "3. `seaf-fsck` should be running now"
+msgstr "3. `seaf-fsck`가 동작해야합니다"
+
+#: deploy_windows/windows_fsck.md:17
+msgid ""
+"For information on *seaf-fsck*, its usage and syntax, see the chapter "
+"[Seafile FSCK](../maintain/seafile_fsck.md)."
+msgstr ""
+"*seaf-fsck*의 사용법과 옵션 문법을 더 자세히 알아보려면, [Seafile FSCK](../"
+"maintain/seafile_fsck.md) 장을 참고하십시오."
+
+# header
+#: deploy_windows/windows_gc.md:2
+msgid "### Garbage Collecting Unused Blocks on Seafile Server ###"
+msgstr "### Seafile 서버에서 사용하지 않는 블록 가비지 수집 ###"
+
+# unordered list
+#: deploy_windows/windows_gc.md:4
+msgid ""
+"- Stop your seafile server by right clicking the server tray icon, and "
+"choose *Quit and shutdown Seafile Server*"
+msgstr ""
+"- 서버 상태 표시줄 아이콘에 마우스 커서를 두고 오른쪽 단추를 눌러 Seafile 서"
+"버를 멈춘 후 *Seafile 서버 끝내기*를 선택하십시오"
+
+# unordered list
+#: deploy_windows/windows_gc.md:5
+msgid ""
+"- In file explorer, navigate to the seafile program folder `seafile-server-3."
+"x.x`"
+msgstr ""
+"- 파일 탐색기에서, `seafile-server-3.x.x` Seafile 프로그램 폴더를 찾아가십시"
+"오"
+
+# unordered list
+#: deploy_windows/windows_gc.md:6
+msgid ""
+"- Right click the file **gc.bat**, and choose *Run with admin privileges*"
+msgstr ""
+"- **gc.bat** 파일에 마우스 커서를 올려놓고 오른쪽 단추를 누른 후 *관리자 권한"
+"으로 실행*을 선택하십시오"
+
+#: deploy_windows/windows_gc.md:8
+msgid "The garbage collection program would run and remove all unused blocks."
+msgstr "가비지 수집 프로그램을 실행하고 사용하지 않는 모든 블록을 제거합니다."

@@ -50,7 +50,8 @@
    * [Enable Office/PDF Documents Online Preview](deploy_pro/office_documents_preview.md)
    * [Integrating with Office Web App](deploy_pro/office_web_app.md)
    * [Details about File Search](deploy_pro/details_about_file_search.md)
-   * [Virus Scan](deploy_pro/virus_scan.md)
+   * Virus Scan
+       * [Virus Scan](deploy_pro/virus_scan.md)
        * [Virus Scan With Kav4fs](deploy_pro/virus_scan_with_kav4fs.md)
    * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)
    * Storage Backends
@@ -92,7 +93,8 @@
    * [Security features](security/security_features.md)
    * [Access logs and auditing](security/auditing.md)
 * [Developing](develop/README.md)
-   * [How to Build Seafile](build_seafile/README.md)
+   * How to Build Seafile
+       * [Intro](build_seafile/README.md)
        * [Linux](build_seafile/linux.md)
        * [FreeBSD](build_seafile/freebsd.md)
        * [Windows](build_seafile/windows.md)
@@ -104,7 +106,7 @@
    * [Web API](develop/web_api.md)
    * [Web API V2.1](develop/web_api_v2.1.md)
    * [Python API](develop/python_api.md)
-   * [PHP API](https://github.com/rene-s/Seafile-PHP-SDK)
+   * [PHP API](develop/php_api.md)
    * [Data Model](develop/data_model.md)
    * [Server Components](develop/server-components.md)
    * [Sync algorithm](develop/sync_algorithm.md)

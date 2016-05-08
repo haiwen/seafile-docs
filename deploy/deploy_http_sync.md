@@ -5,7 +5,7 @@ Starting from version 4.0.0, Seafile supports file syncing via HTTP protocol. Th
 Client version >= 4.2 use http syncing protocol exclusively, the cases are
 
 * If you're not using https, you don't have to configure Nginx or Apache to use http sync. The client can talk directly with the file server on port 8082.
-* If you're using https, you have to configure Nginx or Apahce.
+* If you're using https, you have to configure Nginx or Apache.
 
 If you'are using clients version < 4.2,
 

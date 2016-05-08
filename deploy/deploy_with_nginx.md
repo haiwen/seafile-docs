@@ -78,8 +78,7 @@ Tip for uploading very large files (> 4GB): By default Nginx will buffer large r
 
 ### Modify ccnet.conf
 
-You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md)
-to let Seafile know the domain you choose.
+You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md) to let Seafile know the domain you choose.
 
 ```python
 SERVICE_URL = http://www.myseafile.com

@@ -28,8 +28,7 @@ clone
 -----
 Clone a repo from seafile server
 
-A repo id and a url need to be give because this program need to use seafile web
-API v2 to fetch repo information.
+A repo id and a url need to be give because this program need to use seafile web API v2 to fetch repo information.
 
 usage: seaf-cli -c <config-dir> -r <repo-id> -u <url> [-w <worktree>] -o clone
 
@@ -55,8 +54,7 @@ Subcommands:
     list:           list local liraries
     status:         show syncing status
     download:       download a library from seafile server
-    sync:           synchronize an existing folder with a library in
-                        seafile server
+    sync:           synchronize an existing folder with a library in seafile server
     desync:         desynchronize a library with seafile server
 
 
