@@ -1521,7 +1521,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 
 * repo-id
 * p
-* reuse (optional): Set `resue` to `1` if you want the generated download link can be accessed more than once in one hour.
+* reuse (optional): Set `reuse` to `1` if you want the generated download link can be accessed more than once in one hour.
 
 **Sample request**
 
