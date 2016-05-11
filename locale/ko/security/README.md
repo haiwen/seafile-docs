@@ -1,10 +1,10 @@
-# Security and auditing
+# 보안 및 감사
 
-## Security features 
+## 보안 기능 
 
-* [Security features](security_features.md)
+* [보안 기능](security_features.md)
 
-## Access log and auditing
+## 접근 기록 및 감사
 
-* [Access log and auditing](auditing.md)
+* [접근 기록 및 감사](auditing.md)
 

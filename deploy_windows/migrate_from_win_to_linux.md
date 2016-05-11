@@ -1,6 +1,6 @@
 # Migrate From Windows to Linux
 
-This tutorial show you how to migrate Seafile form Windows(using SQLite) to Linux.
+This tutorial show you how to migrate Seafile from Windows(using SQLite) to Linux.
 
 ### 1. Deploying Seafile Under Linux
 

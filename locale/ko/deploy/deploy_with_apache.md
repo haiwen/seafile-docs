@@ -1,14 +1,14 @@
-# Config Seahub with Apache
+# Seahub와 Apache 설정
 
 ## 중요사항
 
-According to the [security advisory](https://www.djangoproject.com/weblog/2013/aug/06/breach-and-django/) published by Django team, we recommend disable [GZip compression](http://httpd.apache.org/docs/2.2/mod/mod_deflate.html) to mitigate [BREACH attack](http://breachattack.com/).
+장고 팀의 [보안 권고안](https://www.djangoproject.com/weblog/2013/aug/06/breach-and-django/)에 따르면, [BREACH 공격](http://breachattack.com/)을 피하도록 [GZip 압축](http://httpd.apache.org/docs/2.2/mod/mod_deflate.html) 비활성화를 추천합니다.
 
-This tutorial assumes you run at least Apache 2.4.
+이 지침서는 최소한 Apache 2.4를 사용한다고 가정합니다.
 
 ## 준비
 
-Install and enable Apache modules
+Apache 모듈을 설치하고 활성화하십시오
 
 우분투라면 다음 명령으로 활성화할 수 있습니다:
 
@@ -19,15 +19,15 @@ sudo a2enmod proxy_http
 ```
 
 
-On raspbian install fcgi like [this](http://raspberryserver.blogspot.co.at/2013/02/installing-lamp-with-fastcgi-php-fpm.html)
+라즈비안에서는 [이 곳](http://raspberryserver.blogspot.co.at/2013/02/installing-lamp-with-fastcgi-php-fpm.html)에서 언급한대로 fcgi를 설치하십시오
 
-## Deploy Seahub/FileServer With Apache
+## Seafile/FileServer와 Apache 가동
 
-Seahub is the web interface of Seafile server. FileServer is used to handle raw file uploading/downloading through browsers. By default, it listens on port 8082 for HTTP request.
+Seahub는 Seafile 서버의 웹 인터페이스입니다. FileServer는 브라우저의 원시 파일 업로드/다운로드 처리에 활용합니다. FileServer는 기본적으로 8082 포트에서 요청 대기를 수행합니다.
 
-Here we deploy Seahub using fastcgi, and deploy FileServer with reverse proxy. We assume you are running Seahub using domain '''www.myseafile.com'''.
+여기서 fastcgi를 활용하여 Seahub를 구동하고 역방향 프록시로 FileServer를 구동하겠습니다. 여기서 Seahub를 실행하는 환경에서 '''www.myseafile.com''' 도메인을 사용한다고 가정하겠습니다.
 
-Modify Apache config file: (`sites-enabled/000-default`) for ubuntu/debian, (`vhost.conf`) for centos/fedora
+Apache 설정 파일을 수정하십시오: 우분투/데비안에서는(`sites-enabled/000-default`), 센트OS/페도라 에서는(`vhost.conf`)입니다
 
 ```apache
 <VirtualHost *:80>
@@ -69,11 +69,11 @@ Modify Apache config file: (`sites-enabled/000-default`) for ubuntu/debian, (`vh
 SERVICE_URL = http://www.myseafile.com
 ```
 
-Note: If you later change the domain assigned to seahub, you also need to change the value of  <code>SERVICE_URL</code>.
+참고: Seahub에 할당한 도메인을 나중에 바꾸면 <code>SERVICE_URL</code>의 값도 바꿔야합니다.
 
 ### seahub_settings.pySeafile 수정
 
-You need to add a line in <code>seahub_settings.py</code> to set the value of `FILE_SERVER_ROOT` (or `HTTP_SERVER_ROOT` before version 3.1)
+<code>seahub_settings.py</code>에 설정 줄을 추가하여 `FILE_SERVER_ROOT`(3.1.0 버전 이전의 경우 `HTTP_SERVER_ROOT`) 값을 설정해야 합니다
 
 ```python
 FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'
@@ -87,13 +87,13 @@ sudo service apache2 restart
 ./seahub.sh start-fastcgi
 ```
 
-## Troubleshooting
+## 문제 해결
 
-### Problems with paths and files containing spaces
+### 공백 문자가 들어있는 경로 및 파일의 문제
 
-If there are problems with paths or files containing spaces, make sure to have at least Apache 2.4.12.
+경로 또는 파일에 공백이 들어가 있어 문제가 발생한다면 Apache 버전이 2.4.12 이상이 아닌지 확인하십시오.
 
-References
+참고
  * https://github.com/haiwen/seafile/issues/1258#issuecomment-188866740
  * https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/1284641
  * https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/1284641/comments/5
@@ -101,30 +101,30 @@ References
 
 ## Seafile 서버 업그레이드 참고
 
-When [upgrading seafile server](upgrade.md), besides the normal steps you should take, there is one extra step to do: '''Update the path of the static files in your Nginx/Apache configuration'''. For example, assume your are upgrading seafile server 1.3.0 to 1.4.0, then:
+[Seafile 서버를 업그레이드](upgrade.md)할 때, 일반 과정을 거친 다음의 추가 진행 과정이 있습니다. '''Nginx/Apache 설정에서 정적 파일 경로를 업데이트하십시오'''. 예를 들어 Seafile 서버를 1.3.0에서 1.4.0으로 업데이트 한다면:
 
 ```apache
   Alias /media  /home/user/haiwen/seafile-server-1.4.0/seahub/media
 ```
 
-**Tip:**
-You can create a symbolic link <code>seafile-server-latest</code>, and make it point to your current seafile server folder (Since seafile server 2.1.0, the <code>setup-seafile.sh</code> script will do this for you). Then, each time you run a upgrade script, it would update the <code>seafile-server-latest</code> symbolic link to keep it always point to the latest version seafile server folder.
+**요령:**
+<code>seafile-server-latest</code> 심볼릭 링크를 작성하여 현재 Seafile 서버 폴더를 가리킬 수 있습니다(Seafile 서버 2.1.0부터, <code>setup-seafile.sh</code> 스크립트가 이 동작을 진행합니다). 그 다음 업그레이드 스크립트를 실행할 때마다 최신 버전의 Seafile 서버 폴더를 항상 가리키도록 <code>seafile-server-latest</code> 심볼릭 링크를 업데이트합니다.
 
-In this case, you can write:
+이 경우, 다음 설정을 작성할 수 있습니다:
 
 ```apache
   Alias /media  /home/user/haiwen/seafile-server-latest/seahub;
 ```
-This way, you no longer need to update the Apache config file each time you upgrade your seafile server.
+이 방법으로 Seafile 서버를 업그레이드할 때마다 더 이상 Apache 설정 파일을 업데이트할 필요가 없습니다.
 
 
-## Detailed explanation
+## 세부 설명
 
-This may help you understand seafile server better: [Seafile Components](../overview/components.md)
+이 부분은 Seafile 서버의 이해를 돕습니다: [Seafile 구성요소](../overview/components.md)
 
-There are two components in Seafile server, Seahub and FileServer. FileServer only servers for raw file uploading/downloading, it listens on 8082. Seahub that serving all the other pages, is still listen on 8000. But under https, Seahub should listen as in fastcgi mode on 8000 (run as ./seahub.sh start-fastcgi). And as in fastcgi mode, when you visit  http://domain:8000 directly, it should return an error page.
+Seafile 서버는 두가지 부분, Seahub와 FileServer로 이루어져있습니다. FileServer는 8082번 포트에서 요청 대기하며 원시 파일 업로드/다운로드 전용 서버입니다. Seahub는 모든 기타 페이지를 제공하며 8000번 포트에서 요청 대기합니다. 다만 https에서는 Seahub는 8000번 포트에서 fastcgi 모드(./seahub.sh start-fastcgi로 실행)로 요청 대기해야합니다. 그리고 fastcgi 모드에서 http://domain:8000 주소로 바로 접근하면 오류 페이지를 반환해야합니다.
 
-When a user visit https://example.com/home/my/, Apache receives this request and sends it to Seahub via fastcgi. This is controlled by the following config items:
+사용자가 https://example.com/home/my/ 주소로 접근하면, Apache에서 요청을 받아 fastcgi로 Seahub에 전달합니다. 이 동작은 다음 설정 항목으로 관리합니다:
 
 ```apache
     #
@@ -135,9 +135,9 @@ When a user visit https://example.com/home/my/, Apache receives this request and
     ProxyPass / fcgi://127.0.0.1:8000/
 ```
 
-When a user click a file download link in Seahub, Seahub reads the value of `FILE_SERVER_ROOT` and redirects the user to address `https://example.com/seafhttp/xxxxx/`. `https://example.com/seafhttp` is the value of `FILE_SERVER_ROOT`. Here, the `FILE_SERVER` means the FileServer component of Seafile, which only serves for raw file downloading/uploading.
+사용자가 Seahub의 파일 다운로드 링크를 누르면, Seahub에서 `FILE_SERVER_ROOT` 값을 읽고 `https://example.com/seafhttp/xxxxx/` 주소로 사용자를 안내합니다. `https://example.com/seafhttp`는 `FILE_SERVER_ROOT`의 값입니다. 여기서 `FILE_SERVER`는 원시 파일 업로드/다운로드만 처리하는 Seafile의 FileServer 구성 요소입니다.
 
-When Apache receives the request at 'https://example.com/seafhttp/xxxxx/', it proxies the request to FileServer, which is listening at 127.0.0.1:8082. This is controlled by the following config items:
+Apache에서 'https://example.com/seafhttp/xxxxx/' 요청을 받으면,  127.0.0.1:8082에서 대기 중인 FileServer에 요청을 전달합니다. 다음 설정 항목으로 이 동작을 관리합니다:
 
 ```apache
     #

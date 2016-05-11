@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -369,280 +369,300 @@ msgstr ""
 
 #: SUMMARY.md:53
 # unordered list
-msgid "   * [Virus Scan](deploy_pro/virus_scan.md)"
+msgid "   * Virus Scan"
 msgstr ""
 
 #: SUMMARY.md:54
 # unordered list
-msgid "       * [Virus Scan With Kav4fs](deploy_pro/virus_scan_with_kav4fs.md)"
+msgid "       * [Virus Scan](deploy_pro/virus_scan.md)"
 msgstr ""
 
 #: SUMMARY.md:55
 # unordered list
-msgid "   * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)"
+msgid "       * [Virus Scan With Kav4fs](deploy_pro/virus_scan_with_kav4fs.md)"
 msgstr ""
 
 #: SUMMARY.md:56
 # unordered list
-msgid "   * Storage Backends"
+msgid "   * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)"
 msgstr ""
 
 #: SUMMARY.md:57
 # unordered list
-msgid "       * [Amazon S3 Backend](deploy_pro/setup_with_amazon_s3.md)"
+msgid "   * Storage Backends"
 msgstr ""
 
 #: SUMMARY.md:58
 # unordered list
-msgid "       * [Ceph Backend](deploy_pro/setup_with_ceph.md)"
+msgid "       * [Amazon S3 Backend](deploy_pro/setup_with_amazon_s3.md)"
 msgstr ""
 
 #: SUMMARY.md:59
 # unordered list
-msgid "       * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)"
+msgid "       * [Ceph Backend](deploy_pro/setup_with_ceph.md)"
 msgstr ""
 
 #: SUMMARY.md:60
 # unordered list
-msgid "   * Cluster Deployment"
+msgid "       * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)"
 msgstr ""
 
 #: SUMMARY.md:61
 # unordered list
-msgid "       * [Deploy in a cluster](deploy_pro/deploy_in_a_cluster.md)"
+msgid "       * [Storage Backend Encryption](deploy_pro/seaf_encrypt.md)"
 msgstr ""
 
 #: SUMMARY.md:62
 # unordered list
-msgid "       * [Setup with MariaDB and Ceph](deploy_pro/clustering_with_mariadb_ceph.md)"
+msgid "   * Cluster Deployment"
 msgstr ""
 
 #: SUMMARY.md:63
 # unordered list
-msgid "       * [Setup Seafile cluster with NFS](deploy_pro/setup_seafile_cluster_with_nfs.md)"
+msgid "       * [Deploy in a cluster](deploy_pro/deploy_in_a_cluster.md)"
 msgstr ""
 
 #: SUMMARY.md:64
 # unordered list
-msgid "       * [Enable search and background tasks in a cluster](deploy_pro/enable_search_and_background_tasks_in_a_cluster.md)"
+msgid "       * [Setup with MariaDB and Ceph](deploy_pro/clustering_with_mariadb_ceph.md)"
 msgstr ""
 
 #: SUMMARY.md:65
 # unordered list
-msgid "       * [Upgrade a cluster](deploy_pro/upgrade_a_cluster.md)"
+msgid "       * [Setup Seafile cluster with NFS](deploy_pro/setup_seafile_cluster_with_nfs.md)"
 msgstr ""
 
 #: SUMMARY.md:66
 # unordered list
-msgid "   * [Real-time Backup Server](deploy_pro/real_time_backup.md)"
+msgid "       * [Enable search and background tasks in a cluster](deploy_pro/enable_search_and_background_tasks_in_a_cluster.md)"
 msgstr ""
 
 #: SUMMARY.md:67
 # unordered list
-msgid "   * [Configurable Options](deploy_pro/configurable_options.md)"
+msgid "       * [Upgrade a cluster](deploy_pro/upgrade_a_cluster.md)"
 msgstr ""
 
 #: SUMMARY.md:68
 # unordered list
-msgid "   * [FAQ](deploy_pro/faq_for_seafile_pro_server.md)"
+msgid "   * [Real-time Backup Server](deploy_pro/real_time_backup.md)"
 msgstr ""
 
 #: SUMMARY.md:69
 # unordered list
-msgid "   * [License](deploy_pro/seafile_professional_sdition_software_license_agreement.md)"
+msgid "   * [Import Directory To Seafile](deploy_pro/seaf_import.md)"
 msgstr ""
 
 #: SUMMARY.md:70
 # unordered list
-msgid "* [Server Configuration and Customization](config/README.md)"
+msgid "   * [Configurable Options](deploy_pro/configurable_options.md)"
 msgstr ""
 
 #: SUMMARY.md:71
 # unordered list
-msgid "   * [ccnet.conf](config/ccnet-conf.md)"
+msgid "   * [FAQ](deploy_pro/faq_for_seafile_pro_server.md)"
 msgstr ""
 
 #: SUMMARY.md:72
 # unordered list
-msgid "   * [seafile.conf](config/seafile-conf.md)"
+msgid "   * [License](deploy_pro/seafile_professional_sdition_software_license_agreement.md)"
 msgstr ""
 
 #: SUMMARY.md:73
 # unordered list
-msgid "   * [seahub_settings.py](config/seahub_settings_py.md)"
+msgid "* [Server Configuration and Customization](config/README.md)"
 msgstr ""
 
 #: SUMMARY.md:74
 # unordered list
-msgid "   * [Seahub customization](config/seahub_customization.md)"
+msgid "   * [ccnet.conf](config/ccnet-conf.md)"
 msgstr ""
 
 #: SUMMARY.md:75
 # unordered list
-msgid "   * [Desktop client customization](config/desktop_customization.md)"
+msgid "   * [seafile.conf](config/seafile-conf.md)"
 msgstr ""
 
 #: SUMMARY.md:76
 # unordered list
-msgid "   * [Email Sending](config/sending_email.md)"
+msgid "   * [seahub_settings.py](config/seahub_settings_py.md)"
 msgstr ""
 
 #: SUMMARY.md:77
 # unordered list
-msgid "   * [User management options](config/user_options.md)"
+msgid "   * [Seahub customization](config/seahub_customization.md)"
 msgstr ""
 
 #: SUMMARY.md:78
 # unordered list
-msgid "   * [Storage Quota and File size limits](config/quota_and_size_options.md)"
+msgid "   * [Desktop client customization](config/desktop_customization.md)"
 msgstr ""
 
 #: SUMMARY.md:79
 # unordered list
-msgid "* [Administration](maintain/README.md)"
+msgid "   * [Email Sending](config/sending_email.md)"
 msgstr ""
 
 #: SUMMARY.md:80
 # unordered list
-msgid "   * [Account management](maintain/account.md)"
+msgid "   * [User management options](config/user_options.md)"
 msgstr ""
 
 #: SUMMARY.md:81
 # unordered list
-msgid "   * [Logs](maintain/logs.md)"
+msgid "   * [Storage Quota and File size limits](config/quota_and_size_options.md)"
 msgstr ""
 
 #: SUMMARY.md:82
 # unordered list
-msgid "   * [Backup and Recovery](maintain/backup_recovery.md)"
+msgid "* [Administration](maintain/README.md)"
 msgstr ""
 
 #: SUMMARY.md:83
 # unordered list
-msgid "   * [Seafile FSCK](maintain/seafile_fsck.md)"
+msgid "   * [Account management](maintain/account.md)"
 msgstr ""
 
 #: SUMMARY.md:84
 # unordered list
-msgid "   * [Seafile GC](maintain/seafile_gc.md)"
+msgid "   * [Logs](maintain/logs.md)"
 msgstr ""
 
 #: SUMMARY.md:85
 # unordered list
-msgid "   * [Clean database](maintain/clean_database.md)"
+msgid "   * [Backup and Recovery](maintain/backup_recovery.md)"
 msgstr ""
 
 #: SUMMARY.md:86
 # unordered list
-msgid "* [WebDAV and FUSE extensions](extension/README.md)"
+msgid "   * [Seafile FSCK](maintain/seafile_fsck.md)"
 msgstr ""
 
 #: SUMMARY.md:87
 # unordered list
-msgid "   * [WebDAV extension](extension/webdav.md)"
+msgid "   * [Seafile GC](maintain/seafile_gc.md)"
 msgstr ""
 
 #: SUMMARY.md:88
 # unordered list
-msgid "   * [FUSE extension](extension/fuse.md)"
+msgid "   * [Clean database](maintain/clean_database.md)"
 msgstr ""
 
 #: SUMMARY.md:89
 # unordered list
-msgid "* [Security and Auditing](security/README.md)"
+msgid "* [WebDAV and FUSE extensions](extension/README.md)"
 msgstr ""
 
 #: SUMMARY.md:90
 # unordered list
-msgid "   * [Security features](security/security_features.md)"
+msgid "   * [WebDAV extension](extension/webdav.md)"
 msgstr ""
 
 #: SUMMARY.md:91
 # unordered list
-msgid "   * [Access logs and auditing](security/auditing.md)"
+msgid "   * [FUSE extension](extension/fuse.md)"
 msgstr ""
 
 #: SUMMARY.md:92
 # unordered list
-msgid "* [Developing](develop/README.md)"
+msgid "* [Security and Auditing](security/README.md)"
 msgstr ""
 
 #: SUMMARY.md:93
 # unordered list
-msgid "   * [How to Build Seafile](build_seafile/README.md)"
+msgid "   * [Security features](security/security_features.md)"
 msgstr ""
 
 #: SUMMARY.md:94
 # unordered list
-msgid "       * [Linux](build_seafile/linux.md)"
+msgid "   * [Access logs and auditing](security/auditing.md)"
 msgstr ""
 
 #: SUMMARY.md:95
 # unordered list
-msgid "       * [FreeBSD](build_seafile/freebsd.md)"
+msgid "* [Developing](develop/README.md)"
 msgstr ""
 
 #: SUMMARY.md:96
 # unordered list
-msgid "       * [Windows](build_seafile/windows.md)"
+msgid "   * How to Build Seafile"
 msgstr ""
 
 #: SUMMARY.md:97
 # unordered list
-msgid "       * [Mac OS X](build_seafile/osx.md)"
+msgid "       * [Intro](build_seafile/README.md)"
 msgstr ""
 
 #: SUMMARY.md:98
 # unordered list
-msgid "       * [Server](build_seafile/server.md)"
+msgid "       * [Linux](build_seafile/linux.md)"
 msgstr ""
 
 #: SUMMARY.md:99
 # unordered list
-msgid "       * [Raspberry Pi](build_seafile/rpi.md)"
+msgid "       * [FreeBSD](build_seafile/freebsd.md)"
 msgstr ""
 
 #: SUMMARY.md:100
 # unordered list
-msgid "   * [Develop env](develop/env.md)"
+msgid "       * [Windows](build_seafile/windows.md)"
 msgstr ""
 
 #: SUMMARY.md:101
 # unordered list
-msgid "   * [Code Standard](develop/code_standard.md)"
+msgid "       * [Mac OS X](build_seafile/osx.md)"
 msgstr ""
 
 #: SUMMARY.md:102
 # unordered list
-msgid "   * [Web API](develop/web_api.md)"
+msgid "       * [Server](build_seafile/server.md)"
 msgstr ""
 
 #: SUMMARY.md:103
 # unordered list
-msgid "   * [Web API V2.1](develop/web_api_v2.1.md)"
+msgid "       * [Raspberry Pi](build_seafile/rpi.md)"
 msgstr ""
 
 #: SUMMARY.md:104
 # unordered list
-msgid "   * [Python API](develop/python_api.md)"
+msgid "   * [Develop env](develop/env.md)"
 msgstr ""
 
 #: SUMMARY.md:105
 # unordered list
-msgid "   * [PHP API](develop/php_api.md)"
+msgid "   * [Code Standard](develop/code_standard.md)"
 msgstr ""
 
 #: SUMMARY.md:106
 # unordered list
-msgid "   * [Data Model](develop/data_model.md)"
+msgid "   * [Web API](develop/web_api.md)"
 msgstr ""
 
 #: SUMMARY.md:107
 # unordered list
-msgid "   * [Server Components](develop/server-components.md)"
+msgid "   * [Web API V2.1](develop/web_api_v2.1.md)"
 msgstr ""
 
 #: SUMMARY.md:108
+# unordered list
+msgid "   * [Python API](develop/python_api.md)"
+msgstr ""
+
+#: SUMMARY.md:109
+# unordered list
+msgid "   * [PHP API](develop/php_api.md)"
+msgstr ""
+
+#: SUMMARY.md:110
+# unordered list
+msgid "   * [Data Model](develop/data_model.md)"
+msgstr ""
+
+#: SUMMARY.md:111
+# unordered list
+msgid "   * [Server Components](develop/server-components.md)"
+msgstr ""
+
+#: SUMMARY.md:112
 # unordered list
 msgid "   * [Sync algorithm](develop/sync_algorithm.md)"
 msgstr ""

@@ -2,20 +2,21 @@
 
 ## 配置文件
 
-**注意**: Seafile 服务器 5.0.0 之后，所有配置文件都移动到了统一的 **conf** 目录下，
-而且大部分配置选项可以通过 Web 界面 (Admin Panel -> Settings) 来配置，不需要直接修改配置文件。
-通过 Web 界面做的配置会保存在数据库中，并且优先级比通过配置文件做的配置的优先级高。
+**Important**: Since Seafile Server 5.0.0, all config files are moved to the central **conf** folder. [Read More](../deploy/new_directory_layout_5_0_0.md).
 
 开源版中包括以下三个配置文件:
 
-- [conf/ccnet.conf](ccnet-conf.md): 用来配置网络和 LDAP/AD 连接
-- [conf/seafile.conf](seafile-conf.md): 用来配置 Seafile
-- [conf/seahub_settings.py](seahub_settings_py.md): 用来配置 Seahub
+- [ccnet.conf](ccnet-conf.md): 用来配置网络和 LDAP/AD 连接
+- [seafile.conf](seafile-conf.md): 用来配置 Seafile
+- [seahub_settings.py](seahub_settings_py.md): 用来配置 Seahub
 
 专业版中还包含以下一个配置文件:
 
-- `conf/seafevents.conf`: 包含搜索与文件预览的配置
+- `seafevents.conf`: 包含搜索与文件预览的配置
 
+Note: Since version 5.0.0, you can also modify most of the config items via web interface. The config items are saved in database table (seahub-db/constance_config). They have a higher priority over the items in config files.
+
+![Seafile Config via Web](../images/seafile-server-config.png)
 
 ## 配置项
 
@@ -35,3 +36,4 @@
 ## 自定义 Web
 
 * [自定义 Web](seahub_customization.md)
+

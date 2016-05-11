@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
-"PO-Revision-Date: 2016-04-20 04:28+0900\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
+"PO-Revision-Date: 2016-05-05 03:53+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean <darkcircle.0426@gmail.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.7\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 # header
@@ -52,7 +52,7 @@ msgstr ""
 # header
 #: README.md:9
 msgid "## Translation (Work In Progress)"
-msgstr ""
+msgstr "## 번역 (작업중)"
 
 #: README.md:11
 msgid ""
@@ -60,22 +60,26 @@ msgid ""
 "Gettext) system, you can start translating this manual following 3 simple "
 "steps."
 msgstr ""
+"[gettext](https://en.wikipedia.org/wiki/Gettext) 시스템에 익숙하지 않아도, 간"
+"단한 다음의 3단계로 시작할 수 있습니다."
 
 #: README.md:13
 msgid ""
 "As an example to translate files from **overview/** folder to *Spanish*, "
 "these 3 steps are:"
 msgstr ""
+"예를 들어 **overview/** 폴더의 파일을 *스페인어*로 번역하려 한다면, 이에 대"
+"한 3단계 절차는:"
 
 # ordered list
 #: README.md:15
 msgid "1. copy **po/overview.pot** to  **po/overview.es.po**."
-msgstr ""
+msgstr "1. **po/overview.pot**를  **po/overview.es.po**로 복사하십시오."
 
 # ordered list
 #: README.md:16
 msgid "1. Translate messages in **po/overview.es.po** to spanish language."
-msgstr ""
+msgstr "1. **po/overview.es.po** 메시지를 스페인어로 번역하십시오."
 
 # ordered list
 #: README.md:17
@@ -83,12 +87,15 @@ msgid ""
 "1. Send us your **po/overview.es.po** for integration. You can also make a "
 "pull request, if you modified an already existing po file."
 msgstr ""
+"1. **po/overview.es.po** 파일 병합을 위해 보내주십시오. 이미 po 파일이 있다"
+"면 pull 요청하셔도 됩니다."
 
 #: README.md:20
 msgid ""
 "If you are familiar with POT and PO files, you can use the one in **po/** "
 "folder."
 msgstr ""
+"POT 및 PO 파일에 익숙하다면, **po/** 폴더의 pot를 골라 사용하시면 됩니다."
 
 # header
 #: README.md:22
@@ -378,7 +385,7 @@ msgid ""
 "   * [Migrate Seafile From Windows To Linux](deploy_windows/"
 "migrate_from_win_to_linux.md)"
 msgstr ""
-"   * [윈도우에서 리눅스로 Seafile 옮기기](deploy_windows/"
+"   * [윈도우에서 리눅스로 Seafile 이전](deploy_windows/"
 "migrate_from_win_to_linux.md)"
 
 # unordered list
@@ -417,7 +424,7 @@ msgid ""
 "   * [Migrate from Seafile Community Server](deploy_pro/"
 "migrate_from_seafile_community_server.md)"
 msgstr ""
-"   * [Seafile 커뮤니티 서버에서 옮기기](deploy_pro/"
+"   * [Seafile 커뮤니티 서버에서 이전](deploy_pro/"
 "migrate_from_seafile_community_server.md)"
 
 # unordered list
@@ -466,53 +473,63 @@ msgstr "   * [파일 검색 세부 안내](deploy_pro/details_about_file_search.
 
 # unordered list
 #: SUMMARY.md:53
-msgid "   * [Virus Scan](deploy_pro/virus_scan.md)"
-msgstr "   * [바이러스 검사](deploy_pro/virus_scan.md)"
+msgid "   * Virus Scan"
+msgstr "   * 바이러스 검사"
 
 # unordered list
 #: SUMMARY.md:54
+msgid "       * [Virus Scan](deploy_pro/virus_scan.md)"
+msgstr "       * [바이러스 검사](deploy_pro/virus_scan.md)"
+
+# unordered list
+#: SUMMARY.md:55
 msgid "       * [Virus Scan With Kav4fs](deploy_pro/virus_scan_with_kav4fs.md)"
 msgstr ""
 "       * [kav4fs로 바이러스 검사](deploy_pro/virus_scan_with_kav4fs.md)"
 
 # unordered list
-#: SUMMARY.md:55
+#: SUMMARY.md:56
 msgid "   * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)"
 msgstr ""
 "   * [재개 가능한 웹 기반 파일 업로드](deploy_pro/web_resumable_upload.md)"
 
 # unordered list
-#: SUMMARY.md:56
+#: SUMMARY.md:57
 msgid "   * Storage Backends"
 msgstr "   * 저장소 백엔드"
 
 # unordered list
-#: SUMMARY.md:57
+#: SUMMARY.md:58
 msgid "       * [Amazon S3 Backend](deploy_pro/setup_with_amazon_s3.md)"
 msgstr "       * [아마존 S3 백엔드](deploy_pro/setup_with_amazon_s3.md)"
 
 # unordered list
-#: SUMMARY.md:58
+#: SUMMARY.md:59
 msgid "       * [Ceph Backend](deploy_pro/setup_with_ceph.md)"
 msgstr "       * [Ceph 백엔드](deploy_pro/setup_with_ceph.md)"
 
 # unordered list
-#: SUMMARY.md:59
+#: SUMMARY.md:60
 msgid "       * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)"
 msgstr "       * [오픈스택 Swift 백엔드](deploy_pro/setup_with_swift.md)"
 
 # unordered list
-#: SUMMARY.md:60
+#: SUMMARY.md:61
+msgid "       * [Storage Backend Encryption](deploy_pro/seaf_encrypt.md)"
+msgstr "       * [저장장치 백엔드 암호화](deploy_pro/seaf_encrypt.md)"
+
+# unordered list
+#: SUMMARY.md:62
 msgid "   * Cluster Deployment"
 msgstr "   * 클러스터 가동"
 
 # unordered list
-#: SUMMARY.md:61
+#: SUMMARY.md:63
 msgid "       * [Deploy in a cluster](deploy_pro/deploy_in_a_cluster.md)"
 msgstr "       * [클러스터에서 가동](deploy_pro/deploy_in_a_cluster.md)"
 
 # unordered list
-#: SUMMARY.md:62
+#: SUMMARY.md:64
 msgid ""
 "       * [Setup with MariaDB and Ceph](deploy_pro/"
 "clustering_with_mariadb_ceph.md)"
@@ -520,7 +537,7 @@ msgstr ""
 "       * [MariaDB와 Ceph 설정](deploy_pro/clustering_with_mariadb_ceph.md)"
 
 # unordered list
-#: SUMMARY.md:63
+#: SUMMARY.md:65
 msgid ""
 "       * [Setup Seafile cluster with NFS](deploy_pro/"
 "setup_seafile_cluster_with_nfs.md)"
@@ -529,7 +546,7 @@ msgstr ""
 "setup_seafile_cluster_with_nfs.md)"
 
 # unordered list
-#: SUMMARY.md:64
+#: SUMMARY.md:66
 msgid ""
 "       * [Enable search and background tasks in a cluster](deploy_pro/"
 "enable_search_and_background_tasks_in_a_cluster.md)"
@@ -538,27 +555,32 @@ msgstr ""
 "enable_search_and_background_tasks_in_a_cluster.md)"
 
 # unordered list
-#: SUMMARY.md:65
+#: SUMMARY.md:67
 msgid "       * [Upgrade a cluster](deploy_pro/upgrade_a_cluster.md)"
 msgstr "       * [클러스터 업그레이드](deploy_pro/upgrade_a_cluster.md)"
 
 # unordered list
-#: SUMMARY.md:66
+#: SUMMARY.md:68
 msgid "   * [Real-time Backup Server](deploy_pro/real_time_backup.md)"
 msgstr "   * [실시간 백업 서버](deploy_pro/real_time_backup.md)"
 
 # unordered list
-#: SUMMARY.md:67
+#: SUMMARY.md:69
+msgid "   * [Import Directory To Seafile](deploy_pro/seaf_import.md)"
+msgstr "   * [Seafile에 디렉터리 가져오기](deploy_pro/seaf_import.md)"
+
+# unordered list
+#: SUMMARY.md:70
 msgid "   * [Configurable Options](deploy_pro/configurable_options.md)"
 msgstr "   * [설정 가능 항목](deploy_pro/configurable_options.md)"
 
 # unordered list
-#: SUMMARY.md:68
+#: SUMMARY.md:71
 msgid "   * [FAQ](deploy_pro/faq_for_seafile_pro_server.md)"
 msgstr "   * [자주 묻는 질문](deploy_pro/faq_for_seafile_pro_server.md)"
 
 # unordered list
-#: SUMMARY.md:69
+#: SUMMARY.md:72
 msgid ""
 "   * [License](deploy_pro/"
 "seafile_professional_sdition_software_license_agreement.md)"
@@ -567,200 +589,204 @@ msgstr ""
 "seafile_professional_sdition_software_license_agreement.md)"
 
 # unordered list
-#: SUMMARY.md:70
+#: SUMMARY.md:73
 msgid "* [Server Configuration and Customization](config/README.md)"
 msgstr "* [서버 설정 및 개별 설정](config/README.md)"
 
 # unordered list
-#: SUMMARY.md:71
+#: SUMMARY.md:74
 msgid "   * [ccnet.conf](config/ccnet-conf.md)"
 msgstr "   * [ccnet.conf](config/ccnet-conf.md)"
 
 # unordered list
-#: SUMMARY.md:72
+#: SUMMARY.md:75
 msgid "   * [seafile.conf](config/seafile-conf.md)"
 msgstr "   * [seafile.conf](config/seafile-conf.md)"
 
 # unordered list
-#: SUMMARY.md:73
+#: SUMMARY.md:76
 msgid "   * [seahub_settings.py](config/seahub_settings_py.md)"
 msgstr "   * [seahub_settings.py](config/seahub_settings_py.md)"
 
 # unordered list
-#: SUMMARY.md:74
+#: SUMMARY.md:77
 msgid "   * [Seahub customization](config/seahub_customization.md)"
 msgstr "   * [Seahub 개별 설정](config/seahub_customization.md)"
 
 # unordered list
-#: SUMMARY.md:75
+#: SUMMARY.md:78
 msgid "   * [Desktop client customization](config/desktop_customization.md)"
 msgstr "   * [Desktop 클라이언트 개별 설정](config/desktop_customization.md)"
 
 # unordered list
-#: SUMMARY.md:76
+#: SUMMARY.md:79
 msgid "   * [Email Sending](config/sending_email.md)"
 msgstr "   * [전자메일 보내기](config/sending_email.md)"
 
 # unordered list
-#: SUMMARY.md:77
+#: SUMMARY.md:80
 msgid "   * [User management options](config/user_options.md)"
 msgstr "   * [사용자 관리 설정 항목](config/user_options.md)"
 
 # unordered list
-#: SUMMARY.md:78
+#: SUMMARY.md:81
 msgid ""
 "   * [Storage Quota and File size limits](config/quota_and_size_options.md)"
 msgstr ""
 "   * [저장소 용량 제한 및 파일 크기 제한](config/quota_and_size_options.md)"
 
 # unordered list
-#: SUMMARY.md:79
+#: SUMMARY.md:82
 msgid "* [Administration](maintain/README.md)"
 msgstr "* [관리](maintain/README.md)"
 
 # unordered list
-#: SUMMARY.md:80
+#: SUMMARY.md:83
 msgid "   * [Account management](maintain/account.md)"
 msgstr "   * [계정 관리](maintain/account.md)"
 
 # unordered list
-#: SUMMARY.md:81
+#: SUMMARY.md:84
 msgid "   * [Logs](maintain/logs.md)"
 msgstr "   * [로그](maintain/logs.md)"
 
 # unordered list
-#: SUMMARY.md:82
+#: SUMMARY.md:85
 msgid "   * [Backup and Recovery](maintain/backup_recovery.md)"
 msgstr "   * [백업 및 복원](maintain/backup_recovery.md)"
 
 # unordered list
-#: SUMMARY.md:83
+#: SUMMARY.md:86
 msgid "   * [Seafile FSCK](maintain/seafile_fsck.md)"
 msgstr "   * [Seafile FSCK](maintain/seafile_fsck.md)"
 
 # unordered list
-#: SUMMARY.md:84
+#: SUMMARY.md:87
 msgid "   * [Seafile GC](maintain/seafile_gc.md)"
 msgstr "   * [Seafile GC](maintain/seafile_gc.md)"
 
 # unordered list
-#: SUMMARY.md:85
+#: SUMMARY.md:88
 msgid "   * [Clean database](maintain/clean_database.md)"
 msgstr "   * [데이터베이스 정리](maintain/clean_database.md)"
 
 # unordered list
-#: SUMMARY.md:86
+#: SUMMARY.md:89
 msgid "* [WebDAV and FUSE extensions](extension/README.md)"
 msgstr "* [WebDAV 및 FUSE 확장 기능](extension/README.md)"
 
 # unordered list
-#: SUMMARY.md:87
+#: SUMMARY.md:90
 msgid "   * [WebDAV extension](extension/webdav.md)"
 msgstr "   * [WebDAV 확장 기능](extension/webdav.md)"
 
 # unordered list
-#: SUMMARY.md:88
+#: SUMMARY.md:91
 msgid "   * [FUSE extension](extension/fuse.md)"
 msgstr "   * [FUSE 확장 기능](extension/fuse.md)"
 
 # unordered list
-#: SUMMARY.md:89
+#: SUMMARY.md:92
 msgid "* [Security and Auditing](security/README.md)"
 msgstr "* [보안 및 감사](security/README.md)"
 
 # unordered list
-#: SUMMARY.md:90
+#: SUMMARY.md:93
 msgid "   * [Security features](security/security_features.md)"
 msgstr "   * [보안 기능](security/security_features.md)"
 
 # unordered list
-#: SUMMARY.md:91
+#: SUMMARY.md:94
 msgid "   * [Access logs and auditing](security/auditing.md)"
 msgstr "   * [접근 기록 및 감사](security/auditing.md)"
 
 # unordered list
-#: SUMMARY.md:92
+#: SUMMARY.md:95
 msgid "* [Developing](develop/README.md)"
 msgstr "* [개발](develop/README.md)"
 
 # unordered list
-#: SUMMARY.md:93
-msgid "   * [How to Build Seafile](build_seafile/README.md)"
-msgstr "   * [Seafile 빌드 방법](build_seafile/README.md)"
+#: SUMMARY.md:96
+msgid "   * How to Build Seafile"
+msgstr "   * Seafile 빌드 방법"
 
 # unordered list
-#: SUMMARY.md:94
+#: SUMMARY.md:97
+msgid "       * [Intro](build_seafile/README.md)"
+msgstr "       * [도입부](build_seafile/README.md)"
+
+# unordered list
+#: SUMMARY.md:98
 msgid "       * [Linux](build_seafile/linux.md)"
 msgstr "       * [리눅스](build_seafile/linux.md)"
 
 # unordered list
-#: SUMMARY.md:95
+#: SUMMARY.md:99
 msgid "       * [FreeBSD](build_seafile/freebsd.md)"
 msgstr "       * [FreeBSD](build_seafile/freebsd.md)"
 
 # unordered list
-#: SUMMARY.md:96
+#: SUMMARY.md:100
 msgid "       * [Windows](build_seafile/windows.md)"
 msgstr "       * [윈도우](build_seafile/windows.md)"
 
 # unordered list
-#: SUMMARY.md:97
+#: SUMMARY.md:101
 msgid "       * [Mac OS X](build_seafile/osx.md)"
 msgstr "       * [Mac OS X](build_seafile/osx.md)"
 
 # unordered list
-#: SUMMARY.md:98
+#: SUMMARY.md:102
 msgid "       * [Server](build_seafile/server.md)"
 msgstr "       * [서버](build_seafile/server.md)"
 
 # unordered list
-#: SUMMARY.md:99
+#: SUMMARY.md:103
 msgid "       * [Raspberry Pi](build_seafile/rpi.md)"
 msgstr "       * [라즈베리 파이](build_seafile/rpi.md)"
 
 # unordered list
-#: SUMMARY.md:100
+#: SUMMARY.md:104
 msgid "   * [Develop env](develop/env.md)"
 msgstr "   * [개발 환경](develop/env.md)"
 
 # unordered list
-#: SUMMARY.md:101
+#: SUMMARY.md:105
 msgid "   * [Code Standard](develop/code_standard.md)"
 msgstr "   * [코딩 표준](develop/code_standard.md)"
 
 # unordered list
-#: SUMMARY.md:102
+#: SUMMARY.md:106
 msgid "   * [Web API](develop/web_api.md)"
 msgstr "   * [웹 API](develop/web_api.md)"
 
 # unordered list
-#: SUMMARY.md:103
+#: SUMMARY.md:107
 msgid "   * [Web API V2.1](develop/web_api_v2.1.md)"
 msgstr "   * [웹 API V2.1](develop/web_api_v2.1.md)"
 
 # unordered list
-#: SUMMARY.md:104
+#: SUMMARY.md:108
 msgid "   * [Python API](develop/python_api.md)"
 msgstr "   * [파이썬 API](develop/python_api.md)"
 
 # unordered list
-#: SUMMARY.md:105
-#, fuzzy
+#: SUMMARY.md:109
 msgid "   * [PHP API](develop/php_api.md)"
-msgstr "   * [파이썬 API](develop/python_api.md)"
+msgstr "   * [PHP API](develop/php_api.md)"
 
 # unordered list
-#: SUMMARY.md:106
+#: SUMMARY.md:110
 msgid "   * [Data Model](develop/data_model.md)"
 msgstr "   * [데이터 모델](develop/data_model.md)"
 
 # unordered list
-#: SUMMARY.md:107
+#: SUMMARY.md:111
 msgid "   * [Server Components](develop/server-components.md)"
 msgstr "   * [서버 구성 요소](develop/server-components.md)"
 
 # unordered list
-#: SUMMARY.md:108
+#: SUMMARY.md:112
 msgid "   * [Sync algorithm](develop/sync_algorithm.md)"
 msgstr "   * [동기화 알고리즘](develop/sync_algorithm.md)"
 
@@ -842,7 +868,7 @@ msgstr "# 기여하기"
 # header
 #: contribution.md:3
 msgid "## Licensing"
-msgstr "## 라이선스 "
+msgstr "## 라이선스"
 
 #: contribution.md:4
 msgid ""
@@ -1138,7 +1164,7 @@ msgid ""
 "configured memecached, restart memcached, then restart Seahub."
 msgstr ""
 "`rm -rf /tmp/seahub_cache/*` 명령으로 캐시를 제거 후 다시 시도하십시오. "
-"memcached 를 설정했다면, memcached를 다시 시작한 후 seahub를 다시 시작하십시"
+"memcached를 설정했다면, memcached를 다시 시작한 후 seahub를 다시 시작하십시"
 "오."
 
 #: faq.md:68
@@ -1169,10 +1195,10 @@ msgid "Please add"
 msgstr "다음 설정을 추가하십시오"
 
 #: faq.md:76
-#, fuzzy
 msgid ""
 "    COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'"
-msgstr "    COMPRESS_CACHE_BACKEND = 'locmem://'"
+msgstr ""
+"    COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'"
 
 #: faq.md:78
 msgid ""
@@ -1235,7 +1261,7 @@ msgid ""
 "You can use FILTER field in LDAP configuration in `ccnet.conf`. For example, "
 "the following filter restricts the access to Seafile to members of a group."
 msgstr ""
-"`ccnet.conf` 에서 LDAP 설정에 FILTER 필드를 사용할 수 있습니다. 예를 들어 다"
+"`ccnet.conf`에서 LDAP 설정에 FILTER 필드를 사용할 수 있습니다. 예를 들어 다"
 "음 필터는 그룹 구성원의 Seafile 접근 권한을 제한합니다."
 
 #: faq.md:99

@@ -33,7 +33,7 @@
 
 - 라우터의 웹 관리자 페이지에 로그인하십시오. 어떻게 하는지 모르겠다면 라우터의 설명서 페이지 절차를 찾아보십시오. 설명서가 없다면 XXX 대신의 라우터 브랜드 이름을 넣어 **"XXX 라우터 관리 페이지"** 를 구글에서 검색하십시오.
 
-- 관리자 페이지를 찾아보신 후, "포워딩", "고급" 과 같은 단어가 있는 태그가 있는지 확인하십시오. 라우터에서 해당 기능을 지원한다면 포트 포워딩 관련 설정을 찾을 수 있습니다.
+- 관리자 페이지를 찾아보신 후, "포워딩", "고급"과 같은 단어가 있는 태그가 있는지 확인하십시오. 라우터에서 해당 기능을 지원한다면 포트 포워딩 관련 설정을 찾을 수 있습니다.
 
 ### 포트 포워딩 규칙 설정
 
@@ -41,8 +41,8 @@ Seafile 서버는 다양한 구성 요소로 이루어져있습니다. 다음의
 
 <table>
 <tr>
-  <th>component</th>
-  <th>default port</th>
+  <th>구성요소</th>
+  <th>기본 포트 번호</th>
 </tr>
 <tr>
   <td>fileserver</td>
@@ -54,8 +54,8 @@ Seafile 서버는 다양한 구성 요소로 이루어져있습니다. 다음의
 </tr>
 </table>
 
-* Apache/Nginx 뒤에서 Seafile 을 가동한다면 8000번과 8002번 포트를 열 필요가 없습니다.
-* If you're not using the default ports, you should adjust the table accroding to your own customiztion.
+* Apache/Nginx 뒤에서 Seafile을 가동한다면 8000번과 8002번 포트를 열 필요가 없습니다.
+* 기본 포트를 사용하지 않으면 자체 개별 설정에 따라 테이블 설정을 수정해야합니다.
 
 ### 포트 포워딩 기능 동작시 시험 방법
 
@@ -78,7 +78,7 @@ telnet <Your WAN IP> 8000
 
 ### SERVICE_URL 설정
 
-`ccnet.conf`의 "SERVICE_URL"은 파일을 온라인에서 탐색할 때ㅑ 파일의 다운로드/업로드 링크를 만들 때 사용합니다. WAN IP로 설정하십시오.
+`ccnet.conf`의 "SERVICE_URL"은 파일을 온라인에서 탐색할 때와 파일의 다운로드/업로드 링크를 만들 때 사용합니다. WAN IP로 설정하십시오.
 
 ```
 SERVICE_URL = http://<Your WAN IP>:8000
@@ -90,21 +90,21 @@ SERVICE_URL = http://<Your WAN IP>:8000
 
 ### 왜 동적 DNS(DDNS) 서비스를 활용하죠?
 
-Having done all the steps above, you should be able to visit your seahub server outside your LAN by your WAN IP. But for most people, the WAN IP address is likey to change regularly by their ISP(Internet Serice Provider), which makes this approach impratical.
+위 모든 과정이 끝나면 LAN 외부에서 WAN IP로 Seahub 서버에 접근할 수 있어야합니다. 하지만 대부분 사람에게 WAN IP 주소는 보통 이런 접근 방식을 활용하지 못하게 ISP(인터넷 서비스 제공 업체)에서 바꿉니다.
 
-You can use a dynamic DNS(DDNS) Service to overcome this problem. By using a dynamic DNS service, you can visit your seahub by domain name (instead of by IP), and the domain name will always be mapped to your WAN IP address, even if it changes regularly.
+이 문제를 해결할 목적으로 동적 DNS(DDNS) 서비스를 활용할 수 있습니다. 동적 DNS 서비스를 활용하면, (IP 주소 대신)도메인 이름으로 Seahub 사이트에 접근할 수 있으며, IP 주소가 항시 바뀌더라도 도메인 이름을 WAN IP 주소에 항상 매핑할 수 있습니다.
 
-There are a dozen of dynmaic DNS service providers on the internet. If you don't know what service to choose We recommend using [www.noip.com](http://www.noip.com) since it performs well in our testing.
+인터넷에 여러 동적 DNS 서비스 제공 업체가 있습니다. 어떤 서비스를 선택할지 모르겠다면, 저희가 테스트 해본 결과 잘 동작하는[www.noip.com](http://www.noip.com)을 추천합니다.
 
-The detailed process is beyond the scope of this wiki. But basically, you should:
+세부 과정은 이 위키의 범위를 벗어납니다. 하지만 기본적으로 다음 과정을 진행해야합니다:
 
-1. Choose a DDNS service provider
-2. Register an account on the DDNS service provider's website
-3. Download a client from your DDNS service provider to keep your domain name always mapped to your WAN IP
+1. DDNS 서비스 제공 업체를 선정하십시오
+2. DDNS 서비스 제공 업체 웹사이트에 가입하십시오
+3. DDNS 서비스 제공 업체의 클라이언트를 다운로드 받고 WAN IP에 항상 도메인 이름을 매핑한 상태로 유지하십시오
 
 ## Seafile 설정 수정
 
-After you have setup your DDNS service, you need to modify the `ccnet.conf`:
+DDNS 서비스 설정이 끝나면, `ccnet.conf` 설정을 수정해야합니다:
 
 ```
 SERVICE_URL = http://<Your dynamic DNS domain>:8000

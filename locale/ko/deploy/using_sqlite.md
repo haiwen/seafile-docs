@@ -20,7 +20,7 @@ uname -m
 
 참고: Seafile 데이터 디렉터리를 NFS, CIFS 마운트 저장소 같은 외장 저장소에 둘 때, SQLite 대신 MySQL 데이터베이스를 사용하십시오.
 
-Supposed your organization's name is "haiwen", and you've downloaded seafile-server_1.4.0_* into your home directory. We suggest you to use the following layout for your deployment:
+조직 이름을 "haiwen"이라 하고, seafile-server_1.4.0_*을 내 폴더에 다운로드했음을 가정하겠습니다. 가동 구성을 다음과 같이 제안합니다:
 ```sh
 mkdir haiwen
 mv seafile-server_* haiwen
@@ -31,7 +31,7 @@ mkdir installed
 mv seafile-server_* installed
 ```
 
-Now you should have the following directory layout
+이제 다음 디렉터리 배치 상태를 갖추고 있어야합니다
 ```sh
 # tree . -L 2
 .
@@ -48,10 +48,10 @@ Now you should have the following directory layout
     └── upgrade
 ```
 
-Benefits of this layout are
+이 디렉터리 배치를 통해 취할 수 있는 이익은
 
- - We can place all the config files for Seafile server inside "haiwen" directory, making it easier to manage.
- - When you upgrade to a new version of Seafile, you can simply untar the latest package into "haiwen" directory. In this way you can reuse the existing config files in "haiwen" directory and don't need to configure again.
+ - "haiwen" 디렉터리에 Seafile 서버용 설정 파일을 둘 수 있으며, 관리하기 쉽습니다.
+ - Seafile을 새 버전을 업그레이드 할 때 "haiwen" 디렉터리의 최신 꾸러미 압축을 해제하기만 하면 됩니다. 이 방식으로 "haiwen" 디렉터리의 기존 설정 파일을 다시 사용할 수 있으며 다시 설정할 필요가 없습니다.
 
 
 ## Seafile 서버 설치
@@ -83,21 +83,21 @@ cd seafile-server-*
 ./setup-seafile.sh  #run the setup script & answer prompted questions
 ```
 
-If some of the prerequisites are not installed, the Seafile initialization script will ask you to install them.
+이전 준비 요소를 설치하지 않았다면 Seafile 초기화 스크립트에서 설치하라고 요구합니다.
 
 스크립트는 다양한 설정 옵션 설정을 안내합니다.
 
 **Seafile 설정 항목**
 
-| Option | Description | Note |
+| 설정 항목 | 설명 | 참고 |
 | -- | -- | ---- |
 | 서버 이름 | Seafile 서버 이름 | 3-15 문자, 영문자, 숫자, 밑줄 문자('_')만 허용 |
 | 서버 IP 또는 도메인  | 서버에서 사용하는 IP 주소 또는 도메인 이름  | Seafile 클라이언트 프로그램에서 이 주소로 서버에 접근합니다 |
-| Seafile data dir  | Seafile stores your data in this directory. By default it'll be placed in the current directory.  | The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space. |
-| fileserver port | The TCP port used by Seafile fileserver  | Default is 8082. If it's been used by other service, you can set it to another port. |
+| Seafile 데이터 디렉터리  | Seafile에서는 이 디렉터리에 데이터를 저장합니다. 기본적으로 현재 디렉터리에 둡니다.  | 이 디렉터리 크기는 Seafile에 데이터를 넣는 만큼 늘어납니다. 충분한 용량을 갖는 디스크 분할 영역을 선택하십시오. |
+| fileserver 포트 | Seafile 파일 서버에서 사용하는 TCP 포트입니다  | 기본값은 8082 입니다. 다른 서비스에서 이미 사용중이라면 다른 포트 번호로 설정할 수 있습니다. |
 
 
-Now you should have the following directory layout:
+다음 디렉터리 구성을 갖춥니다:
 
 ```sh
 #tree haiwen -L 2
@@ -140,7 +140,7 @@ Seafile은 클라이언트-서버간 연결을 유지하므로 Seafile을 시작
 
 #### Seafile 서버 및 Seafile 웹사이트 시작하기
 
-- Seafile을 시작하십시오:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+- Seafile을 시작하십시오:
 ```
 ./seafile.sh start # Start Seafile service
 ```
@@ -152,17 +152,17 @@ Seafile은 클라이언트-서버간 연결을 유지하므로 Seafile을 시작
 
 **참고**: Seahub를 처음 시작할 때, 스크립트는 Seafile 서버에 admin 계정을 만들지 물어봅니다.
 
-After starting the services, you may open a web browser and type in
+서비스를 시작한 후 웹 브라우저에서 다음 주소를 입력하여 여십시오
 
 ``http://192.168.1.111:8000``
 
-you will be redirected to the Login page. Just enter the admin username and password.
+이제 로그인 페이지로 돌아갑니다. admin 사용자 이름 및 암호를 입력하십시오.
 
-**Congratulations!** Now you have successfully setup your private Seafile server.
+**고생하셨습니다!** 이제 개인 Seafile 서버 설정을 성공적으로 끝냈습니다.
 
 #### 다른 포트에서 Seahub 실행
 
-If you want to run Seahub on a port other than the default 8000, say 8001, you must:
+기본 8000번 포트가 아닌, 8001번 포트에서 Seahub를 실행하려면, 다음 과정을 진행해야합니다:
 
 - Seafile 서버를 멈추십시오
 ```
@@ -211,7 +211,7 @@ pkill -f "manage.py run_gunicorn"
 ```
 
 ## 다 됐습니다!
-For a production server we highly recommend to setup with Nginx/Apache and enable SSL/TLS.
+실 사용 서버에서는 Nginx/Apache 및 SSL/TLS 설정을 추천합니다.
 
 다 됐습니다! 이제 Seafile에 대한 내용을 더 읽어 볼 차례입니다.
 - [관리](../maintain/README.md)

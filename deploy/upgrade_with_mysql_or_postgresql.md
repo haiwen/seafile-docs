@@ -1,7 +1,7 @@
 #Seafile
 ## Upgrade with MySQL or PostgreSQL
 
-First, download the new version, for example seafile-server_1.6.0_x86-64.tar.gz, and extract it to the directory where you put all Seafile related staff. You should have a directory layout similar to this:
+First, download the new version, for example seafile-server_1.6.0_x86-64.tar.gz, and extract it to the directory where you put all Seafile related stuff. You should have a directory layout similar to this:
 
 <pre>
 haiwen

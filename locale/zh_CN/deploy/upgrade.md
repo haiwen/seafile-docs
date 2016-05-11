@@ -1,15 +1,19 @@
 # Seafile
 
-## 升级指南
+## Upgrade Manual
 
-使用预编译 Seafile 服务器安装包的用户请看.
+This page is for users who use the pre-compiled seafile server package.
 
-- 如果你是 [源码编译安装 Seafile](../build_seafile/server.md) 的，请参考那篇文档中的 **升级** 部分。
-- 升级之后, 如果没有正常运行，请清空 [Seahub 缓存](add_memcached.md)。
+- If you [build seafile server from source](../build_seafile/server.md), please read the **Upgrading Seafile Server** section on that page, instead of this one.
+- After upgrading, you may need to clean [seahub cache](add_memcached.md) if it doesn't behave as expect.
 
-## 主版本升级 (比如从 2.x 升级到 3.y)
+If you are running a **cluster**, please read [upgrade a Seafile cluster](../deploy_pro/upgrade_a_cluster.md).
 
-假设你现在使用 2.1.0 版本，想要升级到 3.1.0 版本，下载、解压新版本安装包后，得到目录结构如下：
+## Major version upgrade (like from 2.x to 3.y)
+
+
+Suppose you are using version 2.1.0 and like to upgrade to version 3.1.0. First download and extract the new version. You should have a directory layout similar to this:
+
 
 <pre>
 haiwen
@@ -29,7 +33,7 @@ haiwen
    ./seahub.sh stop
    ./seafile.sh stop
    ```
-2. 查看 *seafile-server-3.1.0* 目录下的升级脚本：
+2. 查看 seafile-server-3.1.0 目录下的升级脚本：
 
    ```sh
    cd haiwen/seafile-server-3.1.0
@@ -46,7 +50,7 @@ haiwen
    upgrade/upgrade_3.0_3.1.sh
    ```
 
-3. 从当前版本（2.1.0）开始，按顺序运行以下脚本：
+3. Start from you current version, run the script one by one
 
    ```
    upgrade/upgrade_2.1_2.2.sh
@@ -59,10 +63,10 @@ haiwen
    ```sh
    cd haiwen/seafile-server-3.1.0/
    ./seafile.sh start
-   ./seahub.sh start
+   ./seahub.sh start # or "./seahub.sh start-fastcgi" if you're using fastcgi
    ```
 
-## 小版本升级 (比如从 3.0.x 升级到 3.2.y)
+## Minor version upgrade (like from 3.0.x to 3.2.y)
 
 假设你现在使用 3.0.0 版本，想要升级到 3.2.2 版本，下载、解压新版本安装包，得到目录结构如下：
 
@@ -85,7 +89,7 @@ haiwen
    ./seahub.sh stop
    ./seafile.sh stop
    ```
-2. 查看 *seafile-server-3.2.2* 目录下的升级脚本：
+2. Check the upgrade scripts in seafile-server-3.2.2 directory.
 
    ```sh
    cd haiwen/seafile-server-3.2.2
@@ -101,7 +105,7 @@ haiwen
    upgrade/upgrade_3.1_3.2.sh
    ```
 
-3. 从当前版本（3.0.0）开始，按顺序运行以下脚本：
+3. Start from you current version, run the script one by one
 
    ```
    upgrade/upgrade_3.0_3.1.sh
@@ -121,7 +125,8 @@ haiwen
 
 类似从 3.1.0 升级到 3.1.2，为维护版本升级。
 
-1. 关闭 Seafile 服务（如果正在运行）；
+
+1. 关闭 Seafile 服务（如果正在运行）
 2. 对于此类升级，只需更新头像链接，直接运行升级脚本即可(因为历史原因，此升级脚本命名为 `minor-upgrade.sh`):
 
    ```sh
@@ -129,10 +134,11 @@ haiwen
    upgrade/minor-upgrade.sh
    ```
 
-3. 运行升级脚本之后，启动新版本 Seafile 服务器，完成升级；
+3. 运行升级脚本之后，启动新版本 Seafile 服务器，完成升级
 
-4. 如果新版本运行正常，可以删除旧版本 Seafile 文件。
+4. If the new version works fine, the old version can be removed
 
    ```sh
    rm -rf seafile-server-3.1.0
    ```
+

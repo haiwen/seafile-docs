@@ -9,7 +9,7 @@
 
 ## Deploying and Directory Layout
 
-Supposed your organization's name is "haiwen", and you've downloaded `seafile-server_1.8.2_*` into your home directory. We suggest you to layout your deployment as follows :
+조직 이름을 "haiwen"이라 하고 `seafile-server_1.8.2_*` 파일을 내 폴더에 다운로드했다고 치겠습니다. 다음과 같은 구동 디렉터리 배치를 추천합니다:
 
 <pre>
 mkdir haiwen
@@ -21,7 +21,7 @@ mkdir installed
 mv seafile-server_* installed
 </pre>
 
-Now you should have the following directory layout
+이제 다음 디렉터리 배치 상태를 갖추고 있어야합니다
 <pre>
 #tree haiwen -L 2
 haiwen
@@ -38,14 +38,14 @@ haiwen
     └── upgrade
 </pre>
 
-The benefit of this layout is that:
+이 배치의 장점:
 
-* We can place all the config files for Seafile server inside "haiwen" directory, making it easier to manage.
-* When you upgrade to a new version of Seafile, you can simply untar the latest package into "haiwen" directory. In this way you can reuse the existing config files in "haiwen" directory and don't need to configure again.
+* "haiwen" 디렉터리에 Seafile 서버에 필요한 모든 설정 파일을 둘 수 있어 관리하기 쉽습니다.
+* 새 Seafile 버전으로 업그레이드할 때, 간단하게 "haiwen" 디렉터리에 최신 꾸러미 압축을 해제할 수 있습니다. 이 방식으로 "haiwen" 디렉터리의 기존 설정 파일을 다시 사용할 수 있으며, 설정을 다시 만들 필요가 없습니다.
 
 ## MySQL 데이터베이스 준비
 
-Three components of Seafile Server need their own databases:
+Seafile 서버에서는 다음 세가지 구성 요소의 자체 데이터베이스가 필요합니다:
 
 * ccnet 서버
 * seafile 서버
@@ -53,17 +53,17 @@ Three components of Seafile Server need their own databases:
 
 Seafile 서버 구성요소에 대해 더 알아보려면 [Seafile 서버 구성 요소 둘러보기](../overview/components.md)를 살펴보십시오.
 
-There are two ways to intialize the databases:
+데이터베이스를 초기화하는 방법에는 두가지가 있습니다:
 
-- let the <code>setup-seafile-mysql.sh</code> script create the databases for you.
-- create the databases by yourself, or someone else (the database admin, for example)
+- 데이터베이스를 만드는 <code>setup-seafile-mysql.sh</code>  스크립트를 실행합니다.
+- 여러분 자신 또는 누군가(데이터베이스 관리자)가 데이터베이스를 직접 만듭니다
 
-We recommend the first way. The script would ask you for the root password of the mysql server, and it will create:
+첫번째 방법을 추천합니다. 스크립트에서는 MySQL 서버의 루트 암호를 물어본 후 다음 항목을 만듭니다:
 
-* ccnet/seafile/seahub 데이터베이스
+* ccnet/seafile/seahub 데이터베이스.
 * 데이터베이스에 접근할 새 사용자
 
-However, sometimes you have to use the second way. If you don't have the root password, you need someone who has the privileges, e.g., the database admin, to create the three databases, as well as a mysql user who can access the three databases for you. For example, to create three databases: `ccnet-db` / `seafile-db` / `seahub-db` for ccnet/seafile/seahub respectively, and a mysql user "seafile" to access these databases:
+하지만, 때로는 차선 책을 진행해야 할 수도 있습니다. 루트 암호를 모른다면, 데이터베이스 세가지를 만들고 해당 데이터베이스에 접근할 수 있는 사용자를 만들어줄 데이터베이스 관리자와 같은 권한을 가진 누군가가 필요합니다. 예를 들어 ccnet/Seafile/Seahub 각각에 대해 `ccnet-db` / `seafile-db` / `seahub-db` 데이터베이스와, 이 데이터베이스에 접근할 mysql 사용자 "seafile"을 만들려면:
 
 <pre>
 create database `ccnet-db` character set = 'utf8';
@@ -109,21 +109,21 @@ cd seafile-server-*
 ./setup-seafile-mysql.sh  #run the setup script & answer prompted questions
 </pre>
 
-If some of the prerequisites are not installed, the seafile initialization script will ask you to install them.
+선행 요구사항을 설치하지 않았다면 Seafile 초기화 스크립트에서 해당 구성요소를 설치하라고 요청합니다.
 
 스크립트는 다양한 설정 옵션 설정을 안내합니다.
 
 ** Seafile 설정 옵션 **
 
-| Option | Description | Note |
+| 설정 항목 | 설명 | 참고 |
 | -- | -- | ---- |
-| server name | Name of this seafile server | 3-15 characters, only English letters, digits and underscore ('_') are allowed |
-| server ip or domain | The IP address or domain name used by this server | Seafile client program will access the server with this address |
-| seafile data dir | Seafile stores your data in this directory. By default it'll be placed in the current directory.  | The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space.  |
-| fileserver port | The TCP port used by Seafile fileserver | Default is 8082. If it's been used by other service, you can set it to another port.  |
+| 서버 이름 | Seafile 서버 이름 | 영 대소문자, 숫자, 밑줄 문자('_')만으로 이루어진 3-15개 문자 허용 |
+| 서버 IP 또는 도메인 | 서버에서 사용할 IP 주소 또는 도메인 이름 | Seafile 클라이언트 프로그램은 이 주소로 서버에 접근합니다 |
+| Seafile 데이터 디렉터리 | Seafile에서는 이 디렉터리에 데이터를 저장합니다. 기본적으로 현재 디렉터리에 둡니다.  | 이 디렉터리의 크기는 Seafile에 데이터를 더 많이 두는 만큼 늘어납니다. 충분한 공간을 지닌 디스크 분할 공간을 선택하십시오.  |
+| 파일 서버 포트 | Seafile 파일 서버에서 사용하는 TCP 포트 | 기본 값은 8082 입니다. 다른 서비스에서 사용한다면 다른 포트로 설정할 수 있습니다.  |
 
 
-At this moment, you will be asked to choose a way to initialize seafile databases:
+여기서, Seafile 데이터베이스 초기화 방식에 대한 질문을 받습니다:
 
 ```sh
 -------------------------------------------------------
@@ -136,45 +136,45 @@ Please choose a way to initialize seafile databases:
 ```
 
 
-Which one to choose depends on if you have the root password.
+루트 암호 설정 여부에 따라 다음 중 하나를 선택하십시오.
 
-* If you choose "1", you need to provide the root password. The script would create the databases and a new user to access the databases
-* If you choose "2", the ccnet/seafile/seahub databases must have already been created, either by you, or someone else.
+* "1"을 선택하면, 루트 암호를 입력해야합니다. 스크립트는 데이터베이스 및 데이터베이스 접근용 새 사용자를 만듭니다.
+* "2"를 선택하면, 누가 만들어두었든지간에 ccnet/seafile/seahub 데이터베이스를 이미 만들어 둔 상태여야합니다.
 
-If you choose "[1] Create new ccnet/seafile/seahub databases", you would be asked these questions:
+"[1] Create new ccnet/seafile/seahub databases"를 선택하면, 다음 질문을 받습니다:
 
 
-| Question | Description | Note
+| 질문 | 설명 | 참고
 | -- | -- | ---- |
-| mysql server host | the host address of the mysql server | the default is localhost |
-| mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port.  |
-| root password | the password of mysql root account | the root password is required to create new databases and a new user |
-| mysql user for seafile | the username for seafile programs to use to access MySQL server | if the user does not exist, it would be created |
-| password for seafile mysql user | the password for the user above | |
-| ccnet dabase name | the name of the database used by ccnet, default is "ccnet-db" | the database would be created if not existing |
-| seafile dabase name | the name of the database used by seafile, default is "seafile-db" | the database would be created if not existing |
-| seahub dabase name | the name of the database used by seahub, default is "seahub-db" | the database would be created if not existing |
+| MySQL 서버 호스트 | MySQL 서버 호스트 주소 | 기본 주소 값은 localhost 입니다 |
+| MySQL 서버 포트 | MySQL 서버 포트 | 기본값은 3306입니다. 대부분 모든 MySQL 서버는 이 포트를 사용합니다.  |
+| 루트 암호 | MySQL 루트 계정 암호 | 새 데이터베이스 및 새 사용자를 만들 때 필요한 루트 암호 |
+| Seafile MySQL 사용자 | Seafile 프로그램에서 MySQL 서버에 접근할 때 사용할 사용자 이름 | 사용자가 없다면 만듭니다 |
+| Seafile MySQL 사용자 암호 | 위 사용자의 암호 | |
+| ccnet 데이터베이스 이름 | ccnet에서 사용하는 데이터베이스 이름, 기본값은 "ccnet-db" | 없으면 데이터베이스를 만듭니다 |
+| Seafile 데이터베이스 이름 | Seafile에서 사용하는 데이터베이스 이름, 기본값은 "seafile-db" | 없으면 데이터베이스를 만듭니다 |
+| Seahub 데이터베이스 이름 | Seahub에서 사용하는 데이터베이스 이름, 기본값은 "seahub-db" | 없으면 데이터베이스를 만듭니다 |
 
 
-If you choose "[2] Use existing ccnet/seafile/seahub databases", you would be asked these questions:
+"[2] Use existing ccnet/seafile/seahub databases"를 선택하면, 다음 질문을 받습니다:
 
 
-** related questions for "Use existing ccnet/seafile/seahub databases" **
+** "Use existing ccnet/seafile/seahub databases" 관련 질문 **
 
-| Question | Description | Note |
+| 질문 | 설명 | 참고
 | -- | -- | ---- |
-| mysql server host | the host address of the mysql server | the default is localhost |
-| mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port |
-| mysql user for seafile | the user for seafile programs to use to access MySQL server | the user must already exists |
-| password for seafile mysql user | the password for the user above | |
-| ccnet dabase name | the name of the database used by ccnet | this database must already exist |
-| seafile dabase name | the name of the database used by seafile, default is "seafile-db" | this database must already exist |
-| seahub dabase name | the name of the database used by seahub, default is "seahub-db" | this database must already exist |
+| MySQL 서버 호스트 | MySQL 서버 호스트 주소 | 기본 주소 값은 localhost 입니다 |
+| MySQL 서버 포트 | MySQL 서버 포트 | 기본값은 3306입니다. 대부분 모든 MySQL 서버는 이 포트를 사용합니다 |
+| Seafile MySQL 사용자 | Seafile 프로그램에서 MySQL 서버에 접근할 때 사용할 사용자 이름 | 사용자가 이미 있어야 합니다 |
+| Seafile MySQL 사용자 암호 | 위 사용자의 암호 | |
+| ccnet 데이터베이스 이름 | ccnet에서 사용하는 데이터베이스 이름, 기본값은 "ccnet-db" | 데이터베이스가 이미 있어야 합니다 |
+| Seafile 데이터베이스 이름 | Seafile에서 사용하는 데이터베이스 이름, 기본값은 "seafile-db" | 데이터베이스가 이미 있어야 합니다 |
+| Seahub 데이터베이스 이름 | Seahub에서 사용하는 데이터베이스 이름, 기본값은 "seahub-db" | 데이터베이스가 이미 있어야 합니다 |
 
 
 설정을 완전히 끝냈으면 다음 출력을 볼 수 있습니다
 
-![server-setup-succesfully](../images/Server-setup-successfully.png)
+![서버 설정 성공](../images/Server-setup-successfully.png)
 
 이제 다음 디렉터리 배치 상태를 지니고 있어야합니다:
 ```sh
@@ -205,14 +205,14 @@ haiwen
 │   └── avatars
 ```
 
-The folder <code>seafile-server-latest</code> is a symbolic link to the current seafile server folder. When later you upgrade to a new version, the upgrade scripts would update this link to keep it always point to the latest seafile server folder.
+<code>seafile-server-latest</code> 폴더는 현재 Seafile 서버 폴더의 심볼릭 링크입니다. 나중에 새 버전으로 업그레이드 하면, 업그레이드 스크립트에서 이 링크를 업데이트하여 항상 최신 Seafile 서버 폴더를 가리키도록 합니다.
 
 ## Seafile 서버 실행
 
 
 ### Seafile 서버 및 Seahub 웹사이트 시작
 
-Under seafile-server-1.8.2 directory, run the following commands
+seafile-server-1.8.2 디렉터리에서 다음 명령을 실행하십시오
 
 
 ```
@@ -220,21 +220,21 @@ Under seafile-server-1.8.2 directory, run the following commands
 ./seahub.sh start <port>  # Start seahub website, port defaults to 8000
 ```
 
-Note: The first time you start seahub, the script would prompt you to create an admin account for your seafile server.
+참고: Seahub를 처음 실행할 때 스크립트에서 Seafile 서버의 admin 계정을 만들 지 여부를 물어봅니다.
 
-After starting the services, you may open a web browser and visit Seafile web interface at (assume your server IP is 192.168.1.111):
+서비스를 시작한 후, 웹 브라우저를 열고 다음 주소로 Seafile 웹 인터페이스에 접근하십시오(서버 IP를 192.168.1.111로 가정):
 
 ```
 http://192.168.1.111:8000/
 ```
 
 
-Congratulations! Now you have successfully setup your private Seafile server.
+고생하셨습니다! 이제 개인 Seafile 서버 설정을 성공적으로 끝냈습니다.
 
 
 ### 다른 포트에서 Seahub 실행
 
-If you want to run seahub in a port other than the default 8000, say 8001, you must:
+8000번 기본 포트 대신 8001번과 같은 포트 번호에서 Seahub를 실행하려면 다음 과정을 수행해야합니다:
 
 * Seafile 서버를 멈추십시오
 <pre>
@@ -253,7 +253,7 @@ SERVICE_URL = http://192.168.1.111:8001
 ./seahub.sh start 8001
 </pre>
 
-see [Seafile server configuration options](server_configuration.md) for more details about <code>ccnet.conf</code>.
+<code>ccnet.conf</code>에 대한 자세한 내용은 [Seafile 서버 설정 항목](server_configuration.md)을 참고하십시오.
 
 ## Seafile 및 Seahub 중지 및 다시 시작
 
@@ -275,14 +275,14 @@ see [Seafile server configuration options](server_configuration.md) for more det
 
 대부분의 경우 seafile.sh와 seahub.sh는 잘 동작합니다. 하지만 동작에 실패했을 경우:
 
-* Use `pgrep` command to check if seafile/seahub processes are still running
+* `pgrep` 명령으로 Seafile/Seahub 프로세스가 여전히 실행중인지 확인하십시오
 
 <pre>
 pgrep -f seafile-controller # check seafile processes
 pgrep -f "manage.py run_gunicorn" # check seahub process
 </pre>
 
-* Use `pkill` to kill the processes
+* `pkill` 명령으로 프로세스를 강제로 끝내십시오
 
 <pre>
 pkill -f seafile-controller
@@ -291,15 +291,15 @@ pkill -f "manage.py run_gunicorn"
 
 ## 성능 조정
 
-If you have more than 50 users in your Seafile system, we highly recommand you to [add memcached](../deploy/add_memcached.md). This will make the web 10x faster.  
+Seafile 시스템 사용자가 50명이 넘으면, [memcached 추가](../deploy/add_memcached.md)를 추천합니다. 웹 동작 속도가 10배 빨라집니다.  
 
 ## 다 됐습니다!
 
 다 됐습니다! 이제 Seafile에 대한 내용을 더 읽어 볼 차례입니다.
 
 
-* [Deploy Seafile with Nginx](deploy_with_nginx.md) / [Deploy Seafile with Apache](deploy_with_apache.md)
-* [Enable Https on Seafile Web with Nginx](https_with_nginx.md) / [Enable Https on Seafile Web with Apache](https_with_apache.md)
+* [Seafile과 Nginx 가동](deploy_with_nginx.md) / [Seafile과 Apache 가동](deploy_with_apache.md)
+* [Nginx에서 Seafile 웹의 https 활성화](https_with_nginx.md) / [Apache에서 Seafile 웹의 https 활성화](https_with_apache.md)
 * [Seafile LDAP 사용 설정](using_ldap.md)
-* [How to manage the server](../maintain/README.md)
+* [서버 관리 방법](../maintain/README.md)
 

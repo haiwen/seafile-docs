@@ -8,9 +8,9 @@
 
 ### 상업/기업체 환경에서 Seafile 가동하기
 
-상업 환경에서는 MySQL 데이터베이스와 Nginx 또는 Apache를 함께 사용하여 Seafile을 가동하도록 하는 설정을 권장합니다. Nginx와 Apache에 익숙하지 않은 분들에게는 Apache보다 설정 방법이 쉬운 Nginx를 추천합니다.
+상업 환경에서는 MySQL 데이터베이스와 Nginx 또는 Apache를 함께 사용하여 Seafile을 가동하도록 하는 설정을 권장합니다. Nginx와 Apache에 익숙하지 않은 분께는 Apache보다 설정 방법이 쉬운 Nginx를 추천합니다.
 
-참고: [설치 스크립트로 Seafile 가동하기](https://forum.seafile-server.org/t/seafile-server-installer-for-production-ready-seafile-ce-and-pro-installations/1464)에서 설치 스크립트를 준비했습니다. 설치 관리자는 MariaDB, Memcached, 리버스 프록시용 Nginx를 5분 내로 설정하여  빠르고 간편한 수단을 
+참고: [설치 스크립트로 Seafile 가동하기](https://forum.seafile-server.org/t/seafile-server-installer-for-production-ready-seafile-ce-and-pro-installations/1464)에서 설치 스크립트를 준비했습니다. 설치 관리자는 MariaDB, Memcached, 리버스 프록시용 Nginx를 5분 내로 설정하는 빠르고 간편한 수단을 제공합니다.
 
 다음과 같이 설치 스크립트를 사용하지 않고 Seafile을 직접 설치할 수도 있습니다:
 
@@ -56,10 +56,10 @@ Seafile 서버 설치에 문제가 있다면 **이 부분을 읽으십시오**
 
 ## Seafile 서버 꾸러미 처리 사용자
 
-If you want to package seafile yourself, (e.g. for your favorite Linux distribution), you should always use the correspondent tags:
+Seafile 꾸러미를 직접 구성하려면(예: 원하는 리눅스 배포판용), 항상 다음 각각의 태그를 사용해야합니다:
 
-* When we release a new version of seafile client, say 3.0.1, we will add tags `v3.0.1` to ccnet, seafile and seafile-client.
-* Likewise, when we release a new version of seafile server, say 3.0.1, we will add tags `v3.0.1-server` to ccnet, seafile and seahub.
+* 예를 들어 3.0.1버전의 Seafile 클라이언트 새 버전을 출시하면 `v3.0.1` 태그를 ccnet, Seafile, Seafile-client에 추가합니다.
+* 이와 비슷하게 3.0.1버전의 Seafile 서버 새 버전을 출시했다면 `v3.0.1-server`태그를 ccnet, Seafile, Seahub에 추가합니다.
 * libsearpc는 항상 `v3.0-latest` 태그를 사용합니다.
 
 **참고**: 각 프로젝트의 버전 번호는 태그 이름으로 정하지 않습니다.

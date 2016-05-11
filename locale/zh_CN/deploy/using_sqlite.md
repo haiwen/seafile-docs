@@ -1,56 +1,63 @@
 # 部署 Seafile 服务器（使用 SQLite）
 
-本文档详细介绍如何使用预编译好的软件包来安装和运行 Seafile 服务器。
+## 下载
 
-下载
-----
+到[下载页面](http://www.seafile.com/en/download/#server)下载最新的服务器安装包.
 
-到[下载页面](http://www.seafile.com/download)下载最新的服务器安装包.
+Choose one of:
+- Generic Linux
+- Windows
+- Server for Raspberry Pi
 
-
-部署和目录结构
---------------
-
-注意: 如果你把 Seafile 文件放在一个外部存储的目录里（比如NFS，CIFS）,你应该使用 MySQL 而不是 SQLite 来作为数据库。请参考[下载和安装Seafile服务器（使用MySQL）](using_mysql.md)。
-
-假设你公司的名称为"haiwen",你也已经下载 seafile-server\_1.4.0\_\* 到你的home 目录下。 我们建议使用这样的目录结构:
-
-    mkdir haiwen  
-    mv seafile-server_* haiwen
-    cd haiwen
-    #将 seafile-server_* 移动到 haiwen 目录下后
-    tar -xzf seafile-server_*
-    mkdir installed
-    mv seafile-server_* installed
-
-现在，你的目录看起来应该像这样：
-
-    # tree . -L 2
-    .
-    ├── installed
-    │   └── seafile-server_1.4.0_x86-64.tar.gz
-    └── seafile-server-1.4.0
-        ├── reset-admin.sh
-        ├── runtime
-        ├── seafile
-        ├── seafile.sh
-        ├── seahub
-        ├── seahub.sh
-        ├── setup-seafile.sh
-        └── upgrade
-
-**这样设计目录的好处在于**
-
--   和 seafile 相关的配置文件都放在 haiwen 目录下，便于集中管理.
--   后续升级时,你只需要解压最新的安装包到 haiwen 目录下.
+```
+#check if your system is x86 (32bit) or x86_64 (64 bit)
+uname -m
+```
+Click the tarball link and save it.
 
 
-安装 Seafile 服务器
--------------------
+## Deploying and Directory Layout
 
-### 安装前的准备工作
+NOTE: If you place the Seafile data directory in external storage, such as NFS, CIFS mount, you should not use SQLite as the database, but use MySQL instead.
 
-安装 Seafile 服务器之前，请确认已安装以下软件
+Supposed your organization's name is "haiwen", and you've downloaded seafile-server_1.4.0_* into your home directory. We suggest you to use the following layout for your deployment:
+```sh
+mkdir haiwen
+mv seafile-server_* haiwen
+cd haiwen
+# after moving seafile-server_* to this directory
+tar -xzf seafile-server_*
+mkdir installed
+mv seafile-server_* installed
+```
+
+Now you should have the following directory layout
+```sh
+# tree . -L 2
+.
+├── installed
+│   └── seafile-server_1.4.0_x86-64.tar.gz
+└── seafile-server-1.4.0
+    ├── reset-admin.sh
+    ├── runtime
+    ├── seafile
+    ├── seafile.sh
+    ├── seahub
+    ├── seahub.sh
+    ├── setup-seafile.sh
+    └── upgrade
+```
+
+Benefits of this layout are
+
+- 和 seafile 相关的配置文件都放在 "haiwen" 目录下，便于集中管理.
+ - When you upgrade to a new version of Seafile, you can simply untar the latest package into "haiwen" directory. In this way you can reuse the existing config files in "haiwen" directory and don't need to configure again.
+
+
+## Setting Up Seafile Server
+#### Prerequisites
+
+The Seafile server package requires the following packages have been installed in your system
 
 - python 2.7
 - python-setuptools
@@ -58,165 +65,154 @@
 - python-ldap
 - sqlite3
 
-<!-- -->
+```
+#Debian系统下
+apt-get update
+apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap sqlite3
+```
 
-    #Debian系统下
-    apt-get update
-    apt-get install python2.7 python-setuptools python-imaging python-ldap sqlite3
+```
+# 在 CentOS 7 下
+sudo yum install python-imaging MySQL-python python-memcached python-ldap
+```
 
-    # 在 CentOS 7 下
-    yum install python-setuptools python-imaging python-ldap MySQL-python python-memcached
+#### Setup
 
-### 安装
+```sh
+cd seafile-server-*
+./setup-seafile.sh  #运行安装脚本并回答预设问题
+```
 
-    cd seafile-server-*
-    ./setup-seafile.sh  #运行安装脚本并回答预设问题
+If some of the prerequisites are not installed, the Seafile initialization script will ask you to install them.
 
-如果你的系统中没有安装上面的某个软件，那么 Seafile 初始化脚本会提醒你安装相应的软件包。 该脚本会依次询问你一些问题，从而一步步引导你配置 Seafile 的各项参数。
+The script will guide you through the settings of various configuration options.
 
-<table>
-<tr>
-<th>参数</th>
-<th>作用</th>
-<th>说明</th>
-</tr>
-<tbody>
-<tr class="odd">
-<td align="left"><p>seafile server name</p></td>
-<td align="left"><p>seafile 服务器的名字，目前该配置已经不再使用</p></td>
-<td align="left"><p>3 ~ 15 个字符，可以用英文字母，数字，下划线</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>seafile server ip or domain</p></td>
-<td align="left"><p>seafile 服务器的 IP 地址或者域名</p></td>
-<td align="left"><p>客户端将通过这个 IP 或者地址来访问你的 Seafile 服务</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>seafile data dir</p></td>
-<td align="left"><p>seafile 数据存放的目录，用上面的例子，默认将是 /data/haiwen/seafile-data</p></td>
-<td align="left"><p>seafile 数据将随着使用而逐渐增加，请把它放在一个有足够大空闲空间的分区上</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>seafile fileserver port</p></td>
-<td align="left"><p>seafile fileserver 使用的 TCP 端口</p></td>
-<td align="left"><p>一般使用默认的 8082 端口，如果已经被占用，可以设置为其他的端口</p></td>
-</tr>
-<tr class="odd">
-</tr>
-</tbody>
-</table>
+**Seafile configuration options**
 
-**如果安装正确完成，会打印成功消息**
+| 参数 | 作用 | 说明 |
+| -- | -- | ---- |
+| server name | Name of this Seafile server | 3-15 characters, only English letters, digits and underscore ('_') are allowed |
+| server ip or domain  | The IP address or domain name used by this server  | Seafile client program will access the server with this address |
+| Seafile data dir  | Seafile stores your data in this directory. By default it'll be placed in the current directory.  | The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space. |
+| fileserver port | The TCP port used by Seafile fileserver  | Default is 8082. If it's been used by other service, you can set it to another port. |
+
 
 现在你的目录结构将会是如下:
 
-    #tree haiwen -L 2
-    haiwen
-    ├── conf                # configuration files
-    │   ├── ccnet.conf
-    │   └── seafile.conf
-    │   └── seahub_settings.py
-    │   └── seafdav.conf
-    ├── ccnet
-    │   ├── mykey.peer
-    │   ├── PeerMgr
-    │   └── seafile.ini
-    ├── installed
-    │   └── seafile-server_1.4.0_x86-64.tar.gz
-    ├── seafile-data        
-    ├── seafile-server-1.4.0  # active version
-    │   ├── reset-admin.sh
-    │   ├── runtime
-    │   ├── seafile
-    │   ├── seafile.sh
-    │   ├── seahub
-    │   ├── seahub.sh
-    │   ├── setup-seafile.sh
-    │   └── upgrade
-    ├── seafile-server-latest  # symbolic link to seafile-server-1.4.0
-    ├── seahub-data
-    │   └── avatars
-    ├── seahub.db
+```sh
+#tree haiwen -L 2
+haiwen
+├── ccnet               # configuration files
+│   ├── mykey.peer
+│   ├── PeerMgr
+│   └── seafile.ini
+├── conf
+│   └── ccnet.conf
+│   └── seafile.conf
+│   └── seahub_settings.py
+├── installed
+│   └── seafile-server_1.4.0_x86-64.tar.gz
+├── seafile-data
+├── seafile-server-1.4.0  # active version
+│   ├── reset-admin.sh
+│   ├── runtime
+│   ├── seafile
+│   ├── seafile.sh
+│   ├── seahub
+│   ├── seahub.sh
+│   ├── setup-seafile.sh
+│   └── upgrade
+├── seafile-server-latest  # symbolic link to seafile-server-1.4.0
+├── seahub-data
+│   └── avatars
+├── seahub.db
+```
 
-`seafile-server-latest`文件夹是当前 Seafile 服务器文件夹的符号链接.将来你升级到新版本后, 升级脚本会自动更新使其始终指向最新的 Seafile 服务器文件夹.
+seafile-server-latest文件夹是当前 Seafile 服务器文件夹的符号链接.将来你升级到新版本后, 升级脚本会自动更新使其始终指向最新的 Seafile 服务器文件夹.
 
-启动运行 Seafile 服务器
------------------------
+## Running Seafile Server
 
-### 启动 Seafile 服务器和 Seahub 网站
+#### Before Running
 
-在 seafile-server-1.4.0 目录下，运行如下命令：
+Since Seafile uses persistent connections between client and server, you should increase Linux file descriptors by ulimit if you have a large number of clients before start Seafile, like:
+
+``ulimit -n 30000``
+
+#### Starting Seafile Server and Seahub Website
 
 - 启动 Seafile:
 ```
-     ./seafile.sh start # 启动 Seafile 服务
+./seafile.sh start # 启动 Seafile 服务
 ```
 
-- 启动 Seahub
+- 启动 Seahub:
 ```
-    ./seahub.sh start <port> # 启动 Seahub 网站 （默认运行在8000端口上）
+./seahub.sh start <port>  # 启动 Seahub 网站 （默认运行在8000端口上）
 ```
 
-**小贴士:** 你第一次启动 seahub 时，`seahub.sh` 脚本会提示你创建一个 seafile 管理员帐号。
+**Note**: The first time you start Seahub, the script is going to prompt you to create an admin account for your Seafile server.
 
 服务启动后, 打开浏览器并输入以下地址
 
-    http://192.168.1.111:8000/
+``http://192.168.1.111:8000``
 
-你会被重定向到登陆页面。输入你在之前创建的 Seafile 管理员帐号的用户名/密码即可。
+you will be redirected to the Login page. Just enter the admin username and password.
 
 **恭喜!** 现在你已经成功的安装了 Seafile 服务器.
 
-#### 在另一端口上运行 Seahub
+#### Run Seahub on another port
 
-如果你不想在默认的 8000 端口上运行 Seahub, 而是想自定义端口（比如8001）中运行，请按以下步骤操作:
+If you want to run Seahub on a port other than the default 8000, say 8001, you must:
 
 - 关闭 Seafile 服务器
 ```
-    ./seahub.sh stop # 停止 Seafile 进程
-    ./seafile.sh stop # 停止 Seahub
+./seahub.sh stop
+./seafile.sh stop
 ```
 
-- 更改`haiwen/conf/ccnet.conf`文件中`SERVICE_URL` 的值(假设你的 ip 或者域名时`192.168.1.100`), 如下 (从 5.0 版本开始，可以直接在管理员界面中设置):
+- 更改 [haiwen/conf/ccnet.conf](../config/ccnet-conf.md)文件中SERVICE_URL 的值(假设你的 ip 或者域名时192.168.1.100), 如下 (从 5.0 版本开始，可以直接在管理员界面中设置):
 ```
-    SERVICE_URL = http://192.168.1.100:8001
+SERVICE_URL = http://192.168.1.100:8001
 ```
 
 - 重启 Seafile 服务器
 ```
-    ./seafile.sh start # 启动 Seafile 服务
-    ./seahub.sh start 8001 # 启动 Seahub 网站 （运行在8001端口上）
+./seafile.sh start
+./seahub.sh start 8001
 ```
 
-关闭/重启 Seafile 和 Seahub
----------------------------
+See Seafile [Server Configuration Manual](deploy/server_configuration.md) for more details about ``ccnet.conf``.
 
-#### 关闭
-
+## Manage Seafile and Seahub
+#### Stopping
 ```
-    ./seahub.sh stop # 停止 Seahub
-    ./seafile.sh stop # 停止 Seafile 进程
+./seahub.sh stop # 停止 Seahub
+./seafile.sh stop # 停止 Seafile 进程
 ```
-
-#### 重启
-
+#### Restarting
 ```
-    ./seafile.sh restart # 停止当前的 Seafile 进程，然后重启 Seafile
-    ./seahub.sh restart  # 停止当前的 Seahub 进程，并在 8000 端口重新启动 Seahub
+./seafile.sh restart
+./seahub.sh restart
 ```
+#### When the Scripts Fail
 
-#### 如果停止/重启的脚本运行失败
+大多数情况下 `seafile.sh`, `seahub.sh` 脚本可以正常工作。如果遇到问题：
 
-大多数情况下 seafile.sh seahub.sh 脚本可以正常工作。如果遇到问题：
-
-- 使用 `pgrep` 命令检查 seafile/seahub 进程是否还在运行中
+- 使用 pgrep 命令检查 seafile/seahub 进程是否还在运行中
 ```
-    pgrep -f seafile-controller # 查看 Seafile 进程
-    pgrep -f "manage.py run_gunicorn" # 查看 Seahub 进程
+pgrep -f seafile-controller # 查看 Seafile 进程
+pgrep -f "manage.py run_gunicorn" # 查看 Seahub 进程
 ```
 
--   使用 `pkill` 命令杀掉相关进程
+- 使用 pkill 命令杀掉相关进程
 ```
-    pkill -f seafile-controller # 结束 Seafile 进程
-    pkill -f "manage.py run_gunicorn" # 结束 Seafile 进程
+pkill -f seafile-controller
+pkill -f "manage.py run_gunicorn"
 ```
+
+## That's it!
+For a production server we highly recommend to setup with Nginx/Apache and enable SSL/TLS.
+
+That's it! Now you might want read more about Seafile.
+- [Administration](../maintain/README.md)
+

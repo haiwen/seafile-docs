@@ -161,7 +161,7 @@ If you choose "[2] Use existing ccnet/seafile/seahub databases", you would be as
 
 ** related questions for "Use existing ccnet/seafile/seahub databases" **
 
-| Question | Description | Note |
+| Question | Description | Note
 | -- | -- | ---- |
 | mysql server host | the host address of the mysql server | the default is localhost |
 | mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port |

@@ -854,7 +854,7 @@ msgid ""
 "left untested yet."
 msgstr ""
 "  - Seafile을 빌드할 때 Xcode 명령행 유틸리티로 충분할 수 있지만, 아직 시험해"
-"보진 않았습니다. :P"
+"보진 않았습니다."
 
 # ordered list
 #: build_seafile/osx.md:12

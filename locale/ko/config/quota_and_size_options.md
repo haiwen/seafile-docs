@@ -1,6 +1,6 @@
 # 용량 제한 및 기타 설정 항목
 
-**참고**: Seafile 서버 5.0.0 부터 모든 설정 파일은 **conf** 폴더로 옮겨 모아놓습니다. [좀 더 읽어보십시오](../deploy/new_directory_layout_5_0_0.md).
+**참고**: Seafile 서버 5.0.0부터 모든 설정 파일은 **conf** 폴더로 옮겨 모아놓습니다. [좀 더 읽어보십시오](../deploy/new_directory_layout_5_0_0.md).
 
 #### 용량 제한
 
@@ -33,7 +33,7 @@ keep_days = days of history to keep
 </pre>
 
 
-#### 업로드/다운로드 파일 크기 제한 설정 값 바꾸기
+#### 업로드/다운로드 파일 크기 제한 설정 값 바꾸기.
 
 `seafile.conf`에서:
 

@@ -1,25 +1,54 @@
 # Seahub 配置
 
-**Note**: Seafile 服务器 5.0.0 之后，所有配置文件都移动到了统一的 **conf** 目录下。 [了解详情](../deploy/new_directory_layout_5_0_0.md).
+Note: You can also modify most of the config items via web interface. The config items are saved in database table (seahub-db/constance_config). They have a higher priority over the items in config files.
 
-### Seahub 下发送邮件提醒
+## Seahub 下发送邮件提醒
 
-请参看 [发送邮件提醒](sending_email.md)
+A few features work better if it can send email notifications, such as notifying users about new messages.
+If you want to setup email notifications, please add the following lines to `seahub_settings.py` (and set your email server).
 
-### 缓存
+```python
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.example.com'        # smpt server
+EMAIL_HOST_USER = 'username@example.com'    # username and domain
+EMAIL_HOST_PASSWORD = 'password'    # password
+EMAIL_PORT = 25
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+```
 
-Seahub 在默认文件系统(/tmp/seahub\_cache/)中缓存文件(avatars, profiles,
-etc) . 你可以通过 Memcached 进行缓存操作
-(前提是你已经安装了`python-memcache`模块).
+If you are using Gmail as email server, use following lines:
 
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-            'LOCATION': '127.0.0.1:11211',
-        }
+```python
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'username@gmail.com'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+```
+
+**注意1**: 如果邮件功能不能正常使用，请在<code>logs/seahub.log</code>日志文件中查看问题原因. 更多信息请见 [Email notification list].
+
+**注意2**: 如果你想在非用户验证情况下使用邮件服务，请将 <code>EMAIL_HOST_PASSWORD</code> 置为 **blank** (<code>''</code>).
+
+
+## 缓存
+
+Seahub 在默认文件系统(/tmp/seahub_cache/)中缓存文件(avatars, profiles, etc) . 你可以通过 Memcached 进行缓存操作 (前提是你已经安装了python-memcache模块).
+After install **python-memcache**, add the following lines to **seahub_settings.py**.
+
+```python
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
     }
+}
+```
 
-### 用户管理选项
+## 用户管理选项
 
 The following options affect user registration, password and session.
 
@@ -43,16 +72,20 @@ LOGIN_REMEMBER_DAYS = 7
 # 用户输入密码错误次数超过改设置后，显示验证码
 LOGIN_ATTEMPT_LIMIT = 3
 
+# deactivate user account when login attempts exceed limit
+# Since version 5.1.2 or pro 5.1.3
+FREEZE_USER_ON_LOGIN_FAILED = False
+
 # 用户密码最少长度
 USER_PASSWORD_MIN_LENGTH = 6
-
-# 检查用户密码的复杂性
-USER_STRONG_PASSWORD_REQUIRED = False
 
 # 用户密码复杂性:
 #    数字, 大写字母, 小写字母, 其他符号
 # '3' 表示至少包含以上四种类型中的 3 个
 USER_PASSWORD_STRENGTH_LEVEL = 3
+
+# 检查用户密码的复杂性
+USER_STRONG_PASSWORD_REQUIRED = False
 
 # 管理员添加／重置用户后，强制用户修改登录密码
 # 在版本 5.1.1 加入, 默认开启
@@ -61,35 +94,44 @@ FORCE_PASSWORD_CHANGE = True
 # cookie 的保存时限，(默认为 2 周).
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2
 
-# 浏览器关闭后，是否清空用户会话 cookie
+# 浏览器关闭后，是否清空用户会话 cookie.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 # 是否存储每次请求的会话数据. 默认为 `False`
 SESSION_SAVE_EVERY_REQUEST = False
+
 ```
+
+
 
 ## 资料库设置
 
+Options for libraries:
 
 ```python
 # 加密资料库密码最小长度
 REPO_PASSWORD_MIN_LENGTH = 8
 
-# 加密外链密码最小长度
+# mininum length for password for share link (since version 4.4)
 SHARE_LINK_PASSWORD_MIN_LENGTH = 8
 
-# 关闭与任意目录同步的功能
+# Disable sync with any folder. Default is `False`
+# NOTE: since version 4.2.4
 DISABLE_SYNC_WITH_ANY_FOLDER = True
 
 # 允许用户设置资料库的历史保留天数
 ENABLE_REPO_HISTORY_SETTING = True
+
+# Enable or disable normal user to create organization libraries
+# Since version 5.0.5
+ENABLE_USER_CREATE_ORG_REPO = True
 ```
 
-
-## 在线文件查看设置
+Options for online file preview:
 
 ```python
-# 是否使用 pdf.js 来在线查看文件. 默认为 `True`
+# 是否使用 pdf.js 来在线查看文件. 默认为 `True`,  you can turn it off.
+# NOTE: since version 1.4.
 USE_PDFJS = True
 
 # 在线文件查看最大文件大小，默认为 30M.
@@ -99,42 +141,72 @@ USE_PDFJS = True
 FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024
 
 # 开启 thumbnails 功能
+# NOTE: since version 4.0.2
 ENABLE_THUMBNAIL = True
 
 # 文件缩略图的存储位置
 THUMBNAIL_ROOT = '/haiwen/seahub-data/thumbnail/thumb/'
 ```
 
-## 其他选项
+
+## Cloud Mode
+
+You should enable cloud mode if you use Seafile with an unknown user base. It disables the organization tab in Seahub's website to ensure that users can't access the user list. Cloud mode provides some nice features like sharing content with unregistered users and sending invitations to them. Therefore you also want to enable user registration. Through the global address book (since version 4.2.3) you can do a search for every user account. So you probably want to disable it.
 
 ```python
+# Enable cloude mode and hide `Organization` tab.
+CLOUD_MODE = True
 
-# 时区设置
-# 可用的时区参考:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-TIME_ZONE = 'UTC'
-
-# 系统默认语言设置
-# 可用的设置值参考
-# http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en'
-
-# 站点名, 用在 Email 中.
-SITE_NAME = 'example.com'
-
-# 站点 Title
-SITE_TITLE = 'Seafile'
+# Disable global address book
+ENABLE_GLOBAL_ADDRESSBOOK = False
 ```
 
-## 专业版选项
+
+## Other options
+
 
 ```python
-# 是否允许管理员通过 Web UI 查看用户文件. 默认为 False
+
+# Choices can be found here:
+# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
+# although not all choices may be available on all operating systems.
+# If running in a Windows environment this must be set to the same as your
+# system time zone.
+TIME_ZONE = 'UTC'
+
+# Language code for this installation. All choices can be found here:
+# http://www.i18nguy.com/unicode/language-identifiers.html
+# Default language for sending emails.
+LANGUAGE_CODE = 'en'
+
+# Set this to your website's name. This is contained in email notifications.
+SITE_NAME = 'example.com'
+
+# Set seahub website's title
+SITE_TITLE = 'Seafile'
+
+# If you don't want to run seahub website on your site's root path, set this option to your preferred path.
+# e.g. setting it to '/seahub/' would run seahub on http://example.com/seahub/.
+SITE_ROOT = '/'
+```
+
+## Pro edition only options
+
+```python
+# Whether to show the used traffic in user's profile popup dialog. Default is True
+SHOW_TRAFFIC = True
+
+# Allow administrator to view user's file in UNENCRYPTED libraries
+# through Libraries page in System Admin. Default is False.
 ENABLE_SYS_ADMIN_VIEW_REPO = True
 ```
 
 ## 注意
 
--  请重启 Seahub 以使更改生效.
--  如果更改没有生效，请删除 `seahub_setting.pyc` 缓存文件.
--  如果需要在 `seahub_settings.py` 里添加中文注释，请把 `# -*- coding: utf-8 -*-` 写入文件第一行，并单独为一行。
+* 请重启 Seahub 以使更改生效.
+* 如果更改没有生效，请删除 seahub_setting.pyc 缓存文件.
+
+```bash
+./seahub.sh restart
+```
+

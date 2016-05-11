@@ -1,38 +1,38 @@
 ## 둘러보기
 
-[Shibboleth](https://shibboleth.net/) is a widely used single sign on (SSO) protocol. Seafile server (Community Edition >= 4.1.0, Pro Edition >= 4.0.6) supports authentication via Shibboleth. It allows users from another organization to log in to Seafile without registering an account on the service provider.
+[Shibboleth](https://shibboleth.net/)는 널리 사용하는 단일 접속(SSO) 프로토콜입니다. Seafile 서버(커뮤니티판 >= 4.1.0, 전문가판 >= 4.0.6)에서는 시볼레스 인증을 지원합니다. 시볼레스는 다른 조직 구성원이 서비스 제공 업체에 계정을 등록하지 않고도 Seafile에 로그인할 수 있게 합니다.
 
-In this documentation, we assume the reader is familiar with Shibboleth installation and configuration. For introduction to Shibboleth concepts, please refer to https://wiki.shibboleth.net/confluence/display/SHIB2/UnderstandingShibboleth .
+이 문서에서는, 독자 여러분이 시볼레스 설치 및 설정을 어느정도 할 줄 안다고 가정하겠습니다. 시볼레스 개념 소개는 https://wiki.shibboleth.net/confluence/display/SHIB2/UnderstandingShibboleth 주소를 참고하십시오.
 
-Shibboleth Service Provider (SP) should be installed on the same server as the Seafile server. The official SP from https://shibboleth.net/ is implemented as an Apache module. The module handles all Shibboleth authentication details. Seafile server receives authentication information (username) from fastcgi. The username then can be used as login name for the user.
+시볼레스 서비스 제공자(SP)를 Seafile 서버와 동일한 서버에 설치해야합니다. 공식 SP는 https://shibboleth.net/ 에 있으며 아파치 모듈로 구현했습니다. 이 모듈은 모든 시볼레스 인증 세부 절차를 다룹니다. Seafile 서버는 인증 정보(사용자 이름)을 fastcgi로 받습니다. 그 다음 사용자 이름을 사용자의 로그인 이름으로 사용할 수 있습니다.
 
-Seahub provides a special URL to handle Shibboleth login. The URL is `https://your-server/shib-login`. Only this URL needs to be configured under Shibboleth protection. All other URLs don't go through the Shibboleth module. The overall workflow for a user to login with Shibboleth is as follows:
+Seahub에서는 시볼레스 로그인을 처리하는 특별한 URL을 제공합니다. `https://your-server/shib-login` 입니다. 이 URL은 시볼레스 보안하에 설정해야합니다. 다른 URL은 시볼레스 모듈로 접근할 수 없습니다. 시볼레스 사용자 로그인 전체 흐름은 다음과 같습니다:
 
-1. In the Seafile login page, there is a separate "Shibboleth" login button. When the user clicks the button, she/he will be redirected to `https://your-server/shib-login`.
-2. Since that URL is controlled by Shibboleth, the user will be redirected to IdP for login. After the user logs in, she/he will be redirected back to `https://your-server/shib-login`.
-3. This time the Shibboleth module passes the request to Seahub. Seahub reads the user information from the request and brings the user to her/his home page.
-4. All later access to Seahub will not pass through the Shibboleth module. Since Seahub keeps session information internally, the user doesn't need to login again until the session expires.
+1. Seafile 로그인 페이지에서 "시볼레스" 로그인 단추가 따로 있습니다. 이 단추를 사용자가 누르면 `https://your-server/shib-login`으로 이동합니다.
+2. 이 URL은 시볼레스로 통제하므로, 사용자는 로그인 할 IdP로 이동합니다. 사용자 로그인이 끝나면 `https://your-server/shib-login`으로 돌아갑니다.
+3. 여기서 시볼레스 모듈은 Seahub에 요청을 전달합니다. Seahub는 요청에서 사용자 정보를 읽고, 자신의 홈페이지로 사용자를 안내합니다.
+4. 이후 모든 Seahub로의 접근은 시볼레스 모듈로 전달하지 않습니다. Seahub는 자체적으로 세션 정보를 유지하므로, 사용자는 세션이 끝나기 전까지는 다시 로그인 할 필요가 없습니다.
 
-Since Shibboleth support requires Apache, if you want to use Nginx, you need two servers, one for non-Shibboleth access, another configured with Apache to allow Shibboleth login. In a cluster environment, you can configure your load balancer to direct traffic to different server according to URL. Only the URL `https://your-server/shib-login` needs to be directed to Apache.
+시볼레스 지원은 아파치가 필요하므로, Nginx를 사용하면, 비-시볼레스 접근용 서버와 시볼레스 로그인을 할 수 있도록 설정한 아파치 서버가 필요합니다. 클러스터 환경에서는 URL에 따라 제각기 다른 서버로 트래픽을 전달하는 로드 밸런서를 설정할 수 있습니다. 아파치에는 `https://your-server/shib-login` URL 주소로만 안내하면 됩니다.
 
-The configuration includes 3 steps:
+설정은 3단계로 진행합니다:
 
-1. Install and configure Shibboleth Service Provider;
-2. Configure Apache;
-3. Configure Seahub.
+1. 시볼레스 서비스 제공자를 설치하고 설정하십시오
+2. Apache를 섲렁하십시오
+3. Seahub를 설정하십시오.
 
 ## 시볼레스 서비스 제공자 설치 및 설정
 
-Installation and configuration of Shibboleth is out of the scope of this documentation. Here are a few references:
+시볼레스 설치 및 설정은 이 문서의 범위를 벗어납니다. 다음 몇가지 참고 자료가 있습니다:
 
-* For RedHat and SUSE: https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPLinuxInstall
-* For Ubuntu: http://bradleybeddoes.com/2011/08/12/installing-a-shibboleth-2-sp-in-ubuntu-11-04-within-virtualbox/
+* 레드햇 및 수세: https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPLinuxInstall
+* 우분투: http://bradleybeddoes.com/2011/08/12/installing-a-shibboleth-2-sp-in-ubuntu-11-04-within-virtualbox/
 
-Please note that you don't have to follow the Apache configurations in the above links. Just use the Apache config we provide in the next section.
+위 링크의 아파치 설정을 따를 필요가 없다는 점 참고하십시오. 다음 섹션에서 제공하는 아파치 설정을 활용하십시오.
 
 ## Apache 설정
 
-You should create a new virtual host configuration for Shibboleth.
+시볼레스 새 가상 호스트 설정을 만들어야합니다.
 
 ```
 <IfModule mod_ssl.c>
@@ -91,20 +91,20 @@ You should create a new virtual host configuration for Shibboleth.
 
 ```
 
-After restarting Apache, you should be able to get the Service Provider metadata by accessing https://seafile.example.com/Shibboleth.sso/Metadata . This metadata should be uploaded to the Identity Provider (IdP) server.
+Apache를 다시 시작하고 나면, https://seafile.example.com/Shibboleth.sso/Metadata에 접근하여 서비스 제공 업체 메타데이터를 가져와야합니다. 이 메타데이터는 인증 제공 업체(IdP) 서버 업체에 업로드합니다.
 
 ## Seahub 설정
 
-Seahub extracts the username from the `REMOTE_USER` environment variable. So you should modify your SP's shibboleth2.xml (/etc/shibboleth/shibboleth2.xml on Ubuntu) config file, so that Shibboleth translates your desired attribute into `REMOTE_USER` environment variable.
+Seahub는 `REMOTE_USER` 환경 변수에서 사용자 이름을 가져옵니다. 따라서 SP의 shibboleth2.xml 설정 파일을 수정하여 `REMOTE_USER` 환경 변수에 원하는 속성 값을 시볼레스가 해셕할 수 있게 해야 합니다.
 
 ```
     <ApplicationDefaults entityID="https://your-server/shibboleth"
         REMOTE_USER="xxxx">
 ```
 
-In Seafile, only one of the following two attributes can be used for username: `eppn`, and `mail`. `eppn` stands for "Edu Person Principal Name". It is usually the UserPrincipalName attribute in Active Directory. It's not necessarily a valid email address. `mail` is the user's email address. You should set `REMOTE_USER` to either one of these attributes.
+Seafile에서는 `eppn` 및 `mail` 두가지 속성 중 하나만 사용자 이름으로 간주할 수 있습니다. `eppn`은 "Edu Person Principal Name" 입니다. 액티브 디렉터리에서 보통 UserPrincipalName입니다. 올바른 전자메일 주소는 필요하지 않습니다. `mail`은 사용자의 전자메일 주소입니다. `REMOTE_USER`를 앞에서 언급한 속성 값 중 하나로 설정해야합니다.
 
-Now we have to tell Seahub how to do with the authentication information passed in by Shibboleth.
+이제 시볼레스 방식으로 전달하는 인증 정보를 어떻게 Seahub에 전달하는지 알릴 차례입니다.
 
 seahub_settings.py에 다음 설정 내용을 추가하십시오.
 
@@ -124,14 +124,14 @@ SHIBBOLETH_ATTRIBUTE_MAP = {
 }
 ```
 
-Since version 5.0, Seahub can process additional user attributes from Shibboleth. These attributes are saved into Seahub's database, as user's properties. They're all not mandatory. The internal user properties Seahub now supports are:
+버전 5.0부터, Seahub는 시볼레스 추가 사용자 속성을 처리할 수 있습니다. 해당 속성은 Seahub 데이터베이스에 사용자 속성으로 저장합니다. 모든 속성이 필수는 아닙니다. Seahub에서 현재 자체 사용자 속성으로 지원하는 항목은 다음과 같습니다:
 
-- givenname
-- surname
-- contact_email: used for sending notification email to user if username is not a valid email address (like eppn).
+- 이름
+- 성
+- contact_email: 사용자 이름이 올바른 전자메일 주소가 아닐 경우 사용자에게 알림 전자메일을 보낼 때 사용할 전자메일 주소(eppn과 유사).
 - institution: used to identify user's institution
 
-You can specify the mapping between Shibboleth attributes and Seahub's user properties in seahub_settings.py:
+시볼레스 속성 및 Seahub 사용자 속성 매핑을 seahub_settings.py에서 지정할 수 있습니다:
 
 ```
 SHIBBOLETH_ATTRIBUTE_MAP = {
@@ -143,11 +143,11 @@ SHIBBOLETH_ATTRIBUTE_MAP = {
 }
 ```
 
-In the above config, the hash key is Shibboleth attribute name, the second element in the hash value is Seahub's property name. You can adjust the Shibboleth attribute name for your own needs. ***Note that you may have to change attribute-map.xml in your Shibboleth SP, so that the desired attributes are passed to Seahub. And you have to make sure the IdP sends these attributes to the SP.***
+위 설정에서 해시 키는 시볼레스 속성 이름이며, 해시 값의 두번째 항목은 Seahub의 속성 이름입니다. 시볼레스 속성 이름을 원하는대로 조정할 수 있습니다. ***참고로 시볼레스 SP의 attribute-mal.xml를 수정하여 Seahub에 원하는 속성 값을 전달할 수 있게 하십시오. 그리고 IdP에서 SP로 이 속성 값을 전달하는지 확인해야합니다.***
 
-Since version 5.1.1, we added an option `SHIB_ACTIVATE_AFTER_CREATION` (defaults to `True`) which control the user status after shibboleth connection. If this option set to `False`, user will be inactive after connection, and system admins will be notified by email to activate that account.
+버전 5.1.1부터 시볼레스 연결 후 사용자 상태를 처리하는 `SHIB_ACTIVATE_AFTER_CREATION` (기본값 `True`) 설정 항목을 추가했습니다. 이 항목을 `False`로 설정하면, 사용자 연결 후 비활성 상태가 되며, 시스템 관리자는 사용자 계정을 활성화 하라는 전자메일 알림을 받습니다.
 
 ## 검증
 
-After restarting Apache and Seafile services, you can then test the shibboleth login workflow.
+Apache 및 Seafile 서비스를 다시 시작하고 나면, 시볼레스 로그인 절차를 시험해볼 수 있습니다.
 

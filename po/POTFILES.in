@@ -65,6 +65,8 @@ deploy_pro/multi_institutions.md
 deploy_pro/office_documents_preview.md
 deploy_pro/office_web_app.md
 deploy_pro/real_time_backup.md
+deploy_pro/seaf_encrypt.md
+deploy_pro/seaf_import.md
 deploy_pro/seafile_professional_sdition_software_license_agreement.md
 deploy_pro/setup_seafile_cluster_with_nfs.md
 deploy_pro/setup_with_amazon_s3.md

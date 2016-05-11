@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,7 @@ msgid "- `seafevents.conf`: contains settings for search and documents preview"
 msgstr ""
 
 #: config/README.md:17
-msgid "Note: Since version 5.0.0, you can also modify most of the config items via web interface.The config items are saved in database table (seahub-dab/constance_config). They have a higher priority over the items in config files."
+msgid "Note: Since version 5.0.0, you can also modify most of the config items via web interface. The config items are saved in database table (seahub-db/constance_config). They have a higher priority over the items in config files."
 msgstr ""
 
 #: config/README.md:19
@@ -663,7 +663,7 @@ msgid "# Seahub Settings"
 msgstr ""
 
 #: config/seahub_settings_py.md:3
-msgid "Note: You can also modify most of the config items via web interface.The config items are saved in database table (seahub-dab/constance_config). They have a higher priority over the items in config files."
+msgid "Note: You can also modify most of the config items via web interface. The config items are saved in database table (seahub-db/constance_config). They have a higher priority over the items in config files."
 msgstr ""
 
 #: config/seahub_settings_py.md:5

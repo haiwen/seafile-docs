@@ -1,13 +1,13 @@
 # Seafile
 ## Fuse 활용
 
-Files in the seafile system are split to blocks, which means what are stored on your seafile server are not complete files, but blocks. This design faciliates effective data deduplication.
+Seafile 시스템의 파일은 블록 단위로 나뉘어 있으며, 완전한 파일이 아닌 블록 단위로 Seafile 서버에 저장해둠을 의미합니다. 이 설계 수단은 데이터 중복 방지에 효과적입니다.
 
 그러나, 가끔 관리자는 서버의 파일에 바로 접근하고 싶을 때가 있습니다. 이 때 seaf-fuse를 사용할 수 있습니다.
 
-<code>Seaf-fuse</code> is an implementation of the [http://fuse.sourceforge.net FUSE] virtual filesystem. In a word, it mounts all the seafile files to a folder (which is called the '''mount point'''), so that you can access all the files managed by seafile server, just as you access a normal folder on your server.
+<code>Seaf-fuse</code>는 [http://fuse.sourceforge.net FUSE] 가상 파일 시스템의 구현체입니다. 말 그대로, 모든 Seafile 파일을 폴더('''마운트 지점''')에 마운트하여, 서버의 일반 폴더에 접근하는 것처럼 Seafile 서버가 관리하는 모든 파일에 접근할 수 있습니다.
 
-Seaf-fuse는 Seafile 서버 '''2.1.0''' 부터 추가했습니다:
+Seaf-fuse는 Seafile 서버 '''2.1.0'''부터 추가했습니다.
 
 '''참고:'''
 * 암호화 폴더는 seaf-fuse로 접근할 수 없습니다.
@@ -54,8 +54,8 @@ drwxr-xr-x 2 root root 4.0K Jan  1  1970 sharp@sharp.com/
 drwxr-xr-x 2 root root 4.0K Jan  1  1970 test@test.com/
 </pre>
 
-* The top level folder contains many subfolders, each of which corresponds to a user
-* The time stamp of files and folders is not preserved.
+* 최상위 폴더에는 여러가지 하위 폴더가 있는데, 이 하위 폴더는 각 사용자와 관련이 있습니다
+* 파일 및 폴더의 타임스탬프는 보존하지 않습니다.
 
 #### 사용자별 폴더
 
@@ -66,7 +66,7 @@ drwxr-xr-x 2 root root  924 Jan  1  1970 5403ac56-5552-4e31-a4f1-1de4eb889a5f_Ph
 drwxr-xr-x 2 root root 1.6K Jan  1  1970 a09ab9fc-7bd0-49f1-929d-6abeb8491397_My Notes/
 </pre>
 
-From the above list you can see, under the folder of a user there are subfolders, each of which represents a library of that user, and has a name of this format: '''{library_id}-{library-name}'''.
+위 목록에서 보신 바와 같이, 사용자 폴더 아래에 하위 폴더가 있는데 각 폴더는 사용자의 라이브러리를 나타내며, '''{library_id}-{library-name}''' 형식의 이름이 갖춰져 있습니다.
 
 #### 라이브러리용 폴더
 
@@ -79,12 +79,12 @@ $ ls -lhp /data/seafile-fuse/abc@abc.com/5403ac56-5552-4e31-a4f1-1de4eb889a5f_Ph
 
 #### "Permission denied" 오류 발생시
 
-If you get an error message saying "Permission denied" when running <code>./seaf-fuse.sh start</code>, most likely you are not in the "fuse group". You should:
+<code>./seaf-fuse.sh start</code> 명령을 실행할 때 "Permission denied" 오류 메시지가 나타난다면, 대부분 여러분이 "fuse 그룹"에 속해있지 않았기 때문일지도 모릅니다. 다음 과정을 진행하십시오:
 
 * fuse 그룹에 자신을 추가하십시오
 <pre>
 sudo usermod -a -G fuse <your-user-name>
 </pre>
 * 쉘에서 로그아웃 후 다시 로그인하십시오
-* Now try <code>./seaf-fuse.sh start <path></code> again.
+* 이제<code>./seaf-fuse.sh start <path></code> 명령을 다시 실행해보십시오.
 

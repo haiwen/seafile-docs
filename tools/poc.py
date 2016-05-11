@@ -71,8 +71,11 @@ class PoCompiler:
                         '[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>' \
                         '(,\s([1-2][0-9]{3})(\-([1-2][0-9]{3}))?)+\.\n?$'
         self.langteam = r'^\"Language\-Team: ' \
-                        r'([A-Z][a-z]+)\s\<[a-zA-Z0-9\.\-_]+\@' \
-                        r'[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>\\n\"\n?$'
+                        r'([A-Z][a-z]+)\s(\<[a-zA-Z0-9\.\-_]+' \
+                        r'\@[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+\>|' \
+                        r'\(https?://[a-zA-Z0-9%\-_]+(\.[a-zA-Z0-9%\-_]+)+' \
+                        r'(/[a-zA-Z0-9%\-_]+(\.[a-zA-Z0-9%\-_]+)*)*/?\))' \
+                        r'\\n\"\n?$'
 
         self.cmeta = False
         self.pofile = None
@@ -211,6 +214,14 @@ class PoCompiler:
             elif pt == 'fuzzy':
                 # consider that this isn't translated
                 poline = self.f.readline()
+                pt = self.poparser.parse(poline)
+                if pt == 'obsolete':
+                    while pt != 'blankline':
+                        poline = self.f.readline()
+                        pt = self.poparser.parse(poline)
+
+                    continue
+
                 msgid, msgstr = self.get_msg_set(poline)
 
                 for fn in fnarr:

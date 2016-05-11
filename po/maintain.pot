@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: seafile-docs\n"
 "Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
-"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -828,61 +828,57 @@ msgid "Seafile uses storage de-duplication technology to reduce storage usage. T
 msgstr ""
 
 #: maintain/seafile_gc.md:5
-msgid "To release the storage space occupied by unused blocks, you have to run a"
+msgid "To release the storage space occupied by unused blocks, you have to run a \"garbage collection\" program to clean up unused blocks on your server."
 msgstr ""
 
-#: maintain/seafile_gc.md:6
-msgid "\"garbage collection\" program to clean up unused blocks on your server."
-msgstr ""
-
-#: maintain/seafile_gc.md:8
+#: maintain/seafile_gc.md:7
 msgid "The GC program cleans up two types of unused blocks:"
 msgstr ""
 
-#: maintain/seafile_gc.md:10
+#: maintain/seafile_gc.md:9
 # ordered list
 msgid "1. Blocks that no library references to, that is, the blocks belong to deleted libraries;"
 msgstr ""
 
-#: maintain/seafile_gc.md:11
+#: maintain/seafile_gc.md:10
 # ordered list
 msgid "2. If you set history length limit on some libraries, the out-dated blocks in those libraries will also be removed."
 msgstr ""
 
-#: maintain/seafile_gc.md:13
+#: maintain/seafile_gc.md:12
 msgid "**Before running GC, you must shutdown the Seafile program on your server if you use the community edition. For professional edition, from version 3.1.11, online GC operation is supported. If you use Professional edition, you don't need to shutdown the Seafile program if you are using MySQL or PostgreSQL as database.**  This is because new blocks written into Seafile while GC is running may be mistakenly deleted by the GC program. "
 msgstr ""
 
-#: maintain/seafile_gc.md:15
+#: maintain/seafile_gc.md:14
 # header
 msgid "## Run GC in version 4.1.1 and later"
 msgstr ""
 
-#: maintain/seafile_gc.md:17
+#: maintain/seafile_gc.md:16
 msgid "In community edition 4.1.1 and Pro edition 4.1.0, GC program's command line and output are improved."
 msgstr ""
 
-#: maintain/seafile_gc.md:19
+#: maintain/seafile_gc.md:18
 # header
 msgid "### Dry-run Mode"
 msgstr ""
 
-#: maintain/seafile_gc.md:21
+#: maintain/seafile_gc.md:20
 msgid "To see how much garbage can be collected without actually removing any garbage, use the dry-run option:"
 msgstr ""
 
-#: maintain/seafile_gc.md:23
+#: maintain/seafile_gc.md:22
 # code block
 msgid "```\n"
 "seaf-gc.sh --dry-run [repo-id1] [repo-id2] ...\n"
 "```"
 msgstr ""
 
-#: maintain/seafile_gc.md:27
+#: maintain/seafile_gc.md:26
 msgid "The output should look like:"
 msgstr ""
 
-#: maintain/seafile_gc.md:29
+#: maintain/seafile_gc.md:28
 # code block
 msgid "```\n"
 "[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo My Library(ffa57d93)\n"
@@ -924,109 +920,109 @@ msgid "```\n"
 "```"
 msgstr ""
 
-#: maintain/seafile_gc.md:68
+#: maintain/seafile_gc.md:67
 msgid "If you give specific library ids, only those libraries will be checked; otherwise all libraries will be checked."
 msgstr ""
 
-#: maintain/seafile_gc.md:70
+#: maintain/seafile_gc.md:69
 msgid "Notice that at the end of the output there is a \"repos have blocks to be removed\" section. It contains the list of librareis that have garbage blocks. Later when you run GC without --dry-run option, you can use these libraris ids as input arguments to GC program."
 msgstr ""
 
-#: maintain/seafile_gc.md:72
+#: maintain/seafile_gc.md:71
 # header
 msgid "### Removing Garbage"
 msgstr ""
 
-#: maintain/seafile_gc.md:74
+#: maintain/seafile_gc.md:73
 msgid "To actually remove garbage blocks, run without the --dry-run option:"
 msgstr ""
 
-#: maintain/seafile_gc.md:76
+#: maintain/seafile_gc.md:75
 # code block
 msgid "```\n"
 "seaf-gc.sh [repo-id1] [repo-id2] ...\n"
 "```"
 msgstr ""
 
-#: maintain/seafile_gc.md:80
+#: maintain/seafile_gc.md:79
 msgid "If libraries ids are specified, only those libraries will be checked for garbage."
 msgstr ""
 
-#: maintain/seafile_gc.md:82
+#: maintain/seafile_gc.md:81
 msgid "As described before, there are two types of garbage blocks to be removed. Sometimes just removing the first type (those belong to deleted libraries) of unused blocks is good enough. In this case, the GC program won't bother to check the libraries for outdated historic blocks. The \"-r\" option implements this feature:"
 msgstr ""
 
-#: maintain/seafile_gc.md:84
+#: maintain/seafile_gc.md:83
 # code block
 msgid "```\n"
 "seaf-gc.sh -r\n"
 "```"
 msgstr ""
 
-#: maintain/seafile_gc.md:88
+#: maintain/seafile_gc.md:87
 msgid "**In Seafile version 4.1.1 and later, libraries deleted by the users are not immediately removed from the system. Instead, they're moved into a \"trash\" in the system admin page. Before they're cleared from the trash, their blocks won't be garbage collected.**"
 msgstr ""
 
-#: maintain/seafile_gc.md:90
+#: maintain/seafile_gc.md:89
 # header
 msgid "### Using Multiple Threads in GC"
 msgstr ""
 
-#: maintain/seafile_gc.md:92
+#: maintain/seafile_gc.md:91
 msgid "Since Pro server 5.1.0, you can specify the thread number in GC. By default,"
 msgstr ""
 
-#: maintain/seafile_gc.md:94
+#: maintain/seafile_gc.md:93
 # unordered list
 msgid "- If storage backend is S3/Swift/Ceph, 10 threads are started to do the GC work."
 msgstr ""
 
-#: maintain/seafile_gc.md:95
+#: maintain/seafile_gc.md:94
 # unordered list
 msgid "- If storage backend is file system, only 1 thread is started."
 msgstr ""
 
-#: maintain/seafile_gc.md:97
+#: maintain/seafile_gc.md:96
 msgid "You can specify the thread number in with \"-t\" option. \"-t\" option can be used together with all other options. Each thread will do GC on one library. For example, the following command will use 20 threads to GC all libraries:"
 msgstr ""
 
-#: maintain/seafile_gc.md:99
+#: maintain/seafile_gc.md:98
 # code block
 msgid "```\n"
 "seaf-gc.sh -t 20\n"
 "```"
 msgstr ""
 
-#: maintain/seafile_gc.md:103
+#: maintain/seafile_gc.md:102
 msgid "Since the threads are concurrent, the output of each thread may mix with each others. Library ID is printed in each line of output."
 msgstr ""
 
-#: maintain/seafile_gc.md:105
+#: maintain/seafile_gc.md:104
 # header
 msgid "## Run GC in older versions (before 4.1.1)"
 msgstr ""
 
-#: maintain/seafile_gc.md:107
+#: maintain/seafile_gc.md:106
 msgid "To run GC program"
 msgstr ""
 
-#: maintain/seafile_gc.md:109
+#: maintain/seafile_gc.md:108
 msgid "    ./seaf-gc.sh run"
 msgstr ""
 
-#: maintain/seafile_gc.md:111
+#: maintain/seafile_gc.md:110
 msgid "If you want to do sanity check before actually removing any data, you can use the --dry-run option"
 msgstr ""
 
-#: maintain/seafile_gc.md:113
+#: maintain/seafile_gc.md:112
 msgid "    ./seaf-gc.sh dry-run"
 msgstr ""
 
-#: maintain/seafile_gc.md:115
+#: maintain/seafile_gc.md:114
 msgid "It will show you the total block number vs. the number of blocks to be removed."
 msgstr ""
 
-#: maintain/seafile_gc.md:117
+#: maintain/seafile_gc.md:116
 msgid "To check data integrity after running GC, you can use [seaf-fsck](seafile_fsck.md)"
 msgstr ""
 

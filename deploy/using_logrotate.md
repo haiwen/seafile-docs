@@ -4,8 +4,7 @@
 
 seaf-server and ccnet-server now (since version 3.1) support reopenning logfile by receiving SIGUR1 signal.
 
-This feature is very useful when you need cut logfile while you don't want to shutdown the server programs. All you need to do now is cutting the logfile on
-the fly.
+This feature is very useful when you need cut logfile while you don't want to shutdown the server programs. All you need to do now is cutting the logfile on the fly.
 
 > **NOTE**: signal is not supported by windows, so the feature is not available in windows
 
