@@ -1,0 +1,343 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: client/client.md:1
+# header
+msgid "# Client"
+msgstr ""
+
+#: client/client.md:2
+msgid "This manual explains how to setup and run Seafile client from a pre-built package."
+msgstr ""
+
+#: client/client.md:4
+# header
+msgid "## Components"
+msgstr ""
+
+#: client/client.md:5
+msgid "Seafile client v3.0 consists of three components:"
+msgstr ""
+
+#: client/client.md:7
+# unordered list
+msgid "* ccnet-daemon: for networking"
+msgstr ""
+
+#: client/client.md:8
+# unordered list
+msgid "* seafile-daemon: for file syncing"
+msgstr ""
+
+#: client/client.md:9
+# unordered list
+msgid "* seafile-applet: GUI Client"
+msgstr ""
+
+#: client/client.md:11
+# header
+msgid "## Platform Support"
+msgstr ""
+
+#: client/client.md:12
+# unordered list
+msgid "- GUI Client (seafile-applet)"
+msgstr ""
+
+#: client/client.md:13
+# unordered list
+msgid "    - Availabe on Ubuntu 12.04 or above"
+msgstr ""
+
+#: client/client.md:14
+# unordered list
+msgid "    - Availabe on Windows XP/Vista/7/8"
+msgstr ""
+
+#: client/client.md:15
+# unordered list
+msgid "    - Availabe on Mac OS X 10.6 or above"
+msgstr ""
+
+#: client/client.md:16
+# unordered list
+msgid "    - Availabe on Android"
+msgstr ""
+
+#: client/client.md:17
+# unordered list
+msgid "    - Availabe on iOS (App Store)"
+msgstr ""
+
+#: client/client.md:18
+# unordered list
+msgid "- Terminal Client (ccnet-daemon, and seafile-applet)"
+msgstr ""
+
+#: client/client.md:19
+# unordered list
+msgid "    - Runs on Generic Linux"
+msgstr ""
+
+#: client/client.md:20
+# unordered list
+msgid "    - Runs on Windows XP/Vista/7/8"
+msgstr ""
+
+#: client/client.md:21
+# unordered list
+msgid "    - Runs on Mac OS X 10.6 or above"
+msgstr ""
+
+#: client/client.md:23
+# header
+msgid "## Download"
+msgstr ""
+
+#: client/client.md:25
+msgid "Visit [our download page](http://www.seafile.com/en/download), download the latest client package."
+msgstr ""
+
+#: client/client.md:27
+msgid "Changelog: http://seacloud.cc/group/3/wiki/client-changelog/"
+msgstr ""
+
+#: client/seafile_cli.md:1
+# header
+msgid "# Seafile CLI"
+msgstr ""
+
+#: client/seafile_cli.md:3
+#: client/seafile_cli.md:65
+# header
+msgid "init\n"
+"----"
+msgstr ""
+
+#: client/seafile_cli.md:5
+msgid "Initialize config file"
+msgstr ""
+
+#: client/seafile_cli.md:7
+msgid "usage: seaf-cli -c <config-dir> -o init"
+msgstr ""
+
+#: client/seafile_cli.md:9
+#: client/seafile_cli.md:71
+# header
+msgid "start\n"
+"-----"
+msgstr ""
+
+#: client/seafile_cli.md:11
+msgid "Start seafile-applet to run a seafile client"
+msgstr ""
+
+#: client/seafile_cli.md:13
+msgid "usage: seaf-cli -c <config-dir> -o start"
+msgstr ""
+
+#: client/seafile_cli.md:15
+# header
+msgid "start-ccnet\n"
+"-----------"
+msgstr ""
+
+#: client/seafile_cli.md:17
+msgid "Start ccnet daemon"
+msgstr ""
+
+#: client/seafile_cli.md:19
+msgid "usage: seaf-cli -c <config-dir> -o start-ccnet"
+msgstr ""
+
+#: client/seafile_cli.md:21
+# header
+msgid "start-seafile\n"
+"-------------"
+msgstr ""
+
+#: client/seafile_cli.md:23
+msgid "Start seafile daemon"
+msgstr ""
+
+#: client/seafile_cli.md:25
+msgid "usage: seaf-cli -c <config-dir> [-w <worktree>] -o start-seafile"
+msgstr ""
+
+#: client/seafile_cli.md:27
+# header
+msgid "clone\n"
+"-----"
+msgstr ""
+
+#: client/seafile_cli.md:29
+msgid "Clone a repo from seafile server"
+msgstr ""
+
+#: client/seafile_cli.md:31
+msgid "A repo id and a url need to be give because this program need to use seafile web API v2 to fetch repo information."
+msgstr ""
+
+#: client/seafile_cli.md:33
+msgid "usage: seaf-cli -c <config-dir> -r <repo-id> -u <url> [-w <worktree>] -o clone"
+msgstr ""
+
+#: client/seafile_cli.md:35
+#: client/seafile_cli.md:91
+# header
+msgid "sync\n"
+"----"
+msgstr ""
+
+#: client/seafile_cli.md:37
+msgid "Try to synchronize a repo"
+msgstr ""
+
+#: client/seafile_cli.md:39
+msgid "usage: seaf-cli -c <config-dir> -r <repo-id> -o clone"
+msgstr ""
+
+#: client/seafile_cli.md:41
+# header
+msgid "remove\n"
+"------"
+msgstr ""
+
+#: client/seafile_cli.md:43
+msgid "Try to desynchronize a repo"
+msgstr ""
+
+#: client/seafile_cli.md:45
+msgid "usage: seaf-cli -c <config-dir> -r <repo-id> -o remove"
+msgstr ""
+
+#: client/seafile_cli.md:47
+# header
+msgid "## Usage"
+msgstr ""
+
+#: client/seafile_cli.md:49
+msgid "Subcommands:"
+msgstr ""
+
+#: client/seafile_cli.md:51
+msgid "    init:           create config files for seafile client"
+msgstr ""
+
+#: client/seafile_cli.md:52
+msgid "    start:          start and run seafile client as daemon"
+msgstr ""
+
+#: client/seafile_cli.md:53
+msgid "    stop:           stop seafile client"
+msgstr ""
+
+#: client/seafile_cli.md:54
+msgid "    list:           list local liraries"
+msgstr ""
+
+#: client/seafile_cli.md:55
+msgid "    status:         show syncing status"
+msgstr ""
+
+#: client/seafile_cli.md:56
+msgid "    download:       download a library from seafile server"
+msgstr ""
+
+#: client/seafile_cli.md:57
+msgid "    sync:           synchronize an existing folder with a library in seafile server"
+msgstr ""
+
+#: client/seafile_cli.md:58
+msgid "    desync:         desynchronize a library with seafile server"
+msgstr ""
+
+#: client/seafile_cli.md:61
+msgid "##More details"
+msgstr ""
+
+#: client/seafile_cli.md:63
+msgid "Seafile client stores all its configure information in a config dir. The default location is `~/.ccnet`. All the commands below accept an option `-c <config-dir>`."
+msgstr ""
+
+#: client/seafile_cli.md:67
+msgid "Initialize seafile client. This command initializes the config dir. It also creates sub-directories `seafile-data` and `seafile` under `parent-dir`. `seafile-data` is used to store internal data, while `seafile` is used as the default location put downloaded libraries."
+msgstr ""
+
+#: client/seafile_cli.md:69
+msgid "    seaf-cli init [-c <config-dir>] -d <parent-dir>"
+msgstr ""
+
+#: client/seafile_cli.md:73
+msgid "Start seafile client. This command start `ccnet` and `seaf-daemon`, `ccnet` is the network part of seafile client, `seaf-daemon` manages the files."
+msgstr ""
+
+#: client/seafile_cli.md:75
+msgid "    seaf-cli start [-c <config-dir>]"
+msgstr ""
+
+#: client/seafile_cli.md:77
+# header
+msgid "stop\n"
+"----"
+msgstr ""
+
+#: client/seafile_cli.md:79
+msgid "Stop seafile client."
+msgstr ""
+
+#: client/seafile_cli.md:81
+msgid "    seaf-cli stop [-c <config-dir>]"
+msgstr ""
+
+#: client/seafile_cli.md:84
+# header
+msgid "Download\n"
+"--------"
+msgstr ""
+
+#: client/seafile_cli.md:86
+msgid "Download a library from seafile server"
+msgstr ""
+
+#: client/seafile_cli.md:88
+msgid "    seaf-cli download -l <library-id> -s <seahub-server-url> -d <parent-directory> -u <username> [-p <password>]"
+msgstr ""
+
+#: client/seafile_cli.md:93
+msgid "Synchronize a library with an existing folder."
+msgstr ""
+
+#: client/seafile_cli.md:95
+msgid "    seaf-cli sync -l <library-id> -s <seahub-server-url> -d <existing-folder> -u <username> [-p <password>]"
+msgstr ""
+
+#: client/seafile_cli.md:97
+# header
+msgid "desync\n"
+"------"
+msgstr ""
+
+#: client/seafile_cli.md:99
+msgid "Desynchronize a library from seafile server"
+msgstr ""
+
+#: client/seafile_cli.md:101
+msgid "    seaf-cli desync -d <existing-folder>"
+msgstr ""
+

@@ -1,0 +1,6289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: deploy/README.md:1
+# header
+msgid "# Deploying Seafile under Linux"
+msgstr ""
+
+#: deploy/README.md:3
+msgid "Here we describe how to deploy Seafile from prebuild binary packages."
+msgstr ""
+
+#: deploy/README.md:5
+# header
+msgid "### Deploy Seafile in Home/Personal Environment"
+msgstr ""
+
+#: deploy/README.md:7
+# unordered list
+msgid "* [Deploying Seafile with SQLite](using_sqlite.md)"
+msgstr ""
+
+#: deploy/README.md:9
+# header
+msgid "### Deploy Seafile in Production/Enterprise Environment"
+msgstr ""
+
+#: deploy/README.md:11
+msgid "In production environment we recommend using MySQL as the database and config Seafile web behing Nginx or Apache. For those who are not familiar with Nginx and Apache. We recommend Nginx, since it is easier to config than Apache."
+msgstr ""
+
+#: deploy/README.md:13
+msgid "Note: We have prepared an installation script [Deploy Seafile with an installation script](https://forum.seafile-server.org/t/seafile-server-installer-for-production-ready-seafile-ce-and-pro-installations/1464). The installer offer a quick and easy way to set up a production ready Seafile Server using MariaDB, Memcached and NGINX as a reverse proxy in under 5 minutes."
+msgstr ""
+
+#: deploy/README.md:15
+msgid "You can also install Seafile manually without the installation script as following:"
+msgstr ""
+
+#: deploy/README.md:17
+msgid "Basic:"
+msgstr ""
+
+#: deploy/README.md:19
+# unordered list
+msgid "* [Deploying Seafile with MySQL](using_mysql.md)"
+msgstr ""
+
+#: deploy/README.md:20
+# unordered list
+msgid "* [Config Seahub with Nginx](deploy_with_nginx.md)"
+msgstr ""
+
+#: deploy/README.md:21
+# unordered list
+msgid "* [Enabling Https with Nginx](https_with_nginx.md)"
+msgstr ""
+
+#: deploy/README.md:22
+# unordered list
+msgid "* [Config Seahub with Apache](deploy_with_apache.md)"
+msgstr ""
+
+#: deploy/README.md:23
+# unordered list
+msgid "* [Enabling Https with Apache](https_with_apache.md)"
+msgstr ""
+
+#: deploy/README.md:25
+msgid "Advanced:"
+msgstr ""
+
+#: deploy/README.md:27
+# unordered list
+msgid "* [Add Memcached](add_memcached.md), adding memcached is very important if you have more than 50 users."
+msgstr ""
+
+#: deploy/README.md:28
+# unordered list
+msgid "* [Start Seafile at System Bootup](start_seafile_at_system_bootup.md)"
+msgstr ""
+
+#: deploy/README.md:29
+# unordered list
+msgid "* [Firewall settings](using_firewall.md)"
+msgstr ""
+
+#: deploy/README.md:30
+# unordered list
+msgid "* [Logrotate](using_logrotate.md)"
+msgstr ""
+
+#: deploy/README.md:32
+msgid "User Authentication:"
+msgstr ""
+
+#: deploy/README.md:34
+msgid "Seafile supports a few external user authentication methods."
+msgstr ""
+
+#: deploy/README.md:36
+#: deploy/using_mysql.md:303
+# unordered list
+msgid "* [Configure Seafile to use LDAP](using_ldap.md)"
+msgstr ""
+
+#: deploy/README.md:37
+# unordered list
+msgid "* [Shibboleth Authentication](shibboleth_config.md)"
+msgstr ""
+
+#: deploy/README.md:39
+msgid "Other Deployment Issues"
+msgstr ""
+
+#: deploy/README.md:41
+# unordered list
+msgid "* [Deploy Seafile behind NAT](deploy_seafile_behind_nat.md)"
+msgstr ""
+
+#: deploy/README.md:42
+# unordered list
+msgid "* [Deploy Seahub at Non-root domain](deploy_seahub_at_non-root_domain.md)"
+msgstr ""
+
+#: deploy/README.md:43
+# unordered list
+msgid "* [Migrate From SQLite to MySQL](migrate_from_sqlite_to_mysql.md)"
+msgstr ""
+
+#: deploy/README.md:45
+msgid "Check [configuration options](../config/README.md) for server config options like enabling user registration."
+msgstr ""
+
+#: deploy/README.md:47
+msgid "**Read here** if you have troubles setting up Seafile server"
+msgstr ""
+
+#: deploy/README.md:49
+# ordered list
+msgid "1. Read [Seafile Server Components Overview](../overview/components.md) to understand how Seafile server works. This will save you a lot of time."
+msgstr ""
+
+#: deploy/README.md:50
+# ordered list
+msgid "2. [Common Problems for Setting up Server](common_problems_for_setting_up_server.md)"
+msgstr ""
+
+#: deploy/README.md:51
+# ordered list
+msgid "3. Go to our [forum](https://forum.seafile-server.org/) for help."
+msgstr ""
+
+#: deploy/README.md:53
+# header
+msgid "## Upgrade Seafile Server"
+msgstr ""
+
+#: deploy/README.md:55
+# unordered list
+msgid "* [Upgrade Seafile server](upgrade.md)"
+msgstr ""
+
+#: deploy/README.md:57
+# header
+msgid "## For those that want to package Seafile server"
+msgstr ""
+
+#: deploy/README.md:59
+msgid "If you want to package seafile yourself, (e.g. for your favorite Linux distribution), you should always use the correspondent tags:"
+msgstr ""
+
+#: deploy/README.md:61
+# unordered list
+msgid "* When we release a new version of seafile client, say 3.0.1, we will add tags `v3.0.1` to ccnet, seafile and seafile-client."
+msgstr ""
+
+#: deploy/README.md:62
+# unordered list
+msgid "* Likewise, when we release a new version of seafile server, say 3.0.1, we will add tags `v3.0.1-server` to ccnet, seafile and seahub."
+msgstr ""
+
+#: deploy/README.md:63
+# unordered list
+msgid "* For libsearpc, we always use tag `v3.0-latest`."
+msgstr ""
+
+#: deploy/README.md:65
+msgid "**Note**: The version numbers of each project has nothing to do with the tag name."
+msgstr ""
+
+#: deploy/add_memcached.md:1
+# header
+msgid "# Add memcached"
+msgstr ""
+
+#: deploy/add_memcached.md:3
+msgid "Seahub caches items (avatars, profiles, etc) on the file system in /tmp/seahub_cache/ by default. You can replace it with Memcached. You need to install"
+msgstr ""
+
+#: deploy/add_memcached.md:5
+# unordered list
+msgid "* memcached"
+msgstr ""
+
+#: deploy/add_memcached.md:6
+# unordered list
+msgid "* python memcached module (python-memcache or python-memcached)"
+msgstr ""
+
+#: deploy/add_memcached.md:8
+msgid "Then add the following lines to **seahub_settings.py**."
+msgstr ""
+
+#: deploy/add_memcached.md:10
+# code block
+msgid "```\n"
+"CACHES = {\n"
+"    'default': {\n"
+"        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',\n"
+"        'LOCATION': '127.0.0.1:11211',\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:1
+# header
+msgid "# Common Problems for Setting up Server"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:3
+# header
+msgid "#### \"Error when calling the metaclass bases\" during Seafile initialization"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:5
+msgid "Seafile uses Django 1.5, which requires Python 2.6.5+. Make sure your Python version is 2.7."
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:7
+# header
+msgid "#### Seahub.sh can't start, the error message contains: \"Could not import settings 'seahub.settings', libpython2.7.so.1.0: can not open shared object file\""
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:9
+msgid "You probably encounter this problem in Ubuntu 14.04. Seafile pro edition requires libpython2.7. Install it by:"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:11
+# code block
+msgid "```\n"
+"sudo apt-get install libpython2.7\n"
+"```"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:15
+# header
+msgid "#### Failed to upload/download file online"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:17
+# unordered list
+msgid "* Check your SERVICE_URL setting in ccnet.conf and FILE_SERVER_ROOT setting in seahub_settings.py"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:18
+# unordered list
+msgid "* Make sure you firewall for seafile fileserver is opened."
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:19
+# unordered list
+msgid "* Using chrome/firefox debug mode to find which link is given when click download button and what's wrong with this link"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:22
+# header
+msgid "#### Error on Apache log: \"File does not exist: /var/www/seahub.fcgi\""
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:24
+msgid "Make sure you use \"FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000\" in httpd.conf or apache2.conf, especially the \"/var/www/seahub.fcgi\" part."
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:26
+# header
+msgid "#### Error on Apache log: \"FastCGI: comm with server \"/var/www/seahub.fcgi\" aborted: idle timeout (30 sec)\""
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:28
+msgid "When accessing file history in huge libraries you get HTTP 500 Error."
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:30
+msgid "Solution:"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:32
+msgid "Change in in httpd.conf or apache2.conf from \"FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000\" to \"FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000 -idle-timeout 60\""
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:34
+# header
+msgid "#### Seafile with Apache / HTTPS has text only (no CSS formatting / images)"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:36
+msgid "The media folder (Alias location identified in /etc/apache2/sites-enabled/000-default (Ubuntu)) has inappropriate permissions"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:38
+msgid "Solutions:"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:40
+# ordered list
+msgid "1. Run installation script as non-root user"
+msgstr ""
+
+#: deploy/common_problems_for_setting_up_server.md:41
+# ordered list
+msgid "2. Copy /media folder to var/www/ and edit the Alias location in /etc/apache2/sites-enabled/000-default"
+msgstr ""
+
+#: deploy/db.md:1
+#: deploy/server.md:1
+#: deploy/upgrade.md:1
+#: deploy/using_fuse.md:1
+#: deploy/using_postgresql.md:1
+# header
+msgid "# Seafile"
+msgstr ""
+
+#: deploy/db.md:2
+# header
+msgid "## Customize database"
+msgstr ""
+
+#: deploy/db.md:4
+# unordered list
+msgid "* [Using MySQL](deploy/using_msql.md)"
+msgstr ""
+
+#: deploy/db.md:5
+# unordered list
+msgid "* [Using PostgreSQL](deploy/using_postgresql.md)"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:1
+# header
+msgid "# Configure Syncing via HTTP Protocol"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:3
+msgid "Starting from version 4.0.0, Seafile supports file syncing via HTTP protocol. The server configuration depends on which version of Seafile client do you use."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:5
+msgid "Client version >= 4.2 use http syncing protocol exclusively, the cases are"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:7
+# unordered list
+msgid "* If you're not using https, you don't have to configure Nginx or Apache to use http sync. The client can talk directly with the file server on port 8082."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:8
+# unordered list
+msgid "* If you're using https, you have to configure Nginx or Apache."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:10
+msgid "If you'are using clients version < 4.2,"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:12
+# unordered list
+msgid "* If you want to use http(s) sync, you have to configure Nginx or Apache."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:13
+# unordered list
+msgid "* If you don't configure Nginx or Apache, the client falls back to use non-http syncing protocol (using port 10001 and 12001)."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:15
+msgid "Servers >= 4.0 are compatible with all syncing protocols, any version of client should work with the server."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:17
+# header
+msgid "## Nginx"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:19
+msgid "Follow [this guide](deploy_with_nginx.md) to configure Nginx without HTTPS, or [this guide](https_with_nginx.md) to configure Nginx with HTTPS."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:21
+msgid "The section in Nginx config file related to HTTP sync is"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:23
+# code block
+msgid "```\n"
+"    location /seafhttp {\n"
+"        rewrite ^/seafhttp(.*)$ $1 break;\n"
+"        proxy_pass http://127.0.0.1:8082;\n"
+"        client_max_body_size 0;\n"
+"        proxy_connect_timeout  36000s;\n"
+"        proxy_read_timeout  36000s;\n"
+"    }\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:33
+msgid "there are two things to note:"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:35
+# unordered list
+msgid "* You must use the path \"/seafhttp\" for http syncing. This is hard coded in the client."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:36
+# unordered list
+msgid "* You should add the \"client_max_body_size\" configuration. The value should be set to 0 (means no limit) or 100M (suffice for most cases)."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:38
+# header
+msgid "## Apache"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:40
+msgid "Follow [this guide](deploy_with_apache.md) to configure Apache without HTTPS, or [this guide](https_with_apache.md) to configure Nginx with HTTPS."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:42
+msgid "The section in Apache config file related to HTTP sync is"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:44
+# code block
+msgid "```\n"
+"    #\n"
+"    # seafile fileserver\n"
+"    #\n"
+"    ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"    ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"    RewriteRule ^/seafhttp - [QSA,L]\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:53
+msgid "Note that you must use the path \"/seafhttp\" for http syncing. This is hard coded in the client."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:55
+# header
+msgid "## Client Side Configuration for HTTPS"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:57
+msgid "If you buy a valid SSL certificate, the syncing should work out of the box. If you use self-signed certificate, when you first add an account on the client, it'll pop up a window for you to confirm the server's certificate. If you choose to accept the certificate, the client will use that for https connection."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:59
+msgid "The client loads trusted CA list from the system trusted CA store on start. It then combines those CA list with the user accepted certificates. The combined list is then used for certificate verification."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:61
+msgid "If you follow certificate generation instruction in [this guide](https_with_nginx.md) to generate your self-signed certificate, the syncing should work after confirmation."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:63
+msgid "There may be cases when you can't establish https connection to the server. You can try two work-arounds:"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:65
+# ordered list
+msgid "1. Add your self-signed certificate to system trusted CA store. "
+msgstr ""
+
+#: deploy/deploy_http_sync.md:66
+# ordered list
+msgid "2. Open the client \"settings\" window, in \"advanced\" tab, check \"Do not verifiy server certificate in HTTPS sync\"."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:68
+# header
+msgid "## FAQ and Trouble Shooting"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:70
+# header
+msgid "### My Client Doesn't Sync after Upgrading to 4.2.x"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:72
+msgid "Older clients fall back to non-http sync protocol if http sync fails. So you may get the false sense that the old client works with http sync. But actually it doesn't. Client 4.2 use http sync exclusively, so it doesn't sync any more. You have to correctly configure the server for http sync."
+msgstr ""
+
+#: deploy/deploy_http_sync.md:74
+# header
+msgid "### Choosing Ciphers on Nginx/Apache"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:76
+msgid "You should choose strong ciphers on the server side. The following Nginx cipher list is tested to be working fine:"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:78
+# code block
+msgid "```\n"
+"ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS;\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_http_sync.md:82
+msgid "You may fine tune the list to meet your needs."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:1
+# header
+msgid "# Deploy Seafile behind NAT"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:3
+msgid "A lot of people want to deploy a seafile server in their LAN, and access it from the WAN."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:5
+msgid "To achieve this, you need:"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:7
+# unordered list
+msgid "- A router which supports port forwarding"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:8
+# unordered list
+msgid "- Use a dynamic DNS Service"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:9
+# unordered list
+msgid "- Modify your seafile server configuration"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:11
+# header
+msgid "### Table of Contents"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:13
+# unordered list
+msgid "- [Setup the server](deploy_Seafile_behind_NAT.md#setup-the-server)"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:14
+# unordered list
+msgid "- [Setup port forwarding in your router](deploy_Seafile_behind_NAT.md#setup-port-forwarding-in-your-router)"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:15
+# unordered list
+msgid "- [Use a dynamic dns serivce](deploy_Seafile_behind_NAT.md#use-a-dynamic-dns-serivce)"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:16
+# unordered list
+msgid "- [Modify your seafile configuration](deploy_Seafile_behind_NAT.md#modify-your-seafile-configuration)"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:19
+# header
+msgid "## Setup the server"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:21
+msgid "First, you should follow the guide on [Download and Setup Seafile Server](using_sqlite.md) to setup your Seafile server."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:23
+msgid "Before you continue, make sure:"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:25
+# unordered list
+msgid "- You can visit your seahub website"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:26
+# unordered list
+msgid "- You can download/sync a library through your seafile client"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:28
+# header
+msgid "## Setup Port Forwarding in Your Router"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:30
+# header
+msgid "### Ensure Your Router Supports Port Forwarding"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:32
+msgid "First, ensure your router supports port forwarding."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:34
+# unordered list
+msgid "- Login to the web adminstration page of your router. If you don't know how to do this, you should find the instructions on the manual of the router. If you have no maunal, just google **\"XXX router administration page\"** where `XXX` is your router's brand."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:36
+# unordered list
+msgid "- Navigate around in the adminstration page, and check if there is a tag which contains a word such as \"forward\", \"advanced\". If your router supports it, chances are that you can find the port forwarding related settings there."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:38
+# header
+msgid "### Setup Port Forwarding Rules"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:40
+msgid "Seafile server is composed of several components. You need to configure port forward for all the components listed below."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:42
+# inline html
+msgid "<table>\n"
+"<tr>\n"
+"  <th>component</th>\n"
+"  <th>default port</th>\n"
+"</tr>\n"
+"<tr>\n"
+"  <td>fileserver</td>\n"
+"  <td>8082</td>\n"
+"</tr>\n"
+"<tr>\n"
+"  <td>seahub</td>\n"
+"  <td>8000</td>\n"
+"</tr>\n"
+"</table>"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:57
+# unordered list
+msgid "* You don't need to open port 8000 and 8082 if you deploy Seafile behind Apache/Nginx."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:58
+# unordered list
+msgid "* If you're not using the default ports, you should adjust the table accroding to your own customiztion."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:60
+# header
+msgid "### How to test if your port forwarding is working"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:62
+msgid "After you have set the port forwarding rules on your router, you can check whether it works by:"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:64
+# unordered list
+msgid "- Open a command line prompt"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:65
+# unordered list
+msgid "- Get your WAN IP. A convenient way to get your WAN ip is to visit `http://who.is`, which would show you your WAN IP."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:66
+# unordered list
+msgid "- Try to connect your seahub server"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:67
+# code block
+msgid "````\n"
+"telnet <Your WAN IP> 8000\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:71
+msgid "If your port forwarding is working, the command above should succeed. Otherwise, you may get a message saying something like *connection refused* or *connection timeout*."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:73
+msgid "If your port forwarding is not working, the reasons may be:"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:75
+# unordered list
+msgid "- You have configured a wrong port forwarding"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:76
+# unordered list
+msgid "- Your router may need a restart"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:77
+# unordered list
+msgid "- You network may be down"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:79
+# header
+msgid "### Set SERVICE_URL"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:81
+msgid "\"SERVICE_URL\" in `ccnet.conf` is used to generate the download/upload link for files when you browse files online. Set it using your WAN IP."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:83
+# code block
+msgid "```\n"
+"SERVICE_URL = http://<Your WAN IP>:8000\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:87
+msgid "Most routers support NAT loopback. When your access Seafile web from intranet, file download/upload still works even when external IP is used."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:89
+# header
+msgid "## Use a Dynamic DNS Serivce"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:91
+# header
+msgid "### Why use a Dynamic DNS(DDNS) Service?"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:93
+msgid "Having done all the steps above, you should be able to visit your seahub server outside your LAN by your WAN IP. But for most people, the WAN IP address is likey to change regularly by their ISP(Internet Serice Provider), which makes this approach impratical."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:95
+msgid "You can use a dynamic DNS(DDNS) Service to overcome this problem. By using a dynamic DNS service, you can visit your seahub by domain name (instead of by IP), and the domain name will always be mapped to your WAN IP address, even if it changes regularly."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:97
+msgid "There are a dozen of dynamic DNS service providers on the internet. If you don't know what service to choose We recommend using [www.noip.com](http://www.noip.com) since it performs well in our testing."
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:99
+msgid "The detailed process is beyond the scope of this wiki. But basically, you should:"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:101
+# ordered list
+msgid "1. Choose a DDNS service provider"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:102
+# ordered list
+msgid "2. Register an account on the DDNS service provider's website"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:103
+# ordered list
+msgid "3. Download a client from your DDNS service provider to keep your domain name always mapped to your WAN IP"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:105
+# header
+msgid "## Modify your seafile configuration"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:107
+msgid "After you have setup your DDNS service, you need to modify the `ccnet.conf`:"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:109
+# code block
+msgid "```\n"
+"SERVICE_URL = http://<Your dynamic DNS domain>:8000\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_seafile_behind_nat.md:113
+msgid "Restart your seafile server after this."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:1
+# header
+msgid "# Deploy Seahub at Non-root domain"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:2
+msgid "This documentation will talk about how to deploy Seafile Web using Apache/Nginx at Non-root directory of the website(e.g., www.example.com/seafile/). Please note that the file server path will still be e.g. www.example.com/seafhttp (rather than www.example.com/seafile/seafhttp) because this path is hardcoded in the clients."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:4
+msgid "**Note:** We assume you have read [Deploy Seafile with Nginx](deploy_with_nginx.md) or [Deploy Seafile with Apache](deploy_with_apache.md)."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:6
+#: deploy/shibboleth_config.md:96
+# header
+msgid "## Configure Seahub"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:8
+msgid "First, we need to overwrite some variables in seahub_settings.py:"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:10
+# inline html
+msgid "<pre>\n"
+"SERVE_STATIC = False\n"
+"MEDIA_URL = '/seafmedia/'\n"
+"COMPRESS_URL = MEDIA_URL\n"
+"STATIC_URL = MEDIA_URL + 'assets/'\n"
+"SITE_ROOT = '/seafile/'\n"
+"LOGIN_URL = '/seafile/accounts/login/'    # NOTE: since version 5.0.4\n"
+"</pre>"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:19
+msgid "The webserver will serve static files (js, css, etc), so we just disable <code>SERVE_STATIC</code>."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:21
+msgid "<code>MEDIA_URL</code> can be anything you like, just make sure a trailing slash is appended at the end."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:23
+msgid "We deploy Seafile at <code>/seafile/</code> directory instead of root directory, so we set <code>SITE_ROOT</code> to <code>/seafile/</code>."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:25
+#: deploy/deploy_with_apache.md:62
+#: deploy/deploy_with_nginx.md:77
+# header
+msgid "## Modify ccnet.conf and seahub_setting.py"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:27
+#: deploy/deploy_with_apache.md:64
+#: deploy/deploy_with_nginx.md:79
+# header
+msgid "### Modify ccnet.conf"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:29
+#: deploy/deploy_with_apache.md:66
+#: deploy/deploy_with_nginx.md:81
+msgid "You need to modify the value of <code>SERVICE_URL</code> in [ccnet.conf](../config/ccnet-conf.md) to let Seafile know the domain you choose."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:31
+# inline html
+msgid "<pre>\n"
+"SERVICE_URL = http://www.myseafile.com/seafile\n"
+"</pre>"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:35
+#: deploy/deploy_with_apache.md:72
+#: deploy/deploy_with_nginx.md:87
+msgid "Note: If you later change the domain assigned to seahub, you also need to change the value of  <code>SERVICE_URL</code>."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:37
+#: deploy/deploy_with_apache.md:74
+#: deploy/deploy_with_nginx.md:89
+# header
+msgid "### Modify seahub_settings.py"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:39
+msgid "You need to add a line in <code>seahub_settings.py</code> to set the value of `FILE_SERVER_ROOT`"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:41
+#: deploy/deploy_with_apache.md:78
+#: deploy/deploy_with_nginx.md:93
+# code block
+msgid "```python\n"
+"FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:44
+msgid "**Note:** The file server path MUST be `/seafhttp` because this path is hardcoded in the clients."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:47
+# header
+msgid "## Webserver configuration"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:49
+# header
+msgid "### Deploy with Nginx"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:51
+msgid "Then, we need to configure the Nginx:"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:53
+# inline html
+msgid "<pre>\n"
+"server {\n"
+"    listen 80;\n"
+"    server_name www.example.com;\n"
+"\n"
+"    proxy_set_header X-Forwarded-For $remote_addr;\n"
+"\n"
+"    location /seafile {\n"
+"        fastcgi_pass    127.0.0.1:8000;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param	SERVER_PROTOCOL	    $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param	SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param	SERVER_PORT         $server_port;\n"
+"        fastcgi_param	SERVER_NAME         $server_name;\n"
+"#       fastcgi_param   HTTPS               on; # enable this line only if https is used\n"
+"        access_log      /var/log/nginx/seahub.access.log;\n"
+"    	error_log       /var/log/nginx/seahub.error.log;\n"
+"    }\n"
+"\n"
+"    location /seafhttp {\n"
+"        rewrite ^/seafhttp(.*)$ $1 break;\n"
+"        proxy_pass http://127.0.0.1:8082;\n"
+"        client_max_body_size 0;\n"
+"    }\n"
+"\n"
+"    location /seafmedia {\n"
+"        rewrite ^/seafmedia(.*)$ /media$1 break;\n"
+"        root /home/user/haiwen/seafile-server-latest/seahub;\n"
+"    }\n"
+"}\n"
+"</pre>"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:92
+# header
+msgid "## Deploy with Apache"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:94
+msgid "Here is the sample configuration:"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:96
+# inline html
+msgid "<pre>\n"
+"<VirtualHost *:80>\n"
+"  ServerName www.example.com\n"
+"  DocumentRoot /var/www\n"
+"  Alias /seafmedia  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"\n"
+"  <Location /seafmedia>\n"
+"    ProxyPass !\n"
+"    Require all granted\n"
+"  </Location>\n"
+"\n"
+"  RewriteEngine On\n"
+"\n"
+"  #\n"
+"  # seafile fileserver\n"
+"  #\n"
+"  ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"  ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"  RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"  #\n"
+"  # seahub\n"
+"  #\n"
+"  SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"  SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"  ProxyPass /seafile fcgi://127.0.0.1:8000/seafile\n"
+"</VirtualHost>\n"
+"</pre>"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:125
+msgid "We use Alias to let Apache serve static files, please change the second argument to your path."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:127
+# header
+msgid "## Clear the cache"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:129
+msgid "By default, Seahub caches some data like the link to the avatar icon in `/tmp/seahub_cache/` (unless memcache is used). We suggest to clear the cache after seafile has been stopped:"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:131
+# inline html
+msgid "<pre>\n"
+"rm -rf /tmp/seahub_cache/\n"
+"</pre>"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:135
+msgid "For memcache users, please purge the cache there instead by restarting your memcached server."
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:137
+#: deploy/deploy_with_apache.md:82
+#: deploy/deploy_with_nginx.md:97
+#: deploy/https_with_apache.md:80
+#: deploy/https_with_nginx.md:141
+# header
+msgid "## Start Seafile and Seahub"
+msgstr ""
+
+#: deploy/deploy_seahub_at_non-root_domain.md:139
+# inline html
+msgid "<pre>\n"
+"./seafile.sh start\n"
+"./seahub.sh start-fastcgi\n"
+"</pre>"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:1
+# header
+msgid "# Config Seahub with Apache"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:3
+#: deploy/deploy_with_nginx.md:3
+# header
+msgid "## Important"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:5
+msgid "According to the [security advisory](https://www.djangoproject.com/weblog/2013/aug/06/breach-and-django/) published by Django team, we recommend disable [GZip compression](http://httpd.apache.org/docs/2.2/mod/mod_deflate.html) to mitigate [BREACH attack](http://breachattack.com/)."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:7
+msgid "This tutorial assumes you run at least Apache 2.4."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:9
+# header
+msgid "## Prepare"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:11
+msgid "Install and enable Apache modules"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:13
+msgid "On Ubuntu you can use:"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:15
+# code block
+msgid "```bash\n"
+"sudo a2enmod rewrite\n"
+"sudo a2enmod proxy_fcgi\n"
+"sudo a2enmod proxy_http\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:22
+msgid "On raspbian install fcgi like [this](http://raspberryserver.blogspot.co.at/2013/02/installing-lamp-with-fastcgi-php-fpm.html)"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:24
+# header
+msgid "## Deploy Seahub/FileServer With Apache"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:26
+#: deploy/deploy_with_nginx.md:9
+msgid "Seahub is the web interface of Seafile server. FileServer is used to handle raw file uploading/downloading through browsers. By default, it listens on port 8082 for HTTP request."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:28
+msgid "Here we deploy Seahub using fastcgi, and deploy FileServer with reverse proxy. We assume you are running Seahub using domain '''www.myseafile.com'''."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:30
+msgid "Modify Apache config file: (`sites-enabled/000-default`) for ubuntu/debian, (`vhost.conf`) for centos/fedora"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:32
+# code block
+msgid "```apache\n"
+"<VirtualHost *:80>\n"
+"    ServerName www.myseafile.com\n"
+"    # Use \"DocumentRoot /var/www/html\" for Centos/Fedora\n"
+"    # Use \"DocumentRoot /var/www\" for Ubuntu/Debian\n"
+"    DocumentRoot /var/www\n"
+"    Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"\n"
+"    RewriteEngine On\n"
+"\n"
+"    <Location /media>\n"
+"        Require all granted\n"
+"    </Location>\n"
+"\n"
+"    #\n"
+"    # seafile fileserver\n"
+"    #\n"
+"    ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"    ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"    RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"    #\n"
+"    # seahub\n"
+"    #\n"
+"    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"    SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"    ProxyPass / fcgi://127.0.0.1:8000/\n"
+"</VirtualHost>\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:68
+#: deploy/deploy_with_nginx.md:83
+# code block
+msgid "```python\n"
+"SERVICE_URL = http://www.myseafile.com\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:76
+#: deploy/deploy_with_nginx.md:91
+msgid "You need to add a line in <code>seahub_settings.py</code> to set the value of `FILE_SERVER_ROOT` (or `HTTP_SERVER_ROOT` before version 3.1)"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:84
+# code block
+msgid "```bash\n"
+"sudo service apache2 restart\n"
+"./seafile.sh start\n"
+"./seahub.sh start-fastcgi\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:90
+# header
+msgid "## Troubleshooting"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:92
+# header
+msgid "### Problems with paths and files containing spaces"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:94
+msgid "If there are problems with paths or files containing spaces, make sure to have at least Apache 2.4.12."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:96
+msgid "References"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:97
+# unordered list
+msgid " * https://github.com/haiwen/seafile/issues/1258#issuecomment-188866740"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:98
+# unordered list
+msgid " * https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/1284641"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:99
+# unordered list
+msgid " * https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/1284641/comments/5"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:100
+# unordered list
+msgid " * https://svn.apache.org/viewvc/httpd/httpd/tags/2.4.12/CHANGES?view=markup#l45"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:102
+# header
+msgid "## Notes when Upgrading Seafile Server"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:104
+msgid "When [upgrading seafile server](upgrade.md), besides the normal steps you should take, there is one extra step to do: '''Update the path of the static files in your Nginx/Apache configuration'''. For example, assume your are upgrading seafile server 1.3.0 to 1.4.0, then:"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:106
+# code block
+msgid "```apache\n"
+"  Alias /media  /home/user/haiwen/seafile-server-1.4.0/seahub/media\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:110
+#: deploy/upgrade_with_mysql_or_postgresql.md:93
+msgid "**Tip:**"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:111
+msgid "You can create a symbolic link <code>seafile-server-latest</code>, and make it point to your current seafile server folder (Since seafile server 2.1.0, the <code>setup-seafile.sh</code> script will do this for you). Then, each time you run a upgrade script, it would update the <code>seafile-server-latest</code> symbolic link to keep it always point to the latest version seafile server folder."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:113
+#: deploy/upgrade_with_mysql_or_postgresql.md:96
+msgid "In this case, you can write:"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:115
+# code block
+msgid "```apache\n"
+"  Alias /media  /home/user/haiwen/seafile-server-latest/seahub;\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:118
+msgid "This way, you no longer need to update the Apache config file each time you upgrade your seafile server."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:121
+#: deploy/https_with_apache.md:87
+# header
+msgid "## Detailed explanation"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:123
+msgid "This may help you understand seafile server better: [Seafile Components](../overview/components.md)"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:125
+msgid "There are two components in Seafile server, Seahub and FileServer. FileServer only servers for raw file uploading/downloading, it listens on 8082. Seahub that serving all the other pages, is still listen on 8000. But under https, Seahub should listen as in fastcgi mode on 8000 (run as ./seahub.sh start-fastcgi). And as in fastcgi mode, when you visit  http://domain:8000 directly, it should return an error page."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:127
+#: deploy/https_with_apache.md:93
+msgid "When a user visit https://example.com/home/my/, Apache receives this request and sends it to Seahub via fastcgi. This is controlled by the following config items:"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:129
+#: deploy/https_with_apache.md:94
+# code block
+msgid "```apache\n"
+"    #\n"
+"    # seahub\n"
+"    #\n"
+"    SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"    SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"    ProxyPass / fcgi://127.0.0.1:8000/\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:138
+msgid "When a user click a file download link in Seahub, Seahub reads the value of `FILE_SERVER_ROOT` and redirects the user to address `https://example.com/seafhttp/xxxxx/`. `https://example.com/seafhttp` is the value of `FILE_SERVER_ROOT`. Here, the `FILE_SERVER` means the FileServer component of Seafile, which only serves for raw file downloading/uploading."
+msgstr ""
+
+#: deploy/deploy_with_apache.md:140
+#: deploy/https_with_apache.md:109
+msgid "When Apache receives the request at 'https://example.com/seafhttp/xxxxx/', it proxies the request to FileServer, which is listening at 127.0.0.1:8082. This is controlled by the following config items:"
+msgstr ""
+
+#: deploy/deploy_with_apache.md:142
+#: deploy/https_with_apache.md:110
+# code block
+msgid "```apache\n"
+"    #\n"
+"    # seafile fileserver\n"
+"    #\n"
+"    ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"    ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"    RewriteRule ^/seafhttp - [QSA,L]\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:1
+# header
+msgid "# Config Seahub with Nginx"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:5
+msgid "According to the [security advisory](https://www.djangoproject.com/weblog/2013/aug/06/breach-and-django/) published by Django team, we recommend disable [GZip compression](http://wiki.nginx.org/HttpGzipModule) to mitigate [BREACH attack](http://breachattack.com/)."
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:7
+# header
+msgid "## Deploy Seahub/FileServer with Nginx"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:11
+msgid "Here we deploy Seahub using [FastCGI](http://en.wikipedia.org/wiki/FastCGI), and deploy FileServer with reverse proxy. We assume you are running Seahub using domain '''www.myseafile.com'''."
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:13
+msgid "This is a sample Nginx config file."
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:15
+msgid "In Ubuntu 14.04, you can add the config file as follows:"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:17
+# ordered list
+msgid "1. create file `/etc/nginx/sites-available/seafile.conf`"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:18
+# ordered list
+msgid "2. Delete `/etc/nginx/sites-enabled/default`: `rm /etc/nginx/sites-enabled/default`"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:19
+# ordered list
+msgid "3. Create symbolic link: `ln -s /etc/nginx/sites-available/seafile.conf /etc/nginx/sites-enabled/seafile.conf`"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:21
+# code block
+msgid "```nginx\n"
+"server {\n"
+"    listen 80;\n"
+"    server_name www.myseafile.com;\n"
+"\n"
+"    proxy_set_header X-Forwarded-For $remote_addr;\n"
+"\n"
+"    location / {\n"
+"        fastcgi_pass    127.0.0.1:8000;\n"
+"        fastcgi_param   SCRIPT_FILENAME     $document_root$fastcgi_script_name;\n"
+"        fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"        fastcgi_param	SERVER_PROTOCOL	    $server_protocol;\n"
+"        fastcgi_param   QUERY_STRING        $query_string;\n"
+"        fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"        fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"        fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"        fastcgi_param	SERVER_ADDR         $server_addr;\n"
+"        fastcgi_param	SERVER_PORT         $server_port;\n"
+"        fastcgi_param	SERVER_NAME         $server_name;\n"
+"        fastcgi_param   REMOTE_ADDR         $remote_addr;\n"
+"\n"
+"        access_log      /var/log/nginx/seahub.access.log;\n"
+"    	error_log       /var/log/nginx/seahub.error.log;\n"
+"    	fastcgi_read_timeout 36000;\n"
+"    }\n"
+"\n"
+"    location /seafhttp {\n"
+"        rewrite ^/seafhttp(.*)$ $1 break;\n"
+"        proxy_pass http://127.0.0.1:8082;\n"
+"        client_max_body_size 0;\n"
+"        proxy_connect_timeout  36000s;\n"
+"        proxy_read_timeout  36000s;\n"
+"        proxy_send_timeout  36000s;\n"
+"        send_timeout  36000s;\n"
+"    }\n"
+"\n"
+"    location /media {\n"
+"        root /home/user/haiwen/seafile-server-latest/seahub;\n"
+"    }\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:64
+msgid "Nginx settings \"client_max_body_size\" is by default 1M. Uploading a file bigger than this limit will give you an error message HTTP error code 413 (\"Request Entity Too Large\")."
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:66
+msgid "You should use 0 to disable this feature or write the same value than for the parameter `max_upload_size` in section `[fileserver]` of [seafile.conf](../config/seafile-conf.md)."
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:68
+#: deploy/https_with_nginx.md:100
+msgid "Tip for uploading very large files (> 4GB): By default Nginx will buffer large request body in temp file. After the body is completely received, Nginx will send the body to the upstream server (seaf-server in our case). But it seems when file size is very large, the buffering mechanism dosen't work well. It may stop proxying the body in the middle. So if you want to support file upload larger for 4GB, we suggest you install Nginx version >= 1.8.0 and add the following options to Nginx config file:"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:70
+# code block
+msgid "```nginx\n"
+"    location /seafhttp {\n"
+"        ... ...\n"
+"        proxy_request_buffering off;\n"
+"    }\n"
+"```"
+msgstr ""
+
+#: deploy/deploy_with_nginx.md:99
+#: deploy/https_with_apache.md:82
+#: deploy/https_with_nginx.md:143
+# code block
+msgid "```bash\n"
+"./seafile.sh start\n"
+"./seahub.sh start-fastcgi\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_apache.md:1
+# header
+msgid "# Enabling Https with Apache"
+msgstr ""
+
+#: deploy/https_with_apache.md:3
+# header
+msgid "## Generate SSL digital certificate with OpenSSL"
+msgstr ""
+
+#: deploy/https_with_apache.md:5
+msgid "Here we use self-signed SSL digital certificate for free. If you use a paid ssl certificate from some authority, just skip the this step."
+msgstr ""
+
+#: deploy/https_with_apache.md:7
+#: deploy/https_with_nginx.md:6
+# code block
+msgid "```bash\n"
+"    openssl genrsa -out privkey.pem 2048\n"
+"    openssl req -new -x509 -key privkey.pem -out cacert.pem -days 1095\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_apache.md:12
+#: deploy/https_with_nginx.md:11
+msgid "If you're using a custom CA to sign your SSL certificate, you have to enable certificate revocation list (CRL) in your certificate. Otherwise http syncing on Windows client may not work. See [this thread](https://forum.seafile-server.org/t/https-syncing-on-windows-machine-using-custom-ca/898) for more information."
+msgstr ""
+
+#: deploy/https_with_apache.md:14
+# header
+msgid "## Enable https on Seahub"
+msgstr ""
+
+#: deploy/https_with_apache.md:16
+msgid "Assume you have configured Apache as [Deploy Seafile with Apache](deploy_with_apache.md). To use https, you need to enable mod_ssl"
+msgstr ""
+
+#: deploy/https_with_apache.md:18
+# code block
+msgid "```bash\n"
+"    sudo a2enmod ssl\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_apache.md:22
+msgid "On Windows, you have to add ssl module to httpd.conf"
+msgstr ""
+
+#: deploy/https_with_apache.md:23
+# code block
+msgid "```apache\n"
+"LoadModule ssl_module modules/mod_ssl.so\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_apache.md:27
+msgid "Then modify your Apache configuration file. Here is a sample:"
+msgstr ""
+
+#: deploy/https_with_apache.md:29
+# code block
+msgid "```apache\n"
+"<VirtualHost *:443>\n"
+"  ServerName www.myseafile.com\n"
+"  DocumentRoot /var/www\n"
+"  \n"
+"  SSLEngine On\n"
+"  SSLCertificateFile /path/to/cacert.pem\n"
+"  SSLCertificateKeyFile /path/to/privkey.pem\n"
+"\n"
+"  Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media\n"
+"  \n"
+"  <Location /media>\n"
+"    ProxyPass !\n"
+"    Require all granted\n"
+"  </Location>\n"
+"\n"
+"  RewriteEngine On\n"
+"\n"
+"  #\n"
+"  # seafile fileserver\n"
+"  #\n"
+"  ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"  ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"  RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"  #\n"
+"  # seahub\n"
+"  #\n"
+"  SetEnvIf Request_URI . proxy-fcgi-pathinfo=unescape\n"
+"  SetEnvIf Authorization \"(.*)\" HTTP_AUTHORIZATION=$1\n"
+"  ProxyPass / fcgi://127.0.0.1:8000/\n"
+"</VirtualHost>\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_apache.md:63
+#: deploy/https_with_nginx.md:124
+# header
+msgid "## Modify settings to use https"
+msgstr ""
+
+#: deploy/https_with_apache.md:65
+#: deploy/https_with_nginx.md:126
+# header
+msgid "### ccnet conf"
+msgstr ""
+
+#: deploy/https_with_apache.md:67
+#: deploy/https_with_nginx.md:128
+msgid "Since you change from http to https, you need to modify the value of \"SERVICE_URL\" in [ccnet.conf](../config/ccnet-conf.md):"
+msgstr ""
+
+#: deploy/https_with_apache.md:68
+# code block
+msgid "```python\n"
+"SERVICE_URL = https://www.myseafile.com\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_apache.md:72
+#: deploy/https_with_nginx.md:133
+# header
+msgid "### seahub_settings.py"
+msgstr ""
+
+#: deploy/https_with_apache.md:74
+#: deploy/https_with_nginx.md:135
+msgid "You need to add a line in seahub_settings.py to set the value of `FILE_SERVER_ROOT` (Or `HTTP_SERVER_ROOT` before version 3.1.0)"
+msgstr ""
+
+#: deploy/https_with_apache.md:76
+# code block
+msgid "```python\n"
+"FILE_SERVER_ROOT = 'https://www.myseafile.com/seafhttp'\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_apache.md:89
+msgid "The picture at the end of [this document](components.md) may help you understand seafile server better"
+msgstr ""
+
+#: deploy/https_with_apache.md:91
+msgid "There are two components in Seafile server, Seahub and FileServer. FileServer only servers for raw file uploading/downloading, it listens on 8082. Seahub, that serving all the other pages, is still listen on 8000. But under https, Seahub should listen as in fastcgi mode on 8000 (run as ./seahub.sh start-fastcgi). And as in fastcgi mode, when you visit  http://domain:8000 directly, it should return an error page."
+msgstr ""
+
+#: deploy/https_with_apache.md:102
+msgid "and"
+msgstr ""
+
+#: deploy/https_with_apache.md:103
+# code block
+msgid "```apache\n"
+"    FastCGIExternalServer /var/www/seahub.fcgi -host 127.0.0.1:8000\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_apache.md:107
+msgid "When a user click a file download link in Seahub, Seahub reads the value of `FILE_SERVER_ROOT` and redirects the user to address `https://example.com/seafhttp/xxxxx/`. `https://example.com/seafhttp` is the value of FILE_SERVER_ROOT. Here, the `FILE_SERVER` means the FileServer component of Seafile, which only serves for raw file downloading/uploading."
+msgstr ""
+
+#: deploy/https_with_nginx.md:1
+# header
+msgid "# Enabling Https with Nginx"
+msgstr ""
+
+#: deploy/https_with_nginx.md:3
+msgid "Here we use self-signed SSL digital certificate for free. If you use a paid ssl certificate from some authority, just skip the first step."
+msgstr ""
+
+#: deploy/https_with_nginx.md:5
+# header
+msgid "### Generate SSL digital certificate with OpenSSL"
+msgstr ""
+
+#: deploy/https_with_nginx.md:13
+# header
+msgid "### Enable SSL module of Nginx (optional)"
+msgstr ""
+
+#: deploy/https_with_nginx.md:14
+msgid "If your Nginx does not support SSL, you need to recompile it, the commands are as follows:"
+msgstr ""
+
+#: deploy/https_with_nginx.md:15
+# code block
+msgid "```bash\n"
+"    ./configure --with-http_stub_status_module --with-http_ssl_module\n"
+"    make && make install\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:20
+# header
+msgid "### Modify Nginx configuration file"
+msgstr ""
+
+#: deploy/https_with_nginx.md:22
+msgid "Assume you have configured Nginx as [Deploy-Seafile-with-nginx](deploy_with_nginx.md). To use https, you need to modify your Nginx configuration file."
+msgstr ""
+
+#: deploy/https_with_nginx.md:23
+# code block
+msgid "```nginx\n"
+"    server {\n"
+"        listen       80;\n"
+"        server_name  www.yourdomain.com;\n"
+"        rewrite ^ https://$http_host$request_uri? permanent;	# force redirect http to https\n"
+"    }\n"
+"\n"
+"    server {\n"
+"        listen 443;\n"
+"        ssl on;\n"
+"        ssl_certificate /etc/ssl/cacert.pem;    	# path to your cacert.pem\n"
+"        ssl_certificate_key /etc/ssl/privkey.pem;	# path to your privkey.pem\n"
+"        server_name www.yourdomain.com;\n"
+"        # ......\n"
+"        fastcgi_param   HTTPS               on;\n"
+"        fastcgi_param   HTTP_SCHEME         https;\n"
+"    }\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:43
+# header
+msgid "### Sample configuration file"
+msgstr ""
+
+#: deploy/https_with_nginx.md:45
+msgid "Here is the sample configuration file:"
+msgstr ""
+
+#: deploy/https_with_nginx.md:47
+# code block
+msgid "```nginx\n"
+"    server {\n"
+"        listen       80;\n"
+"        server_name  www.yourdomain.com;\n"
+"        rewrite ^ https://$http_host$request_uri? permanent;	# force redirect http to https\n"
+"    }\n"
+"    server {\n"
+"        listen 443;\n"
+"        ssl on;\n"
+"        ssl_certificate /etc/ssl/cacert.pem;        # path to your cacert.pem\n"
+"        ssl_certificate_key /etc/ssl/privkey.pem;	# path to your privkey.pem\n"
+"        server_name www.yourdoamin.com;\n"
+"        proxy_set_header X-Forwarded-For $remote_addr;\n"
+"        \n"
+"        add_header Strict-Transport-Security \"max-age=31536000; includeSubdomains\";\n"
+"        server_tokens off;\n"
+"\n"
+"        location / {\n"
+"            fastcgi_pass    127.0.0.1:8000;\n"
+"            fastcgi_param   SCRIPT_FILENAME     $document_root$fastcgi_script_name;\n"
+"            fastcgi_param   PATH_INFO           $fastcgi_script_name;\n"
+"\n"
+"            fastcgi_param   SERVER_PROTOCOL	    $server_protocol;\n"
+"            fastcgi_param   QUERY_STRING        $query_string;\n"
+"            fastcgi_param   REQUEST_METHOD      $request_method;\n"
+"            fastcgi_param   CONTENT_TYPE        $content_type;\n"
+"            fastcgi_param   CONTENT_LENGTH      $content_length;\n"
+"            fastcgi_param   SERVER_ADDR         $server_addr;\n"
+"            fastcgi_param   SERVER_PORT         $server_port;\n"
+"            fastcgi_param   SERVER_NAME         $server_name;\n"
+"            fastcgi_param   HTTPS               on;\n"
+"            fastcgi_param   HTTP_SCHEME         https;\n"
+"\n"
+"            access_log      /var/log/nginx/seahub.access.log;\n"
+"    	    error_log       /var/log/nginx/seahub.error.log;\n"
+"    	    fastcgi_read_timeout 36000;\n"
+"        }\n"
+"        location /seafhttp {\n"
+"            rewrite ^/seafhttp(.*)$ $1 break;\n"
+"            proxy_pass http://127.0.0.1:8082;\n"
+"            client_max_body_size 0;\n"
+"            proxy_connect_timeout  36000s;\n"
+"            proxy_read_timeout  36000s;\n"
+"            proxy_send_timeout  36000s;\n"
+"            send_timeout  36000s;\n"
+"        }\n"
+"        location /media {\n"
+"            root /home/user/haiwen/seafile-server-latest/seahub;\n"
+"        }\n"
+"    }\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:99
+# header
+msgid "### Large file uploads"
+msgstr ""
+
+#: deploy/https_with_nginx.md:102
+# code block
+msgid "```\n"
+"    location /seafhttp {\n"
+"        ... ...\n"
+"        proxy_request_buffering off;\n"
+"    }\n"
+"    \n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:110
+msgid "If you have WebDAV enabled it is recommended to add the same:"
+msgstr ""
+
+#: deploy/https_with_nginx.md:112
+# code block
+msgid "```\n"
+"    location /seafdav {\n"
+"        ... ...\n"
+"        proxy_request_buffering off;\n"
+"    }\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:119
+# header
+msgid "### Reload Nginx"
+msgstr ""
+
+#: deploy/https_with_nginx.md:120
+# code block
+msgid "```bash\n"
+"    nginx -s reload\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:129
+# code block
+msgid "```bash\n"
+"SERVICE_URL = https://www.example.com\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:137
+# code block
+msgid "```python\n"
+"FILE_SERVER_ROOT = 'https://www.example.com/seafhttp'\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:148
+# header
+msgid "## Additional security settings for nginx (optional)"
+msgstr ""
+
+#: deploy/https_with_nginx.md:150
+msgid "Add the HSTS header. If you already visited the https version the next time your browser will visit directly the https site and not the http. Prevent man-in-the-middle-attacks."
+msgstr ""
+
+#: deploy/https_with_nginx.md:151
+# code block
+msgid "```nginx\n"
+"add_header Strict-Transport-Security \"max-age=31536000; includeSubdomains\";\n"
+"```"
+msgstr ""
+
+#: deploy/https_with_nginx.md:155
+msgid "Disable exact server version in header. Prevent scans for vulnerable server."
+msgstr ""
+
+#: deploy/https_with_nginx.md:156
+# code block
+msgid "```nginx\n"
+"server_tokens off;\n"
+"```"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:1
+# header
+msgid "# Migrate From SQLite to MySQL"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:3
+msgid "First make sure the python module for MySQL is installed. On Ubuntu, use `apt-get install python-mysqldb` to install it."
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:5
+msgid "Steps to migrate Seafile from SQLite to MySQL:"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:7
+msgid "0. Stop seafile and seahub"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:9
+# ordered list
+msgid "1. Download [sqlite2mysql.sh](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.sh) and [sqlite2mysql.py](https://raw.github.com/haiwen/seafile/master/scripts/sqlite2mysql.py) to the top directory of your Seafile installation path. For example, /data/haiwen."
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:11
+# ordered list
+msgid "2. Run sqlite2mysql.sh"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:12
+# code block
+msgid "```\n"
+"  chmod +x sqlite2mysql.sh\n"
+"  ./sqlite2mysql.sh\n"
+"```"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:16
+msgid "  This script will produce three files(ccnet-db.sql, seafile-db.sql, seahub-db.sql)."
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:18
+# ordered list
+msgid "3. Create 3 databases named `ccnet-db`, `seafile-db`, `seahub-db`."
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:19
+# code block
+msgid "```\n"
+"  create database `ccnet-db` character set = 'utf8';\n"
+"  create database `seafile-db` character set = 'utf8';\n"
+"  create database `seahub-db` character set = 'utf8';\n"
+"```"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:25
+# ordered list
+msgid "4. Loads the sql files to your MySQL databases. For example:"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:26
+# code block
+msgid "```\n"
+"  mysql> use `ccnet-db`\n"
+"  mysql> source ccnet-db.sql\n"
+"  mysql> use `seafile-db`\n"
+"  mysql> source seafile-db.sql\n"
+"  mysql> use `seahub-db`\n"
+"  mysql> source seahub-db.sql\n"
+"```"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:35
+# ordered list
+msgid "5. Modify configure files"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:37
+msgid "  Append following lines to [ccnet.conf](../config/ccnet-conf.md):"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:39
+#: deploy/using_postgresql.md:31
+msgid "        [Database]"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:40
+msgid "        ENGINE=mysql"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:41
+msgid "        HOST=127.0.0.1"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:42
+msgid "        USER=root"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:43
+msgid "        PASSWD=root"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:44
+msgid "        DB=ccnet-db"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:45
+#: deploy/migrate_from_sqlite_to_mysql.md:57
+msgid "        CONNECTION_CHARSET=utf8"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:47
+msgid "    Note: Use `127.0.0.1`, don't use `localhost`."
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:49
+msgid "    Replace the database section in `seafile.conf` with following lines:"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:51
+#: deploy/using_postgresql.md:40
+msgid "        [database]"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:52
+msgid "        type=mysql"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:53
+msgid "        host=127.0.0.1"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:54
+msgid "        user=root"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:55
+msgid "        password=root"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:56
+msgid "        db_name=seafile-db"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:59
+#: deploy/using_postgresql.md:47
+msgid "    Append following lines to `seahub_settings.py`:"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:61
+#: deploy/using_postgresql.md:49
+msgid "        DATABASES = {"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:62
+#: deploy/using_postgresql.md:50
+msgid "            'default': {"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:63
+msgid "                'ENGINE': 'django.db.backends.mysql',"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:64
+msgid "                'USER' : 'root',"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:65
+msgid "                'PASSWORD' : 'root',"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:66
+msgid "                'NAME' : 'seahub-db',"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:67
+msgid "                'HOST' : '127.0.0.1',"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:68
+msgid "                'OPTIONS': {"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:69
+msgid "                    \"init_command\": \"SET storage_engine=INNODB\","
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:70
+msgid "                }"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:71
+#: deploy/using_postgresql.md:56
+msgid "            }"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:72
+#: deploy/using_postgresql.md:57
+msgid "        }"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:74
+# ordered list
+msgid "6. Restart seafile and seahub"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:77
+msgid "**NOTE**"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:79
+msgid "User notifications will be cleared during migration due to the slight difference between MySQL and SQLite, if you only see the busy icon when click the notitfications button beside your avatar, please remove `user_notitfications` table manually by:"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:81
+msgid "    use seahub-db"
+msgstr ""
+
+#: deploy/migrate_from_sqlite_to_mysql.md:82
+msgid "    delete from notifications_usernotification;"
+msgstr ""
+
+#: deploy/new_directory_layout_5_0_0.md:1
+# header
+msgid "# Config files location change in Seafile Server 5.0.0"
+msgstr ""
+
+#: deploy/new_directory_layout_5_0_0.md:3
+msgid "Seafile server has various components, each of them has its own config files. These files used to be in different directories, which is inconvenient to manage."
+msgstr ""
+
+#: deploy/new_directory_layout_5_0_0.md:5
+msgid "This is the layout before Seafile Server 5.0.0:"
+msgstr ""
+
+#: deploy/new_directory_layout_5_0_0.md:7
+# code block
+msgid "```sh\n"
+"└── seahub_settings.py\n"
+"└── ccnet/\n"
+"    └── ccnet.conf\n"
+"└── seafile/\n"
+"    └── seafile.conf\n"
+"└── conf/\n"
+"    └── seafdav.conf\n"
+"└── pro-data/\n"
+"    └── seafevents.conf # (professional edition only)\n"
+"└── seafile-server-latest/\n"
+"```"
+msgstr ""
+
+#: deploy/new_directory_layout_5_0_0.md:20
+msgid "Since Seafile Server 5.0.0, all config files are moved to the **conf** folder:"
+msgstr ""
+
+#: deploy/new_directory_layout_5_0_0.md:22
+# code block
+msgid "```sh\n"
+"└── conf/\n"
+"    └── ccnet.conf\n"
+"    └── seafile.conf\n"
+"    └── seafdav.conf\n"
+"    └── seahub_settings.py\n"
+"    └── seafevents.conf # (professional edition only)\n"
+"└── ccnet/\n"
+"└── seafile/\n"
+"└── pro-data/\n"
+"```"
+msgstr ""
+
+#: deploy/new_directory_layout_5_0_0.md:34
+msgid "This way, it's much easier to manage the configurations since all files can be found in the same place."
+msgstr ""
+
+#: deploy/new_directory_layout_5_0_0.md:36
+msgid "When you upgrading to seafile 5.0.0, the upgrade script would move these files to the central **conf/** folder for you."
+msgstr ""
+
+#: deploy/server.md:2
+# header
+msgid "## Server"
+msgstr ""
+
+#: deploy/server.md:4
+msgid "This manual explains how to setup and run Seafile server from a pre-built package."
+msgstr ""
+
+#: deploy/server.md:6
+# header
+msgid "## Platform Support"
+msgstr ""
+
+#: deploy/server.md:8
+#: deploy/using_sqlite.md:8
+# unordered list
+msgid "- Generic Linux"
+msgstr ""
+
+#: deploy/server.md:9
+# unordered list
+msgid "    - including Raspberry Pi"
+msgstr ""
+
+#: deploy/server.md:10
+#: deploy/using_sqlite.md:9
+# unordered list
+msgid "- Windows"
+msgstr ""
+
+#: deploy/server.md:12
+#: deploy/using_mysql.md:5
+# header
+msgid "## Download"
+msgstr ""
+
+#: deploy/server.md:14
+msgid "Visit [our download page](http://www.seafile.com/en/download), download the latest server package."
+msgstr ""
+
+#: deploy/server.md:16
+# inline html
+msgid "<pre>\n"
+"#check if your system is x86 (32bit) or x86_64 (64 bit)\n"
+"uname -m\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:22
+#: deploy/using_mysql.md:10
+#: deploy/using_sqlite.md:19
+# header
+msgid "## Deploying and Directory Layout"
+msgstr ""
+
+#: deploy/server.md:24
+msgid "NOTE: If you place the Seafile data directory in external storage, such as NFS, CIFS mount, you should not use SQLite as the database, but use MySQL instead. Please follow [https://github.com/haiwen/seafile/wiki/Download-and-Setup-Seafile-Server-with-MySQL this manual] to setup Seafile server."
+msgstr ""
+
+#: deploy/server.md:26
+msgid "Supposed your organization's name is \"haiwen\", and you've downloaded seafile-server_1.4.0_* into your home directory."
+msgstr ""
+
+#: deploy/server.md:27
+msgid "We suggest you to layout your deployment as follows :"
+msgstr ""
+
+#: deploy/server.md:29
+#: deploy/using_mysql.md:14
+# inline html
+msgid "<pre>\n"
+"mkdir haiwen\n"
+"mv seafile-server_* haiwen\n"
+"cd haiwen\n"
+"# after moving seafile-server_* to this directory\n"
+"tar -xzf seafile-server_*\n"
+"mkdir installed\n"
+"mv seafile-server_* installed\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:39
+#: deploy/using_mysql.md:24
+#: deploy/using_sqlite.md:34
+msgid "Now you should have the following directory layout"
+msgstr ""
+
+#: deploy/server.md:40
+# inline html
+msgid "<pre>\n"
+"# tree . -L 2\n"
+".\n"
+"├── installed\n"
+"│   └── seafile-server_1.4.0_x86-64.tar.gz\n"
+"└── seafile-server-1.4.0\n"
+"    ├── reset-admin.sh\n"
+"    ├── runtime\n"
+"    ├── seafile\n"
+"    ├── seafile.sh\n"
+"    ├── seahub\n"
+"    ├── seahub.sh\n"
+"    ├── setup-seafile.sh\n"
+"    └── upgrade\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:56
+msgid "'''The benefit of this layout is that'''"
+msgstr ""
+
+#: deploy/server.md:58
+#: deploy/using_mysql.md:43
+# unordered list
+msgid "* We can place all the config files for Seafile server inside \"haiwen\" directory, making it easier to manage."
+msgstr ""
+
+#: deploy/server.md:59
+# unordered list
+msgid "* When you upgrade to a new version of Seafile, you can simply untar the latest package into \"haiwen\" directory. ''In this way you can reuse the existing config files in \"haiwen\" directory and don't need to configure again''."
+msgstr ""
+
+#: deploy/server.md:61
+#: deploy/using_mysql.md:80
+#: deploy/using_sqlite.md:57
+# header
+msgid "## Setting Up Seafile Server"
+msgstr ""
+
+#: deploy/server.md:63
+#: deploy/using_sqlite.md:58
+# header
+msgid "#### Prerequisites"
+msgstr ""
+
+#: deploy/server.md:65
+#: deploy/using_mysql.md:84
+#: deploy/using_sqlite.md:60
+msgid "The Seafile server package requires the following packages have been installed in your system"
+msgstr ""
+
+#: deploy/server.md:67
+# unordered list
+msgid "* python 2.6.5+ or 2.7"
+msgstr ""
+
+#: deploy/server.md:68
+#: deploy/using_mysql.md:87
+# unordered list
+msgid "* python-setuptools"
+msgstr ""
+
+#: deploy/server.md:69
+# unordered list
+msgid "* python-simplejson"
+msgstr ""
+
+#: deploy/server.md:70
+#: deploy/using_mysql.md:88
+# unordered list
+msgid "* python-imaging"
+msgstr ""
+
+#: deploy/server.md:71
+# unordered list
+msgid "* sqlite3"
+msgstr ""
+
+#: deploy/server.md:73
+# inline html
+msgid "<pre>\n"
+"#on Debian\n"
+"apt-get update\n"
+"apt-get install python2.7 python-setuptools python-simplejson python-imaging sqlite3\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:79
+#: deploy/using_sqlite.md:79
+# header
+msgid "#### Setup"
+msgstr ""
+
+#: deploy/server.md:81
+# inline html
+msgid "<pre>\n"
+"cd seafile-server-*\n"
+"./setup-seafile.sh  #run the setup script & answer prompted questions\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:86
+#: deploy/using_mysql.md:112
+msgid "If some of the prerequisites are not installed, the seafile initialization script will ask you to install them."
+msgstr ""
+
+#: deploy/server.md:88
+msgid "[[images/server-setup.png|You'll see these outputs when you run the setup script]]"
+msgstr ""
+
+#: deploy/server.md:90
+#: deploy/using_mysql.md:114
+#: deploy/using_sqlite.md:88
+msgid "The script will guide you through the settings of various configuration options."
+msgstr ""
+
+#: deploy/server.md:93
+# table
+msgid "{| border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\"\n"
+"|+ Seafile configuration options\n"
+"! Option\n"
+"! Description\n"
+"! Note\n"
+"|-\n"
+"| server name\n"
+"| Name of this seafile server\n"
+"| 3-15 characters, only English letters, digits and underscore ('_') are allowed\n"
+"|-\n"
+"| server ip or domain\n"
+"| The IP address or domain name used by this server\n"
+"| Seafile client program will access the server with this address\n"
+"|-\n"
+"| ccnet server port\n"
+"| The TCP port used by ccnet, the underlying networking service of Seafile\n"
+"| Default is 10001. If it's been used by other service, you can set it to another port.\n"
+"|-\n"
+"| seafile data dir\n"
+"| Seafile stores your data in this directory. By default it'll be placed in the current directory.\n"
+"| The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space.\n"
+"|-\n"
+"| seafile server port\n"
+"| The TCP port used by Seafile to transfer data\n"
+"| Default is 12001. If it's been used by other service, you can set it to another port.\n"
+"|-\n"
+"| fileserver  port\n"
+"| The TCP port used by Seafile fileserver\n"
+"| Default is 8082. If it's been used by other service, you can set it to another port.\n"
+"|-\n"
+"|}"
+msgstr ""
+
+#: deploy/server.md:126
+#: deploy/using_mysql.md:175
+msgid "If the setup is successful, you'll see the following output"
+msgstr ""
+
+#: deploy/server.md:128
+msgid "[[images/server-setup-successfully.png]]"
+msgstr ""
+
+#: deploy/server.md:130
+#: deploy/using_mysql.md:179
+msgid "Now you should have the following directory layout :"
+msgstr ""
+
+#: deploy/server.md:131
+# inline html
+msgid "<pre>\n"
+"#tree haiwen -L 2\n"
+"haiwen\n"
+"├── ccnet               # configuration files\n"
+"│   ├── ccnet.conf\n"
+"│   ├── mykey.peer\n"
+"│   ├── PeerMgr\n"
+"│   └── seafile.ini\n"
+"├── installed\n"
+"│   └── seafile-server_1.4.0_x86-64.tar.gz\n"
+"├── seafile-data\n"
+"│   └── seafile.conf\n"
+"├── seafile-server-1.4.0  # active version\n"
+"│   ├── reset-admin.sh\n"
+"│   ├── runtime\n"
+"│   ├── seafile\n"
+"│   ├── seafile.sh\n"
+"│   ├── seahub\n"
+"│   ├── seahub.sh\n"
+"│   ├── setup-seafile.sh\n"
+"│   └── upgrade\n"
+"├── seafile-server-latest  # symbolic link to seafile-server-1.4.0\n"
+"├── seahub-data\n"
+"│   └── avatars\n"
+"├── seahub.db\n"
+"├── seahub_settings.py   # optional config file\n"
+"└── seahub_settings.pyc\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:160
+#: deploy/using_mysql.md:208
+msgid "The folder <code>seafile-server-latest</code> is a symbolic link to the current seafile server folder. When later you upgrade to a new version, the upgrade scripts would update this link to keep it always point to the latest seafile server folder."
+msgstr ""
+
+#: deploy/server.md:163
+#: deploy/using_mysql.md:210
+#: deploy/using_sqlite.md:133
+# header
+msgid "## Running Seafile Server"
+msgstr ""
+
+#: deploy/server.md:165
+#: deploy/using_sqlite.md:135
+# header
+msgid "#### Before Running"
+msgstr ""
+
+#: deploy/server.md:167
+msgid "Since Seafile uses persistent connection between client and server, if you have '''a large number of clients ''', you should increase Linux file descriptors by ulimit before start seafile, like:"
+msgstr ""
+
+#: deploy/server.md:169
+# inline html
+msgid "<pre>\n"
+"ulimit -n 30000\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:173
+#: deploy/using_sqlite.md:141
+# header
+msgid "#### Starting Seafile Server and Seahub Website"
+msgstr ""
+
+#: deploy/server.md:175
+msgid "Under seafile-server-1.4.0 directory, run the following commands"
+msgstr ""
+
+#: deploy/server.md:177
+# unordered list
+msgid "* Start seafile:"
+msgstr ""
+
+#: deploy/server.md:179
+# inline html
+msgid "<pre>\n"
+"./seafile.sh start # Start seafile service\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:183
+# unordered list
+msgid "* Start seahub"
+msgstr ""
+
+#: deploy/server.md:185
+# inline html
+msgid "<pre>\n"
+"./seahub.sh start <port>  # Start seahub website, port defaults to 8000\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:189
+msgid "'''Note:''' The first time you start seahub, the script would prompt you to create an admin account for your seafile server."
+msgstr ""
+
+#: deploy/server.md:191
+msgid "After starting the services, you may open a web browser and types"
+msgstr ""
+
+#: deploy/server.md:192
+# inline html
+msgid "<pre>\n"
+"http://192.168.1.111:8000/\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:195
+msgid "you will be redirected to the Login page. Enter the username and password you were provided during the Seafile setup. You will then be returned to the `Myhome` page where you can create libraries."
+msgstr ""
+
+#: deploy/server.md:197
+msgid "'''Congratulations!''' Now you have successfully setup your private Seafile server."
+msgstr ""
+
+#: deploy/server.md:199
+#: deploy/using_sqlite.md:163
+# header
+msgid "#### Run Seahub on another port"
+msgstr ""
+
+#: deploy/server.md:201
+#: deploy/using_mysql.md:237
+msgid "If you want to run seahub in a port other than the default 8000, say 8001, you must:"
+msgstr ""
+
+#: deploy/server.md:203
+#: deploy/using_mysql.md:239
+# unordered list
+msgid "* stop the seafile server"
+msgstr ""
+
+#: deploy/server.md:204
+#: deploy/using_mysql.md:240
+# inline html
+msgid "<pre>\n"
+"./seahub.sh stop\n"
+"./seafile.sh stop\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:209
+# unordered list
+msgid "* modify the value of <code>SERVICE_URL</code> in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is <code>192.168.1.100</code>)"
+msgstr ""
+
+#: deploy/server.md:210
+# inline html
+msgid "<pre>\n"
+"SERVICE_URL = http://192.168.1.100:8001\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:214
+#: deploy/using_mysql.md:250
+# unordered list
+msgid "* restart seafile server"
+msgstr ""
+
+#: deploy/server.md:215
+#: deploy/using_mysql.md:251
+# inline html
+msgid "<pre>\n"
+"./seafile.sh start\n"
+"./seahub.sh start 8001\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:220
+msgid "see [[Seafile server configuration options]] for more details about <code>ccnet.conf</code>."
+msgstr ""
+
+#: deploy/server.md:222
+#: deploy/using_mysql.md:258
+# header
+msgid "## Stopping and Restarting Seafile and Seahub"
+msgstr ""
+
+#: deploy/server.md:224
+#: deploy/using_mysql.md:260
+#: deploy/using_sqlite.md:187
+# header
+msgid "#### Stopping"
+msgstr ""
+
+#: deploy/server.md:226
+#: deploy/using_mysql.md:262
+# inline html
+msgid "<pre>\n"
+"./seahub.sh stop # stop seahub website\n"
+"./seafile.sh stop # stop seafile processes\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:231
+#: deploy/using_mysql.md:267
+#: deploy/using_sqlite.md:192
+# header
+msgid "#### Restarting"
+msgstr ""
+
+#: deploy/server.md:233
+#: deploy/using_mysql.md:269
+# inline html
+msgid "<pre>\n"
+"./seafile.sh restart\n"
+"./seahub.sh restart\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:238
+#: deploy/using_mysql.md:274
+#: deploy/using_sqlite.md:197
+# header
+msgid "#### When the Scripts Fail"
+msgstr ""
+
+#: deploy/server.md:240
+#: deploy/using_mysql.md:276
+msgid "Most of the time, seafile.sh and seahub.sh work fine. But if they fail, you may"
+msgstr ""
+
+#: deploy/server.md:242
+# unordered list
+msgid "* Use '''pgrep''' command to check if seafile/seahub processes are still running"
+msgstr ""
+
+#: deploy/server.md:244
+#: deploy/using_mysql.md:280
+# inline html
+msgid "<pre>\n"
+"pgrep -f seafile-controller # check seafile processes\n"
+"pgrep -f \"manage.py run_gunicorn\" # check seahub process\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:249
+# unordered list
+msgid "* Use '''pkill''' to kill the processes"
+msgstr ""
+
+#: deploy/server.md:251
+#: deploy/using_mysql.md:287
+# inline html
+msgid "<pre>\n"
+"pkill -f seafile-controller\n"
+"pkill -f \"manage.py run_gunicorn\"\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server.md:256
+#: deploy/using_mysql.md:296
+#: deploy/using_sqlite.md:213
+# header
+msgid "## That's it!"
+msgstr ""
+
+#: deploy/server.md:257
+#: deploy/using_mysql.md:298
+msgid "That's it! Now you may want read more about seafile."
+msgstr ""
+
+#: deploy/server.md:259
+# unordered list
+msgid "* [[Seafile-server-management|How to manage the server]]."
+msgstr ""
+
+#: deploy/server_configuration.md:1
+# header
+msgid "# Server Configuration and Customization"
+msgstr ""
+
+#: deploy/server_configuration.md:3
+msgid "**Note**: Since Seafile Server 5.0.0, all config files are moved to the central **conf** folder. [Read More](../deploy/new_directory_layout_5_0_0.md)."
+msgstr ""
+
+#: deploy/server_configuration.md:5
+msgid "This manual explains how to change various config options for Seafile server."
+msgstr ""
+
+#: deploy/server_configuration.md:7
+msgid "There are three config files in the community edition:"
+msgstr ""
+
+#: deploy/server_configuration.md:9
+# unordered list
+msgid "- [ccnet.conf](ccnet-conf.md): contains the network settings"
+msgstr ""
+
+#: deploy/server_configuration.md:10
+# unordered list
+msgid "- [seafile.conf](seafile-conf.md): contains settings for seafile daemon and FileServer."
+msgstr ""
+
+#: deploy/server_configuration.md:11
+# unordered list
+msgid "- [seahub_settings.py](seahub_settings_py.md): contains settings for Seahub"
+msgstr ""
+
+#: deploy/server_configuration.md:13
+msgid "There is one additional config file in the pro edition:"
+msgstr ""
+
+#: deploy/server_configuration.md:15
+# unordered list
+msgid "- `seafevents.conf`: contains settings for ccnet/ccnet.search and documents preview"
+msgstr ""
+
+#: deploy/server_configuration.md:20
+# header
+msgid "## Storage Quota Setting (seafile.conf)"
+msgstr ""
+
+#: deploy/server_configuration.md:22
+msgid "You may set a default quota (e.g. 2GB) for all users. To do this, just add the following lines to `seafile.conf` file"
+msgstr ""
+
+#: deploy/server_configuration.md:24
+# inline html
+msgid "<pre>\n"
+"[quota]\n"
+"# default user quota in GB, integer only\n"
+"default = 2\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:30
+msgid "This setting applies to all users. If you want to set quota for a specific user, you may log in to seahub website as administrator, then set it in \"System Admin\" page."
+msgstr ""
+
+#: deploy/server_configuration.md:32
+# header
+msgid "## Default history length limit (seafile.conf)"
+msgstr ""
+
+#: deploy/server_configuration.md:34
+msgid "If you don't want to keep all file revision history, you may set a default history length limit for all libraries."
+msgstr ""
+
+#: deploy/server_configuration.md:36
+# inline html
+msgid "<pre>\n"
+"[history]\n"
+"keep_days = days of history to keep\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:41
+# header
+msgid "## Seafile fileserver configuration (seafile.conf)"
+msgstr ""
+
+#: deploy/server_configuration.md:43
+msgid "The configuration of seafile fileserver is in the <code>[fileserver]</code> section of the file `seafile.conf`"
+msgstr ""
+
+#: deploy/server_configuration.md:45
+# inline html
+msgid "<pre>\n"
+"[fileserver]\n"
+"# binding host for fileserver\n"
+"host = 0.0.0.0\n"
+"# tcp port for fileserver\n"
+"port = 8082\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:53
+msgid "Change upload/download settings."
+msgstr ""
+
+#: deploy/server_configuration.md:55
+# inline html
+msgid "<pre>\n"
+"[fileserver]\n"
+"# Set maximum upload file size to 200M.\n"
+"max_upload_size=200\n"
+"\n"
+"# Set maximum download directory size to 200M.\n"
+"max_download_dir_size=200\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:64
+msgid "**Note**: You need to restart seafile and seahub so that your changes take effect."
+msgstr ""
+
+#: deploy/server_configuration.md:65
+# inline html
+msgid "<pre>\n"
+"./seahub.sh restart\n"
+"./seafile.sh restart\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:70
+# header
+msgid "## Seahub Configurations (seahub_settings.py)"
+msgstr ""
+
+#: deploy/server_configuration.md:72
+# header
+msgid "#### Sending Email Notifications on Seahub"
+msgstr ""
+
+#: deploy/server_configuration.md:74
+msgid "A few features work better if it can send email notifications, such as notifying users about new messages."
+msgstr ""
+
+#: deploy/server_configuration.md:75
+msgid "If you want to setup email notifications, please add the following lines to seahub_settings.py (and set your email server)."
+msgstr ""
+
+#: deploy/server_configuration.md:77
+# inline html
+msgid "<pre>\n"
+"EMAIL_USE_TLS = False\n"
+"EMAIL_HOST = 'smtp.example.com'        # smpt server\n"
+"EMAIL_HOST_USER = 'username@example.com'    # username and domain\n"
+"EMAIL_HOST_PASSWORD = 'password'    # password\n"
+"EMAIL_PORT = '25'\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:87
+msgid "If you are using Gmail as email server, use following lines:"
+msgstr ""
+
+#: deploy/server_configuration.md:89
+# inline html
+msgid "<pre>\n"
+"EMAIL_USE_TLS = True\n"
+"EMAIL_HOST = 'smtp.gmail.com'\n"
+"EMAIL_HOST_USER = 'username@gmail.com'\n"
+"EMAIL_HOST_PASSWORD = 'password'\n"
+"EMAIL_PORT = 587\n"
+"DEFAULT_FROM_EMAIL = EMAIL_HOST_USER\n"
+"SERVER_EMAIL = EMAIL_HOST_USER\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:99
+msgid "**Note**: If your Email service still can not work, you may checkout the log file <code>logs/seahub.log</code> to see what may cause the problem. For complete email notification list, please refer to [Email notification list](customize_email_notifications.md)."
+msgstr ""
+
+#: deploy/server_configuration.md:101
+msgid "**Note2**: If you want to use the Email service without authentication leaf <code>EMAIL_HOST_USER</code> and <code>EMAIL_HOST_PASSWORD</code> **blank** (<code>''</code>). (But notice that the emails then will be sent without a <code>From:</code> address.)"
+msgstr ""
+
+#: deploy/server_configuration.md:103
+# header
+msgid "#### Cache"
+msgstr ""
+
+#: deploy/server_configuration.md:105
+msgid "Seahub caches items(avatars, profiles, etc) on file system by default(/tmp/seahub_cache/). You can replace with Memcached (you have to install python-memcache first)."
+msgstr ""
+
+#: deploy/server_configuration.md:107
+# inline html
+msgid "<pre>\n"
+"CACHES = {\n"
+"    'default': {\n"
+"        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',\n"
+"	'LOCATION': '127.0.0.1:11211',\n"
+"    }\n"
+"}\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:116
+# header
+msgid "#### Seahub Settings"
+msgstr ""
+
+#: deploy/server_configuration.md:118
+msgid "You may change seahub website's settings by adding variables in `seahub_settings.py`."
+msgstr ""
+
+#: deploy/server_configuration.md:120
+# inline html
+msgid "<pre>\n"
+"\n"
+"# Choices can be found here:\n"
+"# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name\n"
+"# although not all choices may be available on all operating systems.\n"
+"# If running in a Windows environment this must be set to the same as your\n"
+"# system time zone.\n"
+"TIME_ZONE = 'UTC'\n"
+"\n"
+"# Set this to seahub website's URL. This URL is contained in email notifications.\n"
+"SITE_BASE = 'http://www.example.com/'\n"
+"\n"
+"# Set this to your website's name. This is contained in email notifications.\n"
+"SITE_NAME = 'example.com'\n"
+"\n"
+"# Set seahub website's title\n"
+"SITE_TITLE = 'Seafile'\n"
+"\n"
+"# If you don't want to run seahub website on your site's root path, set this option to your preferred path.\n"
+"# e.g. setting it to '/seahub/' would run seahub on http://example.com/seahub/.\n"
+"SITE_ROOT = '/'\n"
+"\n"
+"# Whether to use pdf.js to view pdf files online. Default is `True`,  you can turn it off.\n"
+"# NOTE: since version 1.4.\n"
+"USE_PDFJS = True\n"
+"\n"
+"# Enalbe or disalbe registration on web. Default is `False`.\n"
+"# NOTE: since version 1.4.\n"
+"ENABLE_SIGNUP = False\n"
+"\n"
+"# Activate or deactivate user when registration complete. Default is `True`.\n"
+"# If set to `False`, new users need to be activated by admin in admin panel.\n"
+"# NOTE: since version 1.8\n"
+"ACTIVATE_AFTER_REGISTRATION = False\n"
+"\n"
+"# Whether to send email when a system admin adding a new member. Default is `True`.\n"
+"# NOTE: since version 1.4.\n"
+"SEND_EMAIL_ON_ADDING_SYSTEM_MEMBER = True\n"
+"\n"
+" # Whether to send email when a system admin resetting a user's password. Default is `True`.\n"
+"# NOTE: since version 1.4.\n"
+"SEND_EMAIL_ON_RESETTING_USER_PASSWD = True\n"
+"\n"
+"# Hide `Organization` tab.\n"
+"# If you want your private seafile behave exactly like https://cloud.seafile.com/, you can set this flag.\n"
+"CLOUD_MODE = True\n"
+"\n"
+"# Online preview maximum file size, defaults to 30M.\n"
+"FILE_PREVIEW_MAX_SIZE = 30 * 1024 * 1024\n"
+"\n"
+"# Age of cookie, in seconds (default: 2 weeks).\n"
+"SESSION_COOKIE_AGE = 60 * 60 * 24 * 7 * 2\n"
+"\n"
+"# Whether to save the session data on every request.\n"
+"SESSION_SAVE_EVERY_REQUEST = False\n"
+"\n"
+"# Whether a user's session cookie expires when the Web browser is closed.\n"
+"SESSION_EXPIRE_AT_BROWSER_CLOSE = False\n"
+"\n"
+"# Using server side crypto by default, otherwise, let user choose crypto method.\n"
+"FORCE_SERVER_CRYPTO = True\n"
+"\n"
+"</pre>"
+msgstr ""
+
+#: deploy/server_configuration.md:184
+#: deploy/start_seafile_at_system_bootup.md:174
+msgid "**Note**:"
+msgstr ""
+
+#: deploy/server_configuration.md:186
+# unordered list
+msgid "* You need to restart seahub so that your changes take effect."
+msgstr ""
+
+#: deploy/server_configuration.md:187
+# unordered list
+msgid "* If your changes don't take effect, You may need to delete 'seahub_setting.pyc'. (A cache file)"
+msgstr ""
+
+#: deploy/server_configuration.md:189
+# inline html
+msgid "<pre>\n"
+"./seahub.sh restart\n"
+"</pre>"
+msgstr ""
+
+#: deploy/shibboleth_config.md:1
+# header
+msgid "## Overview"
+msgstr ""
+
+#: deploy/shibboleth_config.md:3
+msgid "[Shibboleth](https://shibboleth.net/) is a widely used single sign on (SSO) protocol. Seafile server (Community Edition >= 4.1.0, Pro Edition >= 4.0.6) supports authentication via Shibboleth. It allows users from another organization to log in to Seafile without registering an account on the service provider."
+msgstr ""
+
+#: deploy/shibboleth_config.md:5
+msgid "In this documentation, we assume the reader is familiar with Shibboleth installation and configuration. For introduction to Shibboleth concepts, please refer to https://wiki.shibboleth.net/confluence/display/SHIB2/UnderstandingShibboleth ."
+msgstr ""
+
+#: deploy/shibboleth_config.md:7
+msgid "Shibboleth Service Provider (SP) should be installed on the same server as the Seafile server. The official SP from https://shibboleth.net/ is implemented as an Apache module. The module handles all Shibboleth authentication details. Seafile server receives authentication information (username) from fastcgi. The username then can be used as login name for the user."
+msgstr ""
+
+#: deploy/shibboleth_config.md:9
+msgid "Seahub provides a special URL to handle Shibboleth login. The URL is `https://your-server/shib-login`. Only this URL needs to be configured under Shibboleth protection. All other URLs don't go through the Shibboleth module. The overall workflow for a user to login with Shibboleth is as follows:"
+msgstr ""
+
+#: deploy/shibboleth_config.md:11
+# ordered list
+msgid "1. In the Seafile login page, there is a separate \"Shibboleth\" login button. When the user clicks the button, she/he will be redirected to `https://your-server/shib-login`."
+msgstr ""
+
+#: deploy/shibboleth_config.md:12
+# ordered list
+msgid "2. Since that URL is controlled by Shibboleth, the user will be redirected to IdP for login. After the user logs in, she/he will be redirected back to `https://your-server/shib-login`."
+msgstr ""
+
+#: deploy/shibboleth_config.md:13
+# ordered list
+msgid "3. This time the Shibboleth module passes the request to Seahub. Seahub reads the user information from the request and brings the user to her/his home page."
+msgstr ""
+
+#: deploy/shibboleth_config.md:14
+# ordered list
+msgid "4. All later access to Seahub will not pass through the Shibboleth module. Since Seahub keeps session information internally, the user doesn't need to login again until the session expires."
+msgstr ""
+
+#: deploy/shibboleth_config.md:16
+msgid "Since Shibboleth support requires Apache, if you want to use Nginx, you need two servers, one for non-Shibboleth access, another configured with Apache to allow Shibboleth login. In a cluster environment, you can configure your load balancer to direct traffic to different server according to URL. Only the URL `https://your-server/shib-login` needs to be directed to Apache."
+msgstr ""
+
+#: deploy/shibboleth_config.md:18
+msgid "The configuration includes 3 steps:"
+msgstr ""
+
+#: deploy/shibboleth_config.md:20
+# ordered list
+msgid "1. Install and configure Shibboleth Service Provider;"
+msgstr ""
+
+#: deploy/shibboleth_config.md:21
+# ordered list
+msgid "2. Configure Apache;"
+msgstr ""
+
+#: deploy/shibboleth_config.md:22
+# ordered list
+msgid "3. Configure Seahub."
+msgstr ""
+
+#: deploy/shibboleth_config.md:24
+# header
+msgid "## Install and Configure Shibboleth Service Provider"
+msgstr ""
+
+#: deploy/shibboleth_config.md:26
+msgid "Installation and configuration of Shibboleth is out of the scope of this documentation. Here are a few references:"
+msgstr ""
+
+#: deploy/shibboleth_config.md:28
+# unordered list
+msgid "* For RedHat and SUSE: https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPLinuxInstall"
+msgstr ""
+
+#: deploy/shibboleth_config.md:29
+# unordered list
+msgid "* For Ubuntu: http://bradleybeddoes.com/2011/08/12/installing-a-shibboleth-2-sp-in-ubuntu-11-04-within-virtualbox/"
+msgstr ""
+
+#: deploy/shibboleth_config.md:31
+msgid "Please note that you don't have to follow the Apache configurations in the above links. Just use the Apache config we provide in the next section."
+msgstr ""
+
+#: deploy/shibboleth_config.md:33
+# header
+msgid "## Apache Configuration"
+msgstr ""
+
+#: deploy/shibboleth_config.md:35
+msgid "You should create a new virtual host configuration for Shibboleth."
+msgstr ""
+
+#: deploy/shibboleth_config.md:37
+# code block
+msgid "```\n"
+"<IfModule mod_ssl.c>\n"
+"    <VirtualHost _default_:443>\n"
+"        ServerName seafile.example.com\n"
+"        DocumentRoot /var/www\n"
+"        #Alias /seafmedia  /home/ubuntu/dev/seahub/media\n"
+"        Alias /media /home/user/seafile-server-latest/seahub/media\n"
+"\n"
+"        ErrorLog ${APACHE_LOG_DIR}/seahub.error.log\n"
+"        CustomLog ${APACHE_LOG_DIR}/seahub.access.log combined\n"
+"\n"
+"        SSLEngine on\n"
+"        SSLCertificateFile  /path/to/ssl-cert.pem\n"
+"        SSLCertificateKeyFile /path/to/ssl-key.pem\n"
+"\n"
+"        <Location /Shibboleth.sso>\n"
+"        SetHandler shib\n"
+"        </Location>\n"
+"\n"
+"        <Location /api2>\n"
+"        AuthType None\n"
+"        Require all granted\n"
+"        Allow from all\n"
+"        satisfy any\n"
+"        </Location>\n"
+"\n"
+"        RewriteEngine On\n"
+"        <Location /media>\n"
+"        Require all granted\n"
+"        </Location>\n"
+"\n"
+"        <Location /shib-login>\n"
+"        AuthType shibboleth\n"
+"        ShibRequestSetting requireSession true\n"
+"        Require valid-user\n"
+"        </Location>\n"
+"\n"
+"        #\n"
+"        # seafile fileserver\n"
+"        #\n"
+"        ProxyPass /seafhttp http://127.0.0.1:8082\n"
+"        ProxyPassReverse /seafhttp http://127.0.0.1:8082\n"
+"        RewriteRule ^/seafhttp - [QSA,L]\n"
+"\n"
+"        #\n"
+"        # seahub\n"
+"        #\n"
+"        RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]\n"
+"        RewriteCond %{REQUEST_FILENAME} !-f\n"
+"        RewriteCond %{REQUEST_URI} !^/Shibboleth.sso\n"
+"        RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]\n"
+"\n"
+"    </VirtualHost>\n"
+"</IfModule>\n"
+"\n"
+"```"
+msgstr ""
+
+#: deploy/shibboleth_config.md:94
+msgid "After restarting Apache, you should be able to get the Service Provider metadata by accessing https://seafile.example.com/Shibboleth.sso/Metadata . This metadata should be uploaded to the Identity Provider (IdP) server."
+msgstr ""
+
+#: deploy/shibboleth_config.md:98
+msgid "Seahub extracts the username from the `REMOTE_USER` environment variable. So you should modify your SP's shibboleth2.xml (/etc/shibboleth/shibboleth2.xml on Ubuntu) config file, so that Shibboleth translates your desired attribute into `REMOTE_USER` environment variable."
+msgstr ""
+
+#: deploy/shibboleth_config.md:100
+# code block
+msgid "```\n"
+"    <ApplicationDefaults entityID=\"https://your-server/shibboleth\"\n"
+"        REMOTE_USER=\"xxxx\">\n"
+"```"
+msgstr ""
+
+#: deploy/shibboleth_config.md:105
+msgid "In Seafile, only one of the following two attributes can be used for username: `eppn`, and `mail`. `eppn` stands for \"Edu Person Principal Name\". It is usually the UserPrincipalName attribute in Active Directory. It's not necessarily a valid email address. `mail` is the user's email address. You should set `REMOTE_USER` to either one of these attributes."
+msgstr ""
+
+#: deploy/shibboleth_config.md:107
+msgid "Now we have to tell Seahub how to do with the authentication information passed in by Shibboleth."
+msgstr ""
+
+#: deploy/shibboleth_config.md:109
+msgid "Add the following configuration to seahub_settings.py."
+msgstr ""
+
+#: deploy/shibboleth_config.md:111
+# code block
+msgid "```\n"
+"EXTRA_AUTHENTICATION_BACKENDS = (\n"
+"    'shibboleth.backends.ShibbolethRemoteUserBackend',\n"
+")\n"
+"EXTRA_MIDDLEWARE_CLASSES = (\n"
+"    'shibboleth.middleware.ShibbolethRemoteUserMiddleware',\n"
+")\n"
+"\n"
+"ENABLE_SHIB_LOGIN = True\n"
+"\n"
+"SHIBBOLETH_ATTRIBUTE_MAP = {\n"
+"    # Change eppn to mail if you use mail attribute for REMOTE_USER\n"
+"    \"eppn\": (False, \"username\"),\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy/shibboleth_config.md:127
+msgid "Since version 5.0, Seahub can process additional user attributes from Shibboleth. These attributes are saved into Seahub's database, as user's properties. They're all not mandatory. The internal user properties Seahub now supports are:"
+msgstr ""
+
+#: deploy/shibboleth_config.md:129
+# unordered list
+msgid "- givenname"
+msgstr ""
+
+#: deploy/shibboleth_config.md:130
+# unordered list
+msgid "- surname"
+msgstr ""
+
+#: deploy/shibboleth_config.md:131
+# unordered list
+msgid "- contact_email: used for sending notification email to user if username is not a valid email address (like eppn)."
+msgstr ""
+
+#: deploy/shibboleth_config.md:132
+# unordered list
+msgid "- institution: used to identify user's institution"
+msgstr ""
+
+#: deploy/shibboleth_config.md:134
+msgid "You can specify the mapping between Shibboleth attributes and Seahub's user properties in seahub_settings.py:"
+msgstr ""
+
+#: deploy/shibboleth_config.md:136
+# code block
+msgid "```\n"
+"SHIBBOLETH_ATTRIBUTE_MAP = {\n"
+"    \"eppn\": (False, \"username\"),\n"
+"    \"givenname\": (False, \"givenname\"),\n"
+"    \"sn\": (False, \"surname\"),\n"
+"    \"mail\": (False, \"contact_email\"),\n"
+"    \"organization\": (False, \"institution\"),\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy/shibboleth_config.md:146
+msgid "In the above config, the hash key is Shibboleth attribute name, the second element in the hash value is Seahub's property name. You can adjust the Shibboleth attribute name for your own needs. ***Note that you may have to change attribute-map.xml in your Shibboleth SP, so that the desired attributes are passed to Seahub. And you have to make sure the IdP sends these attributes to the SP.***"
+msgstr ""
+
+#: deploy/shibboleth_config.md:148
+msgid "Since version 5.1.1, we added an option `SHIB_ACTIVATE_AFTER_CREATION` (defaults to `True`) which control the user status after shibboleth connection. If this option set to `False`, user will be inactive after connection, and system admins will be notified by email to activate that account."
+msgstr ""
+
+#: deploy/shibboleth_config.md:150
+# header
+msgid "## Verify"
+msgstr ""
+
+#: deploy/shibboleth_config.md:152
+msgid "After restarting Apache and Seafile services, you can then test the shibboleth login workflow."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:1
+# header
+msgid "# Start Seafile at System Bootup"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:3
+# header
+msgid "For Ubuntu\n"
+"----------"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:6
+msgid "On Ubuntu, we make use of the [/etc/init.d/](https://help.ubuntu.com/community/UbuntuBootupHowto) scripts to start seafile/seahub at system boot."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:8
+#: deploy/start_seafile_at_system_bootup.md:106
+# header
+msgid "### Create a script **/etc/init.d/seafile-server**"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:10
+#: deploy/start_seafile_at_system_bootup.md:108
+msgid "    sudo vim /etc/init.d/seafile-server"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:12
+#: deploy/start_seafile_at_system_bootup.md:110
+msgid "The content of this script is: (You need to modify the value of **user** and **seafile\\_dir** accordingly)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:14
+#: deploy/start_seafile_at_system_bootup.md:259
+#: deploy/start_seafile_at_system_bootup.md:329
+msgid "    #!/bin/bash"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:16
+#: deploy/start_seafile_at_system_bootup.md:218
+#: deploy/start_seafile_at_system_bootup.md:240
+msgid "    # Change the value of \"user\" to your linux user name"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:17
+#: deploy/start_seafile_at_system_bootup.md:125
+#: deploy/start_seafile_at_system_bootup.md:219
+#: deploy/start_seafile_at_system_bootup.md:241
+msgid "    user=haiwen"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:19
+#: deploy/start_seafile_at_system_bootup.md:127
+#: deploy/start_seafile_at_system_bootup.md:221
+#: deploy/start_seafile_at_system_bootup.md:243
+msgid "    # Change the value of \"seafile_dir\" to your path of seafile installation"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:20
+#: deploy/start_seafile_at_system_bootup.md:128
+#: deploy/start_seafile_at_system_bootup.md:222
+#: deploy/start_seafile_at_system_bootup.md:244
+msgid "    # usually the home directory of $user"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:21
+#: deploy/start_seafile_at_system_bootup.md:129
+#: deploy/start_seafile_at_system_bootup.md:223
+#: deploy/start_seafile_at_system_bootup.md:245
+msgid "    seafile_dir=/data/haiwen"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:22
+#: deploy/start_seafile_at_system_bootup.md:130
+#: deploy/start_seafile_at_system_bootup.md:224
+#: deploy/start_seafile_at_system_bootup.md:246
+msgid "    script_path=${seafile_dir}/seafile-server-latest"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:23
+#: deploy/start_seafile_at_system_bootup.md:131
+#: deploy/start_seafile_at_system_bootup.md:247
+msgid "    seafile_init_log=${seafile_dir}/logs/seafile.init.log"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:24
+#: deploy/start_seafile_at_system_bootup.md:132
+#: deploy/start_seafile_at_system_bootup.md:248
+msgid "    seahub_init_log=${seafile_dir}/logs/seahub.init.log"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:26
+msgid "    # Change the value of fastcgi to falst if fastcgi is not used"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:27
+msgid "    fastcgi=true"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:28
+#: deploy/start_seafile_at_system_bootup.md:136
+#: deploy/start_seafile_at_system_bootup.md:253
+msgid "    # Set the port of fastcgi, default is 8000. Change it if you need different."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:29
+#: deploy/start_seafile_at_system_bootup.md:137
+#: deploy/start_seafile_at_system_bootup.md:254
+msgid "    fastcgi_port=8000"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:30
+#: deploy/start_seafile_at_system_bootup.md:32
+#: deploy/start_seafile_at_system_bootup.md:139
+#: deploy/start_seafile_at_system_bootup.md:141
+#: deploy/start_seafile_at_system_bootup.md:260
+#: deploy/start_seafile_at_system_bootup.md:263
+#: deploy/start_seafile_at_system_bootup.md:302
+#: deploy/start_seafile_at_system_bootup.md:304
+#: deploy/start_seafile_at_system_bootup.md:330
+#: deploy/start_seafile_at_system_bootup.md:333
+#: deploy/start_seafile_at_system_bootup.md:377
+#: deploy/start_seafile_at_system_bootup.md:379
+msgid "    #"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:31
+#: deploy/start_seafile_at_system_bootup.md:140
+#: deploy/start_seafile_at_system_bootup.md:303
+#: deploy/start_seafile_at_system_bootup.md:378
+msgid "    # Write a polite log message with date and time"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:33
+#: deploy/start_seafile_at_system_bootup.md:142
+#: deploy/start_seafile_at_system_bootup.md:305
+msgid "    echo -e \"\\n \\n About to perform $1 for seafile at `date -Iseconds` \\n \" >> ${seafile_init_log}"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:34
+#: deploy/start_seafile_at_system_bootup.md:143
+#: deploy/start_seafile_at_system_bootup.md:380
+msgid "    echo -e \"\\n \\n About to perform $1 for seahub at `date -Iseconds` \\n \" >> ${seahub_init_log}"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:35
+#: deploy/start_seafile_at_system_bootup.md:145
+#: deploy/start_seafile_at_system_bootup.md:308
+#: deploy/start_seafile_at_system_bootup.md:383
+msgid "    case \"$1\" in"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:36
+#: deploy/start_seafile_at_system_bootup.md:146
+msgid "            start)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:37
+#: deploy/start_seafile_at_system_bootup.md:46
+#: deploy/start_seafile_at_system_bootup.md:56
+#: deploy/start_seafile_at_system_bootup.md:147
+#: deploy/start_seafile_at_system_bootup.md:156
+#: deploy/start_seafile_at_system_bootup.md:166
+msgid "                    sudo -u ${user} ${script_path}/seafile.sh ${1} >> ${seafile_init_log}"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:38
+#: deploy/start_seafile_at_system_bootup.md:47
+#: deploy/start_seafile_at_system_bootup.md:148
+#: deploy/start_seafile_at_system_bootup.md:157
+msgid "                    if [ $fastcgi = true ];"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:39
+#: deploy/start_seafile_at_system_bootup.md:48
+#: deploy/start_seafile_at_system_bootup.md:149
+#: deploy/start_seafile_at_system_bootup.md:158
+#: deploy/start_seafile_at_system_bootup.md:357
+msgid "                    then"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:40
+#: deploy/start_seafile_at_system_bootup.md:49
+#: deploy/start_seafile_at_system_bootup.md:150
+#: deploy/start_seafile_at_system_bootup.md:159
+msgid "                            sudo -u ${user} ${script_path}/seahub.sh ${1}-fastcgi ${fastcgi_port} >> ${seahub_init_log}"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:41
+#: deploy/start_seafile_at_system_bootup.md:50
+#: deploy/start_seafile_at_system_bootup.md:151
+#: deploy/start_seafile_at_system_bootup.md:160
+#: deploy/start_seafile_at_system_bootup.md:359
+msgid "                    else"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:42
+#: deploy/start_seafile_at_system_bootup.md:51
+#: deploy/start_seafile_at_system_bootup.md:152
+#: deploy/start_seafile_at_system_bootup.md:161
+msgid "                            sudo -u ${user} ${script_path}/seahub.sh ${1} >> ${seahub_init_log}"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:43
+#: deploy/start_seafile_at_system_bootup.md:52
+#: deploy/start_seafile_at_system_bootup.md:153
+#: deploy/start_seafile_at_system_bootup.md:162
+#: deploy/start_seafile_at_system_bootup.md:361
+msgid "                    fi"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:44
+#: deploy/start_seafile_at_system_bootup.md:53
+#: deploy/start_seafile_at_system_bootup.md:57
+#: deploy/start_seafile_at_system_bootup.md:61
+#: deploy/start_seafile_at_system_bootup.md:154
+#: deploy/start_seafile_at_system_bootup.md:163
+#: deploy/start_seafile_at_system_bootup.md:167
+#: deploy/start_seafile_at_system_bootup.md:171
+#: deploy/start_seafile_at_system_bootup.md:311
+#: deploy/start_seafile_at_system_bootup.md:314
+#: deploy/start_seafile_at_system_bootup.md:319
+#: deploy/start_seafile_at_system_bootup.md:386
+#: deploy/start_seafile_at_system_bootup.md:389
+#: deploy/start_seafile_at_system_bootup.md:394
+msgid "            ;;"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:45
+#: deploy/start_seafile_at_system_bootup.md:155
+msgid "            restart)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:54
+#: deploy/start_seafile_at_system_bootup.md:164
+msgid "            stop)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:55
+#: deploy/start_seafile_at_system_bootup.md:165
+msgid "                    sudo -u ${user} ${script_path}/seahub.sh ${1} >> ${seahub_init_log}"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:58
+#: deploy/start_seafile_at_system_bootup.md:168
+msgid "            *)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:59
+#: deploy/start_seafile_at_system_bootup.md:169
+msgid "                    echo \"Usage: /etc/init.d/seafile-server {start|stop|restart}\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:60
+#: deploy/start_seafile_at_system_bootup.md:170
+msgid "                    exit 1"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:62
+#: deploy/start_seafile_at_system_bootup.md:172
+#: deploy/start_seafile_at_system_bootup.md:323
+#: deploy/start_seafile_at_system_bootup.md:398
+msgid "    esac"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:66
+# header
+msgid "### Create a file **/etc/init/seafile-server.conf**"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:68
+# header
+msgid "#### If you're not using MySQL or an external MySQL server"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:70
+msgid "    start on (runlevel [2345])"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:71
+#: deploy/start_seafile_at_system_bootup.md:85
+msgid "    stop on (runlevel [016])"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:73
+#: deploy/start_seafile_at_system_bootup.md:87
+msgid "    pre-start script"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:74
+#: deploy/start_seafile_at_system_bootup.md:88
+msgid "    /etc/init.d/seafile-server start"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:75
+#: deploy/start_seafile_at_system_bootup.md:79
+#: deploy/start_seafile_at_system_bootup.md:89
+#: deploy/start_seafile_at_system_bootup.md:93
+msgid "    end script"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:77
+#: deploy/start_seafile_at_system_bootup.md:91
+msgid "    post-stop script"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:78
+#: deploy/start_seafile_at_system_bootup.md:92
+msgid "    /etc/init.d/seafile-server stop"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:81
+# header
+msgid "#### If you're using MySQL"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:83
+msgid "    start on (started mysql"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:84
+msgid "    and runlevel [2345])"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:95
+#: deploy/start_seafile_at_system_bootup.md:187
+# header
+msgid "### Make the seafile-sever script executable"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:97
+#: deploy/start_seafile_at_system_bootup.md:189
+msgid "    sudo chmod +x /etc/init.d/seafile-server"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:99
+#: deploy/start_seafile_at_system_bootup.md:195
+#: deploy/start_seafile_at_system_bootup.md:479
+# header
+msgid "### Done"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:101
+msgid "Don't forget to update the value of **script\\_path** later if you update your seafile server."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:103
+# header
+msgid "For other Debian based Linux\n"
+"----------------------------"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:112
+msgid "    #!/bin/sh"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:114
+msgid "    ### BEGIN INIT INFO"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:115
+msgid "    # Provides:          seafile-server"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:116
+msgid "    # Required-Start:    $local_fs $remote_fs $network"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:117
+msgid "    # Required-Stop:     $local_fs"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:118
+msgid "    # Default-Start:     2 3 4 5"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:119
+msgid "    # Default-Stop:      0 1 6"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:120
+msgid "    # Short-Description: Starts Seafile Server"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:121
+msgid "    # Description:       starts Seafile Server"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:122
+msgid "    ### END INIT INFO"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:124
+msgid "    # Change the value of \"user\" to linux user name who runs seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:134
+#: deploy/start_seafile_at_system_bootup.md:250
+msgid "    # Change the value of fastcgi to true if fastcgi is to be used"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:135
+#: deploy/start_seafile_at_system_bootup.md:251
+msgid "    fastcgi=false"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:176
+# ordered list
+msgid "1.  If you want to start seahub in fastcgi, just change the **fastcgi** variable to **true**"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:177
+# ordered list
+msgid "2.  If you deployed Seafile with MySQL, append \"mysql\" to the Required-Start line:"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:179
+#: deploy/start_seafile_at_system_bootup.md:206
+#: deploy/start_seafile_at_system_bootup.md:212
+msgid "<!-- -->"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:181
+msgid "    # Required-Start: $local_fs $remote_fs $network mysql"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:183
+# header
+msgid "### Add Directory for Logfiles"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:185
+msgid "     mkdir /path/to/seafile/dir/logs"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:191
+# header
+msgid "### Add seafile-server to rc.d"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:193
+msgid "    sudo update-rc.d seafile-server defaults"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:197
+msgid "Don't forget to update the value of **seafile\\_dir** later if you update your seafile server."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:199
+# header
+msgid "For RHEL/CentOS\n"
+"---------------"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:202
+msgid "On RHEL/CentOS, the script [/etc/rc.local](http://www.centos.org/docs/5/html/Installation_Guide-en-US/s1-boot-init-shutdown-run-boot.html) is executed by the system at bootup, so we start seafile/seahub there."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:204
+# unordered list
+msgid "-   Locate your python executable (python 2.6 or 2.7)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:208
+msgid "    which python2.6 # or \"which python2.7\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:210
+# unordered list
+msgid "-   In /etc/rc.local, add the directory of python2.6(2.7) to **PATH**, and add the seafile/seahub start command"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:214
+msgid "    `"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:215
+msgid "    # Assume the python 2.6(2.7) executable is in \"/usr/local/bin\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:216
+msgid "    PATH=$PATH:/usr/local/bin/"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:226
+msgid "    sudo -u ${user} ${script_path}/seafile.sh start > /tmp/seafile.init.log 2>&1"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:227
+msgid "    sudo -u ${user} ${script_path}/seahub.sh start > /tmp/seahub.init.log 2>&1"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:229
+msgid "**Note**: If you want to start seahub in fastcgi, just change the **\"seahub.sh start\"** in the last line above to **\"seahub.sh start-fastcgi\"**"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:231
+# unordered list
+msgid "-   Done. Don't forget to update the value of **seafile\\_dir** later if you update your seafile server."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:233
+# header
+msgid "For RHEL/CentOS run as service\n"
+"------------------------------"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:236
+msgid "On RHEL/CentOS , we make use of the /etc/init.d/ scripts to start seafile/seahub at system boot as service."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:238
+# header
+msgid "### Create a file **/etc/sysconfig/seafile**"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:257
+# header
+msgid "### Create a script **/etc/init.d/seafile**"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:261
+msgid "    # seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:264
+msgid "    # chkconfig: - 68 32"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:265
+msgid "    # description: seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:267
+#: deploy/start_seafile_at_system_bootup.md:337
+msgid "    # Source function library."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:268
+#: deploy/start_seafile_at_system_bootup.md:338
+msgid "    . /etc/init.d/functions"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:270
+#: deploy/start_seafile_at_system_bootup.md:340
+msgid "    # Source networking configuration."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:271
+#: deploy/start_seafile_at_system_bootup.md:341
+msgid "    . /etc/sysconfig/network"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:273
+#: deploy/start_seafile_at_system_bootup.md:343
+msgid "    if [ -f /etc/sysconfig/seafile ];then"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:274
+#: deploy/start_seafile_at_system_bootup.md:344
+msgid "            . /etc/sysconfig/seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:275
+#: deploy/start_seafile_at_system_bootup.md:345
+msgid "            else"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:276
+#: deploy/start_seafile_at_system_bootup.md:346
+msgid "                echo \"Config file /etc/sysconfig/seafile not found! Bye.\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:277
+#: deploy/start_seafile_at_system_bootup.md:347
+msgid "                exit 200"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:278
+#: deploy/start_seafile_at_system_bootup.md:348
+msgid "            fi"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:280
+#: deploy/start_seafile_at_system_bootup.md:350
+msgid "    RETVAL=0"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:282
+#: deploy/start_seafile_at_system_bootup.md:352
+msgid "    start() {"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:283
+#: deploy/start_seafile_at_system_bootup.md:353
+msgid "            # Start daemons."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:284
+msgid "            echo -n $\"Starting seafile: \""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:285
+#: deploy/start_seafile_at_system_bootup.md:355
+msgid "            ulimit -n 30000"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:286
+msgid "            su - ${user} -c\"${script_path}/seafile.sh start >> ${seafile_init_log} 2>&1\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:287
+#: deploy/start_seafile_at_system_bootup.md:296
+#: deploy/start_seafile_at_system_bootup.md:318
+#: deploy/start_seafile_at_system_bootup.md:362
+#: deploy/start_seafile_at_system_bootup.md:371
+#: deploy/start_seafile_at_system_bootup.md:393
+msgid "            RETVAL=$?"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:288
+#: deploy/start_seafile_at_system_bootup.md:297
+#: deploy/start_seafile_at_system_bootup.md:363
+#: deploy/start_seafile_at_system_bootup.md:372
+msgid "            echo"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:289
+msgid "            [ $RETVAL -eq 0 ] && touch /var/lock/subsys/seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:290
+#: deploy/start_seafile_at_system_bootup.md:299
+#: deploy/start_seafile_at_system_bootup.md:365
+#: deploy/start_seafile_at_system_bootup.md:374
+msgid "            return $RETVAL"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:291
+#: deploy/start_seafile_at_system_bootup.md:300
+#: deploy/start_seafile_at_system_bootup.md:366
+#: deploy/start_seafile_at_system_bootup.md:375
+msgid "    }"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:293
+#: deploy/start_seafile_at_system_bootup.md:368
+msgid "    stop() {"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:294
+msgid "            echo -n $\"Shutting down seafile: \""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:295
+msgid "            su - ${user} -c\"${script_path}/seafile.sh stop >> ${seafile_init_log} 2>&1\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:298
+msgid "            [ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:307
+#: deploy/start_seafile_at_system_bootup.md:382
+msgid "    # See how we were called."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:309
+#: deploy/start_seafile_at_system_bootup.md:384
+msgid "      start)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:310
+#: deploy/start_seafile_at_system_bootup.md:317
+#: deploy/start_seafile_at_system_bootup.md:385
+#: deploy/start_seafile_at_system_bootup.md:392
+msgid "            start"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:312
+#: deploy/start_seafile_at_system_bootup.md:387
+msgid "      stop)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:313
+#: deploy/start_seafile_at_system_bootup.md:316
+#: deploy/start_seafile_at_system_bootup.md:388
+#: deploy/start_seafile_at_system_bootup.md:391
+msgid "            stop"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:315
+#: deploy/start_seafile_at_system_bootup.md:390
+msgid "      restart|reload)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:320
+#: deploy/start_seafile_at_system_bootup.md:395
+msgid "      *)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:321
+#: deploy/start_seafile_at_system_bootup.md:396
+msgid "            echo $\"Usage: $0 {start|stop|restart}\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:322
+#: deploy/start_seafile_at_system_bootup.md:397
+msgid "            RETVAL=3"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:325
+#: deploy/start_seafile_at_system_bootup.md:400
+msgid "    exit $RETVAL"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:327
+# header
+msgid "### Create a script **/etc/init.d/seahub**"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:331
+msgid "    # seahub"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:334
+msgid "    # chkconfig: - 69 31"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:335
+msgid "    # description: seahub"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:354
+msgid "            echo -n $\"Starting seahub: \""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:356
+msgid "            if [  $fastcgi = true ];"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:358
+msgid "                    su - ${user} -c\"${script_path}/seahub.sh start-fastcgi ${fastcgi_port} >> ${seahub_init_log} 2>&1\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:360
+msgid "                    su - ${user} -c\"${script_path}/seahub.sh start >> ${seahub_init_log} 2>&1\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:364
+msgid "            [ $RETVAL -eq 0 ] && touch /var/lock/subsys/seahub"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:369
+msgid "            echo -n $\"Shutting down seahub: \""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:370
+msgid "            su - ${user} -c\"${script_path}/seahub.sh stop >> ${seahub_init_log} 2>&1\""
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:373
+msgid "            [ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/seahub"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:402
+msgid "Next, enable services:"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:404
+msgid "    chmod 550 /etc/init.d/seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:405
+msgid "    chmod 550 /etc/init.d/seahub"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:406
+msgid "    chkconfig --add seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:407
+msgid "    chkconfig --add seahub"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:408
+msgid "    chkconfig seahub on"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:409
+msgid "    chkconfig seafile on"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:411
+msgid "and run:"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:413
+msgid "    service seafile start"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:414
+msgid "    service seahub start"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:416
+# header
+msgid "For systems running systemd\n"
+"---------------------------"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:419
+msgid "Create systemd service files, change **${seafile\\_dir}** to your **seafile** installation location and **seafile** to user, who runs **seafile** (if appropriate). Then you need to reload systemd's daemons: **systemctl daemon-reload**."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:421
+# header
+msgid "### Create systemd service file /etc/systemd/system/seafile.service"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:423
+#: deploy/start_seafile_at_system_bootup.md:441
+#: deploy/start_seafile_at_system_bootup.md:461
+msgid "    [Unit]"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:424
+msgid "    Description=Seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:425
+msgid "    # add mysql.service or postgresql.service depending on your database to the line below"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:426
+msgid "    After=network.target"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:428
+#: deploy/start_seafile_at_system_bootup.md:445
+#: deploy/start_seafile_at_system_bootup.md:468
+msgid "    [Service]"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:429
+#: deploy/start_seafile_at_system_bootup.md:451
+#: deploy/start_seafile_at_system_bootup.md:469
+msgid "    Type=oneshot"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:430
+msgid "    ExecStart=${seafile_dir}/seafile-server-latest/seafile.sh start"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:431
+msgid "    ExecStop=${seafile_dir}/seafile-server-latest/seafile.sh stop"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:432
+#: deploy/start_seafile_at_system_bootup.md:452
+#: deploy/start_seafile_at_system_bootup.md:472
+msgid "    RemainAfterExit=yes"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:433
+#: deploy/start_seafile_at_system_bootup.md:449
+#: deploy/start_seafile_at_system_bootup.md:473
+msgid "    User=seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:434
+#: deploy/start_seafile_at_system_bootup.md:450
+#: deploy/start_seafile_at_system_bootup.md:474
+msgid "    Group=seafile"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:436
+#: deploy/start_seafile_at_system_bootup.md:454
+#: deploy/start_seafile_at_system_bootup.md:476
+msgid "    [Install]"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:437
+#: deploy/start_seafile_at_system_bootup.md:455
+#: deploy/start_seafile_at_system_bootup.md:477
+msgid "    WantedBy=multi-user.target"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:439
+# header
+msgid "### Create systemd service file /etc/systemd/system/seahub.service"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:442
+msgid "    Description=Seafile hub"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:443
+msgid "    After=network.target seafile.service"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:446
+msgid "    # change start to start-fastcgi if you want to run fastcgi"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:447
+msgid "    ExecStart=${seafile_dir}/seafile-server-latest/seahub.sh start"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:448
+msgid "    ExecStop=${seafile_dir}/seafile-server-latest/seahub.sh stop"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:457
+# header
+msgid "### Create systemd service file /etc/systemd/system/seafile-client.service (optional)"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:459
+msgid "You need to create this service file only if you have **seafile** console client and you want to run it on system boot."
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:462
+msgid "    Description=Seafile client"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:463
+msgid "    # Uncomment the next line you are running seafile client on the same computer as server"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:464
+msgid "    # After=seafile.service"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:465
+msgid "    # Or the next one in other case"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:466
+msgid "    # After=network.target"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:470
+msgid "    ExecStart=/usr/bin/seaf-cli start"
+msgstr ""
+
+#: deploy/start_seafile_at_system_bootup.md:471
+msgid "    ExecStop=/usr/bin/seaf-cli stop"
+msgstr ""
+
+#: deploy/upgrade.md:3
+# header
+msgid "## Upgrade Manual"
+msgstr ""
+
+#: deploy/upgrade.md:5
+msgid "This page is for users who use the pre-compiled seafile server package."
+msgstr ""
+
+#: deploy/upgrade.md:7
+# unordered list
+msgid "- If you [build seafile server from source](../build_seafile/server.md), please read the **Upgrading Seafile Server** section on that page, instead of this one."
+msgstr ""
+
+#: deploy/upgrade.md:8
+# unordered list
+msgid "- After upgrading, you may need to clean [seahub cache](add_memcached.md) if it doesn't behave as expect."
+msgstr ""
+
+#: deploy/upgrade.md:10
+msgid "If you are running a **cluster**, please read [upgrade a Seafile cluster](../deploy_pro/upgrade_a_cluster.md)."
+msgstr ""
+
+#: deploy/upgrade.md:12
+# header
+msgid "## Major version upgrade (like from 2.x to 3.y)"
+msgstr ""
+
+#: deploy/upgrade.md:15
+msgid "Suppose you are using version 2.1.0 and like to upgrade to version 3.1.0. First download and extract the new version. You should have a directory layout similar to this:"
+msgstr ""
+
+#: deploy/upgrade.md:18
+# inline html
+msgid "<pre>\n"
+"haiwen\n"
+"   -- seafile-server-2.1.0\n"
+"   -- seafile-server-3.1.0\n"
+"   -- ccnet\n"
+"   -- seafile-data\n"
+"</pre>"
+msgstr ""
+
+#: deploy/upgrade.md:27
+msgid "Now upgrade to version 3.1.0."
+msgstr ""
+
+#: deploy/upgrade.md:29
+#: deploy/upgrade.md:85
+# ordered list
+msgid "1. Shutdown Seafile server if it's running"
+msgstr ""
+
+#: deploy/upgrade.md:31
+# code block
+msgid "   ```sh\n"
+"   cd haiwen/seafile-server-2.1.0\n"
+"   ./seahub.sh stop\n"
+"   ./seafile.sh stop\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:36
+# ordered list
+msgid "2. Check the upgrade scripts in seafile-server-3.1.0 directory."
+msgstr ""
+
+#: deploy/upgrade.md:38
+# code block
+msgid "   ```sh\n"
+"   cd haiwen/seafile-server-3.1.0\n"
+"   ls upgrade/upgrade_*\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:43
+#: deploy/upgrade.md:99
+msgid "   You will get a list of upgrade files:"
+msgstr ""
+
+#: deploy/upgrade.md:45
+# code block
+msgid "   ```\n"
+"   ...\n"
+"   upgrade/upgrade_2.0_2.1.sh\n"
+"   upgrade/upgrade_2.1_2.2.sh\n"
+"   upgrade/upgrade_2.2_3.0.sh\n"
+"   upgrade/upgrade_3.0_3.1.sh\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:53
+#: deploy/upgrade.md:108
+# ordered list
+msgid "3. Start from you current version, run the script one by one"
+msgstr ""
+
+#: deploy/upgrade.md:55
+# code block
+msgid "   ```\n"
+"   upgrade/upgrade_2.1_2.2.sh\n"
+"   upgrade/upgrade_2.2_3.0.sh\n"
+"   upgrade/upgrade_3.0_3.1.sh\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:61
+#: deploy/upgrade.md:115
+# ordered list
+msgid "4. Start the new server version as for any upgrade"
+msgstr ""
+
+#: deploy/upgrade.md:63
+# code block
+msgid "   ```sh\n"
+"   cd haiwen/seafile-server-3.1.0/\n"
+"   ./seafile.sh start\n"
+"   ./seahub.sh start # or \"./seahub.sh start-fastcgi\" if you're using fastcgi\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:69
+# header
+msgid "## Minor version upgrade (like from 3.0.x to 3.2.y)"
+msgstr ""
+
+#: deploy/upgrade.md:71
+msgid "Suppose you are using version 3.0.0 and like to upgrade to version 3.2.2. First download and extract the new version. You should have a directory layout similar to this:"
+msgstr ""
+
+#: deploy/upgrade.md:74
+# inline html
+msgid "<pre>\n"
+"haiwen\n"
+"   -- seafile-server-3.0.0\n"
+"   -- seafile-server-3.2.2\n"
+"   -- ccnet\n"
+"   -- seafile-data\n"
+"</pre>"
+msgstr ""
+
+#: deploy/upgrade.md:83
+msgid "Now upgrade to version 3.2.2."
+msgstr ""
+
+#: deploy/upgrade.md:87
+# code block
+msgid "   ```sh\n"
+"   cd haiwen/seafile-server-3.0.0\n"
+"   ./seahub.sh stop\n"
+"   ./seafile.sh stop\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:92
+# ordered list
+msgid "2. Check the upgrade scripts in seafile-server-3.2.2 directory."
+msgstr ""
+
+#: deploy/upgrade.md:94
+# code block
+msgid "   ```sh\n"
+"   cd haiwen/seafile-server-3.2.2\n"
+"   ls upgrade/upgrade_*\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:101
+# code block
+msgid "   ```\n"
+"   ...\n"
+"   upgrade/upgrade_2.2_3.0.sh\n"
+"   upgrade/upgrade_3.0_3.1.sh\n"
+"   upgrade/upgrade_3.1_3.2.sh\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:110
+# code block
+msgid "   ```\n"
+"   upgrade/upgrade_3.0_3.1.sh\n"
+"   upgrade/upgrade_3.1_3.2.sh\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:117
+# code block
+msgid "   ```sh\n"
+"   cd haiwen/seafile-server-3.2.2/\n"
+"   ./seafile.sh start\n"
+"   ./seahub.sh start\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:124
+# header
+msgid "## Maintenance version upgrade (like from 3.1.0 to 3.1.2)"
+msgstr ""
+
+#: deploy/upgrade.md:126
+msgid "Maintenance upgrade is like an upgrade from 3.1.0 to 3.1.2."
+msgstr ""
+
+#: deploy/upgrade.md:129
+# ordered list
+msgid "1. Stop the current server first as for any upgrade"
+msgstr ""
+
+#: deploy/upgrade.md:130
+# ordered list
+msgid "2. For this type of upgrade, you only need to update the symbolic links (for avatar and a few other folders). We provide a script for you, just run it (For history reason, the script called `minor-upgrade.sh`):"
+msgstr ""
+
+#: deploy/upgrade.md:132
+# code block
+msgid "   ```sh\n"
+"   cd seafile-server-3.1.2\n"
+"   upgrade/minor-upgrade.sh\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade.md:137
+# ordered list
+msgid "3. Start the new server version as for any upgrade"
+msgstr ""
+
+#: deploy/upgrade.md:139
+# ordered list
+msgid "4. If the new version works fine, the old version can be removed"
+msgstr ""
+
+#: deploy/upgrade.md:141
+# code block
+msgid "   ```sh\n"
+"   rm -rf seafile-server-3.1.0\n"
+"   ```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:1
+msgid "#Seafile"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:2
+# header
+msgid "## Upgrade with MySQL or PostgreSQL"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:4
+msgid "First, download the new version, for example seafile-server_1.6.0_x86-64.tar.gz, and extract it to the directory where you put all Seafile related stuff. You should have a directory layout similar to this:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:6
+# inline html
+msgid "<pre>\n"
+"haiwen\n"
+"   -- seafile-server-1.5.0\n"
+"   -- seafile-server-1.6.0\n"
+"   -- ccnet\n"
+"   -- seafile-data\n"
+"</pre>"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:14
+# header
+msgid "## Major Continuous Upgrade (like from 1.5 to 1.6)"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:16
+msgid "Major continuous upgrade including upgrading from 1.5.0 to 1.6.0 or upgrading from 1.5.0 to 1.6.1. It involves four steps:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:18
+# ordered list
+msgid "1. Stop Seafile/Seahub"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:19
+# ordered list
+msgid "2. Update avatars folder and database tables"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:20
+# ordered list
+msgid "3. Update Nginx/Apache configs"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:21
+# ordered list
+msgid "4. Restart Seafile/Seahub"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:23
+# header
+msgid "### 2. Update avatars folder and database tables （After Seafile Server 2.1.1 for MySQL）"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:25
+msgid "Since seafile server 2.1.1, You can upgrade the the avatars folder and the databases using the upgrade scripts. The script's name is like `upgrade_X.X_Y.Y.sh`. For example, assume you are upgrading from seafile server 2.0.0 to seafile server 2.1.1, the you should run the `upgrade_2.0_2.1.sh` script."
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:27
+# code block
+msgid "```sh\n"
+"cd seafile-server-2.1.1/\n"
+"./upgrade/upgrade_2.0_2.1.sh\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:32
+msgid "The script would update the avatars folder and the database tables for you."
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:34
+# header
+msgid "### 2. Update avatars folder and database tables (For PostgreSQL and before Seafile Server 2.1.1)"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:36
+msgid "Before Seafile Server 2.1.1 or if you are using PostgreSQL, you have to manually:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:38
+# unordered list
+msgid "- update the avatars folder symbolic link"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:39
+# unordered list
+msgid "- update and the database tables"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:41
+# header
+msgid "#### Update avatars symbolic link"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:43
+msgid "Assume your top level directory is `/data/haiwen/`, and you are upgrading to seafile server version 1.6.0:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:45
+# code block
+msgid "```\n"
+"cd /data/haiwen\n"
+"cp -a seafile-server-1.6.0/seahub/media/avatars/* seahub-data/avatars/\n"
+"rm -rf seafile-server-1.6.0/seahub/media/avatars\n"
+"#the new server avatars' folder will be linked to the updated avatars folder\n"
+"ln -s -t seafile-server-1.6.0/seahub/media/  ../../../seahub-data/avatars/\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:53
+# header
+msgid "#### Update database tables"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:55
+msgid "When a new version of seafile server is released, there may be changes to the database of seafile/seahub/ccnet. We provide the sql statements to update the databases:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:57
+# unordered list
+msgid "- `upgrade/sql/<VERSION>/mysql/seahub.sql`, for changes to seahub database"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:58
+# unordered list
+msgid "- `upgrade/sql/<VERSION>/mysql/seafile.sql`, for changes to seafile database"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:59
+# unordered list
+msgid "- `upgrade/sql/<VERSION>/mysql/ccnet.sql`, for changes to ccnet database"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:61
+msgid "To apply the changes, just execute the sqls in the correspondent database. If any of the sql files above do not exist, it means the new version does not bring changes to the correspondent database."
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:63
+# code block
+msgid "```sh\n"
+"seafile-server-1.6.0\n"
+"├── seafile\n"
+"├── seahub\n"
+"├── upgrade\n"
+"    ├── sql\n"
+"        ├── 1.6.0\n"
+"            ├── mysql\n"
+"                ├── seahub.mysql\n"
+"                ├── seafile.mysql\n"
+"                ├── ccnet.mysql\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:77
+# header
+msgid "### 3. Update Nginx/Apache Config"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:79
+#: deploy/upgrade_with_mysql_or_postgresql.md:151
+msgid "For Nginx:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:81
+# code block
+msgid "```\n"
+"  location /media {\n"
+"      root /data/haiwen/seafile-server-1.6.0/seahub;\n"
+"  }\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:87
+#: deploy/upgrade_with_mysql_or_postgresql.md:159
+msgid "For Apache:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:89
+# code block
+msgid "```\n"
+"Alias /media  /data/haiwen/seafile-server-1.6.0/seahub/media\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:94
+msgid "You can create a symbolic link <code>seafile-server-latest</code>, and make it point to your current seafile server folder (Since seafile server 2.1.0, the <code>setup-seafile.sh</code> script will do this for your). Then, each time you run a upgrade script, it would update the <code>seafile-server-latest</code> symbolic link to keep it always point to the latest version seafile server folder."
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:98
+# code block
+msgid "```\n"
+"    location /media {\n"
+"        root /data/haiwen/seafile-server-latest/seahub;\n"
+"    }\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:104
+msgid "or For Apache:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:106
+# code block
+msgid "```\n"
+"Alias /media  /data/haiwen/seafile-server-latest/seahub/media\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:110
+msgid "This way, you no longer need to update the Nginx/Apache config file each time you upgrade your seafile server."
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:113
+# header
+msgid "### 4. Restart Seafile/Seahub/Nginx/Apache"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:115
+#: deploy/upgrade_with_mysql_or_postgresql.md:167
+msgid "After done above updating, now restart Seafile/Seahub/Nginx/Apache to see the new version at work!"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:117
+# header
+msgid "## Noncontinuous Upgrade (like from 1.1 to 1.3)"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:119
+msgid "You may also upgrade a few versions at once, e.g. from 1.1.0 to 1.3.0."
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:120
+msgid "The procedure is:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:122
+# ordered list
+msgid "1. upgrade from 1.1.0 to 1.2.0;"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:123
+# ordered list
+msgid "2. upgrade from 1.2.0 to 1.3.0."
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:126
+# header
+msgid "## Minor upgrade (like from 1.5.0 to 1.5.1)"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:128
+msgid "Minor upgrade is like an upgrade from 1.5.0 to 1.5.1."
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:130
+msgid "Here is our dir structure"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:132
+# inline html
+msgid "<pre>\n"
+"haiwen\n"
+"   -- seafile-server-1.5.0\n"
+"   -- seafile-server-1.5.1\n"
+"   -- ccnet\n"
+"   -- seafile-data\n"
+"</pre>"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:140
+# header
+msgid "### Update the avatar link"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:142
+msgid "We provide a script for you, just run it:"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:144
+# code block
+msgid "```sh\n"
+"cd seafile-server-1.5.1\n"
+"upgrade/minor-upgrade.sh\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:149
+# header
+msgid "### Update Nginx/Apache Config"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:153
+# code block
+msgid "```\n"
+"  location /media {\n"
+"      root /data/haiwen/seafile-server-1.5.1/seahub;\n"
+"  }\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:161
+# code block
+msgid "```\n"
+"Alias /media  /data/haiwen/seafile-server-1.5.1/seahub/media\n"
+"```"
+msgstr ""
+
+#: deploy/upgrade_with_mysql_or_postgresql.md:165
+# header
+msgid "### Restart Seafile/Seahub/Nginx/Apache"
+msgstr ""
+
+#: deploy/using_firewall.md:1
+# header
+msgid "# Firewall settings"
+msgstr ""
+
+#: deploy/using_firewall.md:3
+msgid "By default, you should open 2 ports, 8000 and 8082, in your firewall settings."
+msgstr ""
+
+#: deploy/using_firewall.md:5
+msgid "If you run Seafile behind Nginx/Apache with HTTPS, you only need to open ports 443."
+msgstr ""
+
+#: deploy/using_fuse.md:2
+# header
+msgid "## Using Fuse"
+msgstr ""
+
+#: deploy/using_fuse.md:4
+msgid "Files in the seafile system are split to blocks, which means what are stored on your seafile server are not complete files, but blocks. This design faciliates effective data deduplication."
+msgstr ""
+
+#: deploy/using_fuse.md:6
+msgid "However, administrators sometimes want to access the files directly on the server. You can use seaf-fuse to do this."
+msgstr ""
+
+#: deploy/using_fuse.md:8
+msgid "<code>Seaf-fuse</code> is an implementation of the [http://fuse.sourceforge.net FUSE] virtual filesystem. In a word, it mounts all the seafile files to a folder (which is called the '''mount point'''), so that you can access all the files managed by seafile server, just as you access a normal folder on your server."
+msgstr ""
+
+#: deploy/using_fuse.md:10
+msgid "Seaf-fuse is added since Seafile Server '''2.1.0'''."
+msgstr ""
+
+#: deploy/using_fuse.md:12
+msgid "'''Note:'''"
+msgstr ""
+
+#: deploy/using_fuse.md:13
+# unordered list
+msgid "* Encrypted folders can't be accessed by seaf-fuse."
+msgstr ""
+
+#: deploy/using_fuse.md:14
+# unordered list
+msgid "* Currently the implementation is '''read-only''', which means you can't modify the files through the mounted folder."
+msgstr ""
+
+#: deploy/using_fuse.md:15
+# unordered list
+msgid "* One debian/centos systems, you need to be in the \"fuse\" group to have the permission to mount a FUSE folder."
+msgstr ""
+
+#: deploy/using_fuse.md:17
+# header
+msgid "## How to start seaf-fuse"
+msgstr ""
+
+#: deploy/using_fuse.md:19
+msgid "Assume we want to mount to <code>/data/seafile-fuse</code>."
+msgstr ""
+
+#: deploy/using_fuse.md:21
+# header
+msgid "#### Create the folder as the mount point"
+msgstr ""
+
+#: deploy/using_fuse.md:23
+# inline html
+msgid "<pre>\n"
+"mkdir -p /data/seafile-fuse\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_fuse.md:27
+# header
+msgid "#### Start seaf-fuse with the script"
+msgstr ""
+
+#: deploy/using_fuse.md:29
+msgid "'''Note:''' Before start seaf-fuse, you should have started seafile server with <code>./seafile.sh start</code>."
+msgstr ""
+
+#: deploy/using_fuse.md:31
+# inline html
+msgid "<pre>\n"
+"./seaf-fuse.sh start /data/seafile-fuse\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_fuse.md:35
+# header
+msgid "#### Stop seaf-fuse"
+msgstr ""
+
+#: deploy/using_fuse.md:37
+# inline html
+msgid "<pre>\n"
+"./seaf-fuse.sh stop\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_fuse.md:41
+# header
+msgid "## Contents of the mounted folder"
+msgstr ""
+
+#: deploy/using_fuse.md:43
+# header
+msgid "#### The top level folder"
+msgstr ""
+
+#: deploy/using_fuse.md:45
+msgid "Now you can list the content of <code>/data/seafile-fuse</code>."
+msgstr ""
+
+#: deploy/using_fuse.md:47
+# inline html
+msgid "<pre>\n"
+"$ ls -lhp /data/seafile-fuse\n"
+"\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  1970 abc@abc.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  1970 foo@foo.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  1970 plus@plus.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  1970 sharp@sharp.com/\n"
+"drwxr-xr-x 2 root root 4.0K Jan  1  1970 test@test.com/\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_fuse.md:57
+# unordered list
+msgid "* The top level folder contains many subfolders, each of which corresponds to a user"
+msgstr ""
+
+#: deploy/using_fuse.md:58
+# unordered list
+msgid "* The time stamp of files and folders is not preserved."
+msgstr ""
+
+#: deploy/using_fuse.md:60
+# header
+msgid "#### The folder for each user"
+msgstr ""
+
+#: deploy/using_fuse.md:62
+# inline html
+msgid "<pre>\n"
+"$ ls -lhp /data/seafile-fuse/abc@abc.com\n"
+"\n"
+"drwxr-xr-x 2 root root  924 Jan  1  1970 5403ac56-5552-4e31-a4f1-1de4eb889a5f_Photos/\n"
+"drwxr-xr-x 2 root root 1.6K Jan  1  1970 a09ab9fc-7bd0-49f1-929d-6abeb8491397_My Notes/\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_fuse.md:69
+msgid "From the above list you can see, under the folder of a user there are subfolders, each of which represents a library of that user, and has a name of this format: '''{library_id}-{library-name}'''."
+msgstr ""
+
+#: deploy/using_fuse.md:71
+# header
+msgid "#### The folder for a library"
+msgstr ""
+
+#: deploy/using_fuse.md:73
+# inline html
+msgid "<pre>\n"
+"$ ls -lhp /data/seafile-fuse/abc@abc.com/5403ac56-5552-4e31-a4f1-1de4eb889a5f_Photos/\n"
+"\n"
+"-rw-r--r-- 1 root root 501K Jan  1  1970 image.png\n"
+"-rw-r--r-- 1 root root 501K Jan  1  1970 sample.jpng\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_fuse.md:80
+# header
+msgid "#### If you get a \"Permission denied\" error"
+msgstr ""
+
+#: deploy/using_fuse.md:82
+msgid "If you get an error message saying \"Permission denied\" when running <code>./seaf-fuse.sh start</code>, most likely you are not in the \"fuse group\". You should:"
+msgstr ""
+
+#: deploy/using_fuse.md:84
+# unordered list
+msgid "* Add yourself to the fuse group"
+msgstr ""
+
+#: deploy/using_fuse.md:85
+# inline html
+msgid "<pre>\n"
+"sudo usermod -a -G fuse <your-user-name>\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_fuse.md:88
+# unordered list
+msgid "* Logout your shell and login again"
+msgstr ""
+
+#: deploy/using_fuse.md:89
+# unordered list
+msgid "* Now try <code>./seaf-fuse.sh start <path></code> again."
+msgstr ""
+
+#: deploy/using_ldap.md:1
+# header
+msgid "# Configure Seafile to use LDAP"
+msgstr ""
+
+#: deploy/using_ldap.md:3
+msgid "Note: This documentation is for the Community Edition. If you're using Pro Edition, please refer to [the Seafile Pro documentation](../deploy_pro/using_ldap_pro.md)."
+msgstr ""
+
+#: deploy/using_ldap.md:5
+# header
+msgid "## How does LDAP User Management work in Seafile"
+msgstr ""
+
+#: deploy/using_ldap.md:7
+msgid "When Seafile is integrated with LDAP/AD, users in the system can be divided into two tiers:"
+msgstr ""
+
+#: deploy/using_ldap.md:9
+# unordered list
+msgid "- Users within Seafile's internal user database. Some attributes are attached to these users, such as whether it's a system admin user, whether it's activated. This tier includes two types of users:"
+msgstr ""
+
+#: deploy/using_ldap.md:10
+# unordered list
+msgid "    * Native users: these users are created by the admin on Seafile's system admin interface. These users are stored in the `EmailUser` table of the `ccnet` database."
+msgstr ""
+
+#: deploy/using_ldap.md:11
+# unordered list
+msgid "    * Users imported from LDAP/AD server: When a user in LDAP/AD logs into Seafile, its information will be imported from LDAP/AD server into Seafile's database. These users are stored in the `LDAPUsers` table of the `ccnet` database."
+msgstr ""
+
+#: deploy/using_ldap.md:12
+# unordered list
+msgid "- Users in LDAP/AD server. These are all the intended users of Seafile inside the LDAP server. Seafile doesn't manipulate these users directly. It has to import them into its internal database before setting attributes on them."
+msgstr ""
+
+#: deploy/using_ldap.md:14
+msgid "When Seafile counts the number of users in the system, it only counts the **activated** users in its internal database."
+msgstr ""
+
+#: deploy/using_ldap.md:16
+msgid "When Seafile is integrated with LDAP/AD, it'll look up users from both the internal database and LDAP server. As long as the user exists in one of these two sources, they can log into the system."
+msgstr ""
+
+#: deploy/using_ldap.md:18
+# header
+msgid "## Basic LDAP/AD Integration"
+msgstr ""
+
+#: deploy/using_ldap.md:20
+msgid "The only requirement for Seafile to use LDAP/AD for authentication is that there must be a unique identifier for each user in the LDAP/AD server. Seafile can only use email-address-format user identifiers. So there are usually only two options for this unique identifier:"
+msgstr ""
+
+#: deploy/using_ldap.md:22
+# unordered list
+msgid "- Email address: this is the most common choice. Most organizations assign unique email address for each member."
+msgstr ""
+
+#: deploy/using_ldap.md:23
+# unordered list
+msgid "- UserPrincipalName: this is a user attribute only available in Active Directory. It's format is `user-login-name@domain-name`, e.g. `john@example.com`. It's not a real email address, but it works fine as the unique identifier."
+msgstr ""
+
+#: deploy/using_ldap.md:25
+# header
+msgid "### Connecting to Active Directory"
+msgstr ""
+
+#: deploy/using_ldap.md:27
+msgid "To use AD to authenticate user, please add the following lines to ccnet.conf."
+msgstr ""
+
+#: deploy/using_ldap.md:29
+msgid "If you choose email address as unique identifier:"
+msgstr ""
+
+#: deploy/using_ldap.md:31
+#: deploy/using_ldap.md:40
+#: deploy/using_ldap.md:66
+msgid "    [LDAP]"
+msgstr ""
+
+#: deploy/using_ldap.md:32
+#: deploy/using_ldap.md:41
+#: deploy/using_ldap.md:67
+msgid "    HOST = ldap://192.168.1.123/"
+msgstr ""
+
+#: deploy/using_ldap.md:33
+#: deploy/using_ldap.md:42
+msgid "    BASE = cn=users,dc=example,dc=com"
+msgstr ""
+
+#: deploy/using_ldap.md:34
+#: deploy/using_ldap.md:43
+msgid "    USER_DN = administrator@example.local"
+msgstr ""
+
+#: deploy/using_ldap.md:35
+#: deploy/using_ldap.md:44
+#: deploy/using_ldap.md:70
+msgid "    PASSWORD = secret"
+msgstr ""
+
+#: deploy/using_ldap.md:36
+#: deploy/using_ldap.md:71
+msgid "    LOGIN_ATTR = mail"
+msgstr ""
+
+#: deploy/using_ldap.md:38
+msgid "If you choose UserPrincipalName as unique identifier:"
+msgstr ""
+
+#: deploy/using_ldap.md:45
+msgid "    LOGIN_ATTR = userPrincipalName"
+msgstr ""
+
+#: deploy/using_ldap.md:47
+msgid "Meaning of each config options:"
+msgstr ""
+
+#: deploy/using_ldap.md:49
+# unordered list
+msgid "* HOST: LDAP URL for the host. ldap://, ldaps:// and ldapi:// are supported. You can also include a port number in the URL, like ldap://ldap.example.com:389. To use TLS, you should configure the LDAP server to listen on LDAPS port and specify ldaps:// here. More details about TLS will be covered below."
+msgstr ""
+
+#: deploy/using_ldap.md:50
+# unordered list
+msgid "* BASE: The root distinguished name (DN) to use when running queries against the directory server. **You cannot use the root DN (e.g. dc=example,dc=com) as BASE**."
+msgstr ""
+
+#: deploy/using_ldap.md:51
+# unordered list
+msgid "* USER_DN: The distinguished name of the user that Seafile will use when connecting to the directory server. This user should have sufficient privilege to access all the nodes under BASE. It's recommended to use a user in the administrator group."
+msgstr ""
+
+#: deploy/using_ldap.md:52
+# unordered list
+msgid "* PASSWORD: Password of the above user."
+msgstr ""
+
+#: deploy/using_ldap.md:53
+# unordered list
+msgid "* LOGIN_ATTR: The attribute used for user's unique identifier. Use `mail` or `userPrincipalName`."
+msgstr ""
+
+#: deploy/using_ldap.md:55
+msgid "Tips for choosing BASE and USER_DN:"
+msgstr ""
+
+#: deploy/using_ldap.md:57
+# unordered list
+msgid "* To determine the BASE, you first have to navigate your organization hierachy on the domain controller GUI."
+msgstr ""
+
+#: deploy/using_ldap.md:58
+# unordered list
+msgid "    * If you want to allow all users to use Seafile, you can use 'cn=users,dc=yourdomain,dc=com' as BASE (with proper adjustment for your own needs)."
+msgstr ""
+
+#: deploy/using_ldap.md:59
+# unordered list
+msgid "    * If you want to limit users to a certain OU (Organization Unit), you run `dsquery` command on the domain controller to find out the DN for this OU. For example, if the OU is 'staffs', you can run 'dsquery ou -name staff'. More information can be found [here](https://technet.microsoft.com/en-us/library/cc770509.aspx)."
+msgstr ""
+
+#: deploy/using_ldap.md:60
+# unordered list
+msgid "* AD supports 'user@domain.name' format for the USER_DN option. For example you can use administrator@example.com for USER_DN. Sometime the domain controller doesn't recognize this format. You can still use `dsquery` command to find out user's DN. For example, if the user name is 'seafileuser', run `dsquery user -name seafileuser`. More information [here](https://technet.microsoft.com/en-us/library/cc725702.aspx)."
+msgstr ""
+
+#: deploy/using_ldap.md:62
+# header
+msgid "### Connecting to other LDAP servers"
+msgstr ""
+
+#: deploy/using_ldap.md:64
+msgid "Please add the following options to ccnet.conf:"
+msgstr ""
+
+#: deploy/using_ldap.md:68
+msgid "    BASE = ou=users,dc=example,dc=com"
+msgstr ""
+
+#: deploy/using_ldap.md:69
+msgid "    USER_DN = cn=admin,dc=example,dc=com"
+msgstr ""
+
+#: deploy/using_ldap.md:73
+msgid "The meaning of the options are the same as described in the previous section. With other LDAP servers, you can only use `mail` attribute as user's unique identifier."
+msgstr ""
+
+#: deploy/using_ldap.md:75
+# header
+msgid "## Advanced LDAP/AD Integration Options"
+msgstr ""
+
+#: deploy/using_ldap.md:77
+# header
+msgid "### Multiple BASE"
+msgstr ""
+
+#: deploy/using_ldap.md:79
+msgid "Multiple base DN is useful when your company has more than one OUs to use Seafile. You can specify a list of base DN in the \"BASE\" config. The DNs are separated by \";\", e.g. `ou=developers,dc=example,dc=com;ou=marketing,dc=example,dc=com`"
+msgstr ""
+
+#: deploy/using_ldap.md:81
+# header
+msgid "### Additional Search Filter"
+msgstr ""
+
+#: deploy/using_ldap.md:83
+msgid "Search filter is very useful when you have a large organization but only a portion of people want to use Seafile. The filter can be given by setting \"FILTER\" config. The value of this option follows standard LDAP search filter syntax (https://msdn.microsoft.com/en-us/library/aa746475(v=vs.85).aspx)."
+msgstr ""
+
+#: deploy/using_ldap.md:85
+msgid "The final filter used for searching for users is `(&($LOGIN_ATTR=*)($FILTER))`. `$LOGIN_ATTR` and `$FILTER` will be replaced by your option values."
+msgstr ""
+
+#: deploy/using_ldap.md:87
+msgid "For example, add the following line to LDAP config:"
+msgstr ""
+
+#: deploy/using_ldap.md:89
+# code block
+msgid "```\n"
+"FILTER = memberOf=CN=group,CN=developers,DC=example,DC=com\n"
+"```"
+msgstr ""
+
+#: deploy/using_ldap.md:93
+msgid "The final search filter would be `(&(mail=*)(memberOf=CN=group,CN=developers,DC=example,DC=com))`"
+msgstr ""
+
+#: deploy/using_ldap.md:95
+msgid "Note that the case of attribute names in the above example is significant. The `memberOf` attribute is only available in Active Directory."
+msgstr ""
+
+#: deploy/using_ldap.md:97
+# header
+msgid "### Limiting Seafile Users to a Group in Active Directory"
+msgstr ""
+
+#: deploy/using_ldap.md:99
+msgid "You can use the FILTER option to limit user scope to a certain AD group."
+msgstr ""
+
+#: deploy/using_ldap.md:101
+# ordered list
+msgid "1. First, you should find out the DN for the group. Again, we'll use the `dsquery` command on the domain controller. For example, if group name is 'seafilegroup', run `dsquery group -name seafilegroup`."
+msgstr ""
+
+#: deploy/using_ldap.md:102
+# ordered list
+msgid "2. Add the following line to LDAP config:"
+msgstr ""
+
+#: deploy/using_ldap.md:104
+# code block
+msgid "```\n"
+"FILTER = memberOf={output of dsquery command}\n"
+"```"
+msgstr ""
+
+#: deploy/using_ldap.md:108
+# header
+msgid "### Using TLS connection to LDAP/AD server"
+msgstr ""
+
+#: deploy/using_ldap.md:110
+msgid "To use a TLS connection to the directory server, you should install a valid SSL certificate on the directory server."
+msgstr ""
+
+#: deploy/using_ldap.md:112
+msgid "The current version of Seafile Linux server package is compiled on CentOS. We include the ldap client library in the package to maintain compatibility with older Linux distributions. But since different Linux distributions have different path or configuration for OpenSSL library, sometimes Seafile is unable to connect to the directory server with TLS."
+msgstr ""
+
+#: deploy/using_ldap.md:114
+msgid "The ldap library (libldap) bundled in the Seafile package is of version 2.4. If your Linux distribution is new enough (like CentOS 6, Debian 7 or Ubuntu 12.04 or above), you can use system's libldap instead."
+msgstr ""
+
+#: deploy/using_ldap.md:116
+msgid "On Ubuntu 14.04 and Debian 7/8, moving the bundled ldap related libraries out of the library path should make TLS connection work."
+msgstr ""
+
+#: deploy/using_ldap.md:118
+# code block
+msgid "```\n"
+"cd ${SEAFILE_INSTALLATION_DIR}/seafile-server-latest/seafile/lib\n"
+"mkdir disabled_libs_use_local_ones_instead\n"
+"mv liblber-2.4.so.2 libldap-2.4.so.2 libsasl2.so.2 libldap_r-2.4.so.2 disabled_libs_use_local_ones_instead/\n"
+"```"
+msgstr ""
+
+#: deploy/using_ldap.md:124
+msgid "On CentOS 6, you have to move the libnssutil library:"
+msgstr ""
+
+#: deploy/using_ldap.md:126
+# code block
+msgid "```\n"
+"cd ${SEAFILE_INSTALLATION_DIR}/seafile-server-latest/seafile/lib\n"
+"mkdir disabled_libs_use_local_ones_instead\n"
+"mv libnssutil3.so disabled_libs_use_local_ones_instead/\n"
+"```"
+msgstr ""
+
+#: deploy/using_ldap.md:132
+msgid "This effectively removes the bundled libraries from the library search path. "
+msgstr ""
+
+#: deploy/using_ldap.md:133
+msgid "When the server starts, it'll instead find and use the system libraries (if they are installed). "
+msgstr ""
+
+#: deploy/using_ldap.md:134
+msgid "This change has to be repeated after each update of the Seafile installation."
+msgstr ""
+
+#: deploy/using_logrotate.md:1
+# header
+msgid "# Set up logrotate for server"
+msgstr ""
+
+#: deploy/using_logrotate.md:3
+# header
+msgid "## How it works"
+msgstr ""
+
+#: deploy/using_logrotate.md:5
+msgid "seaf-server and ccnet-server now (since version 3.1) support reopenning logfile by receiving SIGUR1 signal."
+msgstr ""
+
+#: deploy/using_logrotate.md:7
+msgid "This feature is very useful when you need cut logfile while you don't want to shutdown the server programs. All you need to do now is cutting the logfile on the fly."
+msgstr ""
+
+#: deploy/using_logrotate.md:9
+# blockquote, which can be cascaded
+msgid "> **NOTE**: signal is not supported by windows, so the feature is not available in windows"
+msgstr ""
+
+#: deploy/using_logrotate.md:11
+# header
+msgid "## Default logrotate configuration directory"
+msgstr ""
+
+#: deploy/using_logrotate.md:13
+msgid "For debian, the default directory for logrotate should be ``/etc/logrotate.d/``"
+msgstr ""
+
+#: deploy/using_logrotate.md:15
+# header
+msgid "## Sample configuration"
+msgstr ""
+
+#: deploy/using_logrotate.md:17
+msgid "Assuming your ccnet-server's logfile is `/home/haiwen/logs/ccnet.log`, and your ccnet-server's pidfile for ccnet-server is ``/home/haiwen/pids/ccnet.pid``."
+msgstr ""
+
+#: deploy/using_logrotate.md:19
+msgid "Assuming your seaf-server's logfile is setup to ``/home/haiwen/logs/seaf-server.log``, and your seaf-server's pidfile for seaf-server is setup to ``/home/haiwen/pids/seaf-server.pid``:"
+msgstr ""
+
+#: deploy/using_logrotate.md:21
+msgid "The configuration for logroate could be like this:"
+msgstr ""
+
+#: deploy/using_logrotate.md:22
+# code block
+msgid "```\n"
+"/home/haiwen/logs/seaf-server.log\n"
+"{\n"
+"        daily\n"
+"        missingok\n"
+"        rotate 52\n"
+"        compress\n"
+"        delaycompress\n"
+"        notifempty\n"
+"        sharedscripts\n"
+"        postrotate\n"
+"                [ ! -f /home/haiwen/pids/seaf-server.pid ] || kill -USR1 `cat /home/haiwen/pids/seaf-server.pid`\n"
+"        endscript\n"
+"}\n"
+"\n"
+"/home/haiwen/logs/ccnet.log\n"
+"{\n"
+"        daily\n"
+"        missingok\n"
+"        rotate 52\n"
+"        compress\n"
+"        delaycompress\n"
+"        notifempty\n"
+"        sharedscripts\n"
+"        postrotate\n"
+"                [ ! -f /home/haiwen/pids/ccnet.pid ] || kill -USR1 `cat /home/haiwen/pids/ccnet.pid`\n"
+"        endscript\n"
+"}\n"
+"```"
+msgstr ""
+
+#: deploy/using_logrotate.md:52
+msgid "You can save this file, for example in debian, to ``/etc/logrotate.d/seafile``"
+msgstr ""
+
+#: deploy/using_logrotate.md:54
+# header
+msgid "## That's it"
+msgstr ""
+
+#: deploy/using_logrotate.md:56
+msgid "You now gets all the things done, just sit and enjoy your time :-D"
+msgstr ""
+
+#: deploy/using_mysql.md:1
+# header
+msgid "# Deploying Seafile with MySQL"
+msgstr ""
+
+#: deploy/using_mysql.md:3
+msgid "This manual explains how to setup and run seafile server from a pre-built package with MySQL."
+msgstr ""
+
+#: deploy/using_mysql.md:7
+msgid "[Download](http://www.seafile.com/en/download) the latest server package."
+msgstr ""
+
+#: deploy/using_mysql.md:12
+msgid "Supposed your organization's name is \"haiwen\", and you've downloaded `seafile-server_1.8.2_*` into your home directory. We suggest you to layout your deployment as follows :"
+msgstr ""
+
+#: deploy/using_mysql.md:25
+# inline html
+msgid "<pre>\n"
+"#tree haiwen -L 2\n"
+"haiwen\n"
+"├── installed\n"
+"│   └── seafile-server_1.8.2_x86-64.tar.gz\n"
+"└── seafile-server-1.8.2\n"
+"    ├── reset-admin.sh\n"
+"    ├── runtime\n"
+"    ├── seafile\n"
+"    ├── seafile.sh\n"
+"    ├── seahub\n"
+"    ├── seahub.sh\n"
+"    ├── setup-seafile.sh\n"
+"    └── upgrade\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_mysql.md:41
+msgid "The benefit of this layout is that:"
+msgstr ""
+
+#: deploy/using_mysql.md:44
+# unordered list
+msgid "* When you upgrade to a new version of Seafile, you can simply untar the latest package into \"haiwen\" directory. In this way you can reuse the existing config files in \"haiwen\" directory and don't need to configure again."
+msgstr ""
+
+#: deploy/using_mysql.md:46
+# header
+msgid "## Prepare MySQL Databases"
+msgstr ""
+
+#: deploy/using_mysql.md:48
+msgid "Three components of Seafile Server need their own databases:"
+msgstr ""
+
+#: deploy/using_mysql.md:50
+# unordered list
+msgid "* ccnet server"
+msgstr ""
+
+#: deploy/using_mysql.md:51
+# unordered list
+msgid "* seafile server"
+msgstr ""
+
+#: deploy/using_mysql.md:52
+# unordered list
+msgid "* seahub"
+msgstr ""
+
+#: deploy/using_mysql.md:54
+msgid "See [Seafile Server Components Overview](components.md) if you want to know more about the seafile server components."
+msgstr ""
+
+#: deploy/using_mysql.md:56
+msgid "There are two ways to intialize the databases:"
+msgstr ""
+
+#: deploy/using_mysql.md:58
+# unordered list
+msgid "- let the <code>setup-seafile-mysql.sh</code> script create the databases for you."
+msgstr ""
+
+#: deploy/using_mysql.md:59
+# unordered list
+msgid "- create the databases by yourself, or someone else (the database admin, for example)"
+msgstr ""
+
+#: deploy/using_mysql.md:61
+msgid "We recommend the first way. The script would ask you for the root password of the mysql server, and it will create:"
+msgstr ""
+
+#: deploy/using_mysql.md:63
+# unordered list
+msgid "* database for ccnet/seafile/seahub."
+msgstr ""
+
+#: deploy/using_mysql.md:64
+# unordered list
+msgid "* a new user to access these databases"
+msgstr ""
+
+#: deploy/using_mysql.md:66
+msgid "However, sometimes you have to use the second way. If you don't have the root password, you need someone who has the privileges, e.g., the database admin, to create the three databases, as well as a mysql user who can access the three databases for you. For example, to create three databases: `ccnet-db` / `seafile-db` / `seahub-db` for ccnet/seafile/seahub respectively, and a mysql user \"seafile\" to access these databases:"
+msgstr ""
+
+#: deploy/using_mysql.md:68
+# inline html
+msgid "<pre>\n"
+"create database `ccnet-db` character set = 'utf8';\n"
+"create database `seafile-db` character set = 'utf8';\n"
+"create database `seahub-db` character set = 'utf8';\n"
+"\n"
+"create user 'seafile'@'localhost' identified by 'seafile';\n"
+"\n"
+"GRANT ALL PRIVILEGES ON `ccnet-db`.* to `seafile`@localhost;\n"
+"GRANT ALL PRIVILEGES ON `seafile-db`.* to `seafile`@localhost;\n"
+"GRANT ALL PRIVILEGES ON `seahub-db`.* to `seafile`@localhost;\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_mysql.md:82
+# header
+msgid "### Prerequisites"
+msgstr ""
+
+#: deploy/using_mysql.md:86
+# unordered list
+msgid "* python 2.7"
+msgstr ""
+
+#: deploy/using_mysql.md:89
+# unordered list
+msgid "* python-ldap"
+msgstr ""
+
+#: deploy/using_mysql.md:90
+# unordered list
+msgid "* python-mysqldb"
+msgstr ""
+
+#: deploy/using_mysql.md:91
+# unordered list
+msgid "* python-memcache (or python-memcached)"
+msgstr ""
+
+#: deploy/using_mysql.md:93
+# inline html
+msgid "<pre>\n"
+"# on Debian/Ubuntu\n"
+"apt-get update\n"
+"apt-get install python2.7 libpython2.7 python-setuptools python-imaging \\\n"
+"  python-ldap python-mysqldb python-memcache\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_mysql.md:100
+# inline html
+msgid "<pre>\n"
+"# on CentOS 7\n"
+"sudo yum install python-imaging MySQL-python python-memcached python-ldap\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_mysql.md:105
+# header
+msgid "### Setup"
+msgstr ""
+
+#: deploy/using_mysql.md:107
+# inline html
+msgid "<pre>\n"
+"cd seafile-server-*\n"
+"./setup-seafile-mysql.sh  #run the setup script & answer prompted questions\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_mysql.md:116
+msgid "** Seafile configuration options **"
+msgstr ""
+
+#: deploy/using_mysql.md:118
+#: deploy/using_sqlite.md:92
+msgid "| Option | Description | Note |"
+msgstr ""
+
+#: deploy/using_mysql.md:119
+#: deploy/using_mysql.md:148
+#: deploy/using_mysql.md:165
+#: deploy/using_sqlite.md:93
+msgid "| -- | -- | ---- |"
+msgstr ""
+
+#: deploy/using_mysql.md:120
+msgid "| server name | Name of this seafile server | 3-15 characters, only English letters, digits and underscore ('_') are allowed |"
+msgstr ""
+
+#: deploy/using_mysql.md:121
+msgid "| server ip or domain | The IP address or domain name used by this server | Seafile client program will access the server with this address |"
+msgstr ""
+
+#: deploy/using_mysql.md:122
+msgid "| seafile data dir | Seafile stores your data in this directory. By default it'll be placed in the current directory.  | The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space.  |"
+msgstr ""
+
+#: deploy/using_mysql.md:123
+msgid "| fileserver port | The TCP port used by Seafile fileserver | Default is 8082. If it's been used by other service, you can set it to another port.  |"
+msgstr ""
+
+#: deploy/using_mysql.md:126
+msgid "At this moment, you will be asked to choose a way to initialize seafile databases:"
+msgstr ""
+
+#: deploy/using_mysql.md:128
+# code block
+msgid "```sh\n"
+"-------------------------------------------------------\n"
+"Please choose a way to initialize seafile databases:\n"
+"-------------------------------------------------------\n"
+"\n"
+"[1] Create new ccnet/seafile/seahub databases\n"
+"[2] Use existing ccnet/seafile/seahub databases\n"
+"\n"
+"```"
+msgstr ""
+
+#: deploy/using_mysql.md:139
+msgid "Which one to choose depends on if you have the root password."
+msgstr ""
+
+#: deploy/using_mysql.md:141
+# unordered list
+msgid "* If you choose \"1\", you need to provide the root password. The script would create the databases and a new user to access the databases"
+msgstr ""
+
+#: deploy/using_mysql.md:142
+# unordered list
+msgid "* If you choose \"2\", the ccnet/seafile/seahub databases must have already been created, either by you, or someone else."
+msgstr ""
+
+#: deploy/using_mysql.md:144
+msgid "If you choose \"[1] Create new ccnet/seafile/seahub databases\", you would be asked these questions:"
+msgstr ""
+
+#: deploy/using_mysql.md:147
+#: deploy/using_mysql.md:164
+msgid "| Question | Description | Note"
+msgstr ""
+
+#: deploy/using_mysql.md:149
+#: deploy/using_mysql.md:166
+msgid "| mysql server host | the host address of the mysql server | the default is localhost |"
+msgstr ""
+
+#: deploy/using_mysql.md:150
+msgid "| mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port.  |"
+msgstr ""
+
+#: deploy/using_mysql.md:151
+msgid "| root password | the password of mysql root account | the root password is required to create new databases and a new user |"
+msgstr ""
+
+#: deploy/using_mysql.md:152
+msgid "| mysql user for seafile | the username for seafile programs to use to access MySQL server | if the user does not exist, it would be created |"
+msgstr ""
+
+#: deploy/using_mysql.md:153
+#: deploy/using_mysql.md:169
+msgid "| password for seafile mysql user | the password for the user above | |"
+msgstr ""
+
+#: deploy/using_mysql.md:154
+msgid "| ccnet dabase name | the name of the database used by ccnet, default is \"ccnet-db\" | the database would be created if not existing |"
+msgstr ""
+
+#: deploy/using_mysql.md:155
+msgid "| seafile dabase name | the name of the database used by seafile, default is \"seafile-db\" | the database would be created if not existing |"
+msgstr ""
+
+#: deploy/using_mysql.md:156
+msgid "| seahub dabase name | the name of the database used by seahub, default is \"seahub-db\" | the database would be created if not existing |"
+msgstr ""
+
+#: deploy/using_mysql.md:159
+msgid "If you choose \"[2] Use existing ccnet/seafile/seahub databases\", you would be asked these questions:"
+msgstr ""
+
+#: deploy/using_mysql.md:162
+msgid "** related questions for \"Use existing ccnet/seafile/seahub databases\" **"
+msgstr ""
+
+#: deploy/using_mysql.md:167
+msgid "| mysql server port | the port of the mysql server | the default is 3306. Almost every mysql server uses this port |"
+msgstr ""
+
+#: deploy/using_mysql.md:168
+msgid "| mysql user for seafile | the user for seafile programs to use to access MySQL server | the user must already exists |"
+msgstr ""
+
+#: deploy/using_mysql.md:170
+msgid "| ccnet dabase name | the name of the database used by ccnet | this database must already exist |"
+msgstr ""
+
+#: deploy/using_mysql.md:171
+msgid "| seafile dabase name | the name of the database used by seafile, default is \"seafile-db\" | this database must already exist |"
+msgstr ""
+
+#: deploy/using_mysql.md:172
+msgid "| seahub dabase name | the name of the database used by seahub, default is \"seahub-db\" | this database must already exist |"
+msgstr ""
+
+#: deploy/using_mysql.md:177
+msgid "![server-setup-succesfully](../images/Server-setup-successfully.png)"
+msgstr ""
+
+#: deploy/using_mysql.md:180
+# code block
+msgid "```sh\n"
+"#tree haiwen -L 2\n"
+"haiwen\n"
+"├── ccnet               # configuration files\n"
+"│   ├── mykey.peer\n"
+"│   ├── PeerMgr\n"
+"│   └── seafile.ini\n"
+"├── conf\n"
+"│   └── ccnet.conf\n"
+"│   └── seafile.conf\n"
+"│   └── seahub_settings.py\n"
+"├── installed\n"
+"│   └── seafile-server_1.8.2_x86-64.tar.gz\n"
+"├── seafile-data\n"
+"├── seafile-server-1.8.2  # active version\n"
+"│   ├── reset-admin.sh\n"
+"│   ├── runtime\n"
+"│   ├── seafile\n"
+"│   ├── seafile.sh\n"
+"│   ├── seahub\n"
+"│   ├── seahub.sh\n"
+"│   ├── setup-seafile.sh\n"
+"│   └── upgrade\n"
+"├── seafile-server-latest  # symbolic link to seafile-server-1.8.2\n"
+"├── seahub-data\n"
+"│   └── avatars\n"
+"```"
+msgstr ""
+
+#: deploy/using_mysql.md:213
+# header
+msgid "### Starting Seafile Server and Seahub Website"
+msgstr ""
+
+#: deploy/using_mysql.md:215
+msgid "Under seafile-server-1.8.2 directory, run the following commands"
+msgstr ""
+
+#: deploy/using_mysql.md:218
+# code block
+msgid "```\n"
+"./seafile.sh start # Start seafile service\n"
+"./seahub.sh start <port>  # Start seahub website, port defaults to 8000\n"
+"```"
+msgstr ""
+
+#: deploy/using_mysql.md:223
+msgid "Note: The first time you start seahub, the script would prompt you to create an admin account for your seafile server."
+msgstr ""
+
+#: deploy/using_mysql.md:225
+msgid "After starting the services, you may open a web browser and visit Seafile web interface at (assume your server IP is 192.168.1.111):"
+msgstr ""
+
+#: deploy/using_mysql.md:227
+# code block
+msgid "```\n"
+"http://192.168.1.111:8000/\n"
+"```"
+msgstr ""
+
+#: deploy/using_mysql.md:232
+msgid "Congratulations! Now you have successfully setup your private Seafile server."
+msgstr ""
+
+#: deploy/using_mysql.md:235
+# header
+msgid "### Run Seahub on another port"
+msgstr ""
+
+#: deploy/using_mysql.md:245
+# unordered list
+msgid "* modify the value of `SERVICE_URL` in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is `192.168.1.111`)"
+msgstr ""
+
+#: deploy/using_mysql.md:246
+# inline html
+msgid "<pre>\n"
+"SERVICE_URL = http://192.168.1.111:8001\n"
+"</pre>"
+msgstr ""
+
+#: deploy/using_mysql.md:256
+msgid "see [Seafile server configuration options](server_configuration.md) for more details about <code>ccnet.conf</code>."
+msgstr ""
+
+#: deploy/using_mysql.md:278
+# unordered list
+msgid "* Use `pgrep` command to check if seafile/seahub processes are still running"
+msgstr ""
+
+#: deploy/using_mysql.md:285
+# unordered list
+msgid "* Use `pkill` to kill the processes"
+msgstr ""
+
+#: deploy/using_mysql.md:292
+# header
+msgid "## Performance turning"
+msgstr ""
+
+#: deploy/using_mysql.md:294
+msgid "If you have more than 50 users in your Seafile system, we highly recommand you to [add memcached](../deploy/add_memcached.md). This will make the web 10x faster.  "
+msgstr ""
+
+#: deploy/using_mysql.md:301
+# unordered list
+msgid "* [Deploy Seafile with Nginx](deploy_with_nginx.md) / [Deploy Seafile with Apache](deploy_with_apache.md)"
+msgstr ""
+
+#: deploy/using_mysql.md:302
+# unordered list
+msgid "* [Enable Https on Seafile Web with Nginx](https_with_nginx.md) / [Enable Https on Seafile Web with Apache](https_with_apache.md)"
+msgstr ""
+
+#: deploy/using_mysql.md:304
+# unordered list
+msgid "* [How to manage the server](../maintain/README.md)"
+msgstr ""
+
+#: deploy/using_postgresql.md:2
+# header
+msgid "## Using PostgreSQL"
+msgstr ""
+
+#: deploy/using_postgresql.md:4
+msgid "**Note**: Postgres support is still in Beta status and may have some minor bugs. Please use MySQL in production environment."
+msgstr ""
+
+#: deploy/using_postgresql.md:6
+# header
+msgid "## Deploy Seafile with PostgreSQL"
+msgstr ""
+
+#: deploy/using_postgresql.md:8
+# header
+msgid "## Preparation"
+msgstr ""
+
+#: deploy/using_postgresql.md:10
+# ordered list
+msgid "1. [[Download and setup seafile server]], then start seafile and seahub and make sure everything is OK."
+msgstr ""
+
+#: deploy/using_postgresql.md:12
+# ordered list
+msgid "2. Setup PostgreSQL."
+msgstr ""
+
+#: deploy/using_postgresql.md:14
+msgid "        sudo apt-get install postgresql"
+msgstr ""
+
+#: deploy/using_postgresql.md:16
+# ordered list
+msgid "3. Create seafile postgres user and required databases. (Obviously you should use a more secure password than seafile)"
+msgstr ""
+
+#: deploy/using_postgresql.md:18
+msgid "        sudo -u postgres psql -U postgres -d postgres -c \"CREATE USER seafile WITH PASSWORD 'seafile' CREATEDB;\""
+msgstr ""
+
+#: deploy/using_postgresql.md:19
+msgid "        createdb ccnet_db -U seafile -W -h localhost"
+msgstr ""
+
+#: deploy/using_postgresql.md:20
+msgid "        createdb seafile_db -U seafile -W -h localhost"
+msgstr ""
+
+#: deploy/using_postgresql.md:21
+msgid "        createdb seahub_db -U seafile -W -h localhost"
+msgstr ""
+
+#: deploy/using_postgresql.md:23
+# ordered list
+msgid "3. Create 3 databases named `ccnet_db`, `seafile_db`, `seahub_db`. e.g., ``create database ccnet_db encoding 'utf8';``"
+msgstr ""
+
+#: deploy/using_postgresql.md:25
+# header
+msgid "## Steps"
+msgstr ""
+
+#: deploy/using_postgresql.md:27
+# ordered list
+msgid "1. Shutdown services by `./seahub.sh stop` and `./seafile.sh stop`. Then, append the following PostgreSQL configurations to 3 config files (you may need to change to fit your configuration)."
+msgstr ""
+
+#: deploy/using_postgresql.md:29
+msgid "    Append following lines to [ccnet.conf](../config/ccnet-conf.md):"
+msgstr ""
+
+#: deploy/using_postgresql.md:32
+msgid "        ENGINE=pgsql"
+msgstr ""
+
+#: deploy/using_postgresql.md:33
+msgid "        HOST=localhost"
+msgstr ""
+
+#: deploy/using_postgresql.md:34
+msgid "        USER=seafile"
+msgstr ""
+
+#: deploy/using_postgresql.md:35
+msgid "        PASSWD=seafile"
+msgstr ""
+
+#: deploy/using_postgresql.md:36
+msgid "        DB=ccnet_db"
+msgstr ""
+
+#: deploy/using_postgresql.md:38
+msgid "    Replace the database section in [seafile.conf](../config/seafile-conf.md) with following lines:"
+msgstr ""
+
+#: deploy/using_postgresql.md:41
+msgid "        type=pgsql"
+msgstr ""
+
+#: deploy/using_postgresql.md:42
+msgid "        host=localhost"
+msgstr ""
+
+#: deploy/using_postgresql.md:43
+msgid "        user=seafile"
+msgstr ""
+
+#: deploy/using_postgresql.md:44
+msgid "        password=seafile"
+msgstr ""
+
+#: deploy/using_postgresql.md:45
+msgid "        db_name=seafile_db"
+msgstr ""
+
+#: deploy/using_postgresql.md:51
+msgid "                'ENGINE': 'django.db.backends.postgresql_psycopg2',"
+msgstr ""
+
+#: deploy/using_postgresql.md:52
+msgid "                'NAME' : 'seahub_db',"
+msgstr ""
+
+#: deploy/using_postgresql.md:53
+msgid "                'USER' : 'seafile',"
+msgstr ""
+
+#: deploy/using_postgresql.md:54
+msgid "                'PASSWORD' : 'seafile',"
+msgstr ""
+
+#: deploy/using_postgresql.md:55
+msgid "                'HOST' : 'localhost',"
+msgstr ""
+
+#: deploy/using_postgresql.md:59
+# ordered list
+msgid "2. Start seafile by `./seafile.sh start`. There will be several tables created in `ccnet_db` and `seafile_db` if your configuration is correct."
+msgstr ""
+
+#: deploy/using_postgresql.md:61
+# ordered list
+msgid "3. Install python-psycopg2 (package name on ubuntu):"
+msgstr ""
+
+#: deploy/using_postgresql.md:63
+msgid "        [sudo] apt-get build-dep python-psycopg2"
+msgstr ""
+
+#: deploy/using_postgresql.md:65
+msgid "        [sudo] pip install psycopg2"
+msgstr ""
+
+#: deploy/using_postgresql.md:67
+# ordered list
+msgid "4. Start seahub as follows (assume current path is `/data/haiwen/seafile-server-1.7.0`:"
+msgstr ""
+
+#: deploy/using_postgresql.md:69
+msgid "        export CCNET_CONF_DIR=/data/haiwen/ccnet"
+msgstr ""
+
+#: deploy/using_postgresql.md:70
+msgid "        export SEAFILE_CONF_DIR=/data/haiwen/seafile-data"
+msgstr ""
+
+#: deploy/using_postgresql.md:71
+msgid "        INSTALLPATH=/data/haiwen/seafile-server-1.7.0"
+msgstr ""
+
+#: deploy/using_postgresql.md:72
+msgid "        export PYTHONPATH=${INSTALLPATH}/seafile/lib/python2.6/site-packages:${INSTALLPATH}/seafile/lib64/python2.6/site-packages:${INSTALLPATH}/seahub/thirdpart:$PYTHONPATH"
+msgstr ""
+
+#: deploy/using_postgresql.md:73
+msgid "        cd seahub"
+msgstr ""
+
+#: deploy/using_postgresql.md:74
+msgid "        python manage.py syncdb"
+msgstr ""
+
+#: deploy/using_postgresql.md:76
+msgid "    There will be several tables created in `seahub_db`. Then start seahub by `./seahub.sh start`."
+msgstr ""
+
+#: deploy/using_postgresql.md:78
+# header
+msgid "## Create Seahub Admin"
+msgstr ""
+
+#: deploy/using_postgresql.md:80
+msgid "Assume current path is `/data/haiwen/seafile-server-1.7.0`, and you have exported all the variables above,"
+msgstr ""
+
+#: deploy/using_postgresql.md:82
+msgid "    cd seahub"
+msgstr ""
+
+#: deploy/using_postgresql.md:83
+msgid "    python manage.py createsuperuser"
+msgstr ""
+
+#: deploy/using_postgresql.md:85
+msgid "This command tool will guide you to create a seahub admin."
+msgstr ""
+
+#: deploy/using_sqlite.md:1
+# header
+msgid "# Deploying Seafile with SQLite"
+msgstr ""
+
+#: deploy/using_sqlite.md:3
+# header
+msgid "## Download binary package"
+msgstr ""
+
+#: deploy/using_sqlite.md:5
+msgid "Visit our [download page](http://www.seafile.com/en/download/#server),  download the latest server package."
+msgstr ""
+
+#: deploy/using_sqlite.md:7
+msgid "Choose one of:"
+msgstr ""
+
+#: deploy/using_sqlite.md:10
+# unordered list
+msgid "- Server for Raspberry Pi"
+msgstr ""
+
+#: deploy/using_sqlite.md:12
+# code block
+msgid "```\n"
+"#check if your system is x86 (32bit) or x86_64 (64 bit)\n"
+"uname -m\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:16
+msgid "Click the tarball link and save it."
+msgstr ""
+
+#: deploy/using_sqlite.md:21
+msgid "NOTE: If you place the Seafile data directory in external storage, such as NFS, CIFS mount, you should not use SQLite as the database, but use MySQL instead."
+msgstr ""
+
+#: deploy/using_sqlite.md:23
+msgid "Supposed your organization's name is \"haiwen\", and you've downloaded seafile-server_1.4.0_* into your home directory. We suggest you to use the following layout for your deployment:"
+msgstr ""
+
+#: deploy/using_sqlite.md:24
+# code block
+msgid "```sh\n"
+"mkdir haiwen\n"
+"mv seafile-server_* haiwen\n"
+"cd haiwen\n"
+"# after moving seafile-server_* to this directory\n"
+"tar -xzf seafile-server_*\n"
+"mkdir installed\n"
+"mv seafile-server_* installed\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:35
+# code block
+msgid "```sh\n"
+"# tree . -L 2\n"
+".\n"
+"├── installed\n"
+"│   └── seafile-server_1.4.0_x86-64.tar.gz\n"
+"└── seafile-server-1.4.0\n"
+"    ├── reset-admin.sh\n"
+"    ├── runtime\n"
+"    ├── seafile\n"
+"    ├── seafile.sh\n"
+"    ├── seahub\n"
+"    ├── seahub.sh\n"
+"    ├── setup-seafile.sh\n"
+"    └── upgrade\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:51
+msgid "Benefits of this layout are"
+msgstr ""
+
+#: deploy/using_sqlite.md:53
+# unordered list
+msgid " - We can place all the config files for Seafile server inside \"haiwen\" directory, making it easier to manage."
+msgstr ""
+
+#: deploy/using_sqlite.md:54
+# unordered list
+msgid " - When you upgrade to a new version of Seafile, you can simply untar the latest package into \"haiwen\" directory. In this way you can reuse the existing config files in \"haiwen\" directory and don't need to configure again."
+msgstr ""
+
+#: deploy/using_sqlite.md:62
+# unordered list
+msgid "- python 2.7"
+msgstr ""
+
+#: deploy/using_sqlite.md:63
+# unordered list
+msgid "- python-setuptools"
+msgstr ""
+
+#: deploy/using_sqlite.md:64
+# unordered list
+msgid "- python-imaging"
+msgstr ""
+
+#: deploy/using_sqlite.md:65
+# unordered list
+msgid "- python-ldap"
+msgstr ""
+
+#: deploy/using_sqlite.md:66
+# unordered list
+msgid "- sqlite3"
+msgstr ""
+
+#: deploy/using_sqlite.md:68
+# code block
+msgid "```\n"
+"#on Debian\n"
+"apt-get update\n"
+"apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap sqlite3\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:74
+# code block
+msgid "```\n"
+"# on CentOS 7\n"
+"sudo yum install python-imaging MySQL-python python-memcached python-ldap\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:81
+# code block
+msgid "```sh\n"
+"cd seafile-server-*\n"
+"./setup-seafile.sh  #run the setup script & answer prompted questions\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:86
+msgid "If some of the prerequisites are not installed, the Seafile initialization script will ask you to install them."
+msgstr ""
+
+#: deploy/using_sqlite.md:90
+msgid "**Seafile configuration options**"
+msgstr ""
+
+#: deploy/using_sqlite.md:94
+msgid "| server name | Name of this Seafile server | 3-15 characters, only English letters, digits and underscore ('_') are allowed |"
+msgstr ""
+
+#: deploy/using_sqlite.md:95
+msgid "| server ip or domain  | The IP address or domain name used by this server  | Seafile client program will access the server with this address |"
+msgstr ""
+
+#: deploy/using_sqlite.md:96
+msgid "| Seafile data dir  | Seafile stores your data in this directory. By default it'll be placed in the current directory.  | The size of this directory will increase as you put more and more data into Seafile. Please select a disk partition with enough free space. |"
+msgstr ""
+
+#: deploy/using_sqlite.md:97
+msgid "| fileserver port | The TCP port used by Seafile fileserver  | Default is 8082. If it's been used by other service, you can set it to another port. |"
+msgstr ""
+
+#: deploy/using_sqlite.md:100
+msgid "Now you should have the following directory layout:"
+msgstr ""
+
+#: deploy/using_sqlite.md:102
+# code block
+msgid "```sh\n"
+"#tree haiwen -L 2\n"
+"haiwen\n"
+"├── ccnet               # configuration files\n"
+"│   ├── mykey.peer\n"
+"│   ├── PeerMgr\n"
+"│   └── seafile.ini\n"
+"├── conf\n"
+"│   └── ccnet.conf\n"
+"│   └── seafile.conf\n"
+"│   └── seahub_settings.py\n"
+"├── installed\n"
+"│   └── seafile-server_1.4.0_x86-64.tar.gz\n"
+"├── seafile-data\n"
+"├── seafile-server-1.4.0  # active version\n"
+"│   ├── reset-admin.sh\n"
+"│   ├── runtime\n"
+"│   ├── seafile\n"
+"│   ├── seafile.sh\n"
+"│   ├── seahub\n"
+"│   ├── seahub.sh\n"
+"│   ├── setup-seafile.sh\n"
+"│   └── upgrade\n"
+"├── seafile-server-latest  # symbolic link to seafile-server-1.4.0\n"
+"├── seahub-data\n"
+"│   └── avatars\n"
+"├── seahub.db\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:131
+msgid "The folder seafile-server-latest is a symbolic link to the current Seafile server folder. When later you upgrade to a new version, the upgrade scripts would update this link to keep it always point to the latest Seafile server folder."
+msgstr ""
+
+#: deploy/using_sqlite.md:137
+msgid "Since Seafile uses persistent connections between client and server, you should increase Linux file descriptors by ulimit if you have a large number of clients before start Seafile, like:"
+msgstr ""
+
+#: deploy/using_sqlite.md:139
+msgid "``ulimit -n 30000``"
+msgstr ""
+
+#: deploy/using_sqlite.md:143
+# unordered list
+msgid "- Start Seafile:"
+msgstr ""
+
+#: deploy/using_sqlite.md:144
+# code block
+msgid "```\n"
+"./seafile.sh start # Start Seafile service\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:148
+# unordered list
+msgid "- Start Seahub:"
+msgstr ""
+
+#: deploy/using_sqlite.md:149
+# code block
+msgid "```\n"
+"./seahub.sh start <port>  # Start Seahub website, port defaults to 8000\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:153
+msgid "**Note**: The first time you start Seahub, the script is going to prompt you to create an admin account for your Seafile server."
+msgstr ""
+
+#: deploy/using_sqlite.md:155
+msgid "After starting the services, you may open a web browser and type in"
+msgstr ""
+
+#: deploy/using_sqlite.md:157
+msgid "``http://192.168.1.111:8000``"
+msgstr ""
+
+#: deploy/using_sqlite.md:159
+msgid "you will be redirected to the Login page. Just enter the admin username and password."
+msgstr ""
+
+#: deploy/using_sqlite.md:161
+msgid "**Congratulations!** Now you have successfully setup your private Seafile server."
+msgstr ""
+
+#: deploy/using_sqlite.md:165
+msgid "If you want to run Seahub on a port other than the default 8000, say 8001, you must:"
+msgstr ""
+
+#: deploy/using_sqlite.md:167
+# unordered list
+msgid "- stop the Seafile server"
+msgstr ""
+
+#: deploy/using_sqlite.md:168
+# code block
+msgid "```\n"
+"./seahub.sh stop\n"
+"./seafile.sh stop\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:173
+# unordered list
+msgid "- modify the value of SERVICE_URL in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is 192.168.1.100). For Seafile version 5.0+, you can modify SERVICE_URL via web UI in \"System Admin->Settings\""
+msgstr ""
+
+#: deploy/using_sqlite.md:174
+# code block
+msgid "```\n"
+"SERVICE_URL = http://192.168.1.100:8001\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:178
+# unordered list
+msgid "- restart Seafile server"
+msgstr ""
+
+#: deploy/using_sqlite.md:179
+# code block
+msgid "```\n"
+"./seafile.sh start\n"
+"./seahub.sh start 8001\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:184
+msgid "See Seafile [Server Configuration Manual](deploy/server_configuration.md) for more details about ``ccnet.conf``."
+msgstr ""
+
+#: deploy/using_sqlite.md:186
+# header
+msgid "## Manage Seafile and Seahub"
+msgstr ""
+
+#: deploy/using_sqlite.md:188
+# code block
+msgid "```\n"
+"./seahub.sh stop # stop seahub website\n"
+"./seafile.sh stop # stop seafile processes\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:193
+# code block
+msgid "```\n"
+"./seafile.sh restart\n"
+"./seahub.sh restart\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:199
+msgid "Most of the time, `seafile.sh` and `seahub.sh` work fine. But if they fail, you might want to"
+msgstr ""
+
+#: deploy/using_sqlite.md:201
+# unordered list
+msgid "- Use pgrep command to check if Seafile/Seahub processes are still running"
+msgstr ""
+
+#: deploy/using_sqlite.md:202
+# code block
+msgid "```\n"
+"pgrep -f seafile-controller # check Seafile processes\n"
+"pgrep -f \"manage.py run_gunicorn\" # check Seahub process\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:207
+# unordered list
+msgid "- Use pkill to kill the processes"
+msgstr ""
+
+#: deploy/using_sqlite.md:208
+# code block
+msgid "```\n"
+"pkill -f seafile-controller\n"
+"pkill -f \"manage.py run_gunicorn\"\n"
+"```"
+msgstr ""
+
+#: deploy/using_sqlite.md:214
+msgid "For a production server we highly recommend to setup with Nginx/Apache and enable SSL/TLS."
+msgstr ""
+
+#: deploy/using_sqlite.md:216
+msgid "That's it! Now you might want read more about Seafile."
+msgstr ""
+
+#: deploy/using_sqlite.md:217
+# unordered list
+msgid "- [Administration](../maintain/README.md)"
+msgstr ""
+

@@ -4,8 +4,7 @@
 
 #### When downloading a library, the client hangs at "connecting server"
 
-First, you can check the Seafile client log (`~/.ccnet/logs/seafile.log` for
-Linux, `C:/users/your_name/ccnet/logs/seafile.log` for Windows) to see what's wrong.
+First, you can check the Seafile client log (`~/.ccnet/logs/seafile.log` for Linux, `C:/users/your_name/ccnet/logs/seafile.log` for Windows) to see what's wrong.
 
 Possible reasons:
 

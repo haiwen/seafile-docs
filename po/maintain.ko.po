@@ -1,0 +1,1563 @@
+# Korean translation for the seafile-docs package.
+# This file is distributed under the same license as the seafile-docs package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
+"PO-Revision-Date: 2016-05-05 03:54+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <darkcircle.0426@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+
+# header
+#: maintain/README.md:1
+msgid "# Administration"
+msgstr "# 관리"
+
+# header
+#: maintain/README.md:3
+msgid "### Enter the admin panel"
+msgstr "### 관리자 창 들어가기"
+
+#: maintain/README.md:5
+msgid ""
+"As the system admin, you can enter the admin panel by click the `tools` "
+"button at the top-right, beside the avatar:"
+msgstr ""
+"시스템 관리자는 우측 상단의 아바타 옆에 있는 `도구` 단추를 눌러 관리자 창에 "
+"들어갈 수 있습니다:"
+
+#: maintain/README.md:7
+msgid "![Admin tools](../images/tools-button.png)"
+msgstr "![관리자 도구](../images/tools-button.png)"
+
+#: maintain/README.md:9
+msgid "After clicking the button, you will get into the admin panel:"
+msgstr "단추를 누르면 관리자 창이 나타납니다:"
+
+#: maintain/README.md:11
+msgid "![System admin panel](../images/system-admin.png)"
+msgstr "![시스템 관리자 창](../images/system-admin.png)"
+
+# header
+#: maintain/README.md:13
+msgid "### Account management"
+msgstr "### 계정 관리"
+
+# unordered list
+#: maintain/README.md:15
+msgid "* [Account management](account.md)"
+msgstr "* [계정 관리](account.md)"
+
+# header
+#: maintain/README.md:17
+msgid "### Logs"
+msgstr "### 기록"
+
+# unordered list
+#: maintain/README.md:19
+msgid "* [The location of log files](logs.md)"
+msgstr "* [로그 파일 위치](logs.md)"
+
+# header
+#: maintain/README.md:21
+msgid "### Backup and Recovery"
+msgstr "### 백업 및 복구"
+
+#: maintain/README.md:23
+msgid "Backup and recovery:"
+msgstr "백업 및 복구:"
+
+# unordered list
+#: maintain/README.md:25
+msgid "* [Backup and recovery](backup_recovery.md)"
+msgstr "* [백업 및 복구](backup_recovery.md)"
+
+#: maintain/README.md:27
+msgid "Recover corrupt files after server hard shutdown or system crash:"
+msgstr ""
+"서버를 갑자기 끄거나 시스템이 갑작스럽게 멈추었을 때 깨진 파일을 복구합니다:"
+
+# unordered list
+#: maintain/README.md:29
+msgid "* [Seafile FSCK](seafile_fsck.md)"
+msgstr "* [Seafile FSCK](seafile_fsck.md)"
+
+#: maintain/README.md:31
+msgid "You can run Seafile GC to remove unused files:"
+msgstr "Seafile GC를 실행하여 불필요한 파일을 제거할 수 있습니다:"
+
+# unordered list
+#: maintain/README.md:33
+msgid "* [Seafile GC](seafile_gc.md)"
+msgstr "* [Seafile GC](seafile_gc.md)"
+
+# header
+#: maintain/README.md:35
+msgid "### Clean database"
+msgstr "### 데이터베이스 정리"
+
+# unordered list
+#: maintain/README.md:37
+msgid "* [Clean database](clean_database.md)"
+msgstr "* [데이터베이스 정리](clean_database.md)"
+
+# header
+#: maintain/account.md:1
+msgid "# Account Management"
+msgstr "# 계정 관리"
+
+# header
+#: maintain/account.md:3
+msgid "#### User Management"
+msgstr "#### 사용자 관리"
+
+#: maintain/account.md:5
+msgid ""
+"When you setup seahub website, you should have setup a admin account. After "
+"you logged in a admin, you may add/delete users and file libraries."
+msgstr ""
+"Seahub 웹 사이트를 설정할 때 admin 계정을 설정해야합니다. admin 계정으로 로그"
+"인하면, 사용자 및 라이브러리를 추가/제거할 수 있습니다."
+
+# header
+#: maintain/account.md:7
+msgid "#### Resetting User Password"
+msgstr "#### 사용자 암호 재설정"
+
+#: maintain/account.md:9
+msgid "Administrator can reset password for a user in \"System Admin\" page."
+msgstr ""
+"관리자는 \"시스템 관리자\" 페이지에서 사용자 암호를 재설정할 수 있습니다."
+
+#: maintain/account.md:11
+msgid ""
+"In a private server, the default settings doesn't support users to reset "
+"their password by email. If you want to enable this, you have first to [set "
+"up notification email](../config/sending_email.md)."
+msgstr ""
+"개인 서버의 기본 설정은 전자메일을 통한 사용자 암호 재설정을 지원하지 않습니"
+"다. 이 기능을 활성화하려면 [알림 메일 설정](../config/sending_email.md)을 우"
+"선 진행해야합니다."
+
+# header
+#: maintain/account.md:13
+msgid "#### Forgot Admin Account or Password?"
+msgstr "#### 관리자 계정 또는 암호 분실?"
+
+#: maintain/account.md:15
+msgid ""
+"You may run `reset-admin.sh` script under seafile-server directory. This "
+"script would help you reset the admin account and password."
+msgstr ""
+"seafile-server 디렉터리의 `reset-admin.sh` 스크립트를 실행하십시오. 이 스크립"
+"트는 관리자 계정 및 암호 재설정 과정을 안내합니다."
+
+# header
+#: maintain/backup_recovery.md:1
+msgid "## Overview"
+msgstr "## 둘러보기"
+
+#: maintain/backup_recovery.md:3
+msgid "There are generally two parts of data to backup"
+msgstr "백업할 데이터는 두 부분으로 이루어져있습니다"
+
+# unordered list
+#: maintain/backup_recovery.md:5
+msgid "* Seafile library data"
+msgstr "* Seafile 라이브러리 데이터"
+
+# unordered list
+#: maintain/backup_recovery.md:6
+msgid "* Databases"
+msgstr "* 데이터베이스"
+
+#: maintain/backup_recovery.md:8
+msgid ""
+"If you setup seafile server according to our manual, you should have a "
+"directory layout like:"
+msgstr ""
+"설명서를 따라 Seafile 서버를 설정했다면, 디렉터리 구조는 다음과 같습니다:"
+
+#: maintain/backup_recovery.md:10
+msgid "    haiwen       # Replace the name with your organization name"
+msgstr "    haiwen       # 조직 이름으로 바꿈"
+
+#: maintain/backup_recovery.md:11
+msgid "      --seafile-server-2.x.x # untar from seafile package"
+msgstr "      --seafile-server-2.x.x # Seafile 꾸러미 압축 해제본"
+
+#: maintain/backup_recovery.md:12
+msgid ""
+"      --seafile-data   # seafile configuration and data (if you choose the "
+"default)"
+msgstr ""
+"      --seafile-data   # Seafile 설정 및 데이터(기본으로 선택했을 경우)"
+
+#: maintain/backup_recovery.md:13
+msgid "      --seahub-data    # seahub data"
+msgstr "      --seahub-data    # Seahub 데이터"
+
+#: maintain/backup_recovery.md:14
+msgid "      --ccnet          # ccnet configuration and data "
+msgstr "      --ccnet          # ccnet 설정 및 데이터"
+
+#: maintain/backup_recovery.md:15
+msgid "      --seahub.db      # sqlite3 database used by seahub"
+msgstr "      --seahub.db      # Seahub에서 사용하는 SQLite3 데이터베이스"
+
+#: maintain/backup_recovery.md:16
+msgid "      --seahub_settings.py # optional config file for seahub"
+msgstr "      --seahub_settings.py # Seahub용 추가 설정 파일"
+
+#: maintain/backup_recovery.md:18
+msgid "All your library data is stored under the 'haiwen' directory."
+msgstr "모든 라이브러리 데이터는 'haiwen' 디렉터리에 저장합니다."
+
+#: maintain/backup_recovery.md:20
+msgid ""
+"Seafile also stores some important metadata data in a few databases. The "
+"names and locations of these databases depends on which database software "
+"you use."
+msgstr ""
+"Seafile 에는 데이터베이스 몇군데에 중요한 일부 메타데이터를 저장합니다. 이 데"
+"이터베이스의 이름 및 위치는 어떤 데이터베이스 프로그램을 사용하느냐에 따라 다"
+"릅니다."
+
+#: maintain/backup_recovery.md:22
+msgid ""
+"For SQLite, the database files are also under the 'haiwen' directory. The "
+"locations are:"
+msgstr ""
+"SQLite에서 데이터베이스 파일은 'haiwen'  디렉터리에 저장하며 위치는 다음과 같"
+"습니다:"
+
+# unordered list
+#: maintain/backup_recovery.md:24
+msgid "* ccnet/PeerMgr/usermgr.db: contains user information"
+msgstr "* ccnet/PeerMgr/usermgr.db: 사용자 정보"
+
+# unordered list
+#: maintain/backup_recovery.md:25
+msgid "* ccnet/GroupMgr/groupmgr.db: contains group information"
+msgstr "* ccnet/GroupMgr/groupmgr.db: 그룹 정보"
+
+# unordered list
+#: maintain/backup_recovery.md:26
+msgid "* seafile-data/seafile.db: contains library metadata"
+msgstr "* seafile-data/seafile.db: 라이브러리 메타데이터"
+
+# unordered list
+#: maintain/backup_recovery.md:27 maintain/backup_recovery.md:33
+msgid "* seahub.db: contains tables used by the web front end (seahub)"
+msgstr "* seahub.db: 웹 프론트엔드(seahub)에서 사용하는 테이블"
+
+#: maintain/backup_recovery.md:29
+msgid ""
+"For MySQL, the databases are created by the administrator, so the names can "
+"be different from one deployment to another. There are 3 databases:"
+msgstr ""
+"MySQL에서 데이터베이스는 관리자가 만들기 때문에 어떻게 구동하느냐에 따라 이름"
+"이 다를 수 있습니다. 데이터베이스는 세가지가 있습니다:"
+
+# unordered list
+#: maintain/backup_recovery.md:31
+msgid "* ccnet-db: contains user and group information"
+msgstr "* ccnet-db: 사용자 및 그룹 정보"
+
+# unordered list
+#: maintain/backup_recovery.md:32
+msgid "* seafile-db: contains library metadata"
+msgstr "* seafile-db: 라이브러리 메타데이터"
+
+# header
+#: maintain/backup_recovery.md:35
+msgid "## Backup steps ##"
+msgstr "## 백업 단계 ##"
+
+#: maintain/backup_recovery.md:37
+msgid "The backup is a three step procedure:"
+msgstr "백업 단계는 3단계로 구성합니다:"
+
+# ordered list
+#: maintain/backup_recovery.md:39
+msgid ""
+"1. Optional: Stop Seafile server first if you're using SQLite as database."
+msgstr ""
+"1. 선택: SQLite를 데이터베이스로 사용한다면 Seafile 서버를 우선 멈춥니다."
+
+# ordered list
+#: maintain/backup_recovery.md:40
+msgid "2. Backup the databases;"
+msgstr "2. 데이터베이스 백업"
+
+# ordered list
+#: maintain/backup_recovery.md:41
+msgid "3. Backup the seafile data directory;"
+msgstr "3. Seafile 데이터 디렉터리 백업"
+
+# header
+#: maintain/backup_recovery.md:43
+msgid "### Backup Order: Database First or Data Directory First"
+msgstr "### 백업 순서: 데이터베이스 먼저 또는 데이터 디렉터리 먼저"
+
+# unordered list
+#: maintain/backup_recovery.md:45
+msgid ""
+"- backup data directory first, SQL later: When you're backing up data "
+"directory, some new objects are written and they're not backed up. Those new "
+"objects may be referenced in SQL database. So when you restore, some records "
+"in the database cannot find its object. So the library is corrupted."
+msgstr ""
+"- 데이터 디렉터리 백업 먼저, SQL 나중 실행: 데이터 디렉터리를 백업할 때 백업"
+"하지 않은 일부 새 객체를 기록합니다. 새 객체는 SQL 데이터베이스에서 참조합니"
+"다. 복원할 때 데이터베이스 기록 일부는 이 객체를 찾지 못합니다. 때문에, 라이"
+"브러리가 깨집니다."
+
+# unordered list
+#: maintain/backup_recovery.md:46
+msgid ""
+"- backup SQL first, data directory later: Since you backup database first, "
+"all records in the database have valid objects to be referenced. So the "
+"libraries won't be corrupted. But new objects written to storage when you're "
+"backing up are not referenced by database records. So some libraries are out "
+"of date. When you restore, some new data are lost."
+msgstr ""
+"- SQL 백업 먼저, 데이터 디렉터리 나중: 데이터베이스 백업을 먼저 하면, 모든 데"
+"이터베이스 레코드는 올바른 객체를 참조합니다. 따라서 라이브러리가 깨지지 않습"
+"니다. 하지만 백업 과정에서 저장소에 보관한 새 객체는 데이터베이스 레코드에서 "
+"참조하지 않습니다. 따라서 일부 라이브러리는 오래된 상태가 됩니다. 복원할 때, "
+"일부 새 데이터를 유실합니다."
+
+#: maintain/backup_recovery.md:48
+msgid ""
+"The second sequence is better in the sense that it avoids library "
+"corruption. Like other backup solutions, some new data can be lost in "
+"recovery. There is always a backup window."
+msgstr ""
+"라이브러리 손상 방지에는 두번째 순서가 더 나을지도 모르겠습니다. 다른 백업 방"
+"식으로는 복원 과정에 새 데이터를 잃을 수 있습니다. 때문에 백업에 있어서는 언"
+"제나 제한이 있습니다."
+
+#: maintain/backup_recovery.md:49
+msgid ""
+"However, if your storage backup mechanism can finish quickly enough, using "
+"the first sequence can retain more data."
+msgstr ""
+"그러나, 신속하게 끝낼 수 있는 저장소 백업 방식이 있다면, 첫번째 순서 방식이 "
+"더 많은 데이터를 백업할 수 있습니다."
+
+#: maintain/backup_recovery.md:51
+msgid ""
+"We assume your seafile data directory is in `/data/haiwen`. And you want to "
+"backup to `/backup` directory. The `/backup` can be an NFS or Windows share "
+"mount exported by another machine, or just an external disk. You can create "
+"a layout similar to the following in `/backup` directory:"
+msgstr ""
+"Seafile 데이터 디렉터리는 `/data/haiwen`이며, `/backup` 디렉터리에 백업한다"
+"고 가정하겠습니다. `/backup` NFS, 디렉터리는 다른 머신에서 가져온 윈도우 공"
+"유 폴더, 외장 디스크일 수 있습니다. `/backup` 디렉터리를 다음과 같이 만들 수 "
+"있습니다:"
+
+#: maintain/backup_recovery.md:53
+msgid "    /backup"
+msgstr "    /backup"
+
+#: maintain/backup_recovery.md:54
+msgid "    ---- databases/  contains database backup files"
+msgstr "    ---- databases/  데이터베이스 백업 파일"
+
+#: maintain/backup_recovery.md:55
+msgid "    ---- data/  contains backups of the data directory"
+msgstr "    ---- data/  데이터 디렉터리 백업본"
+
+# header
+#: maintain/backup_recovery.md:57
+msgid "### Backing up Databases ###"
+msgstr "### 데이터베이스 백업 ###"
+
+#: maintain/backup_recovery.md:59
+msgid ""
+"It's recommended to backup the database to a separate file each time. Don't "
+"overwrite older database backups for at least a week."
+msgstr ""
+"데이터베이스를 때때로 파일 제각각으로 백업하심이 좋습니다. 최소한 일주일 단위"
+"로 이전 데이터베이스 백업을 덮어쓰지 마십시오."
+
+#: maintain/backup_recovery.md:61 maintain/backup_recovery.md:111
+msgid "**MySQL**"
+msgstr "**MySQL**"
+
+#: maintain/backup_recovery.md:63
+msgid ""
+"Assume your database names are `ccnet-db`, `seafile-db` and `seahub-db`. "
+"mysqldump automatically locks the tables so you don't need to stop Seafile "
+"server when backing up MySQL databases. Since the database tables are "
+"usually very small, it won't take long to dump."
+msgstr ""
+"데이터베이스 이름을 `ccnet-db`, `seafile-db`, `seahub-db`라 하겠습니다. "
+"mysqldump는 테이블을 자동으로 잠그므로 MySQL 데이터베이스를 백업할 때 "
+"Seafile 서버를 굳이 멈출 필요가 없습니다. 보통 데이터베이스 테이블은 매우 작"
+"으므로 덤프의 크기는 그리 작지 않을지도 모릅니다."
+
+#: maintain/backup_recovery.md:65
+msgid ""
+"    mysqldump -h [mysqlhost] -u[username] -p[password] --opt ccnet-db > /"
+"backup/databases/ccnet-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+"    mysqldump -h [<MySQL 호스트>] -u[<사용자이름>] -p[<암호>] --opt ccnet-db "
+"> /backup/databases/ccnet-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+
+#: maintain/backup_recovery.md:67
+msgid ""
+"    mysqldump -h [mysqlhost] -u[username] -p[password] --opt seafile-db > /"
+"backup/databases/seafile-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+"    mysqldump -h [<MySQL 호스트>] -u[<사용자이름>] -p[<암호>] --opt seafile-"
+"db > /backup/databases/seafile-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+
+#: maintain/backup_recovery.md:69
+msgid ""
+"    mysqldump -h [mysqlhost] -u[username] -p[password] --opt seahub-db > /"
+"backup/databases/seahub-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+"    mysqldump -h [<MySQL 호스트>] -u[<사용자이름>] -p[<암호>] --opt seahub-"
+"db > /backup/databases/seahub-db.sql.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+
+#: maintain/backup_recovery.md:71 maintain/backup_recovery.md:117
+msgid "**SQLite**"
+msgstr "**SQLite**"
+
+#: maintain/backup_recovery.md:73
+msgid ""
+"You need to stop Seafile server first before backing up SQLite database."
+msgstr "SQLite 데이터베이스를 백업하기 전 Seafile 서버를 우선 멈추어야합니다."
+
+#: maintain/backup_recovery.md:75
+msgid ""
+"    sqlite3 /data/haiwen/ccnet/GroupMgr/groupmgr.db .dump > /backup/"
+"databases/groupmgr.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+"    sqlite3 /data/haiwen/ccnet/GroupMgr/groupmgr.db .dump > /backup/"
+"databases/groupmgr.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+
+#: maintain/backup_recovery.md:77
+msgid ""
+"    sqlite3 /data/haiwen/ccnet/PeerMgr/usermgr.db .dump > /backup/databases/"
+"usermgr.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+"    sqlite3 /data/haiwen/ccnet/PeerMgr/usermgr.db .dump > /backup/databases/"
+"usermgr.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+
+#: maintain/backup_recovery.md:79
+msgid ""
+"    sqlite3 /data/haiwen/seafile-data/seafile.db .dump > /backup/databases/"
+"seafile.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+"    sqlite3 /data/haiwen/seafile-data/seafile.db .dump > /backup/databases/"
+"seafile.db.bak.`date +\"%Y-%m-%d-%H-%M-%S\"`"
+
+#: maintain/backup_recovery.md:81
+msgid ""
+"    sqlite3 /data/haiwen/seahub.db .dump > /backup/databases/seahub.db.bak."
+"`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+"    sqlite3 /data/haiwen/seahub.db .dump > /backup/databases/seahub.db.bak."
+"`date +\"%Y-%m-%d-%H-%M-%S\"`"
+
+# header
+#: maintain/backup_recovery.md:83
+msgid "### Backing up Seafile library data ###"
+msgstr "### Seafile 라이브러리 데이터 백업 ###"
+
+#: maintain/backup_recovery.md:85
+msgid ""
+"The data files are all stored in the `/data/haiwen` directory, so just back "
+"up the whole directory. You can directly copy the whole directory to the "
+"backup destination, or you can use rsync to do incremental backup. "
+msgstr ""
+"모든 데이터 파일은 `/data/haiwen` 디렉터리에 저장하므로, 디렉터리 전체를 백업"
+"합니다. 백업 대상 저장소에 디렉터리 전체를 복사하거나 rsync로 증분 백업을 수"
+"행할 수 있습니다."
+
+#: maintain/backup_recovery.md:87
+msgid "To directly copy the whole data directory,"
+msgstr "데이터 디렉터리 전체를 직접 복사하려면,"
+
+#: maintain/backup_recovery.md:89
+msgid ""
+"    cp -R /data/haiwen /backup/data/haiwen-`date +\"%Y-%m-%d-%H-%M-%S\"`"
+msgstr ""
+"    cp -R /data/haiwen /backup/data/haiwen-`date +\"%Y-%m-%d-%H-%M-%S\"`"
+
+#: maintain/backup_recovery.md:91
+msgid ""
+"This produces a separate copy of the data directory each time. You can "
+"delete older backup copies after a new one is completed."
+msgstr ""
+"이 명령은 데이터 디렉터리를 시간별로 따로 복사합니다. 새 디렉터리 복사가 끝나"
+"면 이전 백업 사본을 삭제할 수 있습니다."
+
+#: maintain/backup_recovery.md:93
+msgid ""
+"If you have a lot of data, copying the whole data directory would take long. "
+"You can use rsync to do incremental backup."
+msgstr ""
+"데이터가 많으면 데이터 디렉터리 전체 복사에 시간이 걸릴 수 있습니다. rsync를 "
+"사용하여 증분 백업할 수 있습니다."
+
+#: maintain/backup_recovery.md:95
+msgid "    rsync -az /data/haiwen /backup/data"
+msgstr "    rsync -az /data/haiwen /backup/data"
+
+#: maintain/backup_recovery.md:97
+msgid "This command backup the data directory to `/backup/data/haiwen`."
+msgstr "이 명령은 데이터 디렉터리를 `/backup/data/haiwen`으로 백업합니다."
+
+# header
+#: maintain/backup_recovery.md:99
+msgid "## Restore from backup ##"
+msgstr "## 백업 복원 ##"
+
+#: maintain/backup_recovery.md:101
+msgid ""
+"Now supposed your primary seafile server is broken, you're switching to a "
+"new machine. Using the backup data to restore your Seafile instance:"
+msgstr ""
+"이제 초기 Seafile 서버가 손상되어, 새 머신으로 전환하는 상황을 가정해보겠습니"
+"다. Seafile 인스턴스 복원에 백업 데이터를 사용합니다:"
+
+# ordered list
+#: maintain/backup_recovery.md:103
+msgid ""
+"1. Copy `/backup/data/haiwen` to the new machine. Let's assume the seafile "
+"deployment location new machine is also `/data/haiwen`."
+msgstr ""
+"1. `/backup/data/haiwen` 디렉터리를 새 머신으로 복사합니다. 새 머신의 "
+"Seafile 가동 위치를 `/data/haiwen` 이라고 하겠습니다."
+
+# ordered list
+#: maintain/backup_recovery.md:104
+msgid "2. Restore the database."
+msgstr "2.데이터베이스를 복원합니다."
+
+# ordered list
+#: maintain/backup_recovery.md:105
+msgid ""
+"3. Since database and data are backed up separately, they may become a "
+"little inconsistent with each other. To correct the potential inconsistency, "
+"run seaf-fsck tool to check data integrity on the new machine. See [seaf-"
+"fsck documentation](seafile_fsck.md)."
+msgstr ""
+"3. 데이터베이스 및 데이터를 제각기 백업했으니, 서로 일관성이 없을 수도 있습니"
+"다. 잠재적 비 일관성을 해결하려면, seaf-fsck 도구를 실행하여 새 머신에서 데이"
+"터 무결성을 확인하십시오. [seaf-fsck 문서를 참고하십시오](seafile_fsck.md)."
+
+# header
+#: maintain/backup_recovery.md:107
+msgid "### Restore the databases"
+msgstr "### 데이터베이스 복원"
+
+#: maintain/backup_recovery.md:109
+msgid ""
+"Now with the latest valid database backup files at hand, you can restore "
+"them."
+msgstr "이제 최신 유효 데이터베이스 파일을 직접 복원할 수 있습니다."
+
+#: maintain/backup_recovery.md:113
+msgid ""
+"    mysql -u[username] -p[password] ccnet-db < ccnet-db."
+"sql.2013-10-19-16-00-05"
+msgstr ""
+"    mysql -u[<사용자이름>] -p[<암호>] ccnet-db < ccnet-db."
+"sql.2013-10-19-16-00-05"
+
+#: maintain/backup_recovery.md:114
+msgid ""
+"    mysql -u[username] -p[password] seafile-db < seafile-db."
+"sql.2013-10-19-16-00-20"
+msgstr ""
+"    mysql -u[<사용자이름>] -p[<암호>] seafile-db < seafile-db."
+"sql.2013-10-19-16-00-20"
+
+#: maintain/backup_recovery.md:115
+msgid ""
+"    mysql -u[username] -p[password] seahub-db < seahub-db."
+"sql.2013-10-19-16-01-05"
+msgstr ""
+"    mysql -u[<사용자이름>] -p[<암호>] seahub-db < seahub-db."
+"sql.2013-10-19-16-01-05"
+
+#: maintain/backup_recovery.md:119
+msgid "    cd /data/haiwen"
+msgstr "    cd /data/haiwen"
+
+#: maintain/backup_recovery.md:120
+msgid "    mv ccnet/PeerMgr/usermgr.db ccnet/PeerMgr/usermgr.db.old"
+msgstr "    mv ccnet/PeerMgr/usermgr.db ccnet/PeerMgr/usermgr.db.old"
+
+#: maintain/backup_recovery.md:121
+msgid "    mv ccnet/GroupMgr/groupmgr.db ccnet/GroupMgr/groupmgr.db.old"
+msgstr "    mv ccnet/GroupMgr/groupmgr.db ccnet/GroupMgr/groupmgr.db.old"
+
+#: maintain/backup_recovery.md:122
+msgid "    mv seafile-data/seafile.db seafile-data/seafile.db.old"
+msgstr "    mv seafile-data/seafile.db seafile-data/seafile.db.old"
+
+#: maintain/backup_recovery.md:123
+msgid "    mv seahub.db seahub.db.old"
+msgstr "    mv seahub.db seahub.db.old"
+
+#: maintain/backup_recovery.md:124
+msgid "    sqlite3 ccnet/PeerMgr/usermgr.db < usermgr.db.bak.xxxx"
+msgstr "    sqlite3 ccnet/PeerMgr/usermgr.db < usermgr.db.bak.xxxx"
+
+#: maintain/backup_recovery.md:125
+msgid "    sqlite3 ccnet/GroupMgr/groupmgr.db < groupmgr.db.bak.xxxx"
+msgstr "    sqlite3 ccnet/GroupMgr/groupmgr.db < groupmgr.db.bak.xxxx"
+
+#: maintain/backup_recovery.md:126
+msgid "    sqlite3 seafile-data/seafile.db < seafile.db.bak.xxxx"
+msgstr "    sqlite3 seafile-data/seafile.db < seafile.db.bak.xxxx"
+
+#: maintain/backup_recovery.md:127
+msgid "    sqlite3 seahub.db < seahub.db.bak.xxxx"
+msgstr "    sqlite3 seahub.db < seahub.db.bak.xxxx"
+
+# header
+#: maintain/clean_database.md:1
+msgid "# Clean Database"
+msgstr "# 데이터베이스 정리"
+
+# header
+#: maintain/clean_database.md:3
+msgid "## Seahub"
+msgstr "## Seahub"
+
+# header
+#: maintain/clean_database.md:5
+msgid "### Session"
+msgstr "### 세션"
+
+#: maintain/clean_database.md:7
+msgid ""
+"Since version 5.0, we offered command to clear expired session records in "
+"seahub database."
+msgstr ""
+"5.0 버전부터 Seahub 데이터베이스에서 유효 기간이 지난 세션을 정리하는 명령을 "
+"제공합니다."
+
+#: maintain/clean_database.md:9
+msgid "    cd <install-path>/seafile-server-latest"
+msgstr "    cd <install-path>/seafile-server-latest"
+
+#: maintain/clean_database.md:10
+msgid "    ./seahub.sh clearsessions"
+msgstr "    ./seahub.sh clearsessions"
+
+# header
+#: maintain/logs.md:1
+msgid "# Logs"
+msgstr "# 기록"
+
+# header
+#: maintain/logs.md:3
+msgid "### Log files of seafile server:"
+msgstr "### Seafile 서버 기록 파일:"
+
+# unordered list
+#: maintain/logs.md:5 maintain/logs.md:19
+msgid "* seafile.log: logs of Seafile server"
+msgstr "* seafile.log: Seafile 서버 기록"
+
+# unordered list
+#: maintain/logs.md:6 maintain/logs.md:20
+msgid "* controller.log: logs of Controller"
+msgstr "* controller.log: 컨트롤러 기록"
+
+# unordered list
+#: maintain/logs.md:7 maintain/logs.md:21
+msgid "* seahub_django_request.log: logs of Seahub"
+msgstr "* seahub_django_request.log: Seahub 기록"
+
+# unordered list
+#: maintain/logs.md:8 maintain/logs.md:22
+msgid "* seahub.log: logs from Django framework and emails sending"
+msgstr "* seahub.log: 장고 프레임워크 및 전자메일 전송 기록"
+
+# unordered list
+#: maintain/logs.md:9 maintain/logs.md:26
+msgid "* Ccnet Log: logs/ccnet.log  (logs for internal RPC, not useful)"
+msgstr "* Ccnet Log: logs/ccnet.log (자체 RPC 기록. 쓸모 있지 않음)"
+
+#: maintain/logs.md:11
+msgid "pro edition only:"
+msgstr "전문가판 전용:"
+
+# unordered list
+#: maintain/logs.md:13
+msgid "* seafevents.log: logs for background tasks and office file convertion"
+msgstr "* seafevents.log: 백그라운드 작업 및 오피스 파일 변환 기록"
+
+# unordered list
+#: maintain/logs.md:14 maintain/logs.md:25
+msgid ""
+"* seahub_email_sender.log: logs for periodically email sending of background "
+"tasks"
+msgstr ""
+"* seahub_email_sender.log: 백그라운드 작업으로 보내는 주기 전송 메일 기록"
+
+# header
+#: maintain/logs.md:17
+msgid "### Log files for seafile background node in cluster mode:"
+msgstr "### 클러스터 모드의 Seafile 백그라운드 노드 기록 파일:"
+
+# unordered list
+#: maintain/logs.md:23
+msgid "* seafevents.log: Empty"
+msgstr "* seafevents.log: 비어있음"
+
+# unordered list
+#: maintain/logs.md:24
+msgid ""
+"* seafile-background-tasks.log: logs for background tasks and office file "
+"convertion"
+msgstr ""
+"* seafile-background-tasks.log: 백그라운드 작업 및 오피스파일 반환 기록logs "
+"for background tasks and office file convertion"
+
+# header
+#: maintain/seafile_fsck.md:1
+msgid "# Seafile FSCK"
+msgstr "# Seafile FSCK"
+
+#: maintain/seafile_fsck.md:3
+msgid ""
+"On the server side, Seafile stores the files in the libraries in an internal "
+"format. Seafile has its own representation of directories and files (similar "
+"to Git)."
+msgstr ""
+"Seafile 서버 측에서는 자체 형식으로 라이브러리에 파일을 저장합니다. Seafile에"
+"는 각각에 자체 디렉터리와 파일 형상을 지니고 있습니다(git와 유사)."
+
+#: maintain/seafile_fsck.md:5
+msgid ""
+"With default installation, these internal objects are stored in the server's "
+"file system directly (such as Ext4, NTFS). But most file systems don't "
+"assure the integrity of file contents after a hard shutdown or system crash. "
+"So if new Seafile internal objects are being written when the system "
+"crashes, they can be corrupt after the system reboots. This will make part "
+"of the corresponding library not accessible."
+msgstr ""
+"기본 설치 후, 자체 객체는 서버 파일 시스템(ext4, NTFS)에 바로 저장합니다. 허"
+"나 대부분의 파일 시스템은 갑작스러운 전원 꺼짐 또는 시스템 손상시 파일 내용"
+"의 무결성을 보증할 수 없습니다. 따라서 시스템 손상시 Seafile 자체 객체를 기록"
+"했다면, 시스템을 다시 부팅했을 때 객체가 깨질 수 있습니다. 이렇게 되면 각각"
+"의 라이브러리의 일부에 접근할 수 없습니다."
+
+#: maintain/seafile_fsck.md:7
+msgid ""
+"Note: If you store the seafile-data directory in a battery-backed NAS (like "
+"EMC or NetApp), or use S3 backend available in the Pro edition, the internal "
+"objects won't be corrupt."
+msgstr ""
+"참고: 배터리 보조 NAS(EMC 또는 NetApp)에 seafile-data 디렉터리를 저장하거나, "
+"전문가판의 S3 백엔드를 사용한다면 자체 객체는 깨지지 않습니다."
+
+#: maintain/seafile_fsck.md:9
+msgid ""
+"Starting from version 2.0, Seafile server comes with a seaf-fsck tool to "
+"help you recover from this corruption (similar to git-fsck tool). This tool "
+"recovers any corrupted library back to its last consistent and usable state."
+msgstr ""
+"Seafile 버전 2.0 부터는 Seafile 서버에 seaf-fsck 도구(git-fsck 도구와 유사)"
+"를 도입하여 깨진 데이터 복구를 도와줍니다. 이 도구는 어떤 깨진 라이브러리도 "
+"최근의 일관성을 유지하고 안정적으로 사용할 수 있도록 복구합니다."
+
+#: maintain/seafile_fsck.md:11
+msgid ""
+"Starting from version 4.1, we provide a seaf-fsck.sh script. The seaf-fsck "
+"tool accepts the following arguments:"
+msgstr ""
+"Seafile 버전 4.1 부터는 seaf-fsck.sh 스크립트를 제공합니다. seaf-fsck 도구는 "
+"다음 인자를 받아들입니다:"
+
+# code block
+#: maintain/seafile_fsck.md:13
+msgid ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh [--repair|-r] [--enable-sync|-e] [--export|-E export_path] "
+"[repo_id_1 [repo_id_2 ...]]\n"
+"```"
+msgstr ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh [--repair|-r] [--enable-sync|-e] [--export|-E export_path] "
+"[repo_id_1 [repo_id_2 ...]]\n"
+"```"
+
+#: maintain/seafile_fsck.md:18
+msgid "There are three modes of operation for seaf-fsck:"
+msgstr "seaf-fsck 동작 방식은 세가지가 있습니다:"
+
+# ordered list
+#: maintain/seafile_fsck.md:20
+msgid "1. checking integrity of libraries."
+msgstr "1.  라이브러리 무결성을 검사합니다."
+
+# ordered list
+#: maintain/seafile_fsck.md:21
+msgid "2. repairing corrupted libraries."
+msgstr "2. 깨진 라이브러리를 복구합니다."
+
+# ordered list
+#: maintain/seafile_fsck.md:22
+msgid "3. exporting libraries."
+msgstr "3. 라이브러리를 내보냅니다."
+
+# header
+#: maintain/seafile_fsck.md:24
+msgid "## Checking Integrity of Libraries"
+msgstr "## 라이브러리 무결성 검사"
+
+#: maintain/seafile_fsck.md:26
+msgid ""
+"Running seaf-fsck.sh without any arguments will run a **read-only** "
+"integrity check for all libraries."
+msgstr ""
+"어떤 인자도 붙이지 않고 seaf-fsck.sh를 실행하면 모든 라이브러리에 대해 **읽"
+"기 전용** 상태로 무결성을 검사합니다."
+
+# code block
+#: maintain/seafile_fsck.md:28
+msgid ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh\n"
+"```"
+msgstr ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh\n"
+"```"
+
+#: maintain/seafile_fsck.md:33
+msgid ""
+"If you want to check integrity for specific libraries, just append the "
+"library id's as arguments:"
+msgstr ""
+"일부 라이브러리의 무결성을 검사하려면 라이브러리 ID를 인자로 붙이십시오:"
+
+# code block
+#: maintain/seafile_fsck.md:35
+msgid ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh [library-id1] [library-id2] ...\n"
+"```"
+msgstr ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh [library-id1] [library-id2] ...\n"
+"```"
+
+#: maintain/seafile_fsck.md:40
+msgid "The output looks like:"
+msgstr "출력 결과는 다음과 같습니다:"
+
+# code block
+#: maintain/seafile_fsck.md:42
+msgid ""
+"```\n"
+"[02/13/15 16:21:07] fsck.c(470): Running fsck for repo ca1a860d-"
+"e1c1-4a52-8123-0bf9def8697f.\n"
+"[02/13/15 16:21:07] fsck.c(413): Checking file system integrity of repo "
+"fsck(ca1a860d)...\n"
+"[02/13/15 16:21:07] fsck.c(35): Dir 9c09d937397b51e1283d68ee7590cd9ce01fe4c9 "
+"is missing.\n"
+"[02/13/15 16:21:07] fsck.c(200): Dir /bf/pk/(9c09d937) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(105): Block "
+"36e3dd8757edeb97758b3b4d8530a4a8a045d3cb is corrupted.\n"
+"[02/13/15 16:21:07] fsck.c(178): File /bf/02.1.md(ef37e350) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(85): Block "
+"650fb22495b0b199cff0f1e1ebf036e548fcb95a is missing.\n"
+"[02/13/15 16:21:07] fsck.c(178): File /01.2.md(4a73621f) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(514): Fsck finished for repo ca1a860d.\n"
+"```"
+msgstr ""
+"```\n"
+"[02/13/15 16:21:07] fsck.c(470): Running fsck for repo ca1a860d-"
+"e1c1-4a52-8123-0bf9def8697f.\n"
+"[02/13/15 16:21:07] fsck.c(413): Checking file system integrity of repo "
+"fsck(ca1a860d)...\n"
+"[02/13/15 16:21:07] fsck.c(35): Dir 9c09d937397b51e1283d68ee7590cd9ce01fe4c9 "
+"is missing.\n"
+"[02/13/15 16:21:07] fsck.c(200): Dir /bf/pk/(9c09d937) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(105): Block "
+"36e3dd8757edeb97758b3b4d8530a4a8a045d3cb is corrupted.\n"
+"[02/13/15 16:21:07] fsck.c(178): File /bf/02.1.md(ef37e350) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(85): Block "
+"650fb22495b0b199cff0f1e1ebf036e548fcb95a is missing.\n"
+"[02/13/15 16:21:07] fsck.c(178): File /01.2.md(4a73621f) is curropted.\n"
+"[02/13/15 16:21:07] fsck.c(514): Fsck finished for repo ca1a860d.\n"
+"```"
+
+#: maintain/seafile_fsck.md:54
+msgid "The corrupted files and directories are reported."
+msgstr "깨진 파일과 디렉터리가 나타납니다."
+
+#: maintain/seafile_fsck.md:56
+msgid "Sometimes you can see output like the following:"
+msgstr "때로는 다음과 같은 출력 내용을 볼 수 있습니다:"
+
+# code block
+#: maintain/seafile_fsck.md:58
+msgid ""
+"```\n"
+"[02/13/15 16:36:11] Commit 6259251e2b0dd9a8e99925ae6199cbf4c134ec10 is "
+"missing\n"
+"[02/13/15 16:36:11] fsck.c(476): Repo ca1a860d HEAD commit is corrupted, "
+"need to restore to an old version.\n"
+"[02/13/15 16:36:11] fsck.c(314): Scanning available commits...\n"
+"[02/13/15 16:36:11] fsck.c(376): Find available commit 1b26b13c(created at "
+"2015-02-13 16:10:21) for repo ca1a860d.\n"
+"```"
+msgstr ""
+"```\n"
+"[02/13/15 16:36:11] Commit 6259251e2b0dd9a8e99925ae6199cbf4c134ec10 is "
+"missing\n"
+"[02/13/15 16:36:11] fsck.c(476): Repo ca1a860d HEAD commit is corrupted, "
+"need to restore to an old version.\n"
+"[02/13/15 16:36:11] fsck.c(314): Scanning available commits...\n"
+"[02/13/15 16:36:11] fsck.c(376): Find available commit 1b26b13c(created at "
+"2015-02-13 16:10:21) for repo ca1a860d.\n"
+"```"
+
+#: maintain/seafile_fsck.md:65
+msgid ""
+"This means the \"head commit\" (current state of the library) recorded in "
+"database is not consistent with the library data. In such case, fsck will "
+"try to find the last consistent state and check the integrity in that state."
+msgstr ""
+"데이터베이스에 기록한 \"가장 최근의 커밋\"(라이브러리 현재 상태)이 라이브러"
+"리 데이터와 일치하지 않음을 나타냅니다. 이 경우, fsck에서 최근 일관성 확보 상"
+"태를 찾아 해당 상태의 무결성을 확인합니다."
+
+#: maintain/seafile_fsck.md:67
+msgid ""
+"Tips: **If you have many libraries, it's helpful to save the fsck output "
+"into a log file for later analysis.**"
+msgstr ""
+"요령: **라이브러리가 많다면, 추후 분석 용도로 로그 파일에 출력 내용을 저장하"
+"는 것이 좋습니다.**"
+
+# header
+#: maintain/seafile_fsck.md:69
+msgid "## Repairing Corruption"
+msgstr "## 손상 복구"
+
+#: maintain/seafile_fsck.md:71
+msgid "Corruption repair in seaf-fsck basically works in two steps:"
+msgstr "seaf-fsck의 손상 복구 기능은 기본적으로 두 단계에 걸쳐 동작합니다:"
+
+# ordered list
+#: maintain/seafile_fsck.md:73
+msgid ""
+"1. If the library state (commit) recorded in database is not found in data "
+"directory, find the last available state from data directory."
+msgstr ""
+"1. 데이터베이스에 기록한 라이브러리 상태(커밋)을 데이터 디렉터리에서 찾을 수 "
+"없으면 데이터 디렉터리에서 최근의 상태를 확인합니다."
+
+# ordered list
+#: maintain/seafile_fsck.md:74
+msgid ""
+"2. Check data integrity in that specific state. If files or directories are "
+"corrupted, set them to empty files or empty directories. The corrupted paths "
+"will be reported, so that the user can recover them from somewhere else."
+msgstr ""
+"2. 각각의 상태에 대해 데이터 무결성을 확인합니다. 파일 또는 디렉터리가 깨졌다"
+"면 빈 파일 또는 빈 디렉터리로 설정합니다. 깨진 경로는 보고하여 사용자가 다른 "
+"어떤 방편으로든 복구할 수 있게 합니다."
+
+#: maintain/seafile_fsck.md:76
+msgid "Running the following command repairs all the libraries:"
+msgstr "다음 명령을 실행하면 모든 라이브러리를 복구합니다:"
+
+# code block
+#: maintain/seafile_fsck.md:78
+msgid ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --repair\n"
+"```"
+msgstr ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --repair\n"
+"```"
+
+#: maintain/seafile_fsck.md:83
+msgid ""
+"Most of time you run the read-only integrity check first, to find out which "
+"libraries are corrupted. And then you repair specific libraries with the "
+"following command:"
+msgstr ""
+"대부분 읽기 전용 방식으로 무결성 검사를 먼저 실행하여 어떤 라이브러리가 깨졌"
+"는지 확인합니다. 그리고 각각의 라이브러리를 다음 명령으로 복구합니다:"
+
+# code block
+#: maintain/seafile_fsck.md:85
+msgid ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --repair [library-id1] [library-id2] ...\n"
+"```"
+msgstr ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --repair [library-id1] [library-id2] ...\n"
+"```"
+
+#: maintain/seafile_fsck.md:90
+msgid ""
+"Because corrupted files and directories are emptied after repair, syncing "
+"the library after repair may result in data lost in the clients. The good "
+"copies on the clients may be replaced by the empty copies. To prevent this "
+"from happening, the system prevents a \"repaired\" library from syncing to "
+"clients. The system admin should inform the users to recover the corrupted "
+"files and folders. And then run the following command to enable syncing for "
+"the library again:"
+msgstr ""
+"손상된 파일 및 디렉터리는 복구 후 비워둔 상태가 되기 때문에, 복구 과정이 끝나"
+"고 라이브러리를 동기화하면 클라이언트의 데이터를 잃을 수 있습니다. 클라이언트"
+"의 제대로 된 사본을 빈 사본으로 바꿉니다. 이 문제를 막으려, 시스템에서는 클라"
+"이언트와의 동기화로 라이브러리의 \"복구\"를 막습니다. 시스템 관리자는 사용자"
+"에게 손상 파일과 폴더를 복구하라고 알려야합니다. 그리고 다음 명령을 실행하여 "
+"라이브러리 동기화를 다시금 활성화하십시오:"
+
+# code block
+#: maintain/seafile_fsck.md:92
+msgid ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --enable-sync [library-id1] [library-id2] ...\n"
+"```"
+msgstr ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --enable-sync [library-id1] [library-id2] ...\n"
+"```"
+
+# header
+#: maintain/seafile_fsck.md:97
+msgid "### Change after CE 5.0.3 and Pro 5.0.2"
+msgstr "### 커뮤니티판 5.0.3 및 전문가판 5.0.2 이후 버전에서 바뀐 사항"
+
+#: maintain/seafile_fsck.md:99
+msgid ""
+"Since community eidition 5.0.3 and Pro edition 5.0.2, we improved seaf-fsck "
+"repair operation. Two improvements are added:"
+msgstr ""
+"커뮤니티판 5.0.3 및 전문가판 5.0.2부터 seaf-fsck 복구 동작을 개선했습니다. 개"
+"선사항 두가지를 추가했습니다:"
+
+# unordered list
+#: maintain/seafile_fsck.md:101
+msgid ""
+"- After running \"--repair\" operation, the system admin doesn't need to run "
+"\"--enable-sync\" command any more. Instead, seaf-fsck automatically "
+"disconnects all syncing clients to the library. So the users are forced to "
+"re-sync the library."
+msgstr ""
+"- \"--repair\" 동작 실행 후, 시스템 관리자는 더 이상 \"--enable-sync\" 명령"
+"을 실행하지 않아도 됩니다. 대신, seaf-fsck에서 자동으로 라이브러리에 연결한 "
+"모든 클라이언트 연결을 끊습니다. 따라서 사용자는 라이브러리를 강제로 다시 동"
+"기화 해야합니다."
+
+# unordered list
+#: maintain/seafile_fsck.md:102
+msgid ""
+"- In the library history, seaf-fsck includes the list of files and folders "
+"that are corrupted. So it's much easier to located corrupted paths."
+msgstr ""
+"- 라이브러리 기록에서, seaf-fsck 결과에는 손상된 파일 및 폴더가 들어갑니다. "
+"따라서 손상된 경로를 쉽게 찾을 수 있습니다."
+
+# header
+#: maintain/seafile_fsck.md:104
+msgid "### Best Practice for Repairing a Library"
+msgstr "### 라이브러리 복구 사례"
+
+#: maintain/seafile_fsck.md:106
+msgid ""
+"To check all libraries and find out which library is corrupted, the system "
+"admin can run seaf-fsck.sh without any argument and save the output to a log "
+"file. Search for keyword \"Fail\" in the log file to locate corrupted "
+"libraries."
+msgstr ""
+"모든 라이브러리를 검사하여 어떤 라이브러리가 손상되었는지 찾으려면, 시스템 관"
+"리자가 어떤 인자도 설정하지 않은 상태에서 seaf-fsck.sh를 실행한 후 로그 파일"
+"에 출력 내용을 저장할 수 있습니다. 손상된 라이브러리를 찾으려면 로그 파일에"
+"서 \"Fail\" 키워드를 찾으십시오."
+
+#: maintain/seafile_fsck.md:108
+msgid ""
+"When the system admin find a library is corrupted, he/she should run seaf-"
+"fsck.sh with \"--repair\" for the library. After the command fixes the "
+"library, the admin should inform user to recover files from other places. "
+"There are two ways:"
+msgstr ""
+"시스템 관리자가 손상된 라이브러리를 찾으면, 라이브러리를 복구하는 \"--repair"
+"\" 인자를 주어 seaf-fsck.sh를 실행하십시오. 명령 실행으로 라이브러리 문제를 "
+"수정하면, 관리자는 다른 위치의 파일로 라이브러리의 파일을 복구하라고 알려주어"
+"야합니다. 두가지 방법이 있습니다:"
+
+# unordered list
+#: maintain/seafile_fsck.md:110
+msgid "- Upload corrupted files or folders via the web interface"
+msgstr "- 웹 인터페이스로 깨진 파일 또는 폴더를 업로드"
+
+# unordered list
+#: maintain/seafile_fsck.md:111
+msgid ""
+"- If the library was synced to some desktop computer, and that computer has "
+"a correct version of the corrupted file, resyncing the library on that "
+"computer will upload the corrupted files to the server."
+msgstr ""
+"- 임의의 데스크톱 컴퓨터에서 라이브러리를 동기화했고, 컴퓨터에 손상된 파일의 "
+"올바른 버전이 있다면, 해당 컴퓨터의 라이브러리를 다시 동기화할 때 서버에서 손"
+"상된 파일을 업로드합니다."
+
+# header
+#: maintain/seafile_fsck.md:113
+msgid "## Exporting Libraries to File System"
+msgstr "## 라이브러리를 파일 시스템으로 내보내기"
+
+#: maintain/seafile_fsck.md:115
+msgid ""
+"Since version 4.2.0, you can use seaf-fsck to export all the files in "
+"libraries to external file system (such as Ext4). This procedure doesn't "
+"rely on the seafile database. As long as you have your seafile-data "
+"directory, you can always export your files from Seafile to external file "
+"system."
+msgstr ""
+"버전 4.2.0 부터, seaf-fsck 명령으로 라이브러리의 모든 파일을 외부 파일 시스템"
+"(ext4 등)으로 내보낼 수 있습니다. 이 절차는 Seafile 데이터베이스 상태에 의존"
+"하지 않습니다. seafile-data 디렉터리를 보유하는 동안 Seafile의 파일을 외부 파"
+"일 시스템으로 언제든 내보낼 수 있습니다."
+
+#: maintain/seafile_fsck.md:117
+msgid "The command syntax is"
+msgstr "명령 문법은 다음과 같습니다"
+
+# code block
+#: maintain/seafile_fsck.md:119
+msgid ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --export top_export_path [library-id1] [library-id2] ...\n"
+"```"
+msgstr ""
+"```\n"
+"cd seafile-server-latest\n"
+"./seaf-fsck.sh --export top_export_path [library-id1] [library-id2] ...\n"
+"```"
+
+#: maintain/seafile_fsck.md:124
+msgid ""
+"The argument `top_export_path` is a directory to place the exported files. "
+"Each library will be exported as a sub-directory of the export path. If you "
+"don't specify library ids, all libraries will be exported."
+msgstr ""
+"`top_export_path` 인자는 내보낸 파일이 들어가는 디렉터리입니다. 각 라이브러리"
+"는 내보내기 경로의 하위 디렉터리 형태로 내보냅니다. 라이브러리 ID를 지정하지 "
+"않으면 모든 라이브러리를 내보냅니다."
+
+#: maintain/seafile_fsck.md:126
+msgid ""
+"Currently only un-encrypted libraries can be exported. Encrypted libraries "
+"will be skipped."
+msgstr ""
+"현재 암호화하지 않은 라이브러리만 내보낼 수 있습니다. 암호화 한 라이브러리는 "
+"건너뜁니다."
+
+# header
+#: maintain/seafile_gc.md:1
+msgid "# Seafile GC"
+msgstr "# Seafile GC"
+
+#: maintain/seafile_gc.md:3
+msgid ""
+"Seafile uses storage de-duplication technology to reduce storage usage. The "
+"underlying data blocks will not be removed immediately after you delete a "
+"file or a library. As a result, the number of unused data blocks will "
+"increase on Seafile server."
+msgstr ""
+"Seafile은 저장소 사용을 줄이는 저장장치 중복 방지 기술을 사용합니다. 파일 또"
+"는 라이브러리를 삭제하고 나서도 기반 데이터 블록을 바로 제거하지 않습니다. 결"
+"과적으로 사용하지 않는 여러 데이터 블록은 Seafile 서버에서 계속 늘어납니다."
+
+#: maintain/seafile_gc.md:5
+msgid ""
+"To release the storage space occupied by unused blocks, you have to run a "
+"\"garbage collection\" program to clean up unused blocks on your server."
+msgstr ""
+"사용하지 않은 블록이 차지하는 저장 공간을 확보하려면 \"가비지 수집\" 프로그램"
+"을 실행하여 서버에서 사용하지 않는 블록을 정리해야합니다."
+
+#: maintain/seafile_gc.md:7
+msgid "The GC program cleans up two types of unused blocks:"
+msgstr "GC 프로그램에서는 사용하지 않는 두가지 형식의 블록을 정리합니다:"
+
+# ordered list
+#: maintain/seafile_gc.md:9
+msgid ""
+"1. Blocks that no library references to, that is, the blocks belong to "
+"deleted libraries;"
+msgstr "1. 삭제한 라이브러리에 있던, 어떤 라이브러리에서도 참조하지 않는 블록"
+
+# ordered list
+#: maintain/seafile_gc.md:10
+msgid ""
+"2. If you set history length limit on some libraries, the out-dated blocks "
+"in those libraries will also be removed."
+msgstr ""
+"2. 일부 라이브러리의 기록 분량 제한 값을 설정하면, 이 라이브러리의 오래된 블"
+"록도 제거합니다."
+
+#: maintain/seafile_gc.md:12
+msgid ""
+"**Before running GC, you must shutdown the Seafile program on your server if "
+"you use the community edition. For professional edition, from version "
+"3.1.11, online GC operation is supported. If you use Professional edition, "
+"you don't need to shutdown the Seafile program if you are using MySQL or "
+"PostgreSQL as database.**  This is because new blocks written into Seafile "
+"while GC is running may be mistakenly deleted by the GC program. "
+msgstr ""
+"**GC를 실행하기 전, 커뮤니티판을 사용한다면 서버에서 실행중인 Seafile 프로그"
+"램 가동을 멈춰야합니다. 전문가판에서는 3.1.11부터 온라인 GC 처리를 지원합니"
+"다. 전문가판을 사용한다면 MySQL또는 PostgreSQL을 데이터베이스로 사용할 때 "
+"Seafile 프로그램의 가동을 멈출 필요가 없습니다.** 왜냐면 GC를 실행하는 동안 "
+"Seafile에서 기록한 새 블록은 GC 프로그램에서 실수로 삭제할 수 있기 때문입니"
+"다."
+
+# header
+#: maintain/seafile_gc.md:14
+msgid "## Run GC in version 4.1.1 and later"
+msgstr "## 버전 4.1.1 이상에서 GC 실행"
+
+#: maintain/seafile_gc.md:16
+msgid ""
+"In community edition 4.1.1 and Pro edition 4.1.0, GC program's command line "
+"and output are improved."
+msgstr ""
+"커뮤니티판 4.1.1 및 전문가판 4.1.0에서 GC 프로그램 명령행 메시지 및 출력 내용"
+"을 개선했습니다."
+
+# header
+#: maintain/seafile_gc.md:18
+msgid "### Dry-run Mode"
+msgstr "### Dry-run 모드"
+
+#: maintain/seafile_gc.md:20
+msgid ""
+"To see how much garbage can be collected without actually removing any "
+"garbage, use the dry-run option:"
+msgstr ""
+"가비지를 제거하지 않고 가비지를 얼마나 많이 수집할 수 있는지 보려면 dry-run "
+"옵션을 사용하십시오:"
+
+# code block
+#: maintain/seafile_gc.md:22
+msgid ""
+"```\n"
+"seaf-gc.sh --dry-run [repo-id1] [repo-id2] ...\n"
+"```"
+msgstr ""
+"```\n"
+"seaf-gc.sh --dry-run [repo-id1] [repo-id2] ...\n"
+"```"
+
+#: maintain/seafile_gc.md:26
+msgid "The output should look like:"
+msgstr "출력 내용은 다음과 같습니다:"
+
+# code block
+#: maintain/seafile_gc.md:28
+msgid ""
+"```\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo My "
+"Library(ffa57d93)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 265.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo ffa57d93.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 5 commits, 265 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 265 blocks total, about 265 "
+"reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo aa(f3d0a8d0)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 5.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo f3d0a8d0.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 8 commits, 5 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(264): Populating index for sub-repo 9217622a.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 4 commits, 4 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 5 blocks total, about 9 "
+"reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo test2(e7d26d93)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 507.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo e7d26d93.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 577 commits, 507 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 507 blocks total, about 507 "
+"reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:50] seafserv-gc.c(124): === Repos deleted by users ===\n"
+"[03/19/15 19:41:50] seafserv-gc.c(145): === GC is finished ===\n"
+"\n"
+"[03/19/15 19:41:50] Following repos have blocks to be removed:\n"
+"repo-id1\n"
+"repo-id2\n"
+"repo-id3\n"
+"```"
+msgstr ""
+"```\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo My "
+"Library(ffa57d93)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 265.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo ffa57d93.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 5 commits, 265 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 265 blocks total, about 265 "
+"reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo aa(f3d0a8d0)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 5.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo f3d0a8d0.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 8 commits, 5 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(264): Populating index for sub-repo 9217622a.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 4 commits, 4 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 5 blocks total, about 9 "
+"reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:49] seafserv-gc.c(115): GC version 1 repo test2(e7d26d93)\n"
+"[03/19/15 19:41:49] gc-core.c(394): GC started. Total block number is 507.\n"
+"[03/19/15 19:41:49] gc-core.c(75): GC index size is 1024 Byte.\n"
+"[03/19/15 19:41:49] gc-core.c(408): Populating index.\n"
+"[03/19/15 19:41:49] gc-core.c(262): Populating index for repo e7d26d93.\n"
+"[03/19/15 19:41:49] gc-core.c(308): Traversed 577 commits, 507 blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(440): Scanning unused blocks.\n"
+"[03/19/15 19:41:49] gc-core.c(472): GC finished. 507 blocks total, about 507 "
+"reachable blocks, 0 blocks can be removed.\n"
+"\n"
+"[03/19/15 19:41:50] seafserv-gc.c(124): === Repos deleted by users ===\n"
+"[03/19/15 19:41:50] seafserv-gc.c(145): === GC is finished ===\n"
+"\n"
+"[03/19/15 19:41:50] Following repos have blocks to be removed:\n"
+"repo-id1\n"
+"repo-id2\n"
+"repo-id3\n"
+"```"
+
+#: maintain/seafile_gc.md:67
+msgid ""
+"If you give specific library ids, only those libraries will be checked; "
+"otherwise all libraries will be checked."
+msgstr ""
+"라이브러리 ID를 지정하면, 해당 라이브러리만 검사합니다. 그렇지 않으면 모든 라"
+"이브러리를 검사합니다."
+
+#: maintain/seafile_gc.md:69
+msgid ""
+"Notice that at the end of the output there is a \"repos have blocks to be "
+"removed\" section. It contains the list of librareis that have garbage "
+"blocks. Later when you run GC without --dry-run option, you can use these "
+"libraris ids as input arguments to GC program."
+msgstr ""
+"출력 마지막 부분에 \"repos have blocks to be removed\" 섹션이 있습니다. 여기"
+"에는 가비지 블록이 있는 라이브러리 목록이 나타납니다. 그 다음 --dry-run 옵션"
+"을 빼고 GC를 실행할 때, GC 프로그램의 입력 인자로 출력에 나타난 라이브러리 ID"
+"를 넣을 수 있습니다."
+
+# header
+#: maintain/seafile_gc.md:71
+msgid "### Removing Garbage"
+msgstr "### 쓸모 없는 파일 제거"
+
+#: maintain/seafile_gc.md:73
+msgid "To actually remove garbage blocks, run without the --dry-run option:"
+msgstr "실제로 가비지 블록을 제거하려면 --dry-run 옵션 없이 실행하십시오:"
+
+# code block
+#: maintain/seafile_gc.md:75
+msgid ""
+"```\n"
+"seaf-gc.sh [repo-id1] [repo-id2] ...\n"
+"```"
+msgstr ""
+"```\n"
+"seaf-gc.sh [repo-id1] [repo-id2] ...\n"
+"```"
+
+#: maintain/seafile_gc.md:79
+msgid ""
+"If libraries ids are specified, only those libraries will be checked for "
+"garbage."
+msgstr "라이브러리 ID를 지정하면, 해당 라이브러리만 가비지 검사를 합니다."
+
+#: maintain/seafile_gc.md:81
+msgid ""
+"As described before, there are two types of garbage blocks to be removed. "
+"Sometimes just removing the first type (those belong to deleted libraries) "
+"of unused blocks is good enough. In this case, the GC program won't bother "
+"to check the libraries for outdated historic blocks. The \"-r\" option "
+"implements this feature:"
+msgstr ""
+"이전에 설명한 바와 같이, 제거할 가비지 블록 형식은 두가지가 있습니다. 사용하"
+"지 않는 블록의 첫번째 형식을 제거하는 것만드로도(삭제한 라이브러리의 소유) 충"
+"분할 수도 있습니다. 이 경우 GC 프로그램에서는 오래된 기록 블록의 라이브러리 "
+"검사 동작으로 사용자를 귀찮게 하지 않습니다. \"-r\" 옵션은 다음 기능을 수행합"
+"니다:"
+
+# code block
+#: maintain/seafile_gc.md:83
+msgid ""
+"```\n"
+"seaf-gc.sh -r\n"
+"```"
+msgstr ""
+"```\n"
+"seaf-gc.sh -r\n"
+"```"
+
+#: maintain/seafile_gc.md:87
+msgid ""
+"**In Seafile version 4.1.1 and later, libraries deleted by the users are not "
+"immediately removed from the system. Instead, they're moved into a \"trash\" "
+"in the system admin page. Before they're cleared from the trash, their "
+"blocks won't be garbage collected.**"
+msgstr ""
+"**Seafile 버전 4.1.1 이후에서는, 사용자가 삭제한 라이브러리를 시스템에서 바"
+"로 제거하지 않습니다. 시스템 관리자 페이지의 \"휴지통\"에 이동합니다. 휴지동"
+"에서 완전히 지우기 전, 해당 블록은 가비지 수집 과정에서 정리하지 않습니다.**"
+
+# header
+#: maintain/seafile_gc.md:89
+msgid "### Using Multiple Threads in GC"
+msgstr "### GC 다중 스레드 활용"
+
+#: maintain/seafile_gc.md:91
+msgid ""
+"Since Pro server 5.1.0, you can specify the thread number in GC. By default,"
+msgstr ""
+"전문가판 서버 5.1.0부터, GC 스레드 갯수를 지정할 수 있습니다. 기본적으로,"
+
+# unordered list
+#: maintain/seafile_gc.md:93
+msgid ""
+"- If storage backend is S3/Swift/Ceph, 10 threads are started to do the GC "
+"work."
+msgstr ""
+"- 저장소 백엔드가 S3/Swift/Ceph라면, GC 동작에 스레드 10개를 시작합니다."
+
+# unordered list
+#: maintain/seafile_gc.md:94
+msgid "- If storage backend is file system, only 1 thread is started."
+msgstr "- 저장소 백엔드가 파일 시스템이라면, 스레드 하나만 시작합니다."
+
+#: maintain/seafile_gc.md:96
+msgid ""
+"You can specify the thread number in with \"-t\" option. \"-t\" option can "
+"be used together with all other options. Each thread will do GC on one "
+"library. For example, the following command will use 20 threads to GC all "
+"libraries:"
+msgstr ""
+"\"-t\" 옵션을 사용하여 스레드 갯수를 지정할 수 있습니다. \"-t\" 옵션은 다른 "
+"옵션과 함께 사용할 수 있습니다. 각 스레드는 라이브러리에 대해 GC 작업을 수행"
+"합니다. 예를 들어, 다음 명령은 모든 라이브러리에 대해 GC 작업을 수행하는데 스"
+"레드 20개를 사용합니다:"
+
+# code block
+#: maintain/seafile_gc.md:98
+msgid ""
+"```\n"
+"seaf-gc.sh -t 20\n"
+"```"
+msgstr ""
+"```\n"
+"seaf-gc.sh -t 20\n"
+"```"
+
+#: maintain/seafile_gc.md:102
+msgid ""
+"Since the threads are concurrent, the output of each thread may mix with "
+"each others. Library ID is printed in each line of output."
+msgstr ""
+"스레드는 동시 처리 작업이므로, 각 스레드 출력은 서로 섞일 수 있습니다. 라이브"
+"러리 ID는 각 줄 마다 나타납니다."
+
+# header
+#: maintain/seafile_gc.md:104
+msgid "## Run GC in older versions (before 4.1.1)"
+msgstr "## 이전 버전(4.1.1 이전)에서 GC 실행"
+
+#: maintain/seafile_gc.md:106
+msgid "To run GC program"
+msgstr "GC 프로그램을 실행하려면"
+
+#: maintain/seafile_gc.md:108
+msgid "    ./seaf-gc.sh run"
+msgstr "    ./seaf-gc.sh run"
+
+#: maintain/seafile_gc.md:110
+msgid ""
+"If you want to do sanity check before actually removing any data, you can "
+"use the --dry-run option"
+msgstr ""
+"데이터를 제거하기 전 상태를 검사한다면 --dry-run 옵션을 사용할 수 있습니다"
+
+#: maintain/seafile_gc.md:112
+msgid "    ./seaf-gc.sh dry-run"
+msgstr "    ./seaf-gc.sh dry-run"
+
+#: maintain/seafile_gc.md:114
+msgid ""
+"It will show you the total block number vs. the number of blocks to be "
+"removed."
+msgstr "전체 블록 수와 제거 블록 갯수를 보여줍니다."
+
+#: maintain/seafile_gc.md:116
+msgid ""
+"To check data integrity after running GC, you can use [seaf-fsck]"
+"(seafile_fsck.md)"
+msgstr ""
+"GC 실행 후 데이터 무결성을 검사한다면 [seaf-fsck](seafile_fsck.md)를 활용할 "
+"수 있습니다"
+
+#, fuzzy
+#~ msgid ""
+#~ "\"garbage collection\" program to clean up unused blocks on your server."
+#~ msgstr ""
+#~ "사용하지 않은 블록이 차지하는 저장 공간을 확보하려면 \"가비지 수집\" 프로"
+#~ "그램을 실행하여 서버에서 사용하지 않는 블록을 정리해야합니다."

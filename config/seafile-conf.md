@@ -53,9 +53,7 @@ After a file is uploaded via the web interface, or the cloud file browser in the
 max_indexing_threads = 10
 ```
 
-You can download a folder as a zip archive from seahub, but some zip software
-on windows doesn't support UTF-8, in which case you can use the "windows_encoding"
-settings to solve it.
+You can download a folder as a zip archive from seahub, but some zip software on windows doesn't support UTF-8, in which case you can use the "windows_encoding" settings to solve it.
 <pre>
 [zip]
 # The file name encoding of the downloaded zip file.

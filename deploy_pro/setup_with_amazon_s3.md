@@ -54,7 +54,7 @@ memcached_options = --SERVER=localhost --POOL-MIN=10 --POOL-MAX=100
 It's recommended to create separate buckets for commit, fs, and block objects.
 The key_id and key are required to authenticate you to S3. You can find the key_id and key in the "security credentials" section on your AWS account page.
 
-When creating your buckets on S3, please first read [S3 bucket naming rules][1]. Note especially not to use **UPPERCASE** letters in bucket names (don't use camel style names, such as MyCommitOjbects).
+When creating your buckets on S3, please first read [S3 bucket naming rules][1]. Note especially not to use **UPPERCASE** letters in bucket names (don't use camel style names, such as MyCommitObjects).
 
 ### Use S3 in newer regions
 

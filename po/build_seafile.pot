@@ -1,0 +1,2260 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: build_seafile/README.md:1
+# header
+msgid "# How to Build Seafile"
+msgstr ""
+
+#: build_seafile/README.md:3
+msgid "You can build Seafile from our source code package or from the Github repo directly."
+msgstr ""
+
+#: build_seafile/README.md:5
+msgid "Client"
+msgstr ""
+
+#: build_seafile/README.md:7
+# unordered list
+msgid "* [Linux](linux.md)"
+msgstr ""
+
+#: build_seafile/README.md:8
+# unordered list
+msgid "* [Max OS X](osx.md)"
+msgstr ""
+
+#: build_seafile/README.md:10
+msgid "Server"
+msgstr ""
+
+#: build_seafile/README.md:12
+# unordered list
+msgid "* [Build Seafile server](server.md)"
+msgstr ""
+
+#: build_seafile/freebsd.md:1
+# header
+msgid "# FreeBSD"
+msgstr ""
+
+#: build_seafile/freebsd.md:3
+#: build_seafile/linux.md:3
+# header
+msgid "#### Preparation"
+msgstr ""
+
+#: build_seafile/freebsd.md:5
+msgid "**support for FreeBSD** is still under construction."
+msgstr ""
+
+#: build_seafile/freebsd.md:7
+#: build_seafile/linux.md:5
+msgid "The following list is what you need to install on your development machine. __You should install all of them before you build seafile__."
+msgstr ""
+
+#: build_seafile/freebsd.md:9
+msgid "Package names are according to FreeBSD Ports. You might install your ports manually or via ``pkgng``."
+msgstr ""
+
+#: build_seafile/freebsd.md:11
+# unordered list
+msgid "* devel/autoconf"
+msgstr ""
+
+#: build_seafile/freebsd.md:12
+# unordered list
+msgid "* devel/automake"
+msgstr ""
+
+#: build_seafile/freebsd.md:13
+# unordered list
+msgid "* textproc/intltool"
+msgstr ""
+
+#: build_seafile/freebsd.md:14
+# unordered list
+msgid "* textproc/gsed"
+msgstr ""
+
+#: build_seafile/freebsd.md:15
+# unordered list
+msgid "* devel/libtool"
+msgstr ""
+
+#: build_seafile/freebsd.md:16
+# unordered list
+msgid "* devel/libevent2"
+msgstr ""
+
+#: build_seafile/freebsd.md:17
+# unordered list
+msgid "* ftp/curl"
+msgstr ""
+
+#: build_seafile/freebsd.md:18
+# unordered list
+msgid "* devel/glib20"
+msgstr ""
+
+#: build_seafile/freebsd.md:19
+# unordered list
+msgid "* misc/ossp-uuid"
+msgstr ""
+
+#: build_seafile/freebsd.md:20
+# unordered list
+msgid "* databases/sqlite3"
+msgstr ""
+
+#: build_seafile/freebsd.md:21
+# unordered list
+msgid "* devel/jansson"
+msgstr ""
+
+#: build_seafile/freebsd.md:22
+# unordered list
+msgid "* lang/vala"
+msgstr ""
+
+#: build_seafile/freebsd.md:23
+# unordered list
+msgid "* devel/cmake"
+msgstr ""
+
+#: build_seafile/freebsd.md:24
+# unordered list
+msgid "* archivers/libarchive"
+msgstr ""
+
+#: build_seafile/freebsd.md:25
+# unordered list
+msgid "* devel/py-simplejson (removed in furture release)"
+msgstr ""
+
+#: build_seafile/freebsd.md:27
+msgid "GUI"
+msgstr ""
+
+#: build_seafile/freebsd.md:28
+# unordered list
+msgid "* devel/qt4"
+msgstr ""
+
+#: build_seafile/freebsd.md:30
+# code block
+msgid "```bash\n"
+"#portmaster devel/autoconf devel/automake textproc/intltool textproc/gsed \\\n"
+"devel/libtool devel/libevent2 ftp/curl devel/glib20 misc/ossp-uuid databases/sqlite3 \\\n"
+"devel/jansson lang/vala devel/cmake devel/py-simplejson archivers/libarchive\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:35
+msgid "For a fresh PkgNG users,"
+msgstr ""
+
+#: build_seafile/freebsd.md:37
+# code block
+msgid "```bash\n"
+"#pkg install autoconf automake intltool gsed libtool libevent2 curl \\\n"
+"  glib20 ossp-uuid sqlite3 jansson vala cmake py-simplejson libarchive\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:42
+#: build_seafile/linux.md:36
+# header
+msgid "#### Building"
+msgstr ""
+
+#: build_seafile/freebsd.md:44
+#: build_seafile/linux.md:38
+msgid "First you should get the latest source of libsearpc/ccnet/seafile/seafile-client:"
+msgstr ""
+
+#: build_seafile/freebsd.md:46
+#: build_seafile/linux.md:40
+#: build_seafile/server.md:90
+msgid "Download the source tarball of the latest tag from"
+msgstr ""
+
+#: build_seafile/freebsd.md:48
+#: build_seafile/linux.md:42
+# unordered list
+msgid "- https://github.com/haiwen/libsearpc/tags (use v3.0-latest)"
+msgstr ""
+
+#: build_seafile/freebsd.md:49
+#: build_seafile/linux.md:43
+# unordered list
+msgid "- https://github.com/haiwen/ccnet/tags"
+msgstr ""
+
+#: build_seafile/freebsd.md:50
+#: build_seafile/linux.md:44
+# unordered list
+msgid "- https://github.com/haiwen/seafile/tags"
+msgstr ""
+
+#: build_seafile/freebsd.md:51
+#: build_seafile/linux.md:45
+# unordered list
+msgid "- https://github.com/haiwen/seafile-client/tags"
+msgstr ""
+
+#: build_seafile/freebsd.md:53
+msgid "For example, if the latest released seafile client is 3.1.0, then just use the **v3.1.0** tags of the four projects. You should get four tarballs:"
+msgstr ""
+
+#: build_seafile/freebsd.md:55
+#: build_seafile/linux.md:49
+# unordered list
+msgid "- libsearpc-v3.0-latest.tar.gz"
+msgstr ""
+
+#: build_seafile/freebsd.md:56
+# unordered list
+msgid "- ccnet-3.1.0.tar.gz"
+msgstr ""
+
+#: build_seafile/freebsd.md:57
+# unordered list
+msgid "- seafile-3.1.0.tar.gz"
+msgstr ""
+
+#: build_seafile/freebsd.md:58
+# unordered list
+msgid "- seafile-client-3.1.0.tar.gz"
+msgstr ""
+
+#: build_seafile/freebsd.md:60
+# code block
+msgid "```sh\n"
+"export version=3.1.0\n"
+"alias wget='wget --content-disposition -nc'\n"
+"wget https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz\n"
+"wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile-client/archive/v${version}.tar.gz\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:69
+#: build_seafile/linux.md:63
+msgid "Now uncompress them:"
+msgstr ""
+
+#: build_seafile/freebsd.md:71
+# code block
+msgid "```sh\n"
+"tar xf libsearpc-v3.0-latest.tar.gz\n"
+"tar xf ccnet-${version}.tar.gz\n"
+"tar xf seafile-${version}.tar.gz\n"
+"tar xf seafile-client-${version}.tar.gz\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:78
+#: build_seafile/linux.md:72
+msgid "To build Seafile client, you need first build **libsearpc** and **ccnet**, **seafile**."
+msgstr ""
+
+#: build_seafile/freebsd.md:80
+#: build_seafile/linux.md:74
+# header
+msgid "##### set paths"
+msgstr ""
+
+#: build_seafile/freebsd.md:81
+# code block
+msgid "```bash\n"
+"ln -sfh ../libdata/pkgconfig /usr/local/lib/pkgconfig\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:85
+#: build_seafile/linux.md:81
+#: build_seafile/server.md:140
+# header
+msgid "##### libsearpc"
+msgstr ""
+
+#: build_seafile/freebsd.md:87
+# code block
+msgid "```bash\n"
+"cd libsearpc-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:95
+#: build_seafile/linux.md:92
+# header
+msgid "##### ccnet #####"
+msgstr ""
+
+#: build_seafile/freebsd.md:97
+# code block
+msgid "```bash\n"
+"export CFLAGS=\"-I/usr/local/include/ossp/uuid -I/usr/local/include/event2\"\n"
+"export LDFLAGS=\"-L/usr/local/lib -L/usr/local/lib/event2\"\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:107
+#: build_seafile/linux.md:103
+#: build_seafile/server.md:160
+# header
+msgid "##### seafile"
+msgstr ""
+
+#: build_seafile/freebsd.md:109
+# code block
+msgid "```bash\n"
+"cd seafile-${version}/\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:117
+#: build_seafile/linux.md:114
+# header
+msgid "#### seafile-client"
+msgstr ""
+
+#: build_seafile/freebsd.md:119
+# code block
+msgid "```bash\n"
+"cd seafile-client-${version}\n"
+"cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX .\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:126
+#: build_seafile/linux.md:124
+# header
+msgid "#### custom prefix"
+msgstr ""
+
+#: build_seafile/freebsd.md:127
+#: build_seafile/linux.md:125
+msgid "when installing to a custom ```$PREFIX```, i.e. ```/opt```, you may need a script to set the path variables correctly"
+msgstr ""
+
+#: build_seafile/freebsd.md:129
+# code block
+msgid "```bash\n"
+"cat >$PREFIX/bin/seafile-applet.sh <<END\n"
+"#!/bin/bash\n"
+"exec seafile-applet $@\n"
+"END\n"
+"cat >$PREFIX/bin/seaf-cli.sh <<END\n"
+"export PYTHONPATH=/usr/local/lib/python2.7/site-packages\n"
+"exec seaf-cli $@\n"
+"END\n"
+"chmod +x $PREFIX/bin/seafile-applet.sh $PREFIX/bin/seaf-cli.sh\n"
+"```"
+msgstr ""
+
+#: build_seafile/freebsd.md:140
+#: build_seafile/linux.md:142
+msgid "you can now start the client with ```$PREFIX/bin/seafile-applet.sh```."
+msgstr ""
+
+#: build_seafile/linux.md:1
+# header
+msgid "# Linux"
+msgstr ""
+
+#: build_seafile/linux.md:7
+msgid "Package names are according to Ubuntu 14.04. For other Linux distros, please find their corresponding names yourself."
+msgstr ""
+
+#: build_seafile/linux.md:9
+# unordered list
+msgid "* autoconf/automake/libtool"
+msgstr ""
+
+#: build_seafile/linux.md:10
+# unordered list
+msgid "* libevent-dev ( 2.0 or later )"
+msgstr ""
+
+#: build_seafile/linux.md:11
+#: build_seafile/server.md:10
+# unordered list
+msgid "* libcurl4-openssl-dev  (1.0.0 or later)"
+msgstr ""
+
+#: build_seafile/linux.md:12
+# unordered list
+msgid "* libgtk2.0-dev ( 2.24 or later)"
+msgstr ""
+
+#: build_seafile/linux.md:13
+#: build_seafile/server.md:12
+# unordered list
+msgid "* uuid-dev"
+msgstr ""
+
+#: build_seafile/linux.md:14
+#: build_seafile/server.md:13
+# unordered list
+msgid "* intltool (0.40 or later)"
+msgstr ""
+
+#: build_seafile/linux.md:15
+#: build_seafile/server.md:14
+# unordered list
+msgid "* libsqlite3-dev (3.7 or later)"
+msgstr ""
+
+#: build_seafile/linux.md:16
+# unordered list
+msgid "* valac  (only needed if you build from git repo)"
+msgstr ""
+
+#: build_seafile/linux.md:17
+#: build_seafile/server.md:18
+# unordered list
+msgid "* libjansson-dev"
+msgstr ""
+
+#: build_seafile/linux.md:18
+# unordered list
+msgid "* qtchooser"
+msgstr ""
+
+#: build_seafile/linux.md:19
+# unordered list
+msgid "* qtbase5-dev"
+msgstr ""
+
+#: build_seafile/linux.md:20
+# unordered list
+msgid "* libqt5webkit5-dev"
+msgstr ""
+
+#: build_seafile/linux.md:21
+# unordered list
+msgid "* qttools5-dev"
+msgstr ""
+
+#: build_seafile/linux.md:22
+# unordered list
+msgid "* qttools5-dev-tools"
+msgstr ""
+
+#: build_seafile/linux.md:23
+#: build_seafile/server.md:19
+# unordered list
+msgid "* valac"
+msgstr ""
+
+#: build_seafile/linux.md:24
+# unordered list
+msgid "* cmake"
+msgstr ""
+
+#: build_seafile/linux.md:25
+# unordered list
+msgid "* python-simplejson (for seaf-cli)"
+msgstr ""
+
+#: build_seafile/linux.md:27
+# code block
+msgid "```bash\n"
+"sudo apt-get install autoconf automake libtool libevent-dev libcurl4-openssl-dev libgtk2.0-dev uuid-dev intltool libsqlite3-dev valac libjansson-dev cmake qtchooser qtbase5-dev libqt5webkit5-dev qttools5-dev qttools5-dev-tools\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:30
+msgid "For a fresh Fedora 20 installation, the following will install all dependencies via YUM:"
+msgstr ""
+
+#: build_seafile/linux.md:32
+# code block
+msgid "```bash\n"
+"$ sudo yum install wget gcc libevent-devel openssl-devel gtk2-devel libuuid-devel sqlite-devel jansson-devel intltool cmake libtool vala gcc-c++ qt5-qtbase-devel qt5-qttools-devel qt5-qtwebkit-devel\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:47
+msgid "For example, if the latest released seafile client is 5.0.7, then just use the **v5.0.7** tags of the four projects. You should get four tarballs:"
+msgstr ""
+
+#: build_seafile/linux.md:50
+# unordered list
+msgid "- ccnet-5.0.7.tar.gz"
+msgstr ""
+
+#: build_seafile/linux.md:51
+# unordered list
+msgid "- seafile-5.0.7.tar.gz"
+msgstr ""
+
+#: build_seafile/linux.md:52
+# unordered list
+msgid "- seafile-client-5.0.7.tar.gz"
+msgstr ""
+
+#: build_seafile/linux.md:54
+# code block
+msgid "```sh\n"
+"export version=5.0.7\n"
+"alias wget='wget --content-disposition -nc'\n"
+"wget https://github.com/haiwen/libsearpc/archive/v3.0-latest.tar.gz\n"
+"wget https://github.com/haiwen/ccnet/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile/archive/v${version}.tar.gz\n"
+"wget https://github.com/haiwen/seafile-client/archive/v${version}.tar.gz\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:65
+# code block
+msgid "```sh\n"
+"tar xf libsearpc-3.0-latest.tar.gz\n"
+"tar xf ccnet-${version}.tar.gz\n"
+"tar xf seafile-${version}.tar.gz\n"
+"tar xf seafile-client-${version}.tar.gz\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:75
+# code block
+msgid "```bash\n"
+"export PREFIX=/usr\n"
+"export PKG_CONFIG_PATH=\"$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:83
+# code block
+msgid "```bash\n"
+"cd libsearpc-3.0-latest\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:94
+# code block
+msgid "```bash\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:105
+# code block
+msgid "```bash\n"
+"cd seafile-${version}/\n"
+"./autogen.sh\n"
+"./configure --prefix=$PREFIX --disable-fuse\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:116
+# code block
+msgid "```bash\n"
+"cd seafile-client-${version}\n"
+"cmake -DUSE_QT5=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX .\n"
+"make\n"
+"sudo make install\n"
+"cd ..\n"
+"```"
+msgstr ""
+
+#: build_seafile/linux.md:127
+# code block
+msgid "```bash\n"
+"cat >$PREFIX/bin/seafile-applet.sh <<END\n"
+"#!/bin/bash\n"
+"export LD_LIBRARY_PATH=\"$PREFIX/lib:$LD_LIBRARY_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"exec seafile-applet $@\n"
+"END\n"
+"cat >$PREFIX/bin/seaf-cli.sh <<END\n"
+"export LD_LIBRARY_PATH=\"$PREFIX/lib:$LD_LIBRARY_PATH\"\n"
+"export PATH=\"$PREFIX/bin:$PATH\"\n"
+"export PYTHONPATH=$PREFIX/lib/python2.7/site-packages\n"
+"exec seaf-cli $@\n"
+"END\n"
+"chmod +x $PREFIX/bin/seafile-applet.sh $PREFIX/bin/seaf-cli.sh\n"
+"```"
+msgstr ""
+
+#: build_seafile/osx.md:1
+# header
+msgid "# Mac OS X"
+msgstr ""
+
+#: build_seafile/osx.md:3
+# header
+msgid "## Option 1: Homebrew (conflicting with macports)"
+msgstr ""
+
+#: build_seafile/osx.md:5
+msgid "###Setup homebrew environment"
+msgstr ""
+
+#: build_seafile/osx.md:7
+#: build_seafile/osx.md:36
+# ordered list
+msgid "1. Install xcode"
+msgstr ""
+
+#: build_seafile/osx.md:9
+#: build_seafile/osx.md:37
+# unordered list
+msgid "  - Download Xcode from [website](https://developer.apple.com/xcode/downloads/) or [App Store](http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)"
+msgstr ""
+
+#: build_seafile/osx.md:10
+# unordered list
+msgid "  - Xcode Command Line Utilities might be enough to build seafile, but it is left untested yet."
+msgstr ""
+
+#: build_seafile/osx.md:12
+# ordered list
+msgid "2. Install homebrew"
+msgstr ""
+
+#: build_seafile/osx.md:14
+# unordered list
+msgid "  - Execute this from Terminal"
+msgstr ""
+
+#: build_seafile/osx.md:15
+msgid "  ``ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"`"
+msgstr ""
+
+#: build_seafile/osx.md:16
+# unordered list
+msgid "  - Make sure you have a clean homebrew environment. You can double-check it by ``brew doctor``"
+msgstr ""
+
+#: build_seafile/osx.md:18
+# blockquote, which can be cascaded
+msgid "> visit http://brew.sh/ for more"
+msgstr ""
+
+#: build_seafile/osx.md:20
+msgid "Then install seafile from homebrew"
+msgstr ""
+
+#: build_seafile/osx.md:21
+# code block
+msgid "  ```\n"
+"  brew tap Chilledheart/seafile\n"
+"  brew install seafile-client\n"
+"  ```"
+msgstr ""
+
+#: build_seafile/osx.md:26
+msgid "If you face any installation issue, please report it with your homebrew logs"
+msgstr ""
+
+#: build_seafile/osx.md:27
+# unordered list
+msgid "- [Homebrew Troubleshooting](https://github.com/Homebrew/homebrew/wiki/Troubleshooting)"
+msgstr ""
+
+#: build_seafile/osx.md:29
+msgid "If it is an issue while using homebrewed seafile, please report it with your seafile logs"
+msgstr ""
+
+#: build_seafile/osx.md:30
+# unordered list
+msgid "- [Seafile FAQ](../faq.md)"
+msgstr ""
+
+#: build_seafile/osx.md:32
+# header
+msgid "## Option 2: Macports (conflicting with homebrew)"
+msgstr ""
+
+#: build_seafile/osx.md:34
+msgid "###Setup macports environment"
+msgstr ""
+
+#: build_seafile/osx.md:39
+# ordered list
+msgid "2. Install macports"
+msgstr ""
+
+#: build_seafile/osx.md:41
+# unordered list
+msgid "  - Quick start https://www.macports.org/install.php"
+msgstr ""
+
+#: build_seafile/osx.md:43
+# blockquote, which can be cascaded
+msgid "> visit https://www.macports.org/ for more"
+msgstr ""
+
+#: build_seafile/osx.md:45
+# ordered list
+msgid "3. Install following libraries and tools using `port`"
+msgstr ""
+
+#: build_seafile/osx.md:47
+msgid "        sudo port install autoconf automake pkgconfig libtool glib2 \\"
+msgstr ""
+
+#: build_seafile/osx.md:48
+msgid "        libevent vala openssl git qt4-mac jansson"
+msgstr ""
+
+#: build_seafile/osx.md:50
+# ordered list
+msgid "4. Install python"
+msgstr ""
+
+#: build_seafile/osx.md:52
+msgid "        sudo port install python27"
+msgstr ""
+
+#: build_seafile/osx.md:53
+msgid "        sudo port select --set python python27"
+msgstr ""
+
+#: build_seafile/osx.md:55
+msgid "        sudo port install py27-pip"
+msgstr ""
+
+#: build_seafile/osx.md:56
+msgid "        sudo port select --set pip pip27"
+msgstr ""
+
+#: build_seafile/osx.md:58
+# ordered list
+msgid "5. Set pkg config environment"
+msgstr ""
+
+#: build_seafile/osx.md:60
+msgid "        export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig"
+msgstr ""
+
+#: build_seafile/osx.md:61
+msgid "        export LIBTOOL=glibtool"
+msgstr ""
+
+#: build_seafile/osx.md:62
+msgid "        export LIBTOOLIZE=glibtoolize"
+msgstr ""
+
+#: build_seafile/osx.md:63
+msgid "        export CPPFLAGS=\"-I/opt/local/include\""
+msgstr ""
+
+#: build_seafile/osx.md:64
+msgid "        export LDFLAGS=\"-L/opt/local/lib -L/usr/local/lib -Wl,-headerpad_max_install_names\""
+msgstr ""
+
+#: build_seafile/osx.md:67
+# header
+msgid "Compiling libsearpc\n"
+"------------------"
+msgstr ""
+
+#: build_seafile/osx.md:70
+msgid "Download [libsearpc](https://github.com/haiwen/libsearpc), then:"
+msgstr ""
+
+#: build_seafile/osx.md:72
+#: build_seafile/osx.md:82
+#: build_seafile/osx.md:93
+msgid "        ./autogen.sh"
+msgstr ""
+
+#: build_seafile/osx.md:73
+#: build_seafile/osx.md:83
+msgid "        ./configure"
+msgstr ""
+
+#: build_seafile/osx.md:74
+#: build_seafile/osx.md:84
+#: build_seafile/osx.md:95
+msgid "        make"
+msgstr ""
+
+#: build_seafile/osx.md:75
+#: build_seafile/osx.md:85
+#: build_seafile/osx.md:96
+msgid "        sudo make install"
+msgstr ""
+
+#: build_seafile/osx.md:77
+# header
+msgid "Compiling ccnet\n"
+"---------------"
+msgstr ""
+
+#: build_seafile/osx.md:80
+msgid "Download [ccnet](https://github.com/haiwen/ccnet), then:"
+msgstr ""
+
+#: build_seafile/osx.md:87
+# header
+msgid "Compiling seafile\n"
+"-----------------"
+msgstr ""
+
+#: build_seafile/osx.md:90
+# ordered list
+msgid "1. Download [seafile](https://github.com/haiwen/seafile)"
+msgstr ""
+
+#: build_seafile/osx.md:91
+# ordered list
+msgid "2. Compile"
+msgstr ""
+
+#: build_seafile/osx.md:94
+msgid "        ./configure --disable-fuse"
+msgstr ""
+
+#: build_seafile/osx.md:98
+# header
+msgid "Compiling seafile-client and packaging it\n"
+"---------"
+msgstr ""
+
+#: build_seafile/osx.md:101
+# ordered list
+msgid "1. execute the building script:"
+msgstr ""
+
+#: build_seafile/osx.md:103
+msgid "        ./scripts/build.py"
+msgstr ""
+
+#: build_seafile/osx.md:105
+# ordered list
+msgid "2. Go to Release directory and see if `seafile-applet.app` can run correctly."
+msgstr ""
+
+#: build_seafile/osx.md:107
+# header
+msgid "Problem you may encounter\n"
+"-------------------------"
+msgstr ""
+
+#: build_seafile/osx.md:109
+# ordered list
+msgid "1. If `install_name_tool` reports \"malformed object\" \"unknown load command\", It may be the version of xcode command line tools incompatible with `install_name_tool`."
+msgstr ""
+
+#: build_seafile/osx.md:110
+# ordered list
+msgid "2. If xcode can't find glib, Corrects xcode's \"build settings/search paths/header search\"."
+msgstr ""
+
+#: build_seafile/rpi.md:1
+# header
+msgid "# How to Build Seafile Server Release Package for Raspberry Pi"
+msgstr ""
+
+#: build_seafile/rpi.md:3
+msgid "*Table of contents*:"
+msgstr ""
+
+#: build_seafile/rpi.md:5
+# unordered list
+msgid "- [Setup the build environment](#wiki-setup-build-env)"
+msgstr ""
+
+#: build_seafile/rpi.md:6
+# unordered list
+msgid "  - [Install packages](#wiki-install-packages)"
+msgstr ""
+
+#: build_seafile/rpi.md:7
+# unordered list
+msgid "  - [Compile development libraries](#wiki-compile-dev-libs)"
+msgstr ""
+
+#: build_seafile/rpi.md:8
+# unordered list
+msgid "  - [Install Python libraries](#wiki-install-python-libs)"
+msgstr ""
+
+#: build_seafile/rpi.md:9
+# unordered list
+msgid "- [Prepare source code](#wiki-prepare-seafile-source-code)"
+msgstr ""
+
+#: build_seafile/rpi.md:10
+# unordered list
+msgid "  - [Fetch git tags and prepare source tarballs](#wiki-fetch-tags-and-prepare-tarballs)"
+msgstr ""
+
+#: build_seafile/rpi.md:11
+# unordered list
+msgid "  - [Run the packaging script](#wiki-run-pkg-script)"
+msgstr ""
+
+#: build_seafile/rpi.md:12
+# unordered list
+msgid "- [Test the built package](#wiki-test-built-pkg)"
+msgstr ""
+
+#: build_seafile/rpi.md:13
+# unordered list
+msgid "  - [Test a fresh install](#wiki-test-fresh-install)"
+msgstr ""
+
+#: build_seafile/rpi.md:14
+# unordered list
+msgid "  - [Test upgrading](#wiki-test-upgrading)"
+msgstr ""
+
+#: build_seafile/rpi.md:16
+# header
+msgid "## <a id=\"wiki-setup-build-env\"></a>Setup the build environment"
+msgstr ""
+
+#: build_seafile/rpi.md:18
+msgid "Requirements:"
+msgstr ""
+
+#: build_seafile/rpi.md:20
+# unordered list
+msgid "- A raspberry pi with raspian distribution installed."
+msgstr ""
+
+#: build_seafile/rpi.md:22
+# header
+msgid "### <a id=\"wiki-install-packages\"></a> Install packages"
+msgstr ""
+
+#: build_seafile/rpi.md:24
+# code block
+msgid "```\n"
+"sudo apt-get install build-essential\n"
+"sudo apt-get install libevent-dev libcurl4-openssl-dev libglib2.0-dev uuid-dev intltool libsqlite3-dev libmysqlclient-dev libarchive-dev libtool libjansson-dev valac libfuse-dev re2c flex python-setuptools cmake\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:28
+# header
+msgid "### <a id=\"wiki-compile-dev-libs\"></a> Compile development libraries"
+msgstr ""
+
+#: build_seafile/rpi.md:30
+#: build_seafile/server.md:31
+# header
+msgid "#### libevhtp"
+msgstr ""
+
+#: build_seafile/rpi.md:32
+msgid "libevhtp is a http server libary on top of libevent. It's used in seafile file server."
+msgstr ""
+
+#: build_seafile/rpi.md:34
+# code block
+msgid "```\n"
+"git clone https://www.github.com/haiwen/libevhtp.git\n"
+"cd libevhtp\n"
+"cmake -DEVHTP_DISABLE_SSL=OFF -DEVHTP_BUILD_SHARED=ON .\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:42
+# header
+msgid "#### libzdb"
+msgstr ""
+
+#: build_seafile/rpi.md:44
+msgid "`libzdb` provides a consistent API to various database backends, including sqlite/mysql/pg/oracle. It's used by ccnet-server and seafile-server."
+msgstr ""
+
+#: build_seafile/rpi.md:46
+# code block
+msgid "```\n"
+"git clone https://www.github.com/haiwen/libzdb.git\n"
+"cd libzdb\n"
+"./autogen.sh\n"
+"./configure\n"
+"make\n"
+"sudo make install\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:55
+msgid "After compiling all the libraries, run `ldconfig` to update the system libraries cache:"
+msgstr ""
+
+#: build_seafile/rpi.md:57
+# code block
+msgid "```\n"
+"sudo ldconfig\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:61
+# header
+msgid "### <a id=\"wiki-install-python-libs\"></a> Install python libraries"
+msgstr ""
+
+#: build_seafile/rpi.md:64
+msgid "Create a new directory `/home/pi/dev/seahub_thirdpart`:"
+msgstr ""
+
+#: build_seafile/rpi.md:66
+# code block
+msgid "```\n"
+"mkdir -p ~/dev/seahub_thirdpart\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:70
+msgid "Download these tarballs to `/tmp/`:"
+msgstr ""
+
+#: build_seafile/rpi.md:72
+# unordered list
+msgid "- [pytz](https://pypi.python.org/packages/source/p/pytz/pytz-2016.1.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:73
+# unordered list
+msgid "- [Django](https://www.djangoproject.com/m/releases/1.8/Django-1.8.10.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:74
+# unordered list
+msgid "- [django-statici18n](https://pypi.python.org/packages/source/d/django-statici18n/django-statici18n-1.1.3.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:75
+# unordered list
+msgid "- [djangorestframework](https://pypi.python.org/packages/source/d/djangorestframework/djangorestframework-3.3.2.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:76
+# unordered list
+msgid "- [django_compressor](https://pypi.python.org/packages/source/d/django_compressor/django_compressor-1.4.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:77
+# unordered list
+msgid "- [jsonfield](https://pypi.python.org/packages/source/j/jsonfield/jsonfield-1.0.3.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:78
+# unordered list
+msgid "- [django-post_office](https://pypi.python.org/packages/source/d/django-post_office/django-post_office-2.0.6.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:79
+# unordered list
+msgid "- [gunicorn](http://pypi.python.org/packages/source/g/gunicorn/gunicorn-19.4.5.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:80
+# unordered list
+msgid "- [flup](http://pypi.python.org/packages/source/f/flup/flup-1.0.2.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:81
+# unordered list
+msgid "- [chardet](https://pypi.python.org/packages/source/c/chardet/chardet-2.3.0.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:82
+# unordered list
+msgid "- [python-dateutil](https://labix.org/download/python-dateutil/python-dateutil-1.5.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:83
+# unordered list
+msgid "- [six](https://pypi.python.org/packages/source/s/six/six-1.9.0.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:84
+# unordered list
+msgid "- [django-picklefield](https://pypi.python.org/packages/source/d/django-picklefield/django-picklefield-0.3.2.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:85
+# unordered list
+msgid "- [django-constance](https://github.com/haiwen/django-constance/archive/bde7f7c.zip)"
+msgstr ""
+
+#: build_seafile/rpi.md:86
+# unordered list
+msgid "- [jdcal](https://pypi.python.org/packages/source/j/jdcal/jdcal-1.2.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:87
+# unordered list
+msgid "- [et_xmlfile](https://pypi.python.org/packages/source/e/et_xmlfile/et_xmlfile-1.0.1.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:88
+# unordered list
+msgid "- [openpyxl](https://pypi.python.org/packages/source/o/openpyxl/openpyxl-2.3.0.tar.gz)"
+msgstr ""
+
+#: build_seafile/rpi.md:90
+msgid "Install all these libaries to `/home/pi/dev/seahub_thirdpart`:"
+msgstr ""
+
+#: build_seafile/rpi.md:92
+# code block
+msgid "```\n"
+"cd ~/dev/seahub_thirdpart\n"
+"export PYTHONPATH=.\n"
+"easy_install -d . /tmp/pytz-2016.1.tar.gz\n"
+"easy_install -d . /tmp/Django-1.8.10.tar.gz\n"
+"easy_install -d . /tmp/django-statici18n-1.1.3.tar.gz\n"
+"easy_install -d . /tmp/djangorestframework-3.3.2.tar.gz\n"
+"easy_install -d . /tmp/django_compressor-1.4.tar.gz\n"
+"easy_install -d . /tmp/jsonfield-1.0.3.tar.gz\n"
+"easy_install -d . /tmp/django-post_office-2.0.6.tar.gz\n"
+"easy_install -d . /tmp/gunicorn-19.4.5.tar.gz\n"
+"easy_install -d . /tmp/flup-1.0.2.tar.gz\n"
+"easy_install -d . /tmp/chardet-2.3.0.tar.gz\n"
+"easy_install -d . /tmp/python-dateutil-1.5.tar.gz\n"
+"easy_install -d . /tmp/six-1.9.0.tar.gz\n"
+"easy_install -d . /tmp/django-picklefield-0.3.2.tar.gz\n"
+"wget -O /tmp/django_constance.zip https://github.com/haiwen/django-constance/archive/bde7f7c.zip\n"
+"easy_install -d . /tmp/django_constance.zip\n"
+"easy_install -d . /tmp/jdcal-1.2.tar.gz\n"
+"easy_install -d . /tmp/et_xmlfile-1.0.1.tar.gz\n"
+"easy_install -d . /tmp/openpyxl-2.3.0.tar.gz\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:115
+# header
+msgid "## <a id=\"wiki-prepare-seafile-source-code\"></a>Prepare seafile source code"
+msgstr ""
+
+#: build_seafile/rpi.md:117
+msgid "To build seafile server, there are four sub projects involved:"
+msgstr ""
+
+#: build_seafile/rpi.md:119
+# unordered list
+msgid "- [libsearpc](https://github.com/haiwen/libsearpc)"
+msgstr ""
+
+#: build_seafile/rpi.md:120
+# unordered list
+msgid "- [ccnet](https://github.com/haiwen/ccnet)"
+msgstr ""
+
+#: build_seafile/rpi.md:121
+# unordered list
+msgid "- [seafile](https://github.com/haiwen/seafile)"
+msgstr ""
+
+#: build_seafile/rpi.md:122
+# unordered list
+msgid "- [seahub](https://github.com/haiwen/seahub)"
+msgstr ""
+
+#: build_seafile/rpi.md:124
+msgid "The build process has two steps:"
+msgstr ""
+
+#: build_seafile/rpi.md:126
+# unordered list
+msgid "- First, fetch the tags of each projects, and make a soruce tarball for each of them."
+msgstr ""
+
+#: build_seafile/rpi.md:127
+# unordered list
+msgid "- Then run a `build-server.py` script to build the server package from the source tarballs."
+msgstr ""
+
+#: build_seafile/rpi.md:129
+# header
+msgid "### <a id=\"wiki-fetch-tags-and-prepare-tarballs\"></a> Fetch git tags and prepare source tarballs"
+msgstr ""
+
+#: build_seafile/rpi.md:131
+msgid "Seafile manages the releases in tags on github."
+msgstr ""
+
+#: build_seafile/rpi.md:133
+msgid "Assume we are packaging for seafile server 4.1.1, then the tags are:"
+msgstr ""
+
+#: build_seafile/rpi.md:135
+# unordered list
+msgid "- ccnet, seafile, and seahub would all have a `v4.1.1-sever` tag."
+msgstr ""
+
+#: build_seafile/rpi.md:136
+# unordered list
+msgid "- libsearpc would have the `v3.0-latest` tag (libsearpc has been quite stable and basically has no further development, so the tag is always `v3.0-latest`)"
+msgstr ""
+
+#: build_seafile/rpi.md:138
+msgid "First setup the `PKG_CONFIG_PATH` enviroment variable (So we don't need to make and make install libsearpc/ccnet/seafile into the system):"
+msgstr ""
+
+#: build_seafile/rpi.md:140
+# code block
+msgid "```\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/seafile/lib:$PKG_CONFIG_PATH\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/libsearpc:$PKG_CONFIG_PATH\n"
+"export PKG_CONFIG_PATH=/home/pi/dev/ccnet:$PKG_CONFIG_PATH\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:147
+# header
+msgid "### libsearpc"
+msgstr ""
+
+#: build_seafile/rpi.md:149
+# code block
+msgid "```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/libsearpc.git\n"
+"cd libsearpc\n"
+"git reset --hard v3.0-latest\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:159
+# header
+msgid "### ccnet"
+msgstr ""
+
+#: build_seafile/rpi.md:161
+# code block
+msgid "```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/ccnet.git\n"
+"cd ccnet\n"
+"git reset --hard v4.1.1-server\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:171
+# header
+msgid "### seafile"
+msgstr ""
+
+#: build_seafile/rpi.md:173
+# code block
+msgid "```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafile.git\n"
+"cd seafile\n"
+"git reset --hard v4.1.1-server\n"
+"./autogen.sh\n"
+"./configure\n"
+"make dist\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:183
+# header
+msgid "### seahub"
+msgstr ""
+
+#: build_seafile/rpi.md:185
+# code block
+msgid "```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seahub.git\n"
+"cd seahub\n"
+"git reset --hard v4.1.1-server\n"
+"./tools/gen-tarball.py --version=4.1.1 --branch=HEAD\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:193
+# header
+msgid "### seafobj"
+msgstr ""
+
+#: build_seafile/rpi.md:195
+# code block
+msgid "```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafobj.git\n"
+"cd seafobj\n"
+"git reset --hard v4.1.1-server\n"
+"make dist\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:203
+# header
+msgid "### seafdav"
+msgstr ""
+
+#: build_seafile/rpi.md:205
+# code block
+msgid "```\n"
+"cd ~/dev\n"
+"git clone https://github.com/haiwen/seafdav.git\n"
+"cd seafdav\n"
+"git reset --hard v4.1.1-server\n"
+"make\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:213
+# header
+msgid "### Copy the source tar balls to the same folder"
+msgstr ""
+
+#: build_seafile/rpi.md:215
+# code block
+msgid "```\n"
+"mkdir ~/seafile-sources\n"
+"cp ~/dev/libsearpc/libsearpc-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/ccnet/ccnet-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/seafile/seafile-<version>-tar.gz ~/seafile-sources\n"
+"cp ~/dev/seahub/seahub-<version>-tar.gz ~/seafile-sources\n"
+"\n"
+"cp ~/dev/seafobj/seafobj.tar.gz ~/seafile-sources\n"
+"cp ~/dev/seafdav/seafdav.tar.gz ~/seafile-sources\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:226
+# header
+msgid "### <a id=\"wiki-run-pkg-script\"></a> Run the packaging script"
+msgstr ""
+
+#: build_seafile/rpi.md:228
+msgid "Now we have all the tarballs prepared, we can run the `build-server.py` script to build the server package."
+msgstr ""
+
+#: build_seafile/rpi.md:230
+# code block
+msgid "```\n"
+"mkdir ~/seafile-server-pkgs\n"
+"~/dev/seafile/scripts/build-server.py --libsearpc_version=<libsearpc_version> --ccnet_version=<ccnet_version> --seafile_version=<seafile_version> --seahub_version=<seahub_version> --srcdir=  --thidrpartdir=/home/pi/dev/seahub_thirdpart --srcdir=/home/pi/seafile-sources --outputdir=/home/pi/seafile-server-pkgs\n"
+"```"
+msgstr ""
+
+#: build_seafile/rpi.md:235
+msgid "After the script finisheds, we would get a `seafile-server_4.1.1_pi.tar.gz` in `~/seafile-server-pkgs` folder."
+msgstr ""
+
+#: build_seafile/rpi.md:237
+# header
+msgid "## <a id=\"wiki-test-built-pkg\"></a> Test the built package"
+msgstr ""
+
+#: build_seafile/rpi.md:239
+# header
+msgid "### <a id=\"wiki-test-fresh-install\"></a>Test a fresh install"
+msgstr ""
+
+#: build_seafile/rpi.md:241
+msgid "Use the built seafile server package to go over the steps of [Deploying Seafile with SQLite](http://manual.seafile.com/deploy/using_sqlite.html)."
+msgstr ""
+
+#: build_seafile/rpi.md:243
+msgid "The test should cover these steps at least:"
+msgstr ""
+
+#: build_seafile/rpi.md:245
+# unordered list
+msgid "- The setup process is ok"
+msgstr ""
+
+#: build_seafile/rpi.md:246
+# unordered list
+msgid "- After `seafile.sh start` and `seahub.sh start`, you can login from a browser."
+msgstr ""
+
+#: build_seafile/rpi.md:247
+# unordered list
+msgid "- Uploading/Downloading files through a web browser works correctly."
+msgstr ""
+
+#: build_seafile/rpi.md:248
+# unordered list
+msgid "- Seafile [WebDAV](http://manual.seafile.com/extension/webdav.html) server works correctly"
+msgstr ""
+
+#: build_seafile/rpi.md:250
+# header
+msgid "### <a id=\"wiki-test-upgrading\"></a> Test upgrading from a previous version"
+msgstr ""
+
+#: build_seafile/rpi.md:252
+# unordered list
+msgid "- Download the package of the previous version seafile server, and setup it."
+msgstr ""
+
+#: build_seafile/rpi.md:253
+# unordered list
+msgid "- Upgrading according to [the manual](http://manual.seafile.com/deploy/upgrade.html)"
+msgstr ""
+
+#: build_seafile/rpi.md:254
+# unordered list
+msgid "- After the upgrade, check the functionality is ok:"
+msgstr ""
+
+#: build_seafile/rpi.md:255
+# unordered list
+msgid "  - Uploading/Downloading files through a web browser works correctly."
+msgstr ""
+
+#: build_seafile/rpi.md:256
+# unordered list
+msgid "  - Seafile [WebDAV](http://manual.seafile.com/extension/webdav.html) server works correctly"
+msgstr ""
+
+#: build_seafile/server.md:1
+# header
+msgid "# Server"
+msgstr ""
+
+#: build_seafile/server.md:3
+# header
+msgid "## Preparation"
+msgstr ""
+
+#: build_seafile/server.md:5
+msgid "The following list is all the libraries you need to install on your machine. **You should install all of them before you build seafile**."
+msgstr ""
+
+#: build_seafile/server.md:7
+msgid "Package names are according to Ubuntu 12.04. For other Linux distros, please find their corresponding names yourself."
+msgstr ""
+
+#: build_seafile/server.md:9
+# unordered list
+msgid "* libevent-dev  (2.0 or later )"
+msgstr ""
+
+#: build_seafile/server.md:11
+# unordered list
+msgid "* libglib2.0-dev (2.28 or later)"
+msgstr ""
+
+#: build_seafile/server.md:15
+# unordered list
+msgid "* libmysqlclient-dev (5.5 or later)"
+msgstr ""
+
+#: build_seafile/server.md:16
+# unordered list
+msgid "* libarchive-dev"
+msgstr ""
+
+#: build_seafile/server.md:17
+# unordered list
+msgid "* libtool"
+msgstr ""
+
+#: build_seafile/server.md:20
+# unordered list
+msgid "* libfuse-dev"
+msgstr ""
+
+#: build_seafile/server.md:22
+msgid "Also, python 2.7 is required since seafile server 5.1.0."
+msgstr ""
+
+#: build_seafile/server.md:24
+msgid "The following libraries need to be compiled from source."
+msgstr ""
+
+#: build_seafile/server.md:26
+# header
+msgid "### libzdb"
+msgstr ""
+
+#: build_seafile/server.md:28
+# unordered list
+msgid "* Install `re2c` and `flex`"
+msgstr ""
+
+#: build_seafile/server.md:29
+# unordered list
+msgid "* Download [libzdb](http://www.tildeslash.com/libzdb/dist/libzdb-2.12.tar.gz)"
+msgstr ""
+
+#: build_seafile/server.md:33
+# unordered list
+msgid "* Download [libevhtp](https://github.com/ellzey/libevhtp/archive/1.1.6.tar.gz)."
+msgstr ""
+
+#: build_seafile/server.md:34
+# unordered list
+msgid "* Build libevhtp by:"
+msgstr ""
+
+#: build_seafile/server.md:36
+# code block
+msgid "```\n"
+"cmake -DEVHTP_DISABLE_SSL=ON -DEVHTP_BUILD_SHARED=ON .\n"
+"make\n"
+"sudo make install\n"
+"\n"
+"```"
+msgstr ""
+
+#: build_seafile/server.md:43
+# header
+msgid "### Seahub dependencies"
+msgstr ""
+
+#: build_seafile/server.md:45
+msgid "**Seahub** is the web front end of Seafile. It's written in the [django](http://djangoproject.com) framework. Seahub requires Python 2.6(or 2.7) installed on your server, and it needs the following python libraries:"
+msgstr ""
+
+#: build_seafile/server.md:47
+# unordered list
+msgid "- Django 1.8"
+msgstr ""
+
+#: build_seafile/server.md:48
+# unordered list
+msgid "- pytz"
+msgstr ""
+
+#: build_seafile/server.md:49
+# unordered list
+msgid "- django-statici18n"
+msgstr ""
+
+#: build_seafile/server.md:50
+# unordered list
+msgid "- djangorestframework"
+msgstr ""
+
+#: build_seafile/server.md:51
+# unordered list
+msgid "- django_compressor"
+msgstr ""
+
+#: build_seafile/server.md:52
+# unordered list
+msgid "- django-post_office"
+msgstr ""
+
+#: build_seafile/server.md:53
+# unordered list
+msgid "- [django-constance](https://github.com/haiwen/django-constance/) (install it by `pip install https://github.com/haiwen/django-constance/archive/bde7f7c.zip`)"
+msgstr ""
+
+#: build_seafile/server.md:54
+# unordered list
+msgid "- gunicorn"
+msgstr ""
+
+#: build_seafile/server.md:55
+# unordered list
+msgid "- flup"
+msgstr ""
+
+#: build_seafile/server.md:56
+# unordered list
+msgid "- chardet"
+msgstr ""
+
+#: build_seafile/server.md:57
+# unordered list
+msgid "- python-dateutil"
+msgstr ""
+
+#: build_seafile/server.md:58
+# unordered list
+msgid "- six"
+msgstr ""
+
+#: build_seafile/server.md:59
+# unordered list
+msgid "- openpyxl"
+msgstr ""
+
+#: build_seafile/server.md:61
+msgid "Before continue, make sure you have all the above libraries available in your system."
+msgstr ""
+
+#: build_seafile/server.md:63
+# header
+msgid "### Prepare the directory layout"
+msgstr ""
+
+#: build_seafile/server.md:65
+msgid "In the following sections, you'll be guided to build and setup the seafile server step by step. Seafile server is consisted of several components. In order for them to function correctly, you must:"
+msgstr ""
+
+#: build_seafile/server.md:67
+# unordered list
+msgid "* Follow our instructions step by step"
+msgstr ""
+
+#: build_seafile/server.md:68
+# unordered list
+msgid "* Make sure your directory layout is exactly the same with the guide in each step."
+msgstr ""
+
+#: build_seafile/server.md:70
+msgid "First create the top level directory. In the following sections, we'll use \"/data/haiwen\" as the top level directory."
+msgstr ""
+
+#: build_seafile/server.md:72
+# inline html
+msgid "<pre>\n"
+"mkdir /data/haiwen/\n"
+"cd /data/haiwen/\n"
+"mkdir seafile-server\n"
+"cd seafile-server\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:79
+msgid "The currently layout is:"
+msgstr ""
+
+#: build_seafile/server.md:81
+# inline html
+msgid "<pre>\n"
+"haiwen/\n"
+"└── seafile-server\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:86
+# header
+msgid "### Get the source"
+msgstr ""
+
+#: build_seafile/server.md:88
+msgid "First you should get the latest source of libsearpc/ccnet/seafile/seahub"
+msgstr ""
+
+#: build_seafile/server.md:92
+# unordered list
+msgid "* https://github.com/haiwen/libsearpc/tags"
+msgstr ""
+
+#: build_seafile/server.md:93
+# unordered list
+msgid "* https://github.com/haiwen/ccnet/tags"
+msgstr ""
+
+#: build_seafile/server.md:94
+# unordered list
+msgid "* https://github.com/haiwen/seafile/tags"
+msgstr ""
+
+#: build_seafile/server.md:95
+# unordered list
+msgid "* https://github.com/haiwen/seahub/tags"
+msgstr ""
+
+#: build_seafile/server.md:97
+msgid "For example, if the latest released seafile server is 4.4.7, then just use the **v4.4.7-server** tags of the projects (except for libsearpc, which uses the **v3.0-latest** tag). You should get four tarballs:"
+msgstr ""
+
+#: build_seafile/server.md:99
+# unordered list
+msgid "* libsearpc-3.0-latest.tar.gz"
+msgstr ""
+
+#: build_seafile/server.md:100
+# unordered list
+msgid "* ccnet-4.4.7-server.tar.gz"
+msgstr ""
+
+#: build_seafile/server.md:101
+# unordered list
+msgid "* seafile-4.4.7-server.tar.gz"
+msgstr ""
+
+#: build_seafile/server.md:102
+# unordered list
+msgid "* seahub-4.4.7-server.tar.gz"
+msgstr ""
+
+#: build_seafile/server.md:104
+msgid "Create a folder <code>haiwen/src</code>, and uncompress libsearpc/ccnet/seafile source to it."
+msgstr ""
+
+#: build_seafile/server.md:106
+# inline html
+msgid "<pre>\n"
+"cd haiwen/seafile-server\n"
+"mkdir src\n"
+"cd src\n"
+"tar xf /path/to/libsearpc-3.0-latest.tar.gz\n"
+"tar xf /path/to/ccnet-4.4.7-server.tar.gz\n"
+"tar xf /path/to/seafile-4.4.7-server.tar.gz\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:115
+msgid "And uncompress seahub tarball to <code>haiwen/seafile-server</code>:"
+msgstr ""
+
+#: build_seafile/server.md:117
+# inline html
+msgid "<pre>\n"
+"cd haiwen/seafile-server\n"
+"tar xf /path/to/seahub-4.4.7-server.tar.gz\n"
+"mv seahub-4.4.7-server seahub\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:123
+msgid "So far, The current directory layout is:"
+msgstr ""
+
+#: build_seafile/server.md:125
+# inline html
+msgid "<pre>\n"
+"haiwen/\n"
+"└── seafile-server\n"
+"    └── seahub\n"
+"    └── src\n"
+"        ├── libsearpc-4.4.7-server\n"
+"        ├── ccnet-4.4.7-server\n"
+"        ├── seafile-4.4.7-server\n"
+"        ├── ... (other files)\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:136
+# header
+msgid "### Building"
+msgstr ""
+
+#: build_seafile/server.md:138
+msgid "To build seafile server, you need first build **libsearpc** and **ccnet**."
+msgstr ""
+
+#: build_seafile/server.md:142
+# inline html
+msgid "<pre>\n"
+"cd libsearpc-${version}\n"
+"./autogen.sh\n"
+"./configure\n"
+"make\n"
+"make install\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:150
+# header
+msgid "##### ccnet"
+msgstr ""
+
+#: build_seafile/server.md:152
+# inline html
+msgid "<pre>\n"
+"cd ccnet-${version}\n"
+"./autogen.sh\n"
+"./configure --disable-client --enable-server   # `export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig` if libsearpc is not found\n"
+"make\n"
+"make install\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:162
+# inline html
+msgid "<pre>\n"
+"cd seafile-${version}\n"
+"./autogen.sh\n"
+"./configure --disable-client --enable-server\n"
+"make\n"
+"make install\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:171
+msgid "*Note*: You need to run `sudo ldconfig` to refresh the system libraries cache after you compiles all the components."
+msgstr ""
+
+#: build_seafile/server.md:173
+# header
+msgid "## Deploy Seafile Server"
+msgstr ""
+
+#: build_seafile/server.md:175
+# header
+msgid "### Components of the Seafile Server"
+msgstr ""
+
+#: build_seafile/server.md:177
+msgid "The seafile server consists of the following components:"
+msgstr ""
+
+#: build_seafile/server.md:179
+# inline html
+msgid "<table>\n"
+"  <tr>\n"
+"    <th>Process Name</th><th>Functionality</th>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>ccnet-server</td><td>underlying networking</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>seaf-server</td><td>data management</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>Seahub</td><td>website front-end of seafile server</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>fileserver</td><td>handles raw file upload/download for Seahub</td>\n"
+"  </tr>\n"
+"</table>"
+msgstr ""
+
+#: build_seafile/server.md:197
+msgid "![server architecture](../images/server-arch.png \"server architecture\")"
+msgstr ""
+
+#: build_seafile/server.md:199
+# unordered list
+msgid "* **ccnet** stores its configuration and metadata is a directory named <code>ccnet</code>."
+msgstr ""
+
+#: build_seafile/server.md:200
+# unordered list
+msgid "* **seaf-server** store its configuration and data in a directory, normally named <code>seafile-data</code>."
+msgstr ""
+
+#: build_seafile/server.md:201
+# unordered list
+msgid "* **seahub** is written in Django. If you have any experience with Django, you should know the <code>syncdb</code> command must be run to create all the database tables."
+msgstr ""
+
+#: build_seafile/server.md:202
+# unordered list
+msgid "* An **admin account** has to be created, so that you, the admin, can login with this account to manage the server."
+msgstr ""
+
+#: build_seafile/server.md:204
+msgid "These are the essential steps to create the configuration:"
+msgstr ""
+
+#: build_seafile/server.md:206
+# unordered list
+msgid "* ensure seafile is already installed and all the python libraries seahub needs are installed."
+msgstr ""
+
+#: build_seafile/server.md:207
+# unordered list
+msgid "* create the ccnet configuration with the **ccnet-init** program"
+msgstr ""
+
+#: build_seafile/server.md:208
+# unordered list
+msgid "* create the seafile configuration with **seaf-server-init** program"
+msgstr ""
+
+#: build_seafile/server.md:209
+# unordered list
+msgid "* run Django **syncdb** command for seahub"
+msgstr ""
+
+#: build_seafile/server.md:210
+# unordered list
+msgid "* create an admin account for the seafile server"
+msgstr ""
+
+#: build_seafile/server.md:212
+msgid "To create the configurations, you can either:"
+msgstr ""
+
+#: build_seafile/server.md:214
+# unordered list
+msgid "* use the seafile-admin script(see below)"
+msgstr ""
+
+#: build_seafile/server.md:215
+# unordered list
+msgid "* [[create server configuration by hand]]"
+msgstr ""
+
+#: build_seafile/server.md:218
+# header
+msgid "### Create Configurations with the seafile-admin script"
+msgstr ""
+
+#: build_seafile/server.md:220
+msgid "<code>seafile-admin</code> should have been installed to system path after you have built and installed Seafile from source."
+msgstr ""
+
+#: build_seafile/server.md:221
+# inline html
+msgid "<pre>\n"
+"usage: seafile-admin [-h] {setup,start,stop,reset-admin} ...\n"
+"\n"
+"optional arguments:\n"
+"  -h, --help            show this help message and exit\n"
+"\n"
+"subcommands:\n"
+"\n"
+"  {setup,start,stop,reset-admin}\n"
+"    setup               setup the seafile server\n"
+"    start               start the seafile server\n"
+"    stop                stop the seafile server\n"
+"    reset-admin         reset seafile admin account\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:236
+msgid "Go to the top level directory(in this guide it's **/data/haiwen/**), and run **seafile-admin setup** to create all the configuration:"
+msgstr ""
+
+#: build_seafile/server.md:237
+# inline html
+msgid "<pre>\n"
+"cd /data/haiwen\n"
+"export PYTHONPATH=/data/haiwen/seafile-server/seahub/thirdpart\n"
+"seafile-admin setup\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:243
+msgid "The script would ask you a series of questions, and create all the configuration for you."
+msgstr ""
+
+#: build_seafile/server.md:245
+# inline html
+msgid "<table>\n"
+"  <tr>\n"
+"    <th>Name</th><th>Usage</th><th>Default</th><th>Requirement</th>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>server name</td>\n"
+"    <td>The name of the server that would be shown on the client</td>\n"
+"    <td></td>\n"
+"    <td>3 ~ 15 letters or digits</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>ip or domain</td>\n"
+"    <td>The ip address or domain name of the server</td>\n"
+"    <td></td>\n"
+"    <td>Make sure to use the right ip or domain, or the client would have trouble connecting it</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"  <td>ccnet port</td>\n"
+"  <td>the tcp port used by ccnet</td>\n"
+"  <td>10001</td>\n"
+"  <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>seafile port</td>\n"
+"    <td>tcp port used by seafile</td>\n"
+"    <td>12001</td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>seafile fileserver port</td>\n"
+"    <td>tcp port used by seafile fileserver</td>\n"
+"    <td>8082</td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>admin email</td>\n"
+"    <td>Email address of the admin account</td>\n"
+"    <td></td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>admin password</td>\n"
+"    <td>password of the admin account</td>\n"
+"    <td></td>\n"
+"    <td></td>\n"
+"  </tr>\n"
+"</table>"
+msgstr ""
+
+#: build_seafile/server.md:293
+msgid "This is a screenshot of the **seafile-admin setup** command:"
+msgstr ""
+
+#: build_seafile/server.md:294
+msgid "![admin setup running](../images/seafile-admin-1.png)"
+msgstr ""
+
+#: build_seafile/server.md:296
+msgid "And a screenshot after setup is finished successfully:"
+msgstr ""
+
+#: build_seafile/server.md:297
+msgid "![admin setup finished](images/seafile-admin-2.png)"
+msgstr ""
+
+#: build_seafile/server.md:299
+msgid "At this time, the directory layout would be like this:"
+msgstr ""
+
+#: build_seafile/server.md:300
+# inline html
+msgid "<pre>\n"
+"haiwen/\n"
+"└── ccnet # ccnet config directory\n"
+"    └── ccnet.conf # ccnet config file\n"
+"└── seafile-data # seafile configuration and data\n"
+"    └── seafile.conf # seafile config file\n"
+"└── seahub-data/ # seahub data\n"
+"└── seahub.db # seahub sqlite3 database\n"
+"└── seahub_settings.py # custom settings for seahub\n"
+"└── seafile-server\n"
+"    └── seahub/\n"
+"    └── seafile-{VERSION} # seafile source code\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:314
+# header
+msgid "### Start the Seafile Server"
+msgstr ""
+
+#: build_seafile/server.md:316
+msgid "After configuration successfully created, run **seafile-admin start** in the top directory to start the all components of Seafile. ( **You should always run the seafile-admin script in the top directory** )."
+msgstr ""
+
+#: build_seafile/server.md:318
+# inline html
+msgid "<pre>\n"
+"cd /data/haiwen # go to the top level directory\n"
+"seafile-admin start\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:323
+msgid "At this moment, all the components should be running and seahub can be visited at **http://yourserver-ip-or-domain:8000**"
+msgstr ""
+
+#: build_seafile/server.md:325
+msgid "**Note** You may want to deploy seahub with nginx or apache. In this case, follow the instructions on Deploy Seafile Web With [Nginx](../deploy/deploy_with_nginx.md)/[Apache](../deploy/deploy_with_apache.md)."
+msgstr ""
+
+#: build_seafile/server.md:327
+# header
+msgid "### Stop the Seafile Server"
+msgstr ""
+
+#: build_seafile/server.md:329
+msgid "To stop seafile server, run **seafile-admin stop**."
+msgstr ""
+
+#: build_seafile/server.md:331
+# inline html
+msgid "<pre>\n"
+"cd /data/haiwen # go to the top level directory\n"
+"seafile-admin stop\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:336
+# header
+msgid "## Upgrade the Seafile Server"
+msgstr ""
+
+#: build_seafile/server.md:338
+msgid "When you want to upgrade to a new vesrion of seafile server, you need to:"
+msgstr ""
+
+#: build_seafile/server.md:340
+# unordered list
+msgid "* Stop the seafile server if it's running"
+msgstr ""
+
+#: build_seafile/server.md:342
+# inline html
+msgid "<pre>\n"
+"cd /data/haiwen\n"
+"seafile-admin stop\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:347
+# unordered list
+msgid "* Get and latest source code and build libsearpc/ccnet/seafile, just as what you do in a fresh setup."
+msgstr ""
+
+#: build_seafile/server.md:348
+# unordered list
+msgid "* Run the upgrade script. The upgrade script mainly updates database used by seafile for you. For example, create a new database table that is used in the latest seafile server but not in the previous version."
+msgstr ""
+
+#: build_seafile/server.md:350
+# header
+msgid "### Get and compile the latest libsearpc/ccnet/seafile"
+msgstr ""
+
+#: build_seafile/server.md:352
+msgid "See the **Building** section above."
+msgstr ""
+
+#: build_seafile/server.md:354
+# header
+msgid "### Get the new seahub tarball and uncompress it"
+msgstr ""
+
+#: build_seafile/server.md:356
+# inline html
+msgid "<pre>\n"
+"cd haiwen/seafile-server\n"
+"mv seahub/ seahub-old # move away the old seahub folder\n"
+"tar xf /path/to/new/seahub-x.x.x-server.tar.gz\n"
+"mv seahub-x.x.x-server seahub\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:364
+# header
+msgid "### Do the upgrade"
+msgstr ""
+
+#: build_seafile/server.md:366
+# unordered list
+msgid "* copy the scripts/upgrade/ subdir outside"
+msgstr ""
+
+#: build_seafile/server.md:368
+msgid "The upgrade scripts is distributed in the <code>scripts/upgrade</code> subdir of seafile source code, we need to copy it to **seafile-server** directory before run the scripts."
+msgstr ""
+
+#: build_seafile/server.md:370
+# inline html
+msgid "<pre>\n"
+"cd /data/haiwen/seafile-server\n"
+"cp -rf seafile-{version}/scripts/upgrade .\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:375
+# header
+msgid "#### Continuous Upgrade (like from 1.1 to 1.2)"
+msgstr ""
+
+#: build_seafile/server.md:377
+msgid "Continuous upgrade means to upgrade from one version of seafile server to the next version. For example, upgrading from 1.1.0 to 1.2.0 is a continuous upgrade."
+msgstr ""
+
+#: build_seafile/server.md:379
+msgid "**Note:** Minor upgrade, like upgrade from 1.3.0 to 1.3.1, is documented in a separate section below."
+msgstr ""
+
+#: build_seafile/server.md:381
+msgid "Say you are upgrading from 1.1.0 to 1.2.0, you should run the script **upgrade_1.1_1.2.sh** in <code>seafile-server</code> directory."
+msgstr ""
+
+#: build_seafile/server.md:383
+# inline html
+msgid "<pre>\n"
+"cd /data/haiwen/seafile-server\n"
+"./upgrade/upgrade_1.1_1.2.sh\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:388
+# header
+msgid "#### Non-continous version upgrade(like from 1.1 to 1.3)"
+msgstr ""
+
+#: build_seafile/server.md:390
+msgid "If you upgrade a few versions at once, e.g. from 1.1.0 to 1.3.0. The procedure is:"
+msgstr ""
+
+#: build_seafile/server.md:392
+# unordered list
+msgid "* upgrade from 1.1.0 to 1.2.0"
+msgstr ""
+
+#: build_seafile/server.md:393
+# unordered list
+msgid "* upgrade from 1.2.0 to 1.3.0"
+msgstr ""
+
+#: build_seafile/server.md:395
+msgid "Just run the upgrade scripts in sequence."
+msgstr ""
+
+#: build_seafile/server.md:397
+# header
+msgid "#### Minor Upgrade (like from 1.3.0 to 1.3.1)"
+msgstr ""
+
+#: build_seafile/server.md:399
+msgid "Minor upgrade Minor upgrade is like an upgrade from 1.3.0 to 1.3.1. For this type of upgrade, you only need to update the avatar link:"
+msgstr ""
+
+#: build_seafile/server.md:401
+# inline html
+msgid "<pre>\n"
+"cd /data/haiwen/seafile-server/seahub/media\n"
+"cp -rf avatars/* ../../../seahub-data/avatars/\n"
+"rm -rf avatars\n"
+"ln -s ../../../seahub-data/avatars\n"
+"</pre>"
+msgstr ""
+
+#: build_seafile/server.md:408
+# header
+msgid "## Problems Report"
+msgstr ""
+
+#: build_seafile/server.md:410
+msgid "If you encounter any problem when building/deploying Seafile, please leave us a message or [open an issue](https://github.com/haiwen/seafile/issues)."
+msgstr ""
+
+#: build_seafile/windows.md:1
+# header
+msgid "# Windows"
+msgstr ""
+

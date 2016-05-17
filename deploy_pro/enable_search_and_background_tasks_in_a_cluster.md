@@ -20,7 +20,7 @@ Let's assume you have three nodes in your cluster: A, B, and C.
 
 ## Configuring Node A (the backend node)
 
-If you following the steps on settings up a cluster, node B and node C should have already be configed as frontend node. You can copy the configuration of node B as a base for node A. Then do the following steps:
+If you following the steps on settings up a cluster, node B and node C should have already be configured as frontend node. You can copy the configuration of node B as a base for node A. Then do the following steps:
 
 ### Install Dependencies (Java, LibreOffice, poppler)
 

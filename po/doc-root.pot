@@ -1,0 +1,1033 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-05-05 03:40:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: README.md:1
+# header
+msgid "# Introduction"
+msgstr ""
+
+#: README.md:3
+msgid "Seafile is an open source cloud storage system with file encryption and group sharing. "
+msgstr ""
+
+#: README.md:5
+msgid "Collections of files are called libraries, and each library can be synced separately. A library can be encrypted with a user chosen password. This password is not stored on the server, so even the server admin cannot view a file's contents."
+msgstr ""
+
+#: README.md:7
+msgid "Seafile allows users to create groups with file syncing, wiki, and discussion to enable easy collaboration around documents within a team."
+msgstr ""
+
+#: README.md:9
+# header
+msgid "## Translation (Work In Progress)"
+msgstr ""
+
+#: README.md:11
+msgid "Even if you are not familiar with [gettext](https://en.wikipedia.org/wiki/Gettext) system, you can start translating this manual following 3 simple steps."
+msgstr ""
+
+#: README.md:13
+msgid "As an example to translate files from **overview/** folder to *Spanish*, these 3 steps are:"
+msgstr ""
+
+#: README.md:15
+# ordered list
+msgid "1. copy **po/overview.pot** to  **po/overview.es.po**."
+msgstr ""
+
+#: README.md:16
+# ordered list
+msgid "1. Translate messages in **po/overview.es.po** to spanish language."
+msgstr ""
+
+#: README.md:17
+# ordered list
+msgid "1. Send us your **po/overview.es.po** for integration. You can also make a pull request, if you modified an already existing po file."
+msgstr ""
+
+#: README.md:20
+msgid "If you are familiar with POT and PO files, you can use the one in **po/** folder."
+msgstr ""
+
+#: README.md:22
+# header
+msgid "## LICENSE"
+msgstr ""
+
+#: README.md:24
+msgid "Seafile server is public under GPLv2."
+msgstr ""
+
+#: README.md:26
+#: contribution.md:6
+msgid "The Seafile server's web end, i.e. Seahub, is published under the Apache License."
+msgstr ""
+
+#: README.md:28
+# header
+msgid "## About this manual"
+msgstr ""
+
+#: README.md:30
+msgid "The \"source code\" of this manual is hosted on GitHub: https://github.com/haiwen/seafile-docs"
+msgstr ""
+
+#: README.md:32
+# header
+msgid "## Contact information"
+msgstr ""
+
+#: README.md:34
+# unordered list
+msgid "* Twitter: @seafile https://twitter.com/seafile"
+msgstr ""
+
+#: README.md:35
+# unordered list
+msgid "* Forum: https://forum.seafile-server.org"
+msgstr ""
+
+#: README.md:37
+# header
+msgid "## More Documents"
+msgstr ""
+
+#: README.md:39
+# unordered list
+msgid "* [Wiki containing general information of Seafile](https://seacloud.cc/group/3/wiki/)"
+msgstr ""
+
+#: SUMMARY.md:1
+# header
+msgid "# Summary"
+msgstr ""
+
+#: SUMMARY.md:3
+# unordered list
+msgid "* [Introduction](README.md)"
+msgstr ""
+
+#: SUMMARY.md:4
+# unordered list
+msgid "* [Overview](overview/README.md)"
+msgstr ""
+
+#: SUMMARY.md:5
+# unordered list
+msgid "   * [Seafile Components](overview/components.md)"
+msgstr ""
+
+#: SUMMARY.md:6
+# unordered list
+msgid "   * [File permission management](overview/file_permission_management.md)"
+msgstr ""
+
+#: SUMMARY.md:7
+# unordered list
+msgid "   * [Roadmap](roadmap.md)"
+msgstr ""
+
+#: SUMMARY.md:8
+# unordered list
+msgid "   * [FAQ](faq.md)"
+msgstr ""
+
+#: SUMMARY.md:9
+# unordered list
+msgid "   * [Changelog](changelog.md)"
+msgstr ""
+
+#: SUMMARY.md:10
+# unordered list
+msgid "   * [Contribution](contribution.md)"
+msgstr ""
+
+#: SUMMARY.md:11
+# unordered list
+msgid "* [Deploying Seafile under Linux](deploy/README.md)"
+msgstr ""
+
+#: SUMMARY.md:12
+# unordered list
+msgid "   * [Deploying Seafile with SQLite](deploy/using_sqlite.md)"
+msgstr ""
+
+#: SUMMARY.md:13
+# unordered list
+msgid "   * [Deploying Seafile with MySQL](deploy/using_mysql.md)"
+msgstr ""
+
+#: SUMMARY.md:14
+# unordered list
+msgid "   * [Config Seahub with Nginx](deploy/deploy_with_nginx.md)"
+msgstr ""
+
+#: SUMMARY.md:15
+# unordered list
+msgid "   * [Enabling Https with Nginx](deploy/https_with_nginx.md)"
+msgstr ""
+
+#: SUMMARY.md:16
+# unordered list
+msgid "   * [Config Seahub with Apache](deploy/deploy_with_apache.md)"
+msgstr ""
+
+#: SUMMARY.md:17
+# unordered list
+msgid "   * [Enabling Https with Apache](deploy/https_with_apache.md)"
+msgstr ""
+
+#: SUMMARY.md:18
+# unordered list
+msgid "   * [Configure Seafile to use LDAP](deploy/using_ldap.md)"
+msgstr ""
+
+#: SUMMARY.md:19
+# unordered list
+msgid "   * [Configure Seafile to use Shibboleth Authentication](deploy/shibboleth_config.md)"
+msgstr ""
+
+#: SUMMARY.md:20
+# unordered list
+msgid "   * [Upgrade Seafile server](deploy/upgrade.md)"
+msgstr ""
+
+#: SUMMARY.md:21
+# unordered list
+msgid "   * Other Deployment Notes"
+msgstr ""
+
+#: SUMMARY.md:22
+# unordered list
+msgid "       * [Start Seafile at System Bootup](deploy/start_seafile_at_system_bootup.md)"
+msgstr ""
+
+#: SUMMARY.md:23
+# unordered list
+msgid "       * [Firewall settings](deploy/using_firewall.md)"
+msgstr ""
+
+#: SUMMARY.md:24
+# unordered list
+msgid "       * [Logrotate](deploy/using_logrotate.md)"
+msgstr ""
+
+#: SUMMARY.md:25
+# unordered list
+msgid "       * [Add Memcached](deploy/add_memcached.md)"
+msgstr ""
+
+#: SUMMARY.md:26
+# unordered list
+msgid "       * [Deploy Seafile behind NAT](deploy/deploy_seafile_behind_nat.md)"
+msgstr ""
+
+#: SUMMARY.md:27
+# unordered list
+msgid "       * [Deploy Seahub at Non-root domain](deploy/deploy_seahub_at_non-root_domain.md)"
+msgstr ""
+
+#: SUMMARY.md:28
+# unordered list
+msgid "       * [Migrate From SQLite to MySQL](deploy/migrate_from_sqlite_to_mysql.md)"
+msgstr ""
+
+#: SUMMARY.md:29
+# unordered list
+msgid "   * [Common Problems for Setting up Server](faq.md)"
+msgstr ""
+
+#: SUMMARY.md:30
+# unordered list
+msgid "   * [New Directory Layout in Seafile Server 5.0.0](deploy/new_directory_layout_5_0_0.md)"
+msgstr ""
+
+#: SUMMARY.md:31
+# unordered list
+msgid "* [Deploy Seafile under Windows](deploy_windows/deploy_with_windows.md)"
+msgstr ""
+
+#: SUMMARY.md:32
+# unordered list
+msgid "   * [Download and Setup Seafile Windows Server](deploy_windows/download_and_setup_seafile_windows_server.md)"
+msgstr ""
+
+#: SUMMARY.md:33
+# unordered list
+msgid "   * [Configure Seafile to use LDAP on Windows](deploy_windows/using_ldap.md)"
+msgstr ""
+
+#: SUMMARY.md:34
+# unordered list
+msgid "   * [Deploy Seafile with MySQL](deploy_windows/deploy_with_mysql.md)"
+msgstr ""
+
+#: SUMMARY.md:35
+# unordered list
+msgid "   * [Deploy Seafile with Apache](deploy_windows/deploy_with_apache.md)"
+msgstr ""
+
+#: SUMMARY.md:36
+# unordered list
+msgid "   * [Deploy Seafile with Nginx](deploy_windows/deploy_with_nginx.md)"
+msgstr ""
+
+#: SUMMARY.md:37
+# unordered list
+msgid "   * [Install Seafile Server as a Windows Service](deploy_windows/install_seafile_server_as_a_windows_service.md)"
+msgstr ""
+
+#: SUMMARY.md:38
+# unordered list
+msgid "   * [Ports used by Seafile Windows Server](deploy_windows/ports_used_by_seafile_windows_server.md)"
+msgstr ""
+
+#: SUMMARY.md:39
+# unordered list
+msgid "   * [Upgrading Seafile Windows Server](deploy_windows/upgrading_seafile_windows_server.md)"
+msgstr ""
+
+#: SUMMARY.md:40
+# unordered list
+msgid "   * [Migrate Seafile From Windows To Linux](deploy_windows/migrate_from_win_to_linux.md)"
+msgstr ""
+
+#: SUMMARY.md:41
+# unordered list
+msgid "   * [Garbage Collecting Unused Blocks on Seafile Server](deploy_windows/windows_gc.md)"
+msgstr ""
+
+#: SUMMARY.md:42
+# unordered list
+msgid "   * [Running seaf-fsck on corrupted repositories](deploy_windows/windows_fsck.md)"
+msgstr ""
+
+#: SUMMARY.md:43
+# unordered list
+msgid "* [Deploy Seafile Pro Edition](deploy_pro/README.md)"
+msgstr ""
+
+#: SUMMARY.md:44
+# unordered list
+msgid "   * [Download and Setup Seafile Professional Server](deploy_pro/download_and_setup_seafile_professional_server.md)"
+msgstr ""
+
+#: SUMMARY.md:45
+# unordered list
+msgid "   * [Migrate from Seafile Community Server](deploy_pro/migrate_from_seafile_community_server.md)"
+msgstr ""
+
+#: SUMMARY.md:46
+# unordered list
+msgid "   * [Upgrading Seafile Professional Server](deploy_pro/upgrading_seafile_professional_server.md)"
+msgstr ""
+
+#: SUMMARY.md:47
+# unordered list
+msgid "   * [LDAP Configuration for Seafile Pro](deploy_pro/using_ldap_pro.md)"
+msgstr ""
+
+#: SUMMARY.md:48
+# unordered list
+msgid "   * [Importing Groups from LDAP](deploy_pro/ldap_group_sync.md)"
+msgstr ""
+
+#: SUMMARY.md:49
+# unordered list
+msgid "   * [Multi-Institutions Support](deploy_pro/multi_institutions.md)"
+msgstr ""
+
+#: SUMMARY.md:50
+# unordered list
+msgid "   * [Enable Office/PDF Documents Online Preview](deploy_pro/office_documents_preview.md)"
+msgstr ""
+
+#: SUMMARY.md:51
+# unordered list
+msgid "   * [Integrating with Office Web App](deploy_pro/office_web_app.md)"
+msgstr ""
+
+#: SUMMARY.md:52
+# unordered list
+msgid "   * [Details about File Search](deploy_pro/details_about_file_search.md)"
+msgstr ""
+
+#: SUMMARY.md:53
+# unordered list
+msgid "   * Virus Scan"
+msgstr ""
+
+#: SUMMARY.md:54
+# unordered list
+msgid "       * [Virus Scan](deploy_pro/virus_scan.md)"
+msgstr ""
+
+#: SUMMARY.md:55
+# unordered list
+msgid "       * [Virus Scan With Kav4fs](deploy_pro/virus_scan_with_kav4fs.md)"
+msgstr ""
+
+#: SUMMARY.md:56
+# unordered list
+msgid "   * [Web Resumable File Upload](deploy_pro/web_resumable_upload.md)"
+msgstr ""
+
+#: SUMMARY.md:57
+# unordered list
+msgid "   * Storage Backends"
+msgstr ""
+
+#: SUMMARY.md:58
+# unordered list
+msgid "       * [Amazon S3 Backend](deploy_pro/setup_with_amazon_s3.md)"
+msgstr ""
+
+#: SUMMARY.md:59
+# unordered list
+msgid "       * [Ceph Backend](deploy_pro/setup_with_ceph.md)"
+msgstr ""
+
+#: SUMMARY.md:60
+# unordered list
+msgid "       * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)"
+msgstr ""
+
+#: SUMMARY.md:61
+# unordered list
+msgid "       * [Storage Backend Encryption](deploy_pro/seaf_encrypt.md)"
+msgstr ""
+
+#: SUMMARY.md:62
+# unordered list
+msgid "   * Cluster Deployment"
+msgstr ""
+
+#: SUMMARY.md:63
+# unordered list
+msgid "       * [Deploy in a cluster](deploy_pro/deploy_in_a_cluster.md)"
+msgstr ""
+
+#: SUMMARY.md:64
+# unordered list
+msgid "       * [Setup with MariaDB and Ceph](deploy_pro/clustering_with_mariadb_ceph.md)"
+msgstr ""
+
+#: SUMMARY.md:65
+# unordered list
+msgid "       * [Setup Seafile cluster with NFS](deploy_pro/setup_seafile_cluster_with_nfs.md)"
+msgstr ""
+
+#: SUMMARY.md:66
+# unordered list
+msgid "       * [Enable search and background tasks in a cluster](deploy_pro/enable_search_and_background_tasks_in_a_cluster.md)"
+msgstr ""
+
+#: SUMMARY.md:67
+# unordered list
+msgid "       * [Upgrade a cluster](deploy_pro/upgrade_a_cluster.md)"
+msgstr ""
+
+#: SUMMARY.md:68
+# unordered list
+msgid "   * [Real-time Backup Server](deploy_pro/real_time_backup.md)"
+msgstr ""
+
+#: SUMMARY.md:69
+# unordered list
+msgid "   * [Import Directory To Seafile](deploy_pro/seaf_import.md)"
+msgstr ""
+
+#: SUMMARY.md:70
+# unordered list
+msgid "   * [Configurable Options](deploy_pro/configurable_options.md)"
+msgstr ""
+
+#: SUMMARY.md:71
+# unordered list
+msgid "   * [FAQ](deploy_pro/faq_for_seafile_pro_server.md)"
+msgstr ""
+
+#: SUMMARY.md:72
+# unordered list
+msgid "   * [License](deploy_pro/seafile_professional_sdition_software_license_agreement.md)"
+msgstr ""
+
+#: SUMMARY.md:73
+# unordered list
+msgid "* [Server Configuration and Customization](config/README.md)"
+msgstr ""
+
+#: SUMMARY.md:74
+# unordered list
+msgid "   * [ccnet.conf](config/ccnet-conf.md)"
+msgstr ""
+
+#: SUMMARY.md:75
+# unordered list
+msgid "   * [seafile.conf](config/seafile-conf.md)"
+msgstr ""
+
+#: SUMMARY.md:76
+# unordered list
+msgid "   * [seahub_settings.py](config/seahub_settings_py.md)"
+msgstr ""
+
+#: SUMMARY.md:77
+# unordered list
+msgid "   * [Seahub customization](config/seahub_customization.md)"
+msgstr ""
+
+#: SUMMARY.md:78
+# unordered list
+msgid "   * [Desktop client customization](config/desktop_customization.md)"
+msgstr ""
+
+#: SUMMARY.md:79
+# unordered list
+msgid "   * [Email Sending](config/sending_email.md)"
+msgstr ""
+
+#: SUMMARY.md:80
+# unordered list
+msgid "   * [User management options](config/user_options.md)"
+msgstr ""
+
+#: SUMMARY.md:81
+# unordered list
+msgid "   * [Storage Quota and File size limits](config/quota_and_size_options.md)"
+msgstr ""
+
+#: SUMMARY.md:82
+# unordered list
+msgid "* [Administration](maintain/README.md)"
+msgstr ""
+
+#: SUMMARY.md:83
+# unordered list
+msgid "   * [Account management](maintain/account.md)"
+msgstr ""
+
+#: SUMMARY.md:84
+# unordered list
+msgid "   * [Logs](maintain/logs.md)"
+msgstr ""
+
+#: SUMMARY.md:85
+# unordered list
+msgid "   * [Backup and Recovery](maintain/backup_recovery.md)"
+msgstr ""
+
+#: SUMMARY.md:86
+# unordered list
+msgid "   * [Seafile FSCK](maintain/seafile_fsck.md)"
+msgstr ""
+
+#: SUMMARY.md:87
+# unordered list
+msgid "   * [Seafile GC](maintain/seafile_gc.md)"
+msgstr ""
+
+#: SUMMARY.md:88
+# unordered list
+msgid "   * [Clean database](maintain/clean_database.md)"
+msgstr ""
+
+#: SUMMARY.md:89
+# unordered list
+msgid "* [WebDAV and FUSE extensions](extension/README.md)"
+msgstr ""
+
+#: SUMMARY.md:90
+# unordered list
+msgid "   * [WebDAV extension](extension/webdav.md)"
+msgstr ""
+
+#: SUMMARY.md:91
+# unordered list
+msgid "   * [FUSE extension](extension/fuse.md)"
+msgstr ""
+
+#: SUMMARY.md:92
+# unordered list
+msgid "* [Security and Auditing](security/README.md)"
+msgstr ""
+
+#: SUMMARY.md:93
+# unordered list
+msgid "   * [Security features](security/security_features.md)"
+msgstr ""
+
+#: SUMMARY.md:94
+# unordered list
+msgid "   * [Access logs and auditing](security/auditing.md)"
+msgstr ""
+
+#: SUMMARY.md:95
+# unordered list
+msgid "* [Developing](develop/README.md)"
+msgstr ""
+
+#: SUMMARY.md:96
+# unordered list
+msgid "   * How to Build Seafile"
+msgstr ""
+
+#: SUMMARY.md:97
+# unordered list
+msgid "       * [Intro](build_seafile/README.md)"
+msgstr ""
+
+#: SUMMARY.md:98
+# unordered list
+msgid "       * [Linux](build_seafile/linux.md)"
+msgstr ""
+
+#: SUMMARY.md:99
+# unordered list
+msgid "       * [FreeBSD](build_seafile/freebsd.md)"
+msgstr ""
+
+#: SUMMARY.md:100
+# unordered list
+msgid "       * [Windows](build_seafile/windows.md)"
+msgstr ""
+
+#: SUMMARY.md:101
+# unordered list
+msgid "       * [Mac OS X](build_seafile/osx.md)"
+msgstr ""
+
+#: SUMMARY.md:102
+# unordered list
+msgid "       * [Server](build_seafile/server.md)"
+msgstr ""
+
+#: SUMMARY.md:103
+# unordered list
+msgid "       * [Raspberry Pi](build_seafile/rpi.md)"
+msgstr ""
+
+#: SUMMARY.md:104
+# unordered list
+msgid "   * [Develop env](develop/env.md)"
+msgstr ""
+
+#: SUMMARY.md:105
+# unordered list
+msgid "   * [Code Standard](develop/code_standard.md)"
+msgstr ""
+
+#: SUMMARY.md:106
+# unordered list
+msgid "   * [Web API](develop/web_api.md)"
+msgstr ""
+
+#: SUMMARY.md:107
+# unordered list
+msgid "   * [Web API V2.1](develop/web_api_v2.1.md)"
+msgstr ""
+
+#: SUMMARY.md:108
+# unordered list
+msgid "   * [Python API](develop/python_api.md)"
+msgstr ""
+
+#: SUMMARY.md:109
+# unordered list
+msgid "   * [PHP API](develop/php_api.md)"
+msgstr ""
+
+#: SUMMARY.md:110
+# unordered list
+msgid "   * [Data Model](develop/data_model.md)"
+msgstr ""
+
+#: SUMMARY.md:111
+# unordered list
+msgid "   * [Server Components](develop/server-components.md)"
+msgstr ""
+
+#: SUMMARY.md:112
+# unordered list
+msgid "   * [Sync algorithm](develop/sync_algorithm.md)"
+msgstr ""
+
+#: changelog.md:1
+# header
+msgid "# Changelog"
+msgstr ""
+
+#: changelog.md:3
+# header
+msgid "### Changelog for this manual"
+msgstr ""
+
+#: changelog.md:5
+# unordered list
+msgid "* 2015.11.20: Update document for file copy and add document for multiple file/folder delete/copy/move"
+msgstr ""
+
+#: changelog.md:6
+# unordered list
+msgid "* 2015.11.18: Add document for [cleaning database](maintain/clean_database.md)."
+msgstr ""
+
+#: changelog.md:9
+# header
+msgid "### Changelogs"
+msgstr ""
+
+#: changelog.md:11
+# unordered list
+msgid "- [Seafile Community Edition](https://seacloud.cc/group/3/wiki/server-changelog/)"
+msgstr ""
+
+#: changelog.md:12
+# unordered list
+msgid "- [Seafile Professional Edition](https://seacloud.cc/group/3/wiki/changelog-for-seafile-professional-server/)"
+msgstr ""
+
+#: changelog.md:13
+# unordered list
+msgid "- [Seafile Client](https://seacloud.cc/group/3/wiki/client-changelog/)"
+msgstr ""
+
+#: changelog.md:14
+# unordered list
+msgid "- [Android Client](https://seacloud.cc/group/3/wiki/android-client-changelog/)"
+msgstr ""
+
+#: changelog.md:15
+# unordered list
+msgid "- [iOS Client](https://seacloud.cc/group/3/wiki/ios-client-changelog/)"
+msgstr ""
+
+#: contribution.md:1
+# header
+msgid "# Contribution"
+msgstr ""
+
+#: contribution.md:3
+# header
+msgid "## Licensing"
+msgstr ""
+
+#: contribution.md:4
+msgid "Seafile and its desktop and mobile clients are published under the GPLv3."
+msgstr ""
+
+#: contribution.md:8
+# header
+msgid "## Discussion"
+msgstr ""
+
+#: contribution.md:9
+msgid "Google Group: https://groups.google.com/forum/?fromgroups#!forum/seafile"
+msgstr ""
+
+#: contribution.md:11
+msgid "IRC: #seafile on freenode"
+msgstr ""
+
+#: contribution.md:13
+msgid "Follow us @seafile https://twitter.com/seafile"
+msgstr ""
+
+#: contribution.md:15
+# header
+msgid "## Reporting a Bug?"
+msgstr ""
+
+#: contribution.md:16
+# unordered list
+msgid "- Find the existing issues that fit your situation if any, or create a new issue. We are using github as our issue tracer https://github.com/haiwen/seafile/issues?state=open"
+msgstr ""
+
+#: contribution.md:17
+# unordered list
+msgid "- Join us on Google Group: https://groups.google.com/forum/?fromgroups#!forum/seafile"
+msgstr ""
+
+#: contribution.md:19
+# header
+msgid "## Code Style"
+msgstr ""
+
+#: contribution.md:20
+msgid "  The source code of seafile is ISO/IEC 9899:1999 (E) (a.k.a. C99) compatible. Take a look at [code standard](develop/code_standard.md)."
+msgstr ""
+
+#: faq.md:1
+# header
+msgid "# FAQ"
+msgstr ""
+
+#: faq.md:3
+# header
+msgid "## Questions about file syncing"
+msgstr ""
+
+#: faq.md:5
+# header
+msgid "#### When downloading a library, the client hangs at \"connecting server\""
+msgstr ""
+
+#: faq.md:7
+msgid "First, you can check the Seafile client log (`~/.ccnet/logs/seafile.log` for Linux, `C:/users/your_name/ccnet/logs/seafile.log` for Windows) to see what's wrong."
+msgstr ""
+
+#: faq.md:9
+msgid "Possible reasons:"
+msgstr ""
+
+#: faq.md:11
+# unordered list
+msgid "* Firewall: Ensure the firewall is configured properly. See [Firewall Settings for Seafile Server](deploy/using_firewall.md)"
+msgstr ""
+
+#: faq.md:13
+# header
+msgid "#### How to add more verbose log information at the client"
+msgstr ""
+
+#: faq.md:15
+msgid "Set environment variable `SEAFILE_DEBUG = all` before running Seafile desktop client. On Linux, you can open a terminal and type: "
+msgstr ""
+
+#: faq.md:17
+# code block
+msgid "```\n"
+"export SEAFILE_DEBUG=all\n"
+"./seafile-applet\n"
+"```"
+msgstr ""
+
+#: faq.md:22
+# header
+msgid "## Questions about server setup"
+msgstr ""
+
+#: faq.md:24
+# header
+msgid "#### Failed to upload/download file online"
+msgstr ""
+
+#: faq.md:26
+# unordered list
+msgid "* Make sure you firewall for seafile fileserver is opened."
+msgstr ""
+
+#: faq.md:27
+# unordered list
+msgid "* Make `SERVICE_URL` in ccnet.conf and `FILE_SERVER_ROOT` in seahub_settings.py are set correctly."
+msgstr ""
+
+#: faq.md:28
+# unordered list
+msgid "* Using chrome/firefox debug mode to find which link is given when click download button and what's wrong with this link"
+msgstr ""
+
+#: faq.md:30
+# header
+msgid "#### Does Seafile server support Python 3?"
+msgstr ""
+
+#: faq.md:32
+msgid "No, You must have python 2.6.5+ or 2.7 installed on your server."
+msgstr ""
+
+#: faq.md:34
+# header
+msgid "#### Can Seafile server run on FreeBSD?"
+msgstr ""
+
+#: faq.md:36
+msgid "There was an unconfirmed solution on the internet, which later has vanished."
+msgstr ""
+
+#: faq.md:37
+msgid "(Please explain the installation routine if you successfully set up Seafile in FreeBSD.)"
+msgstr ""
+
+#: faq.md:39
+# header
+msgid "#### Website displays \"Page unavailable\", what can I do?"
+msgstr ""
+
+#: faq.md:41
+# unordered list
+msgid "* You can check the back trace in seahub log files(`installation folder/logs/seahub_django_request.log`)"
+msgstr ""
+
+#: faq.md:43
+# unordered list
+msgid "* You can also turn on debug by adding <code>DEBUG = True</code> to seahub_settings.py and restart seahub by <code>./seahub.sh restart</code>, then refresh that page, all the debug infomations will be displayed. Make sure ./seahub.sh was started as: ./seahub.sh start-fastcgi"
+msgstr ""
+
+#: faq.md:45
+# header
+msgid "#### Avatar pictures vanished after upgrading server, what can I do?"
+msgstr ""
+
+#: faq.md:47
+# unordered list
+msgid "* You need to check whether the \"avatars\" symbolic link under seahub/media/ is correctly link to ../../../seahub-data/avatars. If not, you need to correct the link according to the \"minor upgrade\" section in [Upgrading-Seafile-Server](deploy/upgrade.md)"
+msgstr ""
+
+#: faq.md:49
+# unordered list
+msgid "* If your avatars link is correctly linked, and avatars are still broken, you may refresh seahub cache by `rm -rf /tmp/seahub_cache/*`"
+msgstr ""
+
+#: faq.md:51
+# header
+msgid "#### How to change seafile-data location after setup?"
+msgstr ""
+
+#: faq.md:53
+msgid "Modify file seafile.ini under ccnet. This file contains the location of seafile-data. Move seafile-data to another place, like `/opt/new/seafile-data`. Then modify the file accordingly."
+msgstr ""
+
+#: faq.md:55
+# header
+msgid "#### Failed to send email, what can I do?"
+msgstr ""
+
+#: faq.md:57
+msgid "Please check logs/seahub.log."
+msgstr ""
+
+#: faq.md:59
+msgid "There are some common mistakes:"
+msgstr ""
+
+#: faq.md:61
+# ordered list
+msgid "1. Check whether there are some typos in the config, e.g., forget single quote, `EMAIL_HOST_USER = XXX`, which should be `EMAIL_HOST_USER = 'XXX'`"
+msgstr ""
+
+#: faq.md:62
+# ordered list
+msgid "1. Your mail server is not available."
+msgstr ""
+
+#: faq.md:64
+# header
+msgid "#### After upgrade Web UI is broken because CSS files can't be loaded"
+msgstr ""
+
+#: faq.md:66
+msgid "Please remove the cache and try again, `rm -rf /tmp/seahub_cache/*`. If you configured memecached, restart memcached, then restart Seahub."
+msgstr ""
+
+#: faq.md:68
+msgid "If the problem is not fixed, check whether seafile-server-latest point to the right folder. Then check whether `seafile-server-latest/seahub/media/CACHE` is correctly generated (it should contain the auto-generated CSS file). "
+msgstr ""
+
+#: faq.md:70
+# header
+msgid "## Questions about Clustering"
+msgstr ""
+
+#: faq.md:72
+# header
+msgid "### Page layout broken because seahub/media/CACHE is created only on first node"
+msgstr ""
+
+#: faq.md:74
+msgid "Please add"
+msgstr ""
+
+#: faq.md:76
+msgid "    COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'"
+msgstr ""
+
+#: faq.md:78
+msgid "to seahub_settings.py as documented http://manual.seafile.com/deploy_pro/deploy_in_a_cluster.html"
+msgstr ""
+
+#: faq.md:80
+msgid "This will tell every node to generate the CSS CACHE in its local folder."
+msgstr ""
+
+#: faq.md:83
+# header
+msgid "## Questions about server maintenance"
+msgstr ""
+
+#: faq.md:85
+# header
+msgid "### How to migrate libraries and groups from one account to another?"
+msgstr ""
+
+#: faq.md:87
+msgid "Since version 4.4.2, system admin can migrate libraries and groups from one account to another existing account using [RESTful web api](https://github.com/haiwen/seafile-docs/blob/master/develop/web_api.md#migrate-account)."
+msgstr ""
+
+#: faq.md:89
+# header
+msgid "### Seafile GC shows errors, FSCK can’t fix them"
+msgstr ""
+
+#: faq.md:91
+msgid "GC scans the history. But FSCK only scan the currently version. You can ignore the error. It is a minor issue."
+msgstr ""
+
+#: faq.md:93
+# header
+msgid "## Questions about LDAP and User management"
+msgstr ""
+
+#: faq.md:95
+# header
+msgid "### How to restrict Seafile access to a certain accounts in AD"
+msgstr ""
+
+#: faq.md:97
+msgid "You can use FILTER field in LDAP configuration in `ccnet.conf`. For example, the following filter restricts the access to Seafile to members of a group."
+msgstr ""
+
+#: faq.md:99
+msgid "    FILTER = (memberOf=cn=group,cn=users,DC=x)"
+msgstr ""
+
+#: faq.md:101
+msgid "AD also supports groups within group. The following filter restricts the access to Seafile to members/groups of a group."
+msgstr ""
+
+#: faq.md:103
+msgid "    FILTER = (memberOf:1.2.840.113556.1.4.1941:=cn=group,cn=users,DC=x)"
+msgstr ""
+
+#: faq.md:105
+msgid "For more information on the Filter syntax, see http://msdn.microsoft.com/en-us/library/aa746475%28VS.85%29.aspx"
+msgstr ""
+
+#: overview.md:1
+# header
+msgid "# Overview"
+msgstr ""
+
+#: roadmap.md:1
+msgid "#Roadmap"
+msgstr ""
+
+#: roadmap.md:3
+msgid "Please check https://seacloud.cc/group/3/wiki/seafile-roadmap/"
+msgstr ""
+

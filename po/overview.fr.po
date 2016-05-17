@@ -1,0 +1,197 @@
+# French translations for seafile-docs package.
+# Copyright (C) 2016 Free Software Foundation, Inc.
+# This file is distributed under the same license as the seafile-docs package.
+# J. Fernando Lagrange <fernando.lagrange@seafile.de>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: seafile-docs\n"
+"Report-Msgid-Bugs-To: https://github.com/haiwen/seafile-docs/issues\n"
+"POT-Creation-Date: 2016-04-28 09:45:55+0200\n"
+"PO-Revision-Date: 2016-04-21 08:46+0200\n"
+"Last-Translator: J. Fernando Lagrange <fernando.lagrange@seafile.de>\n"
+"Language-Team: French <info@seafile.de>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# header
+#: overview/README.md:1
+msgid "# Overview"
+msgstr ""
+
+# unordered list
+#: overview/README.md:3
+msgid "* [Seafile Components](components.md)"
+msgstr ""
+
+# unordered list
+#: overview/README.md:4
+msgid "* [File permission management](file_permission_management.md)"
+msgstr ""
+
+# unordered list
+#: overview/README.md:5
+msgid "* [FAQ](../faq.md)"
+msgstr ""
+
+# unordered list
+#: overview/README.md:6
+msgid "* [Changelog](../changelog.md)"
+msgstr ""
+
+# unordered list
+#: overview/README.md:7
+msgid "* [Roadmap](../roadmap.md)"
+msgstr ""
+
+# unordered list
+#: overview/README.md:8
+msgid "* [Contribution](../contribution.md)"
+msgstr ""
+
+# header
+#: overview/components.md:1
+msgid "# Components Overview"
+msgstr ""
+
+#: overview/components.md:3
+msgid "Seafile server consists of following components:"
+msgstr ""
+
+# unordered list
+#: overview/components.md:5
+msgid ""
+"- **Seahub** (django)：the website. Seafile server package contains a light-"
+"weight Python HTTP server gunicorn that serves the website. By default, "
+"Seahub runs as an application within gunicorn. You can also configure Seahub "
+"to run under fast-cgi mode, behind Nginx or Apache."
+msgstr ""
+
+# unordered list
+#: overview/components.md:6
+msgid ""
+"- **Seafile server** (``seaf-server``)：data service daemon, handles raw "
+"file upload/download/syncing. Seafile server by default listens on 8082 "
+"port. You can configure Nginx/Apache to proxy traffic to the local 8082 port."
+msgstr ""
+
+# unordered list
+#: overview/components.md:7
+msgid ""
+"- **Ccnet server** (``ccnet-server``)： RPC service daemon to enable "
+"communication among multiple components. Ccnet is only used for internal "
+"communication."
+msgstr ""
+
+#: overview/components.md:9
+msgid ""
+"The picture below shows how Seafile clients access files when you configure "
+"Seafile behind Nginx/Apache. "
+msgstr ""
+
+#: overview/components.md:11
+msgid "![Seafile Sync](../images/seafile-arch-new-http.png)"
+msgstr ""
+
+# unordered list
+#: overview/components.md:13
+msgid ""
+"- All access the Seafile service (including Seahub and Seafile server) can "
+"be configured behind Nginx or Apache web server. This way all network "
+"traffic to the service can be encrypted with HTTPS."
+msgstr ""
+
+# unordered list
+#: overview/components.md:14
+msgid ""
+"- When user access Seahub, Seahub access data from Seafile server via Ccnet "
+"RPC."
+msgstr ""
+
+# header
+#: overview/file_permission_management.md:1
+msgid "# File permission management"
+msgstr ""
+
+#: overview/file_permission_management.md:3
+msgid ""
+"Seafile manages files into libraries. Every library has an owner, who can "
+"share the library to other users or share it into groups. The sharing can be "
+"read-only or read-write."
+msgstr ""
+"Seafile gère les fichiers dans les bibliothèques. Chaque bibliothèque a un "
+"propriétaire, qui peut partager la bibliothèque à d'autres utilisateurs ou "
+"la partager avec des groupes. Le partage peut être en lecture seule ou en "
+"lecture-écriture."
+
+# header
+#: overview/file_permission_management.md:5
+msgid "## Read-only syncing"
+msgstr "## Synchronisation en lecture seule"
+
+#: overview/file_permission_management.md:7
+msgid ""
+"Read-only libraries can be synced to local desktop. The modifications at the "
+"client will not be synced back. If an user has modified some file contents, "
+"he/she can use \"resync\" to revert the modifications."
+msgstr ""
+"Les bibliothèques en lecture seule peuvent être synchronisées localement. "
+"Les modifications sur le client local ne seront pas synchronisées. Si un "
+"utilisateurs a modifié le contenu d'un fichier, il/elle peut utiliser la "
+"\"resynchronisation\" pour annuler les modifications."
+
+# header
+#: overview/file_permission_management.md:10
+msgid "## Cascading permission/Sub-folder permissions (Pro edition)"
+msgstr ""
+"## Permissions héritées/permissions sur les sous-dossiers (édition Pro)"
+
+#: overview/file_permission_management.md:12
+msgid ""
+"Sharing controls whether an user/group can see an library, while sub-foler "
+"permissions is used to modify permissions on specific folders."
+msgstr ""
+"Le partage contrôle si un utilisateur/groupe peut voir une bibliothèque, "
+"tandis que les permissions sur les sous-dossiers sont utilisées pour les "
+"permissions de modifications sur ces dossiers uniquement. "
+
+#: overview/file_permission_management.md:14
+msgid ""
+"Suppose you share a library as read-only to a group and then want specific "
+"sub-folders to be read-write by a few users. You can set permissions on sub-"
+"folders for shared users and groups."
+msgstr ""
+"Supposons que vous partagez une bibliothèque en lecture seule à un groupe et "
+"que vous voulez ensuite que certains sous-dossiers soient en lecture-"
+"écriture pour quelques utilisateurs. Vous pouvez donner les permissions sur "
+"ces sous-dossiers aux utilisateurs et aux groupes ayant déjà accès au "
+"partage."
+
+#: overview/file_permission_management.md:16
+msgid "Note:"
+msgstr "Note:"
+
+# unordered list
+#: overview/file_permission_management.md:18
+msgid ""
+"* Setting sub-folder permission for an user without sharing the folder or "
+"parent folder to that user will have no effect."
+msgstr ""
+"Donner les permissions sur un sous-dossier à un utilisateur sans avoir "
+"partagé le sous-dossier ou le dossier parent avec cet utilisateur n'aura "
+"aucun effet."
+
+# unordered list
+#: overview/file_permission_management.md:19
+msgid ""
+"* Sharing a library read-only to an user and then sharing a sub-folder read-"
+"write to that user will lead to two shared items for that user. This will "
+"cause confusing. Use sub-folder permission instead."
+msgstr ""
+"Partager une bibliothèque en lecture seule avec un utilisateur puis partager "
+"un sous-dossier en lecture-écriture avec cet utilisateur aura pour "
+"conséquence d'avoir deux éléments partagés avec cet utilisateur. Cela peut "
+"prêter à confusion. Utilisez plutôt les permissions sur les sous-dossiers."

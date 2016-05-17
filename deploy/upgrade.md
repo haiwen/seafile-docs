@@ -136,7 +136,7 @@ Maintenance upgrade is like an upgrade from 3.1.0 to 3.1.2.
 
 3. Start the new server version as for any upgrade
 
-4. If the new version works file, the old version can be removed
+4. If the new version works fine, the old version can be removed
 
    ```sh
    rm -rf seafile-server-3.1.0
