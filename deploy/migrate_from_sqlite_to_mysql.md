@@ -64,10 +64,7 @@ Steps to migrate Seafile from SQLite to MySQL:
                 'USER' : 'root',
                 'PASSWORD' : 'root',
                 'NAME' : 'seahub-db',
-                'HOST' : '127.0.0.1',
-                'OPTIONS': {
-                    "init_command": "SET storage_engine=INNODB",
-                }
+                'HOST' : '127.0.0.1'
             }
         }
 
