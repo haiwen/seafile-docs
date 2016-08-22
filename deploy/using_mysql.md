@@ -2,6 +2,12 @@
 
 This manual explains how to setup and run Seafile server from a pre-built package with MySQL.
 
+**NOTE**, [As the default python binary on Ubuntu 16.04 server is python 3.](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes#Python_3), but Seafile requires python2.7, so if you are using Ubuntu 16.04 server, you should install python2.7 first:
+
+```
+sudo apt-get install python
+```
+
 ## Download
 
 [Download](https://www.seafile.com/en/download) the latest server package.
