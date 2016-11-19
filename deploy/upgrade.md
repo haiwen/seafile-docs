@@ -169,7 +169,7 @@ Maintenance upgrade is like an upgrade from 5.1.2 to 5.1.3.
 We provide a script for you, just run it (For history reason, the script called `minor-upgrade.sh`):
 
    ```sh
-   cd seafile-server-5.1.2
+   cd seafile-server-5.1.3
    upgrade/minor-upgrade.sh
    ```
 
