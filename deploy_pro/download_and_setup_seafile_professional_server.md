@@ -5,7 +5,13 @@ The following document is tested with Ubuntu 14.04/16.04 and CentOS 7. We recomm
 
 > NOTE:
 >
-> If you are using Ubuntu 14.04, you can use the following command to install all dependencies Seafile requires at one time.
+> If you are using Ubuntu 16.04 server, [As the default python binary on Ubuntu 16.04 server is python 3.](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes#Python_3), but Seafile requires python2.7, so if you are using Ubuntu 16.04 server, you should install python2.7 first:
+>
+> ```
+> sudo apt-get install python
+> ```
+>
+> Or if you are using Ubuntu 14.04, you can install all the dependencies Seafile requires directly.
 >
 > ```
 > sudo apt-get install openjdk-7-jre poppler-utils libpython2.7 python-pip \

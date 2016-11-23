@@ -1,5 +1,11 @@
 # Deploying Seafile with SQLite
 
+[As the default python binary on Ubuntu 16.04 server is python 3.](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes#Python_3), but Seafile requires python2.7, so if you are using Ubuntu 16.04 server, you should install python2.7 first:
+
+```
+sudo apt-get install python
+```
+
 ## Download binary package
 
 Visit our [download page](http://www.seafile.com/en/download/#server),  download the latest server package.
