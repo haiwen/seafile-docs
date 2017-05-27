@@ -154,7 +154,7 @@ Now upgrade to version 5.1.0.
    rm -rf seafile-server-5.0.0/
    ```
    or alternatively be moved to the directory installed (in case you set it up)
-   
+
     ```sh
    mv seafile-server-5.0.0/ installed/
    ```
@@ -165,11 +165,11 @@ Maintenance upgrade is like an upgrade from 5.1.2 to 5.1.3.
 
 
 1. Stop the current server first as for any other upgrade
-2. For this type of upgrade, you only need to update the symbolic links (for avatar and a few other folders). 
+2. For this type of upgrade, you only need to update the symbolic links (for avatar and a few other folders).
 We provide a script for you, just run it (For history reason, the script called `minor-upgrade.sh`):
 
    ```sh
-   cd seafile-server-5.1.2
+   cd seafile-server-5.1.3
    upgrade/minor-upgrade.sh
    ```
 
@@ -181,7 +181,7 @@ We provide a script for you, just run it (For history reason, the script called 
    rm -rf seafile-server-5.1.2/
    ```
    or alternatively be moved to the directory installed (in case you set it up)
-   
+
     ```sh
    mv seafile-server-5.1.2/ installed/
    ```
