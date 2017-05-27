@@ -238,6 +238,7 @@
             <li><a href="#admin-only-update-account">Update Account</a></li>
             <li><a href="#admin-only-migrate-account">Migrate Account</a></li>
             <li><a href="#admin-only-delete-account">Delete Account</a></li>
+            <li><a href="#admin-only-batch-set-account-quota">Batch Set Account Quota</a></li>
         </ul>
     </li>
 
@@ -4170,6 +4171,45 @@ At least one of followings:
 **Errors**
 
 * 403 Permission error, only administrator can perform this action
+
+### <a id="admin-only-batch-set-account-quota"></a>Batch Set Account Quota
+
+**PUT** https://cloud.seafile.com/api/v2.1/admin/users/batch_set_quota/
+
+**Request parameters**
+
+* email
+* storage
+
+**Sample request**
+
+    curl -X PUT -d "email=1@112.com&email=2@1.com&storage=100" -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' https://cloud.seafile.com/api/v2.1/admin/users/batch_set_quota/
+
+**Sample response**
+
+{
+    "failed":[
+        {
+            "email":"1@112.com",
+            "error_msg":"User 1@112.com not found."
+        }
+    ],
+
+    "success":[
+        {
+            "total":100000000,
+            "email":"2@1.com"
+        }
+    ]
+}
+
+**Errors**
+
+* 400 email invalid
+* 400 storage invalid
+* 400 must be an integer that is greater than or equal to 0.
+* 400 Space quota is too low (minimum value is 0)
+* 500 Internal Server Error
 
 ## <a id="admin-only-devices"></a>Devices
 
