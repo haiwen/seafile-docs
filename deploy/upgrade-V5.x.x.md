@@ -9,7 +9,7 @@ __In Seafile 5.0, we moved all config files to the folder ```/seafile-root/conf`
 
 ## V5.1.4
 
-### Python upgrade
+#### Python upgrade
 If you upgrade to 5.1.4+, you need to install the python 3 libs:
 
 ```
@@ -26,39 +26,6 @@ sudo yum install python-urllib3
 pacman -Sy python2-urllib3
 ```
 
-## V5.1.3
+## V5.0.0 - V5.1.3
 
 Nothing to be installed/changed.
-
-## V5.1.2
-
-Nothing to be installed/changed.
-
-## V5.1.1
-
-Nothing to be installed/changed.
-
-## V5.1.0
-
-Nothing to be installed/changed.
-
-## V5.0.5
-
-Nothing to be installed/changed.
-
-## V5.0.4
-
-Nothing to be installed/changed.
-
-## V5.0.3
-
-Nothing to be installed/changed.
-
-## V5.0.2
-
-Nothing to be installed/changed.
-
-## V5.0.1
-
-Nothing to be installed/changed.
-
