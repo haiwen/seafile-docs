@@ -77,7 +77,7 @@ server {
     }
 
     location /seafhttp {
-        rewrite ^/seafhttp(.*)$ $1 break;
+        rewrite ^/seafhttp/(.*)$ /$1 break;
         proxy_pass http://127.0.0.1:8082;
         client_max_body_size 0;
     }
