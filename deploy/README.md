@@ -35,6 +35,7 @@ Seafile supports a few external user authentication methods.
 
 * [Configure Seafile to use LDAP](using_ldap.md)
 * [Shibboleth Authentication](shibboleth_config.md)
+* [Kerberos Authentication](kerberos_config.md)
 
 Other Deployment Issues
 
