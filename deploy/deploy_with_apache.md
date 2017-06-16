@@ -100,3 +100,34 @@ References
  * https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/1284641
  * https://bugs.launchpad.net/ubuntu/+source/apache2/+bug/1284641/comments/5
  * https://svn.apache.org/viewvc/httpd/httpd/tags/2.4.12/CHANGES?view=markup#l45
+
+When the seafile deployment is a small deployment and/or one is bound to distribution provided packages an alternative which can be considered would be to run seahub in normal mode (i.e. start instead of start-fgci) and use a normal proxy. Which would result in a apache configuration file like the below:
+
+```apache
+<VirtualHost *:80>
+    ServerName www.myseafile.com
+    # Use "DocumentRoot /var/www/html" for Centos/Fedora
+    # Use "DocumentRoot /var/www" for Ubuntu/Debian
+    DocumentRoot /var/www
+    Alias /media  /home/user/haiwen/seafile-server-latest/seahub/media
+
+    RewriteEngine On
+
+    <Location /media>
+        Require all granted
+    </Location>
+
+    #
+    # seafile fileserver
+    #
+    ProxyPass /seafhttp http://127.0.0.1:8082
+    ProxyPassReverse /seafhttp http://127.0.0.1:8082
+    RewriteRule ^/seafhttp - [QSA,L]
+
+    #
+    # seahub in normal i.e. non-fastcgi mode (start instead of start-fcgi)
+    #
+    ProxyPass / http://127.0.0.1:8000/
+    ProxyPassReverse / http://127.0.0.1:8000/
+</VirtualHost>
+```
