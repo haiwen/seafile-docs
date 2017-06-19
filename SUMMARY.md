@@ -137,4 +137,7 @@
    * [Seafile Community Edition](changelog/server-changelog.md)
    * [Seafile Professional Edition](changelog/changelog-for-seafile-professional-server.md)
    * [Seafile Client](changelog/client-changelog.md)
+<<<<<<< HEAD
    * [Dirve Client ChangeLog](changelog/drive-client-changelog)
+=======
+>>>>>>> 8ff2c6fbcbb8c8d1808b4963b003dac0d2880c92
