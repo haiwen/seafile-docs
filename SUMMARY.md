@@ -133,7 +133,7 @@
    * [Data Model](develop/data_model.md)
    * [Server Components](develop/server-components.md)
    * [Sync algorithm](develop/sync_algorithm.md)
-* ChangLog
+* ChangeLog
    * [Seafile Community Edition](changelog/server-changelog.md)
    * [Seafile Professional Edition](changelog/changelog-for-seafile-professional-server.md)
    * [Seafile Client](changelog/client-changelog.md)
