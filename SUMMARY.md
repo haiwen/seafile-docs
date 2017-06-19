@@ -136,4 +136,4 @@
 * ChangLog
    * [Seafile Community Edition](changelog/server-changelog.md)
    * [Seafile Professional Edition](changelog/changelog-for-seafile-professional-server.md)
-   * [Seafile Client](client-changelog.md)
+   * [Seafile Client](changelog/client-changelog.md)
