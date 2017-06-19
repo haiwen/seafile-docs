@@ -2823,6 +2823,8 @@ success
 
 * `q`, keyword for searching.
 
+* `page`, optional, a number greater than or equal to **1**.
+
 * `per_page`, optional.
 
 * `search_repo`, `all` or a *repo_id*, (`all` for searching in all libraries), optional.
@@ -2834,38 +2836,48 @@ success
 * `input_fexts`, file extensions manually specific.
 
 **Sample request**
-
-    curl -H 'Authorization: Token e44e3c81b70b07e3a5f580db8ffcbb886f8ee06d' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=seafile&search_repo=all&search_ftypes=custom&ftype=Document&input_fexts=md,png"
+```
+curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=seafile&search_repo=all&search_ftypes=custom&ftype=Document&input_fexts=md,png&per_page=3&page=3"
+```
 
 **Sample response**
 ```
 {
-    "has_more": false,
-    "total": 2,
+    "has_more": true,
+    "total": 336,
     "results": [
         {
-            "repo_id": "36eeafad-6acd-4c69-a8b7-b3f27af56dc0",
-            "name": "seafile-tutorial.doc",
-            "oid": "b88ab96740ef53249b9d21fb3fa28050842266ba",
-            "last_modified": 1490861602,
-            "content_highlight": "A Brief Tour of <b>Seafile</b> <b>Seafile</b> is a file management and collaboration platform for teams... and organizations. Let&#x27;s show you how <b>Seafile</b> manages and syncs your files, and how you can share your files.... Libraries <b>Seafile</b> organizes your files into file libraries. Each library can be synced and shared... separately. When you log in to <b>Seafile</b> website for the first time, <b>Seafile</b> creates a personal library... to your computer after installing the <b>Seafile</b> client. After installation, you need to login to your",
-
-            "fullpath": "/office file/office-2/seafile-tutorial.doc",
-            "repo_name": "123com",
+            "repo_id": "040a8aad-5646-4c68-ba8a-73f90c60089f",
+            "name": "seafile \u8fd0\u7ef4.docx",
+            "oid": "ecba7db3d6b818873bf94cb1f2161f6a0fc22494",
+            "last_modified": 1482910730,
+            "content_highlight": "... .<b>seafile</b>.com...",
+            "fullpath": "/\u4e1c\u98ce\u65e5\u4ea7/Archived/seafile \u8fd0\u7ef4.docx",
+            "repo_name": "\u4ee3\u7ef4\u5ba2\u6237",
             "is_dir": false,
-            "size": 300544
+            "size": 494490
         },
         {
-            "repo_id": "97d4006f-c1e1-4b75-b31c-6ef89d580844",
+            "repo_id": "233191c7-8e33-4fd2-b0a3-e480363d8e0d",
             "name": "seafile-tutorial.doc",
-            "oid": "b88ab96740ef53249b9d21fb3fa28050842266ba",
-            "content_highlight": "A Brief Tour of <b>Seafile</b> <b>Seafile</b> is a file management and collaboration platform for teams... and organizations. Let&#x27;s show you how <b>Seafile</b> manages and syncs your files, and how you can share your files.... Libraries <b>Seafile</b> organizes your files into file libraries. Each library can be synced and shared... separately. When you log in to <b>Seafile</b> website for the first time, <b>Seafile</b> creates a personal library... to your computer after installing the <b>Seafile</b> client. After installation, you need to login to your",
-            "fullpath": "/sea
-            "last_modified": 1490861602,
-            "fullpath": "/seafile-tutorial.doc",
-            "repo_name": "123com",
+            "oid": "1066014004ad479dd7f3cc0a12462c3f1fd2edeb",
+            "last_modified": 1389771193,
+            "content_highlight": "...A Brief Tour of <b>Seafile</b> <b>Seafile</b> is a file m...",
+            "fullpath": "/\u4ea7\u54c1\u4f7f\u7528\u6587\u6863/seafile-tutorial.doc",
+            "repo_name": "seafile-dev",
             "is_dir": false,
-            "size": 300544
+            "size": 414208
+        },
+        {
+            "repo_id": "233191c7-8e33-4fd2-b0a3-e480363d8e0d",
+            "name": "seafile_vm.md",
+            "oid": "66c8dbe139333ead26b4878340da486fffdc5330",
+            "last_modified": 1439277140,
+            "content_highlight": "...<b>Seafile</b> server VM...",
+            "fullpath": "/\u90e8\u7f72\u548c\u8fd0\u7ef4/seafile_vm.md",
+            "repo_name": "seafile-dev",
+            "is_dir": false,
+            "size": 3255
         }
     ]
 }
