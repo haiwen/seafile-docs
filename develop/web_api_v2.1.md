@@ -1932,7 +1932,7 @@ Create upload link for directory with password
 
 #### <a id="get-user-folder-permission"></a>Get User Folder Permission
 
-**GET** http://192.168.1.124:8000/api2/repos/{repo_id}/user-folder-perm/?folder_path=/123
+**GET** https://cloud.seafile.com/api2/repos/{repo_id}/user-folder-perm/?folder_path=/123
 
 **Request parameters**
 
@@ -1942,7 +1942,7 @@ Create upload link for directory with password
 **Sample request**
 
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/user-folder-perm/?folder_path=/123"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/user-folder-perm/?folder_path=/123"
 ```
 
 **Sample response**
@@ -1975,7 +1975,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 #### <a id="set-user-folder-permission"></a>Set User Folder Permission
 
-**POST** http://192.168.1.124:8000/api2/repos/{repo_id}/user-folder-perm/
+**POST** https://cloud.seafile.com/api2/repos/{repo_id}/user-folder-perm/
 
 **Request parameters**
 
@@ -1987,7 +1987,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 **Sample request**
 
 ```
-curl -d "folder_path=/123&permission=rw&user_email=3@1.com&user_email=2@1.com" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/user-folder-perm/"
+curl -d "folder_path=/123&permission=rw&user_email=3@1.com&user_email=2@1.com" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/user-folder-perm/"
 ```
 
 **Sample response**
@@ -2023,7 +2023,7 @@ curl -d "folder_path=/123&permission=rw&user_email=3@1.com&user_email=2@1.com" -
 
 #### <a id="modify-user-folder-permission"></a>Modify User Folder Permission
 
-**PUT** http://192.168.1.124:8000/api2/repos/{repo_id}/user-folder-perm/
+**PUT** https://cloud.seafile.com/api2/repos/{repo_id}/user-folder-perm/
 
 **Request parameters**
 
@@ -2035,7 +2035,7 @@ curl -d "folder_path=/123&permission=rw&user_email=3@1.com&user_email=2@1.com" -
 **Sample request**
 
 ```
-curl -X PUT -d "folder_path=/123&permission=r&user_email=3@1.com" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/user-folder-perm/"
+curl -X PUT -d "folder_path=/123&permission=r&user_email=3@1.com" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/user-folder-perm/"
 ```
 
 **Sample response**
@@ -2065,7 +2065,7 @@ curl -X PUT -d "folder_path=/123&permission=r&user_email=3@1.com" -H 'Authorizat
 
 #### <a id="delete-user-folder-permission"></a>Delete User Folder Permission
 
-**DELETE** http://192.168.1.124:8000/api2/repos/{repo_id}/user-folder-perm/
+**DELETE** https://cloud.seafile.com/api2/repos/{repo_id}/user-folder-perm/
 
 **Request parameters**
 
@@ -2076,7 +2076,7 @@ curl -X PUT -d "folder_path=/123&permission=r&user_email=3@1.com" -H 'Authorizat
 **Sample request**
 
 ```
-curl -X DELETE -d "folder_path=/123&user_email=3@1.com" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/user-folder-perm/"
+curl -X DELETE -d "folder_path=/123&user_email=3@1.com" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/user-folder-perm/"
 ```
 
 **Sample response**
@@ -2100,7 +2100,7 @@ curl -X DELETE -d "folder_path=/123&user_email=3@1.com" -H 'Authorization: Token
 
 #### <a id="get-group-folder-permission"></a>Get Group Folder Permission
 
-**GET** http://192.168.1.124:8000/api2/repos/{repo_id}/group-folder-perm/?folder_path=/123
+**GET** https://cloud.seafile.com/api2/repos/{repo_id}/group-folder-perm/?folder_path=/123
 
 **Request parameters**
 
@@ -2110,7 +2110,7 @@ curl -X DELETE -d "folder_path=/123&user_email=3@1.com" -H 'Authorization: Token
 **Sample request**
 
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/group-folder-perm/?folder_path=/123"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/group-folder-perm/?folder_path=/123"
 ```
 
 **Sample response**
@@ -2143,7 +2143,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 #### <a id="set-group-folder-permission"></a>Set Group Folder Permission
 
-**POST** http://192.168.1.124:8000/api2/repos/{repo_id}/group-folder-perm/
+**POST** https://cloud.seafile.com/api2/repos/{repo_id}/group-folder-perm/
 
 **Request parameters**
 
@@ -2154,7 +2154,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 **Sample request**
 ```
-curl -d "folder_path=/123&permission=rw&group_id=586&group_id=65" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/group-folder-perm/"
+curl -d "folder_path=/123&permission=rw&group_id=586&group_id=65" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/group-folder-perm/"
 ```
 
 **Sample response**
@@ -2190,7 +2190,7 @@ curl -d "folder_path=/123&permission=rw&group_id=586&group_id=65" -H 'Authorizat
 
 #### <a id="modify-group-folder-permission"></a>Modify Group Folder Permission
 
-**PUT** http://192.168.1.124:8000/api2/repos/{repo_id}/group-folder-perm/
+**PUT** https://cloud.seafile.com/api2/repos/{repo_id}/group-folder-perm/
 
 **Request parameters**
 
@@ -2202,7 +2202,7 @@ curl -d "folder_path=/123&permission=rw&group_id=586&group_id=65" -H 'Authorizat
 **Sample request**
 
 ```
-curl -X PUT -d "folder_path=/123&permission=rw&group_id=65" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/group-folder-perm/"
+curl -X PUT -d "folder_path=/123&permission=rw&group_id=65" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/group-folder-perm/"
 ```
 
 **Sample response**
@@ -2232,7 +2232,7 @@ curl -X PUT -d "folder_path=/123&permission=rw&group_id=65" -H 'Authorization: T
 
 #### <a id="delete-group-folder-permission"></a>Delete Group Folder Permission
 
-**DELETE** http://192.168.1.124:8000/api2/repos/{repo_id}/group-folder-perm/
+**DELETE** https://cloud.seafile.com/api2/repos/{repo_id}/group-folder-perm/
 
 **Request parameters**
 
@@ -2242,7 +2242,7 @@ curl -X PUT -d "folder_path=/123&permission=rw&group_id=65" -H 'Authorization: T
 
 **Sample request**
 
-    curl -X DELETE -d "folder_path=/123&group_id=65" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/group-folder-perm/"
+    curl -X DELETE -d "folder_path=/123&group_id=65" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/group-folder-perm/"
 
 **Sample response**
 
@@ -5683,7 +5683,7 @@ Available for Seafile v6.0.8+
 
 #### <a id="admin-only-download-link-get-shared-file-dir-info"></a>Get Shared File/Dir Info
 
-**GET** http://192.168.1.124:8000/api/v2.1/admin/share-links/{token}/
+**GET** https://cloud.seafile.com/api/v2.1/admin/share-links/{token}/
 
 **Request parameters**
 
@@ -5691,7 +5691,7 @@ Available for Seafile v6.0.8+
 
 **Sample request**
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/share-links/db62f56baf1b4460996e/"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/share-links/db62f56baf1b4460996e/"
 ```
 
 **Sample response**
@@ -5704,7 +5704,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
     "obj_name": "asdf",
     "token": "db62f56baf1b4460996e",
     "view_cnt": 8,
-    "link": "http://192.168.1.124:8000/d/db62f56baf1b4460996e/",
+    "link": "https://cloud.seafile.com/d/db62f56baf1b4460996e/",
     "expire_date": "2017-06-23T08:37:13+00:00",
     "path": "/asdf/",
     "creator_contact_email": "lian@lian.com",
@@ -5725,7 +5725,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 #### <a id="admin-only-download-link-get-dirents-in-shared-dir"></a>Get Sub File/Dir List in Shared Dir
 
-**GET** http://192.168.1.124:8000/api/v2.1/admin/share-links/{token}/dirents/
+**GET** https://cloud.seafile.com/api/v2.1/admin/share-links/{token}/dirents/
 
 **Request parameters**
 
@@ -5734,7 +5734,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 **Sample request**
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/share-links/db62f56baf1b4460996e/dirents/?path=/sdf"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/share-links/db62f56baf1b4460996e/dirents/?path=/sdf"
 ```
 
 **Sample response**
@@ -5771,7 +5771,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 #### <a id="admin-only-download-link-download"></a>Download File/Dir
 
-**GET** http://192.168.1.124:8000/api/v2.1/admin/share-links/{token}/download/
+**GET** https://cloud.seafile.com/api/v2.1/admin/share-links/{token}/download/
 
 **Request parameters**
 
@@ -5781,37 +5781,37 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 **Sample request for download (sub) folder in shared dir**
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/share-links/db62f56baf1b4460996e/download/?path=/sdf&type=folder"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/share-links/db62f56baf1b4460996e/download/?path=/sdf&type=folder"
 ```
 
 **Sample response for download (sub) folder in shared dir**
 ```
 {
-    "download_link": "http://192.168.1.124:8082/zip/395e0ea8-3936-4084-b650-64a93d8a313d"
+    "download_link": "https://cloud.seafile.com/seafhttp/zip/395e0ea8-3936-4084-b650-64a93d8a313d"
 }
 ```
 
 **Sample request for download (sub) file in shared dir**
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/share-links/db62f56baf1b4460996e/download/?path=/sdf/12.docx&type=file"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/share-links/db62f56baf1b4460996e/download/?path=/sdf/12.docx&type=file"
 ```
 
 **Sample response for download (sub) file in shared dir**
 ```
 {
-    "download_link": "http://192.168.1.124:8082/files/2fec8ae7-ffd5-4586-b125-7234e7a69656/12.docx"
+    "download_link": "https://cloud.seafile.com/seafhttp/files/2fec8ae7-ffd5-4586-b125-7234e7a69656/12.docx"
 }
 ```
 
 **Sample request for download shared file**
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/share-links/dac219add64f4a4b9c51/download/"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/share-links/dac219add64f4a4b9c51/download/"
 ```
 
 **Sample response for download shared file**
 ```
 {
-    "download_link": "http://192.168.1.124:8082/files/a34af6cb-4762-4eea-b5a4-0b924e6767d0/excel-view.xlsx"
+    "download_link": "https://cloud.seafile.com/seafhttp/files/a34af6cb-4762-4eea-b5a4-0b924e6767d0/excel-view.xlsx"
 }
 ```
 
@@ -5826,7 +5826,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 #### <a id="admin-only-download-link-check-password"></a>Check Password
 
-**GET** http://192.168.1.124:8000/api/v2.1/admin/share-links/{token}/check-password/
+**GET** https://cloud.seafile.com/api/v2.1/admin/share-links/{token}/check-password/
 
 **Request parameters**
 
@@ -5835,7 +5835,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 **Sample request**
 ```
-curl -d 'password=11111111' -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/share-links/db62f56baf1b4460996e/check-password/"
+curl -d 'password=11111111' -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/share-links/db62f56baf1b4460996e/check-password/"
 ```
 
 **Sample response**
@@ -5856,7 +5856,7 @@ curl -d 'password=11111111' -H 'Authorization: Token cbd7705c06846425ed5c46ae031
 
 #### <a id="admin-only-upload-link-get-shared-dir-info"></a>Get Shared Dir Info
 
-**GET** http://192.168.1.124:8000/api/v2.1/admin/upload-links/{token}/
+**GET** https://cloud.seafile.com/api/v2.1/admin/upload-links/{token}/
 
 **Request parameters**
 
@@ -5864,7 +5864,7 @@ curl -d 'password=11111111' -H 'Authorization: Token cbd7705c06846425ed5c46ae031
 
 **Sample request**
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/upload-links/360fe7d6dc684045b7f6/"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/upload-links/360fe7d6dc684045b7f6/"
 ```
 
 **Sample response**
@@ -5877,7 +5877,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
     "creator_contact_email": "lian@lian.com",
     "token": "360fe7d6dc684045b7f6",
     "repo_id": "0a5647c8-7708-445a-bd80-49f04b85b153",
-    "link": "http://192.168.1.124:8000/u/d/360fe7d6dc684045b7f6/",
+    "link": "https://cloud.seafile.com/u/d/360fe7d6dc684045b7f6/",
     "obj_name": "asdf",
     "path": "/asdf/",
     "repo_name": "sadfdaa"
@@ -5891,7 +5891,7 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 #### <a id="admin-only-upload-link-upload"></a>Upload
 
-**GET** http://192.168.1.124:8000/api/v2.1/admin/upload-links/{token}/upload/
+**GET** https://cloud.seafile.com/api/v2.1/admin/upload-links/{token}/upload/
 
 **Request parameters**
 
@@ -5899,13 +5899,13 @@ curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Acce
 
 **Sample request**
 ```
-curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/upload-links/360fe7d6dc684045b7f6/upload/"
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/upload-links/360fe7d6dc684045b7f6/upload/"
 ```
 
 **Sample response**
 ```
 {
-    "upload_link": "http://192.168.1.124:8082/upload-api/360fe7d6dc684045b7f6"
+    "upload_link": "https://cloud.seafile.com/seafhttp/upload-api/360fe7d6dc684045b7f6"
 }
 
 After get upload link, you can upload file to the shared dir, for more info, please see <a id="upload-file-1">Upload File</a>.
@@ -5918,7 +5918,7 @@ After get upload link, you can upload file to the shared dir, for more info, ple
 
 #### <a id="admin-only-upload-link-check-password"></a>Check Password
 
-**GET** http://192.168.1.124:8000/api/v2.1/admin/upload-links/{token}/check-password/
+**GET** https://cloud.seafile.com/api/v2.1/admin/upload-links/{token}/check-password/
 
 **Request parameters**
 
@@ -5927,7 +5927,7 @@ After get upload link, you can upload file to the shared dir, for more info, ple
 
 **Sample request**
 ```
-curl -d 'password=11111111' -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.124:8000/api/v2.1/admin/upload-links/360fe7d6dc684045b7f6/check-password/"
+curl -d 'password=11111111' -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/admin/upload-links/360fe7d6dc684045b7f6/check-password/"
 ```
 
 **Sample response**
