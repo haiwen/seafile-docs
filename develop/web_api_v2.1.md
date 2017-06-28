@@ -2339,23 +2339,24 @@ curl -X PUT -d "folder_path=/123&permission=rw&group_id=65" -H 'Authorization: T
 * repo-id
 
 **Sample request**
-
-    curl -G -H 'Authorization: Token 24fd3c026886e3121b2ca630805ed425c272cb96' -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/632ab8a8-ecf9-4435-93bf-f495d5bfe975/
+```
+curl -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; indent=4' http://192.168.1.124:8000/api/v2.1/repos/1ea0fc53-3721-4c89-b5aa-f6e8a3c7cb56/
+```
 
 **Sample response**
-
-    {
+```
+{
+    "size": 0,
+    "owner_contact_email": "test@test.com",
+    "repo_id": "1ea0fc53-3721-4c89-b5aa-f6e8a3c7cb56",
+    "file_count": 0,
+    "owner_name": "test",
+    "permission": "r",
     "encrypted": false,
-    "password_need": null,
-    "mtime": null,
-    "owner": "self",
-    "id": "632ab8a8-ecf9-4435-93bf-f495d5bfe975",
-    "size": 1356155,
-    "name": "org",
-    "root": "b5227040de360dd22c5717f9563628fe5510cbce",
-    "desc": "org file",
-    "type": "repo"
-    }
+    "owner_email": "test@test.com",
+    "repo_name": "test-repo"
+}
+```
 
 ### <a id="get-library-owner"></a>Get Library Owner
 
