@@ -68,7 +68,6 @@ SESSION_SAVE_EVERY_REQUEST = False
 # Whether enable personal wiki and group wiki. Default is `False`
 # Since 6.1.0 CE
 ENABLE_WIKI = True
-
 ```
 
 
@@ -272,6 +271,46 @@ REST_FRAMEWORK = {
 REST_FRAMEWORK_THROTTING_WHITELIST = []
 ```
 
+## Seahub Custom Functions
+
+Since 6.2 version, you can write your own user search function.
+
+For example, if you want to limit user only search users in the same institution, you can define `custom_search_user` function in `{seafile install path}/conf/seahub_custom_functions/__init__.py`
+
+Code example:
+
+```
+import os
+import sys
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+seahub_dir = os.path.join(current_path, \
+        '../../seafile-server-latest/seahub/seahub')
+sys.path.append(seahub_dir)
+
+from seahub.profile.models import Profile
+def custom_search_user(request, emails):
+
+    institution_name = ''
+
+    username = request.user.username
+    profile = Profile.objects.get_profile_by_user(username)
+    if profile:
+        institution_name = profile.institution
+
+    inst_users = [p.user for p in
+            Profile.objects.filter(institution=institution_name)]
+
+    filtered_emails = []
+    for email in emails:
+        if email in inst_users:
+            filtered_emails.append(email)
+
+    return filtered_emails
+```
+
+> **NOTE**, you should NOT change the name of `custom_search_user` and `seahub_custom_functions/__init__.py`
+
 ## Note
 
 * You need to restart seahub so that your changes take effect.
@@ -280,3 +319,4 @@ REST_FRAMEWORK_THROTTING_WHITELIST = []
 ```bash
 ./seahub.sh restart
 ```
+
