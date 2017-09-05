@@ -273,7 +273,7 @@ REST_FRAMEWORK_THROTTING_WHITELIST = []
 
 ## Seahub Custom Functions
 
-Since 6.2 version, you can write your own user search function.
+Since version 6.2, you can define a custome function to modify the result of user search function.
 
 For example, if you want to limit user only search users in the same institution, you can define `custom_search_user` function in `{seafile install path}/conf/seahub_custom_functions/__init__.py`
 
