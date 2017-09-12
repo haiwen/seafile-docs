@@ -3354,7 +3354,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 
 ### <a id="create-file"></a>Create File
 
-**POST** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo.c
+**POST** https://cloud.seafile.com/api/v2.1/repos/{repo_id}/file/?p={file_path}
 
 **Request parameters**
 
@@ -3363,24 +3363,31 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * operation
 
 **Sample request**
-
-    curl -v -d "operation=create" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/?p=/foo.c
+```
+curl -d 'operation=create' -H 'Authorization: Token c5de3074be40861f399f02c65149c6460bbf073f' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/?p=/test.xlsx"
+```
 
 **Sample response**
-
-    ...
-    < HTTP/1.1 201 CREATED
-    ...
-    "success"
-
-**Success**
-
-   Response code is 201, and a string `"success"` is returned.
+```
+{
+    'is_locked': False,
+    'mtime': '2017-09-12T14:57:42+08:00',
+    'obj_id': u'44bdca6005429390d1ecc6943b05c821bd30917a',
+    'obj_name': u'test.xlsx',
+    'parent_dir': u'/',
+    'repo_id': u'7460f7ac-a0ff-4585-8906-bb5a57d2e118',
+    'size': 7631,
+    'type': 'file'
+}
+```
 
 **Errors**
 
-* 403 FORBIDDEN
-* 520 OPERATION FAILED, fail to create file
+* 400 operation/name invalid.
+* 400 operation can only be 'create', 'rename', 'move', 'copy' or 'revert'.
+* 404 Library/Folder not found.
+* 403 Permission denied.
+* 500 Internal Server Error
 
 ### <a id="rename-file"></a>Rename File
 
