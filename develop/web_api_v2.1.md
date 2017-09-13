@@ -2950,9 +2950,11 @@ success
 
 * `input_fexts`, file extensions manually specific.
 
+* `with_permission`, `true` or `false`. Whether return permission info of the file or not, default is `false`.
+
 **Sample request**
 ```
-curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=seafile&search_repo=all&search_ftypes=custom&ftype=Document&input_fexts=md,png&per_page=3&page=3"
+curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=seafile&search_repo=all&search_ftypes=custom&ftype=Document&input_fexts=md,png&per_page=3&page=3&with_permission=true"
 ```
 
 **Sample response**
@@ -2964,6 +2966,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
         {
             "repo_id": "040a8aad-5646-4c68-ba8a-73f90c60089f",
             "name": "seafile \u8fd0\u7ef4.docx",
+            "permission": "r",
             "oid": "ecba7db3d6b818873bf94cb1f2161f6a0fc22494",
             "last_modified": 1482910730,
             "content_highlight": "... .<b>seafile</b>.com...",
@@ -2975,6 +2978,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
         {
             "repo_id": "233191c7-8e33-4fd2-b0a3-e480363d8e0d",
             "name": "seafile-tutorial.doc",
+            "permission": "rw",
             "oid": "1066014004ad479dd7f3cc0a12462c3f1fd2edeb",
             "last_modified": 1389771193,
             "content_highlight": "...A Brief Tour of <b>Seafile</b> <b>Seafile</b> is a file m...",
@@ -2986,6 +2990,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
         {
             "repo_id": "233191c7-8e33-4fd2-b0a3-e480363d8e0d",
             "name": "seafile_vm.md",
+            "permission": "rw",
             "oid": "66c8dbe139333ead26b4878340da486fffdc5330",
             "last_modified": 1439277140,
             "content_highlight": "...<b>Seafile</b> server VM...",
