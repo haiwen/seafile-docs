@@ -273,7 +273,7 @@
         </ul>
     </li>
     <li>
-        <a href="#admin-only-get-snapshot-label">Get Snapshot Label</a>
+        <a href="#admin-only-get-snapshot-by-label">Get Snapshot By Label</a>
     </li>
     <li>
         <a href="#admin-only-default-library">Default Library</a>
@@ -5087,7 +5087,7 @@ This api is only supported in pro edition.
 * 403 Feature disabled.
 * 500 Internal Server Error
 
-## <a id="admin-only-get-snapshot-label"></a>Get Snapshot Label
+## <a id="admin-only-get-snapshot-by-label"></a>Get Snapshot By Label
 
 **GET** https://cloud.seafile.com/api/v2.1/admin/revision-tags/tagged-items/
 
@@ -5099,7 +5099,7 @@ This api is only supported in pro edition.
 
 **Sample request**
 
-Sample for get snapshot label
+Sample for get snapshot by label
 
 ```
 curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/admin/revision-tags/tagged-items/?repo_id=7377c95d-b303-4914-a555-306651cc4cbf&tag_contains=v
