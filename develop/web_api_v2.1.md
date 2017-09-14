@@ -237,6 +237,12 @@
             <li><a href="#unlink-user-device">Unlink User Device</a></li>
         </ul>
     </li>
+    <li>
+        <a href="#snapshot">Snapshot</a>
+        <li><a href="#get-snapshot">Get Snapshot</a></li>
+        <li><a href="#create-new-snapshot">Create New Snapshot</a></li>
+        <li><a href="#update-snapshot">Update Snapshot</a></li>
+    </li>
     <li><a href="#get-file-activities">Get File Activities</a></li>
     <li><a href="#get-thumbnail-image">Get Thumbnail Image</a></li>
     <li><a href="#search-user">Search User</a></li>
@@ -265,6 +271,9 @@
             <li><a href="#admin-only-get-device-errors">Get Device Errors</a></li>
             <li><a href="#admin-only-clean-device-errors">Clean Device Errors</a></li>
         </ul>
+    </li>
+    <li>
+        <a href="#admin-only-filter-snapshot">Filter Snapshot</a>
     </li>
     <li>
         <a href="#admin-only-default-library">Default Library</a>
@@ -4480,6 +4489,141 @@ For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c
 * 400 device_id invalid
 * 500 Internal Server Error
 
+## <a id="snapshot"></a>Snapshot
+
+### <a id="get-snapshot"></a>Get Snapshot
+
+**GET** https://cloud.seafile.com/api/v2.1/revision-tags/tag-names/
+
+**Sample request**
+
+Sample for get snapshot
+
+```
+curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tag-names/
+```
+
+**Sample response**
+
+```
+[
+    "q1",
+    "qwe",
+    "qwe",
+    "qwe_-.12",
+    "qwe_-1.",
+    "r",
+    "r",
+    "v3",
+    "\u4e2d\u6587",
+    "\u82f1\u6587"
+]
+```
+
+### <a id="create-new-snapshot"></a>Create New Snapshot
+
+**POST** https://cloud.seafile.com/api/v2.1/revision-tags/tagged-items/
+
+**Request parameters**
+* repo_id
+* commit_id, optional
+* tag_names
+
+**Sample request**
+
+Sample for create snapshot.
+
+```
+curl -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf&tag_names=v2.1,v2.2" -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tagged-items/
+```
+
+**Sample response**
+
+```
+{
+    "revisionTags": [
+        {
+            "tag": "v2.1",
+            "tag_creator": "foo@foo.com",
+            "revision": {
+                "commit_id": "4c03938da11e83d6c1d3e8ff469e92f46a80eeaf",
+                "repo_id": "7377c95d-b303-4914-a555-306651cc4cbf",
+                "contact_email": "foo@foo.com",
+                "name": "foo",
+                "time": "2017-09-13T15:20:54+08:00",
+                "link": "/repo/history/view/7377c95d-b303-4914-a555-306651cc4cbf/?commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf",
+                "email": "foo@foo.com",
+                "description": "Added \"ca (1).js\"."
+            }
+        },
+        {
+            "tag": "v2.2",
+            "tag_creator": "foo@foo.com",
+            "revision": {
+                "commit_id": "4c03938da11e83d6c1d3e8ff469e92f46a80eeaf",
+                "repo_id": "7377c95d-b303-4914-a555-306651cc4cbf",
+                "contact_email": "foo@foo.com",
+                "name": "foo",
+                "time": "2017-09-13T15:20:54+08:00",
+                "link": "/repo/history/view/7377c95d-b303-4914-a555-306651cc4cbf/?commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf",
+                "email": "foo@foo.com",
+                "description": "Added \"ca (1).js\"."
+            }
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 400 repo_id/commit_id/tag_names invalid.
+* 403 Permission denied(need rw permission).
+
+### <a id="update-snapshot"></a>Update Snapshot
+
+**PUT** https://cloud.seafile.com/api/v2.1/revision-tags/tagged-items/
+
+**Request parameters**
+* repo_id
+* commit_id(default is head commit if commit_id is empty)
+* tag_names
+
+**Sample request**
+
+Sample for update snapshot.
+
+```
+curl -X PUT -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf&tag_names=v3" -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tagged-items/
+```
+
+**Sample response**
+
+```
+{
+    "revisionTags": [
+        {
+            "tag": "v3",
+            "tag_creator": "foo@foo.com",
+            "revision": {
+                "commit_id": "4c03938da11e83d6c1d3e8ff469e92f46a80eeaf",
+                "repo_id": "7377c95d-b303-4914-a555-306651cc4cbf",
+                "contact_email": "foo@foo.com",
+                "name": "foo",
+                "time": "2017-09-13T15:20:54+08:00",
+                "link": "/repo/history/view/7377c95d-b303-4914-a555-306651cc4cbf/?commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf",
+                "email": "foo@foo.com",
+                "description": "Added \"ca (1).js\"."
+            }
+        }
+    ]
+}
+```
+
+**Errors**
+
+* 400 repo_id/commit_id/tag_names invalid.
+* 403 Permission denied(need rw permission).
+
 ## <a id="get-file-activities"></a>Get File Activities
 
 **GET** https://cloud.seafile.com/api2/events/
@@ -4942,6 +5086,45 @@ This api is only supported in pro edition.
 
 * 403 Feature disabled.
 * 500 Internal Server Error
+
+## <a id="admin-only-filter-snapshot"></a>Filter Snapshot
+
+**GET** https://cloud.seafile.com/api/v2.1/admin/revision-tags/tagged-items/
+
+**Request parameters**
+* user, optional
+* repo_id, optional
+* tag_name, optional
+* tag_contains, optional
+
+**Sample request**
+
+Sample for get snapshot
+
+```
+curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/admin/revision-tags/tagged-items/?repo_id=7377c95d-b303-4914-a555-306651cc4cbf&tag_contains=v
+```
+
+**Sample response**
+
+```
+[
+    {
+        "tag": "v3",
+        "tag_creator": "foo@foo.com",
+        "revision": {
+            "commit_id": "4c03938da11e83d6c1d3e8ff469e92f46a80eeaf",
+            "repo_id": "7377c95d-b303-4914-a555-306651cc4cbf",
+            "contact_email": "foo@foo.com",
+            "name": "foo",
+            "time": "2017-09-13T15:20:54+08:00",
+            "link": "/repo/history/view/7377c95d-b303-4914-a555-306651cc4cbf/?commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf",
+            "email": "foo@foo.com",
+            "description": "Added \"ca (1).js\"."
+        }
+    }
+]
+```
 
 ## <a id="admin-only-default-library"></a>Default Library
 
