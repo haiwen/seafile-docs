@@ -238,10 +238,10 @@
         </ul>
     </li>
     <li>
-        <a href="#snapshot">Snapshot</a>
-        <li><a href="#get-snapshot">Get Snapshot</a></li>
-        <li><a href="#create-new-snapshot">Create New Snapshot</a></li>
-        <li><a href="#update-snapshot">Update Snapshot</a></li>
+        <a href="#snapshot-label">Snapshot Label</a>
+        <li><a href="#get-snapshot-label">Get Snapshot Label</a></li>
+        <li><a href="#create-new-snapshot-label">Create New Snapshot Label</a></li>
+        <li><a href="#update-snapshot-label">Update Snapshot Label</a></li>
     </li>
     <li><a href="#get-file-activities">Get File Activities</a></li>
     <li><a href="#get-thumbnail-image">Get Thumbnail Image</a></li>
@@ -273,7 +273,7 @@
         </ul>
     </li>
     <li>
-        <a href="#admin-only-filter-snapshot">Filter Snapshot</a>
+        <a href="#admin-only-get-snapshot-label">Get Snapshot Label</a>
     </li>
     <li>
         <a href="#admin-only-default-library">Default Library</a>
@@ -4489,15 +4489,15 @@ For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c
 * 400 device_id invalid
 * 500 Internal Server Error
 
-## <a id="snapshot"></a>Snapshot
+## <a id="snapshot-label"></a>Snapshot Label
 
-### <a id="get-snapshot"></a>Get Snapshot
+### <a id="get-snapshot-label"></a>Get Snapshot Label
 
 **GET** https://cloud.seafile.com/api/v2.1/revision-tags/tag-names/
 
 **Sample request**
 
-Sample for get snapshot
+Sample for get snapshot label
 
 ```
 curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tag-names/
@@ -4520,7 +4520,7 @@ curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Acce
 ]
 ```
 
-### <a id="create-new-snapshot"></a>Create New Snapshot
+### <a id="create-new-snapshot-label"></a>Create New Snapshot Label
 
 **POST** https://cloud.seafile.com/api/v2.1/revision-tags/tagged-items/
 
@@ -4531,7 +4531,7 @@ curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Acce
 
 **Sample request**
 
-Sample for create snapshot.
+Sample for create snapshot label.
 
 ```
 curl -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf&tag_names=v2.1,v2.2" -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tagged-items/
@@ -4579,7 +4579,7 @@ curl -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6
 * 400 repo_id/commit_id/tag_names invalid.
 * 403 Permission denied(need rw permission).
 
-### <a id="update-snapshot"></a>Update Snapshot
+### <a id="update-snapshot-label"></a>Update Snapshot Label
 
 **PUT** https://cloud.seafile.com/api/v2.1/revision-tags/tagged-items/
 
@@ -4590,7 +4590,7 @@ curl -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6
 
 **Sample request**
 
-Sample for update snapshot.
+Sample for update snapshot label.
 
 ```
 curl -X PUT -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf&tag_names=v3" -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tagged-items/
@@ -5087,7 +5087,7 @@ This api is only supported in pro edition.
 * 403 Feature disabled.
 * 500 Internal Server Error
 
-## <a id="admin-only-filter-snapshot"></a>Filter Snapshot
+## <a id="admin-only-get-snapshot-label"></a>Get Snapshot Label
 
 **GET** https://cloud.seafile.com/api/v2.1/admin/revision-tags/tagged-items/
 
@@ -5099,7 +5099,7 @@ This api is only supported in pro edition.
 
 **Sample request**
 
-Sample for get snapshot
+Sample for get snapshot label
 
 ```
 curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/admin/revision-tags/tagged-items/?repo_id=7377c95d-b303-4914-a555-306651cc4cbf&tag_contains=v
