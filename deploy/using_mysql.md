@@ -95,7 +95,8 @@ The Seafile server package requires the following packages to be installed on yo
 # on Debian/Ubuntu 14.04 server
 apt-get update
 apt-get install python2.7 libpython2.7 python-setuptools python-imaging \
-  python-ldap python-mysqldb python-memcache python-urllib3
+  python-ldap python-mysqldb python-memcache python-urllib3 python-requests ffmpeg python-pip
+pip install pillow moviepy
 ```
 
 ```
@@ -103,12 +104,14 @@ apt-get install python2.7 libpython2.7 python-setuptools python-imaging \
 apt-get update
 apt-get install python
 apt-get install python2.7 libpython2.7 python-setuptools python-imaging \
-  python-ldap python-mysqldb python-memcache python-urllib3
+  python-ldap python-mysqldb python-memcache python-urllib3 python-requests ffmpeg python-pip
+pip install pillow moviepy
 ```
 
 ```
 # on CentOS 7
-sudo yum install python-imaging MySQL-python python-memcached python-ldap python-urllib3
+sudo yum install python-imaging MySQL-python python-memcached python-ldap python-urllib3 python-requests ffmpeg python-pip
+pip install pillow moviepy
 ```
 
 ### Setup
