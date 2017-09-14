@@ -4,11 +4,11 @@
 
 Seahub is the web interface of Seafile server. FileServer is used to handle raw file uploading/downloading through browsers. By default, it listens on port 8082 for HTTP requests.
 
-Here we deploy Seahub using [gunicorn](http://gunicorn.org/), and deploy FileServer with a reverse proxy. We assume you are running Seahub using domain `seafile.example.com`.
+Here we deploy Seahub and FileServer with reverse proxy. We assume you are running Seahub using domain `seafile.example.com`.
 
 This is a sample Nginx config file.
 
-In Ubuntu 14.04, you can add the config file as follows:
+In Ubuntu 16.04, you can add the config file as follows:
 
 1. create file `/etc/nginx/sites-available/seafile.conf`
 2. Delete `/etc/nginx/sites-enabled/default`: `rm /etc/nginx/sites-enabled/default`
