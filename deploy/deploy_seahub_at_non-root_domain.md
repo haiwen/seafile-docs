@@ -139,5 +139,5 @@ For memcache users, please purge the cache there instead by restarting your memc
 
 ```
 ./seafile.sh start
-./seahub.sh start-fastcgi
+./seahub.sh start # or "./seahub.sh start-fastcgi" if you're using fastcgi
 ```

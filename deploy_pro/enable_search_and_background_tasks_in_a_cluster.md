@@ -78,11 +78,11 @@ Make sure requests to http://<ip of node A> is also handled by Seahub. For examp
 
 ```
 server {
-      listen 80;
-      server_name <IP of node A>;
-      location / {
-          fastcgi_pass    127.0.0.1:8000;
-          ...
+    listen 80;
+    server_name <IP of node A>;
+    location / {
+        proxy_pass         http://127.0.0.1:8000;
+        ...
   }
 ```
 
@@ -101,7 +101,7 @@ Type the following commands to start the background node (Note, one additional c
 
 ```shell
 ./seafile.sh start
-./seahub.sh start-fastcgi
+./seahub.sh start # or "./seahub.sh start-fastcgi" if you're using fastcgi
 ./seafile-background-tasks.sh start
 ```
 

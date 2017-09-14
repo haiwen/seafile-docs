@@ -21,7 +21,7 @@ You can check the detailed error messages in `/var/log/nginx/seahub.error.log` i
 
 * You can check the back trace in Seahub log files (`installation folder/logs/seahub_django_request.log`)
 
-* You can also turn on debug mode by adding `DEBUG = True` to `seahub_settings.py` and restarting Seahub with `./seahub.sh restart`, then refresh the page, all the debug infomations will be displayed. Make sure ./seahub.sh was started as: ./seahub.sh start-fastcgi in case you're using Nginx/Apache.
+* You can also turn on debug mode by adding `DEBUG = True` to `seahub_settings.py` and restarting Seahub with `./seahub.sh restart`, then refresh the page, all the debug infomations will be displayed. Make sure ./seahub.sh was started as: ./seahub.sh start-fastcgi in case you're using fastcgi.
 
 ## Files with a space in their name do not work using Apache
 

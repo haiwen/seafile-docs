@@ -82,5 +82,5 @@ FILE_SERVER_ROOT = 'https://www.myseafile.com/seafhttp'
 
 ```bash
 ./seafile.sh start
-./seahub.sh start-fastcgi
+./seahub.sh start # or "./seahub.sh start-fastcgi" if you're using fastcgi
 ```

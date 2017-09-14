@@ -86,7 +86,7 @@ FILE_SERVER_ROOT = 'http://www.myseafile.com/seafhttp'
 ```bash
 sudo service apache2 restart
 ./seafile.sh start
-./seahub.sh start-fastcgi
+./seahub.sh start # or "./seahub.sh start-fastcgi" if you're using fastcgi
 ```
 
 ## Troubleshooting

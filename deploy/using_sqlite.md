@@ -77,7 +77,7 @@ apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-l
 # As the default python binary on Ubuntu 16.04 server is python 3, we need to install python (python 2) first.
 apt-get update
 apt-get install python
-apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap python-urllib3 sqlite3 ffmpeg python-pip
+apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap python-urllib3 ffmpeg python-pip sqlite3
 pip install pillow moviepy
 ```
 
