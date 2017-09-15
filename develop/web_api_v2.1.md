@@ -273,7 +273,7 @@
         </ul>
     </li>
     <li>
-        <a href="#admin-only-get-snapshot-by-label">Get Snapshot By Label</a>
+        <a href="#admin-only-get-snapshots-by-label">Get Snapshots by Label</a>
     </li>
     <li>
         <a href="#admin-only-default-library">Default Library</a>
@@ -4500,7 +4500,7 @@ For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c
 Sample for get snapshot label
 
 ```
-curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tag-names/
+curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://cloud.seafile.com/api/v2.1/revision-tags/tag-names/
 ```
 
 **Sample response**
@@ -4534,7 +4534,7 @@ curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Acce
 Sample for create snapshot label.
 
 ```
-curl -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf&tag_names=v2.1,v2.2" -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tagged-items/
+curl -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf&tag_names=v2.1,v2.2" -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://cloud.seafile.com/api/v2.1/revision-tags/tagged-items/
 ```
 
 **Sample response**
@@ -4593,7 +4593,7 @@ curl -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6
 Sample for update snapshot label.
 
 ```
-curl -X PUT -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf&tag_names=v3" -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/revision-tags/tagged-items/
+curl -X PUT -d "repo_id=7377c95d-b303-4914-a555-306651cc4cbf&commit_id=4c03938da11e83d6c1d3e8ff469e92f46a80eeaf&tag_names=v3" -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://cloud.seafile.com/api/v2.1/revision-tags/tagged-items/
 ```
 
 **Sample response**
@@ -5087,7 +5087,7 @@ This api is only supported in pro edition.
 * 403 Feature disabled.
 * 500 Internal Server Error
 
-## <a id="admin-only-get-snapshot-by-label"></a>Get Snapshot By Label
+## <a id="admin-only-get-snapshots-by-label"></a>Get Snapshots by Label
 
 **GET** https://cloud.seafile.com/api/v2.1/admin/revision-tags/tagged-items/
 
@@ -5099,10 +5099,10 @@ This api is only supported in pro edition.
 
 **Sample request**
 
-Sample for get snapshot by label
+Sample for get snapshots by label
 
 ```
-curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://192.168.1.126/api/v2.1/admin/revision-tags/tagged-items/?repo_id=7377c95d-b303-4914-a555-306651cc4cbf&tag_contains=v
+curl -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55' -H 'Accept: application/json; indent=4' http://cloud.seafile.com/api/v2.1/admin/revision-tags/tagged-items/?repo_id=7377c95d-b303-4914-a555-306651cc4cbf&tag_contains=v
 ```
 
 **Sample response**
