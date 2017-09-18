@@ -22,6 +22,10 @@ interval=10m
 ## Refer to file search manual for details.
 index_office_pdf=false
 
+## The default size limit for doc, docx, ppt, pptx, xls, xlsx and pdf files, if smaller than the actual file, 
+## wiil result in a highlighted match text can't be displayed.This configuration takes effect in version 6.2.
+office_file_size_limit: 29000000
+
 [SEAHUB EMAIL]
 
 ## must be "true" to enable user email notifications when there are new unread notifications
