@@ -23,8 +23,9 @@ interval=10m
 index_office_pdf=false
 
 ## The default size limit for doc, docx, ppt, pptx, xls, xlsx and pdf files, if smaller than the actual file, 
-## wiil result in a highlighted match text can't be displayed.This configuration takes effect in version 6.2.
-office_file_size_limit: 29000000
+## it wiil result in a highlighted match text can't be displayed. This configuration takes effect in version 6.2.
+## Unit: Mb
+office_file_size_limit: 29
 
 [SEAHUB EMAIL]
 
