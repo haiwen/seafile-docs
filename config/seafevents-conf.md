@@ -22,10 +22,10 @@ interval=10m
 ## Refer to file search manual for details.
 index_office_pdf=false
 
-## The default size limit for doc, docx, ppt, pptx, xls, xlsx and pdf files, if smaller than the actual file, 
-## it will result in a highlighted match text can't be displayed. This configuration takes effect in version 6.2.
-## Unit: Mb
-office_file_size_limit = 29
+## The default size limit for doc, docx, ppt, pptx, xls, xlsx and pdf files. Files larger than this will not be indexed.
+## Since version 6.2.0
+## Unit: MB
+office_file_size_limit = 10
 
 [SEAHUB EMAIL]
 
