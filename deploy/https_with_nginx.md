@@ -122,7 +122,9 @@ Here is the sample configuration file:
 #         fastcgi_param	 SERVER_PORT         $server_port;
 #         fastcgi_param	 SERVER_NAME         $server_name;
 #         fastcgi_param   REMOTE_ADDR         $remote_addr;
-#     	 fastcgi_read_timeout 36000;
+#         fastcgi_param HTTPS on;
+#         fastcgi_param HTTP_SCHEME https;
+#     	  fastcgi_read_timeout 36000;
 #
 #         client_max_body_size 0;
 #
