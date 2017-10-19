@@ -1,17 +1,41 @@
 # Enabling Https with Nginx
 
-Here we use self-signed SSL certificate. If you use a paid ssl certificate from some authority, just skip the first step.
+Here we suggest you use [Let’s Encrypt](https://letsencrypt.org/getting-started/) to get a certificate from a Certificate Authority (CA). If you use a paid ssl certificate from some authority, just skip the first step.
 
-### Generate SSL certificate with OpenSSL
+### Generate SSL certificate
+
+For users who use Let’s Encrypt, you can obtain a valid certificate via [Certbot ACME client](https://certbot.eff.org/)
+
+On Ubuntu systems, the Certbot team maintains a PPA. Once you add it to your list of repositories all you'll need to do is apt-get the following packages.
+
 ```bash
-    openssl genrsa -out privkey.pem 2048
-    openssl req -new -x509 -key privkey.pem -out cacert.pem -days 1095
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-nginx
 ```
 
-If you're using a custom CA to sign your SSL certificate, you have to enable certificate revocation list (CRL) in your certificate. Otherwise http syncing on Windows client may not work. See [this thread](https://forum.seafile-server.org/t/https-syncing-on-windows-machine-using-custom-ca/898) for more information.
+Certbot has an Nginx plugin, which is supported on many platforms, and automates both obtaining and installing certs:
+
+```bash
+sudo certbot --nginx
+```
+
+Running this command will get a certificate for you and have Certbot edit your Nginx configuration automatically to serve it. If you're feeling more conservative and would like to make the changes to your Nginx configuration by hand, you can use the certonly subcommand:
+
+```bash
+sudo certbot --nginx certonly
+```
+
+To learn more about how to use Certbot you can read threir [documentation](https://certbot.eff.org/docs/).
+
+> If you're using a custom CA to sign your SSL certificate, you have to enable certificate revocation list (CRL) in your certificate. Otherwise http syncing on Windows client may not work. See [this thread](https://forum.seafile-server.org/t/https-syncing-on-windows-machine-using-custom-ca/898) for more information.
 
 ### Enable SSL module of Nginx (optional)
+
 If your Nginx does not support SSL, you need to recompile it, the commands are as follows:
+
 ```bash
     ./configure --with-http_stub_status_module --with-http_ssl_module
     make && make install

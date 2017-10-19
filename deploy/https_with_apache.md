@@ -1,15 +1,36 @@
 # Enabling Https with Apache
 
-## Generate SSL digital certificate with OpenSSL
+Here we suggest you use [Let’s Encrypt](https://letsencrypt.org/getting-started/) to get a certificate from a Certificate Authority (CA). If you use a paid ssl certificate from some authority, just skip the first step.
 
-Here we use self-signed SSL digital certificate for free. If you use a paid ssl certificate from some authority, just skip the this step.
+### Generate SSL certificate
+
+For users who use Let’s Encrypt, you can obtain a valid certificate via [Certbot ACME client](https://certbot.eff.org/)
+
+On Ubuntu systems, the Certbot team maintains a PPA. Once you add it to your list of repositories all you'll need to do is apt-get the following packages.
 
 ```bash
-    openssl genrsa -out privkey.pem 2048
-    openssl req -new -x509 -key privkey.pem -out cacert.pem -days 1095
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-apache
 ```
 
-If you're using a custom CA to sign your SSL certificate, you have to enable certificate revocation list (CRL) in your certificate. Otherwise http syncing on Windows client may not work. See [this thread](https://forum.seafile-server.org/t/https-syncing-on-windows-machine-using-custom-ca/898) for more information.
+Certbot has a fairly solid beta-quality Apache plugin, which is supported on many platforms, and automates both obtaining and installing certs:
+
+```bash
+sudo certbot --apache
+```
+
+Running this command will get a certificate for you and have Certbot edit your Apache configuration automatically to serve it. If you're feeling more conservative and would like to make the changes to your Apache configuration by hand, you can use the certonly subcommand:
+
+```bash
+sudo certbot --apache certonly
+```
+
+To learn more about how to use Certbot you can read threir [documentation](https://certbot.eff.org/docs/).
+
+> If you're using a custom CA to sign your SSL certificate, you have to enable certificate revocation list (CRL) in your certificate. Otherwise http syncing on Windows client may not work. See [this thread](https://forum.seafile-server.org/t/https-syncing-on-windows-machine-using-custom-ca/898) for more information.
 
 ## Enable https on Seahub
 
