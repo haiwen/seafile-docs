@@ -38,5 +38,5 @@ Please check logs/seahub.log.
 
 There are some common mistakes:
 
-1. Check whether there are typos in the config (`seahub_settings.py`, e.g. you could have forgotten to add a single quote `EMAIL_HOST_USER = XXX`, which should be `EMAIL_HOST_USER = 'XXX'` or you could habe a space at the end of a config line.
+1. Check whether there are typos in the config (`seahub_settings.py`, e.g. you could have forgotten to add a single quote `EMAIL_HOST_USER = XXX`, which should be `EMAIL_HOST_USER = 'XXX'` or you could have a space at the end of a config line.
 2. Your mail server is not available.
