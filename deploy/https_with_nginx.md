@@ -243,7 +243,7 @@ listen [::]:443 http2;
 
 Add the HSTS header. If you already visited the https version the next time your browser will directly visit the https site and not the http one. Prevent man-in-the-middle-attacks:
 ```nginx
-add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 ```
 
 Disable exact server version in header. Prevent scans for vulnerable server.
