@@ -128,8 +128,8 @@ Disable exact server version in header. Prevent scans for vulnerable server. Thi
 This is also something that you should add in every server block, this is to protect your nginx server from some different attacks.
 The X-XSS-Protection are protecting against cross-site-scripting, X-Frame-Options are protecting against clickjacking attacks and the X-Frame-Options are protecting against sniffing.
 ```
-    add_header X-Content-Type-Options nosniff;
-    add_header X-XSS-Protection "1; mode=block";
-    add_header X-Frame-Options DENY;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header X-Frame-Options "DENY" always;
     add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 ```
