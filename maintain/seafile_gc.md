@@ -171,7 +171,7 @@ systemctl start seafile.service
 
 echo Seafile cleanup done!
 ```
-Make sure that you have been given the script execution rights.
+Make sure that the script has been given execution rights, to do that run this command.
 
     sudo chmod +x /path/to/yourscript.sh
 
