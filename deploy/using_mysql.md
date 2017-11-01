@@ -7,10 +7,10 @@ This manual explains how to setup and run Seafile server from a pre-built packag
 [Download](https://www.seafile.com/en/download) the latest server package.
 
 ## Latest version of MariaDB (Optional)
-MariaDB has many advanteg over MySQL and it's basiclly the same software beside that MariaDB are fixing bugs etc. much faster then MySQL and in the most Linux distro's today MariaDB is the standard.
-And because of that it's importent that you have the latest updated stable version of MariaDB.
+MariaDB has many advantages over MySQL and it's basically the same software beside that MariaDB are fixing bugs etc. much faster then MySQL and in the most Linux distro's today MariaDB is the standard.
+And because of that it's important that you have the latest updated stable version of MariaDB.
 
-Please visist https://downloads.mariadb.org/mariadb/repositories/ and choose your Linux distro and follow the instructions to update to the latest stable version.
+Please visist https://downloads.mariadb.org/mariadb/repositories/ choose your Linux distro and follow the instructions to update to the latest stable version.
 
 
 ## Deploying and Directory Layout
@@ -85,7 +85,7 @@ GRANT ALL PRIVILEGES ON `seahub-db`.* to `seafile`@localhost;
 
 ## MySQL and MariaDB secure installation
 
-This is really importent to do before you are taking your DB to a production server as if you don't do it your DB are insecure and can very easy bee attacked.
+This is really important to do before you are taking your DB to a production server as if you don't do it your DB are insecure and can very easy be attacked.
 
 ```
     sudo mysql_secure_installation
