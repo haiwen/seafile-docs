@@ -24,6 +24,7 @@ There are three modes of operation for seaf-fsck:
 ## Checking Integrity of Libraries
 
 Running seaf-fsck.sh without any arguments will run a **read-only** integrity check for all libraries.
+It's safe to use this when the server are running.
 
 ```
 cd seafile-server-latest
