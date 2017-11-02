@@ -7,7 +7,7 @@ First, make sure `libmemcached` library and development headers are installed on
 On Ubuntu 16.04 or similar, the version in system repository is new enough. So you can install it directly.
 
 ```
-sudo apt-get install libmemcached-dev
+sudo apt-get install libmemcached-dev memcached zlib1g-dev
 ```
 
 On other systems, such as CentOS 7 or Ubuntu 14.04, you should install the library from source code.
@@ -25,8 +25,8 @@ sudo make install
 Install Python memcache library.
 
 ```
-sudo pip install pylibmc
-sudo pip install django-pylibmc
+sudo -H pip install pylibmc
+sudo -H pip install django-pylibmc
 ```
 
 Add the following configuration to `seahub_settings.py`.
