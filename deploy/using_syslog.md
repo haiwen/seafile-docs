@@ -65,13 +65,11 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'DEBUG',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
         'syslog': {
-            'level': 'DEBUG',
             'class': 'logging.handlers.SysLogHandler',
             'address': '/dev/log',
             'formatter': 'standard'
@@ -81,7 +79,7 @@ LOGGING = {
         # root logger
         '': {
             'handlers': ['console', 'syslog'],
-            'level': 'INFO',
+            'level': 'INFO', # Logs when log level is higher than info. Level can be any one of DEBUG, INFO, WARNING, ERROR, CRITICAL.
             'disabled': False
         },
         'django.request': {
