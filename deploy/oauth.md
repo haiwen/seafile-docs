@@ -54,7 +54,7 @@ OAUTH_CLIENT_ID = "your-client-id"
 OAUTH_CLIENT_SECRET = "your-client-secret"
 OAUTH_REDIRECT_URL = 'http{s}://your-domain.com/oauth/callback/'
 
-# The following shoud BOT be change if you are using Google as OAuth provider.
+# The following shoud NOT be changed if you are using Google as OAuth provider.
 OAUTH_PROVIDER_DOMAIN = 'google.com'
 OAUTH_AUTHORIZATION_URL = 'https://accounts.google.com/o/oauth2/v2/auth'
 OAUTH_TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token'
@@ -66,5 +66,28 @@ OAUTH_ATTRIBUTE_MAP = {
     "id": (True, "email"),
     "name": (False, "name"),
     "email": (False, "contact_email"),
+}
+```
+
+For some system, like Github, `email` is not the unique identifier for an user, but `id` is in most cases, so we use `id` as settings example in our manual. As Seafile uses email to identify an unique user account for now, so we combine `id` and OAUTH_PROVIDER_DOMAIN, which is google.com in your case, to an email format string and then create this account if not exist. If you want to use `email` info from Google, just change the setting as followings:
+```
+ENABLE_OAUTH = True
+OAUTH_ENABLE_INSECURE_TRANSPORT = True
+
+OAUTH_CLIENT_ID = "your-client-id"
+OAUTH_CLIENT_SECRET = "your-client-secret"
+OAUTH_REDIRECT_URL = 'http{s}://your-domain.com/oauth/callback/'
+
+# The following shoud NOT be changed if you are using Google as OAuth provider.
+OAUTH_PROVIDER_DOMAIN = 'google.com'
+OAUTH_AUTHORIZATION_URL = 'https://accounts.google.com/o/oauth2/v2/auth'
+OAUTH_TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token'
+OAUTH_USER_INFO_URL = 'https://www.googleapis.com/oauth2/v1/userinfo'
+OAUTH_SCOPE = [
+    "https://www.googleapis.com/auth/userinfo.email",
+]
+OAUTH_ATTRIBUTE_MAP = {
+    "email": (True, "email"),
+    "name": (False, "name"),
 }
 ```
