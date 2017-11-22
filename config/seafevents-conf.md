@@ -58,6 +58,19 @@ max-pages = 50
 ## Previewing a large file (for example >30M) online is likely going to freeze the browser.
 max-size = 2
 
+[EVENTS PUBLISH]
+## must be "true" to enable publish events messages
+enabled = false
+## message format: repo-udpate/t{{repo_id}}}/t{{commit_id}}
+## for now can only support redis message queue
+mq_type = redis
+
+## must be the value of the capital mq_type
+[REDIS]
+## redis use the 0 database and "repo_update" channel
+server = 192.168.1.1
+port = 6379
+password = q!1w@#123
 ```
 
 ### <a id="wiki-options-you-may-want-to-modify"></a>Options you may want to modify
