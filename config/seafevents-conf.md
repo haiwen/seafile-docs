@@ -65,7 +65,6 @@ enabled = false
 ## for now can only support redis message queue
 mq_type = redis
 
-## must be the value of the capital mq_type
 [REDIS]
 ## redis use the 0 database and "repo_update" channel
 server = 192.168.1.1
