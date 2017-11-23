@@ -61,7 +61,7 @@ max-size = 2
 [EVENTS PUBLISH]
 ## must be "true" to enable publish events messages
 enabled = false
-## message format: repo-udpate/t{{repo_id}}}/t{{commit_id}}
+## message format: repo-update/t{{repo_id}}}/t{{commit_id}}
 ## for now can only support redis message queue
 mq_type = redis
 
