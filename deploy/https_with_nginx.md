@@ -241,13 +241,21 @@ listen [::]:443 http2;
 
 ## Additional security settings for nginx (optional)
 
+### Force https on next visit
+
 Add the HSTS header. If you already visited the https version the next time your browser will directly visit the https site and not the http one. Prevent man-in-the-middle-attacks:
 ```nginx
 add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 ```
+
+### Obuscate nginx version
 
 Disable exact server version in header. Prevent scans for vulnerable server.
 **This should be added to every server block, as it shall obfuscate the version of nginx.**
 ```nginx
 server_tokens off;
 ```
+
+## Test your server
+
+To check your configuration you can use the service from ssllabs: https://www.ssllabs.com/ssltest/index.html .
