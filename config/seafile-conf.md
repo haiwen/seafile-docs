@@ -40,8 +40,10 @@ The configuration of seafile fileserver is in the `[fileserver]` section of the 
 
 ```
 [fileserver]
-# bind address for fileserver, default to 0.0.0.0
-host = 0.0.0.0
+# bind address for fileserver
+# default to 0.0.0.0, if deployed without proxy: no access restriction
+# set to 127.0.0.1, if used with local proxy: only access by local
+host = 127.0.0.1
 # tcp port for fileserver
 port = 8082
 ```
