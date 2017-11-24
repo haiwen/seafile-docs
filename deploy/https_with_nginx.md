@@ -213,6 +213,19 @@ You need to add a line in seahub_settings.py to set the value of `FILE_SERVER_RO
 FILE_SERVER_ROOT = 'https://seafile.example.com/seafhttp'
 ```
 
+### Change Seafile config
+
+Update the [configuration](../config/seafile-conf.md#seafile-fileserver-configuration
+) of seafile fileserver is in the `[fileserver]` section of the file `seafile.conf` to local ip `127.0.0.1`
+
+```
+[fileserver]
+# bind address for fileserver
+# default to 0.0.0.0, if deployed without proxy: no access restriction
+# set to 127.0.0.1, if used with local proxy: only access by local
+host = 127.0.0.1
+```
+
 ## Start Seafile and Seahub
 
 ```bash
