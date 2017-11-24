@@ -37,24 +37,20 @@ First, ensure your router supports port forwarding.
 
 ### Setup Port Forwarding Rules
 
-Seafile server is composed of several components. You need to configure port forward for all the components listed below.
+Seafile server is composed of several components. If you deployed Seafile behind Apache/Nginx you need to configure port forward for all the components listed below.
 
-<table>
-<tr>
-  <th>component</th>
-  <th>default port</th>
-</tr>
-<tr>
-  <td>fileserver</td>
-  <td>8082</td>
-</tr>
-<tr>
-  <td>seahub</td>
-  <td>8000</td>
-</tr>
-</table>
+component          | default port | protocol
+-------------------|--------------|----------
+webserver (http)   | 80           | TCP 
+webserver (https)  | 433          | TCP
 
-* You don't need to open port 8000 and 8082 if you deploy Seafile behind Apache/Nginx.
+If you do not deployed Seafile behind Apache/Nginx you need to configure port forward for all the components listed below. (**not recomended!**)
+
+component  | default port | protocol
+-----------|--------------|---------
+fileserver | 8082         | TCP 
+seahub     | 8000         | TCP
+
 * If you're not using the default ports, you should adjust the table accroding to your own customiztion.
 
 ### How to test if your port forwarding is working
@@ -64,7 +60,8 @@ After you have set the port forwarding rules on your router, you can check wheth
 - Open a command line prompt
 - Get your WAN IP. A convenient way to get your WAN ip is to visit `http://who.is`, which would show you your WAN IP.
 - Try to connect your seahub server
-````
+
+```bash
 telnet <Your WAN IP> 8000
 ```
 
@@ -80,7 +77,7 @@ If your port forwarding is not working, the reasons may be:
 
 "SERVICE_URL" in `ccnet.conf` is used to generate the download/upload link for files when you browse files online. Set it using your WAN IP.
 
-```
+```python
 SERVICE_URL = http://<Your WAN IP>:8000
 ```
 
@@ -106,7 +103,7 @@ The detailed process is beyond the scope of this wiki. But basically, you should
 
 After you have setup your DDNS service, you need to modify the `ccnet.conf`:
 
-```
+```python
 SERVICE_URL = http://<Your dynamic DNS domain>:8000
 ```
 
