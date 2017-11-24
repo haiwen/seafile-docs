@@ -49,7 +49,7 @@ Assume you have configured nginx as [Deploy-Seafile-with-nginx](deploy_with_ngin
 server {
     listen       80;
     server_name  seafile.example.com;
-    rewrite ^ https://$http_host$request_uri? permanent;	# force redirect http to https
+    rewrite ^ https://$host$request_uri? permanent;	# force redirect http to https
 
     # Enables or disables emitting nginx version on error pages and in the "Server" response header field.
     server_tokens off;
