@@ -46,3 +46,9 @@ To clean the permisson records, login in to MySQL/MariaDB and use the following 
     use seahub_db;
     DELETE FROM PermAudit WHERE to_days(now()) - to_days(timestamp) > 90;
 
+### Invalid Repo Data
+
+We offered command to clear invalid repo records in Seahub database.
+
+    cd <install-path>/seafile-server-latest
+    ./seahub.sh clear-invalid-repo-data
