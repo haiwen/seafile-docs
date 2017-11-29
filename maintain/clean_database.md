@@ -48,8 +48,8 @@ To clean the permisson records, login in to MySQL/MariaDB and use the following 
 
 ### Invalid Repo Data
 
-We offered command to clear invalid repo records in Seahub database.
-e.g. Some records that are not deleted after the repo is destroyed
+Since version 6.2, we offered command to clear invalid repo records in Seahub database,
+e.g. records that are not deleted after a repo is deleted. This is because users can restore a deleted library, so we can't delete these records at library deleting time.
 
     cd <install-path>/seafile-server-latest
     ./seahub.sh clear-invalid-repo-data
