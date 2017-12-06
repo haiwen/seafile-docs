@@ -52,4 +52,4 @@ Since version 6.2, we offered command to clear invalid repo records in Seahub da
 e.g. records that are not deleted after a repo is deleted. This is because users can restore a deleted library, so we can't delete these records at library deleting time.
 
     cd <install-path>/seafile-server-latest
-    ./seahub.sh clear-invalid-repo-data
+    ./seahub.sh python-env seahub/manage.py clear_invalid_repo_data
