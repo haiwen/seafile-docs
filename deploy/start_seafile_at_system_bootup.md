@@ -44,11 +44,12 @@ The content of the file is (please dont forget to change it if you want to run f
     [Service]
     # change start to start-fastcgi if you want to run fastcgi
     ExecStart=${seafile_dir}/seafile-server-latest/seahub.sh start
-    ExecStop=${seafile_dir}/seafile-server-latest/seahub.sh stop
-    User=seafile
+    ExecStop=${seafile_dir}/seafile-server-latest/seahub.sh stop
+    PIDFile=${seafile_dir}/seafile-server-latest/runtime/seahub.pid
+    User=seafile
     Group=seafile
-    Type=oneshot
-    RemainAfterExit=yes
+    Type=forking
+    Restart=always
 
     [Install]
     WantedBy=multi-user.target
