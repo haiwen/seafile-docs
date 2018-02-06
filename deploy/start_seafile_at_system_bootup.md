@@ -21,12 +21,13 @@ The content of the file is:
     After=network.target
 
     [Service]
-    Type=oneshot
     ExecStart=${seafile_dir}/seafile-server-latest/seafile.sh start
     ExecStop=${seafile_dir}/seafile-server-latest/seafile.sh stop
-    RemainAfterExit=yes
+    PIDFile=${seafile_dir}/seafile-server-latest/runtime/seafile.pid
     User=seafile
     Group=seafile
+    Type=forking
+    Restart=always
 
     [Install]
     WantedBy=multi-user.target
