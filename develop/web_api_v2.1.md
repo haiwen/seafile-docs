@@ -208,6 +208,7 @@
     <li>
         <a href="#directory">Directory</a>
         <ul>
+            <li><a href="#get-directory-detail">Get Directory Detail</a></li>
             <li><a href="#list-directory-entries">List Directory Entries</a></li>
             <li><a href="#get-directory-detail">Get Directory Detail</a></li>
             <li><a href="#create-new-directory">Create New Directory</a></li>
@@ -4119,6 +4120,37 @@ The id of the updated file
 * 500 Internal error
 
 ## <a id="directory"></a>Directory
+
+### <a id="get-directory-detail"></a>Get Directory Detail
+
+**GET** https://cloud.seafile.com/api/v2.1/repos/d06ded7f-05f5-48b8-8ff3-bd46b230b750/dir/detail/?path=/3/
+
+* repo-id
+* path, should NOT be `/`.
+
+**Sample request**
+```
+curl -H "Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154" -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api/v2.1/repos/d06ded7f-05f5-48b8-8ff3-bd46b230b750/dir/detail/?path=/3/"
+```
+
+**Sample response**
+```
+{
+    "repo_id": "d06ded7f-05f5-48b8-8ff3-bd46b230b750",
+    "name": "3",
+    "file_count": 2,
+    "dir_count": 1,
+    "mtime": "2017-07-04T11:29:08+08:00",
+    "path": "/3/",
+    "size": 8170554
+}
+```
+
+**Errors**
+
+* 400 path invalid.
+* 404 Library/Folder not found.
+* 403 Permission denied.
 
 ### <a id="list-directory-entries"></a>List Directory Entries
 
