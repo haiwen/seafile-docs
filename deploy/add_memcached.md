@@ -7,7 +7,7 @@ First, make sure `libmemcached` library and development headers are installed on
 On Ubuntu 16.04 or similar, the version in system repository is new enough. So you can install it directly.
 
 ```
-sudo apt-get install libmemcached-dev
+sudo apt-get install libmemcached-dev zlib1g-dev
 ```
 
 On other systems, such as CentOS 7 or Ubuntu 14.04, you should install the library from source code.
@@ -41,6 +41,15 @@ CACHES = {
 
 ```
 
+bind memcache to unix sockets instead of unix ports is also possible and [suggested](https://serverfault.com/questions/124517/whats-the-difference-between-unix-socket-and-tcp-ip-socket) to be more performant.
+```
+CACHES = {
+    'default': {
+        'BACKEND': 'django_pylibmc.memcached.PyLibMCCache',
+        'LOCATION': '/tmp/memcached.sock',
+    }
+}
+```
 If you use a memcached cluster, please replace the `CACHES` variable with the following. This configuration uses consistent hashing to distribute the keys in memcached. More information can be found on [pylibmc documentation](http://sendapatch.se/projects/pylibmc/behaviors.html) and [django-pylibmc documentation](https://github.com/django-pylibmc/django-pylibmc). Supposed your memcached server addresses are 192.168.1.13[4-6].
 
 ```
