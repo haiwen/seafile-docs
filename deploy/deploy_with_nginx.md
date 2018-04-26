@@ -1,5 +1,12 @@
 # Config Seahub with Nginx
 
+## Latest stable verison of Nginx
+
+Before you start it's importent that you make sure that your running the latest stable version of Nginx.
+
+You can find out how to download and install the latest stable version of Nginx trough the following link:
+http://nginx.org/en/linux_packages.html#stable
+
 ## Deploy Seahub/FileServer with Nginx
 
 Seahub is the web interface of Seafile server. FileServer is used to handle raw file uploading/downloading through browsers. By default, it listens on port 8082 for HTTP requests.
