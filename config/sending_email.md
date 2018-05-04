@@ -37,8 +37,19 @@ EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 ```
+If you are using Gandi's email server, use the following lines:
+```python
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'mail.gandi.net'
+EMAIL_HOST_USER = 'mailbox@mydomain'
+EMAIL_HOST_PASSWORD = 'mailboxpassword'
+EMAIL_PORT = 465
+```
+documentation is [here](https://doc.gandi.net/en/mail/faq/standard-settings)
 
-**Note**: If your email service still does not work, you can checkout the log file `logs/seahub.log` to see what may cause the problem. For a complete email notification list, please refer to [email notification list](customize_email_notifications.md).
+
+**Note**: If your email service still does not work, you can checkout the log file `logs/seahub.log` to see what may cause the problem. For a complete email notification list, please refer to [email notification list](customize_email_notifications.md). 
+On some hosting services such as scaleway smtp out is blocked by default [see support thread](https://community.online.net/t/solved-smtp-connection-blocked/2262/4)
 
 **Note2**: If you want to use the email service without authentication leaf `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD` **blank** (`''`). (But notice that the emails then will be sent without a `From:` address.)
 
