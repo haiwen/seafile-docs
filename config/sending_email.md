@@ -18,12 +18,13 @@ Please add the following lines to seahub_settings.py to enable email sending.
 
 ```python
 EMAIL_USE_TLS = False
-EMAIL_HOST = 'smtp.example.com'        # smpt server
+EMAIL_HOST = 'smtp.example.com'        # smtp server
 EMAIL_HOST_USER = 'username@example.com'    # username and domain
 EMAIL_HOST_PASSWORD = 'password'    # password
 EMAIL_PORT = 25
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
+EMAIL_USE_SSL = EMAIL_PORT == 465 # Quick guess of SSL depending on portused.  
 ```
 
 If you are using Gmail as email server, use following lines:
@@ -37,16 +38,6 @@ EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 ```
-If you are using Gandi's email server, use the following lines:
-```python
-EMAIL_USE_SSL = True
-EMAIL_HOST = 'mail.gandi.net'
-EMAIL_HOST_USER = 'mailbox@mydomain'
-EMAIL_HOST_PASSWORD = 'mailboxpassword'
-EMAIL_PORT = 465
-```
-documentation is [here](https://doc.gandi.net/en/mail/faq/standard-settings)
-
 
 **Note**: If your email service still does not work, you can checkout the log file `logs/seahub.log` to see what may cause the problem. For a complete email notification list, please refer to [email notification list](customize_email_notifications.md). 
 On some hosting services such as scaleway smtp out is blocked by default [see support thread](https://community.online.net/t/solved-smtp-connection-blocked/2262/4)
