@@ -24,7 +24,7 @@ EMAIL_HOST_PASSWORD = 'password'    # password
 EMAIL_PORT = 25
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
-EMAIL_USE_SSL = EMAIL_PORT == 465 # Quick guess of SSL depending on portused.  
+EMAIL_USE_SSL = EMAIL_PORT == 465 # Quick guess of SSL depending on port used.  
 ```
 
 If you are using Gmail as email server, use following lines:
