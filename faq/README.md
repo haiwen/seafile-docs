@@ -242,3 +242,27 @@ This is going to tell every node to generate the CSS CACHE in its local folder.
 ## Client
 
 * [Common problems about desktop syncing client](client.md)
+
+
+## Use non standard nginx port
+
+If you want to use a non standard nginx port other than 80 you have to modify following configuration settings:
+
+Change ccnet.conf
+
+  `SERVICE_URL = https://yourSeafileURL:yourNginxPort`
+
+Change seahub_settings.py
+
+	`FILE_SERVER_ROOT = https://yourSeafileURL:yourNginxPort/seafhttp`
+	`SITE_BASE = https://yourSeafileURL:yourNginxPort`
+
+Change nginx config file for seafile:
+
+```
+  server {
+    listen yourNginxPort; # <--------------------------------------- Non standard PORT
+    ...
+  location / {
+    ...
+	proxy_set_header   Host $host:$server_port;```
