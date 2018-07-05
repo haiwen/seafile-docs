@@ -17,7 +17,7 @@ The real-time backup server uses a syncing algorithm similar to the Seafile desk
 There are two sets of data that need to be backup:
 
 - The seafile-data directory and the core library metadata tables in the seafile database. This data is the core data structures of the libraries in Seafile. They're synced to the backup server with Seafile's syncing algorithm. In this procedure, the metadata tables are kept consistent with the seafile-data directory.
-- All other tables in the database (including seafile, ccnet and seahub databases) are backup with MySQL replication.
+- All other tables in the database (including seafile, ccnet and seahub databases) are backup with mysqldump.
 
 ## Configure Real-Time Backup Server
 
@@ -26,8 +26,8 @@ We assume you already have a primary server running, and now you want to setup a
 The steps to setup the backup server are:
 
 1. Install Seafile on the backup server
-2. Configure MySQL replication between the primary server and the backup server
-3. Configure Seafile syncing between the primary server and the backup server
+2. Configure Seafile syncing between the primary server and the backup server
+3. Backup the tables in the database by `mysqldump` at regular intervals
 
 ### Install Seafile on the Backup Server
 
@@ -38,159 +38,33 @@ When installing Seafile on the backup server, you have to notice:
 - The database names (ccnet, seafile and seahub database) should be the same as the names on the primary server.
 - You don't need to enable other Pro features, such as Office file preview, search indexing, file auditing etc.
 
-### Configure MySQL Replication
-
-MySQL replication asynchronously replicates database updates from a Master server (in our case, the primary server) to a Slave server (the backup server). To better understand how MySQL replication works and how to configure it, you should first read [MySQL official documentation](https://dev.mysql.com/doc/refman/5.6/en/replication-howto.html). The following steps are based on the steps in MySQL documentation, with some modifications for Seafile.
-
 In the following discussion, we'll use "primary server" and "master server", "backup server" and "slave server" interchangeably.
 
-#### Modify MySQL Server Configuration on Primary Server (my.cnf)
-
-On the primary server, add following options to my.cnf:
-
-```
-[mysqld]
-log_bin=mysql-bin
-server-id=1
-```
-
-In the my.cnf of the primary server, another important option is `expire_logs_days` ([reference](http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_expire_logs_days)). This option controls the retention time of the binary log, which is used for replication. The default value of this option is to keep binary log files forever. You can set this option to keep the binary log files for specific days. Binary log files older than the specified days will be deleted. So if the backup server is offline for more than `expire_logs_days`, the replication cannot be resumed after the backup server is online. We recommend to set this option to a long enough time.
-
-If you're using MariaDB Galera cluster as the primary database, you should only use one database node as the replication source. You should add the following option to the my.cnf of that chosen node:
-
-```
-[mysqld]
-log_slave_updates=ON
-```
-
-This option tells MariaDB to replicate the updates from the nodes in the cluster. Otherwise it only replicates its local updates.
-
-After saving the changes, you should restart MySQL on primary server.
-
-#### Create a User for Replication in MySQL
-
-On the primary server, create a user dedicated for replication. In MySQL client prompt,
-
-```
-CREATE USER 'repl'@'%' IDENTIFIED BY 'slavepass';
-GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
-```
-
-Replace the user name and password with your own choice.
-
-#### Obtain the Replication Master Binary Log Coordinates
-
-Before running this step, you should stop Seafile service on the primary server, so that no update will be written into database.
-
-On the primary (Master) server, in MySQL client prompt,
-
-```
-FLUSH TABLES WITH READ LOCK;
-SHOW MASTER STATUS;
-```
-
-You'll get output similar to the following:
-
-```
-+------------------+----------+--------------+------------------+-------------------+
-| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
-+------------------+----------+--------------+------------------+-------------------+
-| mysql-bin.000002 |   368915 |              |                  |                   |
-+------------------+----------+--------------+------------------+-------------------+
-```
-
-The `File` and `Position` fields in output will be used to configure the backup server (replication Slave).
-
-#### Export Existing Data on the Primary Server
+### Export Existing Data on the Primary Server
 
 Exporting data from the databases on the primary server with mysqldump:
 
 ```
 mysqldump -u <user> -p<password> --databases \
---ignore-table=<seafile_db>.Repo --ignore-table=<seafile_db>.Branch --ignore-table=<seafile_db>.RepoHead \
---ignore-table=<seahub_db>.base_userlastlogin --ignore-table=<seahub_db>.django_session \
---ignore-table=<seahub_db>.sysadmin_extra_userloginlog --ignore-table=<seahub_db>.UserTrafficStat \
---ignore-table=<seahub_db>.FileAudit --ignore-table=<seahub_db>.FileUpdate --ignore-table=<seahub_db>.PermAudit \
---ignore-table=<seahub_db>.Event --ignore-table=<seahub_db>.UserEvent --ignore-table=<seahub_db>.avatar_avatar \
---ignore-table=<seahub_db>.avatar_groupavatar --ignore-table=<seahub_db>.avatar_uploaded \
---master-data <seafile_db> <ccnet_db> <seahub_db> > dbdump.sql
+--ignore-table=<seafile_db>.Repo \
+--ignore-table=<seafile_db>.Branch \
+--ignore-table=<seafile_db>.RepoHead \
+<seafile_db> <ccnet_db> <seahub_db> > dbdump.sql
 ```
 
 You should replace `<user>`, `<password>` with your MySQL admin user and password. You should replace `<seafile_db>`, `<seahub_db>` and `<ccnet_db>` with your database names.
 
-#### Modify MySQL Server Configuration on Backup Server (my.cnf)
+**You should set the crontab for run the mysqldump at regular intervals.**
 
-On the backup server, add following options to my.cnf:
-
-```
-[mysqld]
-server-id=2
-replicate-ignore-table = <seafile db>.Repo
-replicate-ignore-table = <seafile db>.Branch
-replicate-ignore-table = <seafile db>.RepoHead
-replicate-ignore-table = <seahub db>.base_userlastlogin
-replicate-ignore-table = <seahub db>.django_session
-replicate-ignore-table = <seahub db>.sysadmin_extra_userloginlog
-replicate-ignore-table = <seahub db>.UserTrafficStat
-replicate-ignore-table = <seahub db>.FileAudit
-replicate-ignore-table = <seahub db>.FileUpdate
-replicate-ignore-table = <seahub db>.PermAudit
-replicate-ignore-table = <seahub db>.avatar_avatar
-replicate-ignore-table = <seahub db>.avatar_groupavatar
-replicate-ignore-table = <seahub db>.avatar_uploaded
-replicate-ignore-table = <seahub db>.Event
-replicate-ignore-table = <seahub db>.UserEvent
-```
-
-The above configuration tells the backup server to ignore following tables on replication:
-
-- The library metadata tables in Seafile db：Repo, Branch, RepoHead。These tables will be synced by Seafile backup server itself.
-- Local or temporary tables in Seahub database. When the admin logs into the backup server to view the data, these tables may be updated on the backup server. To avoid conflicts with the replicated entries, we ignore them on replication.
-
-Notes:
-
-- The `server-id` for the primary and backup server must be different.
-- You should replace `<seafile db>` and `<seahub db>` with your database names.
-
-Restart MySQL server on backup server, with `--skip-slave-start` option so that replication does not start.
-
-```
-sudo /etc/init.d/mysql start --skip-slave-start
-```
-
-#### Import Existing Data into backup server
+### Import Existing Data into backup server
 
 Importing existing data into the backup server's MySQL:
 
 ```
-mysql -u <usr> -p<pas> < dbdump.sql
+mysql -u <user> -p<pass> < dbdump.sql
 ```
 
 Replace `<user>` and `<pass>` with your MySQL admin user name and password.
-
-#### Start Replication
-
-Unlock MySQL on the primary server. In MySQL client prompt,
-
-```
-unlock tables;
-```
-
-On the backup server, setup replication start coordinates:
-
-```
-CHANGE MASTER TO MASTER_HOST='primary-host', MASTER_USER='user', MASTER_PASSWORD='slavepass', MASTER_LOG_FILE='bin-log-file', MASTER_LOG_POS=position;
-```
-
-Replace `primary-host` with the MySQL master server address; Replace `user` with the dedicated user for replication; Replace `slavepass` with the dedicated user's password; Replace `bin-log-file` and `position` with the information you obtained in the "Obtain the Replication Master Binary Log Coordinates" section.
-
-Start replication on the backup server. In MySQL client prompt,
-
-```
-start slave;
-```
-
-After staring replication, you should see some log messages in MySQL's error.log on the backup server, stating the replication is started. And the slave will catch up with any new updates on the master server.
 
 ### Configure Real-time Backup in Seafile
 
@@ -293,7 +167,8 @@ When you find a backup error, follow two steps:
 
 Since the backup server is a fully workable Seafile instance, you can switch your service to the backup server after your primary is severely damaged. But you need to take a few points into consideration before switching to the backup server.
 
-- You should first try to repair the primary server as long as possible. Running seaf-fsck will fix most daily corruptions on the primary server.
+- You should first importing latest data into the backup server's MySQL.
+- Then you should try to repair the primary server as long as possible. Running seaf-fsck will fix most daily corruptions on the primary server.
 - Even with the near real-time feature of the backup server, the data on the backup server may still be a bit older than the primary server. This is especially true for the libraries failed to backup.
 
 Before switching to the backup server, you should first unsync all clients which is syncing with "failed to backup" libraries.
@@ -313,3 +188,9 @@ use seafile-db;
 delete from RepoUserToken where repo_id in ('f690ea2c-fe4d-459a-ba1e-165cdc6df391', 'e2df70b5-cd80-496f-98cf-c9f038cf1307');
 ```
 
+## Running the GC on Backup Server
+
+After running GC on the primary server, run GC on the backup server and clear the chunks of data that have been cleaned up on the primary server from the backup server.
+
+**Note**: Setting the history `keep_days` to `seafile.conf` on the backup server same as the primary server.
+The GC just rely on the `keep_days` on the backup server. If some repository has a different history `keep_days` on the primary server, will not support the different history when running the GC on the backup server.
