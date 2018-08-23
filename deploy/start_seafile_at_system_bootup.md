@@ -21,10 +21,9 @@ The content of the file is:
     After=network.target
 
     [Service]
-    Type=oneshot
+    Type=forking
     ExecStart=${seafile_dir}/seafile-server-latest/seafile.sh start
     ExecStop=${seafile_dir}/seafile-server-latest/seafile.sh stop
-    RemainAfterExit=yes
     User=seafile
     Group=seafile
 
@@ -42,13 +41,12 @@ The content of the file is (please dont forget to change it if you want to run f
     After=network.target seafile.service
 
     [Service]
+    Type=forking
     # change start to start-fastcgi if you want to run fastcgi
     ExecStart=${seafile_dir}/seafile-server-latest/seahub.sh start
     ExecStop=${seafile_dir}/seafile-server-latest/seahub.sh stop
     User=seafile
     Group=seafile
-    Type=oneshot
-    RemainAfterExit=yes
 
     [Install]
     WantedBy=multi-user.target

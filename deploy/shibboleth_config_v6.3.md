@@ -1,4 +1,4 @@
-> This document is for Seafile Server version lower than 6.3, if the server version is 6.3 or above, please refer to [this document](https://manual.seafile.com/deploy/shibboleth_config_v6.3.html).
+> This document is for Seafile Server version 6.3 or above, if the server version is lower than 6.3, please refer to [this document](https://manual.seafile.com/deploy/shibboleth_config.html).
 
 
 ## Overview
@@ -9,14 +9,14 @@ In this documentation, we assume the reader is familiar with Shibboleth installa
 
 Shibboleth Service Provider (SP) should be installed on the same server as the Seafile server. The official SP from https://shibboleth.net/ is implemented as an Apache module. The module handles all Shibboleth authentication details. Seafile server receives authentication information (username) from fastcgi. The username then can be used as login name for the user.
 
-Seahub provides a special URL to handle Shibboleth login. The URL is `https://your-server/shib-login`. Only this URL needs to be configured under Shibboleth protection. All other URLs don't go through the Shibboleth module. The overall workflow for a user to login with Shibboleth is as follows:
+Seahub provides a special URL to handle Shibboleth login. The URL is `https://your-server/sso`. Only this URL needs to be configured under Shibboleth protection. All other URLs don't go through the Shibboleth module. The overall workflow for a user to login with Shibboleth is as follows:
 
-1. In the Seafile login page, there is a separate "Shibboleth" login button. When the user clicks the button, she/he will be redirected to `https://your-server/shib-login`.
-2. Since that URL is controlled by Shibboleth, the user will be redirected to IdP for login. After the user logs in, she/he will be redirected back to `https://your-server/shib-login`.
+1. In the Seafile login page, there is a separate "Shibboleth" login button. When the user clicks the button, she/he will be redirected to `https://your-server/sso`.
+2. Since that URL is controlled by Shibboleth, the user will be redirected to IdP for login. After the user logs in, she/he will be redirected back to `https://your-server/sso`.
 3. This time the Shibboleth module passes the request to Seahub. Seahub reads the user information from the request and brings the user to her/his home page.
 4. All later access to Seahub will not pass through the Shibboleth module. Since Seahub keeps session information internally, the user doesn't need to login again until the session expires.
 
-Since Shibboleth support requires Apache, if you want to use Nginx, you need two servers, one for non-Shibboleth access, another configured with Apache to allow Shibboleth login. In a cluster environment, you can configure your load balancer to direct traffic to different server according to URL. Only the URL `https://your-server/shib-login` needs to be directed to Apache.
+Since Shibboleth support requires Apache, if you want to use Nginx, you need two servers, one for non-Shibboleth access, another configured with Apache to allow Shibboleth login. In a cluster environment, you can configure your load balancer to direct traffic to different server according to URL. Only the URL `https://your-server/sso` needs to be directed to Apache.
 
 The configuration includes 3 steps:
 
@@ -68,7 +68,7 @@ You should create a new virtual host configuration for Shibboleth.
         Require all granted
         </Location>
 
-        <Location /shib-login>
+        <Location /sso>
         AuthType shibboleth
         ShibRequestSetting requireSession true
         Require valid-user
@@ -84,10 +84,8 @@ You should create a new virtual host configuration for Shibboleth.
         #
         # seahub
         #
-        RewriteRule ^/(media.*)$ /$1 [QSA,L,PT]
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteCond %{REQUEST_URI} !^/Shibboleth.sso
-        RewriteRule ^(.*)$ /seahub.fcgi$1 [QSA,L,E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+        ProxyPass / http://127.0.0.1:8000/
+        ProxyPassReverse / http://127.0.0.1:8000/
 
     </VirtualHost>
 </IfModule>
@@ -120,10 +118,10 @@ EXTRA_MIDDLEWARE_CLASSES = (
 )
 
 ENABLE_SHIB_LOGIN = True
-
-SHIBBOLETH_ATTRIBUTE_MAP = {
-    # Change eppn to mail if you use mail attribute for REMOTE_USER
-    "eppn": (False, "username"),
+SHIBBOLETH_USER_HEADER = 'HTTP_REMOTE_USER'
+SHIBBOLETH_ATTRIBUTE_MAP  = {
+    # Change HTTP_EPPN to HTTP_MAIL if you use mail attribute for REMOTE_USER
+    "HTTP_EPPN": (False, "username"),
 }
 ```
 
@@ -137,12 +135,12 @@ Since version 5.0, Seahub can process additional user attributes from Shibboleth
 You can specify the mapping between Shibboleth attributes and Seahub's user properties in seahub_settings.py:
 
 ```
-SHIBBOLETH_ATTRIBUTE_MAP = {
-    "eppn": (False, "username"),
-    "givenname": (False, "givenname"),
-    "sn": (False, "surname"),
-    "mail": (False, "contact_email"),
-    "organization": (False, "institution"),
+SHIBBOLETH_ATTRIBUTE_MAP  = {
+    "HTTP_EPPN": (False, "username"),    
+    "HTTP_GIVENNAME": (False, "givenname"),
+    "HTTP_SN": (False, "surname"),
+    "HTTP_MAIL": (False, "contact_email"),
+    "HTTP_ORGANIZATION": (False, "institution"),
 }
 ```
 
@@ -158,14 +156,15 @@ Since version 6.0.7 pro, we are able to set user role from Shibboleth. Details a
 
 To enable this, modify `SHIBBOLETH_ATTRIBUTE_MAP` above and add `Shibboleth-affiliation` field, you may need to change `Shibboleth-affiliation` according to your Shibboleth SP attributes.
 ```
-SHIBBOLETH_ATTRIBUTE_MAP = {
-    "eppn": (False, "username"),
-    "givenname": (False, "givenname"),
-    "sn": (False, "surname"),
-    "mail": (False, "contact_email"),
-    "organization": (False, "institution"),
-    "Shibboleth-affiliation": (False, "affiliation"),
+SHIBBOLETH_ATTRIBUTE_MAP  = {
+    "HTTP_EPPN": (False, "username"),    
+    "HTTP_GIVENNAME": (False, "givenname"),
+    "HTTP_SN": (False, "surname"),
+    "HTTP_MAIL": (False, "contact_email"),
+    "HTTP_ORGANIZATION": (False, "institution"),
+    "HTTP_Shibboleth-affiliation": (False, "affiliation"),
 }
+
 ```
 
 Then add new config to define affiliation role map, 
@@ -189,4 +188,4 @@ After Shibboleth login, Seafile should calcualte user's role from affiliation an
 
 ## Verify
 
-After restarting Apache and Seafile services, you can then test the shibboleth login workflow.
+After restarting Apache and Seahub service (`./seahub.sh restart`), you can then test the shibboleth login workflow.

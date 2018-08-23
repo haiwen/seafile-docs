@@ -184,6 +184,12 @@ For each API, we provide `curl` examples to illustrate the usage. We also provid
     curl -d "username=username@example.com&password=123456" https://cloud.seafile.com/api2/auth-token/
 
     {"token": "24fd3c026886e3121b2ca630805ed425c272cb96"}
+    
+If two-factor authentication is enabled in your account, you should add one-time token in the request header, otherwise you will get error response `{"non_field_errors":["Two factor auth token is missing."]}`.
+
+    curl --header "X-SEAFILE-OTP:585971" -d "username=username@example.com&password=123456" https://cloud.seafile.com/api2/auth-token/
+    
+    {"token":"dd9dbeeebc927c9f289a9e9a9d940eddf8c1ffd5"}
 
 **auth ping**
 
@@ -2187,7 +2193,7 @@ The id of the updated file
 
 **Sample request**
 
-    curl -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/dir/?p=/foo
+    curl -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/dir/download/?p=/foo
 
 **Sample response**
 

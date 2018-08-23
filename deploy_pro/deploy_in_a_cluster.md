@@ -88,7 +88,7 @@ After the setup process is done, you still have to do a few manual changes to th
 
 #### seafile.conf
 
-You have to add the following configuration to `seafile.conf`
+If you use a single memcached server, you have to add the following configuration to `seafile.conf`
 
 ```
 [cluster]
@@ -96,7 +96,11 @@ enabled = true
 memcached_options = --SERVER=192.168.1.134 --POOL-MIN=10 --POOL-MAX=100
 ```
 
-If you have a memcached cluster, you need to specify all the memcached server addresses in seafile.conf. The format is
+If you use memcached cluster, the way you setup the memcached cluster and the way to configure it in seafile.conf depend on your Seafile server version. The recommended way to setup memcached clusters can be found [here](memcached_mariadb_cluster.md).
+
+**Memcached Configuration before Seafile Pro 6.2.11**
+
+For Seafile server older than 6.2.11, you need to specify all the memcached server addresses in seafile.conf. The format is
 
 ```
 [cluster]
@@ -105,6 +109,16 @@ memcached_options = --SERVER=192.168.1.134 --SERVER=192.168.1.135 --SERVER=192.1
 ```
 
 Notice that there is a `--RETRY-TIMEOUT=3600` option in the above config. This option is important for dealing with memcached server failures. After a memcached server in the cluster fails, Seafile server will stop trying to use it for "RETRY-TIMEOUT" (in seconds). You should set this timeout to relatively long time, to prevent Seafile from retrying the failed server frequently, which may lead to frequent request errors for the clients.
+
+**Memcached Configuration after Seafile Pro 6.2.11**
+
+Since version 6.2.11, the recommended way to setup memcached cluster has been changed. You'll setup two memcached server, in active/standby mode. A floating IP address will be assigned to the current active memcached node. So you have to configure the address in seafile.conf accordingly.
+
+```
+[cluster]
+enabled = true
+memcached_options = --SERVER=<floating IP address> --POOL-MIN=10 --POOL-MAX=100
+```
 
 (Optional) The Seafile server also opens a port for the load balancers to run health checks. Seafile by default uses port 11001. You can change this by adding the following config option to `seafile.conf`
 
@@ -122,11 +136,7 @@ Also add following options to seahub_setting.py. These settings tell Seahub to s
 ```
 AVATAR_FILE_STORAGE = 'seahub.base.database_storage.DatabaseStorage'
 
-COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
 ```
-
-`COMPRESS_CACHE_BACKEND` is needed because the CSS file is created on the fly when any user first visit any page after a new Seafile version being deployed. The CSS file is saved to local disk and the path of the file is saved to cache. If `COMPRESS_CACHE_BACKEND` is not set to use LocMemCache, after one machine in a cluster generating the CSS file, another machine will not generate the file again, which will cause CSS file not found problem in this second machine.
-
 
 #### seafevents.conf
 
@@ -143,6 +153,7 @@ Here is an example `[INDEX FILES]` section:
 [INDEX FILES]
 enabled = true
 interval = 10m
+highlight = fvh     # This configuration is only available for Seafile 6.3.0 pro and above.
 index_office_pdf = true
 external_es_server = true
 es_host = background.seafile.com
@@ -290,7 +301,6 @@ For **seahub_settings.py**:
 
 ```
 AVATAR_FILE_STORAGE = 'seahub.base.database_storage.DatabaseStorage'
-COMPRESS_CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
 
 OFFICE_CONVERTOR_ROOT = 'http://<ip of node background>'
 ```
@@ -301,6 +311,7 @@ For **seafevents.conf**:
 [INDEX FILES]
 enabled = true
 interval = 10m
+highlight = fvh     # This configuration is only available for Seafile 6.3.0 pro and above.
 external_es_server = true
 es_host = <IP of background node>
 es_port = 9200

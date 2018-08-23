@@ -50,7 +50,6 @@ sudo ldconfig
 cd ~/dev/
 git clone https://github.com/haiwen/ccnet-server.git
 cd ccnet-server/
-git checkout -b v6.0.3-server v6.0.3-server
 ./autogen.sh
 ./configure --enable-ldap
 make
@@ -64,7 +63,6 @@ sudo ldconfig
 cd ~/dev/
 git clone https://github.com/haiwen/seafile-server.git
 cd seafile-server/
-git checkout -b v6.0.3-server v6.0.3-server
 ./autogen.sh
 ./configure
 make
@@ -77,7 +75,6 @@ sudo make install
 cd ~/dev/
 git clone https://github.com/haiwen/seahub.git
 cd seahub/
-git checkout -b v6.0.3-server v6.0.3-server
 ```
 
 ## Start `ccnet-server` and `seaf-server`
@@ -91,7 +88,7 @@ ccnet-server -c conf -f -
 
 ```
 cd ~/dev/seafile-server/tests
-mkdir seafile-data
+mkdir -p conf/seafile-data
 touch seafile-data/seafile.conf
 seaf-server -c conf -d conf/seafile-data -f -l -
 ```

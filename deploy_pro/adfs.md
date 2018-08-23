@@ -51,7 +51,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout sp.key -out sp.crt
 - For Ubuntu 16.04
 ```
 sudo apt install libxmlsec1
-sudo pip install cryptography djangosaml2
+sudo pip install cryptography djangosaml2==0.15.0
 ```
 
 ### Config Seafile

@@ -12,6 +12,14 @@ Seahub caches items(avatars, profiles, etc) on file system by default(/tmp/seahu
 
 Refer to ["add memcached"](../deploy/add_memcached.md).
 
+## Security settings
+
+```python
+# For security consideration, please set to match the host/domain of your site, e.g., ALLOWED_HOSTS = ['.example.com'].
+# Please refer https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts for details.
+ALLOWED_HOSTS = ['.myseafile.com']
+```
+
 ## User management options
 
 The following options affect user registration, password and session.
@@ -286,7 +294,7 @@ REST_FRAMEWORK_THROTTING_WHITELIST = []
 
 ## Seahub Custom Functions
 
-Since version 6.2, you can define a custome function to modify the result of user search function.
+Since version 6.2, you can define a custom function to modify the result of user search function.
 
 For example, if you want to limit user only search users in the same institution, you can define `custom_search_user` function in `{seafile install path}/conf/seahub_custom_functions/__init__.py`
 
@@ -323,6 +331,39 @@ def custom_search_user(request, emails):
 ```
 
 > **NOTE**, you should NOT change the name of `custom_search_user` and `seahub_custom_functions/__init__.py`
+
+Since version 6.2.5 pro, if you enable the **ENABLE_SHARE_TO_ALL_GROUPS** feather on sysadmin settings page, you can also define a custom function to return the groups a user can share library to.
+
+For example, if you want to let a user to share library to both its groups and the groups of user `test@test.com`, you can define a `custom_get_groups` function in `{seafile install path}/conf/seahub_custom_functions/__init__.py`
+
+Code example:
+
+```
+import os
+import sys
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+seaserv_dir = os.path.join(current_path, \
+        '../../seafile-server-latest/seafile/lib64/python2.7/site-packages')
+sys.path.append(seaserv_dir)
+
+def custom_get_groups(request):
+
+    from seaserv import ccnet_api
+
+    groups = []
+    username = request.user.username
+
+    # for current user
+    groups += ccnet_api.get_groups(username)
+
+    # for 'test@test.com' user
+    groups += ccnet_api.get_groups('test@test.com')
+
+    return groups
+```
+
+> **NOTE**, you should NOT change the name of `custom_get_groups` and `seahub_custom_functions/__init__.py`
 
 ## Note
 

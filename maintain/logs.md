@@ -10,7 +10,7 @@
 
 pro edition only:
 
-* seafevents.log: logs for background tasks and office file convertion
+* seafevents.log: logs for background tasks and office file conversion
 * seahub_email_sender.log: logs for periodically email sending of background tasks
 
 
@@ -24,4 +24,3 @@ pro edition only:
 * seafile-background-tasks.log: logs for background tasks and office file convertion
 * seahub_email_sender.log: logs for periodically email sending of background tasks
 * Ccnet Log: logs/ccnet.log  (logs for internal RPC, not useful)
-

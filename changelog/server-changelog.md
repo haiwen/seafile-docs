@@ -1,5 +1,65 @@
 # Seafile Server Changelog
 
+## 6.3
+
+In version 6.3, Django is upgraded to version 1.11. Django 1.8, which is used in version 6.2, is deprecated in 2018 April.
+
+With this upgrade, the fast-cgi mode is no longer supported. You need to config Seafile behind Nginx/Apache in WSGI mode.
+
+The way to run Seahub in another port is also changed. You need to modify the configuration file `conf/gunicorn.conf` instead of running `./seahub.sh start <another-port>`.
+
+Version 6.3 also changed the database table for file comments, if you have used this feature, you need migrate old file comments using the following commends after upgrading to 6.3:
+
+```
+./seahub.sh python-env seahub/manage.py migrate_file_comment
+```
+
+> Note, this command should be run while Seafile server is running.
+
+### 6.3.2 (2018/07/09)
+
+* [fix] Fix error when public wiki be viewed by anonymous users
+* Remove department field in users' profile page
+* [fix] Print warning instead of exit when there are errors in database table upgrade
+* [fix] Send notification to the upload link creator after there are files uploaded
+* [fix] Fix customize css via "custom/custom.css"
+* [API] return the last modifier in file detail API
+* [fix] Fix ZIP download can't work in some languages
+
+### 6.3.1 (2018/06/24)
+
+* Allow fullscreen presentation when view ppt(x) file via CollaboraOffice.
+* Support mobile UI style when view file via OnlyOffice.
+* Some UI improvement.
+* Show terms and condition link if terms and condition is enabled
+* [fix] Update OnlyOffice callback func (save file when status is 6).
+* [fix] Show library’s first commit’s desc on library history page.
+* [fix] Check if is an deleted library when admin restore a deleted library.
+* [fix] Removed dead 'quota doc' link on user info popup.
+* [fix] Fix bug of OnlyOffice file co-authoring.
+* [API] Add starred field to file detail api.
+* Use ID instead of email on sysadmin user page.
+* [fix] Fix database upgrade problems
+* [fix] Fix support for sqlite3
+* [fix] Fix crash when seaf-fsck, seaf-gc receive wrong arguments
+
+### 6.3.0 beta (2018/05/26)
+
+* UI Improvements: moving buttons to top bar, improve scrolling in file/library list
+* Update Django to 1.11, remove fast-cgi support
+* Update jQuery to version 3.3.1
+* Update pdf.js
+* Add invite people link to share dialog if the feature is enabled
+* Remove login log after delete a user
+* \[admin] Support customize site title, site name, CSS via Web UI
+* \[beta] Wiki, users can create public wikis
+* Add an option to define the listening address for WSGI mode
+* \[fix] Fix a bug that causing seaf-fsck crash
+* \[fix] Fix support for uploading folder via ‘Cloud file browser’
+* \[fix] Cancel Zip download task at the server side when user close zip download dialog
+* Other fixes
+
+
 ## 6.2
 
 From 6.2, It is recommended to use WSGI mode for communication between Seahub and Nginx/Apache. Two steps are needed if you'd like to switch to WSGI mode:
@@ -34,6 +94,30 @@ The configuration of Apache is as following:
     ProxyPass / http://127.0.0.1:8000/
     ProxyPassReverse / http://127.0.0.1:8000/
 ```
+
+### 6.2.5 (2018/01/23)
+
+* [fix] Fix OAuth bug
+* [fix] Improve the performance of returning a user's all group libraries
+* [new] Support customize the list of groups that a user can see when sharing a library
+
+
+### 6.2.4 (2018/01/16)
+
+* [new] Add the feature "remember this device" after two-factor authentication
+* [new] Add option to notify the admin after new user registration (NOTIFY_ADMIN_AFTER_REGISTRATION)
+* [fix] Fix a bug in modify permission for a a shared sub-folder
+* [fix] Fix support for PostgreSQL
+* [fix] Fix a bug in SQLite database support
+* [fix] Fix support for uploading 500+ files via web interface (caused by API rate throttle)
+* [improve, ui] Add transition to show/hide of feedback messages.
+* [improve] Improve performance of file history page.
+* [improve] Show two file history records at least.
+* [fix] show shared sub-folders when copy/move file/folder to “Other Libraries”.
+* [fix] Remove the white edge of webpage when previewing file via OnlyOffice.
+* [fix] Don’t check if user exists when deleting a group member in admin panel.
+* [fix, oauth] Don’t overwrite public registration settings when login a nonexistent user.
+* Other UI improvements.
 
 ### 6.2.3 (2017/11/15)
 

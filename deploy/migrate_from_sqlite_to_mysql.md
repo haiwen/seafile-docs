@@ -94,7 +94,7 @@ mysql> source seahub_db_data.sql;
         user=root
         password=root
         db_name=seafile_db
-        CONNECTION_CHARSET=utf8
+        connection_charset=utf8
 
     Append following lines to `seahub_settings.py`:
 

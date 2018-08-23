@@ -22,6 +22,5 @@ Note: Since version 5.0.0, you can also modify most of the config items via web 
 
 * [Options for sending email](sending_email.md)
 * [Customize web inferface](seahub_customization.md)
-* [Desktop Client Cusomization](desktop_customization.md)
 * User Management Options: refer to [seahub_settings.py](seahub_settings_py.md)
 * Quota and Download/Upload Limits: refer to [seafile.conf](seafile-conf.md)

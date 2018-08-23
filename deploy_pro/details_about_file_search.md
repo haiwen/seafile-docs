@@ -55,7 +55,7 @@ This feature was added in Seafile Professional Server 2.0.5.
 ...
 external_es_server = true
 es_host = 192.168.1.101
-es_port = 9300
+es_port = 9200
 ```
 
 - `external_es_server`: set to `true` so seafile would not start its own elasticsearch server

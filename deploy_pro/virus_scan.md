@@ -37,6 +37,16 @@ cd seafile-server-latest
 If a virus was detected, you can see scan records and delete infected files on the Virus Scan page in the admin area.
 ![virus-scan](../images/virus-scan.png)
 
+**INFO**: If you directly use clamav command line tool to scan files, scanning files will takes a lot of time. If you want to speed it up, we recommend to run Clamav as a daemon. Please refer to [Run ClamAV as a Daemon](deploy_clamav_as_daemon.md)
+
+When run Clamav as a daemon, the `scan_command` should be `clamdscan` in `seafile.conf`. An example for Clamav-daemon is provided below:
+```
+[virus_scan]
+scan_command = clamdscan
+virus_code = 1
+nonvirus_code = 0
+```
+ 
 Since Pro edition 6.0.0, a few more options are added to provide finer grained control for virus scan.
 
 ```

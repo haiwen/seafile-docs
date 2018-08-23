@@ -91,3 +91,31 @@ OAUTH_ATTRIBUTE_MAP = {
     "name": (False, "name"),
 }
 ```
+
+To enable OAuth via GitLab. Create an application in GitLab (under Admin area->Applications).
+
+Fill in required fields:
+
+- Name: a name you specify
+- Redirect URI: The callback url see below `OAUTH_REDIRECT_URL`
+- Trusted: Skip confirmation dialog page. Select this to *not* ask the user if he wants to authorize seafile to receive access to his/her account data.
+- Scopes: Select `openid` and `read_user` in the scopes list.
+
+Press submit and copy the client id and secret you receive on the confirmation page and use them in this template for your seahub_settings.py:
+
+```
+ENABLE_OAUTH = True
+OAUTH_CLIENT_ID = "your-client-id"
+OAUTH_CLIENT_SECRET = "your-client-secret"
+OAUTH_REDIRECT_URL = "https://your-seafile/oauth/callback/"
+
+OAUTH_PROVIDER_DOMAIN = 'your-domain'
+OAUTH_AUTHORIZATION_URL = 'https://gitlab.your-domain/oauth/authorize'
+OAUTH_TOKEN_URL = 'https://gitlab.your-domain/oauth/token'
+OAUTH_USER_INFO_URL = 'https://gitlab.your-domain/api/v4/user'
+OAUTH_SCOPE = ["openid", "read_user"]
+OAUTH_ATTRIBUTE_MAP = {
+    "email": (True, "email"),
+    "name": (False, "name")
+}
+```

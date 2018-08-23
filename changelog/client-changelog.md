@@ -1,12 +1,58 @@
 # Seafile Client Changelog
 
-## Known bugs and limitations
+## 6.2
 
-v6.1.0 is the latest stable release. It is compatibile with server 5.x and 6.x.
+### 6.2.4 (2018/08/03)
 
-The Mac Finder sync extension need OSX 10.10+
+* [fix] Fix a bug that causing Windows Explorer crash
+
+### 6.2.3 (2018/07/30)
+
+* Prevent multiple seaf-daemon running
+* [fix] Support preconfigured Shibboleth Url
+* Restart seaf-daemon automatically if it is dead
+
+### 6.2.2 6.2.1 Beta (2018/07/13)
+
+* [fix] Fix initialization problem in first time launching
+* Improve file syncing notification message
+
+### 6.2.0 Beta (2018/07/03)
+
+* [mac] Add automatical locking support for Office files
+* [mac] Don't update local office file if it is editing locally while simultaneously edited remotely  
+* [win] Enable using both syncing client and drive client while keep the Explorer file status icon work for both
+* [win] Remove ccnet component to make running multiple-instances on a single machine possible
+* Don't send unneccesary "api2/events" requests
+* [cloud file browser] Fix uploading retrying
+* [fix] Fix .eml files can't be deleted
 
 ## 6.1
+
+### 6.1.8 (2018/05/08)
+
+* [fix] Fix display of library search box
+
+### 6.1.7 (2018/03/29)
+
+* [fix] Fix file searching
+* [cloud file browser] Support showing indexing progress after uploading a large file
+
+
+### 6.1.6 (2018/03/13)
+
+* [fix] Fix crash during login
+* [cloud file browser] Only show search button when the server is pro edition
+* Show detailed path when a library can't be synced because a file is locked
+* [fix] Fix a crash during file syncing caused by files with illegal file name
+* [fix] Fix a bug that causing crash during loading libraries
+
+### 6.1.5 (2018/02/06)
+
+* Add "trust this device" function to two-step authentication
+* Add search files inside a library
+* Some UI improvements
+
 
 ### 6.1.4 (2017/12/20)
 

@@ -44,25 +44,22 @@ During upgrading, Seafile upgrade script will create symbolic link automatically
 You can find a good example of customized css file here: https://github.com/focmb/seafile_custom_css_green
 
 
-## Customize footer and other Seahub Pages
+## Customize help page
 
 **Note:** Since version 2.1.
 
-Create a folder ``templates`` under ``<seafile-install-path>/seahub-data/custom``
+First go to the custom folder
 
-### Customize footer (not used since 6.0.0)
+```
+cd <seafile-install-path>/seahub-data/custom
+```
 
-**Note:** Since version 6.0, Seafile uses a full screen adaptive design, footer is removed.
+then run the following commands
 
-1. Copy ``seahub/seahub/templates/footer.html`` to ``seahub-data/custom/templates``.
-2. Modify `footer.html`.
+```
+mkdir templates
+mkdir templates/help
+cp ../../seafile-server-latest/seahub/seahub/help/templates/help/install.html templates/help/
+```
 
-### Customize Download page
-
-1. Copy ``seahub/seahub/templates/download.html`` to ``seahub-data/custom/templates``.
-2. Modify `download.html`.
-
-### Customize Help page
-
-1. Copy ``seahub/seahub/help/templates/help`` to ``seahub-data/custom/templates/help``.
-2. Modify pages under `help`.
+Modify the `templates/help/install.html` file and save it. You will see the new help page.

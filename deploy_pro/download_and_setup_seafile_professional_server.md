@@ -1,45 +1,44 @@
 # Download and Setup Seafile Professional Server
+
 ## <a id="wiki-preparation"></a>Preparation ##
 
-The following document is tested with Ubuntu 14.04/16.04 and CentOS 7. We recommend to you use Ubuntu 16.04 or CentOS 7 for your server.
+The following document is tested with Ubuntu 16.04 and CentOS 7. We recommend that use Ubuntu 16.04 or CentOS 7 for your server.
 
-> NOTE:
->
-> If you are using Ubuntu 14.04, you can use the following command to install all dependencies Seafile requires at one time.
->
-> ```
-> sudo apt-get install openjdk-7-jre poppler-utils libpython2.7 python-pip \
-> mysql-server python-setuptools python-imaging python-mysqldb python-memcache python-ldap \
-> python-urllib3
->
-> sudo pip install boto requests
-> ```
->
-> Ubuntu 16.04:
->
-> ```
-> sudo apt-get install openjdk-8-jre poppler-utils libpython2.7 python-pip \
-> mysql-server python-setuptools python-imaging python-mysqldb python-memcache python-ldap \
-> python-urllib3
->
-> sudo pip install boto requests
-> sudo ln -sf /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java /usr/bin/
-> ```
->
-> CentOS 7:
->
-> ```
-> wget https://bootstrap.pypa.io/get-pip.py
-> sudo python get-pip.py
-> sudo yum install java-1.7.0-openjdk poppler-utils python-setuptools \
-> python-imaging MySQL-python mariadb-server python-memcached python-ldap \
-> python-urllib3
->
-> sudo pip install boto requests
-> sudo /etc/init.d/mysqld start
-> ```
->
-> For more information please see bellow.
+Now when we release a new version, we will always provide 2 compressed files, for example:
+
+- *seafile-pro-server_6.3.1_x86-64_Ubuntu.tar.gz*, is compiled in Ubuntu 16.04 enviroment.
+
+- *seafile-pro-server_6.3.1_x86-64_CentOS.tar.gz*, is compiled in CentOS 7 enviroment.
+
+If you are using Ubuntu 16.04/Debian server, please use *seafile-pro-server_6.3.1_x86-64_Ubuntu.tar.gz*, for CentOS 7 please use *seafile-pro-server_6.3.1_x86-64_CentOS.tar.gz*.
+
+### Install thirdpart Requirements
+
+For Ubuntu 16.04:
+
+```
+sudo apt-get install openjdk-8-jre poppler-utils libpython2.7 python-pip \
+mysql-server python-setuptools python-imaging python-mysqldb python-memcache python-ldap \
+python-urllib3
+
+sudo pip install boto requests
+sudo ln -sf /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java /usr/bin/
+```
+
+For CentOS 7:
+
+```
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+sudo yum install java-1.7.0-openjdk poppler-utils python-setuptools \
+python-imaging MySQL-python mariadb-server python-memcached python-ldap \
+python-urllib3
+
+sudo pip install boto requests
+sudo /etc/init.d/mysqld start
+```
+
+For more information please see bellow.
 
 ### Minimum System Requirements ###
 
@@ -47,7 +46,7 @@ The following document is tested with Ubuntu 14.04/16.04 and CentOS 7. We recomm
 
 ### Install Java Runtime Environment (JRE) ###
 
-On Ubuntu 14.04/Debian:
+On Debian:
 ```
 sudo apt-get install openjdk-7-jre
 ```
@@ -89,12 +88,6 @@ sudo pip install boto
 If you receive an error about "Wheel installs require setuptools >= ...", run this between the pip and boto lines above
 ```
 sudo pip install setuptools --no-use-wheel --upgrade
-```
-
-### Install libpython2.7 if you use Ubuntu 14.04
-
-```
-sudo apt-get install libpython2.7
 ```
 
 ### Install all libraries required by the Community Edition

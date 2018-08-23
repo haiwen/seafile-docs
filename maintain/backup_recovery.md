@@ -40,7 +40,7 @@ The backup is a three step procedure:
 2. Backup the databases;
 3. Backup the seafile data directory;
 
-### Backup Order: Database First or Data Directory First
+### <a id="backup-order-info"></a> Backup Order: Database First or Data Directory First
 
 - backup data directory first, SQL later: When you're backing up data directory, some new objects are written and they're not backed up. Those new objects may be referenced in SQL database. So when you restore, some records in the database cannot find its object. So the library is corrupted.
 - backup SQL first, data directory later: Since you backup database first, all records in the database have valid objects to be referenced. So the libraries won't be corrupted. But new objects written to storage when you're backing up are not referenced by database records. So some libraries are out of date. When you restore, some new data are lost.

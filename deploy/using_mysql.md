@@ -90,12 +90,13 @@ The Seafile server package requires the following packages to be installed on yo
 * python-mysqldb
 * python-urllib3
 * python-memcache (or python-memcached)
+* python-requests
 
 ```
 # on Debian/Ubuntu 14.04 server
 apt-get update
 apt-get install python2.7 libpython2.7 python-setuptools python-imaging \
-  python-ldap python-mysqldb python-memcache python-urllib3
+  python-ldap python-mysqldb python-memcache python-urllib3 python-requests
 ```
 
 ```
@@ -103,7 +104,7 @@ apt-get install python2.7 libpython2.7 python-setuptools python-imaging \
 # As the default python binary on Ubuntu 16.04 server is python 3, we need to install python (python 2) first.
 apt-get update
 apt-get install python
-apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap python-urllib3 ffmpeg python-pip python-mysqldb python-memcache
+apt-get install python2.7 libpython2.7 python-setuptools python-imaging python-ldap python-urllib3 ffmpeg python-pip python-mysqldb python-memcache python-requests
 pip install pillow moviepy
 ```
 
@@ -111,7 +112,7 @@ pip install pillow moviepy
 # on CentOS 7
 yum -y install epel-release
 rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
-yum -y install python-imaging MySQL-python python-memcached python-ldap python-urllib3 ffmpeg ffmpeg-devel
+yum -y install python-imaging MySQL-python python-memcached python-ldap python-urllib3 ffmpeg ffmpeg-devel python-requests
 pip install pillow moviepy
 ```
 
@@ -245,28 +246,62 @@ http://192.168.1.111:8000/
 Congratulations! Now you have successfully setup your private Seafile Server.
 
 
-### Run Seahub on another port
+#### Run Seahub on another port
 
-If you want to run Seahub on another port than the default port 8000, say 8001, you must:
+If you want to run Seahub on a port other than the default 8000, say 8001, you must:
 
-* stop the Seafile Server
+**Seafile 6.2.x and previous versions**
+
+- stop the Seafile server
 ```
 ./seahub.sh stop
 ./seafile.sh stop
 ```
 
-* modify the value of `SERVICE_URL` in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is `192.168.1.111`). You can also modify `SERVICE_URL` via web UI in "System Admin->Settings". (**Warning**: if you set the value both via Web UI and ccnet.conf, the setting via Web UI will take precedence.)
+- modify the value of SERVICE_URL in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is 192.168.1.100). You can also modify SERVICE_URL via web UI in "System Admin->Settings". (**Warning**: if you set the value both via Web UI and ccnet.conf, the setting via Web UI will take precedence.)
+
 ```
-SERVICE_URL = http://192.168.1.111:8001
+SERVICE_URL = http://192.168.1.100:8001
 ```
 
-* restart Seafile Server
+- restart Seafile server
 ```
 ./seafile.sh start
 ./seahub.sh start 8001
 ```
 
-see [Seafile server configuration options](../config/ccnet-conf.md) for more details about `ccnet.conf`.
+See Seafile [Server Configuration Manual](../config/ccnet-conf.md) for more details about ``ccnet.conf``.
+
+**Seafile 6.3.x and above versions**
+
+At Seafile 6.3.x, you could't simply run Seahub on another port by `./seahub.sh start <port>`. But you can assign the port of seahub by setting the `conf/gunicorn.conf`.
+
+- stop the Seafile server
+```
+./seahub.sh stop
+./seafile.sh stop
+```
+
+- modify the value of SERVICE_URL in the file [ccnet.conf](../config/ccnet-conf.md), like this: (assume your ip or domain is 192.168.1.100). You can also modify SERVICE_URL via web UI in "System Admin->Settings". (**Warning**: if you set the value both via Web UI and ccnet.conf, the setting via Web UI will take precedence.)
+
+```
+SERVICE_URL = http://192.168.1.100:8001
+```
+
+- **modify the conf/gunicorn.conf**
+
+```
+# default localhost:8000
+bind = "0.0.0.0:8001"
+```
+
+- restart Seafile server
+```
+./seafile.sh start
+./seahub.sh start
+```
+
+See Seafile [Server Configuration Manual](../config/ccnet-conf.md) for more details about ``ccnet.conf``.
 
 ## Stopping and Restarting Seafile and Seahub
 

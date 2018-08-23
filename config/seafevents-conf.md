@@ -21,6 +21,9 @@ enabled = true
 ## The interval the search index is updated. Can be s(seconds), m(minutes), h(hours), d(days)
 interval=10m
 
+## From Seafile 6.3.0 pro, in order to speed up the full-text search speed, you should setup
+highlight = fvh
+
 ## If true, indexes the contents of office/pdf files while updating search index
 ## Note: If you change this option from "false" to "true", then you need to clear the search index and update the index again.
 ## Refer to file search manual for details.

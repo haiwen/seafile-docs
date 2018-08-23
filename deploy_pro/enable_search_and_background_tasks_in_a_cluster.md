@@ -121,10 +121,9 @@ Description=Seafile Background Tasks Server
 After=network.target seahub.service
 
 [Service]
-Type=oneshot
+Type=forking
 ExecStart=/opt/seafile/seafile-server-latest/seafile-background-tasks.sh start
 ExecStop=/opt/seafile/seafile-server-latest/seafile-background-tasks.sh stop
-RemainAfterExit=yes
 User=root
 Group=root
 

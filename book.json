@@ -1,6 +1,6 @@
 {
-    "title": null,
-    "description": null,
+    "title": "Seafile Server Manual",
+    "description": "Manual on how to install and maintain Seafile server",
 
     "github": "haiwen",
     "githubHost": "https://github.com/",
@@ -12,21 +12,6 @@
             "theme": "white",
             "family": "sans",
             "size": 1
-        }
-    },
-
-    "theme": "./localtheme",
-
-    "links": {
-        "home": null,
-        "about": null,
-        "issues": null,
-        "contribute": null,
-
-        "sharing": {
-            "google": null,
-            "facebook": null,
-            "twitter": null
         }
     },
 

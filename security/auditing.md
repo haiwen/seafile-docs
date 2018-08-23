@@ -18,6 +18,5 @@ The logging feature is turned off by default before version 6.0. Add the followi
 enabled = true
 ```
 
-See [config options for pro edition](../deploy_pro/configurable_options.md) for more information.
 
 The audit log data is being saved in `seahub-db`.

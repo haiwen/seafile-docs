@@ -1,5 +1,87 @@
 # Seafile Professional Server Changelog
 
+## 6.3
+
+In version 6.3, Django is upgraded to version 1.11. Django 1.8, which is used in version 6.2, is deprecated in 2018 April.
+
+With this upgrade, the fast-cgi mode is no longer supported. You need to config Seafile behind Nginx/Apache in WSGI mode.
+
+The way to run Seahub in another port is also changed. You need to modify the configuration file `conf/gunicorn.conf` instead of running `./seahub.sh start <another-port>`.
+
+
+Version 6.3 also changed the database table for file comments, if you have used this feature, you need migrate old file comments using the following commends after upgrading to 6.3:
+
+```
+./seahub.sh python-env seahub/manage.py migrate_file_comment
+```
+
+> Note, this command should be run while Seafile server is running.
+
+Version 6.3 changed '/shib-login' to '/sso'. If you use Shibboleth, you need to to update your Apache/Nginx config. Please check the updated document: https://manual.seafile.com/deploy/shibboleth_config_v6.3.html
+
+Version 6.3 add a new option for file search (`seafevents.conf`):
+
+```
+[INDEX FILES]
+...
+highlight = fvh
+...
+```
+
+This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
+
+### 6.3.4 (2018/08/16)
+
+* [fix] Fix a bug in creating group-owned library
+
+### 6.3.3 (2018/08/15)
+
+* [fix] Fix some bugs in sharing group-owned libraries
+* [fix] Fix a bug in setting folder permission
+* Update Django to 1.11.11
+* Support login via contact email
+* Support sharing a sub-folder in a group-owned library
+
+### 6.3.2 (2018/07/30)
+
+* [fix] Fix sometimes get group listing will cause ccnet-server crash
+* [fix] Fix built in office file preview can't works
+* Redirect '/shib-login' to '/sso'
+* Other small fixes
+
+### 6.3.1 (2018/07/25)
+
+* Add generating of internal links
+* Lock office files when editing via online office suite
+* Support setting organization quota, delete an organization via Web API
+* Support Swift storage backend Identity v3.0 API
+* Improve markdown editor
+* Several fixes
+
+
+### 6.3.0 Beta (2018/06/28)
+
+* Support nested group and group-owned libraries
+* Keep sharing link when file or folder moved or renamed
+* Update Django to 1.11, remove fast-cgi support
+* Update jQuery to version 3.3.1
+* Update pdf.js, use pdf.js for preview pdf files
+* Docx files are converted to PDFs and preview via pdf.js in builtin preview
+* Support multiple storage backend to be used in a single server
+* [fix] Fix some bugs with OnlyOffice and CollaboraOffice
+* [fix] Use mobile version of OnlyOffice if viewed via mobile devices
+* Shared sub-folders can be searched
+* Show terms and condition link if terms and condition is enabled
+* Remove login log after delete a user
+* [admin] Support customize site title, site name, CSS via Web UI
+* [fix] Fix a bug that causing seaf-fsck crash
+* [fix] Cancel Zip download task at the server side when user close zip download dialog
+* [fix] Fix crash when seaf-fsck, seaf-gc receive wrong arguments
+* [fix] Fix a few bugs in realtime backup server
+* [beta] Wiki, users can create public wikis
+* Some other UI improvements
+
+
 ## 6.2
 
 From 6.2, It is recommended to use proxy mode for communication between Seahub and Nginx/Apache. Two steps are needed if you'd like to switch to WSGI mode:
@@ -34,6 +116,123 @@ The configuration of Apache is as following:
     ProxyPass / http://127.0.0.1:8000/
     ProxyPassReverse / http://127.0.0.1:8000/
 ```
+
+### 6.2.13 (2018.5.18)
+
+* [new] Support only return files or folders when search file via api.
+* [fix] Fix notification display behavior bug on some page.
+* [fix] Recreate folder when failed because of `file already exists` error for the first time.
+* [fix] Fix bug of saving file via onlyoffice.
+* [fix] Fix bug when set user’s reference id to ‘’ via admin api.
+* [fix] Fix bug of group info page display in organization admin panel.
+* [improve] Disable full email search if current user is a guest user.
+* [improve] Return library type when search file via api.
+* [improve] Add user auth info to cookie when login via OAuth.
+* [improve] Return timestamp instead of time string when get user clean up library trash event via api.
+* [improve] Check quota when copy/move file/folder.
+* [improve] Distinguish file or folder when send library/folder share notice/email.
+* [improve] Sort by parent folder’s name when get file/folder recursively.
+* [improve] Remove unused Python imports in ADFS module.
+* [improve] Optimizate library udpate event.
+* [improve] Remove seahub gunicorn access log.
+
+### 6.2.12 (2018.4.20)
+
+* [fix] Fix a bug in seafevents
+
+### 6.2.11 (2018.4.19)
+
+* Update multi storage backend feature, add STORAGE_CLASS_MAPPING_POLICY setting.
+* [fix] Fix bug when search file by path.
+* [fix] A user that can't create a library can sync a sub-folder of a library now.
+* Add title when view file via OOS.
+* Check if enable LIBRARY_TEMPLATES feature when creating library.
+* [api] Enable return all files recursively under a folder.
+* Preserve share links when admin transfer a library from a user to another user.
+* Add setting to disable user change password.
+* Add setting to disable group dissussion.
+* Add setting to disable file comment.
+* Restart both ccnet-server and seaf-server if seaf-server is down.
+* Fix a bug that some cases elasticsearch be started repeatly.
+* Don’t start seafile if failed to mount http-temp dir.
+* Don’t deactive user if failed to get users from ldap server.
+* [fix] Fix online preview can't work in background node caused by wrong Python path.
+
+
+### 6.2.10 (2018.3.20)
+
+* Improve performance of file search
+* [fix] Fix a bug in daily active user statistics
+* [fix] Fix copy files larger than 2GB via seaf-fuse
+* Show 403 error when visit share link if share link creator no longer has access permission to library.
+* [API] Add api for uploading file via upload share link.
+* [API] Support search file/folder in a specific library and folder via api.
+* [fix] Fix bug in folder renaming operation list on activities page.
+* [fix] Fix bug when creating personal/group wiki.
+* [fix] Fix bug when searching specific extension file.
+* [fix] Fix a bug in Two-Factor Authentication.
+* [fix] Fix bug when getting encrypted library history.
+* [fix] Fix UI bug of "New Library" and "More" buttons.
+* [fix] Fix bug of using truncated image file as avatar.
+* Change value of `per_page` parameter to 10 when search file via api.
+* Support indexing files in background after file uploading via API
+* Add user clean library trash event to activities
+* Use inner fileserver url to save file when edit office via OOS.
+
+
+### 6.2.9 (2018.02.10)
+
+* [fix] Support setting region for Swift backend
+* [fix] Notify the admin when an invited people registered
+* [new, API] Add API for cleaning trash
+* [fix, API] Fix permission check in search API
+* [fix] Remove redundant warning message in seahub.log
+* [fix] Add API for upload files via upload link
+* [fix] Fix inconsistency in showing user's space usage in multi-tenancy mode
+* [new] Add online preview for SVG files
+
+### 6.2.8 (2018.02.02)
+
+* [fix] Fix command pro/pro.py --test
+* All logs that went to seahub_django_request.log go to seahub.log
+* Print gunicorn error to runtime/error.log
+* [fix] Don't allow to generate share links via API for encrypted libraries
+* [new] Support online preview for tiff and eps files
+* [new, API] Add api to allow admin to copy files between libraries
+* [new] Allow system admin to share a library as "admin" to another user in admin panel
+* Other UI fixes and improvements
+
+
+### 6.2.7 (2018.01.22)
+
+* [fix, important] Fix a performance bug in search index
+* [fix, important] Fix a memory leak in listing folder with locked files
+* [fix] Fix creating of demo account
+* [new] Notify the inviter when a guest register
+* [new] Add the feature "remember this device" after two-factor authentication
+* [new] Don't allow to move, delete or rename a file when a file is locked
+* [new] Add option to notify the admin after new user registration (NOTIFY_ADMIN_AFTER_REGISTRATION)
+* [new, UI] Support inviting multiple guests at once
+* [new] Support customize the list of groups that a user can see when sharing a library
+* [new, API] Support search files in my libraries, shared libraries, shared to all libraries
+* [fix] Fix OAuth bug
+* [fix] Fix a bug that file preview can't work in Debian 9
+* [fix, multi-tenancy] Fix permission of a shared sub-folder can't be changed
+* [fix] Fix a bug in modify permission for a shared sub-folder
+* [fix] Improve performance in checking folder permission and file lock
+* [fix] Improve the performance of returning a user's all group libraries
+* [fix] Fix support for uploading 500+ files via web interface (caused by API rate throttle)
+* [fix] Fix API get_shared_repo_by_path()
+* [fix] Add more log when failed to zip a file
+* Don't use memcache when read object in the Python part
+* Update license file check
+* [multi-tenancy, API] Return origin_repo_name when listing libraries
+* Add cancel zip download API
+* [fix] Fix some configuration bugs in seafevents module
+
+
+### 6.2.5, 6.2.6 (deprecated)
+
 
 ### 6.2.4 (2017.12.20)
 
