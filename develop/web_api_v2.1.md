@@ -5285,32 +5285,54 @@ If you set 'ret-json' into url arguments, new_file_id will be returned
 
 **GET** https://cloud.seafile.com/api2/repos/{repo_id}/file/comments/counts/?p=/doc
 
-* rpeo_id
-* p
+* `repo_id`
+* `p`, if represents a folder, this api will return comment count of all files in this folder. If represents a file, only return comment count of this file.
 
 **Sample request**
 
-`get the number of file comment correspoding to the file under the folder`
-
-    curl -H "Authorization: Token 05b05e30ee979e333ff33a437988820494fb0afd"  -sS 'https://cloud.seafile.com/api2/repos/4674c2bb-3702-4dd0-b768-8952db27ac87/file/comments/counts/?p=/doc'
+return comment count of all files in a folder
+```
+curl -H "Authorization: Token 05b05e30ee979e333ff33a437988820494fb0afd"  -sS 'https://cloud.seafile.com/api2/repos/4674c2bb-3702-4dd0-b768-8952db27ac87/file/comments/counts/?p=/doc/'
+```
 
 **Sample response**
 
-    [
-        {
-            "doc": 3
-        },
-        {
-            "pdfs": 1
-        }
-    ]
+```
+[
+    {
+        "doc": 3
+    },
+    {
+        "1.txt": 2
+    },
+    {
+        "pdfs": 1
+    }
+]
+```
+
+**Sample request**
+
+get comment count of a single file
+
+```
+curl -H "Authorization: Token 05b05e30ee979e333ff33a437988820494fb0afd"  -sS 'https://cloud.seafile.com/api2/repos/4674c2bb-3702-4dd0-b768-8952db27ac87/file/comments/counts/?p=/doc/1.txt'
+```
+
+**Sample response**
+
+```
+{
+    "1.txt": 2
+}
+```
 
 **Errors**
 
-* 400 Wrong path
-* 403 Can not access repo
-* 404 Folder not found
-* 500 Internal error
+* 400 p invalid.
+* 403 Permission denied.
+* 404 Folder/File not found.
+* 500 Internal Server Error
 
 ### <a id="get-smart-link-for-a-file"></a>Get Smart Link for a File
 
