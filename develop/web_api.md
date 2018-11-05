@@ -13,6 +13,7 @@
 <li><a href="#migrate-account">Migrate Account(Admin only)</a></li>
 <li><a href="#delete-account">Delete Account(Admin only)</a></li>
 <li><a href="#check-account-info">Check Account Info</a></li>
+<li><a href="#update-account-info">Update Account Info</a></li>
 <li><a href="#server-info">Get Server Information</a></li>
 </ul>
 </li>
@@ -273,7 +274,45 @@ If scope parameter is passed then accounts will be searched inside the specific 
     {
     "usage": 26038531,
     "total": 104857600,
-    "email": "user@example.com"
+    "email": "user@example.com",
+    "name: "user name",
+    "contact_email": "contact@example.com",
+    "login_id": "user_login_id",
+    "department": "dev",
+    "is_staff": false,
+    "email_notification_interval": 300, 
+    }
+
+**Errors**
+
+* 403 Invalid token
+
+
+### <a id="update-account-info"></a>Update Account Info ###
+
+**PUT** https://cloud.seafile.com/api2/account/info/
+
+**Request parameters**
+
+* name
+* email_notification_interval (in seconds), 0 means disable email notification
+
+**Sample request**
+
+    curl -X PUT -d "name=new_name&email_notification_interval=3600" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/account/info/
+
+**Sample response**
+
+    {
+    "usage": 26038531,
+    "total": 104857600,
+    "email": "user@example.com",
+    "name: "new_name",
+    "contact_email": "contact@example.com",
+    "login_id": "user_login_id",
+    "department": "dev",
+    "is_staff": false,
+    "email_notification_interval": 3600, 
     }
 
 **Errors**
