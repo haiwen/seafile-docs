@@ -67,7 +67,6 @@
   * Storage Backends
     * [Amazon S3 Backend](deploy_pro/setup_with_amazon_s3.md)
     * [Ceph Backend](deploy_pro/setup_with_ceph.md)
-    * [Migrate to Ceph](deploy_pro/migrate_to_ceph.md)
     * [OpenStack Swift Backend](deploy_pro/setup_with_swift.md)
     * [Storage Backend Encryption](deploy_pro/seaf_encrypt.md)
     * [Multiple Storage Backends](deploy_pro/multiple_storage_backends.md)
