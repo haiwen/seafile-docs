@@ -32,7 +32,6 @@
     * [Add Memcached](deploy/add_memcached.md)
     * [Deploy Seafile behind NAT](deploy/deploy_seafile_behind_nat.md)
     * [Deploy Seahub at Non-root domain](deploy/deploy_seahub_at_non-root_domain.md)
-    * [Migrate From SQLite to MySQL](deploy/migrate_from_sqlite_to_mysql.md)
   * [Common Problems for Setting up Server](faq.md)
   * [New Directory Layout in Seafile Server 5.0.0](deploy/new_directory_layout_5_0_0.md)
   * [Deploying Seafile with Docker](deploy/deploy_with_docker.md)
