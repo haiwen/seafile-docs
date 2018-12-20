@@ -74,7 +74,7 @@ server {
         send_timeout  36000s;
     }
     location /media {
-        root /home/user/haiwen/seafile-server-latest/seahub;
+        root /home/user/haiwen/seafile-server-latest/seahub/media;
     }
 }
 ```
