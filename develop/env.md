@@ -90,8 +90,9 @@ ccnet-server -c conf -f -
 cd ~/dev/seafile-server/tests
 mkdir -p conf/seafile-data
 touch seafile-data/seafile.conf
-seaf-server -c conf -d conf/seafile-data -f -l -
+seaf-server -c conf -d seafile-data -f -l -
 ```
+
 
 The config files and databases (if you use sqlite, which is by default) of `ccnet-server` are located in `~/dev/seafile-server/tests/conf`. This directory is called "ccnet conf directory". The config files, databases and data of `seaf-server` are located in `~/dev/seafile-server/tests/conf/seafile-data`. This directory is called "seafile conf directory". 
 
