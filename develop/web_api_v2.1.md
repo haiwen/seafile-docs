@@ -6256,96 +6256,64 @@ curl -X DELETE -H 'Authorization: Token 88aaa1e6fe35d0444868b4c67f8ca1766cf82f55
 * 400 repo_id/tag_names invalid.
 * 403 Permission denied(need rw permission).
 
-## <a id="get-file-activities"></a>Get File Activities
+## <a id="get-file-activities"></a>Get Activities
 
-**GET** https://cloud.seafile.com/api2/events/
+**GET** "http://192.168.1.113:8000/api/v2.1/activities/"
 
 **Request parameters**
 
-this api will only return first 15 records of activities. if want get more, pass `start` parameter
-
-* start (default 0)
-* size (size of user avatar, default 36)
+* page, default value is 1.
+* per_page, default value is 25.
+* avatar_size, default value is 72.
 
 **Sample request**
 
-    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/events/"
+```
+curl -H 'Authorization: Token d6e1942800107cf682e29b28bd3ec0a92352aae6' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/activities/"
+
+```
 
 **Sample response**
-
 ```
-{'events': [{'author': u'lian@lian.com',
-             'avatar': '<img src="/media/avatars/default.png" width="36" height="36" class="avatar" />',
-             'avatar_url': 'https://cloud.seafile.com/media/avatars/default.png',
-             'date': '2016-05-06',
-             'etype': u'repo-delete',
-             'name': u'lian',
-             'nick': u'lian',
-             'repo_id': u'13e2ae06-8927-465b-8f57-319b3a7cfbdd',
-             'repo_name': u'2',
-             'time': 1462552942,
-             'time_relative': u'<time datetime="2016-05-06T16:42:22.967104" is="relative-time" title="Fri, 6 May 2016 16:42:22 +0800" >19 hours ago</time>'},
-            {'author': u'lian@lian.com',
-             'avatar': '<img src="/media/avatars/default.png" width="36" height="36" class="avatar" />',
-             'avatar_url': 'https://cloud.seafile.com/media/avatars/default.png',
-             'commit_id': u'1be92d40a1b526863bbf39e8abdae7d317a1195f',
-             'converted_cmmt_desc': u'Modified "<a href="/convert_cmmt_desc_link/?repo_id=47945b31-dedb-4b92-a048-32bf825595ce&cmmt_id=1be92d40a1b526863bbf39e8abdae7d317a1195f&nm=excel-view.xlsx" class="normal">excel-view.xlsx</a>"',
-             'date': '2016-04-25',
-             'desc': u'Modified "excel-view.xlsx"',
-             'etype': u'repo-update',
-             'more_files': False,
-             'name': u'lian',
-             'nick': u'lian',
-             'repo_encrypted': False,
-             'repo_id': u'47945b31-dedb-4b92-a048-32bf825595ce',
-             'repo_name': u'wopi',
-             'time': 1461569125,
-             'time_relative': u'<time datetime="2016-04-25T15:25:25" is="relative-time" title="Mon, 25 Apr 2016 15:25:25 +0800" >11 days ago</time>'}
-             ...
-             ],
- 'more': True,
- 'more_offset': 15}
- ```
-
-**Sample request for more activities**
-
-    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/events/?start=15"
-
-**Sample response for more activities**
-
+{
+    "events": [
+        {
+            "commit_id": "110d26aeb4b3f492c51270b6c1dda115138a46ac",
+            "obj_type": "file",
+            "repo_id": "d4f596ed-09ea-4ac6-8d59-12acbd089097",
+            "name": "asynchronous-test.py",
+            "author_email": "lian@lian.com",
+            "author_contact_email": "lian-contact@email.com",
+            "time": "2019-01-05T15:34:01+08:00",
+            "author_name": "name of lian sd",
+            "avatar_url": "http://192.168.1.113:8000/media/avatars/0/1/a72299021077701e7c522c46fdaa87/resized/72/f1624528379862140839578963eb24f2.png",
+            "op_type": "delete",
+            "path": "/asynchronous-test.py",
+            "repo_name": "lib-of-lian"
+        },
+        {
+            "commit_id": "740cc4ae773fb913a4ef8a413e9e2dc240f0bbe4",
+            "obj_type": "file",
+            "repo_id": "564dd12c-d804-4ea6-96af-7843e3c56e35",
+            "name": "1.md",
+            "author_email": "lian@lian.com",
+            "author_contact_email": "lian-contact@email.com",
+            "time": "2018-09-20T14:58:55+08:00",
+            "author_name": "name of lian sd",
+            "avatar_url": "http://192.168.1.113:8000/media/avatars/0/1/a72299021077701e7c522c46fdaa87/resized/72/f1624528379862140839578963eb24f2.png",
+            "op_type": "edit",
+            "path": "/1.md",
+            "repo_name": "chain111"
+        },
+        ...
+    ]
+}
 ```
-{'events': [{'author': u'lian@lian.com',
-             'avatar': '<img src="/media/avatars/default.png" width="36" height="36" class="avatar" />',
-             'avatar_url': 'https://cloud.seafile.com/media/avatars/default.png',
-             'date': '2016-05-06',
-             'etype': u'repo-delete',
-             'name': u'lian',
-             'nick': u'lian',
-             'repo_id': u'13e2ae06-8927-465b-8f57-319b3a7cfbdd',
-             'repo_name': u'2',
-             'time': 1462552942,
-             'time_relative': u'<time datetime="2016-05-06T16:42:22.967104" is="relative-time" title="Fri, 6 May 2016 16:42:22 +0800" >19 hours ago</time>'},
-            {'author': u'lian@lian.com',
-             'avatar': '<img src="/media/avatars/default.png" width="36" height="36" class="avatar" />',
-             'avatar_url': 'https://cloud.seafile.com/media/avatars/default.png',
-             'commit_id': u'1be92d40a1b526863bbf39e8abdae7d317a1195f',
-             'converted_cmmt_desc': u'Modified "<a href="/convert_cmmt_desc_link/?repo_id=47945b31-dedb-4b92-a048-32bf825595ce&cmmt_id=1be92d40a1b526863bbf39e8abdae7d317a1195f&nm=excel-view.xlsx" class="normal">excel-view.xlsx</a>"',
-             'date': '2016-04-25',
-             'desc': u'Modified "excel-view.xlsx"',
-             'etype': u'repo-update',
-             'more_files': False,
-             'name': u'lian',
-             'nick': u'lian',
-             'repo_encrypted': False,
-             'repo_id': u'47945b31-dedb-4b92-a048-32bf825595ce',
-             'repo_name': u'wopi',
-             'time': 1461569125,
-             'time_relative': u'<time datetime="2016-04-25T15:25:25" is="relative-time" title="Mon, 25 Apr 2016 15:25:25 +0800" >11 days ago</time>'}
-             ...
-             ],
- 'more': True,
- 'more_offset': 30}
- ```
+
+**Errors**
+
+* 404 Events not enabled.
+* 500 Internal Server Error
 
 ## <a id="get-thumbnail-image"></a>Get Thumbnail Image
 
@@ -6392,7 +6360,6 @@ this api will only return first 15 records of activities. if want get more, pass
 
 * 400 Argument missing.
 * 403 Guest user can not use global address book.
-
 
 Note: The following APIs are only available since Seafile v5.1.
 
