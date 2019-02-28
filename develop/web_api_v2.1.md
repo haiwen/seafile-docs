@@ -18,11 +18,11 @@
         </ul>
     </li>
     <li>
-        <a href="#starred-files">Starred Files</a>
+        <a href="#starred-items">Starred Items</a>
         <ul>
-            <li><a href="#list-starred-files">List starred files</a></li>
-            <li><a href="#star-a-file">Star A File</a></li>
-            <li><a href="#unstar-a-file">Unstar A File</a></li>
+            <li><a href="#list-starred-items">List Starred Items</a></li>
+            <li><a href="#star-a-item">Star a Library/Folder/File</a></li>
+            <li><a href="#unstar-a-item">Unstar a Library/Folder/File</a></li>
         </ul>
     </li>
     <li>
@@ -573,94 +573,136 @@ Sample response from a seafile pro edition server:
         ]
     }
 
-## <a id="starred-files"></a>Starred Files
+## <a id="starred-items"></a>Starred Items
 
-### <a id="list-starred-files"></a>List starred files
+You can star/unstar a repo/folder/file via this api.
 
-**GET** https://cloud.seafile.com/api2/starredfiles/
+### <a id="list-starred-items"></a>List Starred Items
 
+**GET** https://cloud.seafile.com/api/v2.1/starred-items/
 
 **Sample request**
 
-    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e6199b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/starredfiles/
+```
+curl -H "Authorization: Token 076de58233c09f19e7a5179abff14ad55987350f" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/starred-items/
+```
 
 **Sample response**
 
-    [
-    {
-        "repo": "99b758e6-91ab-4265-b705-925367374cf0",
-        "mtime": 1355198150,
-        "org": -1,
-        "path": "/foo/bar.doc",
-        "dir": false,
-        "size": 0
-    },
-    {
-        "repo": "99b758e6-91ab-4265-b705-925367374cf0",
-        "mtime": 1353751237,
-        "org": -1,
-        "path": "/add_folder-blue.png",
-        "dir": false,
-        "size": 3170
-    }
+```
+{
+    "starred_item_list": [
+        {
+            "repo_encrypted": false,
+            "mtime": "2019-02-27T13:52:30+08:00",
+            "repo_id": "663d57b8-1602-4d6c-a8e3-1b237ca3a766",
+            "obj_name": "spec",
+            "path": "/",
+            "is_dir": true,
+            "user_contact_email": "imwhatiam123@gmail.com",
+            "user_name": "lian-name",
+            "user_email": "imwhatiam123@gmail.com",
+            "repo_name": "spec"
+        },
+        {
+            "repo_encrypted": false,
+            "mtime": "2019-02-27T16:24:48+08:00",
+            "repo_id": "21b941c2-5411-4372-a514-00b62ab99ef2",
+            "obj_name": "My Photos",
+            "path": "/My Photos/",
+            "is_dir": true,
+            "user_contact_email": "imwhatiam123@gmail.com",
+            "user_name": "lian-name",
+            "user_email": "imwhatiam123@gmail.com",
+            "repo_name": "lib-on-dev"
+        },
+        {
+            "repo_encrypted": false,
+            "mtime": "2019-02-28T13:48:46+08:00",
+            "repo_id": "21b941c2-5411-4372-a514-00b62ab99ef2",
+            "obj_name": "test.md",
+            "path": "/test.md",
+            "is_dir": false,
+            "user_contact_email": "imwhatiam123@gmail.com",
+            "user_name": "lian-name",
+            "user_email": "imwhatiam123@gmail.com",
+            "repo_name": "lib-on-dev"
+        },
     ]
-
-### <a id="star-a-file"></a>Star A File
-
-**POST** https://cloud.seafile.com/api2/starredfiles/
-
-**Request parameters**
-
-* repo_id (post)
-* p (post)
-
-**Sample request**
-
-    curl -v -d "repo_id=dae8cecc-2359-4d33-aa42-01b7846c4b32&p=/foo.md" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/starredfiles/
-
-**Sample response**
-
-    ...
-    < HTTP/1.0 201 CREATED
-    < Location: https://cloud.seafile.com/api2/starredfiles/
-    ...
-    "success"
-
-**Success**
-
-   Response code is 201(Created) and Location header provides url of starred file list.
+}
+```
 
 **Errors**
 
-* 400 `repo_id` or `p` is missing, or `p` is not valid file path(e.g. /foo/bar/).
+* 403 Permission denied.
 
-### <a id="unstar-a-file"></a>Unstar A File
+### <a id="star-a-item"></a>Star a Library/Folder/File
 
-**DELETE** https://cloud.seafile.com/api2/starredfiles/
+**POST** https://cloud.seafile.com/api/v2.1/starred-items/
 
 **Request parameters**
 
-* repo_id
-* p
+* `repo_id`
+* `path`: path of folder/file, `/` stands for star a library.
 
 **Sample request**
 
-    curl -X DELETE -v  -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api2/starredfiles/?repo_id=dae8cecc-2359-4d33-aa42-01b7846c4b32&p=/foo.md'
+```
+curl -d "repo_id=21b941c2-5411-4372-a514-00b62ab99ef2&path=/" -H "Authorization: Token 076de58233c09f19e7a5179abff14ad55987350f" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/starred-items/
+```
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 200 OK
-    ...
-    "success"
-
-**Success**
-
-   Response code is 200(OK), and a string named "success" is returned.
+```
+{
+    "repo_encrypted": false,
+    "mtime": "2019-02-28T13:48:46+08:00",
+    "repo_id": "21b941c2-5411-4372-a514-00b62ab99ef2",
+    "obj_name": "lib-on-dev",
+    "path": "/",
+    "is_dir": true,
+    "user_contact_email": "imwhatiam123@gmail.com",
+    "user_name": "lian-name",
+    "user_email": "imwhatiam123@gmail.com",
+    "repo_name": "lib-on-dev"
+}
+```
 
 **Errors**
 
-* 400 `repo_id` or `p` is missing, or `p` is not valid file path(e.g. /foo/bar/).
+* 400 repo_id/path invalid.
+* 403 Permission denied.
+* 404 Library/item not found.
+* 500 Internal Server Error
+
+### <a id="unstar-a-item"></a>Unstar a Library/Folder/File
+
+**DELETE** https://cloud.seafile.com/api/v2.1/starred-items/?repo_id=21b941c2-5411-4372-a514-00b62ab99ef2&path=/test.md
+
+**Request parameters**
+
+* `repo_id`
+* `path`: path of folder/file, `/` stands for unstar a library.
+
+**Sample request**
+
+```
+curl -X DELETE -H "Authorization: Token 076de58233c09f19e7a5179abff14ad55987350f" -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api/v2.1/starred-items/?repo_id=21b941c2-5411-4372-a514-00b62ab99ef2&path=/test.md"
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 repo_id/path invalid.
+* 403 Permission denied.
+* 500 Internal Server Error
 
 ## <a id="group"></a>Group
 
@@ -3657,7 +3699,7 @@ success
 
 **Sample request**
 ```
-curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=seafile&search_repo=all&search_ftypes=custom&ftype=Document&input_fexts=md,png&per_page=3&page=3&with_permission=true"
+curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350f' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=seafile&search_repo=all&search_ftypes=custom&ftype=Document&input_fexts=md,png&per_page=3&page=3&with_permission=true"
 ```
 
 **Sample response**
@@ -3713,7 +3755,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
 
     Search for files in a library specified directory.
 
-    curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=a&search_repo=2628a63b-cfad-41f5-a748-392ec9287686&search_path=/testtest"
+    curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350f' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/search/?q=a&search_repo=2628a63b-cfad-41f5-a748-392ec9287686&search_path=/testtest"
 
 **Sample response**
 
@@ -3754,7 +3796,7 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
 
     Search for files within the specified time range and size range.
 
-    curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -G -d 'q=a&time_from=1517801993&
+    curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350f' -G -d 'q=a&time_from=1517801993&
     time_to=15254060581&size_from=100&size_to=105' http://cloud.seafile.com/api2/search/
 
 **Sample response**
@@ -5475,7 +5517,7 @@ curl -H "Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc" -H 'Acce
 
 **Sample request**
 
-    curl -d "operation=mkdir" -v -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/21b941c2-5411-4372-a514-00b62ab99ef2/dir/?p=/foo
+    curl -d "operation=mkdir" -v -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350f' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/21b941c2-5411-4372-a514-00b62ab99ef2/dir/?p=/foo
 
 **Sample response**
 
