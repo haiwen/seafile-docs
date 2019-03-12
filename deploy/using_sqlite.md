@@ -69,7 +69,7 @@ The Seafile server package requires the following packages have been installed i
 ```
 #on Debian/Ubuntu 14.04 server
 apt-get update
-apt-get install python2.7 libpython2.7 python-setuptools python-ldap python-urllib3 sqlite3 python-requests
+apt-get install python2.7 libpython2.7 python-setuptools python-ldap python-urllib3 sqlite3 python-requests 
 ```
 
 ```
@@ -77,7 +77,7 @@ apt-get install python2.7 libpython2.7 python-setuptools python-ldap python-urll
 # As the default python binary on Ubuntu 16.04 server is python 3, we need to install python (python 2) first.
 apt-get update
 apt-get install python
-apt-get install python2.7 libpython2.7 python-setuptools python-ldap python-urllib3 ffmpeg python-pip sqlite3 python-requests
+apt-get install python2.7 libpython2.7 python-setuptools python-ldap python-urllib3 ffmpeg python-pip sqlite3 python-requests python-imaging
 pip install Pillow==4.3.0
 pip install moviepy  # used in movie file thumbnails
 ```
