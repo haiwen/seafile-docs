@@ -183,23 +183,47 @@
         </ul>
     </li>
     <li>
-        <a href="#file">File</a>
+        <a href="#files-and-directories">Files and Directories</a>
         <ul>
-            <li><a href="#view-file-through-owa">View File Through Owa</a></li>
-            <li><a href="#download-file">Download File</a></li>
+            <li><a href="#list-directory-entries">List Directory Entries</a></li>
             <li><a href="#get-file-detail">Get File Detail</a></li>
-            <li><a href="#get-file-history">Get File History (Deprecated)</a></li>
-            <li><a href="#get-file-history-v2.1">Get File History</a></li>
+            <li><a href="#get-directory-detail">Get Directory Detail</a></li>
+            <li><a href="#create-file">Create File</a></li>
+            <li><a href="#create-directory">Create Directory</a></li>
+            <li><a href="#rename-file">Rename File</a></li>
+            <li><a href="#rename-directory">Rename Directory</a></li>
+            <li><a href="#download-file">Download File</a></li>
+            <li><a href="#download-directory">Download Directory</a></li>
+            <li><a href="#delete-file">Delete File</a></li>
+            <li><a href="#delete-directory">Delete Directory</a></li>
+            <li><a href="#revert-file">Revert File</a></li>
             <li><a href="#restore-file-from-history">Restore File From History</a></li>
             <li><a href="#download-file-revision">Download File From a Revision</a></li>
-            <li><a href="#create-file">Create File</a></li>
-            <li><a href="#rename-file">Rename File</a></li>
+            <li><a href="#revert-directory">Revert Directory</a></li>
+            <li><a href="#view-file-through-owa">View File Through Owa</a></li>
+            <li><a href="#get-file-history">Get File History</a></li>
             <li><a href="#lock-file">Lock File</a></li>
             <li><a href="#unlock-file">Unlock File</a></li>
             <li><a href="#move-file">Move File</a></li>
+            <li><a href="#move-directory-merge">Move Directory Merge</a></li>
             <li><a href="#copy-file">Copy File</a></li>
-            <li><a href="#revert-file">Revert File</a></li>
-            <li><a href="#delete-file">Delete File</a></li>
+            <li>
+                <a href="#asynchronously-copy-move-file-directory">Asynchronously Copy/Move File/Directory</a>
+                <ul>
+                    <li><a href="#asynchronously-copy-move-file-directory-get-task-id">Get Task Id</a></li>
+                    <li><a href="#asynchronously-copy-move-file-directory-cancel-task">Cancel Task</a></li>
+                    <li><a href="#asynchronously-copy-move-file-directory-query-progress">Query Progress</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#multiple-files-directories">Multiple Files / Directories</a>
+                <ul>
+                    <li><a href="#multiple-files-directories-copy">Copy</a></li>
+                    <li><a href="#multiple-files-directories-move">Move</a></li>
+                    <li><a href="#multiple-files-directories-delete">Delete</a></li>
+                    <li><a href="#multiple-files-directories-download">Download</a></li>
+                </ul>
+            </li>
             <li>
                 <a href="#upload-file">Upload File</a>
                 <ul>
@@ -236,36 +260,6 @@
                 </ul>
             </li>
             <li><a href="#get-smart-link-for-a-file">Get Smart Link for a File</a></li>
-        </ul>
-    </li>
-    <li>
-        <a href="#directory">Directory</a>
-        <ul>
-            <li><a href="#list-directory-entries">List Directory Entries</a></li>
-            <li><a href="#get-directory-detail">Get Directory Detail</a></li>
-            <li><a href="#create-new-directory">Create New Directory</a></li>
-            <li><a href="#rename-directory">Rename Directory</a></li>
-            <li><a href="#delete-directory">Delete Directory</a></li>
-            <li><a href="#download-directory">Download Directory</a></li>
-            <li><a href="#revert-directory">Revert Directory</a></li>
-            <li><a href="#move-directory-merge">Move Directory Merge</a></li>
-        </ul>
-    </li>
-    <li>
-        <a href="#asynchronously-copy-move-file-directory">Asynchronously Copy/Move File/Directory</a>
-        <ul>
-            <li><a href="#asynchronously-copy-move-file-directory-get-task-id">Get Task Id</a></li>
-            <li><a href="#asynchronously-copy-move-file-directory-cancel-task">Cancel Task</a></li>
-            <li><a href="#asynchronously-copy-move-file-directory-query-progress">Query Progress</a></li>
-        </ul>
-    </li>
-    <li>
-        <a href="#multiple-files-directories">Multiple Files / Directories</a>
-        <ul>
-            <li><a href="#multiple-files-directories-copy">Copy</a></li>
-            <li><a href="#multiple-files-directories-move">Move</a></li>
-            <li><a href="#multiple-files-directories-delete">Delete</a></li>
-            <li><a href="#multiple-files-directories-download">Download</a></li>
         </ul>
     </li>
     <li>
@@ -4012,7 +4006,554 @@ curl -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Acce
 
 None
 
-## <a id="file"></a>File
+## <a id="files-and-directories"></a>Files and Directories
+
+### <a id="list-directory-entries"></a>List Directory Entries
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
+
+* repo-id
+* p (optional): The path to a directory. If `p` is missing, then defaults to '/' which is the top directory.
+* oid (optional): The object id of the directory. The object id is the checksum of the directory contents.
+* t (optional): If set `t` argument as `f`, will only return file entries, and `d` for only dir entries.
+* recursive (optional): If set `t` argument as `d` **AND** `recursive` argument as `1`, return all dir entries recursively
+
+**Sample request**
+
+request file/dir list of a folder.
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d9b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/99b758e6-91ab-4265-b705-925367374cf0/dir/?p=/foo
+
+**Sample response**
+
+   If oid is the same as the current oid of the directory, returns `"uptodate"` , else returns
+
+    [
+    {
+        "id": "0000000000000000000000000000000000000000",
+        "type": "file",
+        "name": "test1.c",
+        "size": 0
+    },
+    {
+        "id": "e4fe14c8cda2206bb9606907cf4fca6b30221cf9",
+        "type": "dir",
+        "name": "test_dir"
+    }
+    ]
+
+**Sample request**
+
+request recursive dir list of a folder.
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d9b477fd" -H 'Accept: application/json; indent=4' 'https://cloud.seafile.com/api2/repos/99b758e6-91ab-4265-b705-925367374cf0/dir/?t=d&recursive=1'
+
+**Sample response**
+
+```
+[{'id': u'5e307101cad46398fb5fe52d9177836f73c4bae8',
+  'mtime': 1471490386,
+  'name': u'123',
+  'parent_dir': u'/video',
+  'permission': u'rw',
+  'type': 'dir'},
+ {'id': u'0000000000000000000000000000000000000000',
+  'mtime': 1471490391,
+  'name': u'123-2',
+  'parent_dir': u'/video',
+  'permission': u'rw',
+  'type': 'dir'},
+ {'id': u'0000000000000000000000000000000000000000',
+  'mtime': 1471490379,
+  'name': u'456',
+  'parent_dir': u'/video/123',
+  'permission': u'rw',
+  'type': 'dir'},
+ {'id': u'0000000000000000000000000000000000000000',
+  'mtime': 1471490386,
+  'name': u'456-2',
+  'parent_dir': u'/video/123',
+  'permission': u'rw',
+  'type': 'dir'},
+ {'id': u'd8f5f80fbd89bf5634dcf9e21b569c487541d34e',
+  'mtime': 1471490391,
+  'name': u'video',
+  'parent_dir': '/',
+  'permission': u'rw',
+  'type': 'dir'}
+]
+```
+
+**Errors**
+
+* 404 The path is not exist.
+* 440 Repo is encrypted, and password is not provided.
+* 520 Operation failed..
+
+### <a id="get-file-detail"></a>Get File Detail
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/detail/?p=/foo.c
+
+* repo-id
+* p
+
+**Sample request**
+
+    curl -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/detail/?p=/foo.c
+
+**Sample response**
+
+```
+{
+    "last_modifier_name": "\u8d85\u7ba1",
+    "uploader_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "upload_time": "2018-07-11T05:14:20+08:00",
+    "name": "1.md",
+    "permission": "rw",
+    "uploader_name": "\u8d85\u7ba1",
+    "uploader_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "last_modified": "2018-07-16T15:03:56+08:00",
+    "mtime": 1531724636,
+    "starred": false,
+    "size": 2,
+    "type": "file",
+    "id": "86dd07538e51f8d437ecc25d9a48250041fef5a0",
+    "last_modifier_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
+    "last_modifier_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com"
+}
+```
+
+**Errors**
+
+* 400 p invalid.
+* 404 Library/File not found.
+* 403 Permission denied.
+* 500 Internal Server Error
+
+### <a id="get-directory-detail"></a>Get Directory Detail
+
+**GET** https://cloud.seafile.com/api/v2.1/repos/{repo_id}/dir/detail/?path={path}
+
+* repo_id
+* path, should not be `/`.
+
+**Sample request**
+
+```
+curl -H "Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc" -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api/v2.1/repos/d4f596ed-09ea-4ac6-8d59-12acbd089097/dir/detail/?path=Develop"
+```
+
+**Sample response**
+
+```
+{
+    "repo_id": "d4f596ed-09ea-4ac6-8d59-12acbd089097",
+    "name": "Develop",
+    "file_count": 4,
+    "dir_count": 1,
+    "mtime": "2018-01-05T17:45:41+08:00",
+    "path": "/Develop/",
+    "size": 397888
+}
+```
+
+**Errors**
+
+* 400 path invalid.
+* 403 Permission denied.
+* 404 Folder not found.
+* 404 Library not found.
+* 500 Internal Server Error
+
+### <a id="create-file"></a>Create File
+
+**POST** https://cloud.seafile.com/api/v2.1/repos/{repo_id}/file/?p={file_path}
+
+**Request parameters**
+
+* repo-id
+* p
+* operation
+
+**Sample request**
+```
+curl -d 'operation=create' -H 'Authorization: Token c5de3074be40861f399f02c65149c6460bbf073f' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/?p=/test.xlsx"
+```
+
+**Sample response**
+```
+{
+    'is_locked': False,
+    'mtime': '2017-09-12T14:57:42+08:00',
+    'obj_id': u'44bdca6005429390d1ecc6943b05c821bd30917a',
+    'obj_name': u'test.xlsx',
+    'parent_dir': u'/',
+    'repo_id': u'7460f7ac-a0ff-4585-8906-bb5a57d2e118',
+    'size': 7631,
+    'type': 'file'
+}
+```
+
+**Errors**
+
+* 400 operation/name invalid.
+* 400 operation can only be 'create', 'rename', 'move', 'copy' or 'revert'.
+* 404 Library/Folder not found.
+* 403 Permission denied.
+* 500 Internal Server Error
+
+### <a id="create-directory"></a>Create Directory
+
+**POST** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
+
+* repo-id
+* p
+* operation=mkdir (post)
+
+**Sample request**
+
+    curl -d "operation=mkdir" -v -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/21b941c2-5411-4372-a514-00b62ab99ef2/dir/?p=/foo
+
+**Sample response**
+
+    ...
+    < HTTP/1.0 201 CREATED
+    < Location: https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/dir/?p=/foo
+    ...
+
+    "success"
+
+**Success**
+
+   Response code 201(Created) is returned, and Location header provides the url of created directory.
+
+**Errors**
+
+* 400 Path is missing or invalid(e.g. p=/)
+* 520 Operation failed.
+
+**Notes**
+
+   Newly created directory will be renamed if the name is duplicated.
+
+### <a id="rename-file"></a>Rename File
+
+**POST** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo.c
+
+**Request parameters**
+
+* repo-id
+* p
+* operation=rename
+* newname
+
+**Sample request**
+
+    curl -v -d "operation=rename&newname=newfoo.c" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/?p=/foo.c
+
+**Sample response**
+
+    ...
+    < HTTP/1.1 301 MOVED PERMANENTLY
+    ...
+    "success"
+
+**Success**
+
+   Response code is 301, and a string `"success"` is returned.
+
+**Errors**
+
+* 400 BAD REQUEST, Path is missing or invalid(e.g. p=/) or newname is missing(newname too long)
+* 403 FORBIDDEN, You do not have permission to rename file
+* 404 NOT FOUND, repo not found
+* 409 CONFLICT, the newname is the same to the old
+* 520 OPERATION FAILED, fail to rename file
+
+### <a id="rename-directory"></a>Rename Directory
+
+**POST** https://cloud.seafile.com/api2/repos/{repo-id}/dir/?p=/foo
+
+**Parameters**
+
+* repo-id
+* p (path)
+* operation=rename
+* newname (the new name of the directory)
+
+**Sample request**
+
+    curl -d  "operation=rename&newname=pinkfloyd_newfolder" -v  -H 'Authorization: Tokacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/dir/?p=/foo
+
+**Success**
+
+   Response code 200 if everything is ok
+
+**Errors**
+
+* 403 if You do not have permission to rename a folder
+* 400 if newname is not given
+* 520 if Failed to rename directory (generic problem)
+
+**Notes**
+
+   If the new name is the same of the old name no operation will be done.
+
+### <a id="download-file"></a>Download File
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo
+
+**Request parameters**
+
+* repo-id
+* p
+* reuse (optional): Set `reuse` to `1` if you want the generated download link can be accessed more than once in one hour.
+
+**Sample request**
+
+    curl  -v  -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/?p=/foo.c&reuse=1'
+
+**Sample response**
+
+    "https://cloud.seafile.com:8082/files/adee6094/foo.c"
+
+**Errors**
+
+* 400 Path is missing
+* 404 File not found
+* 520 Operation failed.
+
+### <a id="download-directory"></a>Download Directory
+
+Perform the following two steps to download directory
+
+##### <a id="download-directory-get-tast-token"></a>Get Task Token
+
+**GET** https://cloud.seafile.com/api/v2.1/repos/{repo-id}/zip-task/?parent_dir={parent_dir}&dirents={dir}
+
+* repo-id
+* parent_dir
+* dirents
+
+**Sample request**
+
+    curl -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/zip-task/?parent_dir=/&dirents=my_dir_name"
+
+**Sample response**
+
+    {
+        "zip_token": "b2272645-35ee-44ce-8f68-07c022107015"
+    }
+
+**Errors**
+
+* 400 parent_dir/dirents invalid.
+* 400 Unable to download directory: size is too large.
+* 404 Library/Folder not found.
+* 403 Permission denied.
+* 500 Internal Server Error
+
+##### <a id="download-directory-query-task-progress"></a>Query Task Progress
+
+Use the token returned from previous request to check if task progress finished.
+
+**GET** https://cloud.seafile.com/api/v2.1/query-zip-progress/?token={token}
+
+* token
+
+**Sample request**
+
+    curl -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/query-zip-progress/?token=b2272645-35ee-44ce-8f68-07c022107015"
+
+**Sample response**
+
+If `zipped` is equal to `total`, means task finished.
+
+    {
+        "zipped":2,
+        "total":2
+    }
+
+**Errors**
+
+* 400 token invalid.
+* 500 Internal Server Error
+
+After the task finished, you can manually generate directory download url with the `zip_token`:
+
+    FILE_SERVER_ROOT/zip/{zip_token}
+
+For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c022107015` is the final url here.
+
+### <a id="delete-file"></a>Delete File
+
+**DELETE** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo
+
+**Request parameters**
+
+* repo-id
+* p
+
+**Sample request**
+
+    curl -X DELETE -v  -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/?p=/foo.c
+
+**Sample response**
+
+    ...
+    < HTTP/1.0 200 OK
+    ...
+    "success"
+
+**Errors**
+
+* 400 Path is missing
+* 520 Operation failed.
+
+**Note**
+
+   This can also be used to delete directory.
+
+### <a id="delete-directory"></a>Delete Directory
+
+**DELETE** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
+
+* repo-id
+* p
+
+**Sample request**
+
+    curl -X DELETE -v  -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/dir/?p=/foo
+
+**Sample response**
+
+    ...
+    < HTTP/1.0 200 OK
+    ...
+    "success"
+
+**Success**
+
+   Response code is 200(OK), and a string `"success"` is returned.
+
+**Errors**
+
+* 400 Path is missing or invalid(e.g. p=/)
+* 520 Operation failed.
+
+**Note**
+
+   This can also be used to delete file.
+
+### <a id="revert-file"></a>Revert File
+
+**PUT** https://cloud.seafile.com/api2/repos/{repo_id}/file/revert/
+
+**Request parameters**
+
+* repo_id
+* p
+* commit_id
+
+**Sample request**
+
+    curl -v -X PUT -d "commit_id=a1ec20709675f4dc8db825cdbca296be245d189b&p=/foo.c" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/8f5f2222-72a8-454f-ac40-8397c5a556a8/file/revert/
+
+**Sample response**
+
+    ...
+    < HTTP/1.0 200 OK
+    ...
+
+    {"ret": 0}
+
+**Success**
+
+    Response code 200(OK) is returned.
+
+**Errors**
+
+* 400 Path is missing
+
+### <a id="restore-file-from-history"></a>Restore File From History
+
+**POST** https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/?p=/1.md
+
+**Request parameters**
+
+* repo_id
+* p
+* operation
+* commit_id
+
+**Sample request**
+
+    curl -d "operation=revert&commit_id=7ed3ccdc7559d1afddb95bc050230e3d54bbffef" -H "Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a" -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/?p=/1.md"
+
+**Sample response**
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 commit_id invalid.
+* 403 Permission denied.
+* 403 File is locked
+* 500 Internal Server Error
+* 500 Check file lock error
+
+### <a id="download-file-revision"></a>Download File From a Revision
+
+**GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/revision/?p=/foo.c&commit_id=a1ec20709675f4dc8db825cdbca296be245d189b
+
+**Request parameters**
+
+* repo-id
+* p
+* commit_id
+
+**Sample request**
+
+    curl -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/revision/?p=/foo.c\&commit_id=a1ec20709675f4dc8db825cdbca296be245d189b
+
+**Sample response**
+
+    "https://cloud.seafile.com:8082/files/adee6094/foo.c"
+
+**Errors**
+
+* 400 Path is missing
+* 404 Revision not found
+
+### <a id="revert-directory"></a>Revert Directory
+
+**PUT** https://cloud.seafile.com/api2/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/dir/revert/
+
+* repo_id
+* p
+* commit_id
+
+**Sample request**
+
+    curl -X PUT -d "p=/456&commit_id=b1a33768517f65ac7d618ff078dd27855374c7e0" -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/dir/revert/"
+
+**Sample response**
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 path invalid.
+* 400 commit_id invalid.
+* 404 Library/Folder not found.
+* 403 Permission denied.
+* 500 Internal Server Error
 
 ### <a id="view-file-through-owa"></a>View File Through Owa
 
@@ -4068,133 +4609,7 @@ For more info, you can see [this official docs](http://wopi.readthedocs.org/en/l
 * 404 File/Library not found.
 * 500 Internal Server Error
 
-### <a id="download-file"></a>Download File
-
-**GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo
-
-**Request parameters**
-
-* repo-id
-* p
-* reuse (optional): Set `reuse` to `1` if you want the generated download link can be accessed more than once in one hour.
-
-**Sample request**
-
-    curl  -v  -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/?p=/foo.c&reuse=1'
-
-**Sample response**
-
-    "https://cloud.seafile.com:8082/files/adee6094/foo.c"
-
-**Errors**
-
-* 400 Path is missing
-* 404 File not found
-* 520 Operation failed.
-
-### <a id="get-file-detail"></a>Get File Detail
-
-**GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/detail/?p=/foo.c
-
-* repo-id
-* p
-
-**Sample request**
-
-    curl -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/detail/?p=/foo.c
-
-**Sample response**
-
-```
-{
-    "last_modifier_name": "\u8d85\u7ba1",
-    "uploader_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
-    "upload_time": "2018-07-11T05:14:20+08:00",
-    "name": "1.md",
-    "permission": "rw",
-    "uploader_name": "\u8d85\u7ba1",
-    "uploader_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
-    "last_modified": "2018-07-16T15:03:56+08:00",
-    "mtime": 1531724636,
-    "starred": false,
-    "size": 2,
-    "type": "file",
-    "id": "86dd07538e51f8d437ecc25d9a48250041fef5a0",
-    "last_modifier_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com",
-    "last_modifier_contact_email": "03e7957e09ee43d9b57c9b2b4c741668@ifile.com"
-}
-```
-
-**Errors**
-
-* 400 p invalid.
-* 404 Library/File not found.
-* 403 Permission denied.
-* 500 Internal Server Error
-
 ### <a id="get-file-history"></a>Get File History
-
-This is an deprecated api, please use the new one below.
-
-**GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/history/?p=/foo.c
-
-**Request parameters**
-
-* repo-id
-* p
-
-**Sample request**
-
-    curl -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/history/?p=/foo.c
-
-**Sample response**
-
-    {
-    "commits":
-        [
-            {
-            "rev_file_size": 0,
-            "repo_id": "a582d3bc-bcf5-421e-9125-741fa56d18d4",
-            "ctime": 1398149763,
-            "creator_name": "user@example.com",
-            "creator": "0000000000000000000000000000000000000000",
-            "root_id": "b64d413d9894c9206beac3faf9c2a0d75b4a8ebf",
-            "rev_renamed_old_path": null,
-            "parent_id": "8e546762e1657ab22dad83e9cb1e5ea31a767c9a",
-            "new_merge": false,
-            "version": 1,
-            "conflict": false,
-            "desc": "Added \"foo.c\"",
-            "id": "9464f7499bfa7363d563282361339eaf96a93318",
-            "rev_file_id": "0000000000000000000000000000000000000000",
-            "second_parent_id": null
-            },
-            {
-            "rev_file_size": 0,
-            "repo_id": "a582d3bc-bcf5-421e-9125-741fa56d18d4",
-            "ctime": 1398146059,
-            "creator_name": "user@example.com",
-            "creator": "0000000000000000000000000000000000000000",
-            "root_id": "572413414257c76039897e00aeb35f819471206b",
-            "rev_renamed_old_path": null,
-            "parent_id": "f977bdb0ebb205645c3b42216c2817e511c3f68f",
-            "new_merge": false,
-            "version": 1,
-            "conflict": false,
-            "desc": "Added \"foo.c\"",
-            "id": "a1ec20709675f4dc8db825cdbca296be245d189b",
-            "rev_file_id": "0000000000000000000000000000000000000000",
-            "second_parent_id": null
-            }
-        ]
-    }
-
-**Errors**
-
-* 400 Path is missing
-* 404 File not found
-
-### <a id="get-file-history-v2.1"></a>Get File History
 
 **GET** http://192.168.1.113:8000/api/v2.1/repos/{repo_id)/file/history/?path={path}
 
@@ -4296,130 +4711,6 @@ Then more file history returned.
 * 403 Permission denied.
 * 404 Library/File not found.
 * 500 Internal Server Error
-
-### <a id="restore-file-from-history"></a>Restore File From History
-
-**POST** https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/?p=/1.md
-
-**Request parameters**
-
-* repo_id
-* p
-* operation
-* commit_id
-
-**Sample request**
-
-    curl -d "operation=revert&commit_id=7ed3ccdc7559d1afddb95bc050230e3d54bbffef" -H "Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a" -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/?p=/1.md"
-
-**Sample response**
-```
-{
-    "success": true
-}
-```
-
-**Errors**
-
-* 400 commit_id invalid.
-* 403 Permission denied.
-* 403 File is locked
-* 500 Internal Server Error
-* 500 Check file lock error
-
-### <a id="download-file-revision"></a>Download File From a Revision
-
-**GET** https://cloud.seafile.com/api2/repos/{repo-id}/file/revision/?p=/foo.c&commit_id=a1ec20709675f4dc8db825cdbca296be245d189b
-
-**Request parameters**
-
-* repo-id
-* p
-* commit_id
-
-**Sample request**
-
-    curl -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/revision/?p=/foo.c\&commit_id=a1ec20709675f4dc8db825cdbca296be245d189b
-
-**Sample response**
-
-    "https://cloud.seafile.com:8082/files/adee6094/foo.c"
-
-**Errors**
-
-* 400 Path is missing
-* 404 Revision not found
-
-### <a id="create-file"></a>Create File
-
-**POST** https://cloud.seafile.com/api/v2.1/repos/{repo_id}/file/?p={file_path}
-
-**Request parameters**
-
-* repo-id
-* p
-* operation
-
-**Sample request**
-```
-curl -d 'operation=create' -H 'Authorization: Token c5de3074be40861f399f02c65149c6460bbf073f' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/?p=/test.xlsx"
-```
-
-**Sample response**
-```
-{
-    'is_locked': False,
-    'mtime': '2017-09-12T14:57:42+08:00',
-    'obj_id': u'44bdca6005429390d1ecc6943b05c821bd30917a',
-    'obj_name': u'test.xlsx',
-    'parent_dir': u'/',
-    'repo_id': u'7460f7ac-a0ff-4585-8906-bb5a57d2e118',
-    'size': 7631,
-    'type': 'file'
-}
-```
-
-**Errors**
-
-* 400 operation/name invalid.
-* 400 operation can only be 'create', 'rename', 'move', 'copy' or 'revert'.
-* 404 Library/Folder not found.
-* 403 Permission denied.
-* 500 Internal Server Error
-
-### <a id="rename-file"></a>Rename File
-
-**POST** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo.c
-
-**Request parameters**
-
-* repo-id
-* p
-* operation=rename
-* newname
-
-**Sample request**
-
-    curl -v -d "operation=rename&newname=newfoo.c" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/?p=/foo.c
-
-**Sample response**
-
-    ...
-    < HTTP/1.1 301 MOVED PERMANENTLY
-    ...
-    "success"
-
-**Success**
-
-   Response code is 301, and a string `"success"` is returned.
-
-**Errors**
-
-* 400 BAD REQUEST, Path is missing or invalid(e.g. p=/) or newname is missing(newname too long)
-* 403 FORBIDDEN, You do not have permission to rename file
-* 404 NOT FOUND, repo not found
-* 409 CONFLICT, the newname is the same to the old
-* 520 OPERATION FAILED, fail to rename file
 
 ### <a id="lock-file"></a>Lock File
 
@@ -4523,6 +4814,38 @@ curl -d 'operation=create' -H 'Authorization: Token c5de3074be40861f399f02c65149
 * 404 NOT FOUND, repo not found
 * 500 INTERNAL SERVER ERROR
 
+### <a id="move-directory-merge"></a>Move Directory Merge
+
+**POST** http://192.168.1.113:8000/api/v2.1/move-folder-merge/
+
+* src_repo_id
+* src_parent_dir
+* src_dirent_name
+* dst_repo_id
+* dst_parent_dir
+
+**Sample request**
+
+```
+curl -d 'src_repo_id=09b7d3c0-5f0d-49be-9318-7ca136f386cd&src_parent_dir=/&src_dirent_name=1&dst_repo_id=d4aac5b9-28d4-4372-a4b3-d6de171402df&dst_parent_dir=/' -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/move-folder-merge/"
+```
+
+**Sample response**
+
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 parameter invalid.
+* 404 Library/Folder not found.
+* 403 Permission denied.
+* 443 Out of quota.
+* 500 Internal Server Error
+
 ### <a id="copy-file"></a>Copy File
 
 **POST** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo.c
@@ -4560,64 +4883,276 @@ curl -d 'operation=create' -H 'Authorization: Token c5de3074be40861f399f02c65149
 * 403 FORBIDDEN, You do not have permission to copy file
 * 500 INTERNAL SERVER ERROR
 
-### <a id="revert-file"></a>Revert File
+## <a id="asynchronously-copy-move-file-directory"></a>Asynchronously Copy/Move File/Directory
 
-**PUT** https://cloud.seafile.com/api2/repos/{repo_id}/file/revert/
+### <a id="asynchronously-copy-move-file-directory-get-task-id"></a>Get Task Id
+
+**POST** https://cloud.seafile.com/api/v2.1/copy-move-task/
 
 **Request parameters**
 
-* repo_id
-* p
-* commit_id
+* src_repo_id
+* src_parent_dir
+* src_dirent_name
+* dst_repo_id
+* dst_parent_dir
+* operation, `copy` or `move`
+* dirent_type, `file` or `dir`
 
 **Sample request**
 
-    curl -v -X PUT -d "commit_id=a1ec20709675f4dc8db825cdbca296be245d189b&p=/foo.c" -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/8f5f2222-72a8-454f-ac40-8397c5a556a8/file/revert/
+Sample for copy file.
+
+```
+curl -d "src_repo_id=534258e2-761b-465c-9e2c-56e021d3853f&src_parent_dir=/&src_dirent_name=file.md&dst_repo_id=a3fa768d-0f00-4343-8b8d-07b4077881db&dst_parent_dir=/&operation=copy&dirent_type=file" -H 'Authorization: Token ae265ae599a29c238ca25fb63087859798d5f55d' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api/v2.1/copy-move-task/'
+```
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 200 OK
-    ...
-
-    {"ret": 0}
-
-**Success**
-
-    Response code 200(OK) is returned.
+```
+{
+    "task_id": "d1ca2b8c-8ab8-4dd4-8ad7-842130764484"
+}
+```
 
 **Errors**
 
-* 400 Path is missing
+* 400 path/operation/dirent_type invalid.
+* 404 Library/Folder not found.
+* 403 Permission denied.
+* 500 Internal Server Error
 
-### <a id="delete-file"></a>Delete File
+### <a id="asynchronously-copy-move-file-directory-cancel-task"></a>Cancel Task
 
-**DELETE** https://cloud.seafile.com/api2/repos/{repo-id}/file/?p=/foo
+**DELETE** https://cloud.seafile.com/api/v2.1/copy-move-task/
 
 **Request parameters**
 
-* repo-id
-* p
+* task_id
 
 **Sample request**
 
-    curl -X DELETE -v  -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/file/?p=/foo.c
+```
+curl -X DELETE -d "task_id=d1ca2b8c-8ab8-4dd4-8ad7-842130764484" -H 'Authorization: Token ae265ae599a29c238ca25fb63087859798d5f55d' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api/v2.1/copy-move-task/'
+```
 
 **Sample response**
 
-    ...
-    < HTTP/1.0 200 OK
-    ...
+```
+{
+    "success": true
+}
+```
+
+**Errors**
+
+* 400 task_id invalid.
+* 500 Internal Server Error
+
+### <a id="asynchronously-copy-move-file-directory-query-progress"></a>Query Progress
+
+**GET** https://cloud.seafile.com/api/v2.1/query-copy-move-progress/
+
+**Request parameters**
+
+* task_id
+
+**Sample request**
+
+```
+curl -H 'Authorization: Token ae265ae599a29c238ca25fb63087859798d5f55d' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api/v2.1/query-copy-move-progress/?task_id=d1ca2b8c-8ab8-4dd4-8ad7-842130764484'
+```
+
+**Sample response**
+
+```
+{
+    "successful": true,
+    "canceled": false,
+    "total": 1,
+    "done": 1,
+    "failed": false
+}
+```
+
+**Errors**
+
+* 400 task_id invalid.
+* 500 Internal Server Error
+
+## <a id="multiple-files-directories"></a>Multiple Files / Directories
+
+### <a id="multiple-files-directories-copy"></a>Copy
+
+**POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/copy/
+
+**Request parameters**
+
+* p: source folder path, defaults to `"/"`
+* file_names: list of file/folder names to copy. Multiple file/folder names can be seperated by `:`.
+* dst_repo: the destination repo id
+* dst_dir: the destination folder in `dst_repo`
+
+**Sample request**
+
+    curl -d "dst_repo=bdf816e6-aba8-468c-962f-77c2fcfd1d1c&dst_dir=/1&file_names=1.md:2.md:test" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/fileops/copy/?p=/1/test-2"
+
+**Sample response**
+```
+[
+    {
+        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
+        "parent_dir": "/1",
+        "obj_name": "1 (2).md"
+    },
+    {
+        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
+        "parent_dir": "/1",
+        "obj_name": "2 (2).md"
+    },
+    {
+        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
+        "parent_dir": "/1",
+        "obj_name": "test (2)"
+    }
+]
+```
+
+**Errors**
+
+* 400 missing argument
+* 403 You do not have permission to copy file
+* 404 repo not found
+* 502 failed to copy file
+
+### <a id="multiple-files-directories-move"></a>Move
+
+**POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/move/
+
+**Request parameters**
+
+* p: source folder path, defaults to `"/"`
+* file_names: list of file/folder names to move. Multiple file/folder names can be seperated by `:`.
+* dst_repo: the destination repo id
+* dst_dir: the destination folder in `dst_repo`
+
+**Sample request**
+
+    curl -d "dst_repo=bdf816e6-aba8-468c-962f-77c2fcfd1d1c&dst_dir=/1&file_names=1.md:2.md:test" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/fileops/move/?p=/1/test-2"
+
+**Sample response**
+```
+[
+    {
+        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
+        "parent_dir": "/1",
+        "obj_name": "1 (3).md"
+    },
+    {
+        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
+        "parent_dir": "/1",
+        "obj_name": "2 (3).md"
+    },
+    {
+        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
+        "parent_dir": "/1",
+        "obj_name": "test (3)"
+    }
+]
+```
+
+**Errors**
+
+* 400 missing argument
+* 403 You do not have permission to move file
+* 404 repo not found
+* 502 failed to move file
+
+### <a id="multiple-files-directories-delete"></a>Delete
+
+**POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/delete/
+
+**Request parameters**
+
+* p: source folder path, defaults to `"/"`
+* file_names: list of file/folder names to delete. Multiple file/folder names can be seperated by `:`.
+
+**Sample request**
+
+    curl -d "file_names=foo.c:bar.c:dir1:dir2" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' https://cloud.seafile.com/api2/repos/c7436518-5f46-4296-97db-2fcba4c8c8db/fileops/delete/?p=src_path
+
+**Sample response**
+
     "success"
 
 **Errors**
 
-* 400 Path is missing
-* 520 Operation failed.
+* 400 missing argument
+* 403 You do not have permission to delete file
+* 404 repo not found
+* 502 failed to delete file
 
-**Note**
+### <a id="multiple-files-directories-download"></a>Download
 
-   This can also be used to delete directory.
+Perform the following two steps to download multiple files and directories.
+
+##### <a id="multiple-files-directories-get-tast-toke"></a>Get Task Token
+
+**GET** https://cloud.seafile.com/api/v2.1/repos/{repo-id}/zip-task/?parent_dir={parent_dir}&dirents={dir,file}
+
+* repo-id
+* parent_dir
+* dirents
+
+**Sample request**
+
+    curl -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/zip-task/?parent_dir=/&dirents=my_dir_name&dirents=my_file_name"
+
+**Sample response**
+
+    {
+        "zip_token": "b2272645-35ee-44ce-8f68-07c022107015"
+    }
+
+**Errors**
+
+* 400 parent_dir/dirents invalid.
+* 400 Unable to download directory: size is too large.
+* 404 Library/Folder not found.
+* 403 Permission denied.
+* 500 Internal Server Error
+
+##### <a id="multiple-files-directories-query-task-progress"></a>Query Task Progress
+
+Use the token returned from previous request to check if task progress finished.
+
+**GET** https://cloud.seafile.com/api/v2.1/query-zip-progress/?token={token}
+
+* token
+
+**Sample request**
+
+    curl -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/query-zip-progress/?token=b2272645-35ee-44ce-8f68-07c022107015"
+
+**Sample response**
+
+If `zipped` is equal to `total`, means task finished.
+
+    {
+        "zipped":2,
+        "total":2
+    }
+
+**Errors**
+
+* 400 token invalid.
+* 500 Internal Server Error
+
+After the task finished, you can manually generate directory download url with the `zip_token`:
+
+    FILE_SERVER_ROOT/zip/{zip_token}
+
+For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c022107015` is the final url here.
 
 ### <a id="upload-file"></a>Upload File
 
@@ -5343,611 +5878,6 @@ curl -H "Authorization: Token 1cb7908b876d9b1708c757a347f2e6346456ab91" -H 'Acce
 * 403 Permission denied.
 * 404 Library/Foldef/File/ not found.
 * 500 Internal Server Error
-
-## <a id="directory"></a>Directory
-
-### <a id="list-directory-entries"></a>List Directory Entries
-
-**GET** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
-
-* repo-id
-* p (optional): The path to a directory. If `p` is missing, then defaults to '/' which is the top directory.
-* oid (optional): The object id of the directory. The object id is the checksum of the directory contents.
-* t (optional): If set `t` argument as `f`, will only return file entries, and `d` for only dir entries.
-* recursive (optional): If set `t` argument as `d` **AND** `recursive` argument as `1`, return all dir entries recursively
-
-**Sample request**
-
-request file/dir list of a folder.
-
-    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d9b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api2/repos/99b758e6-91ab-4265-b705-925367374cf0/dir/?p=/foo
-
-**Sample response**
-
-   If oid is the same as the current oid of the directory, returns `"uptodate"` , else returns
-
-    [
-    {
-        "id": "0000000000000000000000000000000000000000",
-        "type": "file",
-        "name": "test1.c",
-        "size": 0
-    },
-    {
-        "id": "e4fe14c8cda2206bb9606907cf4fca6b30221cf9",
-        "type": "dir",
-        "name": "test_dir"
-    }
-    ]
-
-**Sample request**
-
-request recursive dir list of a folder.
-
-    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d9b477fd" -H 'Accept: application/json; indent=4' 'https://cloud.seafile.com/api2/repos/99b758e6-91ab-4265-b705-925367374cf0/dir/?t=d&recursive=1'
-
-**Sample response**
-
-```
-[{'id': u'5e307101cad46398fb5fe52d9177836f73c4bae8',
-  'mtime': 1471490386,
-  'name': u'123',
-  'parent_dir': u'/video',
-  'permission': u'rw',
-  'type': 'dir'},
- {'id': u'0000000000000000000000000000000000000000',
-  'mtime': 1471490391,
-  'name': u'123-2',
-  'parent_dir': u'/video',
-  'permission': u'rw',
-  'type': 'dir'},
- {'id': u'0000000000000000000000000000000000000000',
-  'mtime': 1471490379,
-  'name': u'456',
-  'parent_dir': u'/video/123',
-  'permission': u'rw',
-  'type': 'dir'},
- {'id': u'0000000000000000000000000000000000000000',
-  'mtime': 1471490386,
-  'name': u'456-2',
-  'parent_dir': u'/video/123',
-  'permission': u'rw',
-  'type': 'dir'},
- {'id': u'd8f5f80fbd89bf5634dcf9e21b569c487541d34e',
-  'mtime': 1471490391,
-  'name': u'video',
-  'parent_dir': '/',
-  'permission': u'rw',
-  'type': 'dir'}
-]
-```
-
-**Errors**
-
-* 404 The path is not exist.
-* 440 Repo is encrypted, and password is not provided.
-* 520 Operation failed..
-
-### <a id="get-directory-detail"></a>Get Directory Detail
-
-**GET** https://cloud.seafile.com/api/v2.1/repos/{repo_id}/dir/detail/?path={path}
-
-* repo_id
-* path, should not be `/`.
-
-**Sample request**
-
-```
-curl -H "Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc" -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api/v2.1/repos/d4f596ed-09ea-4ac6-8d59-12acbd089097/dir/detail/?path=Develop"
-```
-
-**Sample response**
-
-```
-{
-    "repo_id": "d4f596ed-09ea-4ac6-8d59-12acbd089097",
-    "name": "Develop",
-    "file_count": 4,
-    "dir_count": 1,
-    "mtime": "2018-01-05T17:45:41+08:00",
-    "path": "/Develop/",
-    "size": 397888
-}
-```
-
-**Errors**
-
-* 400 path invalid.
-* 403 Permission denied.
-* 404 Folder not found.
-* 404 Library not found.
-* 500 Internal Server Error
-
-### <a id="create-new-directory"></a>Create New Directory
-
-**POST** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
-
-* repo-id
-* p
-* operation=mkdir (post)
-
-**Sample request**
-
-    curl -d "operation=mkdir" -v -H 'Authorization: Token 076de58233c09f19e7a5179abff14ad55987350e' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/21b941c2-5411-4372-a514-00b62ab99ef2/dir/?p=/foo
-
-**Sample response**
-
-    ...
-    < HTTP/1.0 201 CREATED
-    < Location: https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/dir/?p=/foo
-    ...
-
-    "success"
-
-**Success**
-
-   Response code 201(Created) is returned, and Location header provides the url of created directory.
-
-**Errors**
-
-* 400 Path is missing or invalid(e.g. p=/)
-* 520 Operation failed.
-
-**Notes**
-
-   Newly created directory will be renamed if the name is duplicated.
-
-### <a id="rename-directory"></a>Rename Directory
-
-**POST** https://cloud.seafile.com/api2/repos/{repo-id}/dir/?p=/foo
-
-**Parameters**
-
-* repo-id
-* p (path)
-* operation=rename
-* newname (the new name of the directory)
-
-**Sample request**
-
-    curl -d  "operation=rename&newname=pinkfloyd_newfolder" -v  -H 'Authorization: Tokacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/dir/?p=/foo
-
-**Success**
-
-   Response code 200 if everything is ok
-
-**Errors**
-
-* 403 if You do not have permission to rename a folder
-* 400 if newname is not given
-* 520 if Failed to rename directory (generic problem)
-
-**Notes**
-
-   If the new name is the same of the old name no operation will be done.
-
-### <a id="delete-directory"></a>Delete Directory
-
-**DELETE** https://cloud.seafile.com/api2/repos/{repo-id}/dir/
-
-* repo-id
-* p
-
-**Sample request**
-
-    curl -X DELETE -v  -H 'Authorization: Token f2210dacd3606d94ff8e61d99b477fd' -H 'Accept: application/json; charset=utf-8; indent=4' https://cloud.seafile.com/api2/repos/dae8cecc-2359-4d33-aa42-01b7846c4b32/dir/?p=/foo
-
-**Sample response**
-
-    ...
-    < HTTP/1.0 200 OK
-    ...
-    "success"
-
-**Success**
-
-   Response code is 200(OK), and a string `"success"` is returned.
-
-**Errors**
-
-* 400 Path is missing or invalid(e.g. p=/)
-* 520 Operation failed.
-
-**Note**
-
-   This can also be used to delete file.
-
-### <a id="download-directory"></a>Download Directory
-
-Perform the following two steps to download directory
-
-##### <a id="download-directory-get-tast-toke"></a>Get Task Token
-
-**GET** https://cloud.seafile.com/api/v2.1/repos/{repo-id}/zip-task/?parent_dir={parent_dir}&dirents={dir}
-
-* repo-id
-* parent_dir
-* dirents
-
-**Sample request**
-
-    curl -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/zip-task/?parent_dir=/&dirents=my_dir_name"
-
-**Sample response**
-
-    {
-        "zip_token": "b2272645-35ee-44ce-8f68-07c022107015"
-    }
-
-**Errors**
-
-* 400 parent_dir/dirents invalid.
-* 400 Unable to download directory: size is too large.
-* 404 Library/Folder not found.
-* 403 Permission denied.
-* 500 Internal Server Error
-
-### <a id="revert-directory"></a>Revert Directory
-
-**PUT** https://cloud.seafile.com/api2/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/dir/revert/
-
-* repo_id
-* p
-* commit_id
-
-**Sample request**
-
-    curl -X PUT -d "p=/456&commit_id=b1a33768517f65ac7d618ff078dd27855374c7e0" -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api2/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/dir/revert/"
-
-**Sample response**
-```
-{
-    "success": true
-}
-```
-
-**Errors**
-
-* 400 path invalid.
-* 400 commit_id invalid.
-* 404 Library/Folder not found.
-* 403 Permission denied.
-* 500 Internal Server Error
-
-### <a id="move-directory-merge"></a>Move Directory Merge
-
-**POST** http://192.168.1.113:8000/api/v2.1/move-folder-merge/
-
-* src_repo_id
-* src_parent_dir
-* src_dirent_name
-* dst_repo_id
-* dst_parent_dir
-
-**Sample request**
-
-```
-curl -d 'src_repo_id=09b7d3c0-5f0d-49be-9318-7ca136f386cd&src_parent_dir=/&src_dirent_name=1&dst_repo_id=d4aac5b9-28d4-4372-a4b3-d6de171402df&dst_parent_dir=/' -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/move-folder-merge/"
-```
-
-**Sample response**
-
-```
-{
-    "success": true
-}
-```
-
-**Errors**
-
-* 400 parameter invalid.
-* 404 Library/Folder not found.
-* 403 Permission denied.
-* 443 Out of quota.
-* 500 Internal Server Error
-
-##### <a id="download-directory-query-task-progress"></a>Query Task Progress
-
-Use the token returned from previous request to check if task progress finished.
-
-**GET** https://cloud.seafile.com/api/v2.1/query-zip-progress/?token={token}
-
-* token
-
-**Sample request**
-
-    curl -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/query-zip-progress/?token=b2272645-35ee-44ce-8f68-07c022107015"
-
-**Sample response**
-
-If `zipped` is equal to `total`, means task finished.
-
-    {
-        "zipped":2,
-        "total":2
-    }
-
-**Errors**
-
-* 400 token invalid.
-* 500 Internal Server Error
-
-After the task finished, you can manually generate directory download url with the `zip_token`:
-
-    FILE_SERVER_ROOT/zip/{zip_token}
-
-For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c022107015` is the final url here.
-
-## <a id="asynchronously-copy-move-file-directory"></a>Asynchronously Copy/Move File/Directory
-
-### <a id="asynchronously-copy-move-file-directory-get-task-id"></a>Get Task Id
-
-**POST** https://cloud.seafile.com/api/v2.1/copy-move-task/
-
-**Request parameters**
-
-* src_repo_id
-* src_parent_dir
-* src_dirent_name
-* dst_repo_id
-* dst_parent_dir
-* operation, `copy` or `move`
-* dirent_type, `file` or `dir`
-
-**Sample request**
-
-Sample for copy file.
-
-```
-curl -d "src_repo_id=534258e2-761b-465c-9e2c-56e021d3853f&src_parent_dir=/&src_dirent_name=file.md&dst_repo_id=a3fa768d-0f00-4343-8b8d-07b4077881db&dst_parent_dir=/&operation=copy&dirent_type=file" -H 'Authorization: Token ae265ae599a29c238ca25fb63087859798d5f55d' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api/v2.1/copy-move-task/'
-```
-
-**Sample response**
-
-```
-{
-    "task_id": "d1ca2b8c-8ab8-4dd4-8ad7-842130764484"
-}
-```
-
-**Errors**
-
-* 400 path/operation/dirent_type invalid.
-* 404 Library/Folder not found.
-* 403 Permission denied.
-* 500 Internal Server Error
-
-### <a id="asynchronously-copy-move-file-directory-cancel-task"></a>Cancel Task
-
-**DELETE** https://cloud.seafile.com/api/v2.1/copy-move-task/
-
-**Request parameters**
-
-* task_id
-
-**Sample request**
-
-```
-curl -X DELETE -d "task_id=d1ca2b8c-8ab8-4dd4-8ad7-842130764484" -H 'Authorization: Token ae265ae599a29c238ca25fb63087859798d5f55d' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api/v2.1/copy-move-task/'
-```
-
-**Sample response**
-
-```
-{
-    "success": true
-}
-```
-
-**Errors**
-
-* 400 task_id invalid.
-* 500 Internal Server Error
-
-### <a id="asynchronously-copy-move-file-directory-query-progress"></a>Query Progress
-
-**GET** https://cloud.seafile.com/api/v2.1/query-copy-move-progress/
-
-**Request parameters**
-
-* task_id
-
-**Sample request**
-
-```
-curl -H 'Authorization: Token ae265ae599a29c238ca25fb63087859798d5f55d' -H 'Accept: application/json; charset=utf-8; indent=4' 'https://cloud.seafile.com/api/v2.1/query-copy-move-progress/?task_id=d1ca2b8c-8ab8-4dd4-8ad7-842130764484'
-```
-
-**Sample response**
-
-```
-{
-    "successful": true,
-    "canceled": false,
-    "total": 1,
-    "done": 1,
-    "failed": false
-}
-```
-
-**Errors**
-
-* 400 task_id invalid.
-* 500 Internal Server Error
-
-## <a id="multiple-files-directories"></a>Multiple Files / Directories
-
-### <a id="multiple-files-directories-copy"></a>Copy
-
-**POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/copy/
-
-**Request parameters**
-
-* p: source folder path, defaults to `"/"`
-* file_names: list of file/folder names to copy. Multiple file/folder names can be seperated by `:`.
-* dst_repo: the destination repo id
-* dst_dir: the destination folder in `dst_repo`
-
-**Sample request**
-
-    curl -d "dst_repo=bdf816e6-aba8-468c-962f-77c2fcfd1d1c&dst_dir=/1&file_names=1.md:2.md:test" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/fileops/copy/?p=/1/test-2"
-
-**Sample response**
-```
-[
-    {
-        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
-        "parent_dir": "/1",
-        "obj_name": "1 (2).md"
-    },
-    {
-        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
-        "parent_dir": "/1",
-        "obj_name": "2 (2).md"
-    },
-    {
-        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
-        "parent_dir": "/1",
-        "obj_name": "test (2)"
-    }
-]
-```
-
-**Errors**
-
-* 400 missing argument
-* 403 You do not have permission to copy file
-* 404 repo not found
-* 502 failed to copy file
-
-### <a id="multiple-files-directories-move"></a>Move
-
-**POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/move/
-
-**Request parameters**
-
-* p: source folder path, defaults to `"/"`
-* file_names: list of file/folder names to move. Multiple file/folder names can be seperated by `:`.
-* dst_repo: the destination repo id
-* dst_dir: the destination folder in `dst_repo`
-
-**Sample request**
-
-    curl -d "dst_repo=bdf816e6-aba8-468c-962f-77c2fcfd1d1c&dst_dir=/1&file_names=1.md:2.md:test" -H 'Authorization: Token cbd7705c06846425ed5c46ae0313d5b098d24154' -H 'Accept: application/json; indent=4' "https://cloud.seafile.com/api2/repos/bdf816e6-aba8-468c-962f-77c2fcfd1d1c/fileops/move/?p=/1/test-2"
-
-**Sample response**
-```
-[
-    {
-        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
-        "parent_dir": "/1",
-        "obj_name": "1 (3).md"
-    },
-    {
-        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
-        "parent_dir": "/1",
-        "obj_name": "2 (3).md"
-    },
-    {
-        "repo_id": "bdf816e6-aba8-468c-962f-77c2fcfd1d1c",
-        "parent_dir": "/1",
-        "obj_name": "test (3)"
-    }
-]
-```
-
-**Errors**
-
-* 400 missing argument
-* 403 You do not have permission to move file
-* 404 repo not found
-* 502 failed to move file
-
-### <a id="multiple-files-directories-delete"></a>Delete
-
-**POST** https://cloud.seafile.com/api2/repos/{repo_id}/fileops/delete/
-
-**Request parameters**
-
-* p: source folder path, defaults to `"/"`
-* file_names: list of file/folder names to delete. Multiple file/folder names can be seperated by `:`.
-
-**Sample request**
-
-    curl -d "file_names=foo.c:bar.c:dir1:dir2" -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' https://cloud.seafile.com/api2/repos/c7436518-5f46-4296-97db-2fcba4c8c8db/fileops/delete/?p=src_path
-
-**Sample response**
-
-    "success"
-
-**Errors**
-
-* 400 missing argument
-* 403 You do not have permission to delete file
-* 404 repo not found
-* 502 failed to delete file
-
-### <a id="multiple-files-directories-download"></a>Download
-
-Perform the following two steps to download multiple files and directories.
-
-##### <a id="multiple-files-directories-get-tast-toke"></a>Get Task Token
-
-**GET** https://cloud.seafile.com/api/v2.1/repos/{repo-id}/zip-task/?parent_dir={parent_dir}&dirents={dir,file}
-
-* repo-id
-* parent_dir
-* dirents
-
-**Sample request**
-
-    curl -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/zip-task/?parent_dir=/&dirents=my_dir_name&dirents=my_file_name"
-
-**Sample response**
-
-    {
-        "zip_token": "b2272645-35ee-44ce-8f68-07c022107015"
-    }
-
-**Errors**
-
-* 400 parent_dir/dirents invalid.
-* 400 Unable to download directory: size is too large.
-* 404 Library/Folder not found.
-* 403 Permission denied.
-* 500 Internal Server Error
-
-##### <a id="multiple-files-directories-query-task-progress"></a>Query Task Progress
-
-Use the token returned from previous request to check if task progress finished.
-
-**GET** https://cloud.seafile.com/api/v2.1/query-zip-progress/?token={token}
-
-* token
-
-**Sample request**
-
-    curl -H 'Authorization: Token 0eb24ce5db35a31f70171eca2f760f03f59fa09a' -H 'Accept: application/json; charset=utf-8; indent=4' "https://cloud.seafile.com/api/v2.1/query-zip-progress/?token=b2272645-35ee-44ce-8f68-07c022107015"
-
-**Sample response**
-
-If `zipped` is equal to `total`, means task finished.
-
-    {
-        "zipped":2,
-        "total":2
-    }
-
-**Errors**
-
-* 400 token invalid.
-* 500 Internal Server Error
-
-After the task finished, you can manually generate directory download url with the `zip_token`:
-
-    FILE_SERVER_ROOT/zip/{zip_token}
-
-For example, `https://cloud.seafile.com/seafhttp/zip/b2272645-35ee-44ce-8f68-07c022107015` is the final url here.
 
 ## <a id="avatar"></a>Avatar
 
