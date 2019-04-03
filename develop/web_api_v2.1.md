@@ -1818,21 +1818,53 @@ Create download link for directory with password and expire date
 
 #### <a id="list-direntry-in-dir-download-link"></a>List Direntry in Dir Download Link
 
-**GET** https://cloud.seafile.com/api2/d/{token}/dir/
+**GET** http://192.168.1.113:8000/api/v2.1/share-links/dd4c8f4445f44ae48728/dirents/?path=/
 
 **Request parameters**
 
-* token (upload link token)
-* p (sub folder path)
-* password (if link is encrypted)
+* `token`: Folder share link token.
+* `path`: Sub folder path in folder share link. Default is `/`.
 
 **Sample request**
 
-    curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' "https://cloud.seafile.com/api2/d/3af7c46595/dir/?p=/subfolder/"
+```
+curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Accept: application/json; indent=4' "http://192.168.1.113:8000/api/v2.1/share-links/dd4c8f4445f44ae48728/dirents/?path=/"
+```
 
 **Sample response**
 
-    [{"mtime": 1436846750, "type": "dir", "name": "sadof", "id": "1806dbdb700b7bcd49e6275107c7ccf7b3ea1776"}, {"id": "bdb06f6de972c42893fda590ac954988b562429c", "mtime": 1436431020, "type": "file", "name": "test.mdert", "size": 20}]
+```
+{
+    "dirent_list": [
+        {
+            "is_dir": true,
+            "last_modified": "2019-04-03T11:44:56+08:00",
+            "folder_path": "/folder/",
+            "folder_name": "folder",
+            "size": 0
+        },
+        {
+            "file_name": "1.txt",
+            "is_dir": false,
+            "last_modified": "2019-04-03T11:44:56+08:00",
+            "file_path": "/1.txt",
+            "size": 3
+        },
+        {
+            "file_name": "l.xlsx",
+            "is_dir": false,
+            "last_modified": "2019-04-03T11:44:56+08:00",
+            "file_path": "/l.xlsx",
+            "size": 7631
+        }
+    ]
+}
+```
+**Errors**
+
+* 403 Permission denied.
+* 404 token/library/folder not found.
+* 500 Internal Server Error
 
 ### <a id="upload-link"></a>Upload Link
 
