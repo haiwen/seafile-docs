@@ -1851,11 +1851,12 @@ curl -H 'Authorization: Token f2210dacd9c6ccb8133606d94ff8e61d99b477fd' -H 'Acce
             "size": 3
         },
         {
-            "file_name": "l.xlsx",
+            "file_name": "Screenshot from 2019-03-15 15-23-00.png",
+            "last_modified": "2019-04-08T15:48:16+08:00",
+            "encoded_thumbnail_src": "thumbnail/5df4fcee99e04e869d18/48/Screenshot%20from%202019-03-15%2015-23-00.png",
             "is_dir": false,
-            "last_modified": "2019-04-03T11:44:56+08:00",
-            "file_path": "/l.xlsx",
-            "size": 7631
+            "file_path": "/Screenshot from 2019-03-15 15-23-00.png",
+            "size": 214653
         }
     ]
 }
@@ -9004,7 +9005,7 @@ curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Acce
   ],
   "owner": "system admin",
   "ancestor_groups": [
-    
+
   ],
 }
 ```
