@@ -42,7 +42,7 @@ Seafile server is composed of several components. If you deployed Seafile behind
 component          | default port | protocol
 -------------------|--------------|----------
 webserver (http)   | 80           | TCP 
-webserver (https)  | 433          | TCP
+webserver (https)  | 443          | TCP
 
 If you do not deployed Seafile behind Apache/Nginx you need to configure port forward for all the components listed below. (**not recomended!**)
 
