@@ -4207,88 +4207,90 @@ This is an deprecated api, please use the new one below.
 **Sample request**
 
 ```
-curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' http://192.168.1.113:8000/api/v2.1/repos/f26331a8-8acd-4c3d-9c73-352c595c36c8/file/history/?path=/Work/Seafile/for-test-web-api.md
+curl -H 'Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc' -H 'Accept: application/json; charset=utf-8; indent=4' 'http://192.168.1.113:8000/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/history/?path=/o/3.md'
 ```
 
 **Sample response**
 
 ```
 {
-    "next_start_commit": "bf642ec4272a28dd4a785c67932e2e42bc4508cb",
+    "next_start_commit": "ad4ac3e7744ef157ee2b600a3519fd7fdeef77ae",
     "data": [
         {
-            "commit_id": "ec91c5ec26b7f5f0d0711c8c40201b9047801b0f",
-            "rev_file_id": "1e09388a46d7654e463a4513c96c19c82e38228c",
-            "ctime": "2018-03-16T15:24:03+08:00",
+            "commit_id": "8fd46f0474f4af6628a74cfa16b760b43d229d61",
+            "rev_file_id": "e36ff0171f3b87d374517614cdeab5a51ad48ded",
+            "ctime": "2017-12-08T15:54:49+08:00",
             "creator_name": "lian",
             "creator_email": "lian@lian.com",
             "rev_renamed_old_path": null,
-            "creator_avatar_url": "/media/avatars/default.png",
-            "path": "/Work/Seafile/for-test-web-api.md",
+            "creator_avatar_url": "/media/avatars/0/1/a72299021077701e7c522c46fdaa87/resized/32/7d92599ea5fd5872f572d0e4d34cd7b6.png",
+            "path": "/o/3.md",
             "creator_contact_email": "lian@lian.com",
-            "size": 15829,
-            "description": "Modified \"for-test-web-api.md\""
+            "size": 3,
+            "description": "Modified \"3.md\""
         },
         {
-            "commit_id": "d6dcffa32d2b73741de26ac19d45759f2269ae32",
-            "rev_file_id": "1292177376d527288389186cac6f55869a9f82c6",
-            "ctime": "2018-02-02T16:17:13+08:00",
+            "commit_id": "a5c3b9855f8a5237e182823130e03bd49d4e8f23",
+            "rev_file_id": "bf84ebd3b1043688dcc7b76a94eb64dadb8209a7",
+            "ctime": "2017-12-08T15:54:42+08:00",
             "creator_name": "lian",
             "creator_email": "lian@lian.com",
-            "rev_renamed_old_path": null,
-            "creator_avatar_url": "/media/avatars/default.png",
-            "path": "/Work/Seafile/for-test-web-api.md",
+            "rev_renamed_old_path": "/o/2.md",
+            "creator_avatar_url": "/media/avatars/0/1/a72299021077701e7c522c46fdaa87/resized/32/7d92599ea5fd5872f572d0e4d34cd7b6.png",
+            "path": "/o/3.md",
             "creator_contact_email": "lian@lian.com",
-            "size": 15829,
-            "description": "Modified \"for-test-web-api.md\""
+            "size": 1,
+            "description": "Renamed \"2.md\""
         }
     ]
 }
 ```
 
-If `next_start_commit`'s value is `false`, means that all file history has been returned.
+- If value of `next_start_commit` is NOT `false`, it means that there are more file history, if you want to continue to get more file history, resend the request with `commit_id` parameter, and assign the value of `next_start_commit` in response to request's `commit_id` parameter.
 
-For the sample response, `next_start_commit`'s value is `bf642ec4272a28dd4a785c67932e2e42bc4508cb`, so if you want to get more file history, send a request with `commit_id` parameter.
+- If value of `rev_renamed_old_path` field in the last item of `data` in response is NOT `null`, it means that the last item is a file renamed/moved commit, if you want to get more file history before file was renamed/moved,  resend the request, and assign the value of `rev_renamed_old_path` in response to request's `path` parameter.
 
+Sample request for get more file history, pay attention to the `path` and `commit_id` parameter.
 ```
-curl -H 'Authorization: Token 2bac21cab9eb0c4baac10d1e6fc3cf590f0dcf17' -H 'Accept: application/json; charset=utf-8; indent=4' "http://192.168.1.113:8000/api/v2.1/repos/f26331a8-8acd-4c3d-9c73-352c595c36c8/file/history/?path=/Work/Seafile/for-test-web-api.md&commit_id=bf642ec4272a28dd4a785c67932e2e42bc4508cb"
+curl -H 'Authorization: Token e71c00e93af863ba9bcddb61a46bb4de11d713fc' -H 'Accept: application/json; charset=utf-8; indent=4' 'http://192.168.1.113:8000/api/v2.1/repos/7460f7ac-a0ff-4585-8906-bb5a57d2e118/file/history/?path=/o/2.md&commit_id=ad4ac3e7744ef157ee2b600a3519fd7fdeef77ae'
 ```
 
-Then more file history returned.
-
+Sample response.
 ```
 {
-    "next_start_commit": "8747a025a7034e445fcfe3d351ac94b4d332564f",
+    "next_start_commit": false,
     "data": [
         {
-            "commit_id": "82fc46eb0fc35cec7db64845d4db7ab6bfae70bc",
-            "rev_file_id": "a1c31c771ff069edd80acc8b3ae16c3428b8ad36",
-            "ctime": "2018-01-30T17:27:59+08:00",
+            "commit_id": "dcb12cf7c325bd4026ad9ebfe880d8f4efe76da8",
+            "rev_file_id": "24adf1d58565836f8d487cdbc6398fffc6777f80",
+            "ctime": "2017-12-06T11:54:53+08:00",
             "creator_name": "lian",
             "creator_email": "lian@lian.com",
             "rev_renamed_old_path": null,
-            "creator_avatar_url": "/media/avatars/default.png",
-            "path": "/Work/Seafile/for-test-web-api.md",
+            "creator_avatar_url": "/media/avatars/0/1/a72299021077701e7c522c46fdaa87/resized/32/7d92599ea5fd5872f572d0e4d34cd7b6.png",
+            "path": "/o/1.md",
             "creator_contact_email": "lian@lian.com",
-            "size": 15829,
-            "description": "Modified \"for-test-web-api.md\""
+            "size": 1,
+            "description": "Modified \"1.md\""
         },
         {
-            "commit_id": "ce12a11a0a2e1cf5dd2bc8a453b1ef2b12511ed1",
-            "rev_file_id": "059fb6daa974f528d0be3c6e7072d5c71fd65a34",
-            "ctime": "2018-01-20T12:26:06+08:00",
+            "commit_id": "e2976492c767d5b989597a9a3b82169bd9e6f15e",
+            "rev_file_id": "0000000000000000000000000000000000000000",
+            "ctime": "2017-12-06T11:54:47+08:00",
             "creator_name": "lian",
             "creator_email": "lian@lian.com",
             "rev_renamed_old_path": null,
-            "creator_avatar_url": "/media/avatars/default.png",
-            "path": "/Work/Seafile/for-test-web-api.md",
+            "creator_avatar_url": "/media/avatars/0/1/a72299021077701e7c522c46fdaa87/resized/32/7d92599ea5fd5872f572d0e4d34cd7b6.png",
+            "path": "/o/1.md",
             "creator_contact_email": "lian@lian.com",
-            "size": 15831,
-            "description": "Modified \"for-test-web-api.md\""
+            "size": 0,
+            "description": "Added \"1.md\""
         }
     ]
 }
 ```
+
+Value of `next_start_commit` is `false` means all file histories have been returned.
 
 **Errors**
 
