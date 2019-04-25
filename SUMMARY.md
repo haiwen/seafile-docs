@@ -23,6 +23,7 @@
   * Online File Preview and Edit
     * [LibreOffice Online Integration](deploy/libreoffice_online.md)
     * [OnlyOffice Integration](deploy/only_office.md)
+    * [BiSheng Office Integration](deploy/bisheng_office.md)
   * [Upgrade Seafile server](deploy/upgrade.md)
     * [Upgrade notes](deploy/upgrade_notes.md)
   * Other Deployment Notes
