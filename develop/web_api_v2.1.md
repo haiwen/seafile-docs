@@ -604,6 +604,7 @@ Sample response from a seafile pro edition server:
 - telephone (if no value passed, this field will not be changed)
 - login_id (username in profile page, if no value passed, this field will not be changed)
 - contact_email (if no value passed, this field will not be changed)
+- list_in_address_book (whether list your account in global address book, if no value passed, this field will not be changed)
 
 **Sample request**
 
