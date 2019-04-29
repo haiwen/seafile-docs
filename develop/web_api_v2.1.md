@@ -15,6 +15,8 @@
             <li><a href="#check-account-info">Check Account Info</a></li>
             <li><a href="#client-login">Get Client Login URL</a></li>
             <li><a href="#server-info">Get Server Information</a></li>
+            <li><a href="#get-user-profile">Get User Profile</a></li>
+            <li><a href="#update-user-profile">Update User Profile</a></li>
         </ul>
     </li>
     <li>
@@ -571,6 +573,51 @@ Sample response from a seafile pro edition server:
         "office-preview",
         "file-search"
         ]
+    }
+
+### <a id="get-user-profile"></a>Get User Profile
+
+**GET** https://cloud.seafile.com/api/v2.1/user/
+
+**Sample request**
+
+    curl -H "Authorization: Token f2210dacd9c6ccb8133606d94ff8e6199b477fd" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/user/
+
+**Sample response**
+
+    {
+        "login_id": "006",
+        "name": "Jon Snow",
+        "telephone": "110",
+        "list_in_address_book": false,
+        "contact_email": "othermailofjon@gmail.com",
+        "email": "jonsnow@gmail.com"
+    }
+
+### <a id="update-user-profile"></a>Update User Profile
+
+**PUT** https://cloud.seafile.com/api/v2.1/user/
+
+**Request parameters**
+
+- name (user's nickname, if no value passed, this field will not be changed)
+- telephone (if no value passed, this field will not be changed)
+- login_id (username in profile page, if no value passed, this field will not be changed)
+- contact_email (if no value passed, this field will not be changed)
+
+**Sample request**
+
+    curl -X PUT -d 'name=Lanister&telephone=120'  -H "Authorization: Token d8c517a01d9ba43a532801fbb3cd07d03b03ea17" -H 'Accept: application/json; indent=4' http://127.0.0.1:8000/api/v2.1/user/
+
+**Sample response**
+
+    {
+        "login_id": "006",
+        "name": "Lanister",
+        "telephone": "120",
+        "list_in_address_book": false,
+        "contact_email": "othermailofjon@gmail.com",
+        "email": "jonsnow@gmail.com"
     }
 
 ## <a id="starred-files"></a>Starred Files
