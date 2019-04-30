@@ -620,6 +620,13 @@ Sample response from a seafile pro edition server:
         "email": "jonsnow@gmail.com"
     }
 
+**Errors**
+
+* 400 name/telephone/contact_email/list_in_address_book invalid.
+* 403 NOT allow to update user profile.
+* 403 NOT allow to set contact email.
+* 500 Internal Server Error
+
 ## <a id="starred-files"></a>Starred Files
 
 ### <a id="list-starred-files"></a>List starred files
