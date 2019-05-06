@@ -607,7 +607,7 @@ Sample response from a seafile pro edition server:
 
 **Sample request**
 
-    curl -X PUT -d 'name=Lanister&telephone=120'  -H "Authorization: Token d8c517a01d9ba43a532801fbb3cd07d03b03ea17" -H 'Accept: application/json; indent=4' http://127.0.0.1:8000/api/v2.1/user/
+    curl -X PUT -d 'name=Lanister&telephone=120'  -H "Authorization: Token d8c517a01d9ba43a532801fbb3cd07d03b03ea17" -H 'Accept: application/json; indent=4' https://cloud.seafile.com/api/v2.1/user/
 
 **Sample response**
 
