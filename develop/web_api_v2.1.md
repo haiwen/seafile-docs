@@ -602,7 +602,7 @@ Sample response from a seafile pro edition server:
 
 - name (user's nickname, if no value passed, this field will not be changed)
 - telephone (if no value passed, this field will not be changed)
-- contact_email (if no value passed, this field will not be changed)
+- contact_email (if no value passed, or pass your old contact email, this field will not be changed)
 - list_in_address_book (`true` or `false`, whether list your account in global address book, if no value passed, this field will not be changed)
 
 **Sample request**
