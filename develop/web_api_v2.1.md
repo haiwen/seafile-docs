@@ -596,6 +596,10 @@ Sample response from a seafile pro edition server:
 
 ### <a id="update-user-profile"></a>Update User Profile
 
+If you want to use this api, you must set `ENABLE_UPDATE_USER_INFO` to `True` in `../conf/seahub_settings.py`, for more info please see [this manual](https://manual.seafile.com/config/seahub_settings_py.html#other-options).
+
+If you want to change contact email, you must set `ENABLE_USER_SET_CONTACT_EMAIL` to `True` in `../conf/seahub_settings.py`.
+
 **PUT** https://cloud.seafile.com/api/v2.1/user/
 
 **Request parameters**
