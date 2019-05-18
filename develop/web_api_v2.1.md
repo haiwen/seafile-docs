@@ -6988,6 +6988,46 @@ Available for Seafile v6.0.0+
 
 * 403 Permission error, only administrator can perform this action
 
+### <a id="admin-only-update-a-library-status"></a>Update a Library Status
+
+Available for Seafile v6.0.0+
+
+**PUT** <https://cloud.seafile.com/api/v2.1/admin/libraries/{repo_id}/>
+
+* `status`: integer,  `0` means normal, `1` means read-only.
+
+**Sample request**
+
+```none
+curl -X PUT -d "status=1" -H 'Authorization: Token 444d2bbf1fc78ffbeedc4704c9f41e32d926ac94' https://cloud.seafile.com/api/v2.1/admin/libraries/ee3b2d19-1a06-47f0-bbfa-554cab3bdedc/
+
+```
+
+**Sample response**
+
+```
+{
+    "status": "read-only",
+    "owner_contact_email": "a@a.com",
+    "owner_name": "aaa",
+    "name": "documents",
+    "encrypted": false,
+    "owner_email": "a@a.com",
+    "file_count": 1,
+    "owner": "a@a.com",
+    "size_formatted": "11\u00a0bytes",
+    "id": "231afed9-9e6c-4314-9247-dfc3ee0ac734",
+    "size": 11
+}
+
+```
+
+**Errors**
+
+* 400 status invalid.
+* 403 Permission error, only administrator can perform this action
+* 404 Library not found.
+* 500 Internal Server Error
 
 ### <a id="admin-only-transfer-a-library"></a>Transfer a Library
 
