@@ -2,24 +2,25 @@
 
 **NOTE**: The tutorial is only available for Seafile CE version.
 
-First make sure the python module for MySQL is installed. On Ubuntu, use `sudo apt-get install python-mysqldb` to install it.
-
 Steps to migrate Seafile from SQLite to MySQL:
 
 1. Stop Seafile and Seahub.
 
-1. Download [sqlite_to_mysql.sh](./sqlite_to_mysql.sh)  to the top directory of your Seafile installation path. For example, `/data/haiwen`.
+1. Download 3 files for mysql databases to `/data/haiwen`:
 
-1. Run `sqlite_to_mysql.sh`, this script will produce three files (ccnet_db_data.sql, seafile_db_data.sql, seahub_db_data.sql).
+- Option 1 - for Seafile 6.3.x get them here: [ce_ccnet_db.sql](./fresh_db_schema_6.3.x/ce_ccnet_db.sql), [ce_seafile_db.sql](./fresh_db_schema_6.3.x/ce_seafile_db.sql), [ce_seahub_db.sql](./fresh_db_schema_6.3.x/ce_seahub_db.sql).
+- Option 2 - for any version (more work): You need to generate all 3 files by yourself by setting up a seperate temporary fresh installation of seafile with mysql which must be the same version as your sqlite installation (you must follow all the way and even start seafile and seahub service of this temp installation so that all databases are set up). Than you have to run this command for each database to generate the files: "mysqldump --no-data -u seafile -p ccnet_db/seafile_db/seahub_db". Open all generated files and just to be on the safe side check that no insert scripts are inside (if they are delete them). Stop this temporary installation and drop all the dababases so that we have a clean mysql server which we can use for our migration: "DROP DATABASE ccnet_db/seafile_db/seahub_db;". 
+
+1. If you went with Option 1 above you now need to set up mysql server (look into manual for mysql installation), if you went with Option 2 you can use that mysql server after you removed existing databases.
+
+1. Download [sqlite_to_mysql.sh](./sqlite_to_mysql.sh) to the top directory of your Seafile installation path (for example, `/data/haiwen`) and run it, this script will produce three files (ccnet_db_data.sql, seafile_db_data.sql, seahub_db_data.sql):
 
  ```
 chmod +x sqlite_to_mysql.sh
 ./sqlite_to_mysql.sh
 ```
 
-1. Download these three files to `/data/haiwen`, [ce_ccnet_db.sql](./ce_ccnet_db.sql), [ce_seafile_db.sql](./ce_seafile_db.sql), [mysql.sql](https://raw.githubusercontent.com/haiwen/seahub/master/sql/mysql.sql)(used for create tables in `seahub_db`).
-
-1. Rename `mysql.sql` to `ce_seahub_db.sql`: `mv mysql.sql ce_seahub_db.sql`. Now you should have the following directory layout.
+1. Now you should have the following directory layout.
 
  ```sh
 .
@@ -64,7 +65,7 @@ mysql> source ce_seafile_db.sql;
 mysql> source seafile_db_data.sql;
 ```
 
-1. Import seahub data to MySql.
+1. Import seahub data to MySql (this one takes the longest).
 
  ```
 mysql> use seahub_db;
@@ -114,10 +115,3 @@ mysql> source seahub_db_data.sql;
         }
 
 1. Restart seafile and seahub
-
-**NOTE**
-
-User notifications will be cleared during migration due to the slight difference between MySQL and SQLite, if you only see the busy icon when click the notitfications button beside your avatar, please remove `user_notitfications` table manually by:
-
-    use seahub_db;
-    delete from notifications_usernotification;

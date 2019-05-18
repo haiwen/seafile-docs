@@ -8,13 +8,12 @@
 #     installation path (e.g. /data/haiwen).
 #  2. Run: ./sqlite_to_mysql.sh
 #  3. Three files(ccnet_db_data.sql, seafile_db_data.sql, seahub_db_data.sql) are created.
-#  4. Loads these files to MySQL after you load schema
+#  4. Load these files to MySQL after you load schema
 #     example: (mysql> source ccnet_db_data.sql)
 #
 
 #Function that generates INSERT statements for all data in given database
 #Parameter1 = database_path
-
 Sqlite2MysqlData () {
 	echo "SET FOREIGN_KEY_CHECKS=0;"
 	for TABLE in $(sqlite3 $1 .tables)
@@ -26,10 +25,11 @@ Sqlite2MysqlData () {
 		COLS_PURE=$(echo $COLS | sed 's/.$//')
 
 		#generate insertstatemets (via echoMultipleCommands support by sqlite3), does not include column names
+		#add one extra parameter for this to be working on Arch distro: "echo -e". Extra parameter breaks this script for other distros.
 		echo ".mode insert\nselect * from '${TABLE}';" | sqlite3 $1 |
 
-		#replace 3rd word with columns from above:  TableName(`col1`, `col2`, `col3`, ...)
-		sed "s/[^ ]*[^ ]/${TABLE}(${COLS_PURE})/3"
+		#replace 3rd word with columns from above and also add ``:  `TableName`(`col1`, `col2`, `col3`, ...)
+		sed "s/[^ ]*[^ ]/\`${TABLE}\` (${COLS_PURE})/3"
 	done
 	echo "SET FOREIGN_KEY_CHECKS=1;"
 }
