@@ -6,7 +6,21 @@ In version 6.0, we support 10 permissions, more permissions will be added later.
 
 In version 6.1, we added a new permission `role_quota` which can be used to set quota for a certain role of users. For example, we can set the quota of employee to 100G by adding `'role_quota': '100g'`, and leave other role of users to the default quota.
 
-Since version 6.3.6, we added a new permission `can_add_public_repo`(whether or not you can create a public library, default is "False").
+In version 6.3, we added these new permissions :
+
+  * `can_send_share_link_mail` which can send an email to the user while sharing the library or folder.
+
+  * `can_drag_drop_folder_to_sync` which can drag and drop folders to create a new synchronization in the desktop client.
+
+  * `can_export_files_via_mobile_client` which can export files in the mobile client.
+
+  * `storage_ids`  which can make different kinds of users to use different storage backends (or classes). See [Multiple Storage Backends](./multiple_storage_backends.md) for details.
+
+In version 6.3.6, we added a new permission `can_add_public_repo`(whether or not you can create a public library, default is "False").
+
+Since version 7.0, the user creates a public library that requires both `can_add_public_repo` and `ENABLE_USER_CREATE_ORG_REPO`(in web admin settings).
+
+In version 7.0, we added a new permission `can_use_wiki` which can specify a kind of users to use the wiki.
 
 Seafile comes with two build-in roles `default` and `guest`, a default user is a normal user with permissions as followings:
 ```
@@ -14,14 +28,20 @@ Seafile comes with two build-in roles `default` and `guest`, a default user is a
         'can_add_repo': True,
         'can_add_group': True,
         'can_view_org': True,
+        'can_add_public_repo': False,
         'can_use_global_address_book': True,
         'can_generate_share_link': True,
         'can_generate_upload_link': True,
+        'can_send_share_link_mail': True,
         'can_invite_guest': False,
+        'can_drag_drop_folder_to_sync': True,
         'can_connect_with_android_clients': True,
         'can_connect_with_ios_clients': True,
         'can_connect_with_desktop_clients': True,
+        'can_export_files_via_mobile_client': True,
+        'storage_ids': [],
         'role_quota': '',
+        'can_use_wiki': True,
     },
 ```
 
@@ -31,14 +51,20 @@ While a guest user can only read files/folders in the system, here are the permi
         'can_add_repo': False,
         'can_add_group': False,
         'can_view_org': False,
+        'can_add_public_repo': False,
         'can_use_global_address_book': False,
         'can_generate_share_link': False,
         'can_generate_upload_link': False,
+        'can_send_share_link_mail': False,
         'can_invite_guest': False,
+        'can_drag_drop_folder_to_sync': False,
         'can_connect_with_android_clients': False,
         'can_connect_with_ios_clients': False,
         'can_connect_with_desktop_clients': False,
+        'can_export_files_via_mobile_client': False,
+        'storage_ids': [],
         'role_quota': '',
+        'can_use_wiki': False,
     },
 ```
 
@@ -52,27 +78,39 @@ ENABLED_ROLE_PERMISSIONS = {
         'can_add_repo': True,
         'can_add_group': True,
         'can_view_org': True,
+        'can_add_public_repo': False,
         'can_use_global_address_book': True,
         'can_generate_share_link': True,
         'can_generate_upload_link': True,
+        'can_send_share_link_mail': True,
         'can_invite_guest': True,
+        'can_drag_drop_folder_to_sync': True,
         'can_connect_with_android_clients': True,
         'can_connect_with_ios_clients': True,
         'can_connect_with_desktop_clients': True,
+        'can_export_files_via_mobile_client': True,
+        'storage_ids': [],
         'role_quota': '',
+        'can_use_wiki': True,
     },
     'guest': {
         'can_add_repo': False,
         'can_add_group': False,
         'can_view_org': True,
+        'can_add_public_repo': False,
         'can_use_global_address_book': False,
         'can_generate_share_link': False,
         'can_generate_upload_link': False,
+        'can_send_share_link_mail': False,
         'can_invite_guest': False,
+        'can_drag_drop_folder_to_sync': False,
         'can_connect_with_android_clients': False,
         'can_connect_with_ios_clients': False,
         'can_connect_with_desktop_clients': False,
+        'can_export_files_via_mobile_client': False,
+        'storage_ids': [],
         'role_quota': '',
+        'can_use_wiki': False,
     }
 }
 ```
@@ -110,41 +148,58 @@ ENABLED_ROLE_PERMISSIONS = {
         'can_add_repo': True,
         'can_add_group': True,
         'can_view_org': True,
+        'can_add_public_repo': False,
         'can_use_global_address_book': True,
         'can_generate_share_link': True,
         'can_generate_upload_link': True,
+        'can_send_share_link_mail': True,
         'can_invite_guest': False,
+        'can_drag_drop_folder_to_sync': True,
         'can_connect_with_android_clients': True,
         'can_connect_with_ios_clients': True,
         'can_connect_with_desktop_clients': True,
+        'can_export_files_via_mobile_client': True,
+        'storage_ids': [],
         'role_quota': '',
+        'can_use_wiki': True,
     },
     'guest': {
         'can_add_repo': False,
         'can_add_group': False,
         'can_view_org': False,
+        'can_add_public_repo': False,
         'can_use_global_address_book': False,
         'can_generate_share_link': False,
         'can_generate_upload_link': False,
+        'can_send_share_link_mail': False,
         'can_invite_guest': False,
+        'can_drag_drop_folder_to_sync': False,
         'can_connect_with_android_clients': False,
         'can_connect_with_ios_clients': False,
         'can_connect_with_desktop_clients': False,
+        'can_export_files_via_mobile_client': False,
+        'storage_ids': [],
         'role_quota': '',
+        'can_use_wiki': False,
     },
     'employee': {
         'can_add_repo': True,
         'can_add_group': True,
         'can_view_org': True,
+        'can_add_public_repo': True,
         'can_use_global_address_book': True,
         'can_generate_share_link': True,
         'can_generate_upload_link': True,
+        'can_send_share_link_mail': True,
         'can_invite_guest': True,
+        'can_drag_drop_folder_to_sync': True,
         'can_connect_with_android_clients': True,
         'can_connect_with_ios_clients': True,
         'can_connect_with_desktop_clients': True,
+        'can_export_files_via_mobile_client': True,
+        'storage_ids': [],
         'role_quota': '',
-        'can_add_public_repo': True,
+        'can_use_wiki': True,
     },
 }
 ```
