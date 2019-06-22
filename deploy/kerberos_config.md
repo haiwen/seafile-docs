@@ -1,5 +1,7 @@
 ## Kerberos
 
+NOTE: Since version 7.0, this documenation is deprecated. Users should use Apache as a proxy server for Kerberos authentication. Then configure Seahub by the instructions in [Remote User Authentication](remote_user.md).
+
 [Kerberos](https://web.mit.edu/kerberos/) is a widely used single sign on (SSO) protocol. Seafile server supports authentication via Kerberos. It allows users to log in to Seafile without entering credentials again if they have a kerberos ticket.
 
 In this documentation, we assume the reader is familiar with Kerberos installation and configuration.

@@ -1,5 +1,40 @@
 # Seafile Server Changelog
 
+## 7.0
+
+**Feature changes**
+
+In version 6.3, users can create public or private Wikis. In version 7.0, private Wikis is replaced by column mode view. Every library has a column mode view. So users don't need to explicitly create private Wikis.
+
+Public Wikis are now renamed to published libraries.
+
+**Upgrade**
+
+Just follow our document on major version upgrade. No special steps are needed.
+
+### 7.0.2 (2019/06/13)
+
+* UI fixes
+* Support index.md in published library
+* Fix IE Edge support
+
+### 7.0.1 beta (2019/05/31)
+
+* [fix] Fix database upgrade problem
+* [fix] Fix WebDAV can't be started
+* [fix] Some UI fixes
+
+### 7.0.0 beta (2019/05/23)
+
+* Upgraded Web UI with React framework. The look and feel of the new UI is much better.
+* Improved Markdown editor
+* Add columns view mode (tree view like in the Windows Explorer)
+* Add context menu to manipulate files
+* Move files via drag and drop
+* Redesigned file tags
+* Support editing share link permission after creating a link
+
+
 ## 6.3
 
 In version 6.3, Django is upgraded to version 1.11. Django 1.8, which is used in version 6.2, is deprecated in 2018 April.

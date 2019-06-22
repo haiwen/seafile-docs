@@ -28,13 +28,13 @@ We provide three ways to deploy Seafile services:
 * [Firewall settings](using_firewall.md)
 * [Logrotate](using_logrotate.md)
 
-### User Authentication
+### LDAP and AD integration
 
-Seafile supports a few external user authentication methods.
+[LDAP/AD Integration](using_ldap.md)
 
-* [Configure Seafile to use LDAP](using_ldap.md)
-* [Shibboleth Authentication](shibboleth_config.md)
-* [Kerberos Authentication](kerberos_config.md)
+### Single Sign On
+
+Seafile supports a few Single Sign On authentication protocols. See [Single Sign On](single_sign_on.md) for a summary.
 
 ### Other Deployment Issues
 

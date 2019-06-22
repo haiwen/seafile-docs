@@ -144,12 +144,12 @@ Since Seafile-pro-6.3.10, you can enable seaf-server's RPC slow log to do perfor
 If you want to configure related options, add the options to seafile.conf:
 
 ```
-[Slow_log]
+[slow_log]
 # default to true
-ENABLE_SLOW_LOG = true
+enable_slow_log = true
 # the unit of all slow log thresholds is millisecond.
 # default to 5000 milliseconds, only RPC queries processed for longer than 5000 milliseconds will be  logged.
-RPC_SLOW_THRESHOLD = 5000
+rpc_slow_threshold = 5000
 ```
 
 You can find `seafile_slow_rpc.log` in `logs/slow_logs`. You can also use [log-rotate](../deploy/using_logrotate.md) to rotate the log files. You just need to send `SIGUSR2` to `seaf-server` process. The slow log file will be closed and reopened.

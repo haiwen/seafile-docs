@@ -22,6 +22,7 @@ Seafile comes with two build-in roles `default` and `guest`, a default user is a
         'can_connect_with_ios_clients': True,
         'can_connect_with_desktop_clients': True,
         'role_quota': '',
+        'can_publish_repo': True,
     },
 ```
 
@@ -39,6 +40,7 @@ While a guest user can only read files/folders in the system, here are the permi
         'can_connect_with_ios_clients': False,
         'can_connect_with_desktop_clients': False,
         'role_quota': '',
+        'can_publish_repo': False,
     },
 ```
 
@@ -60,6 +62,7 @@ ENABLED_ROLE_PERMISSIONS = {
         'can_connect_with_ios_clients': True,
         'can_connect_with_desktop_clients': True,
         'role_quota': '',
+        'can_publish_repo': True,
     },
     'guest': {
         'can_add_repo': False,
@@ -73,6 +76,7 @@ ENABLED_ROLE_PERMISSIONS = {
         'can_connect_with_ios_clients': False,
         'can_connect_with_desktop_clients': False,
         'role_quota': '',
+        'can_publish_repo': False,
     }
 }
 ```
@@ -118,6 +122,7 @@ ENABLED_ROLE_PERMISSIONS = {
         'can_connect_with_ios_clients': True,
         'can_connect_with_desktop_clients': True,
         'role_quota': '',
+        'can_publish_repo': True,
     },
     'guest': {
         'can_add_repo': False,
@@ -131,6 +136,7 @@ ENABLED_ROLE_PERMISSIONS = {
         'can_connect_with_ios_clients': False,
         'can_connect_with_desktop_clients': False,
         'role_quota': '',
+        'can_publish_repo': False,
     },
     'employee': {
         'can_add_repo': True,
@@ -145,6 +151,7 @@ ENABLED_ROLE_PERMISSIONS = {
         'can_connect_with_desktop_clients': True,
         'role_quota': '',
         'can_add_public_repo': True,
+        'can_publish_repo': True,
     },
 }
 ```

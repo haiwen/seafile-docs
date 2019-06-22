@@ -313,4 +313,4 @@ There are still some shared config options that can only be set in [LDAP_SYNC] s
 
 These options are used to control synchronization behaviors, so they're shared for all LDAP servers.
 
-NOTE: It is recommended to have a [LDAP_SYNC_MULTI_x] section for each [LDAP_SYNC_x] section. Otherwise the LDAP sync process will use the options in [LDAP_SYNC] section as default.
+NOTE: It is recommended to have a [LDAP_SYNC_MULTI_x] section for each [LDAP_MULTI_x] section. Otherwise the LDAP sync process will use the options in [LDAP_SYNC] section for that LDAP server.

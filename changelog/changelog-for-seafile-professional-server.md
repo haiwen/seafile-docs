@@ -6,6 +6,17 @@ Since seafile-pro 7.0.0, we have upgraded Elasticsearch to 5.6. As Elasticsearch
 
 Please check our document for how to upgrade to 7.0: https://download.seafile.com/published/support/server-upgrade/pro-7.0.md
 
+### 7.0.3 (2019/06/13)
+
+* UI fixes
+* Support index.md in published library
+* Add sub-folder permission for deparment libraries
+* Enable new file history by default
+* Make published library feature turned on by default
+* Fix IE Edge support
+* Fix LDAP group sync
+
+
 ### 7.0.2 beta (2019/05/17)
 
 * UI fixes
@@ -60,6 +71,10 @@ highlight = fvh
 ```
 
 This option will make search speed improved significantly (10x) when the search result contains large pdf/doc files. But you need to rebuild search index if you want to add this option.
+
+### 6.3.14 (2019/05/21)
+
+* [fix] Fix a bug in LDAP group sync
 
 ### 6.3.13 (2019/03/20)
 

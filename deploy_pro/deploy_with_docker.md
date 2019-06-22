@@ -1,4 +1,4 @@
-### About
+## About
 
 - [Docker](https://docker.com/) is an open source project to pack, ship and run any Linux application in a lighter weight, faster container than a traditional virtual machine.
 
@@ -7,6 +7,15 @@
 - The base image configures Seafile with the Seafile team's recommended optimal defaults.
 
 If you are not familiar with docker commands, please refer to [docker documentation](https://docs.docker.com/engine/reference/commandline/cli/).
+
+## For seafile 7.x.x
+Starting with 7.0, we have adjusted seafile-docker image to use multiple containers. The old image runs MariaDB-Server、Memcached and Elasticsearch in the same container with Seafile server. Now, we strip the MariaDB-Server、Memcached and Elasticsearch from the Seafile image and run them in their respective containers.
+
+If you plan to deploy seafile 7.0, you should refer to the [Deploy Documentation](https://download.seafile.com/published/support/docker/pro-edition/Deploy%20Seafile-pro%20with%20Docker.md).
+
+If you plan to upgrade 6.3 to 7.0, you can refer to the [Upgrade Documentation](https://download.seafile.com/published/support/docker/pro-edition/6.3%20upgrade%20to%207.0.md).
+
+## For seafile 6.x.x
 
 ### Getting Started
 
@@ -130,7 +139,9 @@ Placeholder spot for shared volumes. You may elect to store certain persistent i
 
 ### Upgrading Seafile Server
 
-TO upgrade to latest version of seafile server:
+If you plan to upgrade 6.3 to 7.0, you can refer to the [Upgrade Documentation](https://download.seafile.com/published/support/docker/pro-edition/6.3%20upgrade%20to%207.0.md).
+
+To upgrade to the latest version of seafile 6.3:
 
 ```sh
 docker pull {host}/seafileltd/seafile-pro:latest
@@ -225,10 +236,8 @@ Steps:
 
 ### Troubleshooting
 
-You can run docker commands like "docker logs" or "docker exec" to find errors.
+You can run docker commands like "docker exec" to find errors.
 
 ```sh
-docker logs -f seafile
-# or
-docker exec -it seafile bash
+docker exec -it seafile /bin/bash
 ```

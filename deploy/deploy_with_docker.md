@@ -1,4 +1,4 @@
-### About
+## About
 
 - [Docker](https://docker.com/) is an open source project to pack, ship and run any Linux application in a lighter weight, faster container than a traditional virtual machine.
 
@@ -10,7 +10,17 @@ If you are not familiar with docker commands, please refer to [docker documentat
 
 **Note**: If you want to deploy the Seafile Pro Edition with docker, refor to the [Deploying Seafile-pro with Docker](../deploy_pro/deploy_with_docker.md)
 
-### Getting Started
+## For seafile 7.x.x
+
+Starting with 7.0, we have adjusted seafile-docker image to use multiple containers. The old image runs MariaDB-Server and Memcached in the same container with Seafile server. Now, we strip the MariaDB-Server and Memcached services from the Seafile image and run them in their respective containers.
+
+If you plan to deploy seafile 7.0, you should refer to the [Deploy Documentation](https://download.seafile.com/published/support/docker/deploy%20seafile%20with%20docker.md).
+
+If you plan to upgrade 6.3 to 7.0, you can refer to the [Upgrade Documentation](https://download.seafile.com/published/support/docker/6.3%20upgrade%20to%207.0.md).
+
+## For seafile 6.x.x
+
+### Getting started
 
 To run the seafile server container:
 
@@ -26,9 +36,9 @@ Wait for a few minutes for the first time initialization, then visit `http://sea
 
 This command will mount folder `/opt/seafile-data` at the local server to the docker instance. You can find logs and other data under this folder.
 
-### More configuration Options
+### More configuration options
 
-#### Custom Admin Username and Password
+#### Custom admin username and password
 
 The default admin account is `me@example.com` and the password is `asecret`. You can use a different password  by setting the container's environment variables:
 e.g.
@@ -67,7 +77,7 @@ If you want to use your own SSL certificate:
 - create a folder `/opt/seafile-data/ssl`, and put your certificate and private key under the ssl directory.
 - Assume your site name is `seafile.example.com`, then your certificate must have the name `seafile.example.com.crt`, and the private key must have the name `seafile.example.com.key`.
 
-#### Modify Seafile Server Configurations
+#### Modify seafile server configurations
 
 The config files are under `shared/seafile/conf`. You can modify the configurations according to [Seafile manual](https://manual.seafile.com/)
 
@@ -83,7 +93,7 @@ The seafile logs are under `shared/logs/seafile` in the docker, or `/opt/seafile
 
 The system logs are under `shared/logs/var-log`, or `/opt/seafile-data/logs/var-log` in the server that run the docker.
 
-#### Add a new Admin
+#### Add a new admin
 
 Ensure the container is running, then enter this command:
 
@@ -93,7 +103,7 @@ docker exec -it seafile /opt/seafile/seafile-server-latest/reset-admin.sh
 
 Enter the username and password according to the prompts. You now have a new admin account.
 
-### Directory Structure
+### Directory structure
 
 #### `/shared`
 
@@ -108,9 +118,11 @@ Placeholder spot for shared volumes. You may elect to store certain persistent i
 - /shared/bootstrap.conf: This file does not exist by default. You can create it by your self, and write the configuration of files similar to the `samples` folder.
 
 
-### Upgrading Seafile Server
+### Upgrading seafile server
 
-TO upgrade to latest version of seafile server:
+If you plan to upgrade 6.3 to 7.0, you can refer to the [Upgrade Documentation](https://download.seafile.com/published/support/docker/6.3%20upgrade%20to%207.0.md).
+
+To upgrade to the latest version of seafile 6.3:
 
 ```sh
 docker pull seafileltd/seafile:latest
@@ -128,7 +140,7 @@ docker run -d --name seafile \
 
 If you are one of the early users who use the `launcher` script, you should refer to [upgrade from old format](https://github.com/haiwen/seafile-docker/blob/master/upgrade_from_old_format.md) document.
 
-### Backup and Recovery
+### Backup and recovery
 
 #### Struct
 
@@ -203,7 +215,7 @@ Steps:
   cp -R /backup/data/* /shared/seafile/
   ```
 
-### Garbage Collection
+### Garbage collection
 
 When files are deleted, the blocks comprising those files are not immediately removed as there may be other files that reference those blocks (due to the magic of deduplication). To remove them, Seafile requires a ['garbage collection'](https://manual.seafile.com/maintain/seafile_gc.html) process to be run, which detects which blocks no longer used and purges them. (NOTE: for technical reasons, the GC process does not guarantee that _every single_ orphan block will be deleted.)
 
@@ -211,10 +223,8 @@ The required scripts can be found in the `/scripts` folder of the docker contain
 
 ### Troubleshooting
 
-You can run docker commands like "docker logs" or "docker exec" to find errors.
+You can run docker commands like "docker exec" to find errors.
 
 ```sh
-docker logs -f seafile
-# or
 docker exec -it seafile bash
 ```
