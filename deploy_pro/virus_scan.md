@@ -52,7 +52,7 @@ Since Pro edition 6.0.0, a few more options are added to provide finer grained c
 ```
 [virus_scan]
 ......
-scan_size_limit = (size limit for files to be scanned)
+scan_size_limit = (size limit for files to be scanned) # The unit is MB.
 scan_skip_ext = (a comma (',') separated list of file extensions to be ignored)
 threads = (number of concurrent threads for scan, one thread for one file, default to 4)
 ```

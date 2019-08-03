@@ -2,6 +2,13 @@
 
 ## ChangeLog
 
+### 1.0.5 (2019/06/11)
+
+* [fix] Fix lots of "Creating partial commit after adding" in the log
+* [fix] Fix permission at the client is wrong when a library shared to different groups with different permissions
+* [fix] Don't show libraries with online preview or online read-write permission
+* [Mac] Add Mac Finder preview plugin to prevent automatically downloading of files
+
 ### 1.0.4 (2019/04/23)
 
 * [fix] Fix file locking

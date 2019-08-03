@@ -1,4 +1,3 @@
 # FAQ
 
-Please check the [FAQ section](faq/README.md)
-
+Please check https://download.seafile.com/published/support/faq/server-faq.md

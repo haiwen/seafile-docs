@@ -1,5 +1,16 @@
 # Seafile Client Changelog
 
+## 7.0
+
+### 7.0.0 (2019/06/04)
+
+* Improve error notifications
+* Support new version of encrypted libraries if server version is 7.0.0+
+* Starred items support libraries and folders
+* Support new version of file activities
+* Fix the error of "Failed to remove local repos sync token" during client shutdown
+* Add menu to repair Windows Explorer extension
+
 ## 6.2
 
 ### 6.2.10 (2019/01/15)

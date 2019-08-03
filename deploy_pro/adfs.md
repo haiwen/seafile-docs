@@ -1,4 +1,8 @@
-### Requirements
+# AD Federation Service or SAML 2.0 Integration
+
+This documentation describes how to integrate to ADFS with SAML 2.0 protocol. The procedure can also be used to integrate with other SAML 2.0 compliant service with minimal change.
+
+## Requirements
 
 To use ADFS to log in to your Seafile, you need the following components:
 
@@ -8,7 +12,7 @@ To use ADFS to log in to your Seafile, you need the following components:
 
 1. A valid SSL certificate for Seafile server, and here we use **demo.seafile.com** as the domain name example.
 
-### Prepare Certs File
+## Prepare Certs File
 
 1. x.509 certs for SP (Service Provider)
 
@@ -38,7 +42,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout sp.key -out sp.crt
  
  1. Then copy it to **<seafile-install-path>/seahub-data/certs**.
  
-### Prepare IdP Metadata File
+## Prepare IdP Metadata File
 
 1. Open https://adfs-server.adfs.com/federationmetadata/2007-06/federationmetadata.xml
 
@@ -46,7 +50,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout sp.key -out sp.crt
 
 1. Copy it to **<seafile-install-path>/seahub-data/certs**.
 
-### Install Requirements on Seafile Server
+## Install Requirements on Seafile Server
 
 - For Ubuntu 16.04
 ```
@@ -54,7 +58,7 @@ sudo apt install libxmlsec1
 sudo pip install cryptography djangosaml2==0.15.0
 ```
 
-### Config Seafile
+## Config Seafile
 
 Add the following lines to **seahub_settings.py**
 
@@ -164,7 +168,7 @@ SAML_CONFIG = {
 
 ```
 
-### Config ADFS Server
+## Config ADFS Server
 
 1. Add **Relying Party Trust**
 
@@ -211,7 +215,7 @@ SAML_CONFIG = {
  1. **Pass through all claim values** and click **Finish**. 
  
  
- ### Test
+## Test
  
 After re-starting the services, you may open a web browser and type in `https://demo.seafile.com`, there should be a `ADFS` button in login dialog, click that button will redirect you to the ADFS server (adfs-server.adfs.com), if username and password are correct, you will be redirect back to Seafile home page.
 
