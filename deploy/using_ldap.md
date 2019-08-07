@@ -118,7 +118,7 @@ On Ubuntu 14.04 and Debian 7/8, moving the bundled ldap related libraries out of
 ```
 cd ${SEAFILE_INSTALLATION_DIR}/seafile-server-latest/seafile/lib
 mkdir disabled_libs_use_local_ones_instead
-mv liblber-2.4.so.2 libldap-2.4.so.2 libsasl2.so.2 libldap_r-2.4.so.2 disabled_libs_use_local_ones_instead/
+mv liblber-2.4.so.2 libldap-2.4.so.2 libsasl2.so.3 libldap_r-2.4.so.2 disabled_libs_use_local_ones_instead/
 ```
 
 On CentOS 6, you have to move the libnssutil library:
