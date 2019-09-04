@@ -60,6 +60,7 @@ OAUTH_AUTHORIZATION_URL = 'https://accounts.google.com/o/oauth2/v2/auth'
 OAUTH_TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token'
 OAUTH_USER_INFO_URL = 'https://www.googleapis.com/oauth2/v1/userinfo'
 OAUTH_SCOPE = [
+    "openid",
     "https://www.googleapis.com/auth/userinfo.email",
 ]
 OAUTH_ATTRIBUTE_MAP = {
@@ -84,6 +85,7 @@ OAUTH_AUTHORIZATION_URL = 'https://accounts.google.com/o/oauth2/v2/auth'
 OAUTH_TOKEN_URL = 'https://www.googleapis.com/oauth2/v4/token'
 OAUTH_USER_INFO_URL = 'https://www.googleapis.com/oauth2/v1/userinfo'
 OAUTH_SCOPE = [
+    "openid",
     "https://www.googleapis.com/auth/userinfo.email",
 ]
 OAUTH_ATTRIBUTE_MAP = {
