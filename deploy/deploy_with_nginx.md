@@ -80,7 +80,7 @@ server {
         error_log       /var/log/nginx/seafhttp.error.log;
     }
     location /media {
-        root /home/user/haiwen/seafile-server-latest/seahub;
+        root /home/user/haiwen/seafile-server-latest/seahub/media;
     }
 }
 ```
