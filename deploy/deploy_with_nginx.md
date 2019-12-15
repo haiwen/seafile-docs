@@ -125,3 +125,18 @@ FILE_SERVER_ROOT = 'http://seafile.example.com/seafhttp'
 ./seafile.sh start
 ./seahub.sh start # or "./seahub.sh start-fastcgi" if you're using fastcgi
 ```
+
+## Additional security settings for nginx (optional)
+Disable exact server version in header. Prevent scans for vulnerable server. This should be added to every server block, as it shall obfuscate the version of nginx.
+```
+    server_tokens off;
+```
+
+This is also something that you should add in every server block, this is to protect your nginx server from some different attacks.
+The X-XSS-Protection are protecting against cross-site-scripting, X-Frame-Options are protecting against clickjacking attacks and the X-Frame-Options are protecting against sniffing.
+```
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+```
