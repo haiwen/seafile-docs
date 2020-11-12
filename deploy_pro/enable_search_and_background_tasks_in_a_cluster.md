@@ -63,6 +63,7 @@ On nodes B and C, you need to:
 * Edit `seafevents.conf`, add the following lines:
 ```
 [INDEX FILES]
+enabled = true
 external_es_server = true
 es_host = <ip of node A>
 es_port = 9200
